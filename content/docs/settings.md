@@ -1,8 +1,8 @@
 ---
-description: ''
-sidebar: 'docs'
-prev: '/docs/deploying/'
-next: '/docs/sidebar/'
+description: ""
+sidebar: "docs"
+prev: "/docs/deploying/"
+next: "/docs/sidebar/"
 ---
 
 # Settings
@@ -33,12 +33,10 @@ The standard navigation on the top left is defined in the `gridsome.config.js` f
 module.exports = {
   settings: {
     nav: {
-      links: [
-        { path: '/docs/', title: 'Docs' }
-      ]
+      links: [{ path: "/docs/", title: "Docs" }],
     },
-  }
-}
+  },
+};
 ```
 
 Each link item needs a `path` and a `title` for the link.
@@ -49,7 +47,7 @@ The description of each page goes to the frontmatter of said page. It is an opti
 
 ```md
 ---
-description: 'your description'
+description: "your description"
 ---
 ```
 
@@ -58,13 +56,13 @@ description: 'your description'
 At the top of the page, you can see some icons which link to Twitter/GitHub or personal website. These links are also defined in your `gridsome.config.js` like this:
 
 ```js
-
 module.exports = {
   settings: {
     web: process.env.URL_WEB,
     twitter: process.env.URL_TWITTER,
     github: process.env.URL_GITHUB,
-  }
+  },
+};
 ```
 
 By default these are defined in your `.env` file but can be hardcoded if you want to.

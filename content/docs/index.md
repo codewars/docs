@@ -1,7 +1,7 @@
 ---
-description: ''
-sidebar: 'docs'
-next: '/docs/installation/'
+description: ""
+sidebar: "docs"
+next: "/docs/installation/"
 ---
 
 # Introduction
@@ -39,8 +39,8 @@ This starter uses [TailwindCSS](https://tailwindcss.com/) for layout and styling
 The most inportant colors are defined in the `src/layouts/Default.vue` file at the top of the `style` block via CSS variables. If you want to change the primary color to orange for example, you would simply touch that value there.
 
 ```css
-:rrot {
-  --color-ui-primary: theme('colors.orange.600');
+:root {
+  --color-ui-primary: theme("colors.orange.600");
 }
 ```
 
