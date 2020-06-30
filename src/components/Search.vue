@@ -115,8 +115,10 @@ export default {
         keys: ["value"],
         threshold: 0.25,
       });
-
-      return fuse.search(this.query).slice(0, 15);
+      return fuse
+        .search(this.query)
+        .slice(0, 15)
+        .map((x) => x.item);
     },
     headings() {
       let result = [];
