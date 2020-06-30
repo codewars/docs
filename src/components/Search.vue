@@ -75,7 +75,7 @@
 
 <static-query>
 query Search {
-   allMarkdownPage{
+  allMarkdownPage {
     edges {
       node {
         id

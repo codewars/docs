@@ -7,3 +7,4 @@ dist
 !.env.example
 .env
 .env.*
+/schema.graphql

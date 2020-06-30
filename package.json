@@ -4,7 +4,8 @@
   "scripts": {
     "build": "gridsome build",
     "develop": "gridsome develop",
-    "explore": "gridsome explore"
+    "explore": "gridsome explore",
+    "get-schema": "get-graphql-schema http://localhost:8080/___graphql >| schema.graphql"
   },
   "dependencies": {
     "fuse.js": "^6.4.0",
