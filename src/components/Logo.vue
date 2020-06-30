@@ -1,5 +1,11 @@
 <template>
-  <svg :width="getWidth" :height="getHeight" x="0.0" y="0.0" viewBox="0 0 48 48">
+  <svg
+    :width="getWidth"
+    :height="getHeight"
+    x="0.0"
+    y="0.0"
+    viewBox="0 0 48 48"
+  >
     <path
       fill="currentColor"
       fill-rule="nonzero"
@@ -13,8 +19,8 @@ export default {
   props: {
     width: {
       type: Number,
-      default: 40
-    }
+      default: 40,
+    },
   },
 
   computed: {
@@ -24,8 +30,7 @@ export default {
 
     getHeight() {
       return Math.ceil((this.getWidth / 48) * 48);
-    }
-  }
+    },
+  },
 };
 </script>
-

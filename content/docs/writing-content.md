@@ -1,8 +1,8 @@
 ---
-description: ''
-sidebar: 'docs'
-prev: '/docs/installation/'
-next: '/docs/settings/'
+description: ""
+sidebar: "docs"
+prev: "/docs/installation/"
+next: "/docs/settings/"
 ---
 
 # Writing Content
@@ -17,23 +17,21 @@ This theme uses the default `@gridsome/source-filesystem` plugin to look for `.m
 ```js
 plugins: [
   {
-    use: '@gridsome/source-filesystem',
+    use: "@gridsome/source-filesystem",
     options: {
       // Change the option below.
-      baseDir: './content',
-      path: '**/*.md',
-      typeName: 'MarkdownPage',
+      baseDir: "./content",
+      path: "**/*.md",
+      typeName: "MarkdownPage",
       remark: {
-        externalLinksTarget: '_blank',
-        externalLinksRel: ['noopener', 'noreferrer'],
-        plugins: [
-          '@gridsome/remark-prismjs'
-        ]
-      }
-    }
+        externalLinksTarget: "_blank",
+        externalLinksRel: ["noopener", "noreferrer"],
+        plugins: ["@gridsome/remark-prismjs"],
+      },
+    },
   },
   // ...
-]
+];
 ```
 
 If you have never worked with markdown, just search the internet for a guide. It is very simple to pick up.

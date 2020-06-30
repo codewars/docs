@@ -1,17 +1,21 @@
 <template>
-  <button @click="handleClick" aria-label="Toggle Darkmode" title="Toggle Darkmode">
+  <button
+    @click="handleClick"
+    aria-label="Toggle Darkmode"
+    title="Toggle Darkmode"
+  >
     <slot :dark="isDarkMode" />
   </button>
 </template>
 
 <script>
-export const LIGHTS_OUT = 'lights-out';
+export const LIGHTS_OUT = "lights-out";
 
 export default {
   data() {
     return {
-      isDarkMode: false
-    }
+      isDarkMode: false,
+    };
   },
 
   methods: {
@@ -19,7 +23,7 @@ export default {
       const hasDarkMode = document.documentElement.hasAttribute(LIGHTS_OUT);
 
       // Toggle dark mode on click.
-      return this.toggleDarkMode(! hasDarkMode);
+      return this.toggleDarkMode(!hasDarkMode);
     },
 
     toggleDarkMode(shouldBeDark) {
@@ -33,7 +37,7 @@ export default {
     },
 
     detectPrefered() {
-      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+      return window.matchMedia("(prefers-color-scheme: dark)").matches;
     },
 
     hasInStorage() {
@@ -43,27 +47,22 @@ export default {
     },
 
     writeToStorage(prefersDark) {
-      localStorage.setItem(LIGHTS_OUT, prefersDark ? 'true' : 'false');
+      localStorage.setItem(LIGHTS_OUT, prefersDark ? "true" : "false");
     },
 
     getFromStorage() {
-      return localStorage.getItem(LIGHTS_OUT) === 'true' ? true : false;
-    }
+      return localStorage.getItem(LIGHTS_OUT) === "true" ? true : false;
+    },
   },
 
   mounted() {
     if (this.hasInStorage()) {
-      this.toggleDarkMode(
-        this.getFromStorage()
-      );
+      this.toggleDarkMode(this.getFromStorage());
     } else if (process.isClient && window.matchMedia) {
-      this.toggleDarkMode(
-        this.detectPrefered()
-      );
+      this.toggleDarkMode(this.detectPrefered());
     }
-  }
+  },
 };
 </script>
 
-<style>
-</style>
+<style></style>

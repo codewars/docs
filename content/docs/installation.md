@@ -1,8 +1,8 @@
 ---
-description: ''
-sidebar: 'docs'
-prev: '/docs/'
-next: '/docs/writing-content/'
+description: ""
+sidebar: "docs"
+prev: "/docs/"
+next: "/docs/writing-content/"
 ---
 
 # Installation
@@ -53,11 +53,13 @@ cd docc
 Now you only need to install the dependencies.
 
 Using npm:
+
 ```bash
 npm install
 ```
 
 Or by using yarn:
+
 ```bash
 yarn
 ```
