@@ -22,7 +22,9 @@
               v-for="link in settings.nav.links"
               :key="link.path"
               :to="link.path"
-              class="block p-1 font-medium nav-link text-ui-typo hover:text-ui-primary"
+              class="block p-1 font-medium text-ui-typo hover:text-ui-primary border-b-2 border-transparent"
+              active-class="border-ui-primary font-bold"
+              exact-active-class=""
             >
               {{ link.title }}
             </g-link>
@@ -45,7 +47,7 @@
             title="Website"
             name="Website"
           >
-            <GlobeIcon size="1.5x" />
+            <GlobeIcon class="hover:text-ui-primary" size="1.5x" />
           </a>
 
           <a
@@ -57,7 +59,7 @@
             title="Twitter"
             name="Twitter"
           >
-            <TwitterIcon size="1.5x" />
+            <TwitterIcon class="hover:text-ui-primary" size="1.5x" />
           </a>
 
           <a
@@ -69,13 +71,13 @@
             title="Github"
             name="Github"
           >
-            <GithubIcon size="1.5x" />
+            <GithubIcon class="hover:text-ui-primary" size="1.5x" />
           </a>
 
           <ToggleDarkMode class="ml-2 sm:ml-8">
             <template slot="default" slot-scope="{ dark }">
-              <MoonIcon v-if="dark" size="1.5x" />
-              <SunIcon v-else size="1.5x" />
+              <MoonIcon class="hover:text-ui-primary" v-if="dark" size="1.5x" />
+              <SunIcon class="hover:text-ui-primary" v-else size="1.5x" />
             </template>
           </ToggleDarkMode>
         </div>
@@ -142,18 +144,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-header {
-  svg:not(.feather-search) {
-    &:hover {
-      @apply text-ui-primary;
-    }
-  }
-}
-
-.nav-link {
-  &.active {
-    @apply text-ui-primary font-bold border-ui-primary;
-  }
-}
-</style>
+<style></style>
