@@ -17,10 +17,6 @@ module.exports = {
         xxl: "1400px",
       },
     },
-    container: {
-      center: true,
-      padding: "1rem",
-    },
   },
   variants: {},
   plugins: [],
