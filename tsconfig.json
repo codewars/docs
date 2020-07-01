@@ -3,7 +3,6 @@
   "exclude": ["node_modules", "dist"],
   "compilerOptions": {
     "allowJs": true,
-    "checkJs": true,
     "noEmit": true,
     "baseUrl": ".",
     "paths": {
