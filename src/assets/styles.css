@@ -1,3 +1,7 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
 :root {
   --color-ui-background: theme("colors.white");
   --color-ui-typo: theme("colors.gray.700");
@@ -13,8 +17,8 @@ html[data-dark-mode] {
   --color-ui-border: theme("colors.gray.800");
   --color-ui-primary: theme("colors.indigo.500");
 
-  pre[class*="language-"],
-  code[class*="language-"] {
+  & pre[class*="language-"],
+  & code[class*="language-"] {
     @apply bg-ui-border;
   }
 }
@@ -39,23 +43,23 @@ blockquote {
 }
 
 .content {
-  a {
+  & a {
     @apply text-ui-primary underline;
   }
 
-  h1,
-  h2,
-  h3,
-  h4 {
+  & h1,
+  & h2,
+  & h3,
+  & h4 {
     @apply leading-snug font-black mb-4 text-ui-typo;
 
     &:hover {
-      a::before {
+      & a::before {
         @apply opacity-100;
       }
     }
 
-    a {
+    & a {
       &::before {
         content: "#";
         margin-left: -1em;
@@ -66,62 +70,62 @@ blockquote {
     }
   }
 
-  h1 {
+  & h1 {
     @apply text-4xl;
   }
 
-  h2 {
+  & h2 {
     @apply text-2xl;
   }
 
-  h3 {
+  & h3 {
     @apply text-xl;
   }
 
-  h4 {
+  & h4 {
     @apply text-lg;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  & h1,
+  & h2,
+  & h3,
+  & h4,
+  & h5,
+  & h6 {
     @apply -mt-12 pt-20;
   }
 
-  h2 + h3,
-  h2 + h2,
-  h3 + h3 {
+  & h2 + h3,
+  & h2 + h2,
+  & h3 + h3 {
     @apply border-none -mt-20;
   }
 
-  h2,
-  h3 {
+  & h2,
+  & h3 {
     @apply border-b border-ui-border pb-1 mb-3;
   }
 
-  ul {
+  & ul {
     @apply list-disc;
 
-    ul {
+    & ul {
       list-style: circle;
     }
   }
 
-  ol {
+  & ol {
     @apply list-decimal;
   }
 
-  ol,
-  ul {
+  & ol,
+  & ul {
     @apply pl-5 py-1;
 
-    li {
+    & li {
       @apply mb-2;
 
-      p {
+      & p {
         @apply mb-0;
       }
 
@@ -135,7 +139,7 @@ blockquote {
 blockquote {
   @apply border-l-4 border-ui-border py-2 pl-4;
 
-  p:last-child {
+  & p:last-child {
     @apply mb-0;
   }
 }
@@ -164,8 +168,8 @@ header {
 table {
   @apply text-left mb-6;
 
-  td,
-  th {
+  & td,
+  & th {
     @apply py-3 px-4;
 
     &:first-child {
@@ -177,7 +181,7 @@ table {
     }
   }
 
-  tr {
+  & tr {
     @apply border-b border-ui-border;
 
     &:last-child {

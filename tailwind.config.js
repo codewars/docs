@@ -1,4 +1,8 @@
 module.exports = {
+  purge: {
+    content: ["./content/**/*.md", "./src/**/*.vue", "./src/**/*.js"],
+    options: {},
+  },
   theme: {
     extend: {
       colors: {

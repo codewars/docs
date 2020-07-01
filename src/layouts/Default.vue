@@ -14,7 +14,7 @@
       >
         <aside
           v-if="hasSidebar"
-          class="sidebar"
+          class="sidebar px-4 lg:px-0 fixed lg:sticky w-full lg:w-1/4 overflow-y-auto bg-ui-background lg:bg-transparent border-r border-ui-border lg:top-0 bottom-0 lg:bottom-auto inset-x-0 lg:inset-x-auto z-40 lg:z-0 transition-all"
           :class="{ open: sidebarOpen }"
           :style="sidebarStyle"
         >
@@ -125,19 +125,17 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style>
 .sidebar {
-  @apply fixed bg-ui-background px-4 inset-x-0 bottom-0 w-full border-r border-ui-border overflow-y-auto transition-all z-40;
-
   transform: translateX(-100%);
 
   &.open {
     transform: translateX(0);
   }
+}
 
-  @screen lg {
-    @apply w-1/4 px-0 bg-transparent top-0 bottom-auto inset-x-auto sticky z-0;
-
+@screen lg {
+  .sidebar {
     transform: translateX(0);
   }
 }
