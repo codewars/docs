@@ -9,3 +9,4 @@ dist
 .env.*
 /schema.graphql
 .eslintcache
+.stylelintcache
