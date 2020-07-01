@@ -17,6 +17,11 @@
     "@gridsome/remark-prismjs": "^0.3.0",
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-remark": "^0.5.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.3.1",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier-vue": "^2.1.0",
+    "eslint-plugin-vue": "^6.2.2",
     "gridsome-plugin-tailwindcss": "^2.2.36",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
@@ -35,11 +40,18 @@
     }
   },
   "lint-staged": {
-    "*.{css,scss,vue}": [
+    "*.{css,scss}": [
       "stylelint --fix",
       "prettier --write"
     ],
-    "*.{js,ts,json,md}": [
+    "*.vue": [
+      "stylelint --fix",
+      "eslint --cache --fix"
+    ],
+    "*.{js,ts}": [
+      "eslint --cache --fix"
+    ],
+    "*.{json,md}": [
       "prettier --write"
     ]
   }

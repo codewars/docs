@@ -4,5 +4,6 @@
     "static-query": "graphql"
   },
   "css.validate": false,
-  "scss.validate": false
+  "scss.validate": false,
+  "eslint.validate": ["javascript", "vue"]
 }

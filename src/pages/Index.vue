@@ -4,7 +4,7 @@
       <div class="flex flex-col items-center">
         <div class="flex flex-col items-center mb-2 text-ui-primary">
           <Logo :width="80" />
-          <h2 class="text-3xl text-6xl font-black tracking-tighter border-none">
+          <h2 class="text-6xl font-black tracking-tighter border-none">
             DOCC
           </h2>
         </div>
@@ -113,7 +113,6 @@ export default {
     Logo,
     ArrowRightCircleIcon,
     ZapIcon,
-    CodeIcon,
     MoonIcon,
     SearchIcon,
   },

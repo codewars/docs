@@ -82,10 +82,10 @@ query Search {
         path
         title
         headings {
-        	depth
+          depth
           value
           anchor
-      	}
+        }
       }
     }
   }

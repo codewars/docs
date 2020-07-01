@@ -9,6 +9,7 @@
       </div>
 
       <div class="order-1 w-full md:w-2/3">
+        <!-- eslint-disable-next-line vue/no-v-html -->
         <div class="content" v-html="$page.markdownPage.content" />
 
         <div class="mt-8 pt-8 lg:mt-12 lg:pt-12 border-t border-ui-border">
@@ -20,7 +21,7 @@
 </template>
 
 <page-query>
-query ($id: ID!) {
+query($id: ID!) {
   markdownPage(id: $id) {
     id
     title
@@ -37,7 +38,7 @@ query ($id: ID!) {
       anchor
     }
   }
-  allMarkdownPage{
+  allMarkdownPage {
     edges {
       node {
         path
