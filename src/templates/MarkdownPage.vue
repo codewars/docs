@@ -2,8 +2,7 @@
   <Layout>
     <div class="flex flex-wrap items-start justify-start">
       <div
-        class="order-2 w-full md:w-1/3 sm:pl-4 md:pl-6 lg:pl-8 sticky"
-        style="top: 4rem;"
+        class="order-2 w-full md:w-1/3 sm:pl-4 md:pl-6 lg:pl-8 sticky top-0 pt-16"
       >
         <OnThisPage />
       </div>
@@ -77,18 +76,8 @@ export default {
           content: title,
         },
         {
-          key: "twitter:title",
-          name: "twitter:title",
-          content: title,
-        },
-        {
           key: "og:description",
           name: "og:description",
-          content: description,
-        },
-        {
-          key: "twitter:description",
-          name: "twitter:description",
           content: description,
         },
       ],
