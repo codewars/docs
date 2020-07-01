@@ -1,7 +1,9 @@
 <template>
   <Layout>
     <div class="pt-8 md:pt-16">
-      <h1 class="text-center font-bold text-4xl text-ui-primary">
+      <h1
+        class="mb-4 leading-snug text-center font-bold text-4xl text-ui-primary"
+      >
         Oh no! There is nothing here.
       </h1>
     </div>

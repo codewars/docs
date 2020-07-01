@@ -25,45 +25,6 @@ html[data-dark-mode] {
   transition-timing-function: ease-in-out;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  @apply leading-snug font-black mb-4 text-ui-typo;
-
-  &:hover {
-    a::before {
-      @apply opacity-100;
-    }
-  }
-
-  a {
-    &::before {
-      content: "#";
-      margin-left: -1em;
-      padding-right: 1em;
-
-      @apply text-ui-primary absolute opacity-0 float-left;
-    }
-  }
-}
-
-h1 {
-  @apply text-4xl;
-}
-
-h2 {
-  @apply text-2xl;
-}
-
-h3 {
-  @apply text-xl;
-}
-
-h4 {
-  @apply text-lg;
-}
-
 a:not(.active):not(.text-ui-primary):not(.text-white) {
   @apply text-ui-typo;
 }
@@ -80,6 +41,45 @@ blockquote {
 .content {
   a {
     @apply text-ui-primary underline;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply leading-snug font-black mb-4 text-ui-typo;
+
+    &:hover {
+      a::before {
+        @apply opacity-100;
+      }
+    }
+
+    a {
+      &::before {
+        content: "#";
+        margin-left: -1em;
+        padding-right: 1em;
+
+        @apply text-ui-primary absolute opacity-0 float-left;
+      }
+    }
+  }
+
+  h1 {
+    @apply text-4xl;
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+
+  h3 {
+    @apply text-xl;
+  }
+
+  h4 {
+    @apply text-lg;
   }
 
   h1,

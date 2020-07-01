@@ -4,11 +4,15 @@
       <div class="flex flex-col items-center">
         <div class="flex flex-col items-center mb-2 text-ui-primary">
           <Logo :width="80" />
-          <h2 class="text-6xl font-black tracking-tighter border-none">
+          <h2
+            class="mb-4 text-3xl lg:text-6xl font-black text-ui-typo leading-snug tracking-tighter border-none"
+          >
             DOCC
           </h2>
         </div>
-        <h1 class="text-4xl text-center lg:text-5xl">
+        <h1
+          class="mb-4 text-4xl lg:text-5xl font-black text-ui-typo leading-snug text-center"
+        >
           Great Documentation starts here.
         </h1>
         <p class="text-xl font-medium text-center">
@@ -51,7 +55,9 @@
           class="flex flex-col items-center w-full px-4 mb-8 text-center md:w-1/3"
         >
           <ZapIcon size="3x" class="mb-6 text-ui-primary" />
-          <h3 class="font-bold tracking-wide uppercase text-ui-primary">
+          <h3
+            class="mb-4 text-xl font-bold leading-snug tracking-wide uppercase text-ui-primary"
+          >
             Incredibly Fast
           </h3>
           <p class="text-lg text-left">
@@ -68,7 +74,9 @@
           class="flex flex-col items-center w-full px-4 mb-8 text-center md:w-1/3"
         >
           <SearchIcon size="3x" class="mb-6 text-ui-primary" />
-          <h3 class="font-bold tracking-wide uppercase text-ui-primary">
+          <h3
+            class="mb-4 text-xl font-bold leading-snug tracking-wide uppercase text-ui-primary"
+          >
             Instant Search
           </h3>
           <p class="text-lg text-left">
@@ -85,7 +93,9 @@
           class="flex flex-col items-center w-full px-4 mb-8 text-center md:w-1/3"
         >
           <MoonIcon size="3x" class="mb-6 text-ui-primary" />
-          <h3 class="font-bold tracking-wide uppercase text-ui-primary">
+          <h3
+            class="mb-4 text-xl font-bold leading-snug tracking-wide uppercase text-ui-primary"
+          >
             Lights out
           </h3>
           <p class="text-lg text-left">
