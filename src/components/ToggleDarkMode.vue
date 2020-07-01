@@ -9,7 +9,8 @@
 </template>
 
 <script>
-export const LIGHTS_OUT = "lights-out";
+const DARK_MODE = "dark-mode";
+const DARK_MODE_ATTR = "data-" + DARK_MODE;
 
 export default {
   data() {
@@ -20,14 +21,14 @@ export default {
 
   methods: {
     handleClick() {
-      const hasDarkMode = document.documentElement.hasAttribute(LIGHTS_OUT);
+      const hasDarkMode = document.documentElement.hasAttribute(DARK_MODE_ATTR);
 
       // Toggle dark mode on click.
       return this.toggleDarkMode(!hasDarkMode);
     },
 
     toggleDarkMode(shouldBeDark) {
-      document.documentElement.toggleAttribute(LIGHTS_OUT, shouldBeDark);
+      document.documentElement.toggleAttribute(DARK_MODE_ATTR, shouldBeDark);
 
       this.isDarkMode = shouldBeDark;
 
@@ -41,17 +42,17 @@ export default {
     },
 
     hasInStorage() {
-      const check = localStorage.getItem(LIGHTS_OUT);
+      const check = localStorage.getItem(DARK_MODE);
 
       return check !== null;
     },
 
     writeToStorage(prefersDark) {
-      localStorage.setItem(LIGHTS_OUT, prefersDark ? "true" : "false");
+      localStorage.setItem(DARK_MODE, prefersDark ? "true" : "false");
     },
 
     getFromStorage() {
-      return localStorage.getItem(LIGHTS_OUT) === "true" ? true : false;
+      return localStorage.getItem(DARK_MODE) === "true" ? true : false;
     },
   },
 

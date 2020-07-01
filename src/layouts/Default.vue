@@ -134,7 +134,7 @@ export default {
   --color-ui-primary: theme("colors.indigo.600");
 }
 
-html[lights-out] {
+html[data-dark-mode] {
   --color-ui-background: theme("colors.gray.900");
   --color-ui-typo: theme("colors.gray.100");
   --color-ui-sidebar: theme("colors.gray.800");
