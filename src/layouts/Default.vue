@@ -170,6 +170,7 @@ h4 {
       content: "#";
       margin-left: -1em;
       padding-right: 1em;
+
       @apply text-ui-primary absolute opacity-0 float-left;
     }
   }
@@ -294,9 +295,11 @@ table {
   td,
   th {
     @apply py-3 px-4;
+
     &:first-child {
       @apply pl-0;
     }
+
     &:last-child {
       @apply pr-0;
     }
@@ -304,6 +307,7 @@ table {
 
   tr {
     @apply border-b border-ui-border;
+
     &:last-child {
       @apply border-b-0;
     }
@@ -312,6 +316,7 @@ table {
 
 .sidebar {
   @apply fixed bg-ui-background px-4 inset-x-0 bottom-0 w-full border-r border-ui-border overflow-y-auto transition-all z-40;
+
   transform: translateX(-100%);
 
   &.open {
@@ -320,6 +325,7 @@ table {
 
   @screen lg {
     @apply w-1/4 px-0 bg-transparent top-0 bottom-auto inset-x-auto sticky z-0;
+
     transform: translateX(0);
   }
 }
