@@ -6,7 +6,7 @@ prev: "/docs/settings/"
 
 # Sidebar
 
-In order to have a sidebar visible on the side of the page (like on this one for example) or on mobile devices as an off-canvas navigation, you are required to do some global configuration, as well as some configuration per markdown file.
+To have a sidebar visible on the side of the page (like on this one for example) or on mobile devices as an off-canvas navigation, you are required to do some global configuration, as well as some configuration per Markdown file.
 
 ## Global Configuration
 
@@ -23,13 +23,13 @@ module.exports = {
 };
 ```
 
-Please note that the sidebar option is an array, since you can define multiple sidebars for different sections of your website. For example you might have a sidebar for your guide and another one for your Api reference.
+Please note that the sidebar option is an array, since you can define multiple sidebars for different sections of your site. For example you might have a sidebar for your guide and another one for your API reference.
 
 ### The Sidebar Config Object
 
 A single item in this array needs to have the following properties:
 
-- `name`: The identifier of the sidebar. This will be referenced in your markdown frontmatter.
+- `name`: The identifier of the sidebar. This will be referenced in your Markdown frontmatter.
 - `sections`: The sidebar is divided into several sections. On this page we have **Getting Started** and **Configuration**
 
 ```js
@@ -77,9 +77,9 @@ The sidebar performs a static query to get all pages. This is how we automatical
 
 ## Frontmatter setup
 
-After your global configuration is all done, we only need to tell the markdown page which sidebar to use.
+After your global configuration is all done, we only need to tell the Markdown page which sidebar to use.
 
-In order to do that we simply reference the `name` of the sidebar in our frontmatter:
+To do that we simply reference the `name` of the sidebar in our frontmatter:
 
 ```md
 ---

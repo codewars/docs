@@ -11,7 +11,7 @@ There are several ways to to install this theme.
 
 ## Using the Gridsome CLI
 
-The easiest way to install this theme or a Gridsome theme in general is by using their CLI tool.
+The easiest way to install this theme or a Gridsome theme in general is by using their command-line tool.
 
 If you don't already have it installed, simply run:
 

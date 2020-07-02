@@ -7,7 +7,7 @@ next: "/docs/sidebar/"
 
 # Settings
 
-When creating your markdown files, there is some configuration to do, if we want to utilise all features of this starter theme.
+When creating your Markdown files, there is some configuration to do, if we want to use all features of this starter theme.
 
 ## Sidebar
 
@@ -16,14 +16,14 @@ Check out the [sidebar](/docs/sidebar/) section for more information.
 
 ## Next and Previous Navigation
 
-If you scroll to the bottom of the page, you will notice some buttons which link to the previous pages in these docs. These are also not automatically generated but configured in the frontmatter of your markdown file like this:
+If you scroll to the bottom of the page, you will notice some buttons which link to the previous pages in these docs. These are also not automatically generated but configured in the frontmatter of your Markdown file like this:
 
 ```md
 prev: '/docs/previous-link/'
 next: '/docs/next-link/'
 ```
 
-Just like the sidebar, you only need to specify the link to the page and the title will be fetched via a graphql query.
+Just like the sidebar, you only need to specify the link to the page and the title will be fetched via a GraphQL query.
 
 ## Navigation
 
@@ -53,7 +53,7 @@ description: "your description"
 
 ## Social Links
 
-At the top of the page, you can see some icons which link to Twitter/GitHub or personal website. These links are also defined in your `gridsome.config.js` like this:
+At the top of the page, you can see some icons which link to Twitter/GitHub or personal site. These links are also defined in your `gridsome.config.js` like this:
 
 ```js
 module.exports = {
@@ -65,7 +65,7 @@ module.exports = {
 };
 ```
 
-By default these are defined in your `.env` file but can be hardcoded if you want to.
+By default, these are defined in your `.env` file but can be hardcoded as well.
 
 ## On this Page
 
@@ -73,7 +73,7 @@ On the right side of the page is an overview of every headline of the current vi
 
 ## Google Analytics
 
-Google Analytics is integrated via the `@gridsome/plugin-google-analytics` plugin. It needs your tracking id in order to work correctly, which can also be defined via `.env` file or hardcoded as needed.
+Google Analytics is integrated via the `@gridsome/plugin-google-analytics` plugin. It needs your tracking ID to work correctly, which can also be defined via `.env` file or hardcoded as needed.
 
 If you don't want to use Google Analytics, simply delete this entry from your `plugins`.
 

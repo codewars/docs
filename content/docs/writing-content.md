@@ -12,7 +12,7 @@ You can look into it if you want, to get a sense, of how this theme works but ge
 
 ## Writing Markdown
 
-This theme uses the default `@gridsome/source-filesystem` plugin to look for `.md` files in the `content` folder to create pages. If you want to rename the folder, simply open the `gridsome.config.js`, navigate to the options of the plugin and change the `baseDir` option.
+This theme uses the default `@gridsome/source-filesystem` plugin to look for `.md` files in the `content` folder to create pages. To rename the folder, simply open the `gridsome.config.js`, navigate to the options of the plugin and change the `baseDir` option.
 
 ```js
 plugins: [

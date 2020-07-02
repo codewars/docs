@@ -10,7 +10,7 @@ Docc is a starter theme for [Gridsome](https://gridsome.org/) which is a static 
 
 ## Fast by default
 
-This is the catchphrase of Gridsome and true in any sense of the word. Static site generators output plain html files and have other great features like image processing and lazy-loading. After Serving the initial html, Gridsome site turn into a snappy single page application.
+This is the catchphrase of Gridsome and true in any sense of the word. Static site generators output plain HTML files and have other great features like image processing and lazy-loading. After Serving the initial html, Gridsome site turn into a snappy single page application.
 
 If I may quote Gridsome themselves:
 
@@ -24,7 +24,7 @@ Any good documentation has great navigation. This theme has support for an organ
 
 ## Search
 
-The search component which is shipped with this theme, automatically indexes all headlines in your markdown pages and provides instant client side search powered by [Fuse.js](https://fusejs.io/).
+The search component which is shipped with this theme, automatically indexes all headlines in your Markdown pages and provides instant client-side search powered by [Fuse.js](https://fusejs.io/).
 
 ## Dark Mode
 
@@ -32,11 +32,11 @@ This seems to be a must have for any site in current year. Click the icon at the
 
 ## TailwindCSS
 
-This starter uses [TailwindCSS](https://tailwindcss.com/) for layout and styling. You can easily configure it by editing the `tailwind.config.js` file. [PurgeCSS](https://purgecss.com/) is included as well to keep the bundle size as low as possible and the website fast and snappy!
+This starter uses [TailwindCSS](https://tailwindcss.com/) for layout and styling. You can easily configure it by editing the `tailwind.config.js` file. [PurgeCSS](https://purgecss.com/) is included as well to keep the bundle size as low as possible and the site fast and snappy!
 
 ### Changing Colors
 
-The most inportant colors are defined in the `src/layouts/Default.vue` file at the top of the `style` block via CSS variables. If you want to change the primary color to orange for example, you would simply touch that value there.
+The most inportant colors are defined in the `src/layouts/Default.vue` file at the top of the `style` block via CSS variables. To change the primary color to orange for example, you would simply touch that value there.
 
 ```css
 :root {
