@@ -22,35 +22,50 @@
   </div>
 </template>
 
+<static-query>
+query {
+  allMarkdownPage {
+    edges {
+      node {
+        path
+        title
+      }
+    }
+  }
+}
+</static-query>
+
 <script>
 import { ArrowLeftIcon, ArrowRightIcon } from "vue-feather-icons";
 
 export default {
+  props: {
+    prevPath: {
+      type: String,
+    },
+    nextPath: {
+      type: String,
+    },
+  },
+
   components: {
     ArrowLeftIcon,
     ArrowRightIcon,
   },
 
   computed: {
-    page() {
-      return this.$page.markdownPage;
-    },
     pages() {
-      return this.$page.allMarkdownPage.edges.map((edge) => edge.node);
+      return this.$static.allMarkdownPage.edges.map((edge) => edge.node);
     },
     next() {
-      if (this.pages && !this.page.next) {
-        return false;
-      }
+      if (!this.nextPath) return false;
 
-      return this.pages.find((page) => page.path === this.page.next);
+      return this.pages.find((page) => page.path === this.nextPath);
     },
     prev() {
-      if (this.pages && !this.page.prev) {
-        return false;
-      }
+      if (!this.prevPath) return false;
 
-      return this.pages.find((page) => page.path === this.page.prev);
+      return this.pages.find((page) => page.path === this.prevPath);
     },
   },
 };

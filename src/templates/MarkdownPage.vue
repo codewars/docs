@@ -12,7 +12,7 @@
         <div class="content" v-html="$page.markdownPage.content" />
 
         <div class="mt-8 pt-8 lg:mt-12 lg:pt-12 border-t border-ui-border">
-          <NextPrevLinks />
+          <NextPrevLinks :prevPath="page.prev" :nextPath="page.next" />
         </div>
       </div>
     </div>
