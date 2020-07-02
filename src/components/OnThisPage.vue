@@ -11,7 +11,7 @@
       <ul>
         <li
           v-for="(heading, index) in headings"
-          :key="`${page.path}${heading.anchor}`"
+          :key="`${pagePath}${heading.anchor}`"
           :class="{
             'border-t border-dashed border-ui-border pt-2 mt-2':
               index > 0 && heading.depth === 2,
@@ -20,7 +20,7 @@
           }"
         >
           <g-link
-            :to="`${page.path}${heading.anchor}`"
+            :to="`${pagePath}${heading.anchor}`"
             class="relative flex items-center py-1 text-sm transition transform hover:translate-x-1"
             :class="{
               'pl-2': heading.depth === 3,
@@ -46,20 +46,28 @@
 
 <script>
 export default {
+  props: {
+    pagePath: {
+      type: String,
+      required: true,
+    },
+    headings: {
+      // {depth: number, value: string, anchor: string}[]
+      type: Array,
+      required: true,
+    },
+    selector: {
+      type: String,
+      default:
+        ".content h2, .content h3, .content h4, .content h5, .content h6",
+    },
+  },
+
   data() {
     return {
       activeAnchor: "",
       observer: null,
     };
-  },
-
-  computed: {
-    page() {
-      return this.$page.markdownPage;
-    },
-    headings() {
-      return this.page.headings.filter((h) => h.depth > 1);
-    },
   },
 
   watch: {
@@ -105,9 +113,7 @@ export default {
         threshold: 1,
       });
 
-      const elements = document.querySelectorAll(
-        ".content h2, .content h3, .content h4, .content h5, .content h6"
-      );
+      const elements = document.querySelectorAll(this.selector);
 
       for (let i = 0; i < elements.length; i++) {
         this.observer.observe(elements[i]);
