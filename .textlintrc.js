@@ -3,14 +3,12 @@ module.exports = {
     "common-misspellings": true,
     diacritics: true,
     "en-capitalization": {
-      // Allow lower-case words in Header
+      // Check Header
       allowHeading: true,
-      // Allow lower-case words in Image alt
-      allowFigures: true,
-      // Allow lower-case words in ListItem
-      allowLists: true,
-      // Allowlist
-      allowWords: [],
+      // Check Image alt
+      allowFigures: false,
+      // Check ListItem
+      allowLists: false,
     },
     "stop-words": {
       severity: "warning",
