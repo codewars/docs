@@ -2,7 +2,7 @@
   <div
     ref="sidebar"
     v-if="showSidebar"
-    class="px-4 pt-8 lg:pt-12 divide-y border-ui-border"
+    class="px-4 pt-8 lg:pt-12 divide-y divide-ui-border"
   >
     <div v-for="section of sidebar.sections" :key="section.title" class="py-4">
       <h3
