@@ -1,0 +1,13 @@
+name: R
+status: beta
+timeout: 12s
+testFrameworks:
+  - id: testthat
+    name: testthat
+versions:
+  - id: v3.4.1
+    name: v3.4.1
+    packages:
+      - name: tidyverse
+        version: v1.2.1
+        url: https://www.tidyverse.org/

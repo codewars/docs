@@ -1,0 +1,10 @@
+name: Shell
+status: stable
+timeout: 12s
+testFrameworks:
+  - id: rspec
+    name: RSpec
+versions:
+  - id: bash
+    name: Bash
+    packages: []

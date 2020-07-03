@@ -1,0 +1,13 @@
+name: Crystal
+status: stable
+timeout: 12s
+testFrameworks:
+  - id: spec
+    name: Spec
+versions:
+  - id: v0.24.2
+    name: v0.24.2
+    packages:
+      - name: Spec
+        version: 0.24.2
+        url: https://crystal-lang.org/api/0.24.2/Spec.html

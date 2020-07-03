@@ -1,0 +1,16 @@
+name: BF
+status: beta
+timeout: 12s
+testFrameworks:
+  - id: codewars
+    name: Codewars
+versions:
+  - id: v20041219
+    name: v20041219
+    packages: []
+    description: |
+      package [bf](https://packages.ubuntu.com/xenial/bf) in Ubuntu Xenial.
+
+      Executed with `bf -c29999 solution`.
+
+      See [manpage](http://manpages.ubuntu.com/manpages/xenial/man1/bf.1.html).

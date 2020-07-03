@@ -1,0 +1,17 @@
+name: C
+status: stable
+timeout: 12s
+testFrameworks:
+  - id: criterion
+    name: Criterion
+versions:
+  - id: c18
+    name: Clang 8 / C18
+    description: |
+      `-Wall -Wextra`
+    packages:
+      - name: "-lm"
+      - name: "-lcrypto"
+      - name: "-ldl"
+      - name: "-pthread"
+      - name: sqlite3

@@ -41,7 +41,8 @@
     "textlint-rule-stop-words": "^2.0.5",
     "textlint-rule-terminology": "^2.1.4",
     "textlint-rule-write-good": "^1.6.2",
-    "vue-feather-icons": "^5.0.0"
+    "vue-feather-icons": "^5.0.0",
+    "yaml": "^1.10.0"
   },
   "husky": {
     "hooks": {
@@ -59,7 +60,7 @@
     "*.{js,ts}": [
       "eslint --cache --fix"
     ],
-    "*.json": [
+    "*.{json,yml}": [
       "prettier --write"
     ],
     "*.md": [

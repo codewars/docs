@@ -1,0 +1,8 @@
+name: Chapel
+status: unreleased
+timeout: 12s
+testFrameworks: []
+versions:
+  - id: v1.15.0
+    name: 1.15.0
+    packages: []

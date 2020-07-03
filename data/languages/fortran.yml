@@ -1,0 +1,12 @@
+name: Fortran
+status: beta
+timeout: 12s
+testFrameworks:
+  - id: codewars
+    name: Codewars
+versions:
+  - id: f2008
+    name: f2008 (GFortran 9)
+    description: |
+      `-std=f2008 -fall-intrinsics`
+    packages: []

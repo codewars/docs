@@ -73,4 +73,8 @@ module.exports = {
         return options;
       });
   },
+
+  templates: {
+    Language: "/languages/:id/",
+  },
 };

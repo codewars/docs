@@ -1,0 +1,10 @@
+name: PowerShell
+status: beta
+timeout: 12s
+testFrameworks:
+  - id: pester
+    name: Pester
+versions:
+  - id: v6.0.0
+    name: v6.0.0
+    packages: []

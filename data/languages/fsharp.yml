@@ -1,0 +1,10 @@
+name: F#
+status: stable
+timeout: 12s
+testFrameworks:
+  - id: fuchu
+    name: Fuchu
+versions:
+  - id: v4.0
+    name: v4.0
+    packages: []

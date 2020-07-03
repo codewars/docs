@@ -1,0 +1,10 @@
+name: VB.NET
+status: beta
+timeout: 12s
+testFrameworks:
+  - id: nunit
+    name: NUnit
+versions:
+  - id: v15.5
+    name: v15.5 (.Net Core 2.1)
+    packages: []

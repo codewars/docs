@@ -1,0 +1,10 @@
+name: CFML
+status: beta
+timeout: 16s
+testFrameworks:
+  - id: testbox
+    name: TestBox
+versions:
+  - id: lucee5.2
+    name: Lucee v5.2
+    packages: []

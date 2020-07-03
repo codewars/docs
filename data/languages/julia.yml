@@ -1,0 +1,10 @@
+name: Julia
+status: beta
+timeout: 12s
+testFrameworks:
+  - id: factcheck
+    name: FactCheck
+versions:
+  - id: v1.0
+    name: v1.0
+    packages: []

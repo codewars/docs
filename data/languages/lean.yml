@@ -1,0 +1,18 @@
+name: Lean
+status: stable
+timeout: 20s
+testFrameworks:
+  - id: lean
+    name: Lean
+    note: No test framework.
+versions:
+  - id: v3.7.2
+    name: v3.7.2 with mathlib ecdb138
+    packages:
+      - name: mathlib ecdb138
+        url: https://github.com/leanprover-community/mathlib/tree/ecdb13831d4671eb304c41e78adb5b280c2fc365
+  - id: v3.11.0
+    name: v3.11.0 with mathlib 51e2b4c
+    packages:
+      - name: mathlib 51e2b4c
+        url: https://github.com/leanprover-community/mathlib/tree/51e2b4ccef20e49bc24ef86a6afe6e48196abbcf

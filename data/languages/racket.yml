@@ -1,0 +1,11 @@
+name: Racket
+status: stable
+timeout: 12s
+testFrameworks:
+  - id: rackunit
+    name: RackUnit
+versions:
+  - id: v7.2
+    name: v7.2
+    url: https://blog.racket-lang.org/2019/01/racket-v7-2.html
+    packages: []

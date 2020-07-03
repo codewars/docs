@@ -1,0 +1,10 @@
+name: Idris
+status: beta
+timeout: 12s
+testFrameworks:
+  - id: specdris
+    name: Specdris
+versions:
+  - id: v1.3.x
+    name: v1.3.x
+    packages: []

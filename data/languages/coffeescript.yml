@@ -1,0 +1,10 @@
+name: CoffeeScript
+status: stable
+timeout: 12s
+testFrameworks:
+  - id: codewars
+    name: Codewars
+versions:
+  - id: v1.12.4
+    name: v1.12.4
+    packages: []

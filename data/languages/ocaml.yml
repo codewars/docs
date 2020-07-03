@@ -1,0 +1,12 @@
+name: OCaml
+status: beta
+timeout: 12s
+testFrameworks:
+  - id: ounit
+    name: OUnit
+versions:
+  - id: v4.07
+    name: v4.07
+    packages:
+      - name: Jane Street Core
+      - name: Batteries

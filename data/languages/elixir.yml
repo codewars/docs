@@ -1,0 +1,10 @@
+name: Elixir
+status: stable
+timeout: 12s
+testFrameworks:
+  - id: exunit
+    name: ExUnit
+versions:
+  - id: v1.9.1
+    name: v1.9.1
+    packages: []

@@ -1,0 +1,10 @@
+name: Objective-C
+status: beta
+timeout: 12s
+testFrameworks:
+  - id: unitkit
+    name: UnitKit
+versions:
+  - id: gnustep1.8.1
+    name: GNUStep 1.8.1/Clang
+    packages: []

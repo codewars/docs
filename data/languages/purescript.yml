@@ -1,0 +1,24 @@
+name: PureScript
+status: beta
+timeout: 12s
+testFrameworks:
+  - id: spec
+    name: spec
+versions:
+  - id: v0.12.x
+    name: v0.12.x
+    url: https://github.com/purescript/purescript/releases/tag/v0.12.2
+    packages:
+      - name: prelude
+      - name: console
+      - name: debug
+      - name: effect
+      - name: bigints
+      - name: rationals
+      - name: profunctor-lenses
+      - name: spec
+      - name: spec-discovery
+      - name: spec-quickcheck
+    description: |
+      Packages are managed with [`psc-package`](https://github.com/purescript/psc-package) using package set [`psc-0.12.2-20190119`](https://github.com/purescript/package-sets/tree/psc-0.12.2-20190119).
+      See [`packages.json`](https://github.com/purescript/package-sets/blob/psc-0.12.2-20190119/packages.json) for the versions.

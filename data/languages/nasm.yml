@@ -1,0 +1,12 @@
+name: NASM
+status: stable
+timeout: 12s
+testFrameworks:
+  - id: criterion
+    name: Criterion
+versions:
+  - id: v2.11
+    name: v2.11
+    description: |
+      Submitted code is assembled with `nasm -f elf64`.
+    packages: []

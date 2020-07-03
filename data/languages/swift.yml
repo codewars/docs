@@ -1,0 +1,10 @@
+name: Swift
+status: stable
+timeout: 12s
+testFrameworks:
+  - id: xctest
+    name: XCTest
+versions:
+  - id: v5.0
+    name: v5.0
+    packages: []

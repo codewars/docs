@@ -1,0 +1,17 @@
+name: Coq
+status: stable
+timeout: 16s
+testFrameworks:
+  - id: coq_codewars
+    name: coq_codewars
+    url: https://github.com/Codewars/coq_codewars
+versions:
+  - id: v8.11
+    name: v8.11
+    packages:
+      - name: Equations
+        url: http://mattam82.github.io/Coq-Equations/
+      - name: TLC
+        url: https://www.chargueraud.org/softs/tlc/
+      - name: mathcomp
+        url: http://math-comp.github.io/math-comp/

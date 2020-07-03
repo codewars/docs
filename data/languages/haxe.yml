@@ -1,0 +1,11 @@
+name: Haxe
+status: beta
+timeout: 12s
+testFrameworks:
+  - id: utest
+    name: utest
+    url: https://github.com/haxe-utest/utest
+versions:
+  - id: v4.0
+    name: v4.0
+    packages: []
