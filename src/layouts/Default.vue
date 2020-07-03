@@ -10,7 +10,7 @@
       </header>
 
       <main
-        class="container mx-auto p-4 relative flex flex-wrap justify-start flex-1 w-full bg-ui-background"
+        class="container mx-auto px-4 relative flex flex-wrap justify-start flex-1 w-full bg-ui-background"
       >
         <aside
           v-if="hasSidebar"
