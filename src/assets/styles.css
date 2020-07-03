@@ -1,6 +1,5 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@tailwind base;
+@tailwind components;
 
 :root {
   --color-ui-background: theme("colors.white");
@@ -189,3 +188,5 @@ table {
     }
   }
 }
+
+@tailwind utilities;
