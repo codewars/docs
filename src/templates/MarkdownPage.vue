@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <Layout :sidebarName="page.sidebar" :currentPath="page.path">
     <div class="flex flex-wrap items-start justify-start">
       <div
         class="order-2 w-full md:w-1/3 sm:pl-4 md:pl-6 lg:pl-8 sticky top-0 pt-16"
@@ -35,14 +35,6 @@ query($id: ID!) {
       depth
       value
       anchor
-    }
-  }
-  allMarkdownPage {
-    edges {
-      node {
-        path
-        title
-      }
     }
   }
 }

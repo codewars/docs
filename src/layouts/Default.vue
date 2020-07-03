@@ -19,7 +19,11 @@
           :style="sidebarStyle"
         >
           <div class="w-full pb-16 bg-ui-background">
-            <Sidebar @navigate="sidebarOpen = false" />
+            <Sidebar
+              @navigate="sidebarOpen = false"
+              :name="sidebarName"
+              :currentPath="currentPath"
+            />
           </div>
         </aside>
 
@@ -58,6 +62,14 @@ import LayoutHeader from "@/components/LayoutHeader";
 import { MenuIcon, XIcon } from "vue-feather-icons";
 
 export default {
+  props: {
+    currentPath: {
+      type: String,
+    },
+    sidebarName: {
+      type: String,
+    },
+  },
   components: {
     Sidebar,
     LayoutHeader,
@@ -90,7 +102,11 @@ export default {
       };
     },
     hasSidebar() {
-      return this.$page && this.headerHeight > 0;
+      return (
+        this.$page &&
+        (this.$page.markdownPage || this.sidebarName) &&
+        this.headerHeight > 0
+      );
     },
   },
   mounted() {

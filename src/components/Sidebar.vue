@@ -17,13 +17,13 @@
           :id="page.path"
           :key="page.path"
           :class="getClassesForAnchor(page.path)"
-          @mousedown="$emit('navigate')"
+          @click="$emit('navigate')"
         >
           <g-link :to="page.path" class="flex items-center py-1 font-semibold">
             <span
               class="absolute w-2 h-2 -ml-3 rounded-full opacity-0 bg-ui-primary transition transform scale-0 origin-center"
               :class="{
-                'opacity-100 scale-100': currentPage.path === page.path,
+                'opacity-100 scale-100': currentPath === page.path,
               }"
             ></span>
             {{ page.title }}
@@ -47,11 +47,30 @@ query Sidebar {
       }
     }
   }
+
+  allMarkdownPage {
+    edges {
+      node {
+        path
+        title
+      }
+    }
+  }
 }
 </static-query>
 
 <script>
 export default {
+  props: {
+    currentPath: {
+      type: String,
+      required: true,
+    },
+    // Name of the sidebar.
+    name: {
+      type: String,
+    },
+  },
   data() {
     return {
       expanded: [],
@@ -59,23 +78,21 @@ export default {
   },
   computed: {
     pages() {
-      return this.$page.allMarkdownPage.edges.map((edge) => edge.node);
+      return this.$static.allMarkdownPage.edges.map((edge) => edge.node);
     },
     sidebar() {
+      const name = this.name;
       return this.$static.metadata.settings.sidebar.find(
-        (sidebar) => sidebar.name === this.$page.markdownPage.sidebar
+        (sidebar) => sidebar.name === name
       );
     },
     showSidebar() {
-      return this.$page.markdownPage.sidebar && this.sidebar;
-    },
-    currentPage() {
-      return this.$page.markdownPage;
+      return this.name && this.sidebar;
     },
   },
   methods: {
     getClassesForAnchor(path) {
-      const current = this.currentPage.path === path;
+      const current = this.currentPath === path;
       return {
         "text-ui-primary": current,
         "transition transform hover:translate-x-1 hover:text-ui-primary": !current,
