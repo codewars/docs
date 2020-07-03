@@ -4,7 +4,7 @@
       <div
         class="order-2 w-full md:w-1/3 sm:pl-4 md:pl-6 lg:pl-8 sticky top-0 pt-16"
       >
-        <OnThisPage :pagePath="page.path" :headings="headings" />
+        <OnThisPage :currentPath="page.path" :headings="headings" />
       </div>
 
       <div class="order-1 w-full md:w-2/3">

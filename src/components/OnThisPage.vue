@@ -11,7 +11,7 @@
       <ul>
         <li
           v-for="(heading, index) in headings"
-          :key="`${pagePath}${heading.anchor}`"
+          :key="`${currentPath}${heading.anchor}`"
           :class="{
             'border-t border-dashed border-ui-border pt-2 mt-2':
               index > 0 && heading.depth === 2,
@@ -20,7 +20,7 @@
           }"
         >
           <g-link
-            :to="`${pagePath}${heading.anchor}`"
+            :to="`${currentPath}${heading.anchor}`"
             class="relative flex items-center py-1 text-sm transition transform hover:translate-x-1"
             :class="{
               'pl-2': heading.depth === 3,
@@ -47,7 +47,7 @@
 <script>
 export default {
   props: {
-    pagePath: {
+    currentPath: {
       type: String,
       required: true,
     },
