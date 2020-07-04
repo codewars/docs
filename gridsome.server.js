@@ -43,6 +43,20 @@ module.exports = function (api) {
     }
   });
 
+  api.loadSource(async ({ addCollection }) => {
+    const collection = addCollection("Category");
+    const file = path.join(__dirname, "data/categories.yml");
+    const contents = await readFile(file, { encoding: "utf-8" });
+    const categories = YAML.parse(contents);
+
+    for (const { id, name } of categories) {
+      collection.addNode({
+        id,
+        name,
+      });
+    }
+  });
+
   api.createPages(({ createPage }) => {
     // Use the Pages API here: https://gridsome.org/docs/pages-api/
   });

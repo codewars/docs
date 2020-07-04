@@ -1,5 +1,6 @@
 ---
 description: ""
+category: docs
 sidebar: "docs"
 next: "/docs/installation/"
 ---

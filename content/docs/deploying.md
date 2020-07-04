@@ -1,5 +1,6 @@
 ---
 description: ""
+category: docs
 sidebar: "docs"
 prev: "/docs/writing-content/"
 next: "/docs/settings/"

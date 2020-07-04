@@ -51,6 +51,20 @@ module.exports = {
           externalLinksRel: ["noopener", "noreferrer"],
           plugins: ["@gridsome/remark-prismjs"],
         },
+        refs: {
+          // Each page is classified under a single category.
+          category: {
+            typeName: "Category",
+          },
+          // Can have multiple tags.
+          // tags: {
+          //   typeName: "Tag",
+          // },
+          // Can reference multiple languages to be listed on the language page.
+          // languages: {
+          //   typeName: "Language",
+          // },
+        },
       },
     },
 
@@ -75,6 +89,23 @@ module.exports = {
   },
 
   templates: {
-    Language: "/languages/:id/",
+    Category: [
+      {
+        path: "/category/:id/",
+        component: "@/templates/Category.vue",
+      },
+    ],
+    // Tag: [
+    //   {
+    //     path: "/tags/:id/",
+    //     component: "@/templates/Tag.vue",
+    //   },
+    // ],
+    Language: [
+      {
+        path: "/languages/:id/",
+        template: "@/templates/Language.vue",
+      },
+    ],
   },
 };
