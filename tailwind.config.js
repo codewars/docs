@@ -1,10 +1,12 @@
 module.exports = {
   purge: {
     content: ["./content/**/*.md", "./src/**/*.vue", "./src/**/*.js"],
-    options: {},
+    options: {
+      whitelist: ["dark-mode"],
+    },
   },
   theme: {
-    darkSelector: "html[data-dark-mode]",
+    darkSelector: ".dark-mode",
     extend: {
       colors: {
         ui: {

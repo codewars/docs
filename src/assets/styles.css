@@ -9,7 +9,7 @@
   --color-ui-primary: theme("colors.brand");
 }
 
-html[data-dark-mode] {
+.dark-mode {
   --color-ui-background: theme("colors.oc-gray.9");
   --color-ui-typo: theme("colors.oc-gray.5");
   --color-ui-sidebar: theme("colors.oc-gray.8");

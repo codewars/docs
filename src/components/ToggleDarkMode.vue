@@ -10,7 +10,6 @@
 
 <script>
 const DARK_MODE = "dark-mode";
-const DARK_MODE_ATTR = "data-" + DARK_MODE;
 
 export default {
   data() {
@@ -21,14 +20,16 @@ export default {
 
   methods: {
     handleClick() {
-      const hasDarkMode = document.documentElement.hasAttribute(DARK_MODE_ATTR);
+      const hasDarkMode = document.documentElement.classList.contains(
+        DARK_MODE
+      );
 
       // Toggle dark mode on click.
       return this.toggleDarkMode(!hasDarkMode);
     },
 
     toggleDarkMode(shouldBeDark) {
-      document.documentElement.toggleAttribute(DARK_MODE_ATTR, shouldBeDark);
+      document.documentElement.classList.toggle(DARK_MODE, shouldBeDark);
 
       this.isDarkMode = shouldBeDark;
 
