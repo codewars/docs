@@ -1,11 +1,13 @@
 <template>
   <Layout>
-    <div>
+    <div class="mx-auto max-w-screen-lg">
       <h1 class="mb-4 text-center text-4xl text-ui-typo font-medium">
         {{ category.name }}
       </h1>
 
-      <div class="grid grid-cols-2 gap-4">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+      >
         <div v-for="page of pages" :key="page.id">
           <g-link class="underline" :to="page.path">
             {{ page.title }}
