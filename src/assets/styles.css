@@ -2,24 +2,19 @@
 @tailwind components;
 
 :root {
-  --color-ui-background: theme("colors.white");
-  --color-ui-typo: theme("colors.gray.700");
-  --color-ui-sidebar: theme("colors.gray.200");
-  --color-ui-border: theme("colors.gray.300");
-  --color-ui-primary: theme("colors.indigo.600");
+  --color-ui-background: theme("colors.oc-gray.0");
+  --color-ui-typo: theme("colors.oc-gray.8");
+  --color-ui-sidebar: theme("colors.oc-gray.4");
+  --color-ui-border: theme("colors.oc-gray.3");
+  --color-ui-primary: theme("colors.oc-red.9");
 }
 
 html[data-dark-mode] {
-  --color-ui-background: theme("colors.gray.900");
-  --color-ui-typo: theme("colors.gray.100");
-  --color-ui-sidebar: theme("colors.gray.800");
-  --color-ui-border: theme("colors.gray.800");
-  --color-ui-primary: theme("colors.indigo.500");
-
-  & pre[class*="language-"],
-  & code[class*="language-"] {
-    @apply bg-ui-border;
-  }
+  --color-ui-background: theme("colors.oc-gray.9");
+  --color-ui-typo: theme("colors.oc-gray.5");
+  --color-ui-sidebar: theme("colors.oc-gray.8");
+  --color-ui-border: theme("colors.oc-gray.7");
+  --color-ui-primary: theme("colors.oc-red.9");
 }
 
 * {
