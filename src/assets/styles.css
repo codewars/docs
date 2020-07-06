@@ -149,7 +149,7 @@ pre[class*="language-"] {
   }
 
   & > code[class*="language-"] {
-    @apply border-none leading-relaxed;
+    @apply border-none leading-relaxed px-0;
   }
 }
 
