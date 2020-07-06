@@ -6,7 +6,7 @@
   --color-ui-typo: theme("colors.oc-gray.8");
   --color-ui-sidebar: theme("colors.oc-gray.4");
   --color-ui-border: theme("colors.oc-gray.3");
-  --color-ui-primary: theme("colors.oc-red.9");
+  --color-ui-primary: theme("colors.brand");
 }
 
 html[data-dark-mode] {
@@ -14,7 +14,6 @@ html[data-dark-mode] {
   --color-ui-typo: theme("colors.oc-gray.5");
   --color-ui-sidebar: theme("colors.oc-gray.8");
   --color-ui-border: theme("colors.oc-gray.7");
-  --color-ui-primary: theme("colors.oc-red.9");
 }
 
 * {

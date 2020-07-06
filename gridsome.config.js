@@ -5,16 +5,16 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: "Docc",
+  siteName: "Docs",
   icon: {
     favicon: "./src/assets/favicon.png",
     touchicon: "./src/assets/favicon.png",
   },
-  siteUrl: process.env.SITE_URL ? process.env.SITE_URL : "https://example.com",
+  siteUrl: "https://docs.codewars.com",
   settings: {
-    web: process.env.URL_WEB || false,
+    web: "https://www.codewars.com",
     twitter: process.env.URL_TWITTER || false,
-    github: process.env.URL_GITHUB || false,
+    github: "https://github.com/codewars",
     nav: {
       links: [{ path: "/docs/", title: "Docs" }],
     },

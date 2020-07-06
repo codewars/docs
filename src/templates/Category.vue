@@ -6,13 +6,8 @@
       </h1>
 
       <div class="grid grid-cols-2 gap-4">
-        <div>
-          <g-link
-            class="underline"
-            v-for="page of pages"
-            :key="page.id"
-            :to="page.path"
-          >
+        <div v-for="page of pages" :key="page.id">
+          <g-link class="underline" :to="page.path">
             {{ page.title }}
           </g-link>
           <!-- TODO Add page description? -->
@@ -24,13 +19,6 @@
         :info="pageInfo"
         exactActiveLinkClass="font-semibold pointer-default"
       />
-
-      <p class="mt-4 text-ui-typo text-sm text-center">
-        {{ currentItemsStart }} -
-        {{ currentItemsStart + totalItemsOnPage - 1 }}
-        of
-        {{ totalCount }}
-      </p>
     </div>
   </Layout>
 </template>
@@ -47,8 +35,6 @@ query($id: ID!, $page: Int) {
       pageInfo {
         totalPages
         currentPage
-        perPage
-        totalItems
       }
 
       edges {
@@ -89,12 +75,6 @@ export default {
     },
     pages() {
       return this.category.belongsTo.edges.map((e) => e.node);
-    },
-    currentItemsStart() {
-      return this.pageInfo.perPage * (this.pageInfo.currentPage - 1) + 1;
-    },
-    totalItemsOnPage() {
-      return this.pages.length;
     },
   },
   metaInfo() {

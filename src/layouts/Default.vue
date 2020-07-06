@@ -123,17 +123,12 @@ export default {
         {
           key: "twitter:card",
           name: "twitter:card",
-          content: "summary_large_image",
+          content: "summary",
         },
         {
           key: "og:image",
           name: "og:image",
-          content: process.env.SITE_URL + "/logo.jpg",
-        },
-        {
-          key: "twitter:image",
-          name: "twitter:image",
-          content: process.env.SITE_URL + "/logo.jpg",
+          content: process.env.SITE_URL + "/logo.png",
         },
       ],
     };

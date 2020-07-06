@@ -10,11 +10,11 @@
             <span
               class="hidden ml-2 text-xl font-black tracking-tighter uppercase sm:block"
             >
-              {{ meta.siteName }}
+              Docs
             </span>
           </g-link>
 
-          <div
+          <!-- <div
             v-if="settings.nav.links.length > 0"
             class="hidden ml-2 mr-5 sm:block sm:ml-8"
           >
@@ -28,7 +28,7 @@
             >
               {{ link.title }}
             </g-link>
-          </div>
+          </div> -->
         </div>
 
         <div class="w-full px-2 sm:px-4 max-w-screen-xs">
