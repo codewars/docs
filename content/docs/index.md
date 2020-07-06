@@ -3,6 +3,9 @@ description: ""
 category: docs
 sidebar: "docs"
 next: "/docs/installation/"
+tags:
+  - docc
+  - intro
 ---
 
 # Introduction

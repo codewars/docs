@@ -43,18 +43,21 @@ module.exports = function (api) {
     }
   });
 
-  api.loadSource(async ({ addCollection }) => {
-    const collection = addCollection("Category");
-    const file = path.join(__dirname, "data/categories.yml");
+  const addNodesFromFile = async (collection, file) => {
     const contents = await readFile(file, { encoding: "utf-8" });
-    const categories = YAML.parse(contents);
+    const items = YAML.parse(contents);
+    for (const item of items) collection.addNode(item);
+  };
 
-    for (const { id, name } of categories) {
-      collection.addNode({
-        id,
-        name,
-      });
-    }
+  api.loadSource(async ({ addCollection }) => {
+    await addNodesFromFile(
+      addCollection("Category"),
+      path.join(__dirname, "data/categories.yml")
+    );
+    await addNodesFromFile(
+      addCollection("Tag"),
+      path.join(__dirname, "data/tags.yml")
+    );
   });
 
   api.createPages(({ createPage }) => {

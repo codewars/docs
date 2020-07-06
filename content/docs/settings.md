@@ -4,6 +4,9 @@ category: docs
 sidebar: "docs"
 prev: "/docs/deploying/"
 next: "/docs/sidebar/"
+tags:
+  - docc
+  - settings
 ---
 
 # Settings

@@ -4,6 +4,10 @@ category: docs
 sidebar: "docs"
 prev: "/docs/writing-content/"
 next: "/docs/settings/"
+tags:
+  - docc
+  - deploy
+  - short
 ---
 
 # Deploying

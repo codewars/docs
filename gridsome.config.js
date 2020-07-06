@@ -57,9 +57,9 @@ module.exports = {
             typeName: "Category",
           },
           // Can have multiple tags.
-          // tags: {
-          //   typeName: "Tag",
-          // },
+          tags: {
+            typeName: "Tag",
+          },
           // Can reference multiple languages to be listed on the language page.
           // languages: {
           //   typeName: "Language",
@@ -91,16 +91,16 @@ module.exports = {
   templates: {
     Category: [
       {
-        path: "/category/:id/",
+        path: "/categories/:id/",
         component: "@/templates/Category.vue",
       },
     ],
-    // Tag: [
-    //   {
-    //     path: "/tags/:id/",
-    //     component: "@/templates/Tag.vue",
-    //   },
-    // ],
+    Tag: [
+      {
+        path: "/tags/:id/",
+        component: "@/templates/Tag.vue",
+      },
+    ],
     Language: [
       {
         path: "/languages/:id/",

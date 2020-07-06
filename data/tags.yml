@@ -1,0 +1,11 @@
+# TODO Remove these placeholders and add meaningful tags
+- id: docc
+  name: Docc
+  description: Pages from Docc starter
+- id: settings
+  name: Settings
+  description: Settings
+- id: content
+  name: Content
+- id: codewars
+  name: Codewars

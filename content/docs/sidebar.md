@@ -3,6 +3,9 @@ description: ""
 category: docs
 sidebar: "docs"
 prev: "/docs/settings/"
+tags:
+  - docc
+  - settings
 ---
 
 # Sidebar
