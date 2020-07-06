@@ -21,7 +21,7 @@
           <div class="w-full pb-16 bg-ui-background">
             <Sidebar
               @navigate="sidebarOpen = false"
-              :name="sidebarName"
+              :sidebarSections="sidebarSections"
               :currentPath="currentPath"
             />
           </div>
@@ -52,6 +52,24 @@
 query {
   metadata {
     siteName
+    settings {
+      sidebar {
+        name
+        sections {
+          title
+          items
+        }
+      }
+    }
+  }
+
+  allMarkdownPage {
+    edges {
+      node {
+        path
+        title
+      }
+    }
   }
 }
 </static-query>
@@ -95,6 +113,9 @@ export default {
     },
   },
   computed: {
+    pages() {
+      return this.$static.allMarkdownPage.edges.map((edge) => edge.node);
+    },
     sidebarStyle() {
       return {
         top: this.headerHeight + "px",
@@ -107,6 +128,21 @@ export default {
         (this.$page.markdownPage || this.sidebarName) &&
         this.headerHeight > 0
       );
+    },
+    sidebarSections() {
+      const def = this.$static.metadata.settings.sidebar.find(
+        (sidebar) => sidebar.name === this.sidebarName
+      );
+      if (!def) return null;
+
+      return def.sections.map((section) => {
+        return {
+          title: section.title,
+          items: section.items.map((link) =>
+            this.pages.find((page) => page.path === link)
+          ),
+        };
+      });
     },
   },
   mounted() {
