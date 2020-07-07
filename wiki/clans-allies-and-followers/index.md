@@ -11,7 +11,7 @@ If you follow someone and they follow you back, you become allies. More on that 
 
 When viewing the solutions of a kata, you can choose to only see those from users you are following. This is a great way to easily find solutions from warriors you respect or know personally.
 
-![Solutions](https://www.evernote.com/l/AAVXwOU4ioFOY7ldDXyFLBwxsLu4T_QF5M4B/image.png)
+![Solutions](./solutions.png)
 
 ## Allies
 

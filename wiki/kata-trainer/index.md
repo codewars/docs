@@ -1,6 +1,6 @@
 The kata trainer is the interface you use for completing kata. 
 
-![Kata Trainer](https://www.evernote.com/l/AAUVXCFtZ_VH5oAQn73JWmwfRIVMZ9RreXwB/image.png)
+![Kata Trainer](./kata-trainer.md)
 
 ### Sample Tests
 The sample tests code section will usually be pre-populated with some basic unit tests to get you started. These are not the full set of kata tests, these tests are only provided to get you started and demonstrate what is expected.

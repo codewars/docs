@@ -1,10 +1,10 @@
 The satisfaction rating is the score shown here:
 
-![Satisfaction Rating](https://www.evernote.com/l/AAU2GBEeCMZLGJZ1EJDQIAC1mbCwW8HWARcB/image.png)
+![Satisfaction Rating](./satisfaction-rating.png)
 
 It indicates the number of satisfied users. This score is derived from the votes shown after you complete a kata. You can either vote very, somewhat or not satisfied, as shown here:
 
-![Voting](https://www.evernote.com/l/AAUwNziPnz5PE7VBi9V0y1qIAdHFT_q4mGIB/image.png)
+![Voting](./voting.png)
 
 ## How should I interpret these votes?
 

@@ -6,7 +6,7 @@ This is where translations come in. They allow other warriors to make katas avai
 
 Once you have completed a kata, there will be a new choice within the languages menu to add a new language. 
 
-<img src="https://www.evernote.com/l/AAW0GaebQllDBb_YS-AfeaUiwq5PoxaDPIoB/image.png" title="Language Menu" height="400px">
+<img src="./language-menu.png" title="Language Menu" height="400px">
 
 This will take you to the translations page where you can view existing translations and create new ones.
 

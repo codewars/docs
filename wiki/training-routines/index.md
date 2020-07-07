@@ -4,7 +4,7 @@ Training routes are not fixed. As you cycle through challenges, a new one will b
 
 To set your routine, visit the dashboard. 
 
-![Trainer](https://www.evernote.com/l/AAVPux_lB7VGQYLilZD5TA8W2icd8h7qISIB/image.png)
+![Trainer](./trainer.png)
 
 In the above screenshot, "Rank Up" is the selected training routine. "JavaScript" is the selected language. You will always have one active language and one active training routine at a given time. The only way to update your training routine is to visit the dashboard.
 
