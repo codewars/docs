@@ -3,6 +3,7 @@ module.exports = {
     "common-misspellings": true,
     diacritics: true,
     "en-capitalization": {
+      severity: "warning",
       // Check Header
       allowHeading: true,
       // Check Image alt
