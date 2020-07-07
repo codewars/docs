@@ -64,7 +64,7 @@
     "*.{json,yml}": [
       "prettier --write"
     ],
-    "*.md": [
+    "content/**/*.md": [
       "textlint",
       "prettier --write"
     ]
