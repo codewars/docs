@@ -92,7 +92,7 @@ export default {
   },
 
   metaInfo() {
-    const title = "Codewars Documentation";
+    const title = "Docs";
     const description = "Documentation for Codewars";
 
     return {
