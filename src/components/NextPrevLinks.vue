@@ -22,51 +22,24 @@
   </div>
 </template>
 
-<static-query>
-query {
-  allMarkdownPage {
-    edges {
-      node {
-        path
-        title
-      }
-    }
-  }
-}
-</static-query>
-
 <script>
 import { ArrowLeftIcon, ArrowRightIcon } from "vue-feather-icons";
 
 export default {
   props: {
-    prevPath: {
-      type: String,
+    prev: {
+      // {path: string; title: string}
+      type: Object,
     },
-    nextPath: {
-      type: String,
+    next: {
+      // {path: string; title: string}
+      type: Object,
     },
   },
 
   components: {
     ArrowLeftIcon,
     ArrowRightIcon,
-  },
-
-  computed: {
-    pages() {
-      return this.$static.allMarkdownPage.edges.map((edge) => edge.node);
-    },
-    next() {
-      if (!this.nextPath) return false;
-
-      return this.pages.find((page) => page.path === this.nextPath);
-    },
-    prev() {
-      if (!this.prevPath) return false;
-
-      return this.pages.find((page) => page.path === this.prevPath);
-    },
   },
 };
 </script>

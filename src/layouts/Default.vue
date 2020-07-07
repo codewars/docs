@@ -21,7 +21,7 @@
           <div class="w-full pb-16 bg-ui-background">
             <Sidebar
               @navigate="sidebarOpen = false"
-              :name="sidebarName"
+              :sidebarSections="sidebarSections"
               :currentPath="currentPath"
             />
           </div>
@@ -52,6 +52,24 @@
 query {
   metadata {
     siteName
+    settings {
+      sidebar {
+        name
+        sections {
+          title
+          items
+        }
+      }
+    }
+  }
+
+  allMarkdownPage {
+    edges {
+      node {
+        path
+        title
+      }
+    }
   }
 }
 </static-query>
@@ -66,8 +84,9 @@ export default {
     currentPath: {
       type: String,
     },
-    sidebarName: {
-      type: String,
+    sidebar: {
+      // Name of the sidebar defined in settings or array of sections.
+      type: [String, Array],
     },
   },
   components: {
@@ -95,6 +114,9 @@ export default {
     },
   },
   computed: {
+    pages() {
+      return this.$static.allMarkdownPage.edges.map((edge) => edge.node);
+    },
     sidebarStyle() {
       return {
         top: this.headerHeight + "px",
@@ -104,9 +126,26 @@ export default {
     hasSidebar() {
       return (
         this.$page &&
-        (this.$page.markdownPage || this.sidebarName) &&
+        (this.$page.markdownPage || this.sidebar) &&
         this.headerHeight > 0
       );
+    },
+    sidebarSections() {
+      if (Array.isArray(this.sidebar)) return this.sidebar;
+
+      const def = this.$static.metadata.settings.sidebar.find(
+        (sidebar) => sidebar.name === this.sidebar
+      );
+      if (!def) return null;
+
+      return def.sections.map((section) => {
+        return {
+          title: section.title,
+          items: section.items.map((link) =>
+            this.pages.find((page) => page.path === link)
+          ),
+        };
+      });
     },
   },
   mounted() {

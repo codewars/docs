@@ -1,5 +1,5 @@
 <template>
-  <Layout currentPath="/languages/" sidebarName="docs">
+  <Layout currentPath="/languages/" sidebar="docs">
     <div class="w-full md:w-2/3">
       <div class="content">
         <h1 id="supported-languages">
