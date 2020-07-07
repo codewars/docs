@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <div>
-      <h1 class="text-center text-3xl font-medium mb-4">Categories</h1>
+      <h1 class="text-center text-4xl font-medium mb-4">Categories</h1>
 
       <div
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mx-auto max-w-lg"
