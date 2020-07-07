@@ -61,9 +61,9 @@ module.exports = {
             typeName: "Tag",
           },
           // Can reference multiple languages to be listed on the language page.
-          // languages: {
-          //   typeName: "Language",
-          // },
+          languages: {
+            typeName: "Language",
+          },
         },
       },
     },

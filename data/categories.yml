@@ -2,3 +2,9 @@
 - id: docs
   name: Docs
   description: Docs
+
+- id: guides
+  name: Guides
+- id: references
+  name: References
+  description: Reference Manuals

@@ -1,5 +1,5 @@
 <template>
-  <Layout :currentPath="language.path" sidebarName="docs">
+  <Layout :currentPath="language.path" :sidebar="sidebarSections">
     <h1
       class="mt-4 text-4xl font-black text-ui-typo leading-snug tracking-tighter text-center"
     >
@@ -83,7 +83,9 @@
       </template>
     </div>
 
-    <!-- TODO List documents related to this language. Let MarkdownPage refernce by `language` frontmatter -->
+    <div class="mt-8 pt-8 lg:mt-12 lg:pt-12 border-t border-ui-border">
+      <NextPrevLinks :prev="{ title: 'Languages', path: '/languages/' }" />
+    </div>
   </Layout>
 </template>
 
@@ -111,6 +113,29 @@ query($id: ID!) {
         url
       }
     }
+
+    belongsTo(sortBy: "title", order: ASC) {
+      totalCount
+
+      edges {
+        node {
+          ... on MarkdownPage {
+            title
+            excerpt
+            path
+            category {
+              id
+              name
+            }
+            tags {
+              id
+              name
+              path
+            }
+          }
+        }
+      }
+    }
   }
 
   allLanguage {
@@ -124,7 +149,12 @@ query($id: ID!) {
 </page-query>
 
 <script>
+import NextPrevLinks from "@/components/NextPrevLinks";
+
 export default {
+  components: {
+    NextPrevLinks,
+  },
   computed: {
     language() {
       return this.$page.language;
@@ -137,6 +167,26 @@ export default {
     },
     anyPackages() {
       return this.versionsWithPackages.length > 0;
+    },
+    pages() {
+      return this.language.belongsTo.edges.map((e) => e.node);
+    },
+    // Sidebar of language page lists all pages referencing the language grouped by category
+    sidebarSections() {
+      const pages = this.pages;
+      if (pages.length === 0) return "docs";
+
+      const groups = {};
+      for (const p of pages) {
+        const key = p.category.name;
+        if (!groups[key]) groups[key] = [];
+        groups[key].push(p);
+      }
+      const sections = [];
+      for (const name of Object.keys(groups)) {
+        sections.push({ title: name, items: groups[name] });
+      }
+      return sections;
     },
   },
 

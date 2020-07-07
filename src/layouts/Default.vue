@@ -84,8 +84,9 @@ export default {
     currentPath: {
       type: String,
     },
-    sidebarName: {
-      type: String,
+    sidebar: {
+      // Name of the sidebar defined in settings or array of sections.
+      type: [String, Array],
     },
   },
   components: {
@@ -125,13 +126,15 @@ export default {
     hasSidebar() {
       return (
         this.$page &&
-        (this.$page.markdownPage || this.sidebarName) &&
+        (this.$page.markdownPage || this.sidebar) &&
         this.headerHeight > 0
       );
     },
     sidebarSections() {
+      if (Array.isArray(this.sidebar)) return this.sidebar;
+
       const def = this.$static.metadata.settings.sidebar.find(
-        (sidebar) => sidebar.name === this.sidebarName
+        (sidebar) => sidebar.name === this.sidebar
       );
       if (!def) return null;
 
