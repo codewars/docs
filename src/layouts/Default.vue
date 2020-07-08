@@ -68,6 +68,13 @@ query {
       node {
         path
         title
+        languages {
+          id
+        }
+        category {
+          id
+          name
+        }
       }
     }
   }
@@ -112,6 +119,26 @@ export default {
         this.headerHeight = this.$refs.header.offsetHeight;
       });
     },
+    findLanguagePages(language) {
+      return this.pages.filter((p) =>
+        p.languages.some((x) => x.id === language)
+      );
+    },
+    genSidebarSections(pages) {
+      if (pages.length === 0) return null;
+
+      const groups = {};
+      for (const p of pages) {
+        const key = p.category.name;
+        if (!groups[key]) groups[key] = [];
+        groups[key].push(p);
+      }
+      const sections = [];
+      for (const name of Object.keys(groups)) {
+        sections.push({ title: name, items: groups[name] });
+      }
+      return sections;
+    },
   },
   computed: {
     pages() {
@@ -132,6 +159,12 @@ export default {
     },
     sidebarSections() {
       if (Array.isArray(this.sidebar)) return this.sidebar;
+
+      // Use `field:value` to generate sidebar sections based on some criteria.
+      const [field, value] = this.sidebar.split(":", 2);
+      if (field === "language") {
+        return this.genSidebarSections(this.findLanguagePages(value));
+      }
 
       const def = this.$static.metadata.settings.sidebar.find(
         (sidebar) => sidebar.name === this.sidebar
