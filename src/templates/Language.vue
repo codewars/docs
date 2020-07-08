@@ -1,5 +1,5 @@
 <template>
-  <Layout :currentPath="language.path" :sidebar="sidebarSections">
+  <Layout :currentPath="language.path" :sidebar="`language:${language.id}`">
     <h1
       class="mt-4 text-4xl font-black text-ui-typo leading-snug tracking-tighter text-center"
     >
@@ -113,37 +113,6 @@ query($id: ID!) {
         url
       }
     }
-
-    belongsTo(sortBy: "title", order: ASC) {
-      totalCount
-
-      edges {
-        node {
-          ... on MarkdownPage {
-            title
-            excerpt
-            path
-            category {
-              id
-              name
-            }
-            tags {
-              id
-              name
-              path
-            }
-          }
-        }
-      }
-    }
-  }
-
-  allLanguage {
-    edges {
-      node {
-        name
-      }
-    }
   }
 }
 </page-query>
@@ -167,26 +136,6 @@ export default {
     },
     anyPackages() {
       return this.versionsWithPackages.length > 0;
-    },
-    pages() {
-      return this.language.belongsTo.edges.map((e) => e.node);
-    },
-    // Sidebar of language page lists all pages referencing the language grouped by category
-    sidebarSections() {
-      const pages = this.pages;
-      if (pages.length === 0) return "docs";
-
-      const groups = {};
-      for (const p of pages) {
-        const key = p.category.name;
-        if (!groups[key]) groups[key] = [];
-        groups[key].push(p);
-      }
-      const sections = [];
-      for (const name of Object.keys(groups)) {
-        sections.push({ title: name, items: groups[name] });
-      }
-      return sections;
     },
   },
 

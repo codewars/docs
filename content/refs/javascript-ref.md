@@ -1,6 +1,7 @@
 ---
 category: references
 languages: [javascript]
+sidebar: "language:javascript"
 ---
 
 # Sample JavaScript Reference
