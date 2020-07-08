@@ -2,6 +2,7 @@
 category: references
 languages: [javascript]
 sidebar: "language:javascript"
+prev: /languages/javascript/
 ---
 
 # Sample JavaScript Reference
