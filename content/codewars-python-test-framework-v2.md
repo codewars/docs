@@ -43,7 +43,7 @@ def example_tests():
 
 Here is the result visible by the user in the output panel:
 
-`TODO: add the image`
+`TODO: add the image: "docs/content/PythonTestFrameWorkExample.png"  => how?`
 
 
 
