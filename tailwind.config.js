@@ -8,6 +8,9 @@ module.exports = {
   theme: {
     darkSelector: ".dark-mode",
     extend: {
+      borderColor: {
+        default: "var(--color-ui-border)",
+      },
       colors: {
         ui: {
           background: "var(--color-ui-background)",
