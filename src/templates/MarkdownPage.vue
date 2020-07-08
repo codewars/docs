@@ -46,6 +46,15 @@ query($id: ID!) {
       }
     }
   }
+
+  allLanguages: allLanguage {
+    edges {
+      node {
+        path
+        title: name
+      }
+    }
+  }
 }
 </page-query>
 
@@ -71,15 +80,26 @@ export default {
       return this.$page.allPages.edges.map((edge) => edge.node);
     },
 
-    next() {
-      if (!this.page.next) return null;
-
-      return this.pages.find((page) => page.path === this.page.next);
+    languages() {
+      return this.$page.allLanguages.edges.map((edge) => edge.node);
     },
-    prev() {
-      if (!this.page.prev) return null;
 
-      return this.pages.find((page) => page.path === this.page.prev);
+    next() {
+      return this.page.next && this.findLinkedPage(this.page.next);
+    },
+
+    prev() {
+      return this.page.prev && this.findLinkedPage(this.page.prev);
+    },
+  },
+
+  methods: {
+    findLinkedPage(path) {
+      return (
+        findPage(path) ||
+        this.languages.find((p) => p.path === path) ||
+        this.pages.find((p) => p.path === path)
+      );
     },
   },
 
@@ -108,6 +128,20 @@ export default {
       ],
     };
   },
+};
+
+// To support `prev`/`next` links to pages from `/pages`.
+const findPage = (path) => {
+  switch (path) {
+    case "/languages/":
+      return { path, title: "Languages" };
+    case "/tags/":
+      return { path, title: "Tags" };
+    case "/categories/":
+      return { path, title: "Categories" };
+    default:
+      return null;
+  }
 };
 </script>
 

@@ -5,6 +5,7 @@ tags:
 languages:
   - javascript
 sidebar: "language:javascript"
+prev: /languages/javascript/
 ---
 
 # Testing JavaScript
