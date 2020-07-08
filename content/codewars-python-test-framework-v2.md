@@ -13,7 +13,7 @@ _Note: the test module is aliased with `test`, so you can call every tool provid
 
 ---
 
-# Overview
+## Overview
 
 The test framework allowes to write named groups of tests holding other named groups of tests, containing themselves assertions.
 
@@ -279,7 +279,7 @@ Test.expect_no_error(msg, f, OSError)          # Pass
 
 
 
-# Timeout Utility
+## Timeout Utility
 
 ```python
 @test.timeout(sec)              # default message: Exceeded time limit of <sec> seconds
