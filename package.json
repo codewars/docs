@@ -64,7 +64,7 @@
     "*.{js,ts}": [
       "eslint --cache --fix"
     ],
-    "*.{json,yml}": [
+    "*.{json,yml,graphql}": [
       "prettier --write"
     ],
     "content/**/*.md": [

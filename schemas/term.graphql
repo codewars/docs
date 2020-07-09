@@ -1,20 +1,34 @@
 type Term implements Node {
   id: ID!
-  """The term in our glossary"""
+  """
+  The term in our glossary
+  """
   term: String!
-  """The description of the term in HTML"""
+  """
+  The description of the term in HTML
+  """
   description: String
-  """Optional acronym form"""
+  """
+  Optional acronym form
+  """
   acronym: String
-  """Optional path to a page in our docs"""
+  """
+  Optional path to a page in our docs
+  """
   see: String
-  """Optional list of external links"""
+  """
+  Optional list of external links
+  """
   links: [Term_Links!]
 }
 
 type Term_Links {
-  """External link title"""
+  """
+  External link title
+  """
   title: String!
-  """External link URL"""
+  """
+  External link URL
+  """
   url: String!
 }
