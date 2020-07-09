@@ -44,7 +44,7 @@ def example_tests():
         for a,b,exp in [(-2,30,28), (42,0,42)]:
             test.assert_equals(add(a,b), exp)
             
-    @test.it("Pair tests")
+    @test.it("Reduced group")
     def more():
         for v in range(10):
             test.assert_equals(add(v,v), 2*v)
