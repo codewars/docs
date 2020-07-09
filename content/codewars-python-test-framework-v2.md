@@ -102,7 +102,7 @@ Note that you _cannot nest_ the `it` blocks.
 Some of the functions below can accept a named argument `allow_raise=False`.
 
 If you change its value to `True`, the tests contained inside the current block will be interrupted at the first failed test. The executions are then going back to the parent block if it exists and the next part is executed.
-On some computation-wise intensive katas, this may be a good idea to use this feature so that the user doesn't have to wait a long time before getting feedback (or possibly befor etiming out and in that cas, he might never get ny feedback at all, which may be cumbersome).
+On some computation-wise intensive katas, this may be a good idea to use this feature so that the user doesn't have to wait a long time before getting feedback (or possibly before timing out and in that case, they might never get any feedback at all, which may be cumbersome).
 
 
 
