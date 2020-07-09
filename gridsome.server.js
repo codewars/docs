@@ -40,12 +40,16 @@ module.exports = function (api) {
         encoding: "utf-8",
       });
       const data = YAML.parse(contents);
+      const versions = data.versions.map((v) => {
+        if (v.description) v.description = toHTML(v.description);
+        return v;
+      });
       collection.addNode({
         id,
         name: data.name,
         timeout: data.timeout,
         status: data.status,
-        versions: data.versions,
+        versions,
         testFrameworks: data.testFrameworks,
       });
     }

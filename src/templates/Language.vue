@@ -23,10 +23,12 @@
         <h3 class="text-lg font-semibold">
           {{ version.name }}
         </h3>
-        <!-- TODO Process Markdown -->
-        <div v-if="version.description" class="content">
-          {{ version.description }}
-        </div>
+        <!-- eslint-disable-next-line vue/no-v-html -->
+        <div
+          v-if="version.description"
+          class="content"
+          v-html="version.description"
+        />
       </div>
 
       <h2
