@@ -89,6 +89,8 @@ Both kind of blocks are timed: once the decorated function ends its execution, t
 
 - `describe` blocks:
 
+<!-- TODO Strongly discourage writing assertions in describe -->
+
 Those blocks always stay depolyed whatever the results of the tests in them are. Meaning that if you put assertions directly in them, they will be visible in the output, as well as any other `it` block(s) it could contain. They are the basic block inwhich you can insert `it` blocks or other nested `describe` blocks to create subdivisions in your test suite.
 
 - `it` blocks:
