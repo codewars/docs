@@ -1,0 +1,68 @@
+# A collection of commonly used terms.
+#
+# Please add new terms in alphabetical order.
+
+## Structure
+## ```typescript
+## type Term {
+##   // Slugified word. Must be unique. Assigned to `slugify(term)` if unspecified.
+##   id: string;
+##   // The term in our glossary
+##   term: string;
+##   // Description of the term in Markdown. Converted to HTML during build.
+##   description?: string;
+##   // Optional acronym form.
+##   acronym?: string;
+##   // Optional path to a page in our docs. The title will be set automatically.
+##   see?: string;
+##   // List of external links
+##   links?: {title: string; url: string}[];
+## }
+## ```
+
+## Example
+## ```yaml
+## - term: Test Driven Development
+##   description: A software development process ...
+##   acronym: TDD
+##   see: /path/to/a-page/
+##   links:
+##     - title: Test-driven Development (Wikipedia)
+##       url: https://en.wikipedia.org/wiki/Test-driven_development
+## ```
+
+- term: Dan
+  description: 段
+  links:
+    - title: Dan (rank) - Wikipedia
+      url: https://en.wikipedia.org/wiki/Dan_(rank)
+
+- term: Kata
+  description: 型
+  links:
+    - title: CodeKata by Dave Thomas
+      url: http://codekata.com/kata/codekata-intro/
+    - title: Kata (programming) - Wikipedia
+      url: https://en.wikipedia.org/wiki/Kata_(programming)
+    - title: Kata - Wikipedia
+      url: https://en.wikipedia.org/wiki/Kata
+
+- term: Kumite
+  description: 組手
+  links:
+    - title: Kumite - Wikipedia
+      url: https://en.wikipedia.org/wiki/Kumite
+
+- term: Kyū
+  description: 級
+  links:
+    - title: Kyū - Wikipedia
+      url: https://en.wikipedia.org/wiki/Ky%C5%AB
+
+- term: Test Driven Development
+  description: |
+    > **TODO** Explain. Include why TDD is relevant to Codewars.
+  acronym: TDD
+  links:
+    - title: Test-driven Development - Wikipedia
+      url: https://en.wikipedia.org/wiki/Test-driven_development
