@@ -14,6 +14,17 @@
         <div class="mt-8 pt-8 lg:mt-12 lg:pt-12 border-t border-ui-border">
           <NextPrevLinks :prev="prev" :next="next" />
         </div>
+
+        <div class="mt-8 pt-8">
+          <a
+            :href="githubFileURL"
+            target="_blank"
+            class="flex flex-row items-center justify-center hover:underline"
+          >
+            <GithubIcon size="1x" />
+            <span class="ml-1">Edit on GitHub</span>
+          </a>
+        </div>
       </div>
     </div>
   </Layout>
@@ -36,6 +47,9 @@ query($id: ID!) {
       value
       anchor
     }
+    fileInfo {
+      path
+    }
   }
 
   allPages: allMarkdownPage {
@@ -55,15 +69,24 @@ query($id: ID!) {
       }
     }
   }
+
+  metadata {
+    settings {
+      repository
+    }
+  }
 }
 </page-query>
 
 <script>
+import { GithubIcon } from "vue-feather-icons";
+
 import OnThisPage from "@/components/OnThisPage.vue";
 import NextPrevLinks from "@/components/NextPrevLinks.vue";
 
 export default {
   components: {
+    GithubIcon,
     OnThisPage,
     NextPrevLinks,
   },
@@ -90,6 +113,18 @@ export default {
 
     prev() {
       return this.page.prev && this.findLinkedPage(this.page.prev);
+    },
+
+    repository() {
+      return this.$page.metadata.settings.repository;
+    },
+
+    filePath() {
+      return this.page.fileInfo.path;
+    },
+
+    githubFileURL() {
+      return `${this.repository}/blob/master/content/${this.filePath}`;
     },
   },
 
