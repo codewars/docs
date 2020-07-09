@@ -7,28 +7,17 @@ sidebar: "language:python"
 prev: /languages/python/
 ---
 
-# Python test framework for Codewars (v2)
+# Python Codewars Test Framework
 
-(upgrade by [@Bubbler-4](https://github.com/Bubbler-4), Feb 2019)
+Codewars currently uses a [custom test framework][test-framework-repo] to test Python.
 
-<br>
-<br>
+The framework is automatically imported and assigned to `test`.
 
-You may find here the detailed information about the [test framework](https://github.com/codewars/python-test-framework/blob/master/codewars_test/test_framework.py) designed for Codewars. The present version is extending the first one, so old katas are still compatible, but the use of the v2 is required for newly created katas or translations.
-
-_Note: the test module is aliased with `Test`, so you can call every tool provided with it using either `test.method` or `Test.method` (prefer the first one)._
-
-<br>
-<br>
-
----
+> NOTE: It's aliased to `Test` for historical reasons, but the use is discouraged.
 
 ## Overview
 
 The test framework allowes to write named groups of tests holding other named groups of tests, containing themselves assertions.
-
-- Assertions (using the methods detailed below) can actually be used at any level in the groups, or even outside of them, but you should try to avoid that.
-- Note that the code executed inside a group isn't stopped at the first failed assertion (unless you use `allow_raise`. See below) so the full test suite is executed each time the tests are run.
 
 The basic setup for the tests follows this example:
 
@@ -55,14 +44,13 @@ def rnd_tests():
     ...
 ```
 
-Here is a part of the visible result in the output panel for the user:
+The above produces an output similar to the following:
 
 ![Python Test Framework Example](./python-test-framework-example.png)
 
-<br>
-<br>
+Note that test cases doesn't stop on failure by default. See [Failing Early](#failing-early) to change this behavior.
 
-## Tests grouping (blocks)
+## Grouping Tests
 
 The groups are created using the following decorators:
 
@@ -87,36 +75,24 @@ Those decorators automatically run the decorated function to launch the tests.
 
 Both kind of blocks are timed: once the decorated function ends its execution, the time spent in the function will be displayed at the end of the block (note: for the elapsed time to be visible, the block must be deployed).
 
-- `describe` blocks:
+### Test Group
 
-<!-- TODO Strongly discourage writing assertions in describe -->
+`describe` block groups test cases (`it`). Nesting is allowed as shown above.
 
-Those blocks always stay depolyed whatever the results of the tests in them are. Meaning that if you put assertions directly in them, they will be visible in the output, as well as any other `it` block(s) it could contain. They are the basic block inwhich you can insert `it` blocks or other nested `describe` blocks to create subdivisions in your test suite.
+Always put assertions inside `it` and not directly in `describe`.
 
-- `it` blocks:
+### Test Case
 
-On the contrary of the `describe` blocks, the `it` blocks are deployed in the output panel only when they contain failed assertions. Oterwise they are shrunk and only the name of the block and the number of assertions are visible.
+`it` creates a test case containing assertion(s). Nesting will result in incorrect output.
 
-Note: you can nest `describe` blocks but you _cannot nest_ `it` blocks (for nested `it` blocks, the display in the output panel will be incorrect).
-
-<br>
-<br>
-
----
-
-## Tests interruption
+## Failing Early
 
 Some of the functions below can accept a named argument `allow_raise=False`.
 
 If you change its value to `True`, the tests contained inside the current block will be interrupted at the first failed test. The executions are then going back to the parent block if it exists and the next part is executed.
 On some computation-heavy katas, it may be a good idea to use this feature so that the user has not to wait a long time before getting feedback (or possibly before timing out and in that case, they might never get any feedback at all, which may be cumbersome).
 
-<br>
-<br>
-
----
-
-## Available assertion methods
+## Assertions
 
 ### Equality tests
 
@@ -131,8 +107,6 @@ Note that because Python's equality operator checks for deep equality by default
 
 This function is usually the main building block of a Kata's test cases.
 
-<br>
-
 ### Non-equality tests
 
 ```python
@@ -143,9 +117,7 @@ test.assert_not_equals(actual, expected, message=None, allow_raise=False)
 
 Checks that the actual value does not equal the (un)expected value.
 
-<br>
-
-### Approximate equality tests (handling floats and floating point errors)
+### Approximate equality tests
 
 If the computations of the tests imply some floats, the exact value returned by the user may depend on the order of the different computations and he might end up with a value considered correct but not strictly equal to the expected one. For example:
 
@@ -174,8 +146,6 @@ is_good = abs((actual - expected) / div) < margin
 
 So you can compare either big or small float values without problems.
 
-<br>
-
 ### Truthness tests
 
 ```python
@@ -186,8 +156,6 @@ test.expect(bool, message)
 Checks if the passed value is truthy. This function can be helpful when you test something which cannot be tested using other functions.  
 However, since this function's default failure message is not helpful at all, **you're strongly advised to provide your own helpful message, or even to _not_ use** `test.expect`. To build custom assertion functions, you could/should use the two following ones instead.
 
-<br>
-
 ### Pass and fail
 
 ```python
@@ -197,8 +165,6 @@ test.fail(message)
 
 Simply generates a passed or a failed test with a message.
 If your test method is very complicated or you need a special procedure to test something, these functions are probably a good choice.
-
-<br>
 
 ### Error tests
 
@@ -224,8 +190,6 @@ test.expect_error(msg, f, OSError)             # Fail
 test.expect_error(msg, f, (OSError, KeyError)) # Pass
 ```
 
-<br>
-
 ### No-error tests
 
 ```python
@@ -245,9 +209,6 @@ test.expect_no_error(msg, f)                   # Fail
 test.expect_no_error(msg, f, LookupError)      # Fail
 test.expect_no_error(msg, f, OSError)          # Pass
 ```
-
-<br>
-<br>
 
 ## Timeout Utility
 
@@ -269,3 +230,9 @@ Note:
 Using the timeout utility, you will get an extra asssertion due to the issue of being impossible to catch exceptions thrown from a child process.  
 [The patch (Feb 2019)](https://github.com/Codewars/python-test-framework/pull/1) used to resolve this enforces that **the function does not throw _any_ exceptions.** This is done by wrapping the inner function with `expect_no_error`; as a side effect, you get that one extra "test passed" for a collection of tests run inside a timeout wrapper.
 _Corollary:_ don't forget to write assertions in a timed tests, otherwise a that "test" will be considered a pass even if the function of the user is returning the wrong value.
+
+## Acknowledgements
+
+`v2` to support grouping tests with decorators was contributed by [@Bubbler-4](https://github.com/Bubbler-4).
+
+[test-framework-repo]: https://github.com/codewars/python-test-framework
