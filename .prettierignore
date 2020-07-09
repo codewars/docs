@@ -1,0 +1,5 @@
+.cache
+/dist/
+/wiki/
+src/.temp
+node_modules

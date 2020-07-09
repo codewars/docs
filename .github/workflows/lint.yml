@@ -6,6 +6,8 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
       - uses: actions/setup-node@v1
         with:
           node-version: "12.x"
@@ -17,4 +19,9 @@ jobs:
           restore-keys: |
             yarn-
       - run: yarn install --frozen-lockfile
+      - run: yarn format
       - run: yarn lint:text
+      - run: yarn lint:format
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Prettier
