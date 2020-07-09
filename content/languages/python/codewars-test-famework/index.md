@@ -291,11 +291,11 @@ test.expect_no_error(msg, f, OSError)          # Pass
 ## Timeout Utility
 
 ```python
-@test.timeout(sec)              # default message: Exceeded time limit of <sec> seconds
+@test.timeout(sec)                      # default message: Exceeded time limit of <sec> seconds
 def some_function():
-    #do_some_computation heavy tests here
-    ...
-    test.assert_equals(atoms_in_universe(), expected)
+    #do some heavy tests here...
+    for _ in ad_nauseam():
+        test.assert_equals(count_atoms_in_universe(), expected)
 ```
 
 Runs the decorated function within the time limit (expressed in seconds, the value can be a float or an integer).
