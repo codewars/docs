@@ -15,6 +15,8 @@ module.exports = {
     web: "https://www.codewars.com",
     twitter: process.env.URL_TWITTER || false,
     github: "https://github.com/codewars",
+    // Repository for this documentation.
+    repository: "https://github.com/codewars/docs",
     nav: {
       links: [{ path: "/docs/", title: "Docs" }],
     },
