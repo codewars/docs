@@ -1133,6 +1133,22 @@
     escape-string-regexp "^1.0.5"
     lodash.deburr "^4.1.0"
 
+"@sindresorhus/slugify@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@sindresorhus/slugify/-/slugify-1.0.0.tgz#db6a4df1935cf6c331303ce82021df361ff52348"
+  integrity sha512-g3L0EoNpi2rT/uiOO6BUqbqXZ9mPR+LCl6yZsTDd8K/PeX+Bui5npU+mY0sME+Mc96bW/32kfDhmccPLMK/7pQ==
+  dependencies:
+    "@sindresorhus/transliterate" "^0.1.0"
+    escape-string-regexp "^4.0.0"
+
+"@sindresorhus/transliterate@^0.1.0":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@sindresorhus/transliterate/-/transliterate-0.1.1.tgz#779b31244781d3c898f185b61d58c89e7c782674"
+  integrity sha512-QSdIQ5keUFAZ3KLbfbsntW39ox0Ym8183RqTwBq/ZEFoN3NQAtGV+qWaNdzKpIDHgj9J2CQ2iNDRVU11Zyr7MQ==
+  dependencies:
+    escape-string-regexp "^2.0.0"
+    lodash.deburr "^4.1.0"
+
 "@stylelint/postcss-css-in-js@^0.37.1":
   version "0.37.1"
   resolved "https://registry.yarnpkg.com/@stylelint/postcss-css-in-js/-/postcss-css-in-js-0.37.1.tgz#41e5e7660f73d88227610e18c6ebb262d56ac125"
@@ -4044,6 +4060,16 @@ escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.5:
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
 
+escape-string-regexp@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-2.0.0.tgz#a30304e99daa32e23b2fd20f51babd07cffca344"
+  integrity sha512-UpzcLCXolUWcNu5HtVMHYdXJjArjsF9C0aNnquZYY4uW/Vu0miy5YoWvbV345HauVvcAUnpRuhMMcqTcGOY2+w==
+
+escape-string-regexp@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz#14ba83a5d373e3d311e5afca29cf5bfad965bf34"
+  integrity sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==
+
 eslint-config-prettier@^6.11.0:
   version "6.11.0"
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-6.11.0.tgz#f6d2238c1290d01c859a8b5c1f7d352a0b0da8b1"
@@ -6925,6 +6951,11 @@ markdown-table@^2.0.0:
   dependencies:
     repeat-string "^1.0.0"
 
+marked@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-1.1.0.tgz#62504ad4d11550c942935ccc5e39d64e5a4c4e50"
+  integrity sha512-EkE7RW6KcXfMHy2PA7Jg0YJE1l8UPEZE8k45tylzmZM30/r1M1MUXWQfJlrSbsTeh7m/XTwHbWUENvAJZpp1YA==
+
 match-casing@^1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/match-casing/-/match-casing-1.0.3.tgz#cda6c33e377dbe49daff286e0d500d90766b16a4"
@@ -9585,6 +9616,18 @@ sanitize-html@^1.20.0:
     lodash.isplainobject "^4.0.6"
     lodash.isstring "^4.0.1"
     lodash.mergewith "^4.6.1"
+    postcss "^7.0.27"
+    srcset "^2.0.1"
+    xtend "^4.0.1"
+
+sanitize-html@^1.27.0:
+  version "1.27.0"
+  resolved "https://registry.yarnpkg.com/sanitize-html/-/sanitize-html-1.27.0.tgz#42104a2d59f1a48b616b5165ad5349824861e580"
+  integrity sha512-U1btucGeYVpg0GoK43jPpe/bDCV4cBOGuxzv5NBd0bOjyZdMKY0n98S/vNlO1wVwre0VCj8H3hbzE7gD2+RjKA==
+  dependencies:
+    chalk "^2.4.1"
+    htmlparser2 "^4.1.0"
+    lodash "^4.17.15"
     postcss "^7.0.27"
     srcset "^2.0.1"
     xtend "^4.0.1"

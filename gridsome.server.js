@@ -10,7 +10,15 @@ const path = require("path");
 const { promisify } = require("util");
 const readdir = promisify(fs.readdir);
 const readFile = promisify(fs.readFile);
+
+const slugify = require("@sindresorhus/slugify");
 const YAML = require("yaml");
+// Using Marked for now because it's more simple to use. And because this is
+// done at build time it doesn't increase the bundle size.
+const marked = require("marked");
+const sanitize = require("sanitize-html");
+
+const toHTML = (content) => sanitize(marked(content));
 
 module.exports = function (api) {
   api.loadSource(({ addCollection, addMetadata }) => {
@@ -43,13 +51,13 @@ module.exports = function (api) {
     }
   });
 
-  const addNodesFromFile = async (collection, file) => {
+  const addNodesFromFile = async (collection, file, fn = (x) => x) => {
     const contents = await readFile(file, { encoding: "utf-8" });
     const items = YAML.parse(contents);
-    for (const item of items) collection.addNode(item);
+    for (const item of items) collection.addNode(fn(item));
   };
 
-  api.loadSource(async ({ addCollection }) => {
+  api.loadSource(async ({ addCollection, addSchemaTypes }) => {
     await addNodesFromFile(
       addCollection("Category"),
       path.join(__dirname, "data/categories.yml")
@@ -57,6 +65,23 @@ module.exports = function (api) {
     await addNodesFromFile(
       addCollection("Tag"),
       path.join(__dirname, "data/tags.yml")
+    );
+
+    // Add Schema manually to prevent errors from missing fields.
+    // See https://gridsome.org/docs/schema-api/
+    const termSchema = await readFile(
+      path.join(__dirname, "schemas/term.graphql"),
+      { encoding: "utf-8" }
+    );
+    addSchemaTypes(termSchema);
+    await addNodesFromFile(
+      addCollection("Term"),
+      path.join(__dirname, "data/glossary.yml"),
+      (term) => {
+        if (!term.id) term.id = slugify(term.term);
+        if (term.description) term.description = toHTML(term.description);
+        return term;
+      }
     );
   });
 

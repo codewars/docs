@@ -65,6 +65,18 @@
             View Tags
           </g-link>
         </div>
+
+        <div
+          class="flex flex-col items-center px-4 mb-8 text-center w-full md:w-1/3"
+        >
+          <BookIcon size="3x" class="mb-6 text-ui-primary" />
+          <g-link
+            to="/glossary/"
+            class="text-xl font-bold leading-snug tracking-wide uppercase text-ui-typo"
+          >
+            View Glossary
+          </g-link>
+        </div>
       </div>
 
       <!-- TODO Link to Zulip and also write how to use it -->
@@ -77,6 +89,7 @@
 import Logo from "@/components/Logo";
 import {
   ArrowRightCircleIcon,
+  BookIcon,
   BookOpenIcon,
   FolderIcon,
   TagIcon,
@@ -86,6 +99,7 @@ export default {
   components: {
     Logo,
     ArrowRightCircleIcon,
+    BookIcon,
     BookOpenIcon,
     FolderIcon,
     TagIcon,
