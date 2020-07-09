@@ -1,10 +1,10 @@
 <template>
   <button
-    @click="handleClick"
+    @click="setDarkMode(!isDark)"
     aria-label="Toggle Darkmode"
     title="Toggle Darkmode"
   >
-    <slot :dark="isDarkMode" />
+    <slot :dark="isDark" />
   </button>
 </template>
 
@@ -14,54 +14,32 @@ const DARK_MODE = "dark-mode";
 export default {
   data() {
     return {
-      isDarkMode: false,
+      isDark: false,
     };
   },
 
   methods: {
-    handleClick() {
-      const hasDarkMode = document.documentElement.classList.contains(
-        DARK_MODE
-      );
-
-      // Toggle dark mode on click.
-      return this.toggleDarkMode(!hasDarkMode);
-    },
-
-    toggleDarkMode(shouldBeDark) {
-      document.documentElement.classList.toggle(DARK_MODE, shouldBeDark);
-
-      this.isDarkMode = shouldBeDark;
-
-      this.writeToStorage(shouldBeDark);
-
-      return shouldBeDark;
-    },
-
-    detectPrefered() {
-      return window.matchMedia("(prefers-color-scheme: dark)").matches;
-    },
-
-    hasInStorage() {
-      const check = localStorage.getItem(DARK_MODE);
-
-      return check !== null;
-    },
-
-    writeToStorage(prefersDark) {
-      localStorage.setItem(DARK_MODE, prefersDark ? "true" : "false");
-    },
-
-    getFromStorage() {
-      return localStorage.getItem(DARK_MODE) === "true" ? true : false;
+    setDarkMode(dark) {
+      document.documentElement.classList.toggle(DARK_MODE, dark);
+      this.isDark = dark;
+      localStorage.setItem(DARK_MODE, dark + "");
     },
   },
 
   mounted() {
-    if (this.hasInStorage()) {
-      this.toggleDarkMode(this.getFromStorage());
-    } else if (process.isClient && window.matchMedia) {
-      this.toggleDarkMode(this.detectPrefered());
+    if (!process.isClient) return;
+
+    // Allow overriding the theme with search param `?dark=1`. Useful when embedding.
+    const dark = new URLSearchParams(window.location.search).get("dark");
+    if (dark) return this.setDarkMode(dark === "1");
+
+    const stored = localStorage.getItem(DARK_MODE);
+    if (stored !== null) return this.setDarkMode(stored === "true");
+
+    if (window.matchMedia) {
+      this.setDarkMode(
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+      );
     }
   },
 };
