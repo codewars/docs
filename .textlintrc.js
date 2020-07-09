@@ -21,7 +21,7 @@ module.exports = {
       // Load default terms
       defaultTerms: true,
       // Additional terms
-      terms: [],
+      terms: ["Codewars"],
       // Excludeded terms
       exclude: [],
     },

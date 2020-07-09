@@ -6,7 +6,7 @@
     "develop": "gridsome develop",
     "explore": "gridsome explore",
     "get-schema": "get-graphql-schema http://localhost:8080/___graphql >| schema.graphql",
-    "lint:text": "textlint ./content/**/*.md"
+    "lint:text": "textlint './content/**/*.md'"
   },
   "dependencies": {
     "fuse.js": "^6.4.0",
