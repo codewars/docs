@@ -14,7 +14,7 @@ prev: /languages/python/
 <br>
 <br>
 
-You may find here the detailed information about the [test framework](https://github.com/codewars/python-test-framework/blob/master/codewars_test/test_framework.py) designed for CodeWars. The present version is extending the first one, so old katas are still compatible, but the use of the v2 is required for newly created katas or translations.
+You may find here the detailed information about the [test framework](https://github.com/codewars/python-test-framework/blob/master/codewars_test/test_framework.py) designed for Codewars. The present version is extending the first one, so old katas are still compatible, but the use of the v2 is required for newly created katas or translations.
 
 _Note: the test module is aliased with `Test`, so you can call every tool provided with it using either `test.method` or `Test.method` (prefer the first one)._
 
@@ -89,11 +89,11 @@ Both kind of blocks are timed: once the decorated function ends its execution, t
 
 - `describe` blocks:
 
-Those blocks always stay depolyed whatever the results of the tests in them are. Meaning that if you put assertions directly in them, they will be visible in the output, as well as any other `it` block(s) it could contain. They are the basic block inwhich you can insert `it` blocks or other nested `describe` blocks if you need to create subdivisions in your test suite.
+Those blocks always stay depolyed whatever the results of the tests in them are. Meaning that if you put assertions directly in them, they will be visible in the output, as well as any other `it` block(s) it could contain. They are the basic block inwhich you can insert `it` blocks or other nested `describe` blocks to create subdivisions in your test suite.
 
 - `it` blocks:
 
-On the contrary of the `describe` blocks, the `it` blocks are deployed in the output panel only when they contain failed assertions. Oterwise they are shrinked and only the name of the block and the number of assertions are visible.
+On the contrary of the `describe` blocks, the `it` blocks are deployed in the output panel only when they contain failed assertions. Oterwise they are shrunk and only the name of the block and the number of assertions are visible.
 
 Note: you can nest `describe` blocks but you _cannot nest_ `it` blocks (for nested `it` blocks, the display in the output panel will be incorrect).
 
@@ -182,7 +182,7 @@ test.expect(bool, message)
 ```
 
 Checks if the passed value is truthy. This function can be helpful when you test something which cannot be tested using other functions.  
-However, since this function's default failure message is not helpful at all, **you're strongly advised to provide your own helpful message, or even to _not_ use** `test.expect`. If you need to build custom assertion functions, you could/should use the two following ones instead.
+However, since this function's default failure message is not helpful at all, **you're strongly advised to provide your own helpful message, or even to _not_ use** `test.expect`. To build custom assertion functions, you could/should use the two following ones instead.
 
 <br>
 
