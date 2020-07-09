@@ -58,10 +58,19 @@ export default {
   },
 
   mounted() {
+    if (!process.isClient) return;
+
+    // Allow overriding the theme with search param `?dark=1`. Useful when embedding.
+    const params = new URLSearchParams(window.location.search);
+    const dark = params.get("dark");
+    if (dark) return this.toggleDarkMode(dark === "1");
+
     if (this.hasInStorage()) {
-      this.toggleDarkMode(this.getFromStorage());
-    } else if (process.isClient && window.matchMedia) {
-      this.toggleDarkMode(this.detectPrefered());
+      return this.toggleDarkMode(this.getFromStorage());
+    }
+
+    if (window.matchMedia) {
+      return this.toggleDarkMode(this.detectPrefered());
     }
   },
 };
