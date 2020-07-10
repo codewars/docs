@@ -31,7 +31,6 @@
 ##       url: https://en.wikipedia.org/wiki/Test-driven_development
 ## ```
 
-
 - term: Abandoned kata
   description: Kata whose the author isn't active anymore.
 
@@ -55,7 +54,7 @@
   description: The beta process is the phase where a kata is visible to any other user in the database/[katas search page](https://www.codewars.com/kata/my-languages) but does not have a rank yet. It is to be tested by other users, so that it can be enhanced, modified, ranked and finally approved... or retired if not qualitative enough.
 
 - term: Contributor(s)
-  description: User(s) hwo have either authored, approved, translate or modify a kata in any way (a list of them can be seen in the "Details" page of any kata.
+  description: User(s) who have either authored, approved, translated or modified a kata in any way (a list of them can be seen in the "Details" page of any kata.
 
 - term: Dan
   description: 段
@@ -63,11 +62,15 @@
     - title: Dan (rank) - Wikipedia
       url: https://en.wikipedia.org/wiki/Dan_(rank)
 
-- term: [Dashboard](https://www.codewars.com/dashboard)
+- term: Dashboard
   description: This is the main page for a code warrior. You land there by clicking on the picture in the top left vertical bar (CodeWars' logo). It contains kata suggestions, a leaderboard of you and your allies and a flow of the last comments posted anywhere on CodeWars.
+  links:
+    - title: Codewars Dashboard
+      url: https://www.codewars.com/dashboard
 
 - term: Draft (kata)
-  description: Initial state of a new born kata: when you create a new kata, it is in Draft mode as long as it is not "published". Katas in draft state are not visible through the [katas search page](https://www.codewars.com/kata/my-languages), but can be accessed and tried by other users if the author gives them the direct link to the trainer. Note that a kata in draft state cannot be completed (eg. "submit final" will not show up if you pass all the tests of a draft).
+  description: |
+    Initial state of a new born kata: when you create a new kata, it is in Draft mode as long as it is not "published". Katas in draft state are not visible through the [katas search page](https://www.codewars.com/kata/my-languages), but can be accessed and tried by other users if the author gives them the direct link to the trainer. Note that a kata in draft state cannot be completed (eg. "submit final" will not show up if you pass all the tests of a draft).
 
 - term: Edit panel
   description: |
@@ -85,7 +88,7 @@
   description: |
     Tests whose input and output are always the same, each time your run the tests. Generally, the example tests are made of those, and the test cases contains both fixed and random tests.
 
-- term: Followers.
+- term: Followers
   description: |
     Users who are following other users.
     You can follow an user by clicking on the `Follow` button in his profile or by making yourself part of the same clan.
