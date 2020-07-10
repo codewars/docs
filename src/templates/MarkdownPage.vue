@@ -108,11 +108,11 @@ export default {
     },
 
     next() {
-      return this.page.next && this.findLinkedPage(this.page.next);
+      return this.page.next ? this.findLinkedPage(this.page.next) : null;
     },
 
     prev() {
-      return this.page.prev && this.findLinkedPage(this.page.prev);
+      return this.page.prev ? this.findLinkedPage(this.page.prev) : null;
     },
 
     repository() {
