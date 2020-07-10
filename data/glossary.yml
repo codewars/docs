@@ -31,11 +31,85 @@
 ##       url: https://en.wikipedia.org/wiki/Test-driven_development
 ## ```
 
+
+- term: Abandoned kata
+  description: Kata whose the author isn't active anymore.
+
+- term: Active (author)
+  description: Author who has been connected to CodeWars during the last 30 days.
+
+- term: Allies
+  description: Users who are following each others, or who are part of the same clan.
+
+- term: Approve (a kata)
+  description: Action to push a kata out of the beta process, giving it a rank (kyus). This can be done by power users.
+
+- term: Attempt
+  description: |
+    In the trainer, when you click on the `ATTEMPT` button, you run your code against the full test suite (see "test cases"). Validating all the tests makes you pass/validate the kata, and grants you honor points and progress.
+
+- term: Author
+  description: User who created a kata (either an approved one or one still in beta).
+
+- term: Beta (kata/process)
+  description: The beta process is the phase where a kata is visible to any other user in the database/[katas search page](https://www.codewars.com/kata/my-languages) but does not have a rank yet. It is to be tested by other users, so that it can be enhanced, modified, ranked and finally approved... or retired if not qualitative enough.
+
+- term: Contributor(s)
+  description: User(s) hwo have either authored, approved, translate or modify a kata in any way (a list of them can be seen in the "Details" page of any kata.
+
 - term: Dan
   description: 段
   links:
     - title: Dan (rank) - Wikipedia
       url: https://en.wikipedia.org/wiki/Dan_(rank)
+
+- term: [Dashboard](https://www.codewars.com/dashboard)
+  description: This is the main page for a code warrior. You land there by clicking on the picture in the top left vertical bar (CodeWars' logo). It contains kata suggestions, a leaderboard of you and your allies and a flow of the last comments posted anywhere on CodeWars.
+
+- term: Draft (kata)
+  description: Initial state of a new born kata: when you create a new kata, it is in Draft mode as long as it is not "published". Katas in draft state are not visible through the [katas search page](https://www.codewars.com/kata/my-languages), but can be accessed and tried by other users if the author gives them the direct link to the trainer. Note that a kata in draft state cannot be completed (eg. "submit final" will not show up if you pass all the tests of a draft).
+
+- term: Edit panel
+  description: |
+    This is the interface an author uses to create or modify a kata. There you can see all the available languages, author's solution, initial solution, all the tests, the preloaded version and the description. Contributors and some power users (in specific conditions) have access to the edit panel of published katas.
+    Notes:
+      * Entering the edit panel is an automatic forfeit of the kata for the user going there.
+      * Translating a kata has to be done through the creation of a translation, and ___never___ directly through the edit panel (unless you're the author, but even then, you are advise to use translations)
+
+- term: Example tests
+  description: |
+    Tests that are visible to the user in the trainer. Most of the time, they are only a tiny part of the full tests suite. Hence, passing all the tests of the example tests doesn't make you pass the kata. You have to use `ATTEMPT`.
+    You run the example tests using the `TEST` button in the trainer.
+
+- term: Fixed tests
+  description: |
+    Tests whose input and output are always the same, each time your run the tests. Generally, the example tests are made of those, and the test cases contains both fixed and random tests.
+
+- term: Followers.
+  description: |
+    Users who are following other users.
+    You can follow an user by clicking on the `Follow` button in his profile or by making yourself part of the same clan.
+    You can see in the `Social` section of the profile of a user who he is following, who are his followers and who he is ally with.
+
+- term: Forfeit (a kata)
+  description: |
+    You forfeit a kata when you do one of those actions:
+      * you unlock the solutions (through the button in the trainer, for example)
+      * you enter the edit panel (_warning_: power users may have the possibility to enter the edit panel of some katas. If you do so before you solved it, you actually forfeit it).
+    Forfeiting a kata makes you lose the opportunity to gain honor points or progress by completing this kata.
+
+- term: Inactive (author)
+  description: |
+    Author of a kata who hasn't been connected for more than 30 days. When an author is inactive, some actions he's normally the only person allowed to do are doable by other people (power users with the required privilegees).
+
+- term: Initial solution
+  description: |
+    This is the starting point of your code when you enter the trainer of a kata (the "Solution" box).
+
+- term: Issue (comment)
+  description: |
+    `Issue is the label to use when you write a comment in the discourses section of a kata to point out some problems in the kata itself (wrong tests, wrong reference solution, wrong description, missing tests, misleading description, ...).
+    Note that the `Issue` label is ___NOT___ to use for a user who doesn't understand why his solution is failing some (or all) the tests of the kata.
 
 - term: Kata
   description: 型
@@ -59,10 +133,27 @@
     - title: Kyū - Wikipedia
       url: https://en.wikipedia.org/wiki/Ky%C5%AB
 
+- term: Question (comment)
+  description: |
+    `Question` is the label to use when you write a comment in the discourses section of a kata when you encounter some problems to solve it and you don't understand why your solution is failing some (or all) the tests. Or if you ___believe___ your solution is correct while the expected result isn't.
+    Most of the times, the user (you) is actually missing something, so use the Question label and not the Issue label, unless you can ___prove___ that the problem you're facing is actually an "issue".
+
+- term: Publishing (kata)
+  description: When you hit "publish" in the edit panel of a kata you created, it enters the beta process and becomes visible to anyone in the [katas search page](https://www.codewars.com/kata/my-languages). The beta process begins at the moment a kata is published.
+
 - term: Test Driven Development
   description: |
+    Katas are built following this principle: you are provided with specifications and a set of tests, and your goal is to pass those tests (by following the specifications or finding a way to at least pass the tests).
     > **TODO** Explain. Include why TDD is relevant to Codewars.
   acronym: TDD
   links:
     - title: Test-driven Development - Wikipedia
       url: https://en.wikipedia.org/wiki/Test-driven_development
+
+- term: Trainer (kata)
+  description: |
+    This is the place where you write your code to complete a task.
+
+- term: Translator
+  description: |
+    User who translated an existing kata to a new language, making it available for other users.
