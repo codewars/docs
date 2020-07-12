@@ -12,7 +12,7 @@
           v-for="term of group.terms"
           :key="term.id"
           :id="term.id"
-          class="max-w-md mx-auto mt-4 space-y-4"
+          class="max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto mt-4 space-y-4"
         >
           <div class="font-bold">
             {{ term.term }}
