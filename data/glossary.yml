@@ -32,7 +32,7 @@
 ## ```
 
 - term: Abandoned kata
-  description: Kata whose the author isn't active anymore.
+  description: Kata whose the author is not active anymore.
 
 - term: Active (author)
   description: Author who has been connected to CodeWars during the last 30 days.
@@ -40,8 +40,10 @@
 - term: Allies
   description: Users who are following each others, or who are part of the same clan.
 
-- term: Approve (a kata)
-  description: Action to push a kata out of the beta process, giving it a rank (kyus). This can be done by power users.
+- term: Approve (a kata/translation)
+  description: |
+      Action to push a kata out of the beta process, giving it a rank (kyus). This can be done by power users.
+      For a translation, consists to validate it a make the language available in the kata for all users.
 
 - term: Attempt
   description: |
@@ -135,14 +137,14 @@
   links:
     - title: Kyū - Wikipedia
       url: https://en.wikipedia.org/wiki/Ky%C5%AB
+      
+- term: Publishing (kata)
+  description: When you hit "publish" in the edit panel of a kata you created, it enters the beta process and becomes visible to anyone in the [katas search page](https://www.codewars.com/kata/my-languages). The beta process begins at the moment a kata is published.
 
 - term: Question (comment)
   description: |
     `Question` is the label to use when you write a comment in the discourses section of a kata when you encounter some problems to solve it and you don't understand why your solution is failing some (or all) the tests. Or if you ___believe___ your solution is correct while the expected result isn't.
     Most of the times, the user (you) is actually missing something, so use the Question label and not the Issue label, unless you can ___prove___ that the problem you're facing is actually an "issue".
-
-- term: Publishing (kata)
-  description: When you hit "publish" in the edit panel of a kata you created, it enters the beta process and becomes visible to anyone in the [katas search page](https://www.codewars.com/kata/my-languages). The beta process begins at the moment a kata is published.
 
 - term: Test Driven Development
   description: |
