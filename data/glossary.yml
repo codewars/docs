@@ -42,8 +42,8 @@
 
 - term: Approve (a kata/translation)
   description: |
-      Action to push a kata out of the beta process, giving it a rank (kyus). This can be done by power users.
-      For a translation, consists to validate it a make the language available in the kata for all users.
+    Action to push a kata out of the beta process, giving it a rank (kyus). This can be done by power users.
+    For a translation, consists to validate it a make the language available in the kata for all users.
 
 - term: Attempt
   description: |
@@ -137,7 +137,7 @@
   links:
     - title: Kyū - Wikipedia
       url: https://en.wikipedia.org/wiki/Ky%C5%AB
-      
+
 - term: Publishing (kata)
   description: When you hit "publish" in the edit panel of a kata you created, it enters the beta process and becomes visible to anyone in the [katas search page](https://www.codewars.com/kata/my-languages). The beta process begins at the moment a kata is published.
 
