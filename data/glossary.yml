@@ -113,7 +113,7 @@
 
 - term: Issue (comment)
   description: |
-    `Issue is the label to use when you write a comment in the discourses section of a kata to point out some problems in the kata itself (wrong tests, wrong reference solution, wrong description, missing tests, misleading description, ...).
+    `Issue` is the label to use when you write a comment in the discourses section of a kata to point out some problems in the kata itself (wrong tests, wrong reference solution, wrong description, missing tests, misleading description, ...).
     Note that the `Issue` label is ___NOT___ to use for a user who doesn't understand why his solution is failing some (or all) the tests of the kata.
 
 - term: Kata
