@@ -35,7 +35,7 @@
   description: Kata whose the author is not active anymore.
 
 - term: Active (author)
-  description: Author who has been connected to CodeWars during the last 30 days.
+  description: Author who has been connected to Codewars during the last 30 days.
 
 - term: Allies
   description: Users who are following each others, or who are part of the same clan.
@@ -65,7 +65,7 @@
       url: https://en.wikipedia.org/wiki/Dan_(rank)
 
 - term: Dashboard
-  description: This is the main page for a code warrior. You land there by clicking on the picture in the top left vertical bar (CodeWars' logo). It contains kata suggestions, a leaderboard of you and your allies and a flow of the last comments posted anywhere on CodeWars.
+  description: This is the main page for a code warrior. You land there by clicking on the picture in the top left vertical bar (Codewars' logo). It contains kata suggestions, a leaderboard of you and your allies and a flow of the last comments posted anywhere on Codewars.
   links:
     - title: Codewars Dashboard
       url: https://www.codewars.com/dashboard
