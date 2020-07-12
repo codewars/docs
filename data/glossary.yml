@@ -149,7 +149,6 @@
 - term: Test Driven Development
   description: |
     Katas are built following this principle: you are provided with specifications and a set of tests, and your goal is to pass those tests (by following the specifications or finding a way to at least pass the tests).
-    > **TODO** Explain. Include why TDD is relevant to Codewars.
   acronym: TDD
   links:
     - title: Test-driven Development - Wikipedia
