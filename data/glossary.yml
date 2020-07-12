@@ -1,6 +1,6 @@
-## A collection of commonly used terms.
-##
-## Please add new terms in alphabetical order.
+# A collection of commonly used terms.
+#
+# Please add new terms in alphabetical order.
 
 ## Structure
 ## ```typescript
@@ -40,9 +40,9 @@
 - term: Allies
   description: Users who are following each others, or who are part of the same clan.
 
-- term: Approve (a kata/translation)
+- term: Approve (a kata, a translation)
   description: |
-    Action to push a kata out of the beta process, giving it a rank (kyus). This can be done by power users. |
+    Action to push a kata out of the beta process, giving it a rank (kyus). This can be done by power users.
     For a translation, consists to validate it a make the language available in the kata for all users.
 
 - term: Attempt
