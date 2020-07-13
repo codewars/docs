@@ -30,53 +30,53 @@
       ></div>
 
       <div class="flex flex-wrap justify-center -mx-4">
-        <div
+        <g-link
+          to="/categories/"
           class="flex flex-col items-center px-4 mb-8 text-center w-full md:w-1/3"
         >
           <FolderIcon size="3x" class="mb-6 text-ui-primary" />
-          <g-link
-            to="/categories/"
+          <span
             class="text-xl font-bold leading-snug tracking-wide uppercase text-ui-typo"
           >
             View Categories
-          </g-link>
-        </div>
+          </span>
+        </g-link>
 
-        <div
+        <g-link
+          to="/languages/"
           class="flex flex-col items-center px-4 mb-8 text-center w-full md:w-1/3"
         >
           <BookOpenIcon size="3x" class="mb-6 text-ui-primary" />
-          <g-link
-            to="/languages/"
+          <span
             class="text-xl font-bold leading-snug tracking-wide uppercase text-ui-typo"
           >
             Supported Languages
-          </g-link>
-        </div>
+          </span>
+        </g-link>
 
-        <div
+        <g-link
+          to="/tags/"
           class="flex flex-col items-center px-4 mb-8 text-center w-full md:w-1/3"
         >
           <TagIcon size="3x" class="mb-6 text-ui-primary" />
-          <g-link
-            to="/tags/"
+          <span
             class="text-xl font-bold leading-snug tracking-wide uppercase text-ui-typo"
           >
             View Tags
-          </g-link>
-        </div>
+          </span>
+        </g-link>
 
-        <div
+        <g-link
+          to="/glossary/"
           class="flex flex-col items-center px-4 mb-8 text-center w-full md:w-1/3"
         >
           <BookIcon size="3x" class="mb-6 text-ui-primary" />
-          <g-link
-            to="/glossary/"
+          <span
             class="text-xl font-bold leading-snug tracking-wide uppercase text-ui-typo"
           >
             View Glossary
-          </g-link>
-        </div>
+          </span>
+        </g-link>
       </div>
 
       <!-- TODO Link to Zulip and also write how to use it -->
