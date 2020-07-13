@@ -39,7 +39,7 @@
 
 - term: Allies
   description: Users who are following each others, or who are part of the same clan.
-
+  
 - term: Approve (a kata, a translation)
   description: |
     Action to push a kata out of the beta process, giving it a rank (kyus). This can be done by power users.
@@ -55,6 +55,19 @@
 - term: Beta (kata/process)
   description: The beta process is the phase where a kata is visible to any other user in the database/[katas search page](https://www.codewars.com/kata/my-languages) but does not have a rank yet. It is to be tested by other users, so that it can be enhanced, modified, ranked and finally approved... or retired if not qualitative enough.
 
+- term: Clan(s)
+  description: |
+    You can write the name of your clan/company/organisation through your `profile/account settings`. All the member of this clan are automatically recognized as allies of yours, hence are added to your personnal leaderboard in the [dashboard](#dashboard).
+
+- term: Collections(s)
+  description: |
+    Collections are sets/libraries of katas that any user can create, for any purpose. All collections are public.
+  links:
+    - title: Collections created by one user
+      url: https://www.codewars.com/users/Blind4Basics/authored_collections
+    - title: Browse through all collections
+      url: https://www.codewars.com/collections
+  
 - term: Contributor(s)
   description: User(s) who have either authored, approved, translated or modified a kata in any way (a list of them can be seen in the "Details" page of any kata.
 
@@ -64,7 +77,7 @@
     - title: Dan (rank) - Wikipedia
       url: https://en.wikipedia.org/wiki/Dan_(rank)
 
-- term: Dashboard
+- term: <a name="dashboard">Dashboard</a>
   description: This is the main page for a code warrior. You land there by clicking on the picture in the top left vertical bar (Codewars' logo). It contains kata suggestions, a leaderboard of you and your allies and a flow of the last comments posted anywhere on Codewars.
   links:
     - title: Codewars Dashboard
