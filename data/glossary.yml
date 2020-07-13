@@ -116,10 +116,9 @@
     You can see in the `Social` section of the profile of a user who he is following, who are his followers and who he is ally with.
 
 - term: Forfeit (a kata)
-  description: |
-    You forfeit a kata when you do one of those actions:
+  description: You forfeit a kata when you do one of those actions:
       * you unlock the solutions (through the button in the trainer, for example)
-      * you enter the edit panel (_warning_: power users may have the possibility to enter the edit panel of some katas. If you do so before you solved it, you actually forfeit it).
+      * you enter the edit panel (_warning_, power users may have the possibility to enter the edit panel of some katas. If you do so before you solved it, you actually forfeit it).
     Forfeiting a kata makes you lose the opportunity to gain honor points or progress by completing this kata.
 
 - term: Fork
@@ -185,9 +184,6 @@
 - term: Markdowns (formatting)
   description: |
     CodeWars is responsive to `markdowns`. They allow you to format code, descriptions or comments so that thay are properly readable for other users.
-  links:
-    - title: TODO
-      url: TODO
 
 - term: Merge conflicts
   description: |
@@ -218,8 +214,7 @@
     Most of the times, the user (you) is actually missing something, so use the Question label and not the Issue label, unless you can ___prove___ that the problem you're facing is actually an "issue".
 
 - term: Test Driven Development
-  description: |
-    Katas are built following this principle: you are provided with specifications and a set of tests, and your goal is to pass those tests (by following the specifications or finding a way to at least pass the tests).
+  description: Katas are built following this principle: you are provided with specifications and a set of tests, and your goal is to pass those tests (by following the specifications or finding a way to at least pass the tests).
   acronym: TDD
   links:
     - title: Test-driven Development - Wikipedia
