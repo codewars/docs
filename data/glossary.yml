@@ -32,7 +32,8 @@
 ## ```
 
 - term: Abandoned kata
-  description: Kata whose the author is not active anymore.
+  description: |
+    Kata whose the author is not active anymore.
 
 - term: Active (author)
   description: Author who has been connected to Codewars during the last 30 days.
