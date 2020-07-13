@@ -64,7 +64,7 @@
 
 - term: Collections(s)
   description: |
-    Collections are sets/libraries of katas that any user can create, for any purpose. All collections are public.
+    Collections are sets or libraries of katas that any user can create, for any purpose. All collections are public.
   links:
     - title: Collections created by one user
       url: https://www.codewars.com/users/Blind4Basics/authored_collections
@@ -117,8 +117,8 @@
 
 - term: Forfeit (a kata)
   description: You forfeit a kata when you do one of those actions:
-      * you unlock the solutions (through the button in the trainer, for example)
-      * you enter the edit panel (_warning_, power users may have the possibility to enter the edit panel of some katas. If you do so before you solved it, you actually forfeit it).
+    * You unlock the solutions (through the button in the trainer, for example)
+    * You enter the edit panel (_warning_, power users may have the possibility to enter the edit panel of some katas. If you do so before you solved it, you actually forfeit it).
     Forfeiting a kata makes you lose the opportunity to gain honor points or progress by completing this kata.
 
 - term: Fork
@@ -176,9 +176,9 @@
       url: https://www.codewars.com/users/leaderboard
     - title: Top 500 by completed Katas
       url: https://www.codewars.com/users/leaderboard/kata
-    - title: Top 500 by authored Katas & translations
+    - title: Top 500 by authored Katas and translations
       url: https://www.codewars.com/users/leaderboard/authored
-    - title: Your "personnal" leaderboard (with your allies, in the dashboard)
+    - title: Your personnal leaderboard (with your allies, in the dashboard)
       url: https://www.codewars.com/dashboard
 
 - term: Markdowns (formatting)
@@ -191,7 +191,7 @@
     To resolve this problem, you have to fork the translation and update the description starting with its current (new) version.
 
 - term: Mutation of the input
-  description: To keep it short...: ___Don't mutate the input... Ever___ (eg. don't use sort/append/push/remove/... and alike before doing a copy of the input).
+  description: To keep it short...: ___Don't mutate the input... Ever___ (eg. don't use sort, append, push, remove, ... and alike before doing a copy of the input).
     This is about side effects, modifying the arguments (typically lists/arrays, or even strings if they are mutable in your language) sent to your function during the executions. This can have weird consequences, depending on how the tests are written.
     Nowadays, most test suites are written in a way that avoids this kind of problem but typically, if you end up passing the fixed tests but failing all the random tests with something along the line of `[your result] should equal []`, you're most likely facing a "mutation of the input" problem.
     Hence... Don't mutate the input.
