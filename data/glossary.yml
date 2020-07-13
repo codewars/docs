@@ -121,13 +121,13 @@
 
 - term: Fork
   description: |
-      In the solutions page of a kata, you can see the solutions of other users, and you can `fork` them to suggest modifications/enhancements.
-      Using the fork panel is the right way to try out a solution of another user, rather than copy it in the trainer of the kata.
-  
+    In the solutions page of a kata, you can see the solutions of other users, and you can `fork` them to suggest modifications/enhancements.
+    Using the fork panel is the right way to try out a solution of another user, rather than copy it in the trainer of the kata.
+
 - term: Honor (points)
   description: |
-      Honor points are those that are showing up in the top right corner  of any codewars page. You can win honor points in different ways (completing katas, up votes on your comments or solutions, translations, creating katas, ...)
-  
+    Honor points are those that are showing up in the top right corner  of any codewars page. You can win honor points in different ways (completing katas, up votes on your comments or solutions, translations, creating katas, ...)
+
 - term: Inactive (author)
   description: |
     Author of a kata who hasn't been connected for more than 30 days. When an author is inactive, some actions he's normally the only person allowed to do are doable by other people (power users with the required privilegees).
@@ -165,12 +165,12 @@
 
 - term: Language versions
   description: |
-      A kata may be available in one or more languages (javascript, python, coq, ...), and for each language, there may be different language versions. Like, Node 8 or Node 10 for JS, or python 3.4.3 or 3.6 for python...
-      You can choose the language _and_ the language version in the trainer of a kata (amongst the available ones).
-  
+    A kata may be available in one or more languages (javascript, python, coq, ...), and for each language, there may be different language versions. Like, Node 8 or Node 10 for JS, or python 3.4.3 or 3.6 for python...
+    You can choose the language _and_ the language version in the trainer of a kata (amongst the available ones).
+
 - term: Leaderboards
   description: |
-      Leaderboards are grouping different users according to different criteria.
+    Leaderboards are grouping different users according to different criteria.
   links:
     - title: Overall top 500
       url: https://www.codewars.com/users/leaderboard
@@ -180,35 +180,35 @@
       url: https://www.codewars.com/users/leaderboard/authored
     - title: Your "personnal" leaderboard (with your allies, in the dashboard)
       url: https://www.codewars.com/dashboard
-  
+
 - term: Markdowns (formatting)
   description: |
-      CodeWars is responsive to `markdowns`. They allow you to format code or descriptions so that thay are properly readable for other users.
+    CodeWars is responsive to `markdowns`. They allow you to format code or descriptions so that thay are properly readable for other users.
   links:
     - title: TODO
       url: TODO
-  
+
 - term: Merge conflicts
   description: |
-      When a translation of a kata is published but some changes or done to the description (through the edit panel) before the translation gets approved, it becomes impossible to approve it because of those "merge conflicts".
-      To resolve this problem, you have to fork the translation and update the description starting with its current (new) version.
-  
+    When a translation of a kata is published but some changes or done to the description (through the edit panel) before the translation gets approved, it becomes impossible to approve it because of those "merge conflicts".
+    To resolve this problem, you have to fork the translation and update the description starting with its current (new) version.
+
 - term: Mutation of the input
   description: |
-      To keep it short...: ___Don't mutate the input... Ever___ (eg. don't use sort/append/push/remove/... and alike before doing a copy of the input).
-      This is about side effects, modifying the arguments (typically lists/arrays, or even strings if they are mutable in your language) sent to your function during the executions. This can have werid consequences, depending on how the tests are written.
-      Nowadays, most test suites are written in a way to avoid this kind of problem but typically, if you end up passing the fixed tests but failing all the random tests with something along the line of `[your result] should equal []`, you're most likely facing a "mutation of the input" problem.
-      Hence... Don't mutate the input.
-  
+    To keep it short...: ___Don't mutate the input... Ever___ (eg. don't use sort/append/push/remove/... and alike before doing a copy of the input).
+    This is about side effects, modifying the arguments (typically lists/arrays, or even strings if they are mutable in your language) sent to your function during the executions. This can have werid consequences, depending on how the tests are written.
+    Nowadays, most test suites are written in a way to avoid this kind of problem but typically, if you end up passing the fixed tests but failing all the random tests with something along the line of `[your result] should equal []`, you're most likely facing a "mutation of the input" problem.
+    Hence... Don't mutate the input.
+
 - term: Preloaded (code/section)
   description: |
-      In a Kata, the preloaded section is code that is executed _before_ the solution of the user. The code hold by this section isn't visible, but every function or variable defined there is accessible through the code.
-      If you need/want to see the preloaded section of a Kata, open a fork of a solution _after_ you solved it.
-  
+    In a Kata, the preloaded section is code that is executed _before_ the solution of the user. The code hold by this section isn't visible, but every function or variable defined there is accessible through the code.
+    If you need/want to see the preloaded section of a Kata, open a fork of a solution _after_ you solved it.
+
 - term: Progress
   description: |
-      Aside of honor points, you gain "progress" by completing Katas (and only that way). Progess is what is conditionning your current rank as a warrior.
-  
+    Aside of honor points, you gain "progress" by completing Katas (and only that way). Progess is what is conditionning your current rank as a warrior.
+
 - term: Publishing (kata)
   description: When you hit "publish" in the edit panel of a kata you created, it enters the beta process and becomes visible to anyone in the [katas search page](https://www.codewars.com/kata/my-languages). The beta process begins at the moment a kata is published.
 
