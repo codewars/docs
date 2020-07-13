@@ -39,7 +39,7 @@
 
 - term: Allies
   description: Users who are following each others, or who are part of the same clan.
-  
+
 - term: Approve (a kata, a translation)
   description: |
     Action to push a kata out of the beta process, giving it a rank (kyus). This can be done by power users.
@@ -67,7 +67,7 @@
       url: https://www.codewars.com/users/Blind4Basics/authored_collections
     - title: Browse through all collections
       url: https://www.codewars.com/collections
-  
+
 - term: Contributor(s)
   description: User(s) who have either authored, approved, translated or modified a kata in any way (a list of them can be seen in the "Details" page of any kata.
 
