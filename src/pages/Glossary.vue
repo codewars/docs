@@ -22,33 +22,33 @@
           <!-- eslint-disable-next-line vue/no-v-html -->
           <div
             v-if="term.description"
-            class="content ml-2"
+            class="content ml-3"
             v-html="term.description"
           />
 
-          <div v-if="term.page">
+          <div v-if="term.page" class="ml-6">
             See
             <g-link :to="term.page.path" class="underline">
               {{ term.page.title }}
             </g-link>
           </div>
 
-          <div v-if="term.links && term.links.length > 0">
+          <div v-if="term.links && term.links.length > 0" class="ml-6">
             <ul>
               <li
                 v-for="link of term.links"
                 :key="link.url"
                 class="flex flex-row items-center"
               >
+                <ExternalLinkIcon size="1x" class="text-sm" />
                 <a
                   :href="link.url"
-                  class="hover:underline"
+                  class="ml-1 hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   {{ link.title }}
                 </a>
-                <ExternalLinkIcon size="1x" class="ml-1 text-sm" />
               </li>
             </ul>
           </div>
