@@ -73,7 +73,7 @@
 
 - term: Console
   description: Synonym for "output panel" (see below).
-  
+
 - term: Contributor(s)
   description: User(s) who have either authored, approved, translated or modified a kata in any way (a list of them can be seen in the "Details" page of any kata.
 
