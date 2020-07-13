@@ -116,9 +116,10 @@
     You can see in the `Social` section of the profile of a user who he is following, who are his followers and who he is ally with.
 
 - term: Forfeit (a kata)
-  description: You forfeit a kata when you do one of those actions:
-    * You unlock the solutions (through the button in the trainer, for example)
-    * You enter the edit panel (_warning_, power users may have the possibility to enter the edit panel of some katas. If you do so before you solved it, you actually forfeit it).
+  description: |
+    You forfeit a kata when you do one of those actions:
+      * You unlock the solutions (through the button in the trainer, for example)
+      * You enter the edit panel (_warning_, power users may have the possibility to enter the edit panel of some katas. If you do so before you solved it, you actually forfeit it).
     Forfeiting a kata makes you lose the opportunity to gain honor points or progress by completing this kata.
 
 - term: Fork
@@ -191,7 +192,8 @@
     To resolve this problem, you have to fork the translation and update the description starting with its current (new) version.
 
 - term: Mutation of the input
-  description: To keep it short...: ___Don't mutate the input... Ever___ (eg. don't use sort, append, push, remove, ... and alike before doing a copy of the input).
+  description: |
+    To keep it short...: ___Don't mutate the input... Ever___ (eg. don't use sort, append, push, remove, ... and alike before doing a copy of the input).
     This is about side effects, modifying the arguments (typically lists/arrays, or even strings if they are mutable in your language) sent to your function during the executions. This can have weird consequences, depending on how the tests are written.
     Nowadays, most test suites are written in a way that avoids this kind of problem but typically, if you end up passing the fixed tests but failing all the random tests with something along the line of `[your result] should equal []`, you're most likely facing a "mutation of the input" problem.
     Hence... Don't mutate the input.
@@ -214,7 +216,8 @@
     Most of the times, the user (you) is actually missing something, so use the Question label and not the Issue label, unless you can ___prove___ that the problem you're facing is actually an "issue".
 
 - term: Test Driven Development
-  description: Katas are built following this principle: you are provided with specifications and a set of tests, and your goal is to pass those tests (by following the specifications or finding a way to at least pass the tests).
+  description: |
+    Katas are built following this principle: you are provided with specifications and a set of tests, and your goal is to pass those tests (by following the specifications or finding a way to at least pass the tests).
   acronym: TDD
   links:
     - title: Test-driven Development - Wikipedia
