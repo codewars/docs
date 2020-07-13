@@ -57,7 +57,10 @@
 
 - term: Clan(s)
   description: |
-    You can write the name of your clan/company/organisation through your `profile/account settings`. All the member of this clan are automatically recognized as allies of yours, hence are added to your personnal leaderboard in the [dashboard](#dashboard).
+    You can write the name of your clan/company/organisation through your `profile/account settings`. All the member of this clan are automatically recognized as allies of yours, hence are added to your personnal leaderboard in the dashboard.
+  links:
+    - title: Dashboard leaderboard
+      url: https://www.codewars.com/dashboard
 
 - term: Collections(s)
   description: |
@@ -77,7 +80,7 @@
     - title: Dan (rank) - Wikipedia
       url: https://en.wikipedia.org/wiki/Dan_(rank)
 
-- term: <a name="dashboard">Dashboard</a>
+- term: Dashboard
   description: This is the main page for a code warrior. You land there by clicking on the picture in the top left vertical bar (Codewars' logo). It contains kata suggestions, a leaderboard of you and your allies and a flow of the last comments posted anywhere on Codewars.
   links:
     - title: Codewars Dashboard
