@@ -88,6 +88,8 @@
     <div class="mt-8 pt-8 lg:mt-12 lg:pt-12 border-t border-ui-border">
       <NextPrevLinks :prev="{ title: 'Languages', path: '/languages/' }" />
     </div>
+
+    <EditOnGitHub :filePath="`data/languages/${language.id}.yml`" />
   </Layout>
 </template>
 
@@ -121,10 +123,12 @@ query($id: ID!) {
 
 <script>
 import NextPrevLinks from "@/components/NextPrevLinks";
+import EditOnGitHub from "@/components/EditOnGitHub";
 
 export default {
   components: {
     NextPrevLinks,
+    EditOnGitHub,
   },
   computed: {
     language() {

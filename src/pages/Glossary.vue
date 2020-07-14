@@ -55,6 +55,8 @@
         </div>
       </section>
     </div>
+
+    <EditOnGitHub filePath="data/glossary.yml" />
   </Layout>
 </template>
 
@@ -90,9 +92,12 @@ query {
 <script>
 import { ExternalLinkIcon } from "vue-feather-icons";
 
+import EditOnGitHub from "@/components/EditOnGitHub";
+
 export default {
   components: {
     ExternalLinkIcon,
+    EditOnGitHub,
   },
   computed: {
     pages() {
