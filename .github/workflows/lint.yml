@@ -13,12 +13,15 @@ jobs:
         with:
           node-version: "12.x"
           registry-url: https://registry.npmjs.org/
-      - uses: actions/cache@v1
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - uses: actions/cache@v2
         with:
-          path: node_modules
-          key: yarn-${{ hashFiles('yarn.lock') }}
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            yarn-
+            ${{ runner.os }}-yarn-
       - run: yarn install --frozen-lockfile
       - run: yarn format
       - run: yarn lint:text
