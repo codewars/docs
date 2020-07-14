@@ -108,7 +108,7 @@
 
 - term: Fixed tests
   description: |
-    Tests whose input and output are always the same, each time your run the tests. Generally, the example tests are made of those, and the test cases contains both fixed and random tests.
+    Tests whose inputs/outputs are always the same, each time your run the tests. Generally, the example tests are made of those, and the test cases contains both fixed and random tests.
 
 - term: Followers
   description: |
@@ -216,6 +216,51 @@
     `Question` is the label to use when you write a comment in the discourses section of a kata when you encounter some problems to solve it and you don't understand why your solution is failing some (or all) the tests. Or if you ___believe___ your solution is correct while the expected result isn't.
     Most of the times, the user (you) is actually missing something, so use the Question label and not the Issue label, unless you can ___prove___ that the problem you're facing is actually an "issue".
 
+- term: Random tests
+  description: |
+    Tests whose the inputs/outputs aren't the same each time you run the test suite.
+    Random tests are prefered to randomized tests, when creating Katas.
+    
+- term: Randomized tests
+  description: |
+    Tests whose the inputs/outputs are always the same each time you run the tests, but are showing up each time in a random order.
+  
+- term: Rank
+  description: |
+    Ranks are expressed through the kyus/dans scale (8 kyu -> 1 kyu, then 1 dan -> 8 dan). They may represent the difficulty of a Kata, or the mastery level of a user.
+  
+- term: Reject (translation)
+  description: |
+    A translation writen by an user can be rejected during the review process if it is not fulfilling the original requirements or if the translated task doesn't fit with the original difficulty of the Kata.
+  
+- term: Retire/Retired kata
+  description: |
+    A retired Kata is a Kata that has been judge not qualitative enough by other codewarriors during the beta process. It has been removed from the beta process after some critical thresholds have been reached, without any action of the author. Nothing can be done anymore with a retired Kata.
+  
+- term: Sample tests
+  description: |
+    See example tests.
+  
+- term: Satisfaction rating
+  description: |
+    Value as percents, shown below the title of a Kata. It indicates the average rating of users on that Kata. The satisfaction rating is important during the beta process: it may trigger the auto-retirement if it becomes too low, and it needs to be high enough to allow the approval of a beta kata.
+  
+- term: Sensei
+  description: |
+    Another name used for the author of a kata.
+  
+- term: Solution setup
+  description: |
+    See initial solution.
+    
+- term: Submit/Submit final
+  description: |
+    In the trainer of a Kata, when you hit `ATTEMPT` and that your code passes all the tests, the attempt button is replaced by a green `SUBMIT` one. Hitting this green button is publishing your solution to the solutions page of the kata. You can take some time to refactor your solution before your final submission.
+  
+- term: Suggestion (comment)
+  description: |
+    Label used in the discourses section of Katas to suggest non critical improvements to it (like rewording some parts of the description, or the feedback of some assertion messages in the tests), or to announce the pulication of a translation (useful when the author is inactive, so that power users can review and approve the translation).
+  
 - term: Test Driven Development
   description: |
     Katas are built following this principle: you are provided with specifications and a set of tests, and your goal is to pass those tests (by following the specifications or finding a way to at least pass the tests).
@@ -228,6 +273,19 @@
   description: |
     This is the place where you write your code to complete a task.
 
+- term: Trainer suggestions
+  description: |
+    Trainer suggestions are the Katas that are showing up at the top of the dashboard. Those suggestions can be tweaked at some point, either through the profile of the user or directly through the dashboard.
+    
+- term: Translation
+  description: |
+    A translation is created by an user to make a Kata available in a new language. A translation can be rejected during the peer review process.
+  
 - term: Translator
   description: |
-    User who translated an existing kata to a new language, making it available for other users.
+    User who translated an existing kata to a new language, making it available for other codewarriors.
+
+- term: Unpublish (Kata)
+  description: |
+    An author can unpublish his Kata if it's still in beta state (and only in this case). An unpublished kata goes back to draft state, and cannot be completed anymore by other users.
+    Unpublishing a Kata may be the best way for the author to have time to resolve issues raised by other users during the beta process.
