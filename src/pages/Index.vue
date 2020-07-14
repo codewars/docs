@@ -5,7 +5,7 @@
         <div class="flex flex-col items-center mb-2 text-ui-primary">
           <Logo :width="80" />
           <h2
-            class="mb-4 text-3xl lg:text-5xl font-black text-ui-typo leading-snug tracking-tighter border-none"
+            class="mb-4 text-3xl lg:text-5xl font-semibold text-ui-typo leading-snug tracking-tighter border-none"
           >
             Codewars Docs
           </h2>
