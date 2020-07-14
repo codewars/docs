@@ -64,9 +64,9 @@ query($id: ID!) {
 </page-query>
 
 <script>
-import OnThisPage from "@/components/OnThisPage.vue";
-import NextPrevLinks from "@/components/NextPrevLinks.vue";
-import EditOnGitHub from "@/components/EditOnGitHub.vue";
+import OnThisPage from "@/components/OnThisPage";
+import NextPrevLinks from "@/components/NextPrevLinks";
+import EditOnGitHub from "@/components/EditOnGitHub";
 
 export default {
   components: {
