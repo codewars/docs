@@ -39,6 +39,22 @@ module.exports = {
           },
         ],
       },
+      {
+        name: "getting-started",
+        sections: [
+          {
+            title: "Getting Started",
+            items: [
+              "/getting-started/",
+              "/getting-started/setting-up/",
+              "/getting-started/finding-kata/",
+              "/getting-started/solving-kata/",
+              "/getting-started/solutions/",
+              "/getting-started/community/",
+            ],
+          },
+        ],
+      },
     ],
   },
   plugins: [

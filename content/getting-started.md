@@ -1,5 +1,0 @@
----
-sidebar: docs
----
-
-# Getting Started
