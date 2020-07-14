@@ -7,6 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
+          token: ${{ secrets.BOT_PAT }}
           ref: ${{ github.head_ref }}
       - uses: actions/setup-node@v1
         with:
@@ -24,4 +25,4 @@ jobs:
       - run: yarn lint:format
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Prettier
+          commit_message: Autoformat with Prettier
