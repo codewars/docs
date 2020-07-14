@@ -15,16 +15,7 @@
           <NextPrevLinks :prev="prev" :next="next" />
         </div>
 
-        <div class="mt-8 pt-8">
-          <a
-            :href="githubFileURL"
-            target="_blank"
-            class="flex flex-row items-center justify-center hover:underline"
-          >
-            <GithubIcon size="1x" />
-            <span class="ml-1">Edit on GitHub</span>
-          </a>
-        </div>
+        <EditOnGitHub :filePath="filePath" />
       </div>
     </div>
   </Layout>
@@ -69,32 +60,26 @@ query($id: ID!) {
       }
     }
   }
-
-  metadata {
-    settings {
-      repository
-    }
-  }
 }
 </page-query>
 
 <script>
-import { GithubIcon } from "vue-feather-icons";
-
 import OnThisPage from "@/components/OnThisPage.vue";
 import NextPrevLinks from "@/components/NextPrevLinks.vue";
+import EditOnGitHub from "@/components/EditOnGitHub.vue";
 
 export default {
   components: {
-    GithubIcon,
     OnThisPage,
     NextPrevLinks,
+    EditOnGitHub,
   },
 
   computed: {
     page() {
       return this.$page.markdownPage;
     },
+
     headings() {
       return this.page.headings.filter((h) => h.depth > 1);
     },
@@ -115,16 +100,8 @@ export default {
       return this.page.prev ? this.findLinkedPage(this.page.prev) : null;
     },
 
-    repository() {
-      return this.$page.metadata.settings.repository;
-    },
-
     filePath() {
-      return this.page.fileInfo.path;
-    },
-
-    githubFileURL() {
-      return `${this.repository}/blob/master/content/${this.filePath}`;
+      return `content/${this.page.fileInfo.path}`;
     },
   },
 
