@@ -30,7 +30,7 @@ Here you can pick any available language. Your selection does not determine anyt
 
 ## Your first challenge
 
-After selecting the language, you are presented with your very first challenge. It's an entry level task which you need to solve to prove your dedication and commitment to learning, and prove yourself worthy of training among CodeWarriors. It should not be difficult, let's see...
+After selecting the language, you are presented with your very first challenge. It's an entry level task which you need to solve to prove your dedication and commitment to learning.
 
 ![first task](./img/registering_02_multiply_initial.png)
 
