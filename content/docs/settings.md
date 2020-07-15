@@ -1,6 +1,6 @@
 ---
 description: ""
-category: docs
+kind: reference
 sidebar: "docs"
 prev: "/docs/deploying/"
 next: "/docs/sidebar/"

@@ -1,5 +1,5 @@
 ---
-category: references
+kind: reference
 languages: [python]
 tags:
   - testing

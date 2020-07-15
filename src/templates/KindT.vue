@@ -2,9 +2,10 @@
   <Layout>
     <div class="mx-auto max-w-screen-lg">
       <h1 class="mb-4 text-center text-4xl text-ui-typo font-medium">
-        {{ category.name }}
+        {{ kind.name }}
       </h1>
 
+      <!-- TODO Improve how each document is displayed -->
       <div
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
       >
@@ -27,7 +28,7 @@
 
 <page-query>
 query($id: ID!, $page: Int) {
-  category(id: $id) {
+  kind(id: $id) {
     name
     path
 
@@ -46,7 +47,7 @@ query($id: ID!, $page: Int) {
             excerpt
             path
             # timeToRead
-            category {
+            kind {
               id
               name
             }
@@ -59,6 +60,8 @@ query($id: ID!, $page: Int) {
 </page-query>
 
 <script>
+// Note that this file is named `KindT.vue` because Gridsome generates pages for all nodes if
+// there's a component matching the type name in `src/templates/`.
 import { Pager } from "gridsome";
 
 export default {
@@ -66,22 +69,22 @@ export default {
     Pager,
   },
   computed: {
-    category() {
-      return this.$page.category;
+    kind() {
+      return this.$page.kind;
     },
     totalCount() {
-      return this.category.belongsTo.totalCount;
+      return this.kind.belongsTo.totalCount;
     },
     pageInfo() {
-      return this.category.belongsTo.pageInfo;
+      return this.kind.belongsTo.pageInfo;
     },
     pages() {
-      return this.category.belongsTo.edges.map((e) => e.node);
+      return this.kind.belongsTo.edges.map((e) => e.node);
     },
   },
   metaInfo() {
     return {
-      title: this.$page.category.name,
+      title: this.kind.name,
     };
   },
 };

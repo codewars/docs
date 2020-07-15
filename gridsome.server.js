@@ -58,13 +58,18 @@ module.exports = function (api) {
   const addNodesFromFile = async (collection, file, fn = (x) => x) => {
     const contents = await readFile(file, { encoding: "utf-8" });
     const items = YAML.parse(contents);
-    for (const item of items) collection.addNode(fn(item));
+    for (let i = 0; i < items.length; ++i) collection.addNode(fn(items[i], i));
   };
 
   api.loadSource(async ({ addCollection, addSchemaTypes }) => {
     await addNodesFromFile(
-      addCollection("Category"),
-      path.join(__dirname, "data/categories.yml")
+      addCollection("Kind"),
+      path.join(__dirname, "data/kinds.yml"),
+      (kind, i) => {
+        // Add position so that it can be shown in the order declared.
+        kind.position = i;
+        return kind;
+      }
     );
     await addNodesFromFile(
       addCollection("Tag"),
@@ -89,7 +94,31 @@ module.exports = function (api) {
     );
   });
 
-  api.createPages(({ createPage }) => {
+  api.createPages(async ({ createPage, graphql, findPages }) => {
     // Use the Pages API here: https://gridsome.org/docs/pages-api/
+    const { data } = await graphql(`
+      {
+        kinds: allKind {
+          edges {
+            node {
+              id
+              path
+            }
+          }
+        }
+      }
+    `);
+
+    data.kinds.edges.forEach(({ node }) => {
+      // Couldn't figure out proper filter `filter: { path: { nin: ["", null] } }` returns nodes with null path
+      if (!node.path) return;
+      createPage({
+        path: node.path,
+        component: "./src/templates/KindT.vue",
+        context: {
+          id: node.id,
+        },
+      });
+    });
   });
 };

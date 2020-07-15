@@ -1,5 +1,5 @@
 ---
-category: guides
+kind: recipe
 tags:
   - testing
 languages:

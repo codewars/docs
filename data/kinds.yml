@@ -1,0 +1,36 @@
+# Fields
+# id: Must be unique. Used in URLs. Singular.
+# name: Display name. Capitalized plural for now.
+# description: Short description of the kind. Currently not used.
+# path: Required to create an index page and show on home.
+
+# Main 4 kinds taken from https://documentation.divio.com
+
+# keywords: lesson, newcomer, get started
+- id: tutorial
+  name: Tutorials
+  description: ""
+  path: /tutorials/
+
+# keywords: how to, problem oriented, one goal
+- id: recipe
+  name: Recipes
+  description: ""
+  path: /recipes/
+
+# keywords: describe, list, brief
+- id: reference
+  name: References
+  description: ""
+  path: /references/
+
+# keywords: explain, why, concepts, background, discussion, further reading
+- id: explanation
+  name: Explanations
+  description: ""
+
+# Similar to Recipes, but focused on providing a copy pastable code.
+# Recipes can link to these to provide alternative solutions.
+- id: snippet
+  name: Snippets
+  description: ""

@@ -29,52 +29,22 @@
         class="pt-8 mx-auto mt-8 border-t md:mt-16 md:pt-16 border-top border-ui-border max-w-screen-sm"
       ></div>
 
-      <div class="flex flex-wrap justify-center -mx-4">
+      <div class="flex flex-wrap justify-center w-3/4 max-w-screen-md mx-auto">
         <g-link
-          to="/categories/"
-          class="flex flex-col items-center px-4 mb-8 text-center w-full md:w-1/3"
+          v-for="link of navigationLinks"
+          :to="link.path"
+          :key="link.id"
+          class="flex flex-col items-center px-4 mb-4 text-center w-1/2 md:w-1/3"
         >
-          <FolderIcon size="3x" class="mb-6 text-ui-primary" />
+          <component
+            :is="iconComponent(link.id)"
+            size="2x"
+            class="mb-4 text-ui-primary"
+          />
           <span
-            class="text-xl font-bold leading-snug tracking-wide uppercase text-ui-typo"
+            class="text-lg font-semibold leading-snug tracking-wide uppercase text-ui-typo"
           >
-            View Categories
-          </span>
-        </g-link>
-
-        <g-link
-          to="/languages/"
-          class="flex flex-col items-center px-4 mb-8 text-center w-full md:w-1/3"
-        >
-          <BookOpenIcon size="3x" class="mb-6 text-ui-primary" />
-          <span
-            class="text-xl font-bold leading-snug tracking-wide uppercase text-ui-typo"
-          >
-            Supported Languages
-          </span>
-        </g-link>
-
-        <g-link
-          to="/tags/"
-          class="flex flex-col items-center px-4 mb-8 text-center w-full md:w-1/3"
-        >
-          <TagIcon size="3x" class="mb-6 text-ui-primary" />
-          <span
-            class="text-xl font-bold leading-snug tracking-wide uppercase text-ui-typo"
-          >
-            View Tags
-          </span>
-        </g-link>
-
-        <g-link
-          to="/glossary/"
-          class="flex flex-col items-center px-4 mb-8 text-center w-full md:w-1/3"
-        >
-          <BookIcon size="3x" class="mb-6 text-ui-primary" />
-          <span
-            class="text-xl font-bold leading-snug tracking-wide uppercase text-ui-typo"
-          >
-            View Glossary
+            {{ link.name }}
           </span>
         </g-link>
       </div>
@@ -85,14 +55,30 @@
   </Layout>
 </template>
 
+<static-query>
+query {
+  kinds: allKind(sortBy: "position", order: ASC) {
+    edges {
+      node {
+        id
+        name
+        path
+      }
+    }
+  }
+}
+</static-query>
+
 <script>
 import Logo from "@/components/Logo";
 import {
   ArrowRightCircleIcon,
   BookIcon,
-  BookOpenIcon,
-  FolderIcon,
+  CodeIcon,
+  FileTextIcon,
   TagIcon,
+  MapIcon,
+  TargetIcon,
 } from "vue-feather-icons";
 
 export default {
@@ -100,9 +86,48 @@ export default {
     Logo,
     ArrowRightCircleIcon,
     BookIcon,
-    BookOpenIcon,
-    FolderIcon,
+    CodeIcon,
+    FileTextIcon,
     TagIcon,
+    TargetIcon,
+    MapIcon,
+  },
+
+  computed: {
+    kinds() {
+      return this.$static.kinds.edges.map((e) => e.node).filter((k) => k.path);
+    },
+
+    navigationLinks() {
+      // TODO Add short descriptions
+      return [
+        ...this.kinds,
+        { id: "languages", path: "/languages/", name: "Languages" },
+        { id: "tags", path: "/tags/", name: "Tags" },
+        { id: "glossary", path: "/glossary/", name: "Glossary" },
+      ];
+    },
+  },
+
+  methods: {
+    iconComponent(id) {
+      switch (id) {
+        case "tutorial":
+          return "MapIcon";
+        case "recipe":
+          return "TargetIcon";
+        case "reference":
+          return "FileTextIcon";
+        case "tags":
+          return "TagIcon";
+        case "languages":
+          return "CodeIcon";
+        case "glossary":
+          return "BookIcon";
+        default:
+          return "ArrowRightCircleIcon";
+      }
+    },
   },
 
   metaInfo() {

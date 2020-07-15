@@ -13,9 +13,9 @@
       >
         <div v-for="page of pages" :key="page.id">
           <div>
-            <template v-if="page.category">
-              <g-link :to="page.category.path">
-                {{ page.category.name }}
+            <template v-if="page.kind && page.kind.path">
+              <g-link :to="page.kind.path">
+                {{ page.kind.name }}
               </g-link>
               <span class="mx-2 font-mono">/</span>
             </template>
@@ -62,7 +62,7 @@ query($id: ID!, $page: Int) {
             id
             title
             path
-            category {
+            kind {
               id
               name
               path
