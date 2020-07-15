@@ -71,7 +71,7 @@ query {
         languages {
           id
         }
-        category {
+        kind {
           id
           name
         }
@@ -129,7 +129,7 @@ export default {
 
       const groups = {};
       for (const p of pages) {
-        const key = p.category.name;
+        const key = p.kind.name;
         if (!groups[key]) groups[key] = [];
         groups[key].push(p);
       }

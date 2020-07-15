@@ -149,8 +149,6 @@ const findPage = (path) => {
       return { path, title: "Languages" };
     case "/tags/":
       return { path, title: "Tags" };
-    case "/categories/":
-      return { path, title: "Categories" };
     default:
       return null;
   }

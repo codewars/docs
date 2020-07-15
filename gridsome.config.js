@@ -70,9 +70,9 @@ module.exports = {
           plugins: ["@gridsome/remark-prismjs"],
         },
         refs: {
-          // Each page is classified under a single category.
-          category: {
-            typeName: "Category",
+          // Each documentation should belong to a single kind.
+          kind: {
+            typeName: "Kind",
           },
           // Can have multiple tags.
           tags: {
@@ -107,12 +107,6 @@ module.exports = {
   },
 
   templates: {
-    Category: [
-      {
-        path: "/categories/:id/",
-        component: "@/templates/Category.vue",
-      },
-    ],
     Tag: [
       {
         path: "/tags/:id/",

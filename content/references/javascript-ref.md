@@ -1,5 +1,5 @@
 ---
-category: references
+kind: reference
 languages: [javascript]
 sidebar: "language:javascript"
 prev: /languages/javascript/
@@ -9,4 +9,4 @@ prev: /languages/javascript/
 
 > TODO Remove this file
 
-This file exists to show how the sidebar on language pages are automatically populated and grouped by `category`.
+This file exists to show how the sidebar on language pages are automatically populated and grouped by `kind`.

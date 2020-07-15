@@ -1,6 +1,6 @@
 ---
 description: ""
-category: docs
+kind: reference
 sidebar: "docs"
 prev: "/docs/installation/"
 next: "/docs/settings/"
