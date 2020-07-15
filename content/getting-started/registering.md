@@ -17,7 +17,7 @@ Steps
 
 # Registering
 
-So you decided to join? That's great! There's only a couple of steps to create new account and start solving tasks, learn, and improve your skills!
+So you decided to join? That's great! There's only a couple of steps to create a new account and start solving tasks, learn, and improve your skills!
 
 ## First step
 
