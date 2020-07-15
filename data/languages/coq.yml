@@ -2,9 +2,9 @@ name: Coq
 status: stable
 timeout: 16s
 testFrameworks:
-  - id: coq_codewars
+  - id: coq-codewars
     name: coq_codewars
-    url: https://github.com/Codewars/coq_codewars
+    url: https://github.com/codewars/coq_codewars
 versions:
   - id: v8.11
     name: v8.11
