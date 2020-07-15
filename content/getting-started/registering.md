@@ -25,7 +25,8 @@ First, you need to go to [Sign Up](https://www.codewars.com/join) page, if you h
 
 ![languages board](./img/registering_01_choose_language.png)
 
-Choose whatever language you like, you want to learn, or are familiar with. I want to improve my skills with functional programming, and I already know a bit if Java, so I choose Scala as my initial language. Here you can pick any language available, your selection does not determine anything yet, and you will be always able to choose another language later, if you wish.
+Choose whatever language you like, want to learn, or are familiar with: "I want to improve my skills with functional programming, and I already know a bit if Java, so I choose Scala as my initial language".
+Here you can pick any available language. Your selection does not determine anything yet, and you will always be able to choose another language later, if you wish.
 
 ## Your first challenge
 
