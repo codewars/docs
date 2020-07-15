@@ -72,6 +72,9 @@
     "content/**/*.md": [
       "textlint",
       "prettier --write"
+    ],
+    "!(content)/**/*.md": [
+      "prettier --write"
     ]
   }
 }
