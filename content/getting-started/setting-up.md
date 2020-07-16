@@ -1,12 +1,12 @@
 ---
 sidebar: getting-started
-prev: "/getting-started/registering/"
+prev: "/getting-started/"
 next: "/getting-started/finding-kata/"
 ---
 
 # Setting Up
 
-In this section you will learn how to set up your account to get the best training experience and tune your preferences for the Codewars website. There are two areas you can configure: [Account Settings](#account-settings) and [Training Setup](#training-setup).
+In this section you will learn how to set up your account to get the best training experience and tune your preferences for the Codewars site. There are two areas you can configure: [Account Settings](#account-settings) and [Training Setup](#training-setup).
 
 ## Account Settings
 
