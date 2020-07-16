@@ -6,7 +6,7 @@ next: "/getting-started/solving-kata/"
 
 # Finding Kata
 
-Your account is configured and you are ready for your next challenge. Now you will learn how to find a task to train on. 
+Your account is configured and you are ready for your next challenge. Now you will learn how to find a task to train on.
 
 ## Codewars trainer
 
@@ -27,11 +27,11 @@ For those really looking for a hard challenge, we recommend you go directly to t
 ![sidebar](./img/finding-kata_02_sidebar.png)
 
 Details of kata search page are described in [UI documentation (TODO: insert link to documentation of kata search panel)](), but here are some hints useful for beginners:
- - You can set **"Sort by"** to **"Easiest"** or **"Most Completed"**, so you will be presented with tasks easy enough to start your programming training. 
- - Set **"Progress"** to **"Kata I have not trained on"** to see tasks which you have not attempted yet. If you prefer training by repetition, you can select **"Kata I have completed"**.
- - Pick difficulty of tasks you are ready to try. Remember that 8 kyū and 7 kyū (white) tasks are the easiest.
- - Filter by tags to see tasks related to some specific topic.
 
+- You can set **"Sort by"** to **"Easiest"** or **"Most Completed"**, so you will be presented with tasks easy enough to start your programming training.
+- Set **"Progress"** to **"Kata I have not trained on"** to see tasks which you have not attempted yet. If you prefer training by repetition, you can select **"Kata I have completed"**.
+- Pick difficulty of tasks you are ready to try. Remember that 8 kyū and 7 kyū (white) tasks are the easiest.
+- Filter by tags to see tasks related to some specific topic.
 
 ## Weekly Coding Challenge
 
@@ -41,9 +41,7 @@ If you are subscribed to **"Weekly Coding Challenge"** newsletter, you receive w
 
 There are also other ways to find some nice tasks to train on, for example:
 
- - You can search for some interesting [collections](https://www.codewars.com/collections).
- - You can compete with your friends and see what kata they managed to solve! Just go to their profile page and select **"Kata"** tab.
- 
+- You can search for some interesting [collections](https://www.codewars.com/collections).
+- You can compete with your friends and see what kata they managed to solve! Just go to their profile page and select **"Kata"** tab.
 
 In the next part you will learn how to attempt a Codewars challenge. Go ahead and get started by training on a kata now!
-
