@@ -37,13 +37,13 @@ Details of kata search page are described in [UI documentation (TODO: insert lin
 
 If you are subscribed to **"Weekly Coding Challenge"** newsletter, you receive weekly emails with a selection of tasks proposed by system to solve. You are proposed a couple of tasks of varying difficulty, and you can select as many of them as you wish to attempt.
 
-### Other ways
+## Other ways
 
 There are also other ways to find some nice tasks to train on, for example:
 
  - You can search for some interesting [collections](https://www.codewars.com/collections).
  - You can compete with your friends and see what kata they managed to solve! Just go to their profile page and select **"Kata"** tab.
- 
+
 
 In the next part you will learn how to attempt a Codewars challenge. Go ahead and get started by training on a kata now!
 
