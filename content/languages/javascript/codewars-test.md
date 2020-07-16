@@ -2,7 +2,9 @@
 kind: reference
 sidebar: "language:javascript"
 prev: /languages/javascript/
-languages: [javascript]
+languages:
+  - javascript
+  - coffeescript
 tags:
   - testing
 ---
