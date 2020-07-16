@@ -46,6 +46,7 @@ module.exports = {
             title: "Getting Started",
             items: [
               "/getting-started/",
+              "/getting-started/registering/",
               "/getting-started/setting-up/",
               "/getting-started/finding-kata/",
               "/getting-started/solving-kata/",
