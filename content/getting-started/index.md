@@ -1,6 +1,6 @@
 ---
 sidebar: getting-started
-next: "/getting-started/registering/"
+next: "/getting-started/setting-up/"
 ---
 
 # Introduction
@@ -11,4 +11,4 @@ Codewars is a platform which helps you learn, train, and improve your coding ski
 
 Going through this tutorial, you will learn how to create your new account on Codewars, set it up for optimal training experience, and get familiar with basic elements of user interface. Very soon you will be able to face challenges collected in Codewars library and start learning!
 
-If you haven't joined yet, go to [Sign Up](https://www.codewars.com/join) page and continue reading this tutorial to get you ready.
+If you haven't joined yet, read how to [register](./registering/) your new account on Codewars.
