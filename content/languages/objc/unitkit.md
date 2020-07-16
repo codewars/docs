@@ -1,9 +1,29 @@
+---
+kind: reference
+sidebar: "language:objc"
+prev: /languages/objc/
+languages: [objc]
+tags:
+  - testing
+---
+
 # UnitKit
+
+<!--
+TODO: Group assertions
+TODO: Add tutorial and link to it
+TODO: Add any recipes and link to them
+-->
 
 A minimalistic unit test framework [UnitKit](https://github.com/etoile/UnitKit) can be used to test Objective-C code.
 
 ## Basic Setup
 
+```objc
+int add(int a, int b) {
+  return a + b;
+}
+```
 
 ```objc
 @implementation TestSuite
@@ -33,7 +53,6 @@ Reports a failure.
 
 Tests that an expression is `true`.
 
-
 ### `UKFalse(condition)`
 
 Tests that an expression is `false`.
@@ -42,11 +61,9 @@ Tests that an expression is `false`.
 
 Tests that `ref == nil`.
 
-
 ### `UKNotNil(ref)`
 
 Tests that `ref != nil`.
-
 
 ### `UKIntsEqual(a, b)`
 
@@ -56,7 +73,6 @@ Tests that two primitive integers are equal.
 
 Don’t pass `unsigned long long` integers that cannot safely casted to `long long`.
 
-
 ### `UKIntsNotEqual(a, b)`
 
 Tests that two primitive integers are not equal.
@@ -64,7 +80,6 @@ Tests that two primitive integers are not equal.
 `a` is the non-expected value and `b` the tested value.
 
 Don’t pass `unsigned long long` integers that cannot safely casted to `long long`.
-
 
 ### `UKFloatsEqual(a, b, d)`
 
@@ -86,13 +101,11 @@ Tests that two primitive floats are not equal, `fabs(a - b) > d`.
 
 Tests that `a` is a subclass of `b`.
 
-
 ### `UKObjectsEqual(a, b)`
 
 Tests that `[a isEqual: b]`.
 
 `a` is the expected value and `b` the tested value.
-
 
 ### `UKObjectsNotEqual(a, b)`
 
@@ -136,16 +149,13 @@ Tests that `b` is not a substring of `a`.
 
 Tests that the code piece raises an exception.
 
-
 ### `UKDoesNotRaiseException(a)`
 
 Tests that the code piece raises no exception.
 
-
 ### `UKRaisesExceptionNamed(a, b)`
 
 Tests that the code piece raises an exception of the name `b`.
-
 
 ### `UKRaisesExceptionClass(a, b)`
 

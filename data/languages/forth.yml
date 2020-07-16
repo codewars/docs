@@ -4,7 +4,7 @@ timeout: 12s
 testFrameworks:
   - id: ttester
     name: ttester with Codewars extension
-    url: https://github.com/Codewars/ttester-codewars
+    url: https://github.com/codewars/ttester-codewars
 versions:
   - id: v0.7.3
     name: Gforth 0.7.3

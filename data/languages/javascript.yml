@@ -2,8 +2,8 @@ name: JavaScript
 status: stable
 timeout: 12s
 testFrameworks:
-  - id: codewars
-    name: Codewars
+  - id: codewars-test
+    name: Codewars Test Framework
   - id: mocha
     name: Mocha
 # - id: jest

@@ -2,7 +2,7 @@ name: Clojure
 status: stable
 timeout: 12s
 testFrameworks:
-  - id: clojure.test
+  - id: clojure-test
     name: Clojure Test
 versions:
   - id: v1.8.0

@@ -2,8 +2,8 @@ name: BF
 status: beta
 timeout: 12s
 testFrameworks:
-  - id: codewars
-    name: Codewars
+  - id: codewars-test
+    name: Codewars Test Framework
 versions:
   - id: v20041219
     name: v20041219

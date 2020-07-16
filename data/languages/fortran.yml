@@ -2,8 +2,9 @@ name: Fortran
 status: beta
 timeout: 12s
 testFrameworks:
-  - id: codewars
-    name: Codewars
+  - id: codewars-test
+    name: Codewars Test Framework
+    url: https://github.com/codewars/fortran-test-framework
 versions:
   - id: f2008
     name: f2008 (GFortran 9)

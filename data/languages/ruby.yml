@@ -2,8 +2,9 @@ name: Ruby
 status: stable
 timeout: 12s
 testFrameworks:
-  - id: codewars
-    name: Codewars
+  - id: codewars-test
+    name: Codewars Test Framework
+    url: https://github.com/codewars/ruby-test-framework
   - id: rspec
     name: RSpec
 versions:
