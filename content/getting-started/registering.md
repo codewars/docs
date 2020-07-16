@@ -42,6 +42,6 @@ Great, your account is registered!
 
 ## Next steps
 
-You have successfully created your account and registered it with Codewars. You are strongly recommended to [set up](./setting-up/) your account and training routine, but if you wish, you can go straight to your [dashboard](./my-profile/) or even find your [next challenges to solve](./finding-kata/).
+You have successfully created your account and registered it with Codewars. You are strongly recommended to [set up](/getting-started/setting-up/) your account and training routine, but if you wish, you can go straight to your [dashboard](./my-profile/) or even find your [next challenges to solve](/getting-started/finding-kata/).
 
 Your training with Codewars has just began. Good luck!
