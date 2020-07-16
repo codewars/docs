@@ -25,12 +25,11 @@ First, you need to go to [Sign Up](https://www.codewars.com/join) page, if you h
 
 ![languages board](./img/registering_01_choose_language.png)
 
-Choose whatever language you like, want to learn, or are familiar with: "I want to improve my skills with functional programming, and I already know a bit if Java, so I choose Scala as my initial language".
-Here you can pick any available language. Your selection does not determine anything yet, and you will always be able to choose another language later, if you wish.
+Choose whatever language you like, want to learn, or are familiar with. Here you can pick any language available, and it will be used to present you your very first, introductory challenge.
 
 ## Your first challenge
 
-After selecting the language, you are presented with your very first challenge. It's an entry level task which you need to solve to prove your dedication and commitment to learning, and prove yourself worthy of training among CodeWarriors. It should not be difficult, let's see...
+It's an entry level task which you need to solve to prove your dedication and commitment to learning. Let's see...
 
 ![first task](./img/registering_02_multiply_initial.png)
 
@@ -44,11 +43,11 @@ If your answer is correct, you will experience the best little thing in a life o
 
 ## Your new account
 
-You have proved yourself worthy. You have proved yourself committed and willing to learn and improve your skills. You are allowed to enter Codewars dojo. To get your account created, fill in a couple of details, or use your GitHub account to authenticate on Codewars:
+You have solved your first Codewars challenge. Great! Now you are ready to have your account created. Just fill in a couple of details, or use your GitHub account to authenticate on Codewars:
 
 ![enlist](./img/registering_05_enlist.png)
 
-Great, your account is created!
+Great, your account is registered!
 
 **Important note:** Codewars will send you an email to confirm your email account. Go to your inbox and click on confirmation link in the message titled `"Confirm your account... Dojo Access Link"`, received from Codewars. Until you do this, you will be allowed to train and solve tasks, but some actions will be restricted or unavaliable for you. For example, you won't be able to create discourse posts. If you cannot find the email, check `Spam` folder of your inbox! If you do not confirm your account right now, you can always ask Codewars to resend you the confirmation email by clicking dedicated button in your account panel (we will get to your account panel soon).
 
@@ -68,4 +67,4 @@ Remember that if you would like to change your answers later, you will always be
 
 When you are finished with setting up your training, you are redirected to your dashboard. In next steps you will get familiar with things you can find on your [dashboard](https://www.codewars.com/dashboard) and in your account panel, and you will search for your next kata to solve.
 
-Your training in Codewars dojo has just began. Good luck!
+Your training with Codewars has just began. Good luck!
