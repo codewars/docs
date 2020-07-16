@@ -18,17 +18,17 @@ You can find all options described in detail [here (TODO: insert link to actual 
 
 ### Information
 
- - **Email**, **Username** *(TBD)*
- - **Name** *(TBD)*
- - **Clan** *(TBD)*
- - **Skills** *(TBD)*
- - **Development Experience** - select any option which you feel describes you the best. If you are making your first steps in the world of programming, just pick "Learning to Program". If you are a seasoned programmer who wants to train their coding-fu, improve their skills, and probably learn somethng new, you can choose "Senior Developer".
+- **Email**, **Username** _(TBD)_
+- **Name** _(TBD)_
+- **Clan** _(TBD)_
+- **Skills** _(TBD)_
+- **Development Experience** - select any option which you feel describes you the best. If you are making your first steps in the world of programming, just pick "Learning to Program". If you are a seasoned programmer who wants to train their coding-fu, improve their skills, and probably learn somethng new, you can choose "Senior Developer".
 
 ### Preferences
 
- - **Email Notifications** *(TBD)*
- - **Default Catalog List View** *(TBD)*
- - **Red Subscription** *(TBD)*
+- **Email Notifications** _(TBD)_
+- **Default Catalog List View** _(TBD)_
+- **Red Subscription** _(TBD)_
 
 Now you just need to clik `UPDATE` to have your settings stored in the database. Anytime you need to change your settings, you can always come back to **Account Settings** panel and perform necessary changes.
 
@@ -45,4 +45,3 @@ Again, detailed description can be found in [UI documentation (TODO: insert link
 - **Choose the language you wish to train on** - you can select from a large list of languages available on Codewars. You can select one, but if you want, you can select more. During your training, Codewars suggests you tasks which are available in languages you choose here. If you are not sure if you want to select some language or not, don't worry! You can always switch to any language available for currently trained task.
 
 Remember that if you would like to change your setting later, you will always be able to do so by navigating to your Training Setup panel. If you configured everything here, just click `SAVE` and you will be redirected back to your dashboard.
-
