@@ -38,7 +38,7 @@ You have solved your first Codewars challenge. Great! Now you are ready to have 
 
 Great, your account is registered!
 
-**Important note:** Codewars will send you an email to confirm your email account. Go to your inbox and click on confirmation link in the message titled `"Confirm your account... Dojo Access Link"`, received from Codewars. Until you do this, you will be allowed to train and solve tasks, but some actions will be restricted or unavaliable for you. For example, you won't be able to create discourse posts. If you cannot find the email, check `Spam` folder of your inbox! If you do not confirm your account right now, you can always ask Codewars to resend you the confirmation email by clicking dedicated button in your account panel (we will get to your account panel soon).
+**Important note:** Codewars will send you an email asking to confirm the account. Some actions like posting comments will be restricted until you do. If you cannot find the email in your inbox, make sure to check the spam folder as well. The button to resend the confirmation email is shown in the Account Settings if your account is not confirmed. We'll show you where to find the Account Settings soon.
 
 ## Next steps
 
