@@ -4,17 +4,6 @@ prev: "/getting-started/"
 next: "/getting-started/setting-up/"
 ---
 
-<!--
-Steps
-1. Sign up
-2. Choose language
-3. Multiply CAPTCHA
-4. Enlist
- - confirmation email
-5. Initial training setup
-6. Initial dashboard, popup "Let's get started!", read more
--->
-
 # Registering
 
 So you decided to join? That's great! There's only a couple of steps to create a new account and start solving tasks, learn, and improve your skills!
