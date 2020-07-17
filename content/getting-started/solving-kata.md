@@ -20,7 +20,7 @@ You use solution editor to write code which solves the task. You can type the co
 
 This button will test your solution against the _sample_ tests. Most kata will have provided you some sample tests to get you going, while others will not, in which case some test documentation will be shown instead.
 
-Codewars promotes approach of [Test Driven Development (is link to Wikipedia article OK?)](). This means that you are encouraged to write not only code for your solution, but also add as many tests in `Sample Tests` panel as you can think of (see [Writing Tests]() to see how), for various scenarios, inputs, and edge cases. Everytime you run them by clicking `TEST`, system will execute all sample tests against your solution, and tell you if it passed all of them, or maybe failed some.
+Codewars promotes approach of [Test Driven Development (is link to Wikipedia article OK?)](). This means that you are encouraged to write not only code for your solution, but also add as many tests in `Sample Tests` panel as you can think of (see [Writing Tests (TODO: add link to explanation how to add more sample tests)]() to see how), for various scenarios, inputs, and edge cases. Everytime you run them by clicking `TEST`, system will execute all sample tests against your solution, and tell you if it passed all of them, or maybe failed some.
 
 When sample tests pass and you believe your solution is ready, you can go to next step.
 
@@ -28,19 +28,28 @@ When sample tests pass and you believe your solution is ready, you can go to nex
 
 This button will submit your code against the full set of tests needed to complete the kata. 
 
-You cannot see full tests until you solve the kata. They can fail, even if all sample tests pass.
+You cannot see full tests until you solve the kata. Full test suite is usually much larger than sample tests, and it contains test cases for various inputs, data configurations, edge cases, performance, etc. Even if your solution passes all sample tests, it still can fail attempt against full tests. If tests output panel turns red, do not worry! You can run your solution as many times as you need.
 
-### Production Quality Code
+When tests output panel turns green and your solution passes all the tests, congratulations! Task is solved, and you are awarded with Honor points and your progress increases (see [following paragraph](#rewards) for more details).
 
-Some Codewarriors like to write code golfed or creative/clever solutions, but most try to write production quality code. After you have completed all of the test cases (via the attempt button), you will be given an opportunity to cleanup your code so that it's "code review" ready.
+### Submit Final: Production Quality Code
 
+Some users like to write code golfed or creative/clever solutions, but most try to write production quality code. After you have completed all of the test cases (via the attempt button), you will be given an opportunity to cleanup your code so that it's "code review" ready. After clicking **"Submit Final"** your solution is stored in the system and available for others to see, comment, and vote.
 
-## Solution troubleshooting
+## When tests fail over again
 
-## Forfeiting a kata
+Sometimes you just cannot get your solution right. Output panel is red after every attempt, kata might appear broken, or you receive some errors you do not understand and you have no idea what's going on. But don't worry, there are many ways to get help. See [Troubleshooting your Solution (TODO: add link to FAQ)]() FAQ to get some advice.  
 
-## Reward: honor, progress, privileges
+## Unlocking solutions
 
+Some kata are difficult. Some of them turn out to be more difficult than they initially appeared. Sometimes it might just not be your good day. It's OK, and happens to all of us. You can take a break from the kata and try another one, you will always be able to come back to this one later. You can do more research, search the web for algorithms, or ask friends for help. But if nothing helps, and you *really* need to know what other users came up with to defeat the task, you can unlock solutions without finishing the kata.
+
+When you unlock solutions you immediately gain access to all information about kata just as if you have finished it: solutions of other users, code of full test suite, etc. Although be warned, because this way you get no reward, and you forfeit all eligibility for any reward you would get for solving this kata in the future, for example in another language. Use this option with care, giving up is also a way to learn on Codewars, but sometimes waiting a bit and doing more research also helps.
+
+## Rewards
+
+_TBD_
 
 ## Satisfaction voting
--->
+
+_TBD_
