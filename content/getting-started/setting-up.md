@@ -38,7 +38,6 @@ You can enter your training setup panel by navigating with [this link](https://w
 
 Again, detailed description can be found in [UI documentation (TODO: insert link to actual documentation of UI)](), but things needed to get you started are briefly explaned below:
 
-- **What is your programming experience?** - a duplicate of **Development Experience** from [Account Settings](#account-settings).
 - **Would you like to receive our newsletter with weekly challenges?** - choose "Yes" to receive a weekly email with some suggested tasks to solve. Email contains a choice of Codewars problems of every difficulty, so you will be always able to find something what would suit you. Participating in Weekly Coding Challenge is a great way to keep yourself motivated! If you do not want to receive the email, just pick "No".
 - **Choose the language you wish to train on** - you can select from a large list of languages available on Codewars. You can select one, but if you want, you can select more. During your training, Codewars suggests you tasks which are available in languages you choose here. If you are not sure if you want to select some language or not, don't worry! You can always switch to any language available for currently trained task.
 
