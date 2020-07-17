@@ -20,6 +20,8 @@ For newer developers, we recommend that you pick the "Fundamentals" focus track,
 
 For experienced developers looking for a challenge, you can select the "Rank Up" focus track, which will cause you to begin with easy to medium challenges and quickly advance to harder ones.
 
+If, for some reason, you do not like suggested kata, you can skip on it without any serious consequences. It will not be suggested to you by trainer anymore, but you will be always able to get back to it and solve it, for example by searching through kata library (see below).
+
 ## Kata search page
 
 For those really looking for a hard challenge, we recommend you go directly to the full list of kata where you can select from over 6000 kata to train on. Remember, 1 kyū is the hardest level a kata can be.
