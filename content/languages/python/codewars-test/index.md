@@ -90,7 +90,7 @@ Always put assertions inside `it` and not directly in `describe`.
 Some of the functions below can accept a named argument `allow_raise=False`.
 
 If you change its value to `True`, the tests contained inside the current block will be interrupted at the first failed test. The executions are then going back to the parent block if it exists and the next part is executed.
-On some computation-heavy katas, it may be a good idea to use this feature so that the user has not to wait a long time before getting feedback (or possibly before timing out and in that case, they might never get any feedback at all, which may be cumbersome).
+On some computation-heavy Kata, it may be a good idea to use this feature so that the user has not to wait a long time before getting feedback (or possibly before timing out and in that case, they might never get any feedback at all, which may be cumbersome).
 
 ## Assertions
 
