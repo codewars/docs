@@ -3,3 +3,4 @@
 /wiki/
 src/.temp
 node_modules
+/content/references/markdown/*.md
