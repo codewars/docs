@@ -43,7 +43,7 @@
 
 - term: Approve (a kata, a translation)
   description: |
-    Action to push a kata out of the beta process, giving it a rank (kyus). This can be done by power users.
+    Action to push a kata out of the beta process, giving it a rank (kyu). This can be done by power users.
     For a translation, consists to validate it a make the language available in the kata for all users.
 
 - term: Attempt
@@ -92,7 +92,7 @@
 
 - term: Draft (kata)
   description: |
-    Initial state of a new born kata: when you create a new kata, it is in Draft mode as long as it is not "published". Katas in draft state are not visible through the [katas search page](https://www.codewars.com/kata/my-languages), but can be accessed and tried by other users if the author gives them the direct link to the trainer. Note that a kata in draft state cannot be completed (eg. "submit final" will not show up if you pass all the tests of a draft).
+    Initial state of a new born kata: when you create a new kata, it is in Draft mode as long as it is not "published". Kata in draft state are not visible through the [katas search page](https://www.codewars.com/kata/my-languages), but can be accessed and tried by other users if the author gives them the direct link to the trainer. Note that a kata in draft state cannot be completed (eg. "submit final" will not show up if you pass all the tests of a draft).
 
 - term: Edit panel
   description: |
@@ -176,9 +176,9 @@
   links:
     - title: Overall top 500
       url: https://www.codewars.com/users/leaderboard
-    - title: Top 500 by completed Katas
+    - title: Top 500 by completed Kata
       url: https://www.codewars.com/users/leaderboard/kata
-    - title: Top 500 by authored Katas and translations
+    - title: Top 500 by authored Kata and translations
       url: https://www.codewars.com/users/leaderboard/authored
     - title: Your personnal leaderboard (with your allies, in the dashboard)
       url: https://www.codewars.com/dashboard
@@ -206,7 +206,7 @@
 
 - term: Progress
   description: |
-    Aside of honor points, you gain "progress" by completing Katas (and only that way). Progess is what is conditioning your current rank as a codewarrior.
+    Aside of honor points, you gain "progress" by completing Kata (and only that way). Progess is what is conditioning your current rank as a codewarrior.
 
 - term: Publishing (kata)
   description: When you hit "publish" in the edit panel of a kata you created, it enters the beta process and becomes visible to anyone in the [katas search page](https://www.codewars.com/kata/my-languages). The beta process begins at the moment a kata is published.
@@ -219,7 +219,7 @@
 - term: Random tests
   description: |
     Tests whose the inputs/outputs aren't the same each time you run the test suite.
-    Random tests are prefered to randomized tests, when creating Katas.
+    Random tests are prefered to randomized tests, when creating Kata.
 
 - term: Randomized tests
   description: |
@@ -227,7 +227,7 @@
 
 - term: Rank
   description: |
-    Ranks are expressed through the kyus/dans scale (8 kyu -> 1 kyu, then 1 dan -> 8 dan). They may represent the difficulty of a Kata, or the mastery level of a user.
+    Ranks are expressed through the kyu/dan scale (8 kyu -> 1 kyu, then 1 dan -> 8 dan). They may represent the difficulty of a Kata, or the mastery level of a user.
 
 - term: Reject (translation)
   description: |
@@ -259,11 +259,11 @@
 
 - term: Suggestion (comment)
   description: |
-    Label used in the discourses section of Katas to suggest non critical improvements to it (like rewording some parts of the description, or the feedback of some assertion messages in the tests), or to announce the pulication of a translation (useful when the author is inactive, so that power users can review and approve the translation).
+    Label used in the discourses section of Kata to suggest non critical improvements to it (like rewording some parts of the description, or the feedback of some assertion messages in the tests), or to announce the pulication of a translation (useful when the author is inactive, so that power users can review and approve the translation).
 
 - term: Test Driven Development
   description: |
-    Katas are built following this principle: you are provided with specifications and a set of tests, and your goal is to pass those tests (by following the specifications or finding a way to at least pass the tests).
+    Kata are built following this principle: you are provided with specifications and a set of tests, and your goal is to pass those tests (by following the specifications or finding a way to at least pass the tests).
   acronym: TDD
   links:
     - title: Test-driven Development - Wikipedia
@@ -275,7 +275,7 @@
 
 - term: Trainer suggestions
   description: |
-    Trainer suggestions are the Katas that are showing up at the top of the dashboard. Those suggestions can be tweaked at some point, either through the profile of the user or directly through the dashboard.
+    Trainer suggestions are the Kata that are showing up at the top of the dashboard. Those suggestions can be tweaked at some point, either through the profile of the user or directly through the dashboard.
 
 - term: Translation
   description: |
