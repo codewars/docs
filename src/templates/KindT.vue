@@ -32,7 +32,7 @@ query($id: ID!, $page: Int) {
     name
     path
 
-    belongsTo(perPage: 4, page: $page, sortBy: "title", order: ASC) @paginate {
+    belongsTo(perPage: 20, page: $page, sortBy: "title", order: ASC) @paginate {
       totalCount
 
       pageInfo {
