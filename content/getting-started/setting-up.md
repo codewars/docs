@@ -18,17 +18,15 @@ You can find all options described in detail [here (TODO: insert link to actual 
 
 ### Information
 
-- **Email**, **Username** _(TBD)_
-- **Name** _(TBD)_
-- **Clan** _(TBD)_
-- **Skills** _(TBD)_
+- **Email**, **Username** - authentication details entered by you upon registration
+- **Clan** - fill this in if you'd like to team up with your friends, group, or organization. More on Codewars clans can be found [here (TODO: link to clans doc)]()
 - **Development Experience** - select any option which you feel describes you the best. If you are making your first steps in the world of programming, just pick "Learning to Program". If you are a seasoned programmer who wants to train their coding-fu, improve their skills, and probably learn somethng new, you can choose "Senior Developer".
 
 ### Preferences
 
-- **Email Notifications** _(TBD)_
-- **Default Catalog List View** _(TBD)_
-- **Red Subscription** _(TBD)_
+- **Email Notifications** - select how often you would like to receive email notifications from Codewars about events like replies to your posts etc. 
+- **Default Catalog List View** - default setting for **"Status"** filter on kata [search page (TODO: link to docs on kata search page)](). Beginners are advised to set it to **"Approved Only"**, but if you want to participate in [beta evaluation process (TODO: link to docs on beta process)](), you can set it to any value you like.
+- **Red Subscription** - donating some money, you can support Codewars and get some great features. Check more information on [Codewars RED](https://www.codewars.com/subscription).
 
 Now you just need to clik `UPDATE` to have your settings stored in the database. Anytime you need to change your settings, you can always come back to **Account Settings** panel and perform necessary changes.
 
