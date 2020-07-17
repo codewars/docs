@@ -130,3 +130,6 @@ x_n \leq l \leq y_n
 Renders:
 
 ![Math Typeset Example](./math-typeset-example.png)
+
+This feature is powered by [KaTeX](https://katex.org).
+See their [support table](https://katex.org/docs/support_table.html) to find what's supported.
