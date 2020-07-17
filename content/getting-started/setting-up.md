@@ -24,7 +24,7 @@ You can find all options described in detail [here (TODO: insert link to actual 
 
 ### Preferences
 
-- **Email Notifications** - select how often you would like to receive email notifications from Codewars about events like replies to your posts etc. 
+- **Email Notifications** - select how often you would like to receive email notifications from Codewars about events like replies to your posts etc.
 - **Default Catalog List View** - default setting for **"Status"** filter on kata [search page (TODO: link to docs on kata search page)](). Beginners are advised to set it to **"Approved Only"**, but if you want to participate in [beta evaluation process (TODO: link to docs on beta process)](), you can set it to any value you like.
 - **Red Subscription** - donating some money, you can support Codewars and get some great features. Check more information on [Codewars RED](https://www.codewars.com/subscription).
 
