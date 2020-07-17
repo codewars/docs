@@ -36,7 +36,7 @@ So if the active language was TypeScript, the above Markdown outputs:
 This is useful when showing examples.
 
 Notes:
-- The code block must have info string set to a valid language id. To find the language id, visit its documentation from the [languages page](/languages/).
+- The code block must have info string set to a valid language ID. To find the language ID, visit its documentation from the [languages page](/languages/).
 - To avoid rendering errors, always put an empty line before and after the code block or the group of code bloks, while consecutive code blocks for different languages must not be separated with empty lines.
 
 ## Conditional Rendering
