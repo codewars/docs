@@ -48,7 +48,19 @@ When you unlock solutions you immediately gain access to all information about k
 
 ## Rewards
 
-_TBD_
+You worked hard to solve your last challenge, and after you succeeded, you definitely deserve a reward. Each solved tasks rewards you in two ways: progressing your rank, and with Honor points. The more difficult kata you solve, the bigger the reward. 
+
+### Rank
+
+Rank level reflects your experience and knowledge you have gained by solving kata. You start at the lowest rank of 8 kyu, and each correct solution brings you closer to a higher rank. You can see your rank progress toward next level on your profile page:
+
+![rank progress](./img/solving_01_rank-progress.png)
+
+More information on ranks and progress can be found [here (TODO: add link to docs on progress)]().
+
+### Honor
+
+Honor points are rewarded by contributing to Codewars in many ways, and solving a kata is one of them. By earning Honor points you gain additional [privileges (TODO: link to docs)]() and climb [leaderboards (TODO: link to docs)]().
 
 ## Satisfaction voting
 
