@@ -26,6 +26,7 @@ TODO Community rules
 
 ## Other Places
 
-TODO Link to Gitter
-TODO Link to Zulip when ready
-TODO Link to Forum when ready
+Kata discourse is not the only place to meet other users. Community members can be also met at:
+ - Codewars [Gitter](https://gitter.im/Codewars/codewars.com) with a dedicated room for [kata solving help](https://gitter.im/Codewars/codewars.com/kata-solving-help),
+ - [Chat (TODO: link when ready)]() on Zulip,
+ - Codewars [forum (TODO: link to forum)]()
