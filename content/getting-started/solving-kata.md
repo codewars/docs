@@ -64,7 +64,7 @@ Honor points are rewarded by contributing to Codewars in many ways, and solving 
 
 ## Feedback
 
-After you have succesfully solved a task, you can let others know how you liked it. One way to do this is to leave your satisfaction vote:
+After you have successfully solved a task, you can let others know how you liked it. One way to do this is to leave your satisfaction vote:
 
 ![satisfaction vote](./img/solving_02_vote.png)
 
