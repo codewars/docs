@@ -26,9 +26,9 @@ When sample tests pass and you believe your solution is ready, you can go to nex
 
 ### Attempt
 
-This button will submit your code against the full set of tests needed to complete the kata.
+This button will submit your code to test it against the full set of tests needed to complete the kata.
 
-You cannot see full tests until you solve the kata. Full test suite is usually much larger than sample tests, and it contains test cases for various inputs, data configurations, edge cases, performance, etc. Even if your solution passes all sample tests, it still can fail attempt against full tests. If tests output panel turns red, do not worry! You can run your solution as many times as you need.
+You cannot see full tests until you solve the kata. Full test suite is usually much larger than sample tests, and it contains test cases for various inputs, data configurations, edge cases, performance, etc. Even if your solution passes all sample tests, it still can fail attempt against full tests. If tests output panel turns red, do not worry! You can edit and run your solution as many times as you need.
 
 When tests output panel turns green and your solution passes all the tests, congratulations! Task is solved, and you are awarded with Honor points and your progress increases (see [following paragraph](#rewards) for more details).
 
@@ -48,11 +48,11 @@ When you unlock solutions you immediately gain access to all information about k
 
 ## Rewards
 
-You worked hard to solve your last challenge, and after you succeeded, you definitely deserve a reward. Each solved tasks rewards you in two ways: progressing your rank, and with Honor points. The more difficult kata you solve, the bigger the reward.
+You worked hard to solve your last challenge, and after you succeeded, you definitely deserve a reward. Each solved tasks rewards you in two ways: progressing your rank, and granting some amount of Honor points. The more difficult kata you solve, the bigger the reward.
 
 ### Rank
 
-Rank level reflects your experience and knowledge you have gained by solving kata. You start at the lowest rank of 8 kyu, and each correct solution brings you closer to a higher rank. You can see your rank progress toward next level on your profile page:
+Rank level reflects your experience and knowledge you have gained by solving kata. You start at the lowest rank of 8 kyū, and each correct solution brings you closer to a higher rank. You can see your rank progress toward next level on your profile page:
 
 ![rank progress](./img/solving_01_rank-progress.png)
 
@@ -62,6 +62,10 @@ More information on ranks and progress can be found [here (TODO: add link to doc
 
 Honor points are rewarded by contributing to Codewars in many ways, and solving a kata is one of them. By earning Honor points you gain additional [privileges (TODO: link to docs)]() and climb [leaderboards (TODO: link to docs)]().
 
-## Satisfaction voting
+## Feedback
 
-_TBD_
+After you have succesfully solved a task, you can let others know how you liked it. One way to do this is to leave your satisfaction vote:
+
+![satisfaction vote](./img/solving_02_vote.png)
+
+You can also participate in discussion on a kata. If you wish to log an issue about this specific kata, such as poorly worded descriptions or issues with test cases, then you can leave a comment in discourse section. More on this in the next part.
