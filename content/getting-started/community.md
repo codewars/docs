@@ -14,7 +14,7 @@ If you want to discuss some particular kata, you can use its discourse page to d
  - **Suggestion** - if you have an idea how author could change the kata, its description, or tests, to make it better,
  - **Issue** - if you think the kata is broken, and author needs to fix it in some way.
 
-Discourse posts support [Markdown formatting (TODO: link to markdown reference)](), so you can use some styling, or make sure the code is neatly presented with [code formatting blocks (TODO: direct link to markdown docs, chapter on code blocks)](). 
+Discourse posts support [Markdown formatting (TODO: link to Markdown reference)](), so you can use some styling, or make sure the code is neatly presented with [code formatting blocks (TODO: direct link to Markdown docs, chapter on code blocks)](). 
 
 You should also also mark your posts with **Spoiler** flag if it contains some code (even not fully working one), or reveals some significant details of the solution. 
 
