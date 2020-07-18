@@ -48,7 +48,7 @@ When you unlock solutions you immediately gain access to all information about k
 
 ## Rewards
 
-You worked hard to solve your last challenge, and after you succeeded, you definitely deserve a reward. Each solved tasks rewards you in two ways: progressing your rank, and with Honor points. The more difficult kata you solve, the bigger the reward. 
+You worked hard to solve your last challenge, and after you succeeded, you definitely deserve a reward. Each solved tasks rewards you in two ways: progressing your rank, and with Honor points. The more difficult kata you solve, the bigger the reward.
 
 ### Rank
 
