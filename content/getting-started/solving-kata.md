@@ -6,7 +6,7 @@ next: "/getting-started/solutions/"
 
 # Solving Kata
 
-After clicking on a link to a kata, you are presented a [kata details (TODO: link to kata details panel doc)]() view with general information about it. Read carefully through the description, and if you are ready to face the challenge, click `TRAIN`. 
+After clicking on a link to a kata, you are presented a [kata details (TODO: link to kata details panel doc)]() view with general information about it. Read carefully through the description, and if you are ready to face the challenge, click `TRAIN`.
 
 ## Kata Trainer
 
@@ -14,7 +14,7 @@ Welcome to the kata trainer! You use this view to take your attempts on solution
 
 ### Solution editor
 
-You use solution editor to write code which solves the task. You can type the code straight into the editor, but if you want, you can use your favorite IDE and just copy your solution from it and paste it here. 
+You use solution editor to write code which solves the task. You can type the code straight into the editor, but if you want, you can use your favorite IDE and just copy your solution from it and paste it here.
 
 ### Test
 
@@ -26,7 +26,7 @@ When sample tests pass and you believe your solution is ready, you can go to nex
 
 ### Attempt
 
-This button will submit your code against the full set of tests needed to complete the kata. 
+This button will submit your code against the full set of tests needed to complete the kata.
 
 You cannot see full tests until you solve the kata. Full test suite is usually much larger than sample tests, and it contains test cases for various inputs, data configurations, edge cases, performance, etc. Even if your solution passes all sample tests, it still can fail attempt against full tests. If tests output panel turns red, do not worry! You can run your solution as many times as you need.
 
@@ -38,11 +38,11 @@ Some users like to write code golfed or creative/clever solutions, but most try 
 
 ## When tests fail over again
 
-Sometimes you just cannot get your solution right. Output panel is red after every attempt, kata might appear broken, or you receive some errors you do not understand and you have no idea what's going on. But don't worry, there are many ways to get help. See [Troubleshooting your Solution (TODO: add link to FAQ)]() FAQ to get some advice.  
+Sometimes you just cannot get your solution right. Output panel is red after every attempt, kata might appear broken, or you receive some errors you do not understand and you have no idea what's going on. But don't worry, there are many ways to get help. See [Troubleshooting your Solution (TODO: add link to FAQ)]() FAQ to get some advice.
 
 ## Unlocking solutions
 
-Some kata are difficult. Some of them turn out to be more difficult than they initially appeared. Sometimes it might just not be your good day. It's OK, and happens to all of us. You can take a break from the kata and try another one, you will always be able to come back to this one later. You can do more research, search the web for algorithms, or ask friends for help. But if nothing helps, and you *really* need to know what other users came up with to defeat the task, you can unlock solutions without finishing the kata.
+Some kata are difficult. Some of them turn out to be more difficult than they initially appeared. Sometimes it might just not be your good day. It's OK, and happens to all of us. You can take a break from the kata and try another one, you will always be able to come back to this one later. You can do more research, search the web for algorithms, or ask friends for help. But if nothing helps, and you _really_ need to know what other users came up with to defeat the task, you can unlock solutions without finishing the kata.
 
 When you unlock solutions you immediately gain access to all information about kata just as if you have finished it: solutions of other users, code of full test suite, etc. Although be warned, because this way you get no reward, and you forfeit all eligibility for any reward you would get for solving this kata in the future, for example in another language. Use this option with care, giving up is also a way to learn on Codewars, but sometimes waiting a bit and doing more research also helps.
 
