@@ -15,15 +15,15 @@ If you want to discuss some particular kata, you can use its discourse page to d
 - **Suggestion** - if you have an idea how author could change the kata, its description, or tests, to make it better,
 - **Issue** - if you think the kata is broken, and author needs to fix it in some way.
 
-Discourse posts support [Markdown formatting (TODO: link to Markdown reference)](), so you can use some styling, or make sure the code is neatly presented with [code formatting blocks (TODO: direct link to Markdown docs, chapter on code blocks)]().
+Discourse posts support [Markdown formatting (TODO: link to Markdown reference)](), so you can use some styling, or present your code neatly with [code formatting blocks (TODO: direct link to chapter on code blocks in Markdown docs)]().
 
-You should also also mark your posts with **Spoiler** flag if it contains some code (even not fully working one), or reveals some significant details of the solution.
+You should also mark your posts with **Spoiler** flag if they contain some code (even not fully working one), or reveal some significant details of the solution.
 
 ## Communication
 
-TODO How to communicate effectively
-TODO Where to ask for help
-TODO Community rules
+Remember that your posts will be read by other people, and to be able to help you or answer your questions, they have to be able to understand you properly. Do all you can to express yourself clearly, describe your point with all necessary details, use appropriate labels and code formatting when needed.
+
+There's a set of rules you should follow to keep interaction with other users a good experience for both sides. You can find them in _(TODO: where? Code of Conduct, some discourse guidelines?)_.
 
 ## Other Places
 
