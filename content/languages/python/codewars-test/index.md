@@ -53,7 +53,7 @@ The above produces an output similar to the following:
 </div>
 <div class="hidden dark:block">
 
-![Output window example](./python-test-framework-example-light.png)
+![Output window example](./python-test-framework-example-dark.png)
 
 </div>
 
