@@ -45,6 +45,7 @@ def rnd_tests():
 ```
 
 The above produces an output similar to the following:
+
 <div class="block dark:hidden>
 
 ![Output window example](./python-test-framework-example-light.png)
