@@ -15,6 +15,8 @@ If you want to discuss some particular kata, you can use its discourse page to d
 - **Suggestion** - if you have an idea how author could change the kata, its description, or tests, to make it better,
 - **Issue** - if you think the kata is broken, and author needs to fix it in some way.
 
+See this [detailed documentation (TODO: direct link to Labels reference? same link than the one at the end of the "Communication" part)]() about the different kinds of labels and their use.
+
 Discourse posts support [Markdown formatting (TODO: link to Markdown reference)](), so you can use some styling, or present your code neatly with [code formatting blocks (TODO: direct link to chapter on code blocks in Markdown docs)]().
 
 You should also mark your posts with **Spoiler** flag if they contain some code (even not fully working one), or reveal some significant details of the solution.
