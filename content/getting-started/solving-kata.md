@@ -6,7 +6,7 @@ next: "/getting-started/solutions/"
 
 # Solving Kata
 
-After clicking on a link to a kata, you are presented a [kata details (TODO: link to kata details panel doc)]() view with general information about it. Read carefully through the description, and if you are ready to face the challenge, click `TRAIN`.
+After clicking on a link to a kata, you are presented with the [kata details (TODO: link to kata details panel doc)]() view with general information about it. Read carefully through the description, and if you are ready to face the challenge, click `TRAIN`.
 
 ## Kata Trainer
 
