@@ -49,7 +49,6 @@ The above produces an output similar to the following:
 <img src="./img/python-test-framework-example-light.png" class="block dark:hidden">
 <img src="./img/python-test-framework-example-dark.png" class="hidden dark:block">
 
-
 Note that test cases doesn't stop on failure by default. See [Failing Early](#failing-early) to change this behavior.
 
 ## Grouping Tests
