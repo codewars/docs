@@ -45,9 +45,16 @@ def rnd_tests():
 ```
 
 The above produces an output similar to the following:
+<div class="block dark:hidden>
 
-<img src="./img/python-test-framework-example-light.PNG" class="block dark:hidden">
-<img src="./img/python-test-framework-example-dark.PNG" class="hidden dark:block">
+![Output window example](./python-test-framework-example-light.png)
+
+</div>
+<div class="hidden dark:block">
+
+![Output window example](./python-test-framework-example-light.png)
+
+</div>
 
 Note that test cases doesn't stop on failure by default. See [Failing Early](#failing-early) to change this behavior.
 
