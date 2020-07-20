@@ -24,7 +24,7 @@ If, for some reason, you do not like suggested kata, you can skip on it without 
 
 ## Kata search page
 
-For those really looking for a hard challenge, we recommend you go directly to the full list of kata where you can select from over 6000 kata to train on. Remember, 1 kyū is the hardest level a kata can be.
+For those really looking for a hard challenge or for a specific kind of rank/task/..., we recommend you go directly to the full list of kata where you can select from over 8000 kata to train on. Remember, 8 kyū is the easiest level a kata can be.
 
 ![sidebar](./img/finding-kata_02_sidebar.png)
 
