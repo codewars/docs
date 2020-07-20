@@ -12,7 +12,7 @@
         </div>
 
         <div>
-          <strong class="text-ui-typo">New to Codewars?</strong>
+          <strong class="text-ui-typo text-xl">New to Codewars?</strong>
         </div>
         <div class="flex justify-center mt-8 text-center">
           <g-link
