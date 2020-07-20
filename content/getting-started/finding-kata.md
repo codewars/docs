@@ -28,7 +28,7 @@ For those really looking for a hard challenge or for a specific kind of rank/tas
 
 ![sidebar](./img/finding-kata_02_sidebar.png)
 
-Details of kata search page are described in [UI documentation (TODO: insert link to documentation of kata search panel)](), but here are some hints useful for beginners:
+Details of kata search page are described in [UI documentation (TODO: insert link to documentation of kata search panel)](), but here are some useful hints for beginners:
 
 - You can set **"Sort by"** to **"Easiest"** or **"Most Completed"**, so you will be presented with tasks easy enough to start your programming training.
 - Set **"Progress"** to **"Kata I have not trained on"** to see tasks which you have not attempted yet. If you prefer training by repetition, you can select **"Kata I have completed"**.
