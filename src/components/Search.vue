@@ -10,7 +10,7 @@
       <div
         class="absolute inset-y-0 left-0 flex items-center justify-center px-3 py-2 opacity-50"
       >
-        <SearchIcon size="1.25x" class="text-ui-typo" />
+        <SearchIcon size="1.25x" class="text-typo-base" />
       </div>
       <input
         ref="input"

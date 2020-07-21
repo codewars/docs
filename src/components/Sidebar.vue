@@ -6,7 +6,7 @@
   >
     <div v-for="section of sidebarSections" :key="section.title" class="py-4">
       <h3
-        class="pt-0 mt-0 mb-1 font-black text-sm leading-snug tracking-tight uppercase border-none text-ui-typo"
+        class="pt-0 mt-0 mb-1 font-black text-sm leading-snug tracking-tight uppercase border-none text-typo-base"
       >
         {{ section.title }}
       </h3>

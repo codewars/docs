@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <div class="mx-auto max-w-screen-lg">
-      <h1 class="mb-4 text-center text-4xl text-ui-typo font-medium">
+      <h1 class="mb-4 text-center text-4xl text-typo-base font-medium">
         {{ kind.name }}
       </h1>
 

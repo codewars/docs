@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <div class="mx-auto max-w-screen-lg">
-      <h1 class="mb-2 text-center text-4xl text-ui-typo font-medium">
+      <h1 class="mb-2 text-center text-4xl text-typo-base font-medium">
         {{ tag.name }}
       </h1>
       <div v-if="tag.description" class="-mt-2 mb-2 text-center">
