@@ -8,13 +8,13 @@ next: "/getting-started/solving-kata/"
 
 Your account is configured and you are ready for your next challenge. Now you will learn how to find a task to train on.
 
-## Codewars trainer
+## Personal Trainer
 
-The easiest way of getting started is to use our trainer on the dashboard to pick your next kata.
+The easiest way of getting started is to use the personal trainer on the dashboard to pick your next kata.
 
 ![training routines](./img/finding-kata_01_training-routines.png)
 
-The trainer allows you to pick your language, select your focus, preview the challenge, skip to another challenge and to start training.
+The personal trainer suggests you a kata based on the selected language and focus area. You can either train on the suggested kata or skip to see the next suggestion.
 
 For newer developers, we recommend that you pick the "Fundamentals" focus track, which will randomly select easier kata for you to train on.
 
