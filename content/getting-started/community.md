@@ -5,7 +5,7 @@ prev: "/getting-started/solutions/"
 
 # Community
 
-Codewars gathers thousands of users with many different skills and levels of experience. Their knowledge is an invaluable resource and they can make your training easier, and extremely effective.
+Codewars gathers users with many different skills and levels of experience. Their knowledge is an invaluable resource and they can make your training easier, and extremely effective.
 
 ## Kata Discourse
 
@@ -35,4 +35,4 @@ Kata discourse is not the only place to meet other users. Community members can 
 
 - Codewars [Gitter](https://gitter.im/Codewars/codewars.com) with a dedicated room for [kata solving help](https://gitter.im/Codewars/codewars.com/kata-solving-help),
 - [Chat (TODO: link when ready)]() on Zulip,
-- Codewars [forum (TODO: link to forum)]()
+- Codewars [forum (TODO: link to Discourse forum)]()
