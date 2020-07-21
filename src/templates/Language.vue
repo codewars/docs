@@ -1,7 +1,7 @@
 <template>
   <Layout :currentPath="language.path" :sidebar="`language:${language.id}`">
     <h1
-      class="mt-4 text-4xl font-black text-ui-typo leading-snug tracking-tighter text-center"
+      class="mt-4 text-4xl font-black text-typo-base leading-snug tracking-tighter text-center"
     >
       {{ language.name }}
     </h1>
@@ -15,7 +15,7 @@
     <div class="space-y-4">
       <h2
         id="versions"
-        class="mb-2 text-xl font-black text-ui-typo leading-snug tracking-tighter"
+        class="mb-2 text-xl font-black text-typo-base leading-snug tracking-tighter"
       >
         Versions
       </h2>
@@ -26,14 +26,14 @@
         <!-- eslint-disable-next-line vue/no-v-html -->
         <div
           v-if="version.description"
-          class="content"
+          class="prose"
           v-html="version.description"
         />
       </div>
 
       <h2
         id="timeout"
-        class="mb-2 text-xl font-black text-ui-typo leading-snug tracking-tighter"
+        class="mb-2 text-xl font-black text-typo-base leading-snug tracking-tighter"
       >
         Timeout
       </h2>
@@ -44,7 +44,7 @@
       <template v-if="language.testFrameworks.length > 0">
         <h2
           id="test-frameworks"
-          class="mb-2 text-xl font-black text-ui-typo leading-snug tracking-tighter"
+          class="mb-2 text-xl font-black text-typo-base leading-snug tracking-tighter"
         >
           Test Frameworks
         </h2>
@@ -55,7 +55,7 @@
 
       <template v-if="anyPackages">
         <h2
-          class="mb-2 text-xl font-black text-ui-typo leading-snug tracking-tighter"
+          class="mb-2 text-xl font-black text-typo-base leading-snug tracking-tighter"
         >
           Packages
         </h2>

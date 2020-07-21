@@ -22,7 +22,7 @@
           <!-- eslint-disable-next-line vue/no-v-html -->
           <div
             v-if="term.description"
-            class="content ml-3"
+            class="prose ml-3"
             v-html="term.description"
           />
 

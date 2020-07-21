@@ -3,7 +3,7 @@
     class="mt-8 sm:pl-4 md:pl-6 md:pt-12 lg:pl-8 sm:pb-16 sm:border-l border-ui-border md:mt-0"
   >
     <h3
-      class="pt-0 mb-4 mt-0 text-ui-typo font-black text-sm leading-snug tracking-wide uppercase border-none"
+      class="pt-0 mb-4 mt-0 text-typo-base font-black text-sm leading-snug tracking-wide uppercase border-none"
     >
       On this page
     </h3>
@@ -58,8 +58,7 @@ export default {
     },
     selector: {
       type: String,
-      default:
-        ".content h2, .content h3, .content h4, .content h5, .content h6",
+      default: ".prose h2, .prose h3, .prose h4, .prose h5, .prose h6",
     },
   },
 

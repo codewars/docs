@@ -22,7 +22,7 @@
               v-for="link in settings.nav.links"
               :key="link.path"
               :to="link.path"
-              class="block p-1 font-medium text-ui-typo hover:text-ui-primary border-b-2 border-transparent"
+              class="block p-1 font-medium text-typo-base hover:text-ui-primary border-b-2 border-transparent"
               active-class="border-ui-primary font-bold"
               exact-active-class=""
             >

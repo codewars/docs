@@ -5,14 +5,14 @@
         <div class="flex flex-col items-center mb-2 text-ui-primary">
           <Logo :width="80" />
           <h2
-            class="mb-4 text-3xl lg:text-5xl font-semibold text-ui-typo leading-snug tracking-tighter border-none"
+            class="mb-4 text-3xl lg:text-5xl font-semibold text-typo-base leading-snug tracking-tighter border-none"
           >
             Codewars Docs
           </h2>
         </div>
 
         <div>
-          <strong class="text-ui-typo text-xl">New to Codewars?</strong>
+          <strong class="text-typo-base text-xl">New to Codewars?</strong>
         </div>
         <div class="flex justify-center mt-8 text-center">
           <g-link
@@ -42,7 +42,7 @@
             class="mb-4 text-ui-primary"
           />
           <span
-            class="text-lg font-semibold leading-snug tracking-wide uppercase text-ui-typo"
+            class="text-lg font-semibold leading-snug tracking-wide uppercase text-typo-base"
           >
             {{ link.name }}
           </span>

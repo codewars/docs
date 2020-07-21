@@ -1,7 +1,7 @@
 <template>
   <Layout currentPath="/languages/" sidebar="docs">
     <div class="w-full md:w-2/3">
-      <div class="content">
+      <div class="prose pt-8">
         <h1 id="supported-languages">
           <a href="#supported-languages" aria-hidden="true"></a>
           Supported Languages
@@ -19,7 +19,7 @@
           <a href="#stable-languages" aria-hidden="true"></a>
           Stable
         </h2>
-        <ul class="list-disc">
+        <ul>
           <li v-for="edge of $page.languages.edges" :key="edge.node.id">
             <g-link :to="edge.node.path" class="underline">
               {{ edge.node.name }}
@@ -32,7 +32,7 @@
           Beta
         </h2>
         <!-- TODO Explain what Beta means. -->
-        <ul class="list-disc">
+        <ul>
           <li v-for="edge of $page.betaLanguages.edges" :key="edge.node.id">
             <g-link :to="edge.node.path" class="underline">
               {{ edge.node.name }}
