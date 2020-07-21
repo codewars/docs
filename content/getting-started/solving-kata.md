@@ -32,7 +32,7 @@ You cannot see full tests until you solve the kata. Full test suite is usually m
 
 When tests output panel turns green and your solution passes all the tests, congratulations! Task is solved, and you are awarded with Honor points and your progress increases (see [following paragraph](#rewards) for more details).
 
-### Submit Final: Production Quality Code
+### Submit Final
 
 Some users like to write code golfed or creative/clever solutions, but most try to write production quality code. After you have completed all of the test cases (via the attempt button), you will be given an opportunity to cleanup your code so that it's "code review" ready. After clicking **"Submit Final"** your solution is stored in the system and available for others to see, comment, and vote.
 
