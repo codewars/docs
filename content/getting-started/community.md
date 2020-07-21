@@ -9,7 +9,9 @@ Codewars gathers thousands of users with many different skills and levels of exp
 
 ## Kata Discourse
 
-If you want to discuss some particular kata, you can use its discourse page to do so. It's a good place to ask for explanation, search for help with solution, add your opinion on it, or report problems. You can label your post with one of possible labels:
+If you want to discuss some particular kata, you can use its discourse page to do so.
+
+It's a good place to ask for explanations, search for help about solution, add your opinion on it, or report problems. You can label your post with one of possible labels when appropriate:
 
 - **Question** - if description is not clear, you need help, got stuck, or you cannot get your solution to work,
 - **Suggestion** - if you have an idea how author could change the kata, its description, or tests, to make it better,
