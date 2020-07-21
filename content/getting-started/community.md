@@ -5,7 +5,7 @@ prev: "/getting-started/solutions/"
 
 # Community
 
-Codewars gathers thousands of users of many skills and levels of experience. Their knowledge is invaluable resource and when used correctly, your training can be easier, and extremely effective.
+Codewars gathers thousands of users with many different skills and levels of experience. Their knowledge is an invaluable resource and they can make your training easier, and extremely effective.
 
 ## Kata Discourse
 
