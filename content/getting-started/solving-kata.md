@@ -20,7 +20,7 @@ You use solution editor to write code which solves the task. You can type the co
 
 This button will test your solution against the _sample_ tests. Most kata will have provided you some sample tests to get you going, while others will not, in which case some test documentation will be shown instead.
 
-Codewars promotes the [Test Driven Development](https://en.wikipedia.org/wiki/Test-driven_development) approach.  This means that you are encouraged to write not only code for your solution, but also add as many tests in `Sample Tests` panel as you can think of (see [Writing Tests (TODO: add link to explanation how to add more sample tests)]() to see how), for various scenarios, inputs, and edge cases. Every time you run them by clicking `TEST`, system will execute all sample tests against your solution, and tell you if it passed all of them, or maybe failed some.
+Codewars promotes the [Test Driven Development](https://en.wikipedia.org/wiki/Test-driven_development) approach. This means that you are encouraged to write not only code for your solution, but also add as many tests in `Sample Tests` panel as you can think of (see [Writing Tests (TODO: add link to explanation how to add more sample tests)]() to see how), for various scenarios, inputs, and edge cases. Every time you run them by clicking `TEST`, system will execute all sample tests against your solution, and tell you if it passed all of them, or maybe failed some.
 
 When sample tests pass and you believe your solution is ready, you can go to next step.
 
