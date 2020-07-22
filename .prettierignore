@@ -1,6 +1,6 @@
 .cache
+/__tmp__/
 /dist/
-/wiki/
 src/.temp
 node_modules
 /content/references/markdown/*.md
