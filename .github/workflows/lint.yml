@@ -31,7 +31,10 @@ jobs:
       - run: yarn install --frozen-lockfile
       - if: ${{ github.event_name == 'pull_request' }}
         run: yarn format
-      - run: yarn lint:text
+      # Add Problem Matcher so that TextLint results are surfaced.
+      # https://github.com/actions/toolkit/blob/master/docs/problem-matchers.md
+      - run: echo "::add-matcher::.github/matchers/textlint-unix.json"
+      - run: yarn textlint --format unix './content/**/*.md'
       - run: yarn lint:format
       - if: ${{ github.event_name == 'pull_request' }}
         uses: stefanzweifel/git-auto-commit-action@v4
