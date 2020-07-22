@@ -1,7 +1,7 @@
 ---
 sidebar: getting-started
 prev: "/getting-started/finding-kata/"
-next: "/getting-started/solutions/"
+next: "/getting-started/kata-solved/"
 ---
 
 # Solving Kata
@@ -11,6 +11,7 @@ After clicking on a link to a kata, you are presented with the [kata details (TO
 ## Kata Trainer
 
 Welcome to the kata trainer! You use this view to take your attempts on solution, write the code and run tests. A few tips to get you started:
+![kata trainer](./img/solving_03_trainer.png)
 
 ### Solution editor
 
@@ -34,7 +35,7 @@ When tests output panel turns green and your solution passes all the tests, cong
 
 ### Submit Final
 
-Some users like to write code golfed or creative/clever solutions, but most try to write production quality code. After you have completed all of the test cases (via the attempt button), you will be given an opportunity to cleanup your code so that it's "code review" ready. After clicking **"Submit Final"** your solution is stored in the system and available for others to see, comment, and vote.
+Some users like to write code golfed or creative/clever solutions, but most try to write production quality code. After you have completed all of the test cases (via the attempt button), you will be given an opportunity to cleanup your code so that it's "code review" ready. After clicking **"Submit"** your solution is stored in the system and available for others to see, comment, and vote.
 
 ## When tests fail over again
 
@@ -42,30 +43,5 @@ Sometimes you just cannot get your solution right. Output panel is red after eve
 
 ## Unlocking solutions
 
-Some kata are difficult. Some of them turn out to be more difficult than they initially appeared. Sometimes it might just not be your good day. It's OK, and happens to all of us. You can take a break from the kata and try another one, you will always be able to come back to this one later. You can do more research, search the web for algorithms, or ask friends for help. But if nothing helps, and you _really_ need to know what other users came up with to defeat the task, you can unlock solutions without finishing the kata.
+You can learn from solutions of other users even if you do not solve the kata! If kata is too difficult, or for some reason you do not want to solve it, but you still would like to see solutions, you can unlock them by forfeiting all eligibility to any reward you could get from solving the excercise. When you unlock solutions, you immediately gain access to all information about kata just as if you have finished it: solutions of other users, code of full test suite, etc. Although be warned, because this way you get no reward, even if you solve this kata in the future, for example in another language.
 
-When you unlock solutions you immediately gain access to all information about kata just as if you have finished it: solutions of other users, code of full test suite, etc. Although be warned, because this way you get no reward, and you forfeit all eligibility for any reward you would get for solving this kata in the future, for example in another language. Use this option with care, giving up is also a way to learn on Codewars, but sometimes waiting a bit and doing more research also helps.
-
-## Rewards
-
-You worked hard to solve your last challenge, and after you succeeded, you definitely deserve a reward. Each solved tasks rewards you in two ways: progressing your rank, and granting some amount of Honor points. The more difficult kata you solve, the bigger the reward.
-
-### Rank
-
-Rank level reflects your experience and knowledge you have gained by solving kata. You start at the lowest rank of 8 kyū, and each correct solution brings you closer to a higher rank. You can see your rank progress toward next level on your profile page:
-
-![rank progress](./img/solving_01_rank-progress.png)
-
-More information on ranks and progress can be found [here (TODO: add link to docs on progress)]().
-
-### Honor
-
-Honor points are rewarded by contributing to Codewars in many ways, and solving a kata is one of them. By earning Honor points you gain additional [privileges (TODO: link to docs)]() and climb [leaderboards (TODO: link to docs)]().
-
-## Feedback
-
-After you have successfully solved a task, you can let others know how you liked it. One way to do this is to leave your satisfaction vote:
-
-![satisfaction vote](./img/solving_02_vote.png)
-
-You can also participate in discussion on a kata. If you wish to log an issue about this specific kata, such as poorly worded descriptions or issues with test cases, then you can leave a comment in discourse section. More on this in the next part.
