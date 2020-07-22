@@ -48,12 +48,12 @@ The above produces an output similar to the following:
 
 <div class="block dark:hidden">
 
-![Output window example](./python-test-framework-example-light.png)
+![Output window example](./img/python-test-framework-example-light.png)
 
 </div>
 <div class="hidden dark:block">
 
-![Output window example](./python-test-framework-example-dark.png)
+![Output window example](./img/python-test-framework-example-dark.png)
 
 </div>
 
