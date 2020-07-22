@@ -37,4 +37,4 @@ Kata discourse is not the only place to meet other users. Community members can 
 <!--
 - [Chat (TODO: link when ready)]() on Zulip,
 - Codewars [forum (TODO: link to Discourse forum)]()
--->
+  -->
