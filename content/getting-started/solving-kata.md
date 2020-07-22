@@ -43,5 +43,5 @@ Sometimes you just cannot get your solution right. Output panel is red after eve
 
 ## Unlocking solutions
 
-You can learn from solutions of other users even if you do not solve the kata! If kata is too difficult, or for some reason you do not want to solve it, but you still would like to see solutions, you can unlock them by forfeiting all eligibility to any reward you could get from solving the excercise. When you unlock solutions, you immediately gain access to all information about kata just as if you have finished it: solutions of other users, code of full test suite, etc. Although be warned, because this way you get no reward, even if you solve this kata in the future, for example in another language.
+You can learn from solutions of other users even if you do not solve the kata! If kata is too difficult, or for some reason you do not want to solve it, but you still would like to see solutions, you can unlock them by forfeiting all eligibility to any reward you could get from solving the exercise. When you unlock solutions, you immediately gain access to all information about kata just as if you have finished it: solutions of other users, code of full test suite, etc. Although be warned, because this way you get no reward, even if you solve this kata in the future, for example in another language.
 

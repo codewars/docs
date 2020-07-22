@@ -6,7 +6,7 @@ next: "/getting-started/solutions/"
 
 # When a kata gets solved
 
-Finally this great moment happened: tests output panel is all green, and you were able to submityour solution. Congratulations! It's time to collect your reward. It's also a good time to share some feedback, to guide others who'd encounter the same kata.
+Finally this great moment happened: tests output panel is all green, and you were able to submit your solution. Congratulations! It's time to collect your reward. It's also a good time to share some feedback, to guide others who'd encounter the same kata.
 
 ## Rewards
 
