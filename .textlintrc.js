@@ -23,7 +23,7 @@ module.exports = {
       // Additional terms
       terms: ["Codewars"],
       // Excludeded terms
-      exclude: ["built in"],
+      exclude: ["built-in"],
     },
   },
   filters: {
