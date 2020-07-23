@@ -22,7 +22,7 @@ You use solution editor to write code which solves the task. You can type the co
 Codewars promotes the [Test Driven Development](https://en.wikipedia.org/wiki/Test-driven_development) approach. This means that you are encouraged to write not only code for your solution, but also add as many tests in `Sample Tests` panel as you can think of (see [Writing Tests (TODO: add link to explanation how to add more sample tests)]() to see how), for various scenarios, inputs, and edge cases. Most kata will have provided you some sample tests to get you going, while others will not, in which case some test documentation will be shown instead.
 Every time you run sample tests by clicking `TEST`, system will execute them against your solution, and tell you if it passed all of them, or maybe failed some. When some sample test fails, you know you need to work on your solution some more. When all sample tests pass, you can either add some more test cases for scenarios not tested yet, or, if you believe your solution is ready, you can go to next step.
 
-### Attempt your solution with full test suite
+### Attempting to pass the full test suite
 
 When your solution is thoroughly tested, it passes all sample tests you created, and you cannot think of any new test cases to add, you can run full test suite against your solution. Passing it is necessary to have the kata marked as solved.
 
