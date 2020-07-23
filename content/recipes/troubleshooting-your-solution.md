@@ -100,7 +100,6 @@ It’s because your solution does not pass the tests. Remember that when you pre
 
 </a>
 
-<!--- For false positive "built in" -->
 <!--- textlint-disable terminology -->
 
 For some kata (but not for all!), test suite is built in such a way that tests are stopped on first failure. When you see only one failed test and it’s the last one, it might mean that it’s the first one which your solution failed, and when you fix it, there are more to come.
@@ -370,4 +369,3 @@ On Codewars, this error was usually seen when a solution attempted to dereferenc
 ### Exit code 137
 
 Exit code 137 usually means that too much output was printed to console. You can find more details on this problem [here](#i-get-max-buffer-size-reached-15-mib).
-
