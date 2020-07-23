@@ -24,7 +24,7 @@ Every time you run sample tests by clicking `TEST`, system will execute them aga
 
 ### Attempt your solution with full test suite
 
-When your solution is throughly tested, it passes all sample tests you created, and you cannot think of any new test cases to add, you can run full test suite against your solution. Passing it is necessary to have the kata marked as solved.
+When your solution is thoroughly tested, it passes all sample tests you created, and you cannot think of any new test cases to add, you can run full test suite against your solution. Passing it is necessary to have the kata marked as solved.
 
 You cannot see full tests until you solve the kata. Full test suite is usually much larger than sample tests, and it contains test cases for various inputs, data configurations, edge cases, performance, etc. Even if your solution passes all sample tests, it still can fail attempt against full tests. If tests output panel turns red, do not worry! You can edit and run your solution as many times as you need.
 
