@@ -100,11 +100,11 @@ It’s because your solution does not pass the tests. Remember that when you pre
 
 </a>
 
-<!--- textlint-disable terminology -->
+<!--- textlint-disable -->
 
 For some kata (but not for all!), test suite is built in such a way that tests are stopped on first failure. When you see only one failed test and it’s the last one, it might mean that it’s the first one which your solution failed, and when you fix it, there are more to come.
 
-<!-- textlint-enable terminology -->
+<!-- textlint-enable -->
 
 
 
