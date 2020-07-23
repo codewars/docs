@@ -100,7 +100,12 @@ It’s because your solution does not pass the tests. Remember that when you pre
 
 </a>
 
+<!--- For false positive "built in" -->
+<!--- textlint-disable terminology -->
+
 For some kata (but not for all!), test suite is built in such a way that tests are stopped on first failure. When you see only one failed test and it’s the last one, it might mean that it’s the first one which your solution failed, and when you fix it, there are more to come.
+
+<!-- textlint-enable terminology -->
 
 
 
@@ -137,7 +142,12 @@ There is a couple of possible reasons for such behavior:
 
 Most (all?) languages on Codewars support writing to standard output. You can use stdout functions of your language to print function arguments (or anything else) and it will be visible in test output panel.
 
+<!--- For false positive "built in" -->
+<!--- textlint-disable terminology -->
+
 **Important note:** remember that when tests are run, your solution is executed (potentially with all the print statements inside), then assertions are performed on returned value, and finally, green/red assertion messages are printed. This leads to the fact that whatever you print in your solution, will appear **above** the assertion message it applies to. It's somewhat difficult to spot it visually in CW test output panel. If you think that your output totally does not match to the test case or its assertion message, be sure to look at the green/red message located **below** what you printed, and not above it. Additionally, some test suites are built in a way that printed output and assertion message are completely far away one from another, but such kata are rather exceptions and not that common.
+
+<!--- textlint-enable terminology -->
 
 ![ConsoleOutputExample](https://i.imgur.com/Uf3cZgz.png)
 
@@ -360,5 +370,4 @@ On Codewars, this error was usually seen when a solution attempted to dereferenc
 ### Exit code 137
 
 Exit code 137 usually means that too much output was printed to console. You can find more details on this problem [here](#i-get-max-buffer-size-reached-15-mib).
-
 
