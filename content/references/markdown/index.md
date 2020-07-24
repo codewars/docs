@@ -19,7 +19,7 @@ You may find below a summary of the most used ones.
 
 ## Emphasis
 
-```code
+```markdown
 _This is italic_
 *This is also italic*
 
