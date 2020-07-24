@@ -36,11 +36,11 @@ Note that `*You **can** combine them*`: *You **can** combine them*.
 
 ## Headers
 
-```text
-# This is <h1>
-## This is <h2>
-### This is <h3>
-```
+<pre><code>
+# This is &lt;h1&gt;
+## This is &lt;h2&gt;
+### This is &lt;h3&gt;
+</code></pre>
 
 
 
