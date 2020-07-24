@@ -48,9 +48,26 @@ Note that `*You **can** combine them*`: *You **can** combine them*.
 
 To get text displayed without the renderer playing with the indentation or whitespaces, code blocks
 
-### Inline code blocks
+### Inline code blocks:
 
-To highlight code  ` \`inline code block\` `
+To highlight code inside a sentence, use simple backticks  ``` `print("This is some code")` ```.
+
+### Mutliline code blocks:
+
+For multiline code blocks, use triple backticks.
+
+Constraints:
+   - Put an empty line before and after the code block itself, so that it's rendered correctly
+   - The triple backticks must be alone one their line (see [extensions](./references/markdown/extensions/) for exceptions)
+
+```code
+\`\`\`
+```
+```
+
+
+
+
 
 
 ## Lists
