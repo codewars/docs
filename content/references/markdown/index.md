@@ -44,10 +44,18 @@ Note that `*You **can** combine them*`: *You **can** combine them*.
 
 
 
+## Code blocks
+
+To get text displayed without the renderer playing with the indentation or whitespaces, code blocks
+
+### Inline code blocks
+
+To highlight code  ` \`inline code block\` `
+
 
 ## Lists
 
-* Unordered lists:
+### Unordered lists:
 
 ```code
 * item 1
@@ -58,7 +66,7 @@ Note that `*You **can** combine them*`: *You **can** combine them*.
 
 You can use different marks to get same result, like `+` or `-`.
 
-* Ordered lists:
+### Ordered lists:
 
 The numbering is automatic, hence you cannot mix different types of paragraphs or items if you want to keep the numbering correct.
 ```code
@@ -74,7 +82,7 @@ Example:
 1. item 2
     1. item 2.1
     * unordered mark
-    1. cannot be itme 2.2
+    1. cannot be item 2.2
 
 
 
@@ -105,7 +113,7 @@ Similarly to links:
 ## Paragraphs & line continuations:
 
 * To get separated paragraphs, put an empty line between your paragraphs in the text.
-    If you just use a line break, both parapgraphs will be merged together when rendered, like those two lines even if they are written on two différent lines.
+    If you just use a line break, both parapgraphs will be merged together when rendered, like those two lines even if they are written on two different lines.
 
 * If you just want a line break without any space between the paragraphs, put two whitespaces  
     ...at the end of the line, like it is here.
@@ -113,8 +121,8 @@ Similarly to links:
 The related code is:
 
 ```code
-* To get separated paragraphs, put an empty line between your paragraphs in the text.
-    If you just use a line break, both parapgraphs will be merged together when rendered, like those two lines even if they are written on two différent lines.
+* To get separated [...] in the text.
+    If you just use [...] different lines.
 
 * If you just want a line break without any space between the paragraphs, put two whitespaces  
     ...at the end of the line, like it is here.
