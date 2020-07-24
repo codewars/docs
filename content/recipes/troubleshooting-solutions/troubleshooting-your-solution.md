@@ -181,6 +181,7 @@ There are a few possible causes:
 
 Sometimes, you see all the tests green, 0 failed tests and then "exit code 137" in red at the top of the output panel.  
 If you see "STDERR, Max Buffer Size Reached (1.5 MiB)" at the bottom of it, that means too much things were printed to the console during the tests and they were interrupted.
+
 <div class="block dark:hidden">
 
 ![alt](./img/buffer-limit-error-light.png)
