@@ -36,7 +36,7 @@ Note that `*You **can** combine them*`: *You **can** combine them*.
 
 ## Headers
 
-```code
+```markdown
 # This is &lt;h1&gt;
 ## This is &lt;h2&gt;
 ###### This is &lt;h6&gt;
