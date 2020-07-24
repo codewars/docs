@@ -85,7 +85,6 @@ You can use different marks to get same result, like `+` or `-`.
 
 ### Ordered lists:
 
-The numbering is automatic, hence you cannot mix different types of paragraphs or items if you want to keep the numbering correct.
 ```markdown
 1. item 1
 1. item 2
