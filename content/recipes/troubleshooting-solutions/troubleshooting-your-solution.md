@@ -12,43 +12,6 @@ This guide covers common problems you may run into as a newcomer solving kata on
 
 ---
 
-# Table of contents
-
-**Scenarios:**
-
-### Your solution seems to work or is close to working, but still fails tests:
-
-- [My solution works on my machine, but not on Codewars](#my-machine)
-- [My solution seems to work fine, but some tests fail](#works-but-no)
-- [When I run "Tests", everything passes, but when I hit “Attempt” tests fail](#test-attempt)
-- [All tests except the last one pass](#last-fail)
-- [When I print my answer it looks exactly the same as the expected output, yet tests fail](#expected-the-same)
-
-### Error messages and printing your input/output
-
-- [How can I see which input causes my solution to fail?](#print-input)
-- [I want to print something to the console but it's not showing up!](#no-print)
-- [Tests fail and assertion message is confusing and unhelpful](#assert-confusing)
-
-### When the tests crash or don't complete
-
-- [I get Execution Timeout](#timeout)
-- [I get Max Buffer Size Reached (1.5 MiB)](#maxbuffer)
-- [I get `Exit code: some number`, or a message about some strange signal with some number](#exitcode)
-- [I get an empty output panel with "nothing was written to STDOUT or STDERR"](#memorysaturation)
-
-### Miscellaneous
-
-- [I think there is a bug in the kata and/or its tests. What should I do?](#kata-bug)
-- [How do I post to a kata discourse?](#post-discourse)
-- [I am stuck. I tried everything and nothing helped. What now?](#more-help)
-
-### Appendices and other
-
-- [Appendix A: Exit codes, signals, and other strange numbers](#appendix-errorcodes)
-
----
-
 ## Your solution seems to work or is close to working, but still fails tests
 
 ### <a name="my-machine"><a name="works-but-no">My solution works on my machine, but not on Codewars, **_OR_** My solution seems correct, but some tests fail when I attempt it.</a></a>
