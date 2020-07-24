@@ -4,6 +4,8 @@ topic: markdown
 next: /references/markdown/extensions/
 ---
 
+
+
 # Basic Markdown Syntax
 
 Codewars supports [Markdown][wiki-markdown].
@@ -28,6 +30,19 @@ ___here, italic and bold___
 ***here, italic and bold***
 ```
 Note that `*You **can** combine them*`: *You **can** combine them*.
+
+
+
+
+## Headers
+
+```code
+# This is <h1>
+## This is <h2>
+###### This is <h6>
+```
+
+
 
 
 ## Lists
@@ -116,7 +131,7 @@ To quote the answer of another user, for example:
 > You quote like this...
 ```
 
-> ...and you get this...
+> ...and you get this.
 
 
 
