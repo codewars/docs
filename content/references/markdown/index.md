@@ -60,12 +60,20 @@ Constraints:
    - Put an empty line before and after the code block itself, so that it's rendered correctly
    - The triple backticks must be alone one their line (see [extensions](./references/markdown/extensions/) for exceptions)
 
-```markdown
-\`\`\`
-\`\`\`
+````markdown
 ```
+This is a code block
+       you can indent inside it as you like.
+```
+````
 
+Another way to declare a code block is to put 4 whitesapces at the beginning of the line
 
+````markdown
+   This will be rendered as a code block too
+           you can indent inside it as you like.
+
+````
 
 
 
