@@ -74,7 +74,7 @@ Constraints:
 
 ### Unordered lists:
 
-```code
+```markdown
 * item 1
 * item 2
     * subitem 2.1
