@@ -129,12 +129,12 @@ Most (all?) languages on Codewars support writing to standard output. You can us
 
 <div class="block dark:hidden">
 
-![alt](./img/troubleshooting-print-console-light.png)
+![Print to the console picture - light](./img/troubleshooting-print-console-light.png)
 
 </div>
 <div class="hidden dark:block">
 
-![alt](./img/troubleshooting-print-console-dark.png)
+![Print to the console picture - dark](./img/troubleshooting-print-console-dark.png)
 
 </div>
 
@@ -181,15 +181,14 @@ There are a few possible causes:
 
 Sometimes, you see all the tests green, 0 failed tests and then "exit code 137" in red at the top of the output panel.  
 If you see "STDERR, Max Buffer Size Reached (1.5 MiB)" at the bottom of it, that means too much things were printed to the console during the tests and they were interrupted.
-
 <div class="block dark:hidden">
 
-![alt](./img/buffer-limit-error-light.png)
+![Buffer Limit Error pitcure - light](./img/buffer-limit-error-light.png)
 
 </div>
 <div class="hidden dark:block">
 
-![alt](./img/buffer-limit-error-dark.png)
+![Buffer Limit Error pitcure - dark](./img/buffer-limit-error-dark.png)
 
 </div>
 
