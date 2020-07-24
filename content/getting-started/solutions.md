@@ -1,6 +1,6 @@
 ---
 sidebar: getting-started
-prev: "/getting-started/solving-kata/"
+prev: "/getting-started/kata-solved/"
 next: "/getting-started/community/"
 ---
 
