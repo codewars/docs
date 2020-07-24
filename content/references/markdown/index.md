@@ -107,8 +107,8 @@ Example:
 
 Valid url links are automatically converted to links. If you want to have a custom text instead of the url, you can you this syntax:
 
-```code
-[Custom text](address)
+```markdown
+[link text](https://www.example.com)
 ```
 
 Like this [custom text leading to Codewars](https://www.codewars.com/dashboard).
