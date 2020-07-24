@@ -121,7 +121,7 @@ Like this [custom text leading to Codewars](https://www.codewars.com/dashboard).
 
 Similarly to links:
 
-```code
+```markdown
 ![alt text](address)
 ```
 
