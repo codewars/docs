@@ -127,7 +127,16 @@ Most (all?) languages on Codewars support writing to standard output. You can us
 
 <!--- textlint-enable terminology -->
 
-![ConsoleOutputExample](https://i.imgur.com/Uf3cZgz.png)
+<div class="block dark:hidden">
+
+![alt](./img/troubleshooting-print-console-light.png)
+
+</div>
+<div class="hidden dark:block">
+
+![alt](./img/troubleshooting-print-console-dark.png)
+
+</div>
 
 <a name="no-print">
 
