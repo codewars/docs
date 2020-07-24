@@ -51,7 +51,6 @@ This guide covers common problems you may run into as a newcomer solving kata on
 
 ## Your solution seems to work or is close to working, but still fails tests
 
-
 ### <a name="my-machine"><a name="works-but-no">My solution works on my machine, but not on Codewars, **_OR_** My solution seems correct, but some tests fail when I attempt it.</a></a>
 
 There are a number of things it could be. Try following (in given order):
@@ -72,10 +71,7 @@ There are a number of things it could be. Try following (in given order):
 
 - Ask a question ([see here](#post-discourse)).
 
-
-
 ### <a name="test-attempt">When I run "Tests", everything passes, but when I hit “Attempt” tests fail</a>
-
 
 It’s because your solution does not pass the tests. Remember that when you press **“TEST”**, only sample tests are run - the ones you see under the kata code editor. There’s usually only a couple of sample tests, they are easy, execute fast, and they do not cover too many edge cases. Only when you press **“ATTEMPT”**, the full test suite is run, potentially with tests for edge cases, large inputs, performance, random tests, etc. You cannot see full test suite (and its test cases) if you haven’t solved the kata. Only when full test suite is run and passes, your solution can be accepted and kata can be considered solved. See [this point](#works-but-no) for possible hints how to proceed.
 
