@@ -36,23 +36,27 @@ Note that `*You **can** combine them*`: *You **can** combine them*.
 
 ## Headers
 
-```markdown
-# This is &lt;h1&gt;
-## This is &lt;h2&gt;
-###### This is &lt;h6&gt;
+```text
+# This is <h1>
+## This is <h2>
+### This is <h3>
 ```
 
 
 
-## Code blocks
+## Displaying code
 
-To get text displayed without the renderer playing with the indentation or whitespaces, code blocks
+Use code spans and code blocks to show the text as is. Use code block to show the syntax highlighted code.
 
-### Inline code blocks:
+### Code span
 
-To highlight code inside a sentence, use simple backticks  ``` `print("This is some code")` ```.
+Use single backtick (<code>`</code>) to show the text as is inline.
 
-### Mutliline code blocks:
+```markdown
+Code span example: `print("example")`
+```
+
+### Code block
 
 For multiline code blocks, use triple backticks.
 
