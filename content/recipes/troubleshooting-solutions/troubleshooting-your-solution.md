@@ -249,13 +249,13 @@ Probably nothing. Go through following checklist and see which applies to you:
 
 </a>
 
-- Use [code formatting](https://github.com/Codewars/Codewars.com/wiki/Markdown-Formatting) when posting blocks of code.
+- Use [code formatting TODO](https://github.com/Codewars/Codewars.com/wiki/Markdown-Formatting) when posting blocks of code.
 - Use **spoiler flag** when your posts contain parts of solution (even not working one), or if it mentions anything what might reveal details of solution.
 - Say what language version you are referring to.
 - Mark your post with **Question** label if you have some problems solving the kata and want to ask for help.
 - Mark your post with **Suggestion** label if you want to propose some changes or improvements to discussed kata. It's also customary when posting a translation to post a link as a suggestion as well, in case the notification gets lost.
 - Mark your post with **Issue** label only if you are perfectly sure that kata is in some way broken, and needs to be edited and fixed. If you have difficulties with solving the kata, raise a **Question**, and not an **Issue**.
-- Read [this Codewars wiki page](https://github.com/Codewars/Codewars.com/wiki/Kata-Discourse) for some more details on labels.
+- Read [this Codewars wiki page TODO](https://github.com/Codewars/Codewars.com/wiki/Kata-Discourse) for some more details on labels.
 - Note that because of this three-label system, the standard of issues is _likely more strict_ on Codewars than on other platforms you might be familiar with. So for example many GitHub issues would be questions or suggestions by this standard.
 - Remember that by posting a comment you're communicating with _real humans_, and by labelling (or not labelling) you're requesting the corresponding level of attention from _real humans_. We understand that you may be utterly frustrated about the fact that the answer should be 1064 not 1074, but it needs to be understood that these guidelines provide crucial information that help the community help you and/or improve the kata, and will also help yourself understand the problem better.
 
@@ -265,7 +265,7 @@ Probably nothing. Go through following checklist and see which applies to you:
 
 </a>
 
-You can search for additional help on Codewars gitter chats: [general](https://gitter.im/Codewars/Codewars.com) or [kata solving help](https://gitter.im/Codewars/Codewars.com/kata-solving-help). There’s always someone hanging out there, and usually users are very willing to help. Usually.
+You can search for additional help on Codewars gitter chats: [general TODO](https://gitter.im/Codewars/Codewars.com) or [kata solving help TODO](https://gitter.im/Codewars/Codewars.com/kata-solving-help). There’s always someone hanging out there, and usually users are very willing to help. Usually.
 
 ---
 
