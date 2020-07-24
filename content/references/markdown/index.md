@@ -153,7 +153,7 @@ The related code is:
 To quote the answer of another user, for example:
 
 ```code
-> You quote like this...
+> Quoted text
 ```
 
 > Quoted text
