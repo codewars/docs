@@ -50,4 +50,18 @@
   }
 }
 
+/* Required to show the heading below the fixed header on anchor navigation.
+ * https://stackoverflow.com/a/38106970
+ */
+h1,
+h2,
+h3,
+h4 {
+  &[id]::before {
+    content: "";
+
+    @apply invisible block -mt-16 h-16;
+  }
+}
+
 @tailwind utilities;
