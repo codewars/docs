@@ -50,7 +50,7 @@ Use code spans and code blocks to show the text as is. Use code block to show th
 
 ### Code span
 
-Use single backtick (<code>`</code>) to show the text as is inline.
+Use single backtick (`) to show the text as is inline.
 
 ```markdown
 Code span example: `print("example")`
@@ -84,7 +84,7 @@ Another way to declare a code block is to put 4 whitesapces at the beginning of 
 
 ## Lists
 
-### Unordered lists:
+### Unordered lists
 
 ```markdown
 * item 1
@@ -95,7 +95,7 @@ Another way to declare a code block is to put 4 whitesapces at the beginning of 
 
 You can use different marks to get same result, like `+` or `-`.
 
-### Ordered lists:
+### Ordered lists
 
 ```markdown
 1. item 1
