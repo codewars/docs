@@ -156,7 +156,7 @@ To quote the answer of another user, for example:
 > You quote like this...
 ```
 
-> ...and you get this.
+> Quoted text
 
 
 
