@@ -60,9 +60,9 @@ Constraints:
    - Put an empty line before and after the code block itself, so that it's rendered correctly
    - The triple backticks must be alone one their line (see [extensions](./references/markdown/extensions/) for exceptions)
 
-```code
+```markdown
 \`\`\`
-```
+\`\`\`
 ```
 
 
