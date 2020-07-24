@@ -50,6 +50,7 @@ module.exports = {
               "/getting-started/setting-up/",
               "/getting-started/finding-kata/",
               "/getting-started/solving-kata/",
+              "/getting-started/kata-solved/",
               "/getting-started/solutions/",
               "/getting-started/community/",
             ],
