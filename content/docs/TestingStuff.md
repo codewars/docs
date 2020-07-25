@@ -1,5 +1,5 @@
 ---
-kind: tuorial
+kind: tutorial
 topic: links
 ---
 
