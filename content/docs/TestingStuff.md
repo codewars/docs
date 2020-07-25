@@ -10,6 +10,7 @@
 ### paths links (while original file is `docs/content/docs/TestingStuff.md`):
 
 - [community](./getting-started/community.md) >>> OK!
+
 ```markdown
 - [community](community.md) >>> FAIL
 - [community](./content/getting-started/community.md) >>> FAIL
@@ -32,5 +33,4 @@
 * in docs (sub folder): [meh!](chekc sub dir)
 * in content: [meh!](extensions)
 * in data: [tags] (note: yml file)
-
 ```
