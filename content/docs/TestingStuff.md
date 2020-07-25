@@ -1,5 +1,5 @@
 ---
-kind:tutorial
+kind: tutorial
 ---
 
 ### direct links:
