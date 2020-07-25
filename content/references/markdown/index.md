@@ -138,27 +138,6 @@ Similarly to links:
 
 
 
-## Paragraphs & line continuations:
-
-* To get separated paragraphs, put an empty line between your paragraphs in the text.
-    If you just use a line break, both parapgraphs will be merged together when rendered, like those two lines even if they are written on two different lines.
-
-* If you just want a line break without any space between the paragraphs, put two whitespaces  
-    ...at the end of the line, like it is here.
-
-The related code is:
-
-```code
-* To get separated [...] in the text.
-    If you just use [...] different lines.
-
-* If you just want a line break without any space between the paragraphs, put two whitespaces  
-    ...at the end of the line, like it is here.
-```
-
-
-
-
 ## Blockquotes
 
 To quote the answer of another user, for example:
