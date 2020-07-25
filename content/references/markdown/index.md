@@ -71,13 +71,6 @@ This is a code block
 ```
 ````
 
-Another way to declare a code block is to put 4 whitesapces at the beginning of the line
-
-````markdown
-   This will be rendered as a code block too
-           you can indent inside it as you like.
-
-````
 
 
 
@@ -116,7 +109,9 @@ Example:
 
 ## Links
 
-Valid url links are automatically converted to links. If you want to have a custom text instead of the url, you can you this syntax:
+Valid URLs are automatically converted to links with link text set to the URL.
+
+To specify a link text, use the following syntax:
 
 ```markdown
 [link text](https://www.example.com)
