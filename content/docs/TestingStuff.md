@@ -9,11 +9,14 @@
 
 ### paths links (while original file is `docs/content/docs/TestingStuff.md`):
 
-- [community](community.md) >>> FAIL
 - [community](./getting-started/community.md) >>> OK!
+```markdown
+- [community](community.md) >>> FAIL
 - [community](./content/getting-started/community.md) >>> FAIL
 - [community](./docs/content/getting-started/community.md) >>> FAIL
+```
 
+```markdown
 ### direct links with custom text:
 
 - in docs (same folder): [meh][installation]
@@ -29,3 +32,5 @@
 * in docs (sub folder): [meh!](chekc sub dir)
 * in content: [meh!](extensions)
 * in data: [tags] (note: yml file)
+
+```
