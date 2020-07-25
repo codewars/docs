@@ -1,5 +1,6 @@
 ---
-kind: tutorial
+kind: tuorial
+topic: links
 ---
 
 ### direct links:
