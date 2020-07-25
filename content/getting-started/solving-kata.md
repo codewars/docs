@@ -12,8 +12,16 @@ After opening a kata page, you are presented with the [kata details (TODO: link 
 
 Welcome to the kata trainer! You use this view to take your attempts on solution, write the code and run tests. A few tips to get you started:
 
-<div class="block dark:hidden">![kata trainer](./img/solving_03_trainer_light.png)</div>
-<div class="hidden dark:block">![kata trainer](./img/solving_03_trainer_dark.png)</div>
+<div class="block dark:hidden">
+
+![kata trainer](./img/solving_03_trainer_light.png)
+
+</div>
+<div class="hidden dark:block">
+
+![kata trainer](./img/solving_03_trainer_dark.png)
+
+</div>
 
 ### Solution editor
 
