@@ -25,7 +25,7 @@ Rank level reflects your experience and knowledge you have gained by solving kat
 
 ![rank progress](./img/solving_01_rank-progress_dark.png)
 
-</div
+</div>
 
 More information on ranks and progress can be found [here (TODO: add link to docs on progress)]().
 
@@ -46,6 +46,6 @@ After you have successfully solved a task, you can let others know how you liked
 
 ![satisfaction vote](./img/solving_02_vote_dark.png)
 
-</div
+</div>
 
 You can also participate in discussion on a kata. If you wish to log an issue about this specific kata, such as poorly worded descriptions or issues with test cases, then you can leave a comment in discourse section. More on this in the next part.
