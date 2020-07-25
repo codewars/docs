@@ -9,7 +9,7 @@
 
 ### paths links (while original file is `docs/content/docs/TestingStuff.md`):
 
-- [community](./getting-started/community.md) >>> OK!
+- [community](./getting-started/community) >>> OK!
 
 ```markdown
 - [community](community.md) >>> FAIL
