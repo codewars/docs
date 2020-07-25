@@ -1,3 +1,7 @@
+---
+kind:tutorial
+---
+
 ### direct links:
 
 - in docs (same folder): [installation]
