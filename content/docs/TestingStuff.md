@@ -1,7 +1,3 @@
----
-kind: tutorial
-topic: links
----
 
 ### direct links:
 
