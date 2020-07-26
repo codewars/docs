@@ -16,7 +16,16 @@ You worked hard to solve your last challenge, and after you succeeded, you defin
 
 Rank level reflects your experience and knowledge you have gained by solving kata. You start at the lowest rank of 8 kyū, and each correct solution brings you closer to a higher rank. You can see your rank progress toward next level on your profile page:
 
-![rank progress](./img/solving_01_rank-progress.png)
+<div class="block dark:hidden">
+
+![rank progress](./img/solving_01_rank-progress_light.png)
+
+</div>
+<div class="hidden dark:block">
+
+![rank progress](./img/solving_01_rank-progress_dark.png)
+
+</div>
 
 More information on ranks and progress can be found [here (TODO: add link to docs on progress)]().
 
@@ -28,6 +37,15 @@ Honor points are rewarded by contributing to Codewars in many ways, and solving 
 
 After you have successfully solved a task, you can let others know how you liked it. One way to do this is to leave your satisfaction vote:
 
-![satisfaction vote](./img/solving_02_vote.png)
+<div class="block dark:hidden">
+
+![satisfaction vote](./img/solving_02_vote_light.png)
+
+</div>
+<div class="hidden dark:block">
+
+![satisfaction vote](./img/solving_02_vote_dark.png)
+
+</div>
 
 You can also participate in discussion on a kata. If you wish to log an issue about this specific kata, such as poorly worded descriptions or issues with test cases, then you can leave a comment in discourse section. More on this in the next part.

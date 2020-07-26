@@ -12,7 +12,16 @@ In this section you will learn how to set up your account to get the best traini
 
 You can enter your account settings panel by navigating with [this link](https://www.codewars.com/users/edit), or using following menu:
 
-![Account Settings menu](./img/setting-up_01_account-menu.png)
+<div class="block dark:hidden">
+
+![Account Settings menu](./img/setting-up_01_account-menu_light.png)
+
+</div>
+<div class="hidden dark:block">
+
+![Account Settings menu](./img/setting-up_01_account-menu_dark.png)
+
+</div>
 
 You can find all options described in detail [here (TODO: insert link to actual documentation of UI)](), and below are listed ones useful to get you running as soon as possible:
 
@@ -34,7 +43,16 @@ Now you just need to clik `UPDATE` to have your settings stored in the database.
 
 You can enter your training setup panel by navigating with [this link](https://www.codewars.com/trainer/setup), or using following menu:
 
-![Training Setup menu](./img/setting-up_02_training-menu.png)
+<div class="block dark:hidden">
+
+![Training Setup menu](./img/setting-up_02_training-menu_light.png)
+
+</div>
+<div class="hidden dark:block">
+
+![Training Setup menu](./img/setting-up_02_training-menu_dark.png)
+
+</div>
 
 Again, detailed description can be found in [UI documentation (TODO: insert link to actual documentation of UI)](), but things needed to get you started are briefly explaned below:
 

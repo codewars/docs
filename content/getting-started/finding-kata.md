@@ -12,7 +12,16 @@ Your account is configured and you are ready for your next challenge. Now you wi
 
 The easiest way of getting started is to use the personal trainer on the dashboard to pick your next kata.
 
-![training routines](./img/finding-kata_01_training-routines.png)
+<div class="block dark:hidden">
+
+![training routines](./img/finding-kata_01_training-routines_light.png)
+
+</div>
+<div class="hidden dark:block">
+
+![training routines](./img/finding-kata_01_training-routines_dark.png)
+
+</div>
 
 The personal trainer suggests you a kata based on the selected language and focus area. You can either train on the suggested kata or skip to see the next suggestion.
 
@@ -26,7 +35,16 @@ If, for some reason, you do not like suggested kata, you can skip on it without 
 
 For those really looking for a hard challenge or for a specific kind of rank/task/..., we recommend you go directly to the full list of kata where you can select from over 8000 kata to train on. Remember, 8 kyū is the easiest level a kata can be.
 
-![sidebar](./img/finding-kata_02_sidebar.png)
+<div class="block dark:hidden">
+
+![sidebar](./img/finding-kata_02_sidebar_light.png)
+
+</div>
+<div class="hidden dark:block">
+
+![sidebar](./img/finding-kata_02_sidebar_dark.png)
+
+</div>
 
 Details of kata search page are described in [UI documentation (TODO: insert link to documentation of kata search panel)](), but here are some useful hints for beginners:
 
