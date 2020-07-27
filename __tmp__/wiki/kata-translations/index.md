@@ -6,7 +6,7 @@ This is where translations come in. They allow other warriors to make katas avai
 
 Once you have completed a kata, there will be a new choice within the languages menu to add a new language. 
 
-<img src="./language-menu.png" title="Language Menu" height="400px">
+<img src="https://www.evernote.com/l/AAW0GaebQllDBb_YS-AfeaUiwq5PoxaDPIoB/image.png" title="Language Menu" height="400px">
 
 This will take you to the translations page where you can view existing translations and create new ones.
 
@@ -43,11 +43,15 @@ Specifically
 * do not add your own "cute" comments in the code
 * do not make any of your own "improvements" without informing the kata sensei why they were required
 
+The one notable exception to the last bullet point above is with regards to random tests. It is not uncommon for katas (published in the earlier years of Codewars) to lack random tests. In such cases, translations are still expected to include random tests, except in rare instances where random tests are simply not applicable.
+
 ### Consider relevance
 
 Not all kata can be translated to all languages. 
 
 For example, if the kata is of a "Bugfix" type, the problem may not be applicable to other languages. If it feels like you are jamming a square peg into a round hole to create the translation then do not do it.
+
+Another example would be when there is a disparity in difficulty between a translation and the original kata. For instance, a language that requires a user to write out an entire algorithm will require a great deal more legwork versus a language which provides the same algorithm as a built-in or importable module (e.g. Python, known for being "batteries included"). In short, if the translation (or the bulk of it) can be solved with a simple import and that option is not available in the original kata, that translation may not be suitable for publishing.
 
 ### Language conventions
 
@@ -59,7 +63,7 @@ Please note, the description is shared among all kata languages. Do not add or r
 
 ## How to announce your translation
 
-When you publish your translation the original kata sensei will be automatically notified that your effort is pending their approval. But it is also good practice to write a comment in the kata "Discourse" to announce what you have done.
+When you publish your translation the original kata sensei will be automatically notified that your effort is pending their approval. But it is also good practice to write a comment in the kata "Discourse" to announce what you have done. This way, if the original author has been absent from Codewars for a prolonged period of time, another qualified user can review and approve in their place.
 
 Tip: marking that comment as a `suggestion` will also help your translation from being accidentally overlooked.
 
