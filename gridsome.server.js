@@ -21,6 +21,13 @@ const sanitize = require("sanitize-html");
 const toHTML = (content) => sanitize(marked(content));
 
 module.exports = function (api) {
+  api.onCreateNode((options) => {
+    if (options.internal.typeName === "MarkdownPage") {
+      // Add slug field to sort case insensitively.
+      return { ...options, slug: slugify(options.title) };
+    }
+  });
+
   api.loadSource(({ addCollection, addMetadata }) => {
     // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
     addMetadata("settings", require("./gridsome.config").settings);
