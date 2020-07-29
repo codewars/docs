@@ -9,7 +9,10 @@
 
       <div class="order-1 w-full md:w-2/3">
         <!-- eslint-disable-next-line vue/no-v-html -->
-        <div class="prose pt-8" v-html="$page.markdownPage.content" />
+        <div
+          class="prose max-w-none pt-8"
+          v-html="$page.markdownPage.content"
+        />
 
         <div class="mt-8 pt-8 lg:mt-12 lg:pt-12 border-t border-ui-border">
           <NextPrevLinks :prev="prev" :next="next" />

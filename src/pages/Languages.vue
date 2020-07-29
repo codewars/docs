@@ -1,7 +1,7 @@
 <template>
   <Layout currentPath="/languages/" sidebar="docs">
     <div class="w-full md:w-2/3">
-      <div class="prose pt-8">
+      <div class="prose max-w-none pt-8">
         <h1 id="supported-languages">
           <a href="#supported-languages" aria-hidden="true"></a>
           Supported Languages

@@ -63,16 +63,20 @@ module.exports = {
             // color: theme("colors.gray.600"),
             color: theme("colors.typo.low"),
           },
-          // Backticks can be removed by adding the following, but we should style it differently if we do.
-          // "code::before": {
-          //   content: "",
-          // },
-          // "code::after": {
-          //   content: "",
-          // },
+          "code::before": {
+            content: '""',
+          },
+          "code::after": {
+            content: '""',
+          },
           code: {
             // color: theme("colors.gray.900"),
             color: theme("colors.typo.high"),
+            borderColor: theme("colors.ui.border"),
+            borderWidth: "1px",
+            padding: theme("spacing.1"),
+            borderRadius: theme("borderRadius.default"),
+            fontWeight: null,
           },
           pre: {
             // color: theme("colors.gray.300"),
