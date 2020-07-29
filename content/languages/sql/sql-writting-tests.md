@@ -11,9 +11,9 @@ Here's an opinionated suggestion of how to test SQL which is similar to the "ins
 
 Disadvantages of this approach are that the challenger might be surprised or confused by the Ruby code, so offering an explanatory note at the end of the instructions can go a long way to mitigating this. Another possible downside is that the test file can become verbose, so you can strategically move some of the content to helper functions in the preloaded file.
 
-Other than Codewars' `run_sql` function, the optional diff table code and interactions with the [`DB` object](https://github.com/jeremyevans/sequel#label-A+Short+Example), the code uses normal RSpec comparisons on an array of hashes.
+Other than Codewars' `run_sql` function, the optional diff table code and interactions with the [DB object](https://github.com/jeremyevans/sequel#label-A+Short+Example), the code uses normal RSpec comparisons on an array of hashes.
 
-Random tests are important to include for the submission to prevent cheating and can use [`Faker`](https://github.com/faker-ruby/faker) and Ruby's [`Random`](https://ruby-doc.org/core-2.4.0/Random.html) class.
+Random tests are important to include for the submission to prevent cheating and can use [Faker](https://github.com/faker-ruby/faker) and Ruby's [Random](https://ruby-doc.org/core-2.4.0/Random.html) class.
 
 ### Example instructions:
 
