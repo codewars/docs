@@ -26,7 +26,7 @@
         <!-- eslint-disable-next-line vue/no-v-html -->
         <div
           v-if="version.description"
-          class="prose"
+          class="prose max-w-none"
           v-html="version.description"
         />
       </div>
