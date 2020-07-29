@@ -50,7 +50,7 @@ Use code spans and code blocks to show the text as is. Use code block to show th
 
 ### Code span
 
-Use single backtick (\`) to show the text as is inline.
+Use single backtick `` ` `` to show the text as is inline.
 
 ```markdown
 Code span example: `print("example")`
@@ -60,16 +60,37 @@ Code span example: `print("example")`
 
 For multiline code blocks, use triple backticks.
 
-Constraints:
-   - Put an empty line before and after the code block itself, so that it's rendered correctly
-   - The triple backticks must be alone one their line (see [extensions] for exceptions)
-
 ````markdown
 ```
 This is a code block
        you can indent inside it as you like.
 ```
 ````
+
+Note: The triple backticks must be alone one their line, otherwise the block will not be rendered correctly (see [extensions] for exceptions).
+
+````markdown
+```This is incorrect
+as a block
+```
+
+```
+Begins but,
+this is incorrect```
+````
+
+Sepcial case: languages blocks (see [extensions]):
+
+````markdown
+```python
+print("ab")    # this is code
+```
+
+```if:ruby
+This won't be rendered as code (see next documentation)
+```
+````
+
 
 
 
