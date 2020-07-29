@@ -16,34 +16,41 @@ Other than Codewars' `run_sql` function, the optional diff table code and intera
 Random tests are important to include for the submission to prevent cheating and can use [`Faker`](https://github.com/faker-ruby/faker) and Ruby's [`Random`](https://ruby-doc.org/core-2.4.0/Random.html) class.
 
 ### Example instructions:
-Write a query to retrieve all rows from the `widgets` table where the varchar widget `name` column starts with the substring `"foo"`. *...Include examples, schema images, etc...*
 
-### Complete solution: 
+Write a query to retrieve all rows from the `widgets` table where the varchar widget `name` column starts with the substring `"foo"`. _...Include examples, schema images, etc..._
+
+### Complete solution:
+
 ```sql
 SELECT * FROM widgets WHERE widgets.name LIKE 'foo%';
 ```
+
 ### Initial solution:
+
 ```sql
 -- Write your query here
 ```
+
 ### Preloaded code:
+
 ```ruby
 def show_diff_table(actual, expected)
   daff_data = DaffWrapper.new(
-    actual, 
-    expected, 
+    actual,
+    expected,
     index: true
   ).serializable
   Display.daff_table(
-    daff_data, 
-    label: "Diff", 
-    tab: true, 
+    daff_data,
+    label: "Diff",
+    tab: true,
     allow_preview: true
   )
 end
 ```
 
 ### Test cases and example test cases:
+
 ```ruby
 describe "Query tests" do
   after(:each) {DB.drop_table?(:widgets)}
@@ -53,12 +60,12 @@ describe "Query tests" do
       varchar(:name)
     end
   end
-  
+
   it "should work on an example test" do
     DB[:widgets].insert(name: "foo")
     DB[:widgets].insert(name: "quux")
     DB[:widgets].insert(name: "foobar")
-    expected = [{:id => 1, :name => "foo"}, 
+    expected = [{:id => 1, :name => "foo"},
                 {:id => 3, :name => "foobar"}]
     actual = run_sql.to_a()
     show_diff_table(actual, expected)
