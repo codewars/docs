@@ -59,29 +59,19 @@ This is a code block
 ```
 ````
 
-Note: The triple backticks must be alone one their line, otherwise the block will not be rendered correctly (see [extensions] for exceptions).
-
-````markdown
-```This is incorrect
-as a block
-```
-
-```
-Begins but,
-this is incorrect```
-````
-
-Sepcial case: languages blocks (see [extensions]):
+Info strings can be added on the opening triple backtick, to get the syntax highlighted. The info string must be a valid language name (`pyhton`, `javascript`, `php`, `ruby`, `cpp`, ...).
 
 ````markdown
 ```python
-print("ab")    # this is code
-```
-
-```if:ruby
-This won't be rendered as code (see next documentation)
+def hello_world():
+    # this is rendered
+    hi = lambda: 'hello'
+    print(hi())
+    return 42 
 ```
 ````
+
+See Codewars' [extensions] page about sequential and language specific blocks.
 
 
 
