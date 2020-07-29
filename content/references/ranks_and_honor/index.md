@@ -1,3 +1,7 @@
+---
+kind: reference
+---
+
 # Ranks and Honor
 
 On Codewars, there are two different scales you can level up by doing different things:
