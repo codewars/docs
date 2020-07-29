@@ -7,7 +7,9 @@ tags:
   - testing
 ---
 
-# Generalities
+# Writting tests for SQL
+
+## Generalities
 
 If you do use an existing SQL kata, be sure to avoid exposing the solution in the preloaded code file. It's easy for a code warrior to read the file in the sample tests and view the solution. Also, drop and recreate the database per `it` block so that there's no surprising state shared across cases.
 
