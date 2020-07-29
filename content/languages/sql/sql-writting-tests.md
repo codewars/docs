@@ -1,5 +1,3 @@
-
-
 If you do use an existing SQL kata, be sure to avoid exposing the solution in the preloaded code file. It's easy for a code warrior to read the file in the sample tests and view the solution. Also, drop and recreate the database per `it` block so that there's no surprising state shared across cases.
 
 Here's an opinionated suggestion of how to test SQL which is similar to the "insert example" button in the new kata editor. In both cases, sample tests are explicitly visible to the code warrior rather than buried in the interface with `compare_with`, which many challenges use and abuse. Even if the challenger is not familiar with Ruby, it's less magical and easier to debug when exposed. They're always free to ignore the test cases. I prefer a close to 1:1 ratio between `it` block and `expect` calls so the challenger can localize their problem easily.
