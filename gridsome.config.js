@@ -64,9 +64,9 @@ module.exports = {
             title: "Ranks, Honor, Privileges",
             items: [
               "/references/gamification/",
-              "/references/gamification/ranks",
-              "/references/gamification/honor",
-              "/references/gamification/privileges",
+              "/references/gamification/ranks/",
+              "/references/gamification/honor/",
+              "/references/gamification/privileges/",
             ],
           },
         ],
