@@ -5,6 +5,8 @@ languages: [sql]
 topic: tests
 tags:
   - testing
+sidebar: "language:sql"
+prev: /languages/sql/
 ---
 
 # Writting tests for SQL
