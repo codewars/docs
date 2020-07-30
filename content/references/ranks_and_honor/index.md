@@ -85,8 +85,6 @@ This table shows the amount of score you gain every time you complete a kata of 
 
 Honor represents the level of respect a user has earned from the community, based on their skill and contributions. While ranks are an indication of your skill only, honor is mostly an indication of your activity and contributions.
 
-### Honor Points
-
 You earn honor when you accomplish certain goals on Codewars.
 
 | Solving kata            | Honor | Description                                                                                 |
