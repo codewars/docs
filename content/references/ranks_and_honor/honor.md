@@ -1,5 +1,6 @@
 ---
 kind: reference
+sidebar: ranks-honor
 prev: /references/ranks-and-honor/ranks
 next: /references/ranks-and-honor/privileges/
 ---
