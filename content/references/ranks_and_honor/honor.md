@@ -1,3 +1,9 @@
+---
+kind: reference
+prev: /references/ranks-and-honor/ranks
+next: /references/ranks-and-honor/privileges/
+---
+
 # Honor
 
 Honor represents the level of respect a user has earned from the community, based on their skill and contributions. While ranks are an indication of your skill only, honor is mostly an indication of your activity and contributions.

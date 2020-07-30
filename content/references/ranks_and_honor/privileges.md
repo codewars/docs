@@ -1,3 +1,8 @@
+---
+kind: reference
+prev: /references/ranks-and-honor/honor/
+---
+
 # Privileges
 
 Users earn new privileges as they use the site more. Privileges are earned by reaching a certain level of honor. 
