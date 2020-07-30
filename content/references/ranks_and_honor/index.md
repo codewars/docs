@@ -70,16 +70,16 @@ When a kata is completed, you always received a set amount of honor points based
 
 This table shows the amount of score you gain every time you complete a kata of a given rank. Remember, every kata completion counts toward the rank of that language, but only the first completion of a given kata counts toward your overall rank/score.
 
-| Kata Rank              | Score Awarded |
-| :--------------------- | ------------: |
-| Complete an 8 kyu kata |             2 |
-| Complete a 7 kyu kata  |             3 |
-| Complete a 6 kyu kata  |             8 |
-| Complete a 5 kyu kata  |            21 |
-| Complete a 4 kyu kata  |            55 |
-| Complete a 3 kyu kata  |           149 |
-| Complete a 2 kyu kata  |           404 |
-| Complete a 1 kyu kata  |         1,097 |
+| Kata Rank | Score Awarded |
+| :-------- | ------------: |
+| 8 kyu     |             2 |
+| 7 kyu     |             3 |
+| 6 kyu     |             8 |
+| 5 kyu     |            21 |
+| 4 kyu     |            55 |
+| 3 kyu     |           149 |
+| 2 kyu     |           404 |
+| 1 kyu     |         1,097 |
 
 ## Honor
 
