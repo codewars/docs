@@ -97,16 +97,24 @@ You can use `-`, `*`, and `+` as bullet markers.
 ```markdown
 1. item 1
     1. subitem 1.1
+    2. subitem 1.2
 2. item 2
-    * subitem 2.1
+    * subitem (you can use unordered subitems too)
+3. item 3
+```
 
-or
+Incrementing the marker is optional so you can use the following too:
 
+```markdown
 1. item 1
     1. subitem 1.1
-1. item 2 (incrementing the marker number is optional)
-    * subitem 2.1
+    1. subitem 1.2
+1. item 2
+    * subitem (you can use unordered subitems too)
+1. item 3
 ```
+
+
 
 
 ## Links
