@@ -28,8 +28,8 @@ __This is bold__
 
 ___here, italic and bold___
 ***here, italic and bold***
+*You can have **bold** in italic*
 ```
-Note that `*You **can** combine them*`: *You **can** combine them*.
 
 
 
@@ -50,16 +50,17 @@ Code span example: `print("example")`
 
 ### Code block
 
-For multiline code blocks, use triple backticks.
+For code blocks, use triple backticks (a "code fence").
 
 ````markdown
 ```
-This is a code block
-       you can indent inside it as you like.
+This is the content of the code block.
+       You can indent inside it as you like and it will be preserved.
 ```
 ````
 
-Info strings can be added on the opening triple backtick, to get the syntax highlighted. The info string must be a valid language name (`pyhton`, `javascript`, `php`, `ruby`, `cpp`, ...).
+The opening code fence can be followed by an optional text called the info string. When the info string is a valid language ID, `python` for example, the content is syntax highlighted.
+See the language's documentation in [supported languages](/languages/) to find the langauge ID.
 
 ````markdown
 ```python
@@ -71,7 +72,7 @@ def hello_world():
 ```
 ````
 
-See Codewars' [extensions] page about sequential and language specific blocks.
+If you're writing a kata description, see [Codewars' extensions][extensions] like sequential and language specific blocks.
 
 
 
@@ -89,25 +90,23 @@ See Codewars' [extensions] page about sequential and language specific blocks.
     * subitem 2.2
 ```
 
-You can use different marks to get same result, like `+` or `-`.
+You can use `-`, `*`, and `+` as bullet markers.
 
 ### Ordered lists
 
 ```markdown
 1. item 1
-1. item 2
-  * subitem 2.1
-  * subitem 2.2
-```
+    1. subitem 1.1
+2. item 2
+    * subitem 2.1
 
-Example:
+or
 
 1. item 1
-1. item 2
-    1. item 2.1
-    * unordered mark
-    1. cannot be item 2.2
-
+    1. subitem 1.1
+1. item 2 (incrementing the marker number is optional)
+    * subitem 2.1
+```
 
 
 ## Links
@@ -120,7 +119,6 @@ To specify a link text, use the following syntax:
 [link text](https://www.example.com)
 ```
 
-Like this [custom text leading to Codewars](https://www.codewars.com/dashboard).
 
 
 
@@ -128,7 +126,7 @@ Like this [custom text leading to Codewars](https://www.codewars.com/dashboard).
 
 ## Images
 
-Similarly to links:
+To include an image:
 
 ```markdown
 ![alt text](address)
@@ -144,7 +142,6 @@ To quote the answer of another user, for example:
 > Quoted text
 ```
 
-> Quoted text
 
 
 
@@ -152,7 +149,6 @@ To quote the answer of another user, for example:
 
 
 <!--
-TODO Finish this basic Markdown reference by listing most frequently used ones
 TODO Add tutorial for writing readable comment with Markdown
 TODO Add tutorial for formatting kata description
 -->
