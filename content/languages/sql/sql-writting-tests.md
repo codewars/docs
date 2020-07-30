@@ -9,7 +9,7 @@ sidebar: "language:sql"
 prev: /languages/sql/
 ---
 
-# Writting tests for SQL
+# Writing explicit tests for SQL kata
 
 ## Generalities
 
@@ -23,23 +23,23 @@ Other than Codewars' `run_sql` function, the optional diff table code and intera
 
 Random tests are important to include for the submission to prevent cheating and can use [Faker](https://github.com/faker-ruby/faker) and Ruby's [Random](https://ruby-doc.org/core-2.4.0/Random.html) class.
 
-## Example instructions:
+## Example instructions
 
 Write a query to retrieve all rows from the `widgets` table where the varchar widget `name` column starts with the substring `"foo"`. _...Include examples, schema images, etc..._
 
-## Complete solution:
+## Complete solution
 
 ```sql
 SELECT * FROM widgets WHERE widgets.name LIKE 'foo%';
 ```
 
-## Initial solution:
+## Initial solution
 
 ```sql
 -- Write your query here
 ```
 
-## Preloaded code:
+## Preloaded code
 
 ```ruby
 def show_diff_table(actual, expected)
@@ -57,7 +57,7 @@ def show_diff_table(actual, expected)
 end
 ```
 
-## Test cases and example test cases:
+## Test cases
 
 ```ruby
 describe "Query tests" do
