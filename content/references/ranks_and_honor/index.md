@@ -109,7 +109,9 @@ You earn honor when you accomplish certain goals on Codewars.
 | Reached 1 dan |   450 | you have reached 1dan (master)!     |
 | Reached 2 dan |   900 | you have reached 2dan (master)!     |
 | Reached 3 dan |  1800 | you have reached 3dan (master)!     |
-| Reached 4 dan |  3600 | you have reached 4dan (master)!     |
+| Reached 4 dan |  3200 | you have reached 4dan (master)!     |
+| Reached 5 dan |  6400 | you have reached 5dan (master)!     |
+| Reached 6 dan | 12800 | you have reached 6dan (master)!     |
 
 | Authored kata           | Honor | Description                                      |
 | :---------------------- | ----: | :----------------------------------------------- |
