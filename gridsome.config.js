@@ -67,6 +67,7 @@ module.exports = {
               "/references/gamification/ranks/",
               "/references/gamification/honor/",
               "/references/gamification/privileges/",
+              "/references/gamification/tables/",
             ],
           },
         ],

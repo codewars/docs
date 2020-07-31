@@ -4,7 +4,7 @@ sidebar: ranks-honor
 next: /references/gamification/ranks/
 ---
 
-# Ranks and Honor
+# Rewards and Progress
 
 On Codewars, there are two different scales you can level up by doing different things:
 

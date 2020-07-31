@@ -31,32 +31,11 @@ When you solve a kata in some language, you earn some amount of score determined
 
 The score used to decide your rank is not the same as honor. You can't see your score on your profile, but it is visible in the API at the endpoint `https://www.codewars.com/api/v1/users/USERNAME`.
 
-The table below shows the score required for you to reach each rank. You can see each rank is progressively harder to reach than the previous one.
+[This table](/references/gamification/tables/#rank-requirements) shows the score required for you to reach each rank. You can see each rank is progressively harder to reach than the previous one.
 
-| User Rank | Required Score |
-| :-------- | -------------: |
-| 8 kyu     |              0 |
-| 7 kyu     |             20 |
-| 6 kyu     |             76 |
-| 5 kyu     |            229 |
-| 4 kyu     |            643 |
-| 3 kyu     |          1,768 |
-| 2 kyu     |          4,829 |
-| 1 kyu     |         13,147 |
-| 1 dan     |         35,759 |
-| 2 dan     |         97,225 |
 
-When a kata is completed, you always received a set amount of honor points based on the level of the kata as well as an internal score that counts toward your next rank. Since every rank requires a higher score than the last, completing an easy kata well below your current rank will result in little progress. However completing a hard kata above your current rank will give you much more progress towards leveling up. As such, completing a lot of low level kata will give you a lot of honor, but will not increase your rank very quickly. Completing more difficult kata will level your rank faster.
+When a kata is completed, you always receive a set amount of honor points based on the level of the kata as well as an internal score that counts toward your next rank. Since every rank requires a higher score than the last, completing an easy kata well below your current rank will result in little progress. However completing a hard kata above your current rank will give you much more progress towards leveling up. As such, completing a lot of low level kata will give you a lot of honor, but will not increase your rank very quickly. Completing more difficult kata will level your rank faster.
 
-This table shows the amount of score you gain every time you complete a kata of a given rank. Remember, every kata completion counts toward the rank of that language, but only the first completion of a given kata counts toward your overall rank/score.
+[This table](/references/gamification/tables/#rank-rewards) shows the amount of score you gain every time you complete a kata of a given rank. Remember, every kata completion counts toward the rank of that language, but only the first completion of a given kata counts toward your overall rank/score.
 
-| Kata Rank | Score Awarded |
-| :-------- | ------------: |
-| 8 kyu     |             2 |
-| 7 kyu     |             3 |
-| 6 kyu     |             8 |
-| 5 kyu     |            21 |
-| 4 kyu     |            55 |
-| 3 kyu     |           149 |
-| 2 kyu     |           404 |
-| 1 kyu     |         1,097 |
+
