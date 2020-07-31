@@ -12,10 +12,11 @@ Honor represents the level of respect a user has earned from the community, base
 ## Honor rewards
 
 You earn honor when you accomplish certain goals on Codewars:
- - Completing a kata rewards you with some amount of Honor depending on the rank of solved kata,
- - Reaching a higher rank grants you additional Honor in amount related to reached rank,
- - Authoring activities, like publishing a beta kata, creatign a translation, or having your kata approved,
- - Community activities, for example voting on kata satisfaction, rating a beta kata, upvotes and downvotes collected on your posts and solutions
+
+- Completing a kata rewards you with some amount of Honor depending on the rank of solved kata,
+- Reaching a higher rank grants you additional Honor in amount related to reached rank,
+- Authoring activities, like publishing a beta kata, creatign a translation, or having your kata approved,
+- Community activities, for example voting on kata satisfaction, rating a beta kata, upvotes and downvotes collected on your posts and solutions
 
 You can find exact amount of rewarded Honor points in [this reference](/references/gamification/tables/#honor-rewards).
 

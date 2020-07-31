@@ -21,7 +21,6 @@ prev: /references/gamification/privileges/
 | 1 dan     |         35,759 |
 | 2 dan     |         97,225 |
 
-
 ## Rank rewards
 
 | Kata Rank | Score Awarded |
