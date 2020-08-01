@@ -1,7 +1,7 @@
 ---
 kind: reference
 sidebar: ranks-honor
-prev: /explainations/gamification/privileges
+prev: /explanations/gamification/privileges
 next: /references/gamification/honor/
 ---
 
