@@ -7,13 +7,18 @@ next: /explanations/gamification/honor/
 
 # Ranks
 
-Ranks are used to indicate profficiency, progression, and difficulty. Users complete kata which are assigned a rank, which in turn earns them a higher rank once they complete enough of them. There are two classes of ranks, Kyu and Dan. You begin with Kyu at level 8 and work your way down to level 1. Then you progress to Dan, where you work your way up from level 1 to level 8.
+Ranks are used to indicate the proficiency of users and the difficulty of Kata. There are two classes of ranks, Kyu and Dan, which are  divided in 8 levels each. By increasing order of proficiency/difficulty:
+* 8 Kyu to 1 Kyu
+* 1 Dan to 8 Dan
 
 Why the names Kyu and Dan? The terms are borrowed from a system in Japanese martial arts, which is in turn borrowed from the game of Go. Kyu (or Kyū) indicates the number of degrees away from master level (Dan). This is why they count downward. Once you reach master level, we count upward. Black belts in martial arts are Dan level.
 
-## Leveling Your Rank
 
-When you visit your profile on the site, you can see that you have an Overall rank for the site as well as individual ranks for each language you have completed kata in:
+
+
+## User Rank Breakdown
+
+When you visit your profile on Codewars, you can see that you have an Overall rank as well as individual ranks for each language you have completed kata in:
 
 <div class="block dark:hidden">
 
@@ -26,13 +31,38 @@ When you visit your profile on the site, you can see that you have an Overall ra
 
 </div>
 
-System keeps an internal overall score as well as separate score for each language that drive your overall rank and per-language rank respectively.
-When you solve a kata in some language, you earn some amount of score determined by rank of solved kata, and your progress for this language increases. When you complete a kata for the first time, additionally you will improve your Overall rank score by the same amount. Each rank has a percentage which represents how close you are to leveling to the next rank. For example, if your overall rank is `5 kyu / 25.0%` that means you have earned 25% of the progress that is needed to reach the rank of 4 kyu.
+The wheel on the left indicates your progress toward your next rank. For example, if you see the `1 dan` bagde in the wheel and your overall rank is `1 kyu / 70.0%` that means you have earned 70% of the progress  needed to reach the rank of 1 dan.
 
-The score used to decide your rank is not the same as honor. You can't see your score on your profile, but it is visible in the API at the endpoint `https://www.codewars.com/api/v1/users/USERNAME`.
+The overall rank increases each time you successfully complete kata you never completed in any language before. This increase occurs only one time per kata. On the other hand, the language ranks are language specific, so if you complete the same Kata in several languages, each one of them will progress accordingly.
 
-[This table](/references/gamification/ranks/#rank-requirements) shows the score required for you to reach each rank. You can see each rank is progressively harder to reach than the previous one.
+Note that you cannot gain progress if you forfeited a kata.
 
-When a kata is completed, you always receive a set amount of honor points based on the level of the kata as well as an internal score that counts toward your next rank. Since every rank requires a higher score than the last, completing an easy kata well below your current rank will result in little progress. However completing a hard kata above your current rank will give you much more progress towards leveling up. As such, completing a lot of low level kata will give you a lot of honor, but will not increase your rank very quickly. Completing more difficult kata will level your rank faster.
 
-[This table](/references/gamification/ranks/#rank-rewards) shows the amount of score you gain every time you complete a kata of a given rank. Remember, every kata completion counts toward the rank of that language, but only the first completion of a given kata counts toward your overall rank/score.
+## Leveling Your Rank
+
+The score used to determine your rank is not the same as honor. You can't see your score on your profile, but it is visible in the API at the endpoint `https://www.codewars.com/api/v1/users/USERNAME`.
+
+As said before, the only way to "rank up" is to complete Kata. However, the rank of the Kata you complete has a huge difference on the evolution of your rank/%.
+
+* [This table](/references/gamification/ranks/#rank-rewards) shows the amount of score you gain every time you complete a kata of a given rank.
+* [This table](/references/gamification/ranks/#rank-requirements) gives the total score required to reach each user rank.
+
+As you can see, if your main goal is to level up your rank, you should aim for completing hard kata, above your current user rank. On the contrary, completing a lot of low level kata will give you a lot of honor, but will not increase your rank very quickly.
+
+Remember, every kata completion counts toward the rank of that language, but only the first completion of a given kata counts toward your overall rank/score.
+
+---
+
+_Note about the conversion `score <-> %`:_
+
+New users are often surprised when they realized that some kata of rank 4 kyu rewarded them with 5% progress or so, then the amout suddenly dropped to 1.7%. This kind of things happens each time your rank level up: since the score rewarded for a Kata is constant but the score required to reach the next level increases a lot, the equivalent % awarded in lower and lower when you level up for the same difficulty.
+
+To give you a general idea about the process, completing a kata where (note: values are very approximative):
+* `kata rank == your rank+2: +30%`
+* `kata rank == your rank+1: +12%`
+* `kata rank == your rank+0: +5%`
+* `kata rank == your rank-1: +1.7%`
+* `kata rank == your rank-2: +0.7%`
+* `kata rank == your rank-3: +0.3%`
+* `kata rank == your rank-4: +0.09%`
+* ...
