@@ -79,13 +79,13 @@ describe "Query tests" do
     show_diff_table(actual, expected)
     expect(actual).to eq(expected)
   end
-  
+
   it "should work on a random test" do
     40.times do
       name = (1..rand(1..4)).map {"foo".chars.sample}.join
       DB[:widgets].insert(name: name)
     end
-    
+
     ref_soln_query = "SELECT * FROM widgets WHERE widgets.name LIKE 'foo%';"
     expected = DB[ref_soln_query].to_a()
     actual = run_sql.to_a()
