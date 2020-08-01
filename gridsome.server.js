@@ -24,7 +24,10 @@ module.exports = function (api) {
   api.onCreateNode((options) => {
     if (options.internal.typeName === "MarkdownPage") {
       // Add slug field to sort case insensitively.
-      return { ...options, slug: slugify(options.title) };
+      return {
+        ...options,
+        slug: slugify(options.title, { decamelize: false }),
+      };
     }
   });
 
