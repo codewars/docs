@@ -29,32 +29,32 @@ When you visit your profile on Codewars, you can see that you have an Overall ra
 
 </div>
 
-The wheel on the left indicates your progress toward your next rank. For example, if you see the `1 dan` bagde in the wheel and your overall rank is `1 kyu / 70.0%` that means you have earned 70% of the progress needed to reach the rank of 1 dan.
+The wheel on the left indicates your progress toward your next rank. For example, if you see the `1 dan` bagde in the wheel and your overall rank is `1 kyu / 70.0%` that means you have earned 70% of the progress needed to go from 1 kyu to 1 dan (see details in [this table](/references/gamification/ranks/#rank-requirements)).
 
-The overall rank increases each time you successfully complete kata you never completed in any language before. This increase occurs only one time per kata. On the other hand, the language ranks are language specific, so if you complete the same Kata in several languages, each one of them will progress accordingly.
+The overall rank increases each time you successfully complete kata you never did in any language before. This increase occurs only one time per kata. On the other hand, you can complete the same Kata in different languages and each one of the related score will increase accordingly.
 
 Note that you cannot gain progress if you forfeited a kata.
 
 ## Leveling Your Rank
 
-The score used to determine your rank is not the same as honor. You can't see your score on your profile, but it is visible in the API at the endpoint `https://www.codewars.com/api/v1/users/USERNAME`.
+The score used to determine your rank is not the same as for honor. You can't see your rank score on your profile, but it is visible in the API at the endpoint `https://www.codewars.com/api/v1/users/USERNAME`.
 
-As said before, the only way to "rank up" is to complete Kata. However, the rank of the Kata you complete has a huge difference on the evolution of your rank/%.
+As said before, the only way to "rank up" is to complete Kata. However, the rank of the Kata you complete makes a huge difference on the evolution of your rank/%.
 
-- [This table](/references/gamification/ranks/#rank-rewards) shows the amount of score you gain every time you complete a kata of a given rank.
-- [This table](/references/gamification/ranks/#rank-requirements) gives the total score required to reach each user rank.
+- The score awarded for each complete Kata, according to its rand may be found in [this table](/references/gamification/ranks/#rank-rewards).
+- The score required to reach the different Kyu/Dan levels may be found in [this table](/references/gamification/ranks/#rank-requirements).
 
-As you can see, if your main goal is to level up your rank, you should aim for completing hard kata, above your current user rank. On the contrary, completing a lot of low level kata will give you a lot of honor, but will not increase your rank very quickly.
+As you can see, if your main goal is to level up your rank, you should aim for completing hard kata above your current user rank. On the contrary, completing a lot of low level kata will give you a lot of honor but will not increase your rank very quickly.
 
 Remember, every kata completion counts toward the rank of that language, but only the first completion of a given kata counts toward your overall rank/score.
 
 ---
 
-_Note about the conversion `score <-> %`:_
+_Note about the conversion_ `score <-> %`_:_
 
-New users are often surprised when they realized that some kata of rank 4 kyu rewarded them with 5% progress or so, then the amout suddenly dropped to 1.7%. This kind of things happens each time your rank levels up: since the score rewarded for a Kata is constant but the score required to reach the next level increases a lot, the % awarded for the same Kata rank becomes lower and lower when you level up.
+New users are often surprised when they realized that some kata of rank 4 kyu rewarded them with 5% progress or so, then the amout suddenly dropped to 1.7%. This kind of things happens each time your rank levels up: since the actual score earned for completing a Kata is constant ([see table](/references/gamification/ranks/#rank-rewards)) while the score required to reach the next level increases a lot, the % awarded for the same Kata rank becomes lower and lower when you level up.
 
-To give you a general idea about the process, completing a kata where (note: values are very approximative):
+To give you a general idea about the process, here are the approximative percents you may gain when comparing your rank with the rank of the Kata you completed:
 
 | Kata rank - Your rank |      % |
 | :-------------------- | -----: |
