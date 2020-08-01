@@ -13,8 +13,6 @@ prev: /languages/sql/
 
 ## Generalities
 
-If you do use an existing SQL kata, be sure to avoid exposing the solution in the preloaded code file. It's easy for a code warrior to read the file in the sample tests and view the solution. Also, drop and recreate the database per `it` block so that there's no surprising state shared across cases.
-
 Here's an opinionated suggestion of how to test SQL which is similar to the "insert example" button in the new kata editor. In both cases, sample tests are explicitly visible to the code warrior rather than buried in the interface with `compare_with`, which many challenges use and abuse. Even if the challenger is not familiar with Ruby, it's less magical and easier to debug when exposed. They're always free to ignore the test cases. I prefer a close to 1:1 ratio between `it` block and `expect` calls so the challenger can localize their problem easily.
 
 Disadvantages of this approach are that the challenger might be surprised or confused by the Ruby code, so offering an explanatory note at the end of the instructions can go a long way to mitigating this. Another possible downside is that the test file can become verbose, so you can strategically move some of the content to helper functions in the preloaded file.
@@ -23,9 +21,11 @@ Other than Codewars' `run_sql` function, the optional diff table code and intera
 
 Random tests are important to include for the submission to prevent cheating and can use [Faker](https://github.com/faker-ruby/faker) and Ruby's [Random](https://ruby-doc.org/core-2.4.0/Random.html) class.
 
-## Example instructions
+Note: If you do use an existing SQL kata, be sure to avoid exposing the solution in the preloaded code file. It's easy for a code warrior to read the file in the sample tests and view the solution. Also, drop and recreate the database per `it` block so that there's no surprising state shared across cases.
 
-Write a query to retrieve all rows from the `widgets` table where the varchar widget `name` column starts with the substring `"foo"`. _...Include examples, schema images, etc..._
+## Instructions example
+
+> Write a query to retrieve all rows from the `widgets` table where the varchar widget `name` column starts with the substring `"foo"`.
 
 ## Complete solution
 
