@@ -36,13 +36,18 @@ prev: /references/gamification/privileges/
 
 ## Honor rewards
 
-| Solving kata            | Honor | Description                                                                                 |
-| :---------------------- | ----: | :------------------------------------------------------------------------------------------ |
-| Completed Kata (White)  |     2 | completion of a "beginner" level kata (8kyu and 7kyu)                                       |
-| Completed Kata (Yellow) |     8 | completion of a "novice" level kata (6kyu and 5kyu)                                         |
-| Completed Kata (Blue)   |    32 | completion of a "competent" level kata (4kyu and 3kyu)                                      |
-| Completed Kata (Purple) |   128 | completion of a "proficient" level kata (2kyu and 1 kyu)                                    |
-| Completed Kata (Beta)   |     2 | when the kata is approved, you get the points missing according to its actual approved rank |
+### Solving kata
+
+| Level                                   | Honor |
+| :-------------------------------------- | ----: |
+| White (8kyu & 7kyu) <br> _Beginner_     |     2 |
+| Yellow (6kyu & 5kyu) <br> _Novice_      |     8 |
+| Blue (4kyu & 3kyu) <br> _Competent_     |    32 |
+| Purple (2kyu & 1kyu) <br> _Proficient_  |   128 |
+|                                         |       |
+| None <br> _Beta_                        |   2\* |
+
+\* Additional honor based on the level is rewarded once the kata is approved.
 
 | Ranking up    | Honor | Description                         |
 | :------------ | ----: | :---------------------------------- |
