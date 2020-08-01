@@ -52,15 +52,17 @@ Remember, every kata completion counts toward the rank of that language, but onl
 
 _Note about the conversion `score <-> %`:_
 
-New users are often surprised when they realized that some kata of rank 4 kyu rewarded them with 5% progress or so, then the amout suddenly dropped to 1.7%. This kind of things happens each time your rank level up: since the score rewarded for a Kata is constant but the score required to reach the next level increases a lot, the equivalent % awarded in lower and lower when you level up for the same difficulty.
+New users are often surprised when they realized that some kata of rank 4 kyu rewarded them with 5% progress or so, then the amout suddenly dropped to 1.7%. This kind of things happens each time your rank levels up: since the score rewarded for a Kata is constant but the score required to reach the next level increases a lot, the % awarded for the same Kata rank becomes lower and lower when you level up.
 
 To give you a general idea about the process, completing a kata where (note: values are very approximative):
 
-- `kata rank == your rank+2: +30%`
-- `kata rank == your rank+1: +12%`
-- `kata rank == your rank+0: +5%`
-- `kata rank == your rank-1: +1.7%`
-- `kata rank == your rank-2: +0.7%`
-- `kata rank == your rank-3: +0.3%`
-- `kata rank == your rank-4: +0.09%`
-- ...
+| Kata rank - Your rank  |       % |
+| :--------------------- | ------: |
+|  ...                   | ...     |
+|  +2                    | +30%    |
+|  +1                    | +12%    |
+|  0                     | +5%     |
+|  -1                    | +1.7%   |
+|  -2                    | +0.3%   |
+|  -3                    | +0.09%  |
+|  ...                    | ... |
