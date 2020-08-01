@@ -54,7 +54,7 @@ _Note about the conversion_ `score <-> %`_:_
 
 New users are often surprised when they realized that some kata of rank 4 kyu rewarded them with 5% progress or so, then the amout suddenly dropped to 1.7%. This kind of things happens each time your rank levels up: since the actual score earned for completing a Kata is constant ([see table](/references/gamification/ranks/#rank-rewards)) while the score required to reach the next level increases a lot, the % awarded for the same Kata rank becomes lower and lower when you level up.
 
-To give you a general idea about the process, here are the approximative percents you may gain when comparing your rank with the rank of the Kata you completed:
+To give you a general idea about the process, here are the approximate percents you may gain when comparing your rank with the rank of the Kata you completed:
 
 | Kata rank - Your rank |      % |
 | :-------------------- | -----: |
