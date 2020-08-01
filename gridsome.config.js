@@ -61,13 +61,20 @@ module.exports = {
         name: "ranks-honor",
         sections: [
           {
-            title: "Ranks, Honor, Privileges",
+            title: "About",
             items: [
-              "/references/gamification/",
+              "/explanations/gamification/",
+              "/explanations/gamification/ranks/",
+              "/explanations/gamification/honor/",
+              "/explanations/gamification/privileges/",
+            ],
+          },
+          {
+            title: "References",
+            items: [
               "/references/gamification/ranks/",
               "/references/gamification/honor/",
-              "/references/gamification/privileges/",
-              "/references/gamification/tables/",
+              "/references/gamification/privileges/",              
             ],
           },
         ],

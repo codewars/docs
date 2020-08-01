@@ -5,37 +5,66 @@ prev: /references/gamification/ranks/
 next: /references/gamification/privileges/
 ---
 
-# Honor
+# Honor rewards
 
-Honor represents the level of respect a user has earned from the community, based on their skill and contributions. While ranks are an indication of your skill only, honor is mostly an indication of your activity and contributions.
+## Solving kata
 
-## Honor rewards
+| Level                                  | Honor |
+| :------------------------------------- | ----: |
+| White (8kyu & 7kyu) <br> _Beginner_    |     2 |
+| Yellow (6kyu & 5kyu) <br> _Novice_     |     8 |
+| Blue (4kyu & 3kyu) <br> _Competent_    |    32 |
+| Purple (2kyu & 1kyu) <br> _Proficient_ |   128 |
+|                                        |       |
+| None <br> _Beta_                       |   2\* |
 
-You earn honor when you accomplish certain goals on Codewars:
+\* Additional honor based on the level is rewarded once the kata is approved.
 
-- Completing a kata rewards you with some amount of Honor depending on the rank of solved kata,
-- Reaching a higher rank grants you additional Honor in amount related to reached rank,
-- Authoring activities, like publishing a beta kata, creatign a translation, or having your kata approved,
-- Community activities, for example voting on kata satisfaction, rating a beta kata, upvotes and downvotes collected on your posts and solutions
+## Ranking up
 
-You can find exact amount of rewarded Honor points in [this reference](/references/gamification/tables/#honor-rewards).
+| Reached Rank |  Honor |
+| :----------- | -----: |
+| 7 kyu        |     20 |
+| 6 kyu        |     30 |
+| 5 kyu        |     45 |
+| 4 kyu        |     70 |
+| 3 kyu        |    100 |
+| 2 kyu        |    150 |
+| 1 kyu        |    225 |
+|              |        |
+| 1 dan        |    450 |
+| 2 dan        |    900 |
+| 3 dan        |  1,800 |
+| 4 dan        |  3,200 |
+| 5 dan        |  6,400 |
+| 6 dan        | 12,800 |
 
-Your profile page displays a breakdown of your Honor points:
+## Authoring Kata
 
-<div class="block dark:hidden">
+| Events on Authored Kata           | Honor |
+| :-------------------------------- | ----: |
+| Published for beta process        |     3 |
+| Approved as White (8kyu & 7kyu)   |     3 |
+| Approved as Yellow (6kyu & 5kyu)  |    15 |
+| Approved as Blue (4kyu & 3kyu)    |    75 |
+| Approved as Purple (2kyu & 1 kyu) |   375 |
+| Received an up vote               |     2 |
+| Received a down vote              |    -2 |
 
-![rank progress](./img/honor-breakdown_light.png)
+## Other
 
-</div>
-<div class="hidden dark:block">
-
-![rank progress](./img/honor-breakdown_dark.png)
-
-</div>
-
-## Leaderboards and Honor Percentile
-
-You can determine the level of your achievements in comparison with overall Codewars community in two ways:
-
-- **Leaderboards**: Codewars manages [leaderboards (TODO: link to leaderboards reference)]() which show users with highest amount of Honor.
-- **Honor Percentile**: Stat which shows your position relative to all Codewars users. Percentile of, for example, 20%, means that 20% of all Codewars users have more Honor points than you, and that you have more Honor points than 80% of all other users.
+| Contributions                 | Honor | Description                                                        |
+| :---------------------------- | ----: | :----------------------------------------------------------------- |
+| Translation Approved (White)  |     4 |                                                                    |
+| Translation Approved (Yellow) |    16 |                                                                    |
+| Translation Approved (Blue)   |    64 |                                                                    |
+| Translation Approved (Purple) |   256 |                                                                    |
+| Assessed Beta Kata Rank       |     1 | after a beta kata completion                                       |
+| Assessed Kata Satisfaction    |     1 | after a kata completion                                            |
+| Published Kumite or Fork      |     2 | fork a solution of yours or another user's, or create a new kumite |
+| Kata Solution upvoted         |     1 | your solution gets a 'best practices' or 'clever' upvote           |
+| Comment upvoted               |     1 |                                                                    |
+| Comment uownvoted             |    -1 |                                                                    |
+| Referral Signup (first 5)     |     3 |                                                                    |
+| Referral Signup (6+)          |     1 |                                                                    |
+| Added GitHub Account          |     1 |                                                                    |
