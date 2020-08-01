@@ -19,7 +19,7 @@ Disadvantages of this approach are that the challenger might be surprised or con
 
 Other than Codewars' `run_sql` function, the optional diff table code and interactions with the [DB object](https://github.com/jeremyevans/sequel#label-A+Short+Example), the code uses normal RSpec comparisons on an array of hashes.
 
-Random tests are important to include for the submission to prevent cheating and can use [Faker](https://github.com/faker-ruby/faker) and Ruby's [Random](https://ruby-doc.org/core-2.4.0/Random.html) class.
+Random tests are important to include for the submission to prevent cheating and can use [Faker](https://github.com/faker-ruby/faker) and Ruby's [Random](https://ruby-doc.org/core-2.4.0/Random.html) class to generate mock data. Then run the reference query on the database and assert the comparison of the result arrays as usual.
 
 Note: If you do use an existing SQL kata, be sure to avoid exposing the solution in the preloaded code file. It's easy for a code warrior to read the file in the sample tests and view the solution. Also, drop and recreate the database per `it` block so that there's no surprising state shared across cases.
 
