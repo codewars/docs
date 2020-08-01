@@ -68,15 +68,17 @@ prev: /references/gamification/privileges/
 | 5 dan        |  6,400 |
 | 6 dan        | 12,800 |
 
-| Authored kata           | Honor | Description                                      |
-| :---------------------- | ----: | :----------------------------------------------- |
-| Published Kata          |     3 | creation of a new beta Kata                      |
-| Kata Approved (White)   |     3 |                                                  |
-| Kata Approved (Yellow)  |    15 |                                                  |
-| Kata Approved (Blue)    |    75 |                                                  |
-| Kata Approved (Purple)  |   375 |                                                  |
-| Authored Kata Upvoted   |     2 | a user who completed one of your kata upvoted it |
-| Authored Kata Downvoted |    -2 |                                                  |
+### Authoring Kata
+
+| Events on Authored Kata           | Honor |
+| :-------------------------------- | ----: |
+| Published for beta process        |     3 |
+| Approved as White (8kyu & 7kyu)   |     3 |
+| Approved as Yellow (6kyu & 5kyu)  |    15 |
+| Approved as Blue (4kyu & 3kyu)    |    75 |
+| Approved as Purple (2kyu & 1 kyu) |   375 |
+| Received an up vote               |     2 |
+| Received a down vote              |    -2 |
 
 | Contributions                 | Honor | Description                                                        |
 | :---------------------------- | ----: | :----------------------------------------------------------------- |
