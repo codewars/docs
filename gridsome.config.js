@@ -74,7 +74,7 @@ module.exports = {
             items: [
               "/references/gamification/ranks/",
               "/references/gamification/honor/",
-              "/references/gamification/privileges/",              
+              "/references/gamification/privileges/",
             ],
           },
         ],
