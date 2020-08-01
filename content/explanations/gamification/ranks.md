@@ -56,13 +56,13 @@ New users are often surprised when they realized that some kata of rank 4 kyu re
 
 To give you a general idea about the process, completing a kata where (note: values are very approximative):
 
-| Kata rank - Your rank  |       % |
-| :--------------------- | ------: |
-|  ...                   | ...     |
-|  +2                    | +30%    |
-|  +1                    | +12%    |
-|  0                     | +5%     |
-|  -1                    | +1.7%   |
-|  -2                    | +0.3%   |
-|  -3                    | +0.09%  |
-|  ...                    | ... |
+| Kata rank - Your rank |      % |
+| :-------------------- | -----: |
+| ...                   |    ... |
+| +2                    |   +30% |
+| +1                    |   +12% |
+| 0                     |    +5% |
+| -1                    |  +1.7% |
+| -2                    |  +0.3% |
+| -3                    | +0.09% |
+| ...                   |    ... |
