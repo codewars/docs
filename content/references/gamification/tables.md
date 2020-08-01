@@ -49,21 +49,24 @@ prev: /references/gamification/privileges/
 
 \* Additional honor based on the level is rewarded once the kata is approved.
 
-| Ranking up    | Honor | Description                         |
-| :------------ | ----: | :---------------------------------- |
-| Reached 7 kyu |    20 | you have reached 7kyu (beginner)!   |
-| Reached 6 kyu |    30 | you have reached 6kyu (novice)!     |
-| Reached 5 kyu |    45 | you have reached 5kyu (novice)!     |
-| Reached 4 kyu |    70 | you have reached 4kyu (competent)!  |
-| Reached 3 kyu |   100 | you have reached 3kyu (competent)!  |
-| Reached 2 kyu |   150 | you have reached 2kyu (proficient)! |
-| Reached 1 kyu |   225 | you have reached 1kyu (proficient)! |
-| Reached 1 dan |   450 | you have reached 1dan (master)!     |
-| Reached 2 dan |   900 | you have reached 2dan (master)!     |
-| Reached 3 dan |  1800 | you have reached 3dan (master)!     |
-| Reached 4 dan |  3200 | you have reached 4dan (master)!     |
-| Reached 5 dan |  6400 | you have reached 5dan (master)!     |
-| Reached 6 dan | 12800 | you have reached 6dan (master)!     |
+### Ranking up
+
+| Reached Rank  |  Honor  |
+| :------------ | ------: |
+| 7 kyu         |      20 |
+| 6 kyu         |      30 |
+| 5 kyu         |      45 |
+| 4 kyu         |      70 |
+| 3 kyu         |     100 |
+| 2 kyu         |     150 |
+| 1 kyu         |     225 |
+|               |         |
+| 1 dan         |     450 |
+| 2 dan         |     900 |
+| 3 dan         |   1,800 |
+| 4 dan         |   3,200 |
+| 5 dan         |   6,400 |
+| 6 dan         |  12,800 |
 
 | Authored kata           | Honor | Description                                      |
 | :---------------------- | ----: | :----------------------------------------------- |
