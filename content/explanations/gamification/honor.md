@@ -35,18 +35,17 @@ Your profile page displays a breakdown of your Honor points:
 
 </div>
 
-- __Completed Kata__ is the amount of honor you gained by only solving tasks and voting them,
-- __Authored Kata & Translations__ represent the amount of honor earned doing so,
-- __Kumite__ gives teh honor earned by publishing Kumite and by foking solutions,
-- __Comments__ indicates the total balance of up and down votes on your comments,
-- __Solution Up Vote__ is the sum of all the [Best Practices (TODO)]() and [Clever (TODO)]() votes you got on your solutions,
-- __Referrals__ is the honor earned when you invite other people to join Codewars.
-- __Achievements__ is the sum of the honor you earned when ranking up.
+- **Completed Kata** is the amount of honor you gained by only solving tasks and voting them,
+- **Authored Kata & Translations** represent the amount of honor earned doing so,
+- **Kumite** gives teh honor earned by publishing Kumite and by foking solutions,
+- **Comments** indicates the total balance of up and down votes on your comments,
+- **Solution Up Vote** is the sum of all the [Best Practices (TODO)]() and [Clever (TODO)]() votes you got on your solutions,
+- **Referrals** is the honor earned when you invite other people to join Codewars.
+- **Achievements** is the sum of the honor you earned when ranking up.
 
 ## Leaderboards and Honor Percentile
 
 You can determine the level of your achievements in comparison with overall Codewars community in two ways:
 
-
 - **Leaderboards**: Codewars manages differents kinds of [leaderboards (TODO: link to leaderboards reference)]() which show users with highest amount of Honor considering different kinds of situations/actions.
-- **Honor Percentile**: Stat which shows your position relative to all other Codewars users. For example, a 20%  percentile value means that 20% of all Codewars' users have more Honor points than you, and that you have more Honor points than 80% of all users. This value is calculated according to your overall Honor.
+- **Honor Percentile**: Stat which shows your position relative to all other Codewars users. For example, a 20% percentile value means that 20% of all Codewars' users have more Honor points than you, and that you have more Honor points than 80% of all users. This value is calculated according to your overall Honor.
