@@ -38,35 +38,35 @@ prev: /references/gamification/privileges/
 
 ### Solving kata
 
-| Level                                   | Honor |
-| :-------------------------------------- | ----: |
-| White (8kyu & 7kyu) <br> _Beginner_     |     2 |
-| Yellow (6kyu & 5kyu) <br> _Novice_      |     8 |
-| Blue (4kyu & 3kyu) <br> _Competent_     |    32 |
-| Purple (2kyu & 1kyu) <br> _Proficient_  |   128 |
-|                                         |       |
-| None <br> _Beta_                        |   2\* |
+| Level                                  | Honor |
+| :------------------------------------- | ----: |
+| White (8kyu & 7kyu) <br> _Beginner_    |     2 |
+| Yellow (6kyu & 5kyu) <br> _Novice_     |     8 |
+| Blue (4kyu & 3kyu) <br> _Competent_    |    32 |
+| Purple (2kyu & 1kyu) <br> _Proficient_ |   128 |
+|                                        |       |
+| None <br> _Beta_                       |   2\* |
 
 \* Additional honor based on the level is rewarded once the kata is approved.
 
 ### Ranking up
 
-| Reached Rank  |  Honor  |
-| :------------ | ------: |
-| 7 kyu         |      20 |
-| 6 kyu         |      30 |
-| 5 kyu         |      45 |
-| 4 kyu         |      70 |
-| 3 kyu         |     100 |
-| 2 kyu         |     150 |
-| 1 kyu         |     225 |
-|               |         |
-| 1 dan         |     450 |
-| 2 dan         |     900 |
-| 3 dan         |   1,800 |
-| 4 dan         |   3,200 |
-| 5 dan         |   6,400 |
-| 6 dan         |  12,800 |
+| Reached Rank |  Honor |
+| :----------- | -----: |
+| 7 kyu        |     20 |
+| 6 kyu        |     30 |
+| 5 kyu        |     45 |
+| 4 kyu        |     70 |
+| 3 kyu        |    100 |
+| 2 kyu        |    150 |
+| 1 kyu        |    225 |
+|              |        |
+| 1 dan        |    450 |
+| 2 dan        |    900 |
+| 3 dan        |  1,800 |
+| 4 dan        |  3,200 |
+| 5 dan        |  6,400 |
+| 6 dan        | 12,800 |
 
 | Authored kata           | Honor | Description                                      |
 | :---------------------- | ----: | :----------------------------------------------- |
