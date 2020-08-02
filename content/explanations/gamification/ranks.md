@@ -39,7 +39,7 @@ Note that you cannot gain progress if you forfeited a kata.
 
 The score used to determine your rank is not the same as for honor. You can't see your rank score on your profile, but it is visible in the API at the endpoint `https://www.codewars.com/api/v1/users/USERNAME`.
 
-As said before, the only way to "rank up" is to complete Kata. However, the rank of the Kata you complete makes a huge difference on the evolution of your rank/%.
+As said before, the only way to "rank up" is to complete Kata. However, the rank of the Kata you complete makes a huge difference on the evolution of your rank and its progress.
 
 - The score awarded for each complete Kata, according to its rand may be found in [this table](/references/gamification/ranks/#rank-rewards).
 - The score required to reach the different Kyu/Dan levels may be found in [this table](/references/gamification/ranks/#rank-requirements).
@@ -50,7 +50,7 @@ Remember, every kata completion counts toward the rank of that language, but onl
 
 ---
 
-_Note about the conversion_ `score <-> %`_:_
+_Note about the conversion between rank score and rank progress percentage:_
 
 New users are often surprised when they realized that some kata of rank 4 kyu rewarded them with 5% progress or so, then the amout suddenly dropped to 1.7%. This kind of things happens each time your rank levels up: since the actual score earned for completing a Kata is constant ([see table](/references/gamification/ranks/#rank-rewards)) while the score required to reach the next level increases a lot, the % awarded for the same Kata rank becomes lower and lower when you level up.
 
