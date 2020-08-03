@@ -62,7 +62,10 @@ module.exports = {
         sections: [
           {
             title: "Markdown Syntax",
-            items: ["/references/markdown/", "/references/markdown/extensions/"],
+            items: [
+              "/references/markdown/",
+              "/references/markdown/extensions/",
+            ],
           },
         ],
       },
