@@ -22,6 +22,17 @@ module.exports = {
     },
     sidebar: [
       {
+        name: "troubleshooting",
+        sections: [
+          {
+            title: "Troubleshooting your solutions",
+            items: [
+              "/troubleshooting-solutions/",
+            ],
+          },
+        ],
+      },
+      {
         name: "docs",
         sections: [
           {
