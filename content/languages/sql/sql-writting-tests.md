@@ -48,14 +48,14 @@ def show_diff_table(actual, expected)
     puts "<TAB:TABLE:Results: Expected>#{expected.to_json()}"
   else
     daff_data = DaffWrapper.new(
-      actual, 
-      expected, 
+      actual,
+      expected,
       index: true
     ).serializable
     Display.daff_table(
-      daff_data, 
-      label: "Diff", 
-      tab: true, 
+      daff_data,
+      label: "Diff",
+      tab: true,
       allow_preview: true
     )
   end
@@ -73,24 +73,24 @@ describe "Query tests" do
       varchar(:name)
     end
   end
-  
+
   it "should work on an example test" do
     DB[:widgets].insert(name: "foo")
     DB[:widgets].insert(name: "quux")
     DB[:widgets].insert(name: "foobar")
-    expected = [{:id => 1, :name => "foo"}, 
+    expected = [{:id => 1, :name => "foo"},
                 {:id => 3, :name => "foobar"}]
     actual = run_sql.to_a()
     show_diff_table(actual, expected)
     expect(actual).to eq(expected)
   end
-  
+
   it "should work on a random test" do
     40.times do
       name = (1..rand(1..4)).map {"foo".chars.sample}.join
       DB[:widgets].insert(name: name)
     end
-    
+
     ref_soln_query = "SELECT * FROM widgets WHERE widgets.name LIKE 'foo%';"
     expected = DB[ref_soln_query].to_a()
     actual = run_sql.to_a()
