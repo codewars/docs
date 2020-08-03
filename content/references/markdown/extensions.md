@@ -1,6 +1,6 @@
 ---
 kind: reference
-sidebar: markdowns
+sidebar: markdown
 topic: markdown
 prev: /references/markdown/
 ---
