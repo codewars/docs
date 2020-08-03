@@ -9,6 +9,11 @@
   name: Content
 - id: codewars
   name: Codewars
-
+- id: testing
+  name: Testing
+- id: solving
+  name: Solving
+- id: issue
+  name: Issue
 - id: testing
   name: Testing
