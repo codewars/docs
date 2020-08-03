@@ -1,5 +1,6 @@
 ---
 kind: reference
+sidebar: markdowns
 topic: markdown
 next: /references/markdown/extensions/
 ---
