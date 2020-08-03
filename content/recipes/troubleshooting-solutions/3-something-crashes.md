@@ -9,4 +9,4 @@ prev: /recipes/troubleshooting/2-getting-information/
 next: /recipes/troubleshooting/4-miscellaneous/
 ---
 
-# A
+# Something crashes
