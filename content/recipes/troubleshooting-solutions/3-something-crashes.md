@@ -3,9 +3,8 @@ kind: recipe
 sidebar: troubleshooting
 topic: debugging
 tags:
-    - solving
-    - issue
+  - solving
+  - issue
 prev: /recipes/troubleshooting/2-getting-information/
 next: /recipes/troubleshooting/4-miscellaneous/
 ---
-
