@@ -2,7 +2,7 @@
 - id: docc
   name: Docc
   description: Pages from Docc starter
-  
+
 - id: content
   name: Content
 - id: codewars
