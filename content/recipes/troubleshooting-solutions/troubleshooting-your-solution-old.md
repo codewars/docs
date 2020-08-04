@@ -4,7 +4,7 @@ kind: recipe
 sidebar: "docs"
 ---
 
-# Troubleshooting Your Solution
+# Troubleshooting Your Solution (version 1)
 
 > **_"It doesn't work!"_**
 
