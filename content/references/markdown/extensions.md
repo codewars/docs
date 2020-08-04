@@ -53,7 +53,7 @@ If the active language of the user is TypeScript, the above Markdown is rendered
 
 ## Conditional Rendering
 
-Similarly to sequential code blocks, conditional rendering blocks are used to show normally rendered text, but only if the language selected by the user matches the info string of the block.
+Conditional rendering blocks renders the content when the language selected by the user matches the condition specified in the info string.
 
 ### Basic syntax
 
@@ -65,9 +65,7 @@ For java, use `Preloaded.check(input)`.
 
 If the selected language is java, this block is showing up in the description, rendered to:
 
-> ```if:java
 > For java, use `Preloaded.check(input)`.
-> ```
 
 ### Details
 
@@ -146,12 +144,12 @@ Math typesetting is supported with the following two syntaxes:
 - Inline: [code span](/references/markdown/#code-span) starting and ending with `$`
 - Block: [code block](/references/markdown/#code-block) with info string `math`
 
+See the [support table](https://katex.org/docs/support_table.html) on [KaTeX](https://katex.org) to find all of the supported syntaxes.
 
-### Usual Notations
+### Commonly used Symbols/Functions
 
-See the [support table](https://katex.org/docs/support_table.html) on [KaTeX](https://katex.org) to find all of the supported syntaxes. You may find below are some that are often used:
 
-| Notation | Represents             |
+| Symbol/Function | Represents             |
 | :------- | :--------------------- |
 | `x_n`    |  indice                |
 | `x^n`    |  exponant              |
