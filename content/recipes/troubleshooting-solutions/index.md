@@ -5,10 +5,10 @@ topic: debugging
 tags:
   - solving
   - issue
-next: /recipes/troubleshooting/1-almost-good-but/
+next: /recipes/troubleshooting/almost-good-but/
 ---
 
-# Troublehsooting your solutions
+# Troubleshooting your solutions
 
 > **_"It doesn't work!"_**
 
