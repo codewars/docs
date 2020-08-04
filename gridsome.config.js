@@ -22,22 +22,6 @@ module.exports = {
     },
     sidebar: [
       {
-        name: "troubleshooting",
-        sections: [
-          {
-            title: "Troubleshooting your solutions",
-            items: [
-              "/troubleshooting-solutions/",
-              "/troubleshooting-solutions/1-almost-good-but/",
-              "/troubleshooting-solutions/2-getting-information/",
-              "/troubleshooting-solutions/3-something-crashes/",
-              "/troubleshooting-solutions/4-miscellaneous/",
-              "/troubleshooting-solutions/appendices/",
-            ],
-          },
-        ],
-      },
-      {
         name: "docs",
         sections: [
           {
@@ -69,6 +53,22 @@ module.exports = {
               "/getting-started/kata-solved/",
               "/getting-started/solutions/",
               "/getting-started/community/",
+            ],
+          },
+        ],
+      },
+      {
+        name: "troubleshooting",
+        sections: [
+          {
+            title: "Troubleshooting your solutions",
+            items: [
+              "/troubleshooting-solutions/",
+              "/troubleshooting-solutions/1-almost-good-but/",
+              "/troubleshooting-solutions/2-getting-information/",
+              "/troubleshooting-solutions/3-something-crashes/",
+              "/troubleshooting-solutions/4-miscellaneous/",
+              "/troubleshooting-solutions/appendices/",
             ],
           },
         ],
