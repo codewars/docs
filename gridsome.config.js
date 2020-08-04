@@ -63,12 +63,12 @@ module.exports = {
           {
             title: "Troubleshooting your solutions",
             items: [
-              "/troubleshooting-solutions/",
-              "/troubleshooting-solutions/1-almost-good-but/",
-              "/troubleshooting-solutions/2-getting-information/",
-              "/troubleshooting-solutions/3-something-crashes/",
-              "/troubleshooting-solutions/4-miscellaneous/",
-              "/troubleshooting-solutions/appendices/",
+              "/recipes/troubleshooting-solutions/",
+              "/recipes/troubleshooting-solutions/1-almost-good-but/",
+              "/recipes/troubleshooting-solutions/2-getting-information/",
+              "/recipes/troubleshooting-solutions/3-something-crashes/",
+              "/recipes/troubleshooting-solutions/4-miscellaneous/",
+              "/recipes/troubleshooting-solutions/appendices/",
             ],
           },
         ],
