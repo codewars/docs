@@ -5,7 +5,7 @@ topic: debugging
 tags:
   - solving
   - issue
-next: /recipes/troubleshooting/almost-good-but/
+next: /recipes/troubleshooting-solutions/almost-good-but/
 ---
 
 # Troubleshooting your solutions
