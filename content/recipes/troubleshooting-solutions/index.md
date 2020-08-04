@@ -18,9 +18,7 @@ This guide covers common problems you may run into as a newcomer solving kata on
 
 ---
 
-## This is all wrong... x/ (test)
-
-## [Almost good, but...](/recipes/troubleshooting/1-almost-good-but/)
+## Almost good, but...
 
 When your solution seems to work or is close to working, but still fails tests:
 
@@ -39,7 +37,7 @@ When your solution seems to work or is close to working, but still fails tests:
 - [I see it in the console!]()  
   When you print your answer to the console it looks exactly the same as the expected output, and yet tests fail...
 
-## [Getting information](/recipes/troubleshooting/2-getting-information/)
+## Getting information
 
 When something goes wrong, you'd like to gather some kind of information like, what's the input? your output? what does that damn assertion message means??
 
@@ -52,7 +50,7 @@ When something goes wrong, you'd like to gather some kind of information like, w
 - [Confusing assertion message]()  
   When you get things like `expected {} to equal {}`...
 
-## [Something crashes](/recipes/troubleshooting/3-something-crashes/)
+## Something crashes
 
 - [Execution Timeout]()  
   That works, but you're facing the damn `Execution timed out` error message.
@@ -66,7 +64,7 @@ When something goes wrong, you'd like to gather some kind of information like, w
 - [Nothing to STDOUT/STDERR]()  
   You get an empty output panel with `nothing was written to STDOUT or STDERR`
 
-## [Miscellaneous](/recipes/troubleshooting/4-miscellaneous/)
+## Miscellaneous
 
 - [The tests are wrong!]()  
   When you think there is a bug in the kata and/or its tests. What to do?
@@ -77,6 +75,6 @@ When something goes wrong, you'd like to gather some kind of information like, w
 - [Still stuck...?]()  
   You are stuck. You tried everything and nothing helped. What now?
 
-## [Appendices and others](/recipes/troubleshooting/appendices/)
+## Appendices and others
 
 - [Appendix A: Exit codes, signals, and other strange number...]()
