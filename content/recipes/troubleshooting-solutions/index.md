@@ -18,6 +18,8 @@ This guide covers common problems you may run into as a newcomer solving kata on
 
 ---
 
+## This is all wrong... x/ (test)
+
 ## [Almost good, but...](/recipes/troubleshooting/1-almost-good-but/)
 
 When your solution seems to work or is close to working, but still fails tests:
