@@ -2,7 +2,6 @@
 kind: explanation
 sidebar: ranks-honor
 prev: /explanations/gamification/honor/
-next: /references/gamification/ranks/
 ---
 
 # Privileges
