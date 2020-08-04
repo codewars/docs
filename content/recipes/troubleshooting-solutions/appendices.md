@@ -8,4 +8,4 @@ tags:
 prev: /recipes/troubleshooting/4-miscellaneous/
 ---
 
-# Appendices and other
+# Appendices and others

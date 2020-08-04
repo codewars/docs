@@ -18,7 +18,7 @@ This guide covers common problems you may run into as a newcomer solving kata on
 
 ---
 
-[## Almost good, but...](/recipes/troubleshooting/1-almost-good-but/)
+## [Almost good, but...](/recipes/troubleshooting/1-almost-good-but/)
 
 When your solution seems to work or is close to working, but still fails tests:
 
@@ -37,7 +37,7 @@ When your solution seems to work or is close to working, but still fails tests:
 - [I see it in the console!]()  
   When you print your answer to the console it looks exactly the same as the expected output, and yet tests fail...
 
-[## Getting information](/recipes/troubleshooting/2-getting-information/)
+## [Getting information](/recipes/troubleshooting/2-getting-information/)
 
 When something goes wrong, you'd like to gather some kind of information like, what's the input? your output? what does that damn assertion message means??
 
@@ -50,7 +50,7 @@ When something goes wrong, you'd like to gather some kind of information like, w
 - [Confusing assertion message]()  
   When you get things like `expected {} to equal {}`...
 
-[## Something crashes](/recipes/troubleshooting/3-something-crashes/)
+## [Something crashes](/recipes/troubleshooting/3-something-crashes/)
 
 - [Execution Timeout]()  
   That works, but you're facing the damn `Execution timed out` error message.
