@@ -2,18 +2,17 @@
 - id: docc
   name: Docc
   description: Pages from Docc starter
-- id: settings
-  name: Settings
-  description: Settings
+  
 - id: content
   name: Content
 - id: codewars
   name: Codewars
-- id: testing
-  name: Testing
-- id: solving
-  name: Solving
 - id: issue
   name: Issue
+- id: settings
+  name: Settings
+  description: Settings
+- id: solving
+  name: Solving
 - id: testing
   name: Testing
