@@ -1,6 +1,6 @@
 ### What is Kumite?
 
-In karate, kumite (ko͞omiˌtā) is the practice of taking techniques learned from kata and applying them through the act of freestyle sparring. Continuing with the coding dojo theme, and the already well established concept of a code kata, we wanted to play the idea of what a code kumite would look like within the Codewars community. It is a social experiment to see how developers could share ideas and then respond to them with code instead of just words.
+In karate, kumite (ko͞omiˌtā) is the practice of taking techniques learned from kata and applying them through the act of freestyle sparring. Continuing with the coding dojo theme, and the already well established concept of a code kata, we wanted to play with the idea of what a code kumite might look like within the Codewars community. It is a social experiment to see how developers could share ideas and then respond to them with code instead of just words.
 
 ### How does it work?
 
