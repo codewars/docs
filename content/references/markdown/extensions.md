@@ -71,7 +71,7 @@ If the selected language is java, this block is showing up in the description, r
 
 * The language name in the info string has to match a valid language ID. To find the language ID, visit its documentation from the [languages page](/languages/).
 * To obtain proper rendering, language specific blocks need an empty line before and after them, just like code blocks.
-* You can use any markdown formatting you want inside conditional blocks, but be careful [when inserting code fences](/references/markdown/extensions/#using-code-blocks-inside-conditional-blocks): prefere to use different kinds of code fences to distinguish them more easily.
+* You can use any markdown formatting you want inside conditional blocks, but be careful when inserting code blocks: prefere to use different kinds of code fences to distinguish them more easily (like `~~~` and ```` ``` ````: [see here](/references/markdown/extensions/#using-code-blocks-inside-conditional-blocks)).
 * You can use different kinds of conditions or assigned them to groups of languages using the following syntaxes:
   - `if:language`
   - `if:language,language2`
