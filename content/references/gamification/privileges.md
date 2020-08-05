@@ -17,7 +17,7 @@ prev: /references/gamification/honor/
 | Vote 2x power                             |          1,000 | Your vote counts 2x towards getting a kata out of beta       |
 | Vote 3x power                             |          2,000 | Your vote counts 3x towards getting a kata out of beta       |
 | Vote 4x power                             |          3,000 | Your vote counts 4x towards getting a kata out of beta       |
-| Coauthor Kata **†** / Approve Translation |          4,000 | Ability to edit other author's kata and approve translations |
+| Coauthor Kata / Approve Translation |          4,000 | Ability to edit other author's kata and approve translations |
 | Resolve comment                           |          5,000 | Ability to resolve other's comments                          |
 | Approve Kata                              |          6,000 | Ability to approve a beta kata and assign its rank           |
 | Edit locked test cases                    |         10,000 | Ability to edit test cases when they're locked               |
