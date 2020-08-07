@@ -57,6 +57,28 @@ module.exports = {
           },
         ],
       },
+      {
+        name: "ranks-honor",
+        sections: [
+          {
+            title: "About",
+            items: [
+              "/explanations/gamification/",
+              "/explanations/gamification/ranks/",
+              "/explanations/gamification/honor/",
+              "/explanations/gamification/privileges/",
+            ],
+          },
+          {
+            title: "References",
+            items: [
+              "/references/gamification/ranks/",
+              "/references/gamification/honor/",
+              "/references/gamification/privileges/",
+            ],
+          },
+        ],
+      },
     ],
   },
   plugins: [
