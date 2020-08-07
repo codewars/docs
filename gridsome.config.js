@@ -58,6 +58,18 @@ module.exports = {
         ],
       },
       {
+        name: "markdown",
+        sections: [
+          {
+            title: "Markdown Syntax",
+            items: [
+              "/references/markdown/",
+              "/references/markdown/extensions/",
+            ],
+          },
+        ],
+      },
+      {
         name: "ranks-honor",
         sections: [
           {
