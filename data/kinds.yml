@@ -28,6 +28,7 @@
 - id: explanation
   name: Explanations
   description: ""
+  path: /explanations/
 
 # Similar to Recipes, but focused on providing a copy pastable code.
 # Recipes can link to these to provide alternative solutions.
