@@ -1,8 +1,8 @@
 ---
-kind: explanation
+kind: concept
 sidebar: ranks-honor
-prev: /explanations/gamification/
-next: /explanations/gamification/honor/
+prev: /concepts/gamification/
+next: /concepts/gamification/honor/
 ---
 
 # Ranks
