@@ -79,6 +79,7 @@ import {
   TagIcon,
   MapIcon,
   TargetIcon,
+  InfoIcon,
 } from "vue-feather-icons";
 
 export default {
@@ -91,6 +92,7 @@ export default {
     TagIcon,
     TargetIcon,
     MapIcon,
+    InfoIcon,
   },
 
   computed: {
@@ -118,6 +120,8 @@ export default {
           return "TargetIcon";
         case "reference":
           return "FileTextIcon";
+        case "concept":
+          return "InfoIcon";
         case "tags":
           return "TagIcon";
         case "languages":
