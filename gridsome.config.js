@@ -75,10 +75,10 @@ module.exports = {
           {
             title: "About",
             items: [
-              "/explanations/gamification/",
-              "/explanations/gamification/ranks/",
-              "/explanations/gamification/honor/",
-              "/explanations/gamification/privileges/",
+              "/concepts/gamification/",
+              "/concepts/gamification/ranks/",
+              "/concepts/gamification/honor/",
+              "/concepts/gamification/privileges/",
             ],
           },
           {

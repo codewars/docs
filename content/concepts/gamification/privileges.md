@@ -1,7 +1,7 @@
 ---
-kind: explanation
+kind: concept
 sidebar: ranks-honor
-prev: /explanations/gamification/honor/
+prev: /concepts/gamification/honor/
 ---
 
 # Privileges

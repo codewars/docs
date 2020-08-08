@@ -25,10 +25,10 @@
   path: /references/
 
 # keywords: explain, why, concepts, background, discussion, further reading
-- id: explanation
-  name: Explanations
+- id: concept
+  name: Concepts
   description: ""
-  path: /explanations/
+  path: /concepts/
 
 # Similar to Recipes, but focused on providing a copy pastable code.
 # Recipes can link to these to provide alternative solutions.
