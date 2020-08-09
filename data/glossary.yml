@@ -29,6 +29,8 @@
 ##   links:
 ##     - title: Test-driven Development (Wikipedia)
 ##       url: https://en.wikipedia.org/wiki/Test-driven_development
+##     - title: another entry in the glossary
+##       url: https://en.wikipedia.org/wiki/Test-driven_development
 ## ```
 
 - term: Abandoned kata
@@ -102,6 +104,7 @@
       * Translating a kata has to be done through the creation of a translation, and ___never___ directly through the edit panel (unless you're the author, but even then, you are advise to use translations)
 
 - term: Example tests
+  id: example-tests
   description: |
     Tests that are visible to the user in the trainer. Most of the time, they are only a tiny part of the full tests suite. Hence, passing all the tests of the example tests doesn't make you pass the kata. You have to use `ATTEMPT`.
     You run the example tests using the `TEST` button in the trainer.
@@ -238,8 +241,8 @@
     A retired Kata is a Kata that has been judge not qualitative enough by other codewarriors during the beta process. It has been removed from the beta process after some critical thresholds have been reached, without any action of the author. Nothing can be done anymore with a retired Kata.
 
 - term: Sample tests
-  description: |
-    See example tests.
+  description: ""
+  see: /glossary/#example-tests
 
 - term: Satisfaction rating
   description: |
