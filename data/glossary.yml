@@ -241,10 +241,8 @@
     A retired Kata is a Kata that has been judge not qualitative enough by other codewarriors during the beta process. It has been removed from the beta process after some critical thresholds have been reached, without any action of the author. Nothing can be done anymore with a retired Kata.
 
 - term: Sample tests
-  description: "meh!?"
-  links:
-    - title: See example tests
-      url: /glossary/#example-tests
+  description: See [example tests](/glossary/#example-tests)
+  see: /getting-started/
 
 - term: Satisfaction rating
   description: |
