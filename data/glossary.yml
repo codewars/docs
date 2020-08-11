@@ -206,7 +206,7 @@
 - term: Markdowns (formatting)
   description: |
     Codewars is responsive to `markdowns`. They allow you to format code, descriptions or comments so that thay are properly readable for other users.
- see: /references/markdown/
+    see: /references/markdown/
 
 - term: Merge conflicts
   description: |
