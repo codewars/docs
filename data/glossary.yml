@@ -102,7 +102,7 @@
     Kata may be considered as duplicates in the following  situations, for example:
       - another Kata is already published (currently in beta or approved) asking for nearly the same thing(s)
       - other Kata already exist about the same topic which has been covered already a lot (like, "yet another fizz buzz thing...")
-    
+
     The usual course of action for an author being told his kata is a duplicate is to unpublish his kata, if he cannot make it different/valuable enough compared to what's already present in the database.
 
 - term: Edit panel
