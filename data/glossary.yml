@@ -105,7 +105,7 @@
       - another Kata is already published (currently in beta or approved) asking for nearly the same thing(s)
       - other Kata already exist about the same topic which has been covered already a lot (like, "yet another fizz buzz thing...")
     The usual course of action for an author being told his kata is a duplicate is to unpublish his kata, if he cannot make it different/valuable enough compared to what's already present in the database.
-  
+
 - term: Edit panel
   description: |
     This is the interface an author uses to create or modify a kata. There you can see all the available languages, author's solution, initial solution, all the tests, the preloaded version and the description. Contributors and some power users (in specific conditions) have access to the edit panel of published katas.
@@ -226,7 +226,7 @@
   description: |
     The output panel is the tab in the trainer where the tests feedback and all that you print to the console from inside your code are written to. It's actually the usual `STDOUT/STDERR`.
     It's useful for [debugging - TODO]() too.
-  
+
 - term: Preloaded (code/section)
   description: |
     In a Kata, the preloaded section is code that is executed _before_ the solution of the user is defined. The code hold by this section isn't visible to the user but every function or variable defined there is accessible to him drugint the executions of his code.
@@ -236,7 +236,7 @@
   description: |
     Aside of honor points, you gain "progress" by completing Kata (and only that way). Progess is what is conditioning your current rank as a codewarrior.
   see: /gamification/ranks/
-  
+
 - term: Publishing (kata)
   description: When you hit "publish" in the edit panel of a kata you created, it enters the beta process and becomes visible to anyone in the [katas search page](https://www.codewars.com/kata/my-languages). The beta process begins at the moment a kata is published.
 
@@ -269,7 +269,6 @@
 
 - term: Sample tests
   description: See [example tests](/glossary/#example-tests-id)
-  
 
 - term: Satisfaction rating
   description: |
@@ -295,7 +294,7 @@
   description: |
     Test cases represent the full batch of tests the code of a user has to pass to complete a Kata on Codewars.
     Test cases generally contain more tests than the [example tests](/glossary/#example-tests-id), combining both [fixed](/glossary/#fixed-tests-id) and [random tests](/glossary/#random-tests-id).
-  
+
 - term: Test Driven Development
   description: |
     Kata are built following this principle: you are provided with specifications and a set of tests, and your goal is to pass those tests (by following the specifications or finding a way to at least pass the tests).
@@ -306,12 +305,12 @@
 
 - term: Test suite (kata)
   description: See [test cases](/glossary/#test-cases-id)
-  
+
 - term: Trainer (kata)
   description: |
     This is the place where you write your code to complete a task.
   see: /solving-kata/
-  
+
 - term: Trainer suggestions
   description: |
     Trainer suggestions are the Kata that are showing up at the top of the dashboard. Those suggestions can be tweaked at some point, either through the profile of the user or directly through the dashboard.
