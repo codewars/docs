@@ -162,7 +162,8 @@
     Note that the `Issue` label is ___NOT___ to use for a user who doesn't understand why his solution is failing some (or all) the tests of the kata.
 
 - term: Kata
-  description: "Kata" (型) is how coding tasks are named on Codewars. See [here - TODO]() for more information about it.
+  description: |
+    "Kata" (型) is how coding tasks are named on Codewars. See [here - TODO]() for more information about it.
 
 - term: Kata search page
   description: |
