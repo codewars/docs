@@ -29,8 +29,6 @@
 ##   links:
 ##     - title: Test-driven Development (Wikipedia)
 ##       url: https://en.wikipedia.org/wiki/Test-driven_development
-##     - title: another entry in the glossary
-##       url: https://en.wikipedia.org/wiki/Test-driven_development
 ## ```
 
 - term: Abandoned kata
@@ -75,7 +73,7 @@
       url: https://www.codewars.com/collections
 
 - term: Console
-  description: See [output panel](output-panel-id)
+  description: See [output panel](/glossary/#output-panel-id)
 
 - term: Contributor(s)
   description: User(s) who have either authored, approved, translated or modified a kata in any way (a list of them can be seen in the "Details" page of any kata.
@@ -84,7 +82,7 @@
   description: |
     (段) - The term is borrowed from a system in Japanese martial arts, which is in turn borrowed from the game of Go.
     Dan indicates the number of degrees in master level. This is why they count upward.
-  see: /gamification/ranks/
+  see: /concepts/gamification/ranks/
   links:
     - title: Dan (rank) - Wikipedia
       url: https://en.wikipedia.org/wiki/Dan_(rank)
@@ -104,6 +102,7 @@
     Kata may be considered as duplicates in the following  situations, for example:
       - another Kata is already published (currently in beta or approved) asking for nearly the same thing(s)
       - other Kata already exist about the same topic which has been covered already a lot (like, "yet another fizz buzz thing...")
+    
     The usual course of action for an author being told his kata is a duplicate is to unpublish his kata, if he cannot make it different/valuable enough compared to what's already present in the database.
 
 - term: Edit panel
@@ -207,7 +206,7 @@
 - term: Markdowns (formatting)
   description: |
     Codewars is responsive to `markdowns`. They allow you to format code, descriptions or comments so that thay are properly readable for other users.
-  see: /markdown/
+ see: /references/markdown/
 
 - term: Merge conflicts
   description: |
@@ -235,7 +234,7 @@
 - term: Progress
   description: |
     Aside of honor points, you gain "progress" by completing Kata (and only that way). Progess is what is conditioning your current rank as a codewarrior.
-  see: /gamification/ranks/
+ see: /concepts/gamification/ranks/
 
 - term: Publishing (kata)
   description: When you hit "publish" in the edit panel of a kata you created, it enters the beta process and becomes visible to anyone in the [katas search page](https://www.codewars.com/kata/my-languages). The beta process begins at the moment a kata is published.
@@ -309,12 +308,12 @@
 - term: Trainer (kata)
   description: |
     This is the place where you write your code to complete a task.
-  see: /solving-kata/
+ see: /getting-started/solving-kata/
 
 - term: Trainer suggestions
   description: |
     Trainer suggestions are the Kata that are showing up at the top of the dashboard. Those suggestions can be tweaked at some point, either through the profile of the user or directly through the dashboard.
-    See [training setup](/setting-up/#training-setup).
+    See [training setup](/getting-started/setting-up/#training-setup).
 
 - term: Translation
   description: |
