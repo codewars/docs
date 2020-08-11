@@ -125,15 +125,15 @@
 
 - term: Followers
   description: |
-    Users who are following other users.
-    You can follow an user by clicking on the `Follow` button in his profile or by making yourself part of the same clan.
+    Users who are following other users.  
+    You can follow an user by clicking on the `Follow` button in his profile or by making yourself part of the same clan.  
     You can see in the `Social` section of the profile of a user who he is following, who are his followers and who he is ally with.
 
 - term: Forfeit (a kata)
   description: |
     You forfeit a kata when you do one of those actions:
       * You unlock the solutions (through the button in the trainer, for example)
-      * You enter the edit panel (_warning_, power users may have the possibility to enter the edit panel of some katas. If you do so before you solved it, you actually forfeit it).
+      * You enter the edit panel (_warning_, power users may have the possibility to enter the edit panel of some katas. If you do so before you solved it, you actually forfeit it).  
     Forfeiting a kata makes you lose the opportunity to gain honor points or progress by completing this kata.
 
 - term: Fork
@@ -166,7 +166,7 @@
 
 - term: Kata search page
   description: |
-    This is the page on Codewars where you can search for specific Kata by name, rank, language, ...
+    This is the page on Codewars where you can search for specific Kata by name, rank, language, ...  
     See [TODO]() for more explanations.
   links:
     - title: Kata search page on Codewars
@@ -234,7 +234,7 @@
 - term: Progress
   description: |
     Aside of honor points, you gain "progress" by completing Kata (and only that way). Progess is what is conditioning your current rank as a codewarrior.
- see: /concepts/gamification/ranks/
+  see: /concepts/gamification/ranks/
 
 - term: Publishing (kata)
   description: When you hit "publish" in the edit panel of a kata you created, it enters the beta process and becomes visible to anyone in the [katas search page](https://www.codewars.com/kata/my-languages). The beta process begins at the moment a kata is published.
@@ -308,11 +308,11 @@
 - term: Trainer (kata)
   description: |
     This is the place where you write your code to complete a task.
- see: /getting-started/solving-kata/
+  see: /getting-started/solving-kata/
 
 - term: Trainer suggestions
   description: |
-    Trainer suggestions are the Kata that are showing up at the top of the dashboard. Those suggestions can be tweaked at some point, either through the profile of the user or directly through the dashboard.
+    Trainer suggestions are the Kata that are showing up at the top of the dashboard. Those suggestions can be tweaked at some point, either through the profile of the user or directly through the dashboard.  
     See [training setup](/getting-started/setting-up/#training-setup).
 
 - term: Translation
