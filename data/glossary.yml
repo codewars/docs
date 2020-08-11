@@ -73,7 +73,7 @@
       url: https://www.codewars.com/collections
 
 - term: Console
-  description: See [output panel](/glossary/#output-panel-id)
+  description: See [output panel](/glossary/#output-panel)
 
 - term: Contributor(s)
   description: User(s) who have either authored, approved, translated or modified a kata in any way (a list of them can be seen in the "Details" page of any kata.
@@ -113,13 +113,11 @@
       * Translating a kata has to be done through the creation of a translation, and ___never___ directly through the edit panel (unless you're the author, but even then, you are advise to use translations)
 
 - term: Example tests
-  id: example-tests-id
   description: |
     Tests that are visible to the user in the trainer. Most of the time, they are only a tiny part of the full tests suite. Hence, passing all the tests of the example tests doesn't make you pass the kata. You have to use `ATTEMPT`.
     You run the example tests using the `TEST` button in the trainer.
 
 - term: Fixed tests
-  id: fixed-tests-id
   description: |
     Tests whose inputs/outputs are always the same, each time your run the tests. Generally, the example tests are made of those, and the test cases contains both fixed and random tests.
 
@@ -151,7 +149,6 @@
     Author of a kata who hasn't been connected for more than 30 days. When an author is inactive, some actions he's normally the only person allowed to do are doable by other people (power users with the required privilegees).
 
 - term: Initial solution
-  id: initial-solution-id
   description: |
     This is the starting point of your code when you enter the trainer of a kata (the "Solution" box).
 
@@ -221,7 +218,6 @@
     Hence... Don't mutate the input.
 
 - term: Output panel
-  id: output-panel-id
   description: |
     The output panel is the tab in the trainer where the tests feedback and all that you print to the console from inside your code are written to. It's actually the usual `STDOUT/STDERR`.
     It's useful for [debugging - TODO]() too.
@@ -245,7 +241,6 @@
     Most of the times, the user (you) is actually missing something, so use the Question label and not the Issue label, unless you can ___prove___ that the problem you're facing is actually an "issue".
 
 - term: Random tests
-  id: random-tests-id
   description: |
     Tests whose the inputs/outputs aren't the same each time you run the test suite.
     Random tests are prefered to randomized tests, when creating Kata.
@@ -267,7 +262,7 @@
     A retired Kata is a Kata that has been judge not qualitative enough by other codewarriors during the beta process. It has been removed from the beta process after some critical thresholds have been reached, without any action of the author. Nothing can be done anymore with a retired Kata.
 
 - term: Sample tests
-  description: See [example tests](/glossary/#example-tests-id)
+  description: See [example tests](/glossary/#example-tests)
 
 - term: Satisfaction rating
   description: |
@@ -278,7 +273,7 @@
     Another name used for the author of a kata.
 
 - term: Solution setup
-  description: See [initial solution](/glossary/#initial-solution-id).
+  description: See [initial solution](/glossary/#initial-solution).
 
 - term: Submit/Submit final
   description: |
@@ -289,10 +284,9 @@
     Label used in the discourses section of Kata to suggest non critical improvements to it (like rewording some parts of the description, or the feedback of some assertion messages in the tests), or to announce the pulication of a translation (useful when the author is inactive, so that power users can review and approve the translation).
 
 - term: Test cases
-  id: test-cases-id
   description: |
     Test cases represent the full batch of tests the code of a user has to pass to complete a Kata on Codewars.
-    Test cases generally contain more tests than the [example tests](/glossary/#example-tests-id), combining both [fixed](/glossary/#fixed-tests-id) and [random tests](/glossary/#random-tests-id).
+    Test cases generally contain more tests than the [example tests](/glossary/#example-tests), combining both [fixed](/glossary/#fixed-tests) and [random tests](/glossary/#random-tests).
 
 - term: Test Driven Development
   description: |
@@ -303,7 +297,7 @@
       url: https://en.wikipedia.org/wiki/Test-driven_development
 
 - term: Test suite (kata)
-  description: See [test cases](/glossary/#test-cases-id)
+  description: See [test cases](/glossary/#test-cases)
 
 - term: Trainer (kata)
   description: |
