@@ -44,6 +44,7 @@
 - term: Approve (a kata, a translation)
   description: |
     Action to push a kata out of the beta process, giving it a rank (kyu). This can be done by power users.
+
     For a translation, consists to validate it a make the language available in the kata for all users.
 
 - term: Attempt
@@ -73,13 +74,17 @@
       url: https://www.codewars.com/collections
 
 - term: Console
-  description: Synonym for "output panel" (see below).
+  description: See [output panel](/glossary/#output-panel)
 
 - term: Contributor(s)
   description: User(s) who have either authored, approved, translated or modified a kata in any way (a list of them can be seen in the "Details" page of any kata.
 
 - term: Dan
-  description: 段
+  description: |
+    Dan (段) indicates the number of degrees in master level. This is why they count upward.
+
+    The term is borrowed from a system in Japanese martial arts, which is in turn borrowed from the game of Go.
+  see: /concepts/gamification/ranks/
   links:
     - title: Dan (rank) - Wikipedia
       url: https://en.wikipedia.org/wiki/Dan_(rank)
@@ -92,11 +97,22 @@
 
 - term: Draft (kata)
   description: |
-    Initial state of a new born kata: when you create a new kata, it is in Draft mode as long as it is not "published". Kata in draft state are not visible through the [katas search page](https://www.codewars.com/kata/my-languages), but can be accessed and tried by other users if the author gives them the direct link to the trainer. Note that a kata in draft state cannot be completed (eg. "submit final" will not show up if you pass all the tests of a draft).
+    Initial state of a new born kata: when you create a new kata, it is in Draft mode as long as it is not "published". 
+
+    Kata in draft state are not visible through the [kata search page](https://www.codewars.com/kata/my-languages), but can be accessed and tried by other users if the author gives them the direct link to the trainer. Note that a kata in draft state cannot be completed (eg. "submit final" will not show up if you pass all the tests of a draft).
+
+- term: Duplicates (Kata)
+  description: |
+    Kata may be considered as duplicates in the following  situations, for example:
+      - another Kata is already published (currently in beta or approved) asking for nearly the same thing(s)
+      - other Kata already exist about the same topic which has been covered already a lot (like, "yet another fizz buzz thing...")
+
+    The usual course of action for an author being told his kata is a duplicate is to unpublish his kata, if he cannot make it different/valuable enough compared to what's already present in the database.
 
 - term: Edit panel
   description: |
     This is the interface an author uses to create or modify a kata. There you can see all the available languages, author's solution, initial solution, all the tests, the preloaded version and the description. Contributors and some power users (in specific conditions) have access to the edit panel of published katas.
+
     Notes:
       * Entering the edit panel is an automatic forfeit of the kata for the user going there.
       * Translating a kata has to be done through the creation of a translation, and ___never___ directly through the edit panel (unless you're the author, but even then, you are advise to use translations)
@@ -104,6 +120,7 @@
 - term: Example tests
   description: |
     Tests that are visible to the user in the trainer. Most of the time, they are only a tiny part of the full tests suite. Hence, passing all the tests of the example tests doesn't make you pass the kata. You have to use `ATTEMPT`.
+
     You run the example tests using the `TEST` button in the trainer.
 
 - term: Fixed tests
@@ -113,24 +130,29 @@
 - term: Followers
   description: |
     Users who are following other users.
+
     You can follow an user by clicking on the `Follow` button in his profile or by making yourself part of the same clan.
+
     You can see in the `Social` section of the profile of a user who he is following, who are his followers and who he is ally with.
 
 - term: Forfeit (a kata)
   description: |
     You forfeit a kata when you do one of those actions:
       * You unlock the solutions (through the button in the trainer, for example)
-      * You enter the edit panel (_warning_, power users may have the possibility to enter the edit panel of some katas. If you do so before you solved it, you actually forfeit it).
+      * You enter the edit panel (_warning_, power users may have the possibility to enter the edit panel of some katas. If you do so before you solved it, you actually forfeit it).  
+
     Forfeiting a kata makes you lose the opportunity to gain honor points or progress by completing this kata.
 
 - term: Fork
   description: |
     In the solutions page of a kata, you can see the solutions of other users, and you can `fork` them to suggest modifications/enhancements (button below each solution).
+
     Using the fork panel is the right way to try out a solution of another user, rather than to copy it in the trainer of the kata.
 
 - term: Honor (points)
   description: |
     Honor points are the score that is showing up in the top right corner, aside of your avatar. You can win honor points in different ways (completing katas, up votes on your comments or solutions, translations, creating katas, ...)
+  see: /gamification/honor/
 
 - term: Inactive (author)
   description: |
@@ -143,17 +165,21 @@
 - term: Issue (comment)
   description: |
     `Issue` is the label to use when you write a comment in the discourses section of a kata to point out some problems in the kata itself (wrong tests, wrong reference solution, wrong description, missing tests, misleading description, ...).
+
     Note that the `Issue` label is ___NOT___ to use for a user who doesn't understand why his solution is failing some (or all) the tests of the kata.
 
 - term: Kata
-  description: 型
+  description: |
+    Kata (型) is how coding tasks are named on Codewars. See [here - TODO]() for more information about it.
+
+- term: Kata search page
+  description: |
+    This is the page on Codewars where you can search for specific Kata by name, rank, language, ...  
+
+    See [TODO]() for more explanations.
   links:
-    - title: CodeKata by Dave Thomas
-      url: http://codekata.com/kata/codekata-intro/
-    - title: Kata (programming) - Wikipedia
-      url: https://en.wikipedia.org/wiki/Kata_(programming)
-    - title: Kata - Wikipedia
-      url: https://en.wikipedia.org/wiki/Kata
+    - title: Kata search page on Codewars
+      url: https://www.codewars.com/kata/my-languages
 
 - term: Kumite
   description: 組手
@@ -162,7 +188,11 @@
       url: https://en.wikipedia.org/wiki/Kumite
 
 - term: Kyū
-  description: 級
+  description: |
+    Kyū (級) indicates the number of degrees away from master level (Dan). This is why they count downward.
+
+    The term is borrowed from a system in Japanese martial arts, which is in turn borrowed from the game of Go.
+  see: /gamification/ranks/
   links:
     - title: Kyū - Wikipedia
       url: https://en.wikipedia.org/wiki/Ky%C5%AB
@@ -186,27 +216,40 @@
 - term: Markdowns (formatting)
   description: |
     Codewars is responsive to `markdowns`. They allow you to format code, descriptions or comments so that thay are properly readable for other users.
+  see: /references/markdown/
 
 - term: Merge conflicts
   description: |
     When a translation of a kata is published but some changes are done to the description (through the edit panel) before the translation gets approved, it becomes impossible to approve it because of those "merge conflicts".
+
     To resolve this problem, you have to fork the translation and update the description starting with its current (new) version.
 
 - term: Mutation of the input
   description: |
     To keep it short...: ___Don't mutate the input... Ever___ (eg. don't use sort, append, push, remove, ... and alike before doing a copy of the input).
+
     This is about side effects, modifying the arguments (typically lists/arrays, or even strings if they are mutable in your language) sent to your function during the executions. This can have weird consequences, depending on how the tests are written.
+
     Nowadays, most test suites are written in a way that avoids this kind of problem but typically, if you end up passing the fixed tests but failing all the random tests with something along the line of `[your result] should equal []`, you're most likely facing a "mutation of the input" problem.
+
     Hence... Don't mutate the input.
+
+- term: Output panel
+  description: |
+    The output panel is the tab in the trainer where the tests feedback and all that you print to the console from inside your code are written to. It's actually the usual `STDOUT/STDERR`.
+
+    It's useful for [debugging - TODO]() too.
 
 - term: Preloaded (code/section)
   description: |
     In a Kata, the preloaded section is code that is executed _before_ the solution of the user is defined. The code hold by this section isn't visible to the user but every function or variable defined there is accessible to him drugint the executions of his code.
+
     If you need/want to see the preloaded section of a Kata, open a fork of a solution _after_ you solved it and look to the `Preloaded` panel.
 
 - term: Progress
   description: |
     Aside of honor points, you gain "progress" by completing Kata (and only that way). Progess is what is conditioning your current rank as a codewarrior.
+  see: /concepts/gamification/ranks/
 
 - term: Publishing (kata)
   description: When you hit "publish" in the edit panel of a kata you created, it enters the beta process and becomes visible to anyone in the [katas search page](https://www.codewars.com/kata/my-languages). The beta process begins at the moment a kata is published.
@@ -214,11 +257,13 @@
 - term: Question (comment)
   description: |
     `Question` is the label to use when you write a comment in the discourses section of a kata when you encounter some problems to solve it and you don't understand why your solution is failing some (or all) the tests. Or if you ___believe___ your solution is correct while the expected result isn't.
+
     Most of the times, the user (you) is actually missing something, so use the Question label and not the Issue label, unless you can ___prove___ that the problem you're facing is actually an "issue".
 
 - term: Random tests
   description: |
     Tests whose the inputs/outputs aren't the same each time you run the test suite.
+
     Random tests are prefered to randomized tests, when creating Kata.
 
 - term: Randomized tests
@@ -238,8 +283,7 @@
     A retired Kata is a Kata that has been judge not qualitative enough by other codewarriors during the beta process. It has been removed from the beta process after some critical thresholds have been reached, without any action of the author. Nothing can be done anymore with a retired Kata.
 
 - term: Sample tests
-  description: |
-    See example tests.
+  description: See [example tests](/glossary/#example-tests)
 
 - term: Satisfaction rating
   description: |
@@ -250,8 +294,7 @@
     Another name used for the author of a kata.
 
 - term: Solution setup
-  description: |
-    See initial solution.
+  description: See [initial solution](/glossary/#initial-solution).
 
 - term: Submit/Submit final
   description: |
@@ -261,6 +304,12 @@
   description: |
     Label used in the discourses section of Kata to suggest non critical improvements to it (like rewording some parts of the description, or the feedback of some assertion messages in the tests), or to announce the pulication of a translation (useful when the author is inactive, so that power users can review and approve the translation).
 
+- term: Test cases
+  description: |
+    Test cases represent the full batch of tests the code of a user has to pass to complete a Kata on Codewars.
+
+    Test cases generally contain more tests than the [example tests](/glossary/#example-tests), combining both [fixed](/glossary/#fixed-tests) and [random tests](/glossary/#random-tests).
+
 - term: Test Driven Development
   description: |
     Kata are built following this principle: you are provided with specifications and a set of tests, and your goal is to pass those tests (by following the specifications or finding a way to at least pass the tests).
@@ -269,13 +318,19 @@
     - title: Test-driven Development - Wikipedia
       url: https://en.wikipedia.org/wiki/Test-driven_development
 
+- term: Test suite (kata)
+  description: See [test cases](/glossary/#test-cases)
+
 - term: Trainer (kata)
   description: |
     This is the place where you write your code to complete a task.
+  see: /getting-started/solving-kata/
 
 - term: Trainer suggestions
   description: |
-    Trainer suggestions are the Kata that are showing up at the top of the dashboard. Those suggestions can be tweaked at some point, either through the profile of the user or directly through the dashboard.
+    Trainer suggestions are the Kata that are showing up at the top of the dashboard. Those suggestions can be tweaked at some point, either through the profile of the user or directly through the dashboard.  
+
+    See [training setup](/getting-started/setting-up/#training-setup).
 
 - term: Translation
   description: |
@@ -288,4 +343,5 @@
 - term: Unpublish (Kata)
   description: |
     An author can unpublish his Kata if it's still in beta state (and only in this case). An unpublished kata goes back to draft state, and cannot be completed anymore by other users.
+
     Unpublishing a Kata may be the best way for the author to have time to resolve issues raised by other users during the beta process.
