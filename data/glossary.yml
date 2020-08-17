@@ -81,9 +81,9 @@
 
 - term: Dan
   description: |
-    (段) - The term is borrowed from a system in Japanese martial arts, which is in turn borrowed from the game of Go.
+    Dan (段) indicates the number of degrees in master level. This is why they count upward.
 
-    Dan indicates the number of degrees in master level. This is why they count upward.
+    The term is borrowed from a system in Japanese martial arts, which is in turn borrowed from the game of Go.
   see: /concepts/gamification/ranks/
   links:
     - title: Dan (rank) - Wikipedia
@@ -99,7 +99,7 @@
   description: |
     Initial state of a new born kata: when you create a new kata, it is in Draft mode as long as it is not "published". 
 
-    Kata in draft state are not visible through the [katas search page](https://www.codewars.com/kata/my-languages), but can be accessed and tried by other users if the author gives them the direct link to the trainer. Note that a kata in draft state cannot be completed (eg. "submit final" will not show up if you pass all the tests of a draft).
+    Kata in draft state are not visible through the [kata search page](https://www.codewars.com/kata/my-languages), but can be accessed and tried by other users if the author gives them the direct link to the trainer. Note that a kata in draft state cannot be completed (eg. "submit final" will not show up if you pass all the tests of a draft).
 
 - term: Duplicates (Kata)
   description: |
@@ -170,7 +170,7 @@
 
 - term: Kata
   description: |
-    "Kata" (型) is how coding tasks are named on Codewars. See [here - TODO]() for more information about it.
+    Kata (型) is how coding tasks are named on Codewars. See [here - TODO]() for more information about it.
 
 - term: Kata search page
   description: |
@@ -189,9 +189,9 @@
 
 - term: Kyū
   description: |
-    (級) - The term is borrowed from a system in Japanese martial arts, which is in turn borrowed from the game of Go.
+    Kyū (級) indicates the number of degrees away from master level (Dan). This is why they count downward.
 
-    Kyu (or Kyū) indicates the number of degrees away from master level (Dan). This is why they count downward.
+    The term is borrowed from a system in Japanese martial arts, which is in turn borrowed from the game of Go.
   see: /gamification/ranks/
   links:
     - title: Kyū - Wikipedia
