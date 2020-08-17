@@ -156,7 +156,9 @@
 
 - term: Inactive (author)
   description: |
-    Author of a kata who hasn't been connected for more than 30 days. When an author is inactive, some actions he's normally the only person allowed to do are doable by other people (power users with the required privilegees).
+    Author of a kata who hasn't been connected for more than 30 days.
+
+    When an author is inactive, some actions he's normally the only person allowed to do are doable by other people (power users with the required privilegees).
 
 - term: Initial solution
   description: |
@@ -199,7 +201,9 @@
 
 - term: Language versions
   description: |
-    A kata may be available in one or more languages (javascript, python, coq, ...), and for each language there may be different versions like Node 8 or Node 10 for JS, python 3.4.3 or 3.6, ... You can choose the language _and_ the language version in the trainer of a kata (amongst the available ones only).
+    A kata may be available in one or more languages (javascript, python, coq, ...), and for each language there may be different versions like Node 8 or Node 10 for JS, python 3.4.3 or 3.6, ...
+
+    You can choose the language _and_ the language version in the trainer of a kata (amongst the available ones only).
 
 - term: Leaderboards
   description: Leaderboards are grouping different users according to different criteria.
@@ -280,14 +284,18 @@
 
 - term: Retire/Retired kata
   description: |
-    A retired Kata is a Kata that has been judge not qualitative enough by other codewarriors during the beta process. It has been removed from the beta process after some critical thresholds have been reached, without any action of the author. Nothing can be done anymore with a retired Kata.
+    A retired Kata is a Kata that has been judge not qualitative enough by other codewarriors during the beta process.
+
+    It has been removed from the beta process after some critical thresholds have been reached, without any action of the author. Nothing can be done anymore with a retired Kata.
 
 - term: Sample tests
   description: See [example tests](/glossary/#example-tests)
 
 - term: Satisfaction rating
   description: |
-    Value as percents, shown below the title of a Kata. It indicates the average rating of users on that Kata. The satisfaction rating is important during the beta process: it may trigger the auto-retirement if it becomes too low, and it needs to be high enough to allow the approval of a beta kata.
+    Value as percents, shown below the title of a Kata. It indicates the average rating of users on that Kata.
+
+    The satisfaction rating is important during the beta process: it may trigger the auto-retirement if it becomes too low, and it needs to be high enough to allow the approval of a beta kata.
 
 - term: Sensei
   description: |
