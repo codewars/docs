@@ -16,7 +16,7 @@ next: /references/gamification/privileges/
 | Blue (4kyu & 3kyu) <br> _Competent_    |    32 |
 | Purple (2kyu & 1kyu) <br> _Proficient_ |   128 |
 |                                        |       |
-| None <br> _Beta_                       |   2\* |
+| None <br> _Beta_                       |   4\* |
 
 \* Additional honor based on the level is rewarded once the kata is approved.
 
