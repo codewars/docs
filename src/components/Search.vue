@@ -31,7 +31,7 @@
     <div
       v-if="showResult"
       class="fixed inset-x-0 z-50 overflow-y-auto border-2 border-t-0 rounded-lg rounded-t-none shadow-lg results sm:bottom-auto sm:absolute bg-oc-gray-2 dark:bg-oc-gray-9 border-oc-gray-3 dark:border-oc-gray-8"
-      style="max-height: calc(100vh - 120px);"
+      style="max-height: calc(100vh - 120px)"
     >
       <ul class="px-4 py-2 m-0">
         <li v-if="results.length === 0" class="px-2">
