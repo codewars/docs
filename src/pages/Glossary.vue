@@ -1,9 +1,8 @@
 <template>
   <Layout>
-    <div class="space-y-8">
-      <h1 class="text-center text-4xl font-medium my-4">Glossary</h1>
-
-      <section v-for="group of groupedTerms" :key="group.id" class="space-y-8">
+    <h1 class="text-center text-4xl font-medium my-4">Glossary</h1>
+    <div class="space-y-16">
+      <section v-for="group of groupedTerms" :key="group.id" class="space-y-12">
         <h2 class="text-center text-2xl mb-2" :id="`terms-${group.id}`">
           {{ group.id }}
         </h2>
