@@ -64,13 +64,13 @@ module.exports = {
             title: "Kata",
             items: [
               "/concepts/kata/",
+              "/concepts/kata/beta-process/",
               "/concepts/kata/collections/",
               "/concepts/kata/discourse/",
-              "/concepts/kata/translations/",
-              "/concepts/kata/training-routines/",
-              "/concepts/kata/beta-process/",
               "/concepts/kata/satisfaction-rating/",
-              "/concepts/kata/solutios-voting/",
+              "/concepts/kata/solutions-voting/",
+              "/concepts/kata/training-routines/",
+              "/concepts/kata/translations/",
             ],
           },
           {
