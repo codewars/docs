@@ -7,7 +7,6 @@ kind: recipe
 - TDD
 - help
 
-
 ## Voting
 
 Solutions can be up voted by the community. There are two types of voting options: "Best Practices" and "Clever". You are only allowed to vote for one option per each solution.

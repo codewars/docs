@@ -7,8 +7,6 @@ sidebar: explanation-kata
 
 ## Sample tests and TDD
 
-
 ## Full tests
 
 ## Assertions (?)
-

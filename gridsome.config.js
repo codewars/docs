@@ -78,12 +78,11 @@ module.exports = {
               "/concepts/kata/beta-process/",
               "/concepts/kata/satisfaction-rating/",
             ],
-          },          
+          },
           {
             title: "How to...",
-            items: ["/recipes/solve-kata/", "/recipes/create-kata/",
-          ],
-        },
+            items: ["/recipes/solve-kata/", "/recipes/create-kata/"],
+          },
         ],
       },
       {
