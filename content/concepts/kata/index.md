@@ -1,8 +1,11 @@
 ---
+kind: concept
 sidebar: explanation-kata
 ---
 
-# What is a Kata?
+# Kata
+
+## What is a Kata?
 
 On Codewars, kata are code challenges focused on improving skill and technique. Some train programming fundamentals, while others focus on complex problem solving. Others are puzzles meant to test your creative problem solving, while others are based on real world coding scenarios.
 
