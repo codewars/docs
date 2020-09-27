@@ -5,6 +5,10 @@ sidebar: explanation-kata
 
 # Kata Beta Process
 
+## How Are Kata Created?
+
+Each kata is crafted for and by the community. Kata are created by other users rewarded with kata authoring privilege. When a kata is published by an author (or Sensei), it will go into a [beta process](/concepts/kata/beta-process/) where the community can help test and provide quality assurance feedback. The author who created kata will initially include one or more languages to train in. Other users later can "translate" the kata into additional languages.
+
 ## What is the Beta Process?
 
 After a kata is published and before it gets approved, it has to go through community approval (and difficulty ranking) in our beta process. The feedback during this process is vital to making sure all kata are of the highest quality.

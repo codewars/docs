@@ -64,8 +64,8 @@ module.exports = {
             title: "Solving",
             items: [
               "/concepts/kata/",
-              "/concepts/kata/solving-kata/",
               "/concepts/kata/training-routines/",
+              "/concepts/kata/tests/",
               "/concepts/kata/solutions/",
               "/concepts/kata/discourse/",
               "/concepts/kata/collections/",
@@ -74,16 +74,16 @@ module.exports = {
           {
             title: "Authoring",
             items: [
-              "/concepts/kata/creating-kata/",
               "/concepts/kata/translations/",
               "/concepts/kata/beta-process/",
               "/concepts/kata/satisfaction-rating/",
             ],
-          },
+          },          
           {
-            title: "See also",
-            items: ["/recipes/create-kata/"],
-          },
+            title: "How to...",
+            items: ["/recipes/solve-kata/", "/recipes/create-kata/",
+          ],
+        },
         ],
       },
       {
