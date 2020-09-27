@@ -12,4 +12,4 @@ Bookmarking (starring) a kata is similar to collecting a kata, except that your 
 
 Only the warrior who created the collection can add to it. You are free to create your own collection with the same name. Kata are also searchable within the kata library by any collection name it is associated with. In this way you can easily find kata that span across multiple collections of the same name.
 
-*This page is a stub, please consider contributing*
+_This page is a stub, please consider contributing_
