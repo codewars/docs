@@ -61,18 +61,25 @@ module.exports = {
         name: "explanation-kata",
         sections: [
           {
-            title: "Kata",
+            title: "Solving",
             items: [
               "/concepts/kata/",
-              "/concepts/kata/beta-process/",
-              "/concepts/kata/collections/",
-              "/concepts/kata/discourse/",
-              "/concepts/kata/satisfaction-rating/",
-              "/concepts/kata/solutions-voting/",
+              "/concepts/kata/solving-kata/",
               "/concepts/kata/training-routines/",
-              "/concepts/kata/translations/",
+              "/concepts/kata/solutions/",
+              "/concepts/kata/discourse/",
+              "/concepts/kata/collections/",
             ],
           },
+          {
+            title: "Authoring",
+            items: [
+              "/concepts/kata/creating-kata/",
+              "/concepts/kata/translations/",
+              "/concepts/kata/beta-process/",
+              "/concepts/kata/satisfaction-rating/",
+            ],
+          },          
           {
             title: "See also",
             items: ["/recipes/create-kata/"],

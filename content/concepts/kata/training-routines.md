@@ -38,3 +38,17 @@ Want to help us vet through new challenges that other warriors have created? Thi
 ### Random
 
 All of the training routines give you a random kata, this routine is as random as it gets.
+
+
+
+
+
+
+
+### Training by Practice and Repeatition
+
+On the Codewars dashboard you will always find a kata that you can train with. These kata are chosen at random based on a training routine. If you select "Practice and Repeat" routine then you will only be given kata you have already trained on. This is an excellent way to hone your skills. Repeatedly completing the same kata will allow you to discover and master efficient ways of handling common programming tasks.
+
+You can learn more about training routines [here](/concepts/kata/training_routines).
+
+On Codewars the idea of repetition is encouraged at your own pace. You will not be pressured to repeat kata you have already completed. If you struggle on a kata it is recommended that you save it to a [collection](/concepts/kata/collections/) and revisit the kata later. Even doing a kata just once will often give you some of the value that would normally only come from repetition. This is because after you complete a kata, and your solution is fresh within your mind, you are shown the solutions of other warriors. This can often lead to an epiphany that you otherwise would have to have found on your own over time.
