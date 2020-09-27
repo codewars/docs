@@ -1,3 +1,7 @@
+---
+kind: recipe
+---
+
 # Creating a kata
 
  - idea

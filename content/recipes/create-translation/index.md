@@ -1,3 +1,7 @@
+---
+kind: recipe
+---
+
 # Creating a translation
 
 this page would relate to creating both initial langiuage version, as well as new translation

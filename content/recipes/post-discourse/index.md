@@ -1,3 +1,7 @@
+---
+kind: recipe
+---
+
 # Posting to a discourse
 
  - labels

@@ -1,3 +1,7 @@
+---
+kind: recipe
+---
+
 # Reviewing a translation
 
  - reviewing issues

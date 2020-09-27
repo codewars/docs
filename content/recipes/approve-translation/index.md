@@ -1,3 +1,7 @@
+---
+kind: recipe
+---
+
 # Approving a translation
 
  - conditions for translation being approvable

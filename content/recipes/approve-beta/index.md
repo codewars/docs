@@ -1,3 +1,7 @@
+---
+kind: recipe
+---
+
 # Approving a beta kata
 
  - conditions for kata being approvable
