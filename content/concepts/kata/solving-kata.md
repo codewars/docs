@@ -5,5 +5,5 @@ sidebar: explanation-kata
 
 # Solving a kata
 
- - TDD
- - help
+- TDD
+- help

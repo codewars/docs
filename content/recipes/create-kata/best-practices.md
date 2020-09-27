@@ -65,4 +65,3 @@ A good kata includes a thorough and clear set of tests that match the descriptio
 [More information on the test frameworks for different languages](https://github.com/Codewars/codewars.com/wiki/Languages-and-Test-Frameworks).
 
 _This page is a stub, please consider contributing_
-

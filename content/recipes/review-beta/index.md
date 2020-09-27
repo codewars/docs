@@ -1,6 +1,4 @@
 # Reviewing a beta kata
 
- - reviewing issues and suggestions
- - reading code of snippets
-
- 
+- reviewing issues and suggestions
+- reading code of snippets

@@ -79,7 +79,7 @@ module.exports = {
               "/concepts/kata/beta-process/",
               "/concepts/kata/satisfaction-rating/",
             ],
-          },          
+          },
           {
             title: "See also",
             items: ["/recipes/create-kata/"],

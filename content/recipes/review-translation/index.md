@@ -1,5 +1,5 @@
 # Reviewing a translation
 
- - reviewing issues
- - checking consistency
- - reading code
+- reviewing issues
+- checking consistency
+- reading code

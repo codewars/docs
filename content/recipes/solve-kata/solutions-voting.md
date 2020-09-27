@@ -11,4 +11,3 @@ Best practices should be a good combination of performance, readability and main
 ## Clever
 
 This is the vote you are looking for if you see a solution that is code golfed or generally clever in some way. If a solution is both clever and performant, readable and maintainable, then "Best Practices" is the way to go. If it is so clever that you are impressed but too clever that you would want to have to deal with it when fixing someone else's code - then "Clever" should be your vote.
-
