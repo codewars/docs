@@ -75,9 +75,7 @@ module.exports = {
           },
           {
             title: "See also",
-            items: [
-              "/recipes/create-kata/",              
-            ],
+            items: ["/recipes/create-kata/"],
           },
         ],
       },
