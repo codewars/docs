@@ -1,3 +1,5 @@
+# Kata Beta Process
+
 ## What is the Beta Process?
 
 After a kata is published and before it gets approved, it has to go through community approval (and difficulty ranking) in our beta process. The feedback during this process is vital to making sure all kata are of the highest quality.

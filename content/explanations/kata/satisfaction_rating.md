@@ -1,3 +1,5 @@
+# Kata satsfaction rating
+
 The satisfaction rating is the score shown here:
 
 ![Satisfaction Rating](https://www.evernote.com/l/AAU2GBEeCMZLGJZ1EJDQIAC1mbCwW8HWARcB/image.png)

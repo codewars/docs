@@ -1,3 +1,5 @@
+# Training routines
+
 When being offered a random kata to train on while viewing the dashboard, and when progressing from one kata to the next, you can configure a training routine which will determine the type of challenge you will work on next. 
 
 Training routes are not fixed. As you cycle through challenges, a new one will be randomly selected for you. Training routines simply allow you to hone in on which type of challenge will be randomly selected for you. 

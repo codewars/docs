@@ -1,3 +1,5 @@
+# Collections
+
 ## What are collections?
 
 Collections are a way for the community to curate groups of kata that can be trained on in a sequence. All collections are public. Eventually we will start to feature well crafted collections on other areas of the site.

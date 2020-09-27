@@ -1,3 +1,5 @@
+# Kata ranking
+
 <!--
 More detailed draft:
 https://docs.google.com/document/d/1eseD5xyhGdtQ-DaWdqfK2yf6mvTDWHWEpkQGBppI8cw

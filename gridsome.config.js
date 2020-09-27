@@ -57,6 +57,21 @@ module.exports = {
           },
         ],
       },
+      {
+        name: "explanation-kata",
+        sections: [
+          {
+            title: "Kata",
+            items: [
+              "/explanations/kata/",
+              "/explanations/kata/collections/",
+              "/explanations/kata/discourse/",
+              "/explanations/kata/ranking/",
+              "/explanations/kata/translations/"
+            ],
+          },
+        ],
+      },      
     ],
   },
   plugins: [

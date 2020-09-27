@@ -1,3 +1,5 @@
+# Kata Best Practices
+
 ## Be Clear
 
 It should be clear in the instructions what the codewarrior is expected to complete in the kata. This is not always straightforward, especially for more challenging exercises. It is helpful to:
