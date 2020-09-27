@@ -1,6 +1,6 @@
 # Translations
 
-Kata authors must write test cases for each specific language that they want to support, as well as a working solution to prove the kata can be solved. As you can imagine, it's not practical for a kata author to be able to write the challenge in all 20+ languages that Codewars supports. 
+Kata authors must write test cases for each specific language that they want to support, as well as a working solution to prove the kata can be solved. As you can imagine, it's not practical for a kata author to be able to write the challenge in all 20+ languages that Codewars supports.
 
 This is where translations come in. They allow other warriors to make katas available in other languages. Any user can publish a translation, where the kata author, an admin, or a power user with the Co-Author privilege can then approve the changes. Once a translation is approved, it will be added to the kata.
 
