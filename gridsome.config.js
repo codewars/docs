@@ -67,7 +67,7 @@ module.exports = {
               "/concepts/kata/collections/",
               "/concepts/kata/discourse/",
               "/concepts/kata/ranking/",
-              "/concepts/kata/translations/"
+              "/concepts/kata/translations/",
             ],
           },
         ],
