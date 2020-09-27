@@ -63,11 +63,11 @@ module.exports = {
           {
             title: "Kata",
             items: [
-              "/explanations/kata/",
-              "/explanations/kata/collections/",
-              "/explanations/kata/discourse/",
-              "/explanations/kata/ranking/",
-              "/explanations/kata/translations/"
+              "/concepts/kata/",
+              "/concepts/kata/collections/",
+              "/concepts/kata/discourse/",
+              "/concepts/kata/ranking/",
+              "/concepts/kata/translations/"
             ],
           },
         ],
