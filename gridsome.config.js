@@ -71,7 +71,41 @@ module.exports = {
             ],
           },
         ],
-      },      
+      },
+      {
+        name: "markdown",
+        sections: [
+          {
+            title: "Markdown Syntax",
+            items: [
+              "/references/markdown/",
+              "/references/markdown/extensions/",
+            ],
+          },
+        ],
+      },
+      {
+        name: "ranks-honor",
+        sections: [
+          {
+            title: "About",
+            items: [
+              "/concepts/gamification/",
+              "/concepts/gamification/ranks/",
+              "/concepts/gamification/honor/",
+              "/concepts/gamification/privileges/",
+            ],
+          },
+          {
+            title: "References",
+            items: [
+              "/references/gamification/ranks/",
+              "/references/gamification/honor/",
+              "/references/gamification/privileges/",
+            ],
+          },
+        ],
+      },
     ],
   },
   plugins: [
