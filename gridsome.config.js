@@ -66,8 +66,17 @@ module.exports = {
               "/concepts/kata/",
               "/concepts/kata/collections/",
               "/concepts/kata/discourse/",
-              "/concepts/kata/ranking/",
               "/concepts/kata/translations/",
+              "/concepts/kata/training_routines/",              
+              "/concepts/kata/beta_process/",
+              "/concepts/kata/satisfaction_rating/",              
+              "/concepts/kata/solutios_voting/",              
+            ],
+          },
+          {
+            title: "See also",
+            items: [
+              "/recipes/create_kata/",              
             ],
           },
         ],

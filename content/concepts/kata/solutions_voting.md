@@ -1,3 +1,8 @@
+---
+kind: concept
+sidebar: explanation-kata
+---
+
 # Solutions
 
 ## About Solutions

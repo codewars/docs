@@ -1,3 +1,8 @@
+---
+kind: concept
+sidebar: explanation-kata
+---
+
 # Kata Discourse
 
 Each kata has its own discourse page where you can discuss. This is also a place for you to log any issues, suggestions or questions.

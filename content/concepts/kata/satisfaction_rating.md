@@ -1,3 +1,8 @@
+---
+kind: concept
+sidebar: explanation-kata
+---
+
 # Kata satsfaction rating
 
 The satisfaction rating is the score shown here:

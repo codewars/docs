@@ -1,3 +1,8 @@
+---
+kind: concept
+sidebar: explanation-kata
+---
+
 # Kata Beta Process
 
 ## What is the Beta Process?

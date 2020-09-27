@@ -1,3 +1,8 @@
+---
+kind: concept
+sidebar: explanation-kata
+---
+
 # Training routines
 
 When being offered a random kata to train on while viewing the dashboard, and when progressing from one kata to the next, you can configure a training routine which will determine the type of challenge you will work on next.
@@ -33,5 +38,3 @@ Want to help us vet through new challenges that other warriors have created? Thi
 ### Random
 
 All of the training routines give you a random kata, this routine is as random as it gets.
-
-_this page is a stub, please consider contributing to it_

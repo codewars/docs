@@ -1,3 +1,8 @@
+---
+kind: concept
+sidebar: explanation-kata
+---
+
 # Translations
 
 Kata authors must write test cases for each specific language that they want to support, as well as a working solution to prove the kata can be solved. As you can imagine, it's not practical for a kata author to be able to write the challenge in all 20+ languages that Codewars supports.
