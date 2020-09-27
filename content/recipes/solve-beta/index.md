@@ -2,7 +2,6 @@
 kind: recipe
 ---
 
-
 # Solving a beta kata
 
 TODO: this page is going to focus on solving beta kata in context of beta process:
