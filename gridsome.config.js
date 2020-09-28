@@ -72,11 +72,11 @@ module.exports = {
             ],
           },
           {
-            title: "Authoring",
+            title: "Contributing",
             items: [
-              "/concepts/kata/translations/",
-              "/concepts/kata/beta-process/",
               "/concepts/kata/satisfaction-rating/",
+              "/concepts/kata/beta-process/",
+              "/concepts/kata/translations/",
             ],
           },
           {
