@@ -23,18 +23,20 @@ Sample tests may be attempted as many times as needed without any negative impac
 
 Kata is not considered solved until user's solution passes attempt against full test suite. Full tests are meant to be thorough and exhaustive, and it's possible they contain some test cases the solution did not account for: be it some edge conditions, large inputs, invalid inputs, or performance tests. They also cannot be viewed by a user if kata was not completed by them in attempted language.
 
-If sample test pass but full attempt does not, it means that solution is still not complete and has to be improved. Test output panel should give some hints on what went wrong, and when it happens, user should reproduce failing condition, add failing test case to their sample tests, and improve the solution. 
+If sample test pass but full attempt does not, it means that solution is still not complete and has to be improved. Test output panel should give some hints on what went wrong, and when it happens, user should reproduce failing condition, add failing test case to their sample tests, and improve the solution.
 
 Sometimes it is important to get tests correct on the first try, for example when you care for "successful on first attempt" stat which is available to Codewars RED users.
 
 ## Tests output (?)
 
 TBD:
- - what's presented there,
- - printing and debugging,
- - handling unhelpful output
+
+- what's presented there,
+- printing and debugging,
+- handling unhelpful output
 
 ## Test frameworks (?)
 
 TBD:
- - follow up on TDD for users who want to add sample tests
+
+- follow up on TDD for users who want to add sample tests
