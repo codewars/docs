@@ -5,11 +5,10 @@ kind: recipe
 # Reviewing a translation
 
 TODO:
+
 - reviewing issues
 - checking consistency
 - reading code
-
-
 
 ## Remarks on accepting a translation
 
