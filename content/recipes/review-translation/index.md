@@ -9,7 +9,7 @@ TODO:
 - checking consistency
 - reading code
 
-
+_TBD: this page was imported from old CW wiki and needs to be reviewied/redacted._
 
 ## Remarks on accepting a translation
 

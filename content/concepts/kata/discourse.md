@@ -5,6 +5,8 @@ sidebar: explanation-kata
 
 # Kata Discourse
 
+_TBD: this page was imported from old CW wiki and needs to be reviewied/redacted._
+
 Each kata has its own discourse page where you can discuss. This is also a place for you to log any issues, suggestions or questions.
 
 > TODO: complete

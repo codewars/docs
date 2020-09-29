@@ -5,6 +5,8 @@ sidebar: explanation-kata
 
 # Kata satsfaction rating
 
+_TBD: this page was imported from old CW wiki and needs to be reviewied/redacted._
+
 The satisfaction rating is the score shown here:
 
 ![Satisfaction Rating](https://www.evernote.com/l/AAU2GBEeCMZLGJZ1EJDQIAC1mbCwW8HWARcB/image.png)

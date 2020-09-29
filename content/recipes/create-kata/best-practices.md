@@ -1,5 +1,7 @@
 # Kata Best Practices
 
+_TBD: this page was imported from old CW wiki and needs to be reviewied/redacted._
+
 ## Be Clear
 
 It should be clear in the instructions what the codewarrior is expected to complete in the kata. This is not always straightforward, especially for more challenging exercises. It is helpful to:

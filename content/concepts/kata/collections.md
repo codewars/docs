@@ -5,6 +5,8 @@ sidebar: explanation-kata
 
 # Collections
 
+_TBD: this page was imported from old CW wiki and needs to be reviewied/redacted._
+
 ## What are collections?
 
 Collections are a way for the community to curate groups of kata that can be trained on in a sequence. All collections are public.
