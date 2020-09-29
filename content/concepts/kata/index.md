@@ -17,9 +17,9 @@ Codewars supports users in many ways so their training with kata is maximally ef
 
 - They can set up one of available [training routines](/concepts/kata/training-routines/).
 - Users can run [test cases](/concepts/kata/tests/) against their solution and solve kata using Test Driven Development approach.
-- Users can view [solutions](/concepts/kata/solutions/) of other people after they manage to solve the kata or unlock them.
 - Users can take a part in a [discourse](/concepts/kata/discourse/) on every kata, to ask for help, or help others.
 - Kata can be bookmarked or grouped into [collections](/concepts/kata/collections/) for easier management, categorization, or sharing with others.
+- Users can view [solutions](/concepts/kata/solutions/) of other people after they manage to solve the kata or unlock them.
 
 ## Contributing to the site
 

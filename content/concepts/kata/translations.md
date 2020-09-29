@@ -23,16 +23,26 @@ To be able to translate a kata to other languages, user has to complete the kata
 
 This will take you to the translations page where you can view existing translations and create new ones.
 
-After translation is approved it becomes available for others to solve, and its author is granted a reward:
+Creating a new language version means writing code snippets required for every kata to have:
+ - **Example solution**, to show that it's possible to solve the kata.
+ - **Solution setup**, which works as a stub to work on for users training on the kata.
+ - **Sample tests**, with some initial test cases which can be expanded when training on a kata. Sample tests can also serve as an example how the solution is called.
+ - **Tests** which are run against user solution when they consider their solution ready. Tests collected in this snipped must pass to consider the kata solved.
+ - **Preloaded** snippet, which contains code not visible to users, and availale for both sample tests and full tests.
 
-- Rank for the language of the translation increases just as if author solved the kata,
+Translation does not have to be finished in one go. It can be saved and kept in draft state as long as necessary. When translator considers it ready, it can be published and put in a "pending" state. It becomes available for other users for review, and can be approved, edited with fixes if necessary, or rejected.
+
+## Reward
+
+Translators are rewarded for their contribution after translation after it is approved and becomes available for others to solve:
+
+- Rank for the language of the translation increases just as if tranlator solved the kata in this language,
 - Author gains twice as much [Honor points](/references/gamification/honor/#other) as compared to solving the kata,
 - If the kata is in beta, rank and Honor rewards are granted once it gets approved and its rank assigned
 - Author is marked as [coauthor (TODO: explain)]() of translated kata.
 
 _*WARNING:* Currently, "Coauthor" flag seems to be affected by a bug which prevents coauthors of a kata from collecting a reward for its translations. Until it gets fixed, users are rewarded for a translation only if they are not a coauthor of the translated kata yet._
 
-Translation does not have to be finished in one go. It can be saved and kept in draft state as long as necessary. When translator considers it ready, it can be published and put in a "pending" state. It becomes available for other users for review, and can be approved, edited with fixes if necessary, or rejected.
 
 ## Pending translations
 
