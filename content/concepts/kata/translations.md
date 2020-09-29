@@ -30,15 +30,17 @@ Creating a new language version means writing code snippets required for every k
  - **Tests** which are run against user solution when they consider their solution ready. Tests collected in this snipped must pass to consider the kata solved.
  - **Preloaded** snippet, which contains code not visible to users, and availale for both sample tests and full tests.
 
+Description is shared among all language version, so changing it in your translation will change it for all remaining languages. If you need to add some language specific information in the description, you can use Codewars specific extensions for Markdown formatting: [Sequential Code Blocks](/references/markdown/extensions/#sequential-code-blocks) or [Language Conditional Rendering](/references/markdown/extensions/#conditional-rendering).
+
 Translation does not have to be finished in one go. It can be saved and kept in draft state as long as necessary. When translator considers it ready, it can be published and put in a "pending" state. It becomes available for other users for review, and can be approved, edited with fixes if necessary, or rejected.
 
 ## Reward
 
-Translators are rewarded for their contribution after translation after it is approved and becomes available for others to solve:
+Translators are rewarded for their contribution after translation it is approved and becomes available for others to solve:
 
-- Rank for the language of the translation increases just as if tranlator solved the kata in this language,
-- Author gains twice as much [Honor points](/references/gamification/honor/#other) as compared to solving the kata,
-- If the kata is in beta, rank and Honor rewards are granted once it gets approved and its rank assigned
+- Rank for the language of the translation increases just as if tranlator solved the kata in this language.
+- Author gains twice as much [Honor points](/references/gamification/honor/#other) as compared to solving the kata.
+- If the kata is in beta, rank and Honor rewards are granted once it gets approved and its rank assigned.
 - Author is marked as [coauthor (TODO: explain)]() of translated kata.
 
 _*WARNING:* Currently, "Coauthor" flag seems to be affected by a bug which prevents coauthors of a kata from collecting a reward for its translations. Until it gets fixed, users are rewarded for a translation only if they are not a coauthor of the translated kata yet._
@@ -55,7 +57,7 @@ TBD
 
 TBD
 
-- HOWTO properly review
+- [HOWTO properly review](/recipes/review-translation/)
 
 ## Aproving a translation
 
