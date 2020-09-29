@@ -5,7 +5,6 @@ sidebar: explanation-kata
 
 # Kata Beta Process
 
-
 Each kata is crafted for and by the community. Kata are created by other users rewarded with kata authoring privilege. When a kata is published by an author (or Sensei), it will go into a beta process where the community can help test and provide quality assurance feedback and cast a vote for its difficulty ranking. The feedback during this process is vital to making sure all kata are of the highest quality.
 
 _TBD: this page was imported from old CW wiki and needs to be reviewied/redacted._
@@ -21,7 +20,6 @@ Users with [sufficient privileges](/references/gamification/privileges/#privileg
 This voting happens on the discussion/solutions page after attempting or completing a kata.
 Each vote that notes an issue should be accompanied by a comment explaining the specific fix or problem.
 Similarly, while a kata sensei can mark an estimated rank, each rank vote will help adjust it's difficulty.
-
 
 TBD
 
