@@ -24,11 +24,12 @@ To be able to translate a kata to other languages, user has to complete the kata
 This will take you to the translations page where you can view existing translations and create new ones.
 
 Creating a new language version means writing code snippets required for every kata to have:
- - **Example solution**, to show that it's possible to solve the kata.
- - **Solution setup**, which works as a stub to work on for users training on the kata.
- - **Sample tests**, with some initial test cases which can be expanded when training on a kata. Sample tests can also serve as an example how the solution is called.
- - **Tests** which are run against user solution when they consider their solution ready. Tests collected in this snipped must pass to consider the kata solved.
- - **Preloaded** snippet, which contains code not visible to users, and availale for both sample tests and full tests.
+
+- **Example solution**, to show that it's possible to solve the kata.
+- **Solution setup**, which works as a stub to work on for users training on the kata.
+- **Sample tests**, with some initial test cases which can be expanded when training on a kata. Sample tests can also serve as an example how the solution is called.
+- **Tests** which are run against user solution when they consider their solution ready. Tests collected in this snipped must pass to consider the kata solved.
+- **Preloaded** snippet, which contains code not visible to users, and availale for both sample tests and full tests.
 
 Description is shared among all language version, so changing it in your translation will change it for all remaining languages. If you need to add some language specific information in the description, you can use Codewars specific extensions for Markdown formatting: [Sequential Code Blocks](/references/markdown/extensions/#sequential-code-blocks) or [Language Conditional Rendering](/references/markdown/extensions/#conditional-rendering).
 
@@ -44,7 +45,6 @@ Translators are rewarded for their contribution after translation it is approved
 - Author is marked as [coauthor (TODO: explain)]() of translated kata.
 
 _*WARNING:* Currently, "Coauthor" flag seems to be affected by a bug which prevents coauthors of a kata from collecting a reward for its translations. Until it gets fixed, users are rewarded for a translation only if they are not a coauthor of the translated kata yet._
-
 
 ## Pending translations
 
