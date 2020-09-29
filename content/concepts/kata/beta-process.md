@@ -5,27 +5,25 @@ sidebar: explanation-kata
 
 # Kata Beta Process
 
+
+Each kata is crafted for and by the community. Kata are created by other users rewarded with kata authoring privilege. When a kata is published by an author (or Sensei), it will go into a beta process where the community can help test and provide quality assurance feedback and cast a vote for its difficulty ranking. The feedback during this process is vital to making sure all kata are of the highest quality.
+
 _TBD: this page was imported from old CW wiki and needs to be reviewied/redacted._
 
-## How Are Kata Created?
-
-Each kata is crafted for and by the community. Kata are created by other users rewarded with kata authoring privilege. When a kata is published by an author (or Sensei), it will go into a [beta process](/concepts/kata/beta-process/) where the community can help test and provide quality assurance feedback. The author who created kata will initially include one or more languages to train in. Other users later can "translate" the kata into additional languages.
-
-## What is the Beta Process?
-
-After a kata is published and before it gets approved, it has to go through community approval (and difficulty ranking) in our beta process. The feedback during this process is vital to making sure all kata are of the highest quality.
-
-## Why participate in the Beta Process?
+## Reward for Reviewers
 
 You earn an _additional_ +2 honor for every Beta Kata you solve, in order to reward you for taking the risk of solving a Kata with potential issues. Then, leaving a satisfaction vote and rank assessment on said Beta Kata rewards you with +1 _extra_ honor _each_, in order to reward you for taking the time to leave valuable feedback on said Kata. Finally, if the Kata is approved, you will also receive the honor and rank progress for official Kata. **Therefore, it is in everyone's interest that you leave your satisfaction vote and rank assessment on every Beta Kata you have completed.**
 
 ## Beta Process Voting
 
-Codewars users with over 50 Honor, earn the privilege of contributing to the beta process and voting on kata approval and ranking.
+Users with [sufficient privileges](/references/gamification/privileges/#privileges) are able to contributie to the beta process and vote on kata approval and ranking.
 
 This voting happens on the discussion/solutions page after attempting or completing a kata.
 Each vote that notes an issue should be accompanied by a comment explaining the specific fix or problem.
 Similarly, while a kata sensei can mark an estimated rank, each rank vote will help adjust it's difficulty.
+
+
+TBD
 
 ## Kata Approval
 
