@@ -24,11 +24,12 @@ To be able to translate a kata to other languages, user has to complete the kata
 This will take you to the translations page where you can view existing translations and create new ones.
 
 Creating a new language version means writing code snippets required for every kata to have:
- - **Example solution**, to show that it's possible to solve the kata.
- - **Solution setup**, which works as a stub to work on for users training on the kata.
- - **Sample tests**, with some initial test cases which can be expanded when training on a kata. Sample tests can also serve as an example how the solution is called.
- - **Tests** which are run against user solution when they consider their solution ready. Tests collected in this snipped must pass to consider the kata solved.
- - **Preloaded** snippet, which contains code not visible to users, and availale for both sample tests and full tests.
+
+- **Example solution**, to show that it's possible to solve the kata.
+- **Solution setup**, which works as a stub to work on for users training on the kata.
+- **Sample tests**, with some initial test cases which can be expanded when training on a kata. Sample tests can also serve as an example how the solution is called.
+- **Tests** which are run against user solution when they consider their solution ready. Tests collected in this snipped must pass to consider the kata solved.
+- **Preloaded** snippet, which contains code not visible to users, and availale for both sample tests and full tests.
 
 Translation does not have to be finished in one go. It can be saved and kept in draft state as long as necessary. When translator considers it ready, it can be published and put in a "pending" state. It becomes available for other users for review, and can be approved, edited with fixes if necessary, or rejected.
 
@@ -42,7 +43,6 @@ Translators are rewarded for their contribution after translation after it is ap
 - Author is marked as [coauthor (TODO: explain)]() of translated kata.
 
 _*WARNING:* Currently, "Coauthor" flag seems to be affected by a bug which prevents coauthors of a kata from collecting a reward for its translations. Until it gets fixed, users are rewarded for a translation only if they are not a coauthor of the translated kata yet._
-
 
 ## Pending translations
 
