@@ -13,22 +13,21 @@ You earn an _additional_ +2 honor for every Beta Kata you solve, in order to rew
 
 ## Steps of Beta Process
 
-Every member of Codewars community can contribute to beta process of every kata in some way and help evaluating its quality before it's accepted and made available for everyone. Some steps are available only after earnig some privilege, but every user can help reviewing a kata in some way. 
+Every member of Codewars community can contribute to beta process of every kata in some way and help evaluating its quality before it's accepted and made available for everyone. Some steps are available only after earnig some privilege, but every user can help reviewing a kata in some way.
 
 ### Attempting the Kata
 
 Training on a kata and solving it is the first step to verify its quality, but also a very effective one. Reading through description, users can check if it's clear enough, or something needs to be reworded or explained in a clearer way. When tests are run, reviewers can verify if they are sufficient, or whether assertion messages are clear and easy to understand.
 
-When kata is successfully solved, user unlocks further steps of the review process. 
+When kata is successfully solved, user unlocks further steps of the review process.
 
 ### Satisfaction vote
 
 Users with [sufficient privileges](/references/gamification/privileges/#privileges) are able to vote on kata quality. They can cast one of three possible votes:
- - **Satisfied**
- - **Somewhat satisfied**
- - **Not satisfied**
 
-
+- **Satisfied**
+- **Somewhat satisfied**
+- **Not satisfied**
 
 ### Difficulty rating
 

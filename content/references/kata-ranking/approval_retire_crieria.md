@@ -2,7 +2,6 @@
 
 ## Eligibility for Approval
 
-
 As an author gets more katas approved, they become established as an experienced kata maker, and less votes will be needed for their future katas to be approved. The following table lists the requirements for a beta kata to be able to be approved:
 
 <table>
@@ -65,4 +64,3 @@ Low quality kata are automatically retired. Current rules are:
 2. If `n` or more votes and satisfaction percent is less than or equal to the half of the required satisfaction (see above). `n` is the same as the number of votes needed to be approved (see above).
 
 This feature needs improvement and any feedback is appreciated. Please comment on [#1672](https://github.com/Codewars/codewars.com/issues/1672).
-
