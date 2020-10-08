@@ -3,10 +3,9 @@ kind: concept
 sidebar: explanation-kata
 ---
 
-# Kata Beta Process
+# Kata Beta Process 
 
 Each kata is crafted for and by the community. Kata are created by other users rewarded with kata authoring privilege. When a kata is published by an author (or Sensei), it will go into beta process where the community can help test and provide quality assurance feedback and cast a vote for its difficulty ranking. The feedback during this process is vital to making sure all kata are of the highest quality.
-
 ## Reward for Reviewers
 
 You earn an _additional_ +2 honor for every Beta Kata you solve, in order to reward you for taking the risk of solving a Kata with potential issues. Then, leaving a satisfaction vote and rank assessment on said Beta Kata rewards you with +1 _extra_ honor _each_, in order to reward you for taking the time to leave valuable feedback on said Kata. Finally, if the Kata is approved, you will also receive the honor and rank progress for official Kata. Therefore, it is in everyone's interest that you leave your satisfaction vote and rank assessment on every Beta Kata you have completed.
@@ -27,7 +26,7 @@ Users with [sufficient privileges](/references/gamification/privileges/#privileg
 
 - **Satisfied**
 - **Somewhat satisfied**
-- **Not satisfied**
+- *Not satisfied*
 
 ### Difficulty rating
 
