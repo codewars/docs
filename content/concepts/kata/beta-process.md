@@ -47,8 +47,8 @@ Some beta kata, especially ones created long time ago, can have some issues or s
 
 Following articles describe some steps of beta process in more details:
 
- - [How to solve a beta kata?](/recipes/solve-beta/)
- - [How to review a beta kata?](/recipes/review-beta/)
+- [How to solve a beta kata?](/recipes/solve-beta/)
+- [How to review a beta kata?](/recipes/review-beta/)
 
 ## Kata Approval and Retirement
 
