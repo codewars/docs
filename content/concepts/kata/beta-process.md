@@ -29,7 +29,7 @@ Users with [sufficient privileges](/references/gamification/privileges/#privileg
 - **Somewhat satisfied**
 - **Not satisfied**
 
-Your vote should reflect your opinion on the idea behind the kata, and not its quality of description, or code. If you think that idea is nice, but author needs to fix code or description, post appropriate suggestions or issues in kata discourse.
+Your vote should reflect your opinion on the idea behind the kata, and not quality of its description, or code. If you think that idea is nice, but author needs to fix code or description, post appropriate suggestions or issues in kata discourse.
 
 ### Difficulty rating vote
 
@@ -37,17 +37,17 @@ Kata author assigns initial difficulty rank estimation to their kata, but they d
 
 ### Reviewing Code
 
-Users with sufficient priviledges can enter kata editor and view the code of all code snippets. Reading through them is a great way to find potential issues with tests, examples, or reference solution. Any discovered problems can be fixed righ away in the code, or reviewer can just raise issues or suggest improvements in kata discourse.
+Users with sufficient priviledges can enter kata editor and view the code of all code snippets. Reading through them is a great way to find potential issues with tests, examples, or reference solution. Any discovered problems can be fixed righ away in the code, or reviewer can raise issues or suggest improvements in kata discourse.
 
 ### Reviewing Issues, Suggestions and Questions
 
-Some beta kata, especially ones created long time ago, can have some issues or suggestions which are still pending, but have been already fixed or are not applicable anymore because kata has changed. It's very helpful if such old issues are reviewed and marked as resolved if they are not valid anymore. It can also happen that there are posts in the kata discourse which report some problem, but are not labelled appropriately. It's generally a good idea to re-raise such issues as new posts with correct label, as it should help other users to find them and eventually fix them.
+Some beta kata, especially ones created long time ago, can have some issues or suggestions which are still pending, but have been already fixed or are not applicable anymore because kata has changed. It's very helpful when such old issues are reviewed and marked as resolved if they are not valid anymore. It can also happen that there are posts in the kata discourse which report some problem, but are not labelled appropriately. It's generally a good idea to re-raise such issues as new posts with correct label, as it should help other users to find them and eventually fix them.
 
 ## See also
 
 Following articles describe some steps of beta process in more details:
- - [/recipes/solve-beta/](How to solve a beta kata?)
- - [/recipes/review-beta/](How to review a beta kata?)
+ - [How to solve a beta kata?](/recipes/solve-beta/)
+ - [How to review a beta kata?](/recipes/review-beta/)
 
 ## Kata Approval and Retirement
 
