@@ -3,7 +3,7 @@ kind: concept
 sidebar: explanation-kata
 ---
 
-# Kata Beta Process 
+# Kata Beta Process
 
 Each kata is crafted for and by the community. Kata are created by other users rewarded with kata authoring privilege. When a kata is published by an author (or Sensei), it will go into beta process where the community can help test and provide quality assurance feedback and cast a vote for its difficulty ranking. The feedback during this process is vital to making sure all kata are of the highest quality.
 
@@ -46,8 +46,9 @@ Some beta kata, especially ones created long time ago, can have some issues or s
 ## See also
 
 Following articles describe some steps of beta process in more details:
- - [/recipes/solve-beta/](How to solve a beta kata?)
- - [/recipes/review-beta/](How to review a beta kata?)
+
+- [/recipes/solve-beta/](How to solve a beta kata?)
+- [/recipes/review-beta/](How to review a beta kata?)
 
 ## Kata Approval and Retirement
 
