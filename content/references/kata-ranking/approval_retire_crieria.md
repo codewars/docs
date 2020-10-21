@@ -1,3 +1,7 @@
+---
+kind: reference
+---
+
 # Criteria for Kata Approval and Retirement
 
 ## Eligibility for Approval
