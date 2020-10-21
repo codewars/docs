@@ -58,6 +58,34 @@ module.exports = {
         ],
       },
       {
+        name: "explanation-kata",
+        sections: [
+          {
+            title: "Solving",
+            items: [
+              "/concepts/kata/",
+              "/concepts/kata/training-routines/",
+              "/concepts/kata/tests/",
+              "/concepts/kata/solutions/",
+              "/concepts/kata/discourse/",
+              "/concepts/kata/collections/",
+            ],
+          },
+          {
+            title: "Contributing",
+            items: [
+              "/concepts/kata/satisfaction-rating/",
+              "/concepts/kata/beta-process/",
+              "/concepts/kata/translations/",
+            ],
+          },
+          {
+            title: "How to...",
+            items: ["/recipes/solve-kata/", "/recipes/create-kata/"],
+          },
+        ],
+      },
+      {
         name: "markdown",
         sections: [
           {
