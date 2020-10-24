@@ -29,7 +29,7 @@ Users with [sufficient privileges](/references/gamification/privileges/#privileg
 - **Somewhat satisfied**
 - **Not satisfied**
 
-Your vote should reflect your opinion on the idea behind the kata, and not quality of its description, or code. If you think that idea is nice, but author needs to fix code or description, post appropriate suggestions or issues in kata discourse.
+If you think the kata itself is valuable but you simply have some issues with it, then you should select "Somewhat" and create an issue instead. If you thought the kata is really great, other than the issues, then you can choose "Very". Please do not choose "None" simply because the kata has an issue but it is otherwise a good kata. The satisfaction rating is meant to indicate quality of kata as a concept, not its current state of condition in terms of open issues which can be fixed.
 
 ### Difficulty rating vote
 
@@ -52,4 +52,4 @@ Following articles describe some steps of beta process in more details:
 
 ## Kata Approval and Retirement
 
-After a kata has received enough approval votes from the community, all issues are fixed, and community reached a consensus on it's ranking, it's ready for the final step to come out of beta. At this point, sufficinetly privileged user can review it to make sure all these criteria has been met (see [How to Review a Beta Kata](/recipes/review-beta/)), and release it as an official kata onto the site!
+After a kata has received [enough approval votes](/references/kata-ranking/approval-retire-criteria/) from the community, all issues are fixed, and community reached a consensus on it's ranking, it's ready for the final step to come out of beta. At this point, sufficinetly privileged user can review it to make sure all these criteria has been met (see [How to Review a Beta Kata](/recipes/review-beta/)), and release it as an official kata onto the site!
