@@ -17,7 +17,9 @@ Every member of Codewars community can contribute to beta process of every kata 
 
 ### Attempting the Kata
 
-Training on a kata and solving it is the first step to verify its quality, but also a very effective one. Reading through description, users can check if it's clear enough, or something needs to be reworded or explained in a clearer way. When tests are run, reviewers can verify if they are sufficient, or whether assertion messages are clear and easy to understand. When any issues are found, users can raise issues or sugest changes in kata discourse.
+Training on a kata and solving it is the first step to verify its quality, but also a very effective one. Reading through description, users can check if it's clear enough, or something needs to be reworded or explained in a clearer way. When tests are run, reviewers can verify if they are sufficient, or whether assertion messages are clear and easy to understand. Users can check whether their experience with the kata meets all [Kata authoring best practices](/recipes/create-kata/best-practices/). When any issues are found, users can raise issues or sugest changes in kata discourse.
+
+While solving a beta kata, users are encouraged to go beyond just finding and submitting a working solution. It's very helpful when people solving the kata do some additional effort and test the tests themselves a bit: verify if test suite handles incorrect answers gracefully (for example, if it does not crash on `null`s), if assertion messages are clear enough, etc.
 
 When kata is successfully solved, user unlocks further steps of the review process.
 
@@ -37,18 +39,11 @@ Kata author assigns initial difficulty rank estimation to their kata, but they d
 
 ### Reviewing Code
 
-Users with sufficient priviledges can enter kata editor and view the code of all code snippets. Reading through them is a great way to find potential issues with tests, examples, or reference solution. Any discovered problems can be fixed righ away in the code, or reviewer can raise issues or suggest improvements in kata discourse.
+Users with sufficient priviledges can enter kata editor and view the code of all code snippets. Reading through them is a great way to find potential issues with tests, examples, or reference solution. Reviewers can check insides of the kata and verify whether it stands up to [Kata authoring best practices](/recipes/create-kata/best-practices/). Any discovered problems can be fixed righ away in the code, or reviewer can raise issues or suggest improvements in kata discourse.
 
 ### Reviewing Issues, Suggestions and Questions
 
 Some beta kata, especially ones created long time ago, can have some issues or suggestions which are still pending, but have been already fixed or are not applicable anymore because kata has changed. It's very helpful when such old issues are reviewed and marked as resolved if they are not valid anymore. It can also happen that there are posts in the kata discourse which report some problem, but are not labelled appropriately. It's generally a good idea to re-raise such issues as new posts with correct label, as it should help other users to find them and eventually fix them.
-
-## See also
-
-Following articles describe some steps of beta process in more details:
-
-- [How to solve a beta kata?](/recipes/solve-beta/)
-- [How to review a beta kata?](/recipes/review-beta/)
 
 ## Kata Approval and Retirement
 
