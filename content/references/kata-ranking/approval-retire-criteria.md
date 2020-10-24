@@ -12,8 +12,8 @@ As an author gets more katas approved, they become established as an experienced
 <thead>
 <tr>
 <th>Level</th>
-<th>Satisfaction %</th>
-<th colspan="4"># of Approved Kata</th>
+<th>Required satisfaction %</th>
+<th colspan="4">Required amount of votes (by # of author's approved kata)</th>
 </tr>
 <tr>
 <th></th>
