@@ -67,4 +67,4 @@ Low quality kata are automatically retired. Current rules are:
 1. If 4 or more votes and satisfaction percent is `0` (4+ consecutive "Not Satisfied" as the only votes)
 2. If kata collected enough votes to be approved or more (see table above), and satisfaction percent is less than or equal to the half of the required satisfaction.
 
-This feature needs improvement and any feedback is appreciated. Please comment on [#1672](https://github.com/Codewars/codewars.com/issues/1672).
+This feature needs improvement and any feedback is appreciated. Please comment on [#1672](https://github.com/codewars/codewars.com/issues/1672).
