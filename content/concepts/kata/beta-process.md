@@ -43,7 +43,7 @@ Users with sufficient priviledges can enter kata editor and view the code of all
 
 ### Reviewing Issues, Suggestions and Questions
 
-Some beta kata, especially ones created long time ago, can have some issues or suggestions which are still pending, but have been already fixed or are not applicable anymore because kata has changed. It's very helpful when such old issues are reviewed and marked as resolved if they are not valid anymore. It can also happen that there are posts in the kata discourse which report some problem, but are not labelled appropriately. It's generally a good idea to re-raise such issues as new posts with correct label, as it should help other users to find them and eventually fix them.
+Some beta kata, especially ones created a long time ago, can have some issues or suggestions which are still pending, but have been already fixed or are not applicable anymore because the kata has changed. It's very helpful when such old issues are reviewed and marked as resolved if they are not valid anymore. It can also happen that there are posts in the kata discourse which report some problem, but are not labelled appropriately. It's generally a good idea to re-raise such issues as new posts with the correct label, as it should help other users to find them and eventually fix them.
 
 ## Kata Approval and Retirement
 
