@@ -13,7 +13,7 @@ You earn an _additional_ 2 honor for every Beta Kata you solve, in order to rewa
 
 ## Steps of Beta Process
 
-Every member of Codewars community can contribute to beta process of every kata in some way and help evaluating its quality before it's accepted and made available for everyone. Some steps are available only after earnig some privilege, but every user can help reviewing a kata in some way.
+Some of the steps are available only after earnig the required privilege, but every user can help reviewing a kata in some way.
 
 ### Attempting the Kata
 
