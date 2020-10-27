@@ -33,7 +33,7 @@ Creating a new language version means writing code snippets required for every k
 
 Description is shared among all language versions, so changing it in your translation will change it for all remaining languages. If you need to add some language specific information in the description, you can use Codewars specific extensions for Markdown formatting: [Sequential Code Blocks](/references/markdown/extensions/#sequential-code-blocks) or [Language Conditional Rendering](/references/markdown/extensions/#conditional-rendering).
 
-Translation does not have to be finished in one go. It can be saved and kept in draft state as long as necessary. When translator considers it ready, it can be published and put in a "pending" state. It becomes available for other users for review, and can be approved, edited with fixes if necessary, or rejected.
+Translation does not have to be finished in one go. It can be saved and kept in draft state as long as necessary. When translator considers it ready, it can be published and put in a "pending" state. It becomes available for other users for review, and can be approved, edited with fixes if necessary, or rejected. Only one translation can be published for given kata and language. For example, if there's already published Java translation, another one can be created but cannot be published until the former one is rejected.
 
 ## Reward
 
@@ -58,16 +58,17 @@ When a translation is published, it's put into a pending state and awaits for re
 
 Before pending translation is accepted and new language version becomes available for a kata, it needs to be reviewed and determined whether it keeps up to Codewars quality standards. When reviewing a translation, users can perform following steps:
 
-- reading the code and description
-- running tests
-- reading comments
-- verifying if translation holds to [translation authoring guidelines (TODO)]()
+- **Reading the code and description**.
+- **Running tests**, and testing tests by running different solutions. Unfortunately, currently running your own solution to a proposed translation is somewhat cumbersome. One possibility is to fork the translation, put in your own solution in place of proposed one, run tests, and discard the fork afterwards. Another way is to create new kumite from scratch and copy/paste code snippets from reviewed translation to your kumite.
+- **Reading comments**, to check if there are any remarks from other reviewers, and whether they still hold and were addressed appropriately. Unfortunately comments under translations cannot be labelled as **Issue** or **Suggestion**, so there are no additional markers for severity of the comment.
+- **Verifying** if translation holds to [translation authoring guidelines (TODO)]()
 
 After a review is completed, the reviewer can finalize it with one of following actions:
 
-- leaving a comment with remarks
-- approving the translation
-- rejecting the translation
+- **Leaving a comment** with remarks, suggestions and issues which should be addressed by the translator.
+- **Fixing problems found during review**. Translation fork can be edited directly only by its author. If a user wants to make changes in a translation fork created by another user, they have to fork it first, edit the code, and publish changes as new fork.
+- **Approving the translation**, so new language version gets introduced to the kata and becomes available to solve for other users.
+- **Rejecting the translation** if it cannot be fixed.
 
 ## Aproving a translation
 
