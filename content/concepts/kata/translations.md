@@ -49,9 +49,10 @@ _*WARNING:* Currently, "Coauthor" flag seems to be affected by a bug which preve
 ## Pending translations
 
 When translation is published, it's put into a pending state and awaits for review and approval. Sufficiently privileged users can search for them, review them, and request some fixes, approve, or reject them. Currently, pending translations can be found in one of following ways:
- - Reading through kata discourse and searching for posts where translators announced the fact that they published a tranlation. Translators are encouraged to post a message labelled as **Suggestion** in kata discourse with a link and information about the language of the translation, so others could find it easily.
- - Navigating to `https://www.codewars.com/kata/kata-id/translations` page lists all accepted and pending translations of a kata.
- - Small group of users has been granted a privilege of accesing the page with list of all pending translations eligible to approval by them. This is the most convenient way of searching for pending translations, but not available to every user at this moment.
+
+- Reading through kata discourse and searching for posts where translators announced the fact that they published a tranlation. Translators are encouraged to post a message labelled as **Suggestion** in kata discourse with a link and information about the language of the translation, so others could find it easily.
+- Navigating to `https://www.codewars.com/kata/kata-id/translations` page lists all accepted and pending translations of a kata.
+- Small group of users has been granted a privilege of accesing the page with list of all pending translations eligible to approval by them. This is the most convenient way of searching for pending translations, but not available to every user at this moment.
 
 ## Reviewing a translation
 
@@ -64,9 +65,9 @@ Before pending translation is accepted and new language version becomes availabl
 
 After review is completed, reviewer can finalize it with one of following actions:
 
- - leaving a comment with remarks
- - approving the translation
- - rejecting the translation
+- leaving a comment with remarks
+- approving the translation
+- rejecting the translation
 
 ## Aproving a translation
 
