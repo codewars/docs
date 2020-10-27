@@ -47,4 +47,4 @@ Some beta kata, especially ones created a long time ago, can have some issues or
 
 ## Kata Approval and Retirement
 
-After a kata has received [enough approval votes](/references/kata-ranking/approval-retire-criteria/) from the community, all issues are fixed, and community reached a consensus on its ranking, it's ready for the final step to come out of beta. At this point, sufficiently privileged user can review it to make sure all these criteria has been met (see [How to Review a Beta Kata](/recipes/review-beta/)), and release it as an official kata onto the site!
+After a kata has received [enough approval votes](/references/kata-ranking/approval-retire-criteria/) from the community, all issues are fixed, and the community reached a consensus on its ranking, it's ready for the final step to come out of beta. At this point, sufficiently privileged users can review it to make sure all these criteria have been met (see [How to Review a Beta Kata](/recipes/review-beta/)), and release it as an official kata onto the site!
