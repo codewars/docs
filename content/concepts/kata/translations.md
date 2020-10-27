@@ -52,7 +52,7 @@ When a translation is published, it's put into a pending state and awaits for re
 
 - Reading through the kata discourse and searching for posts where translators announced the fact that they published a translation. Translators are encouraged to post a message labelled as **Suggestion** in the kata discourse with a link and information about the language of the translation, so others could find it easily.
 - Navigating to `https://www.codewars.com/kata/kata-id/translations` page lists all accepted and pending translations of a kata.
-- Small group of users has been granted a privilege of accesing the page with list of all pending translations eligible to approval by them. This is the most convenient way of searching for pending translations, but not available to every user at this moment.
+- A small group of users has been granted the privilege of accessing the page with a list of all pending translations eligible for approval by them. This is the most convenient way of searching for pending translations, but not available to every user at this moment.
 
 ## Reviewing a translation
 
