@@ -63,7 +63,7 @@ Before pending translation is accepted and new language version becomes availabl
 - reading comments
 - verifying if translation holds to [translation authoring guidelines (TODO)]()
 
-After review is completed, reviewer can finalize it with one of following actions:
+After a review is completed, the reviewer can finalize it with one of following actions:
 
 - leaving a comment with remarks
 - approving the translation
