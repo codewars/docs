@@ -39,7 +39,7 @@ Kata author assigns initial difficulty rank estimation to their kata, but they d
 
 ### Reviewing Code
 
-Users with sufficient priviledges can enter kata editor and view the code of all code snippets. Reading through them is a great way to find potential issues with tests, examples, or reference solution. Reviewers can check insides of the kata and verify whether it stands up to [Kata authoring best practices](/recipes/create-kata/best-practices/). Any discovered problems can be fixed right away in the code, or reviewer can raise issues or suggest improvements in kata discourse.
+Users with sufficient privileges can enter the kata editor and view the code of all code snippets. Reading through them is a great way to find potential issues with tests, examples, or reference solution. Reviewers can check insides of the kata and verify whether it stands up to [Kata authoring best practices](/recipes/create-kata/best-practices/). Any discovered problems can be fixed right away in the code, or reviewers can raise issues or suggest improvements in the kata discourse.
 
 ### Reviewing Issues, Suggestions and Questions
 
