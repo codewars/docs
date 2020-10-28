@@ -77,10 +77,13 @@ After a review is completed, the reviewer can finalize it with one of following 
 
 ### Approving a translation
 
-TBD
+Pending translation can be approved either by kata author, or users with [privilege to coauthor](/references/gamification/privileges/) under following conditions:
+ - translation is older than a week, or
+ - kata author has been inactive for over a month.
 
-- who can approve
-- Approver is marked as coauthor
+When translation is approved, new language version is immediately available for other users to solve.
+
+**NOTE:** currently, probably because of a bug, a user who _approves_ a translation is marked as **kata contributor**. Users with "contributor" flag seem to be affected by a bug which prevents them from getting any future points they would be rewarded for authoring activities on the kata they contributed to. Be aware that as a result, approving of a translation can cause you won't be eligible for any Honor points you would earn by translating, editing or fixing the kata in the future, unless the bug is fixed.
 
 ### Merge Issues
 
