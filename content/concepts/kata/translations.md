@@ -37,6 +37,8 @@ The translation does not have to be finished in one go. It can be saved and kept
 
 Unfortunately, currently there's no reliable way to prevent approval of translations of insufficient quality. Unlike beta kata, translations are not a subject to any kind of beta process, and comments in translation discourse cannot be labelled as issues. That's why it's very important to make sure that published translations comply with [translation authoring guidelines (TODO)]().
 
+After translation is published, translator is adviced to post a comment in kata discourse with a link to their translation fork, labelled as **Suggestion**. This will notify other users about the fact and it will be easier for others to find such pending translation.
+
 **NOTE:** kata authors and users with appropriate privileges are able to add new language versions directly within the kata editor. This approach is strongly discouraged for the following reasons:
 
 - such language versions cannot be properly reviewed before it's published so it misses the opportunity for bugs and issues to be found by reviewers,
@@ -85,6 +87,8 @@ Pending translation can be approved either by kata author, or users with [privil
 - kata author has been inactive for over a month.
 
 When translation is approved, new language version is immediately available for other users to solve. There's also a honor reward, but remember that it's granted to the author of the **initial fork**, and not to the author of the fork which got finally accepted!
+
+Translation approver should also go through the kata discourse and mark suggestions posted by the translator as resolved.
 
 **NOTE:** currently, probably because of a bug, a user who _approves_ a translation is marked as **kata contributor**. Users with "contributor" flag seem to be affected by a bug which prevents them from getting any future points they would be rewarded for authoring activities on the kata they contributed to. Be aware that as a result, approving of a translation can cause you won't be eligible for any Honor points you would earn by translating, editing or fixing the kata in the future, unless the bug is fixed.
 
