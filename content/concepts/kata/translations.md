@@ -80,8 +80,9 @@ After a review is completed, the reviewer can finalize it with one of following 
 ### Approving a translation
 
 Pending translation can be approved either by kata author, or users with [privilege to coauthor](/references/gamification/privileges/) who are not the publisher of the translation fork being approved, under following conditions:
- - translation is older than a week, or
- - kata author has been inactive for over a month.
+
+- translation is older than a week, or
+- kata author has been inactive for over a month.
 
 When translation is approved, new language version is immediately available for other users to solve. There's also a honor reward, but remember that it's granted to the author of the **initial fork**, and not to the author of the fork which got finally accepted!
 
@@ -96,16 +97,18 @@ Once you have fixed the description merge issues you can publish the translation
 ### Rejecting a translation
 
 Sometimes the best course of action is to simply reject a pending translation. Some possible reasons could be:
- - translation is outdated and kata changed a lot since the translation has been published,
- - translation is of bad quality and fixing it is too much work,
- - some user authored newer, better translation and they cannot publish it because there can be only one pending translation per kata per language,
- - there's a justified concern that someone might approve a translation of insufficient quality before its issues are fixed.
+
+- translation is outdated and kata changed a lot since the translation has been published,
+- translation is of bad quality and fixing it is too much work,
+- some user authored newer, better translation and they cannot publish it because there can be only one pending translation per kata per language,
+- there's a justified concern that someone might approve a translation of insufficient quality before its issues are fixed.
 
 It's worth to note that rejected translations are not wasted work. They are still available in the system, can be forked and serve as a base for new translation, or its code can be simply copied and reused.
 
 ## Fixing existing language versions
 
 Sometimes kata needs to be fixed because some issue was found: be it a bug in reference solution, tests, typos in description, or maybe some test cases need to be added. Fixes and improvements to every kata can be done in one of two ways:
+
 - If language version was created as a translation, its most recent version can be forked, modified, and published. Now it needs to go through normal translation review process and wait until other user approves it. However, language versions which were created directly with kata editor (including initial language version of the kata) cannot be forked.
 - Language version can be modified directly with kata editor. This way of fixing kata is discouraged unless absolutely necessary, because it has some drawbacks:
   - it causes merge conflicts for modified snippets if someone would want to publish a fork of this language version some time in the future,
