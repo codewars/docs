@@ -37,8 +37,8 @@ Translation does not have to be finished in one go. It can be saved and kept in 
 
 **NOTE:** kata authors and users with appropriate privileges are able to add new language versions directly with kata editor. This approach is strongly discouraged for following reasons:
 
- - such language version cannot be properly reviewed before it's published, so it misses its opportunity to have bugs and issues found by reviewers,
- - maintenance of a language version created this way is difficult, because it cannot by improved by forking. It can be changed only with kata editor, and this way is available only to power users.
+- such language version cannot be properly reviewed before it's published, so it misses its opportunity to have bugs and issues found by reviewers,
+- maintenance of a language version created this way is difficult, because it cannot by improved by forking. It can be changed only with kata editor, and this way is available only to power users.
 
 ### Reward
 
