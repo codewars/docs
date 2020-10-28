@@ -5,11 +5,11 @@ sidebar: explanation-kata
 
 # Translations
 
-Codewars platform supports a variety of [programming languages](/languages/), and every kata can have more than one language version available. Users can choose any language available to solve the kata, they can also solve one kata in as many languages they wish. After gaining some experience and sufficient privileges, users who solved the kata are allowed to create or review translations to make kata available for broader group of users.
+Codewars supports a variety of [programming languages](/languages/) and every kata can have more than one language version available. Users may choose any language available to solve the kata and do so in as many languages as they wish. After gaining the required privileges, users who solved the kata are allowed to create or review translations to make the kata available for a larger audience.
 
 ## Training on a language version
 
-When user picks a kata to train on and enters kata trainer view, they can choose the language they want to practice. Some kata are available in many languages, some just in a few, and some only in one or two. If a kata is not available in your favorite language, then unfortunately you have to select another language you are familiar with, or wait until someone creates a translation. Completing a kata in only one language is enough to mark the kata as solved, but still, there is something to gain from completing it in other languages too:
+When the user enters the kata trainer to solve a kata, they can select a language to train on. Some kata are available in many languages, some in just a few, and some only in one or two. If a kata is not available in your favorite language, you must select another language you are familiar with or wait until a translation in your preferred language is approved. Completing a kata in only one language is enough to mark the kata as solved; however, there is something to gain from completing it in other languages too:
 
 - Your [language rank](/concepts/gamification/ranks/#user-rank-breakdown) progresses for every language you solved the kata with (but Honor and overall rank progress are awarded only once per kata).
 - You unlock the access to solutions of other users in this language.
@@ -17,7 +17,7 @@ When user picks a kata to train on and enters kata trainer view, they can choose
 
 ## Creating a translation
 
-To be able to translate a kata to other languages, user has to complete the kata in at least one other language. Once you have completed it, there will be a new choice within the languages menu to add a new language.
+To be able to translate a kata to other languages, the user has to complete the kata in at least one language. Once you have completed it, there will be an option within the languages menu to add a new language.
 
 ![Language Menu](https://www.evernote.com/l/AAW0GaebQllDBb_YS-AfeaUiwq5PoxaDPIoB/image.png)
 
@@ -31,25 +31,25 @@ Creating a new language version means writing code snippets required for every k
 - **Tests** which are run against user solution when they consider their solution ready. Tests collected in this snipped must pass to consider the kata solved.
 - **Preloaded** snippet, which contains code not visible to users, and availale for both sample tests and full tests.
 
-Description is shared among all language versions, so changing it in your translation will change it for all remaining languages. If you need to add some language specific information in the description, you can use Codewars specific extensions for Markdown formatting: [Sequential Code Blocks](/references/markdown/extensions/#sequential-code-blocks) or [Language Conditional Rendering](/references/markdown/extensions/#conditional-rendering).
+The description is shared among all language versions so changing it in your translation will change it for all languages. If you need to add some language specific information in the description, you can use Codewars specific extensions for Markdown formatting: [Sequential Code Blocks](/references/markdown/extensions/#sequential-code-blocks) or [Language Conditional Rendering](/references/markdown/extensions/#conditional-rendering).
 
-Translation does not have to be finished in one go. It can be saved and kept in draft state as long as necessary. When translator considers it ready, it can be published and put in a "pending" state. It becomes available for other users for review, and can be approved, edited with fixes if necessary, or rejected. Only one translation can be published for given kata and language. For example, if there's already published Java translation, another one can be created but cannot be published until the former one is rejected.
+The translation does not have to be finished in one go. It can be saved and kept in draft state as long as necessary. When the translator considers it ready, it can be published which places it in a "pending" state and becomes available for other users to review, approve, edit or reject. Only one translation may be published for any given kata and language. For example, if a published Java translation already exists then a new one may be created but not published until the former is rejected.
 
-**NOTE:** kata authors and users with appropriate privileges are able to add new language versions directly with kata editor. This approach is strongly discouraged for following reasons:
+**NOTE:** kata authors and users with appropriate privileges are able to add new language versions directly within the kata editor. This approach is strongly discouraged for the following reasons:
 
-- such language version cannot be properly reviewed before it's published, so it misses its opportunity to have bugs and issues found by reviewers,
-- maintenance of a language version created this way is difficult, because it cannot by improved by forking. It can be changed only with kata editor, and this way is available only to power users.
+- such language versions cannot be properly reviewed before it's published so it misses the opportunity for bugs and issues to be found by reviewers,
+- maintenance of a language version created this way is difficult because it cannot be improved by forking. It can be changed only with the kata editor which is available only to power users.
 
 ### Reward
 
-Translators are rewarded for their contribution after translation it is approved and becomes available for others to solve:
+Translators are rewarded for their contribution upon approval of their translation:
 
-- Rank for the language of the translation increases just as if tranlator solved the kata in this language.
-- Author gains twice as much [Honor points](/references/gamification/honor/#other) as compared to solving the kata.
-- If the kata is in beta, rank and Honor rewards are granted once it gets approved and its rank assigned.
-- Author is marked as [coauthor (TODO: explain)]() of translated kata.
+- The translator earns rank progress for the individual language in which the translation was authored in, equivalent to solving the kata in that language.
+- The translator gains twice the [honor](/references/gamification/honor/#other) compared to solving the kata.
+- If the kata is in beta, rank and honor rewards are granted upon approval of the kata itself.
+- The translator is listed as a [coauthor (TODO: explain)]() of the kata.
 
-_*WARNING:* Currently, "Coauthor" flag seems to be affected by a bug which prevents coauthors of a kata from collecting a reward for its translations. Until it gets fixed, users are rewarded for a translation only if they are not a coauthor of the translated kata yet._
+_WARNING: Currently, the co-author flag seems to be affected by a bug which only rewards translators with honor and rank progress if they have not been listed as a co-author of the kata prior to the approval of the translation._
 
 ## Reviewing and working with pending translations
 
@@ -61,21 +61,21 @@ When a translation is published, it's put into a pending state and awaits for re
 
 ### Reviewing a translation
 
-Before pending translation is accepted and new language version becomes available for a kata, it needs to be reviewed and determined whether it keeps up to Codewars quality standards. When reviewing a translation, users can perform following steps:
+Before a pending translation is accepted and a new language version becomes available for a kata, it needs to be reviewed and determined whether it holds up to Codewars quality standards. When reviewing a translation, users can perform the following steps:
 
 - **Reading the code and description**.
-- **Running tests**, and testing tests by running different solutions. Unfortunately, currently running your own solution to a proposed translation is somewhat cumbersome. One possibility is to fork the translation, put in your own solution in place of proposed one, run tests, and discard the fork afterwards. Another way is to create new kumite from scratch and copy/paste code snippets from reviewed translation to your kumite.
-- **Reading comments**, to check if there are any remarks from other reviewers, and whether they still hold and were addressed appropriately. Unfortunately comments under translations cannot be labelled as **Issue** or **Suggestion**, so there are no additional markers for severity of the comment.
-- **Verifying** if translation holds to [translation authoring guidelines (TODO)]()
+- **Running the tests** against _other_ solutions along with the reference solution. Unfortunately, testing solutions to a proposed translation other than the reference solution is currently rather cumbersome. One possibility is to fork the translation, replace the reference solution with your solution, run the tests and discard the fork afterwards. Another way is to create a new kumite from scratch and copy/paste code snippets from the translation under review to your kumite.
+- **Reading the comments** to check if there are any remarks from other reviewers and whether they still hold or were addressed appropriately. Unfortunately, comments under translations cannot be labelled as an **Issue** or **Suggestion** so there are no additional markers for the severity of the comment.
+- **Verifying** if the translation holds to [translation authoring guidelines (TODO)]()
 
 After a review is completed, the reviewer can finalize it with one of following actions:
 
 - **Leaving a comment** with remarks, suggestions and issues which should be addressed by the translator.
-- **Fixing problems found during review**. Translation fork can be edited directly only by its author. If a user wants to make changes in a translation fork created by another user, they have to fork it first, edit the code, and publish changes as new fork.
-- **Approving the translation**, so new language version gets introduced to the kata and becomes available to solve for other users.
+- **Fixing problems found during the review**. The translation fork may be edited directly only by its author. If a user wants to make changes to a translation fork created by another user, they have to fork it first, edit the code, and publish the changes as a new fork.
+- **Approving the translation**, which introduces a new language version to the kata available for solving.
 - **Rejecting the translation** if it cannot be fixed.
 
-### Aproving a translation
+### Approving a translation
 
 TBD
 
@@ -90,7 +90,7 @@ Once you have fixed the description merge issues you can publish the translation
 
 ### Rejecting a translation
 
-## Fixing existing language version
+## Fixing existing language versions
 
 Code Warriors can fork a translation to improve it and help it get approved faster. However they will not receive rank or honor progression, only the original translator will.
 
