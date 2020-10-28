@@ -78,8 +78,9 @@ After a review is completed, the reviewer can finalize it with one of following 
 ### Approving a translation
 
 Pending translation can be approved either by kata author, or users with [privilege to coauthor](/references/gamification/privileges/) under following conditions:
- - translation is older than a week, or
- - kata author has been inactive for over a month.
+
+- translation is older than a week, or
+- kata author has been inactive for over a month.
 
 When translation is approved, new language version is immediately available for other users to solve.
 
