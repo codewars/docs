@@ -35,7 +35,12 @@ Description is shared among all language versions, so changing it in your transl
 
 Translation does not have to be finished in one go. It can be saved and kept in draft state as long as necessary. When translator considers it ready, it can be published and put in a "pending" state. It becomes available for other users for review, and can be approved, edited with fixes if necessary, or rejected. Only one translation can be published for given kata and language. For example, if there's already published Java translation, another one can be created but cannot be published until the former one is rejected.
 
-## Reward
+**NOTE:** kata authors and users with appropriate privileges are able to add new language versions directly with kata editor. This approach is strongly discouraged for following reasons:
+
+ - such language version cannot be properly reviewed before it's published, so it misses its opportunity to have bugs and issues found by reviewers,
+ - maintenance of a language version created this way is difficult, because it cannot by improved by forking. It can be changed only with kata editor, and this way is available only to power users.
+
+### Reward
 
 Translators are rewarded for their contribution after translation it is approved and becomes available for others to solve:
 
@@ -46,7 +51,7 @@ Translators are rewarded for their contribution after translation it is approved
 
 _*WARNING:* Currently, "Coauthor" flag seems to be affected by a bug which prevents coauthors of a kata from collecting a reward for its translations. Until it gets fixed, users are rewarded for a translation only if they are not a coauthor of the translated kata yet._
 
-## Pending translations
+## Reviewing and working with pending translations
 
 When a translation is published, it's put into a pending state and awaits for review and approval. Sufficiently privileged users can search for them, review them, and request some fixes, approve, or reject them. Currently, pending translations can be found in one of following ways:
 
@@ -54,7 +59,7 @@ When a translation is published, it's put into a pending state and awaits for re
 - Navigating to `https://www.codewars.com/kata/kata-id/translations` page lists all accepted and pending translations of a kata.
 - A small group of users has been granted the privilege of accessing the page with a list of all pending translations eligible for approval by them. This is the most convenient way of searching for pending translations, but not available to every user at this moment.
 
-## Reviewing a translation
+### Reviewing a translation
 
 Before pending translation is accepted and new language version becomes available for a kata, it needs to be reviewed and determined whether it keeps up to Codewars quality standards. When reviewing a translation, users can perform following steps:
 
@@ -70,7 +75,7 @@ After a review is completed, the reviewer can finalize it with one of following 
 - **Approving the translation**, so new language version gets introduced to the kata and becomes available to solve for other users.
 - **Rejecting the translation** if it cannot be fixed.
 
-## Aproving a translation
+### Aproving a translation
 
 TBD
 
@@ -83,8 +88,10 @@ Oftentimes if two translations are created around the same time, they may both u
 
 Once you have fixed the description merge issues you can publish the translation. If you are not the author then you will need to have someone else verify your changes and approve the translation.
 
-## Rejecting a translation
+### Rejecting a translation
 
-## Forking a translation
+## Fixing existing language version
 
 Code Warriors can fork a translation to improve it and help it get approved faster. However they will not receive rank or honor progression, only the original translator will.
+
+TODO: fork vs kata editor
