@@ -87,7 +87,7 @@ When reviewing a translation, users can perform following steps:
 After a review is completed, the reviewer can finalize it with one of following actions:
 
 - **Leaving a comment** with remarks, suggestions and issues which should be addressed by the translator.
-- **Fixing problems found during the review**. The translation fork may be edited directly only by its author. If a user wants to make changes to a translation fork created by another user, they have to fork it first, edit the code, and publish the changes as a new fork.
+- **Fixing problems found during the review**. Only the author of the translation can edit its fork directly. If a user wants to make changes to a translation fork created by someone else, they have to fork it first, edit the code, and publish the changes as a new fork.
 - **Approving the translation**, which introduces a new language to the kata available for solving.
 - **Rejecting the translation** if it cannot be fixed.
 
@@ -127,9 +127,10 @@ It's worth noting that rejected translations are not wasted work. They are still
 
 ## Fixing existing translations
 
-Sometimes a kata needs to be fixed due to an issue, be it a bug in the reference solution, typos in the description or the lack of test coverage. Fixes and improvements to kata can be done in one of two ways:
+Sometimes a kata needs to be fixed due to an issue, be it a bug in the reference solution, typos in the description or the lack of test coverage. Fixes and improvements to approved translations can be done in one of two ways:
 
-- If a translation was created with translations panel, its most recent version can be forked, modified and published, which then goes through the usual translation review process and waits until another user approves it. However, translations created directly within the kata editor cannot be forked.
-- A translation may be modified directly within the kata editor. This method of fixing kata is discouraged unless absolutely necessary due to its drawbacks:
-  - it causes merge conflicts for modified snippets if someone publishes a fork of this translation sometime in the future,
+- If a translation was created with translations panel, its most recent version can be forked, modified, and published. Afterwards it has to go through the usual translation review process and wait until another user approves it. However, translations created directly within the kata editor cannot be forked.
+- A translation may be modified directly with the kata editor. This method allows for immediate changes without waiting for approval, but it also has some drawbacks:
+  - it requires privileges which are available only to experienced users,
+  - it invalidates existing forks, what may cause merge conflicts for modified snippets if someone publishes a fork of this translation sometime in the future,
   - direct edits are not subject to the review process and other users cannot verify the introduced changes.
