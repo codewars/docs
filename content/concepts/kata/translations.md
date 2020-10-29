@@ -5,9 +5,9 @@ sidebar: explanation-kata
 
 # Translations
 
-Codewars supports a variety of [programming languages](/languages/) and every kata can have more than one language version available. Users may choose any language available to solve the kata and do so in as many languages as they wish. After gaining the required privileges, users who solved the kata are allowed to create or review translations to make the kata available for a larger audience.
+Codewars supports a variety of [programming languages](/languages/) and every kata can be available in more than one language. Users may choose any language available to solve the kata and do so in as many languages as they wish. After gaining the required privileges, users who solved the kata are allowed to create or review translations to make the kata available for a larger audience.
 
-## Training on a language version
+## Training on a selected language
 
 When the user enters the kata trainer to solve a kata, they can select a language to train on. Some kata are available in many languages, some in just a few, and some only in one or two. If a kata is not available in your favorite language, you must select another language you are familiar with or wait until a translation in your preferred language is approved. Completing a kata in only one language is enough to mark the kata as solved; however, there is something to gain from completing it in other languages too:
 
@@ -32,7 +32,7 @@ To be able to translate a kata to other languages, the user has to complete the 
 
 This will take you to the translations page where you can view existing translations and create new ones.
 
-Creating a new language version means writing code snippets required for every kata to have:
+Creating a new translation means writing code snippets required for every kata to have:
 
 - **Example solution**, to show that it's possible to solve the kata.
 - **Solution setup**, which works as a stub to work on for users training on the kata.
@@ -40,7 +40,7 @@ Creating a new language version means writing code snippets required for every k
 - **Tests** which are run against user solution when they consider their solution ready. Tests collected in this snipped must pass to consider the kata solved.
 - **Preloaded** snippet, which contains code not visible to users, and availale for both sample tests and full tests.
 
-The description is shared among all language versions so changing it in your translation will change it for all languages. If you need to add some language specific information in the description, you can use Codewars specific extensions for Markdown formatting: [Sequential Code Blocks](/references/markdown/extensions/#sequential-code-blocks) or [Language Conditional Rendering](/references/markdown/extensions/#conditional-rendering).
+The description is shared among all languages so changing it in your translation will change it for all languages. If you need to add some language specific information in the description, you can use Codewars specific extensions for Markdown formatting: [Sequential Code Blocks](/references/markdown/extensions/#sequential-code-blocks) or [Language Conditional Rendering](/references/markdown/extensions/#conditional-rendering).
 
 The translation does not have to be finished in one go. It can be saved and kept in draft state as long as necessary. When the translator considers it ready, it can be published which places it in a "pending" state and becomes available for other users to review, approve, edit or reject. Only one translation may be published for any given kata and language. For example, if a published Java translation already exists then a new one may be created but not published until the former is rejected.
 
@@ -48,10 +48,10 @@ Unfortunately, there is currently no reliable way to prevent approval of transla
 
 After a translation is published, the translator is advised to post a comment in the kata discourse with a link to their translation fork labelled as **Suggestion**. This will notify other users about the fact and it will be easier for others to find such pending translations.
 
-**NOTE:** kata authors and users with appropriate privileges are able to add new language versions directly within the kata editor. This approach is strongly discouraged for the following reasons:
+**NOTE:** kata authors and users with appropriate privileges are able to add new translations directly within the kata editor. This approach is strongly discouraged for the following reasons:
 
-- such language versions cannot be properly reviewed before it's published so it misses the opportunity for bugs and issues to be found by reviewers,
-- maintenance of a language version created this way is difficult because it cannot be improved by forking. It can be changed only with the kata editor which is available only to power users.
+- such translations cannot be properly reviewed before it's published so it misses the opportunity for bugs and issues to be found by reviewers,
+- maintenance of a translation created this way is difficult because it cannot be improved by forking. It can be changed only with the kata editor which is available only to power users.
 
 ### Reward
 
@@ -74,7 +74,7 @@ When a translation is published, it's put into a pending state and awaits for re
 
 ### Reviewing a translation
 
-Before a pending translation is accepted and a new language version becomes available for a kata, it needs to be reviewed and determined whether it holds up to Codewars quality standards. When reviewing a translation, users can perform the following steps:
+Before a pending translation is accepted and a new language becomes available for a kata, it needs to be reviewed and determined whether it holds up to Codewars quality standards. When reviewing a translation, users can perform the following steps:
 
 - **Reading the code and description**.
 - **Running the tests** against _other_ solutions along with the reference solution. Unfortunately, testing solutions to a proposed translation other than the reference solution is currently rather cumbersome. One possibility is to fork the translation, replace the reference solution with your solution, run the tests and discard the fork afterwards. Another way is to create a new kumite from scratch and copy/paste code snippets from the translation under review to your kumite.
@@ -85,7 +85,7 @@ After a review is completed, the reviewer can finalize it with one of following 
 
 - **Leaving a comment** with remarks, suggestions and issues which should be addressed by the translator.
 - **Fixing problems found during the review**. The translation fork may be edited directly only by its author. If a user wants to make changes to a translation fork created by another user, they have to fork it first, edit the code, and publish the changes as a new fork.
-- **Approving the translation**, which introduces a new language version to the kata available for solving.
+- **Approving the translation**, which introduces a new language to the kata available for solving.
 - **Rejecting the translation** if it cannot be fixed.
 
 ### Approving a translation
@@ -95,7 +95,7 @@ Pending translations can be approved by either the kata author or any user with 
 - translation is older than a week, or
 - kata author has been inactive for over a month.
 
-When the translation is approved, a new language version is immediately available for solving. There's also a honor reward, but remember that it's granted to the author of the **initial fork** and not that of the accepted fork!
+When the translation is approved, a new language is immediately available for solving. There's also a honor reward, but remember that it's granted to the author of the **initial fork** and not that of the accepted fork!
 
 The user who approved the translation should also go through the kata discourse and mark suggestions posted by the translator as resolved.
 
@@ -118,11 +118,11 @@ Sometimes the best course of action is to simply reject a pending translation. S
 
 It's worth nothing that rejected translations are not wasted work. They are still available in the system, can be forked and serve as a base for new translations, or its code can be simply copied and reused.
 
-## Fixing existing language versions
+## Fixing existing translations
 
 Sometimes a kata needs to be fixed due to an issue, be it a bug in the reference solution, typos in the description or the lack of test coverage. Fixes and improvements to kata can be done in one of two ways:
 
-- If a language version was created as a translation, its most recent version can be forked, modified and published, which then goes through the usual translation review process and waits until another user approves it. However, language versions created directly within the kata editor cannot be forked.
-- A language version may be modified directly within the kata editor. This method of fixing kata is discouraged unless absolutely necessary due to its drawbacks:
-- it causes merge conflicts for modified snippets if someone publishes a fork of this language version sometime in the future,
+- If a translation was created with translations panel, its most recent version can be forked, modified and published, which then goes through the usual translation review process and waits until another user approves it. However, translations created directly within the kata editor cannot be forked.
+- A translation may be modified directly within the kata editor. This method of fixing kata is discouraged unless absolutely necessary due to its drawbacks:
+- it causes merge conflicts for modified snippets if someone publishes a fork of this translation sometime in the future,
 - direct edits are not subject to the review process and other users cannot verify the introduced changes.
