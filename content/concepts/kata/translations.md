@@ -37,7 +37,7 @@ Creating a new translation means writing code snippets required for every kata t
 
 - **Example solution**, to show that it's possible to solve the kata.
 - **Solution setup**, which works as a stub to work on for users training on the kata.
-- **Sample tests**, with some initial test cases which can be expanded when training on a kata. Sample tests can also serve as an example how the solution is called.
+- **Sample tests**, with some initial test cases which can be expanded by the user training on a kata. Sample tests can also serve as an example how the solution is called.
 - **Tests** which are run against user's solution when they consider their solution ready. All the tests run in this snipped must pass to consider the kata solved.
 - **Preloaded** snippet, which contains code not visible to users, and availale for both sample tests and full tests.
 
@@ -80,7 +80,7 @@ Before a pending translation is accepted and a new language becomes available fo
 When reviewing a translation, users can perform following steps:
 
 - **Reading the code and description**.
-- **Running the tests** against _other_ solutions along with the reference solution. Unfortunately, testing solutions to a proposed translation other than the reference solution is currently rather cumbersome. One possibility is to fork the translation, replace the reference solution with your solution, run the tests and discard the fork afterwards. Another way is to create a new kumite from scratch and copy/paste code snippets from the translation under review to your kumite.
+- **Running the tests** against a couple of solutions, to verify if test suite gracefully handles some unexpected answers and eventual crashes of the solution. Unfortunately, testing tests of a translation is currently rather cumbersome. One possibility is to fork the translation, replace "Solution" snippet with your solution, run tests, and discard the fork afterwards. Another way is to create a new kumite from scratch and copy/paste code snippets from the translation under review to your kumite.
 - **Reading the comments** to check if there are any remarks from other reviewers and whether they still hold or were addressed appropriately. Be aware that comments under translations cannot be labelled as an **Issue** or **Suggestion**, so there are no additional markers for the severity of the comment. They also cannot be marked as spoilers, so don't reveal too many details about the solution in your comment, if possible.
 - **Verifying** if the translation holds to [translation authoring guidelines (TODO)]().
 
