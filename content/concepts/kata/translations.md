@@ -124,5 +124,5 @@ Sometimes a kata needs to be fixed due to an issue, be it a bug in the reference
 
 - If a translation was created with translations panel, its most recent version can be forked, modified and published, which then goes through the usual translation review process and waits until another user approves it. However, translations created directly within the kata editor cannot be forked.
 - A translation may be modified directly within the kata editor. This method of fixing kata is discouraged unless absolutely necessary due to its drawbacks:
-- it causes merge conflicts for modified snippets if someone publishes a fork of this translation sometime in the future,
-- direct edits are not subject to the review process and other users cannot verify the introduced changes.
+  - it causes merge conflicts for modified snippets if someone publishes a fork of this translation sometime in the future,
+  - direct edits are not subject to the review process and other users cannot verify the introduced changes.
