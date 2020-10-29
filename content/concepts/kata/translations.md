@@ -14,7 +14,7 @@ Completing a kata in only one language is enough to mark the kata as solved, how
 
 - Your [language rank](/concepts/gamification/ranks/#user-rank-breakdown) progresses for every language you solved the kata with (but Honor and overall rank progress are awarded only once per kata).
 - You unlock the access to solutions of other users in this language.
-- You can view full test suite for completed languages (TODO: explain where). 
+- You can view full test suite for completed languages (TODO: explain where).
 
 ## Creating a translation
 
