@@ -5,19 +5,20 @@ sidebar: explanation-kata
 
 # Translations
 
-Codewars supports a variety of [programming languages](/languages/) and every kata can be available in more than one language. Users may choose any language available to solve the kata and do so in as many languages as they wish. After gaining the required privileges, users who solved the kata are allowed to create or review translations to make the kata available for a larger audience.
+Codewars supports a variety of [programming languages](/languages/) and every kata can be available in more than one language. Users may choose any language available to solve the kata and do so in as many languages as they wish. After gaining the required privileges, users who solved the kata are allowed to create or review translations to make the kata available in new languages, therefore for a larger audience.
 
 ## Training on a selected language
 
-When the user enters the kata trainer to solve a kata, they can select a language to train on. Some kata are available in many languages, some in just a few, and some only in one or two. If a kata is not available in your favorite language, you must select another language you are familiar with or wait until a translation in your preferred language is approved. Completing a kata in only one language is enough to mark the kata as solved; however, there is something to gain from completing it in other languages too:
+When the user enters the trainer to solve a kata, they can select a language to train on. Some kata are available in many languages, some in just a few, and some only in one or two. If a kata is not available in your favorite language, you must select another language you are familiar with or wait until a translation in your preferred language is created and approved.
+Completing a kata in only one language is enough to mark the kata as solved, however, there are things to gain from completing it in other languages too:
 
 - Your [language rank](/concepts/gamification/ranks/#user-rank-breakdown) progresses for every language you solved the kata with (but Honor and overall rank progress are awarded only once per kata).
 - You unlock the access to solutions of other users in this language.
-- You can view full test suite used to test user attempts against their solutions.
+- You can view full test suite for completed languages (TODO: explain where). 
 
 ## Creating a translation
 
-To be able to translate a kata to other languages, the user has to complete the kata in at least one language. Once they have completed it, there will be an option within the languages menu to add a new language.
+To be able to translate a kata to other languages, the user has to complete the kata in at least one language. Once they have completed it, the option to add a new translation will appear in languages dropdown:
 
 <div class="block dark:hidden">
 
@@ -30,14 +31,14 @@ To be able to translate a kata to other languages, the user has to complete the 
 
 </div>
 
-This will take you to the translations page where you can view existing translations and create new ones.
+This will take the user to the translations page where they can view existing translations (pending ones, approved and rejected) or create new ones.
 
 Creating a new translation means writing code snippets required for every kata to have:
 
 - **Example solution**, to show that it's possible to solve the kata.
 - **Solution setup**, which works as a stub to work on for users training on the kata.
 - **Sample tests**, with some initial test cases which can be expanded when training on a kata. Sample tests can also serve as an example how the solution is called.
-- **Tests** which are run against user solution when they consider their solution ready. Tests collected in this snipped must pass to consider the kata solved.
+- **Tests** which are run against user's solution when they consider their solution ready. All the tests run in this snipped must pass to consider the kata solved.
 - **Preloaded** snippet, which contains code not visible to users, and availale for both sample tests and full tests.
 
 The description is shared among all languages so changing it in your translation will change it for all languages. If you need to add some language specific information in the description, you can use Codewars specific extensions for Markdown formatting: [Sequential Code Blocks](/references/markdown/extensions/#sequential-code-blocks) or [Language Conditional Rendering](/references/markdown/extensions/#conditional-rendering).
@@ -66,19 +67,21 @@ _WARNING: Currently, the co-author flag seems to be affected by a bug which only
 
 ## Reviewing and working with pending translations
 
-When a translation is published, it's put into a pending state and awaits for review and approval. Sufficiently privileged users can search for them, review them, and request some fixes, approve, or reject them. Currently, pending translations can be found in one of following ways:
+When a translation is published, it's put into a pending state and awaits for review and approval. Users who earned related [privileges](/references/gamification/privileges/) can search for them, review them, and approve or reject them.
+Currently, pending translations can be found in one of following ways:
 
 - Reading through the kata discourse and searching for posts where translators announced the fact that they published a translation. Translators are encouraged to post a message labelled as **Suggestion** in the kata discourse with a link and information about the language of the translation, so others could find it easily.
-- Navigating to `https://www.codewars.com/kata/kata-id/translations` page lists all accepted and pending translations of a kata.
-- A small group of users has been granted the privilege of accessing the page with a list of all pending translations eligible for approval by them. This is the most convenient way of searching for pending translations, but not available to every user at this moment.
+- Navigating to `https://www.codewars.com/kata/kata-id/translations` page, which lists all translations in two sections: pending ones at the top, and closed ones (approved and rejected) below.
+- A small group of users has been granted the privilege of accessing the page with a list of all pending translations eligible for approval by them. This is the most convenient way of searching for pending translations, but not available to every user at the moment.
 
 ### Reviewing a translation
 
-Before a pending translation is accepted and a new language becomes available for a kata, it needs to be reviewed and determined whether it holds up to Codewars quality standards. When reviewing a translation, users can perform the following steps:
+Before a pending translation is accepted and a new language becomes available for a kata, it needs to be reviewed and determined whether it holds up to Codewars quality standards.
+When reviewing a translation, users can perform following steps:
 
 - **Reading the code and description**.
 - **Running the tests** against _other_ solutions along with the reference solution. Unfortunately, testing solutions to a proposed translation other than the reference solution is currently rather cumbersome. One possibility is to fork the translation, replace the reference solution with your solution, run the tests and discard the fork afterwards. Another way is to create a new kumite from scratch and copy/paste code snippets from the translation under review to your kumite.
-- **Reading the comments** to check if there are any remarks from other reviewers and whether they still hold or were addressed appropriately. Unfortunately, comments under translations cannot be labelled as an **Issue** or **Suggestion** so there are no additional markers for the severity of the comment.
+- **Reading the comments** to check if there are any remarks from other reviewers and whether they still hold or were addressed appropriately. Be aware that comments under translations cannot be labelled as an **Issue** or **Suggestion**, so there are no additional markers for the severity of the comment. They also cannot be marked as spoilers, so don't reveal too many details about the solution in your comment, if possible.
 - **Verifying** if the translation holds to [translation authoring guidelines (TODO)]().
 
 After a review is completed, the reviewer can finalize it with one of following actions:
@@ -90,12 +93,13 @@ After a review is completed, the reviewer can finalize it with one of following 
 
 ### Approving a translation
 
-Pending translations can be approved by either the kata author or any user with the [privilege to coauthor](/references/gamification/privileges/) apart from the translator himself/herself, under the following conditions:
+Pending translations can be approved by either the kata author at any time, or any user with the [privilege to coauthor](/references/gamification/privileges/) under following conditions:
 
-- translation is older than a week, or
-- kata author has been inactive for over a month.
+- the approver is not the author of the translation, and
+  - translation is older than a week, or
+  - kata author has been inactive for over a month.
 
-When the translation is approved, a new language is immediately available for solving. There's also a honor reward, but remember that it's granted to the author of the **initial fork** and not that of the accepted fork!
+When the translation is approved, a new language is immediately available for solving. There's also a honor reward, but remember that it's granted to the author of the **initial fork** and not that of the approved fork!
 
 The user who approved the translation should also go through the kata discourse and mark suggestions posted by the translator as resolved.
 
@@ -103,20 +107,23 @@ The user who approved the translation should also go through the kata discourse 
 
 ### Merge Issues
 
-Oftentimes if two translations are created around the same time, they may both update the description. When approving the 2nd translation, the 1st approved translation will have already updated the description. This will cause a merge conflict which has to be resolved. You can do this by forking the 2nd translation and updating the description. `<<<<<<<<`, `=========` and `>>>>>>>>` merge labels will show up in the description to help identify where the merge issues are.
+Oftentimes if two translations are created around the same time, they may both update the description. When approving the 2nd translation, the 1st approved translation will already have updated the description. This will cause a merge conflict which has to be resolved.
+You can do this by forking the 2nd translation and updating the description. `<<<<<<<<`, `=========` and `>>>>>>>>` merge labels will show up in the description to help identify where the merge issues are.
+Another solution is to start a new translation to some other (not yet available) language, grab the most recent version of the kata description from there, and then copy/paste it in your fork.
 
-Once you have fixed the description merge issues you can publish the translation. If you are not the author then you will need to have someone else verify your changes and approve the translation.
+Once you have fixed the description merge issues you can publish the translation. If you are not the kata author then you will need to have someone else verify your changes and approve the translation.
 
 ### Rejecting a translation
 
-Sometimes the best course of action is to simply reject a pending translation. Some possible reasons could be:
+Sometimes the best course of action is to simply reject a pending translation.
+Some possible reasons could be:
 
 - translation is outdated and kata changed a lot since the translation has been published,
 - translation is of bad quality and fixing it is too much work,
 - some user authored a newer, better translation and they cannot publish it since there can only be one pending translation per language per kata,
 - there's a justified concern that someone might approve a translation of insufficient quality before its issues are fixed.
 
-It's worth nothing that rejected translations are not wasted work. They are still available in the system, can be forked and serve as a base for new translations, or its code can be simply copied and reused.
+It's worth noting that rejected translations are not wasted work. They are still available in the system, can be forked and used as a base for new translations, or its code can be simply copied and reused.
 
 ## Fixing existing translations
 
