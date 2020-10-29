@@ -37,7 +37,7 @@ Your profile page displays a breakdown of your Honor points:
 
 - **Completed Kata** is the amount of honor you gained by only solving tasks and voting them,
 - **Authored Kata & Translations** represent the amount of honor earned doing so,
-- **Kumite** gives teh honor earned by publishing Kumite and by foking solutions,
+- **Kumite** gives the honor earned by publishing Kumite and by forking solutions,
 - **Comments** indicates the total balance of up and down votes on your comments,
 - **Solution Up Vote** is the sum of all the [Best Practices (TODO)]() and [Clever (TODO)]() votes you got on your solutions,
 - **Referrals** is the honor earned when you invite other people to join Codewars.

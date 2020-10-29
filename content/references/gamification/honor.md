@@ -64,7 +64,7 @@ next: /references/gamification/privileges/
 | Published Kumite or Fork      |     2 | fork a solution of yours or another user's, or create a new kumite |
 | Kata Solution upvoted         |     1 | your solution gets a 'best practices' or 'clever' upvote           |
 | Comment upvoted               |     1 |                                                                    |
-| Comment uownvoted             |    -1 |                                                                    |
+| Comment downvoted             |    -1 |                                                                    |
 | Referral Signup (first 5)     |     3 |                                                                    |
 | Referral Signup (6+)          |     1 |                                                                    |
 | Added GitHub Account          |     1 |                                                                    |

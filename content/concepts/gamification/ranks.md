@@ -41,7 +41,7 @@ The score used to determine your rank is not the same as for honor. You can't se
 
 As said before, the only way to "rank up" is to complete Kata. However, the rank of the Kata you complete makes a huge difference on the evolution of your rank and its progress.
 
-- The score awarded for each complete Kata, according to its rand may be found in [this table](/references/gamification/ranks/#rank-rewards).
+- The score awarded for each complete Kata, according to its rank may be found in [this table](/references/gamification/ranks/#rank-rewards).
 - The score required to reach the different Kyu/Dan levels may be found in [this table](/references/gamification/ranks/#rank-requirements).
 
 As you can see, if your main goal is to level up your rank, you should aim for completing hard kata above your current user rank. On the contrary, completing a lot of low level kata will give you a lot of honor but will not increase your rank very quickly.
