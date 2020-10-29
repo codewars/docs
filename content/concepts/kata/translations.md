@@ -19,7 +19,16 @@ When the user enters the kata trainer to solve a kata, they can select a languag
 
 To be able to translate a kata to other languages, the user has to complete the kata in at least one language. Once they have completed it, there will be an option within the languages menu to add a new language.
 
-![Language Menu](https://www.evernote.com/l/AAW0GaebQllDBb_YS-AfeaUiwq5PoxaDPIoB/image.png)
+<div class="block dark:hidden">
+
+![add translation](./img/add-translation_light.png)
+
+</div>
+<div class="hidden dark:block">
+
+![add translation](./img/add-translation_dark.png)
+
+</div>
 
 This will take you to the translations page where you can view existing translations and create new ones.
 
