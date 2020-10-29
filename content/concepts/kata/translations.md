@@ -35,9 +35,9 @@ The description is shared among all language versions so changing it in your tra
 
 The translation does not have to be finished in one go. It can be saved and kept in draft state as long as necessary. When the translator considers it ready, it can be published which places it in a "pending" state and becomes available for other users to review, approve, edit or reject. Only one translation may be published for any given kata and language. For example, if a published Java translation already exists then a new one may be created but not published until the former is rejected.
 
-Unfortunately, currently there's no reliable way to prevent approval of translations of insufficient quality. Unlike beta kata, translations are not a subject to any kind of beta process, and comments in translation discourse cannot be labelled as issues. That's why it's very important to make sure that published translations comply with [translation authoring guidelines (TODO)]().
+Unfortunately, there is currently no reliable way to prevent approval of translations of insufficient quality. Unlike beta kata, translations are not subject to any kind of beta process, and comments in the translation discourse cannot be labelled as issues. That's why it's very important to make sure that published translations comply with [translation authoring guidelines (TODO)]().
 
-After translation is published, translator is adviced to post a comment in kata discourse with a link to their translation fork, labelled as **Suggestion**. This will notify other users about the fact and it will be easier for others to find such pending translation.
+After a translation is published, the translator is advised to post a comment in the kata discourse with a link to their translation fork labelled as **Suggestion**. This will notify other users about the fact and it will be easier for others to find such pending translations.
 
 **NOTE:** kata authors and users with appropriate privileges are able to add new language versions directly within the kata editor. This approach is strongly discouraged for the following reasons:
 
@@ -81,16 +81,16 @@ After a review is completed, the reviewer can finalize it with one of following 
 
 ### Approving a translation
 
-Pending translation can be approved either by kata author, or users with [privilege to coauthor](/references/gamification/privileges/) who are not the publisher of the translation fork being approved, under following conditions:
+Pending translations can be approved by either the kata author or any user with the [privilege to coauthor](/references/gamification/privileges/) apart from the translator himself/herself, under the following conditions:
 
 - translation is older than a week, or
 - kata author has been inactive for over a month.
 
-When translation is approved, new language version is immediately available for other users to solve. There's also a honor reward, but remember that it's granted to the author of the **initial fork**, and not to the author of the fork which got finally accepted!
+When the translation is approved, a new language version is immediately available for solving. There's also a honor reward, but remember that it's granted to the author of the **initial fork** and not that of the accepted fork!
 
-Translation approver should also go through the kata discourse and mark suggestions posted by the translator as resolved.
+The user who approved the translation should also go through the kata discourse and mark suggestions posted by the translator as resolved.
 
-**NOTE:** currently, probably because of a bug, a user who _approves_ a translation is marked as **kata contributor**. Users with "contributor" flag seem to be affected by a bug which prevents them from getting any future points they would be rewarded for authoring activities on the kata they contributed to. Be aware that as a result, approving of a translation can cause you won't be eligible for any Honor points you would earn by translating, editing or fixing the kata in the future, unless the bug is fixed.
+**NOTE:** at the time of writing, a user who _approves_ a translation is marked as a **kata contributor**. Users with the "contributor" flag seem to be affected by a bug preventing them from earning any future points they would be rewarded for authoring activities on kata they contributed to. Be aware that as a result, approving a translation will render you ineligible for honor points you would otherwise earn by translating, editing or fixing the kata in the future unless the bug is fixed.
 
 ### Merge Issues
 
@@ -104,16 +104,16 @@ Sometimes the best course of action is to simply reject a pending translation. S
 
 - translation is outdated and kata changed a lot since the translation has been published,
 - translation is of bad quality and fixing it is too much work,
-- some user authored newer, better translation and they cannot publish it because there can be only one pending translation per kata per language,
+- some user authored a newer, better translation and they cannot publish it since there can only be one pending translation per language per kata,
 - there's a justified concern that someone might approve a translation of insufficient quality before its issues are fixed.
 
-It's worth to note that rejected translations are not wasted work. They are still available in the system, can be forked and serve as a base for new translation, or its code can be simply copied and reused.
+It's worth nothing that rejected translations are not wasted work. They are still available in the system, can be forked and serve as a base for new translations, or its code can be simply copied and reused.
 
 ## Fixing existing language versions
 
-Sometimes kata needs to be fixed because some issue was found: be it a bug in reference solution, tests, typos in description, or maybe some test cases need to be added. Fixes and improvements to every kata can be done in one of two ways:
+Sometimes a kata needs to be fixed due to an issue, be it a bug in the reference solution, typos in the description or the lack of test coverage. Fixes and improvements to kata can be done in one of two ways:
 
-- If language version was created as a translation, its most recent version can be forked, modified, and published. Now it needs to go through normal translation review process and wait until other user approves it. However, language versions which were created directly with kata editor (including initial language version of the kata) cannot be forked.
-- Language version can be modified directly with kata editor. This way of fixing kata is discouraged unless absolutely necessary, because it has some drawbacks:
-  - it causes merge conflicts for modified snippets if someone would want to publish a fork of this language version some time in the future,
-  - direct edits are not a subject to the review process and other users cannot verify introduced changes.
+- If a language version was created as a translation, its most recent version can be forked, modified and published, which then goes through the usual translation review process and waits until another user approves it. However, language versions created directly within the kata editor cannot be forked.
+- A language version may be modified directly within the kata editor. This method of fixing kata is discouraged unless absolutely necessary due to its drawbacks:
+- it causes merge conflicts for modified snippets if someone publishes a fork of this language version sometime in the future,
+- direct edits are not subject to the review process and other users cannot verify the introduced changes.
