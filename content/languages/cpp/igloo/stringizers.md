@@ -250,7 +250,7 @@ should_pretty_print_vector_of_pairs_of_custom_type
 
 ## Additional info
  - [Getting better output for your types](https://github.com/banditcpp/snowhouse#getting-better-output-for-your-types) in Snowhouse repository.
-
+ - [Kumite](https://www.codewars.com/kumite/5f9b749a9cd7a8002dfa2f34?sel=5f9b749a9cd7a8002dfa2f34) which illustrates how to use stringification in a kata.
 
 
 -----------
