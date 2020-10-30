@@ -9,7 +9,7 @@ tags:
 
 # Adding Custom Stringizers
 
-**NOTE:** code snippets in this article omit `#inlude` directives for brevity. You must remember about including required header files!
+**NOTE:** code snippets in this article omit `#include` directives for brevity. You must remember about including required header files!
 
 ## `[unsupported type]` displayed in assertion messages
 
@@ -68,7 +68,7 @@ Test output:
     Actual: [ [unsupported type], [unsupported type] ]
 ```
 
-Not only your custom types can be affected by this issue. Many built-in, standard, or 3rd party types also cannot be stringified. Basically, every type which does not define its version of output stream operator (`operator <<`) is affected, and `std::pair` template is a very common case of such type for Codewars kata.
+Not only your custom types can be affected by this issue. Snowhouse may be not able to stringify many built-in, standard, or 3rd party types. Basically, every type which does not define its version of output stream operator (`operator <<`) is affected, and `std::pair` template is a very common case of such type for Codewars kata.
 
 ## Solutions
 
@@ -133,7 +133,7 @@ Now your custom types are displayed properly in assertion messages:
 
 ### Stringification with `Stringizer<T>`
 
-Sometimes, definition of `operator <<` cannot be used for stringification. You cannot add it to types which you do not own, or you cannot re-define it types which already have it defined, but not in a way you'd like to. Or maybe you just prefer this way rather than `operator <<`. In such cases, Snowhouse framework allows you to use a `snowhouse::Stringizer<T>` template specialized for the type you want to stringify.
+Sometimes, definition of `operator <<` cannot be used for stringification. You cannot add it to types which you do not own, or you cannot re-define it for types which already have it defined, but not in a way you'd like to. Or maybe you just prefer this way rather than `operator <<`. In such cases, Snowhouse framework allows you to use a `snowhouse::Stringizer<T>` template specialized for the type you want to stringify.
 
 ```cpp
 
@@ -442,4 +442,3 @@ test_stringizers
 ![add translation](./img/stringizers_dark.png)
 
 </div>
-
