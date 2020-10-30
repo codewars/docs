@@ -15,6 +15,7 @@ tags:
 #include <utility>
 #include <vector>
 #include <string>
+#include <sstream>
 
 namespace snowhouse
 {
