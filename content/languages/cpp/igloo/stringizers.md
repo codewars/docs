@@ -51,7 +51,7 @@ Type `Point1d` cannot be stringified, so assertion message displayed in test out
 
 Very similar thing happens when assertion verifies collections (for example `std::vector`) of such types. While `std::vector` template itself can be stringified, elements stored inside might be not:
 
-```c++
+```cpp
 //assertion in test:
 It(does_not_pretty_print_type_without_stringizer)
 {
@@ -76,7 +76,7 @@ To make a stringification of unsupported types possible, you have to provide one
 
 ### Stringification with `operator <<`
 
-`operator <<` is the easiest option to provide stringification, but it can be used only with types you control. You can add `operator <<` for types you created for the kata, but not for 3rd party, external, or standard types, like for example `std::pair`. For them, you have to use specialized `Stringizer<T>` (see below).
+`operator <<` is the easiest option to provide stringification, but it can be used only with types you control. You can add `operator <<` for types you created for the kata, but not for 3rd party, external, or standard types, like for example `std::pair`. For them, you have to use specialized `Stringizer<T>` ([see below](#stringification-with-stringizert)).
 
 Definition of `operator <<` for Snowhouse does not differ from implementation of any other output stream operator for C++ types:
 
@@ -135,7 +135,7 @@ Now your custom types are displayed properly in assertion messages:
 
 Sometimes, definition of `operator <<` cannot be used for stringification. You cannot add it to types which you do not own, or you cannot re-define it types which already have it defined, but not in a way you'd like to. Or maybe you just prefer this way rather than `operator <<`. In such cases, Snowhouse framework allows you to use a `snowhouse::Stringizer<T>` template specialized for the type you want to stringify.
 
-```c++
+```cpp
 
 //Preloaded section
 
@@ -214,7 +214,7 @@ This way you get meaningful output for types which were unsupported:
 
 This way you can also create a universal template which would solve many issues with Codewars kata: a stringizer for any pair!
 
-```c++
+```cpp
 //Preloaded
 namespace snowhouse
 {
