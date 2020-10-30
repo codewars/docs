@@ -13,12 +13,12 @@ tags:
 
 ## `[unsupported type]` displayed in assertion messages
 
-C++ kata currently use [Igloo (TODO: link)]() testing framework with [Snowhouse (TODO: link)]() assertions library to run kata tests and verify test results. Known headache related to Snowhouse library is that, sometimes, it produces very unhelpful assertion messages:
+C++ kata currently use [Igloo](https://github.com/joakimkarlsson/igloo) testing framework with [Snowhouse](https://github.com/banditcpp/snowhouse) assertions library to run kata tests and verify test results. Known headache related to Snowhouse library is that, sometimes, it produces very unhelpful assertion messages:
 
 ```
   does_not_pretty_print_type_without_stringizer
     Expected: equal to [ [unsupported type], [unsupported type] ]
-    Actual: [ [unsupported type] ]
+    Actual: [ [unsupported type], [unsupported type] ]
 ```
 
 Such situation occurs when your tests perform some assertions on types which have not defined the operation of stringification, which could be used by the Snowhouse framework to conveniently compose the assertion message:
