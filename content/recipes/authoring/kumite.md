@@ -4,6 +4,6 @@ sidebar: authoring
 prev: /recipes/authoring/translation/
 ---
 
-# Kumite
+# Creating a Kumite
 
 _This page is a stub._

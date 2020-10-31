@@ -5,6 +5,6 @@ prev: /recipes/kata-snippets/full-tests/
 next: /recipes/kata-snippets/proposed-solution/
 ---
 
-# Preloaded Code
+# Writing Preloaded Code
 
 _This page is a stub._

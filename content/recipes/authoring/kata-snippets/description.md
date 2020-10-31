@@ -5,6 +5,6 @@ prev: /recipes/kata-snippets/
 next: /recipes/kata-snippets/coding-general/
 ---
 
-# Kata Description
+# Writing Kata Description
 
 _This page is a stub._

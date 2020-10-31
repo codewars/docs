@@ -5,6 +5,6 @@ prev: /recipes/authoring/kata/
 next: /recipes/authoring/kumite/
 ---
 
-# Translations
+# Creating a Translation
 
 _This page is a stub._

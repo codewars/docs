@@ -5,6 +5,6 @@ prev: /recipes/authoring/general/
 next: /recipes/authoring/translation/
 ---
 
-# Kata
+# Creating a Kata
 
 _This page is a stub._

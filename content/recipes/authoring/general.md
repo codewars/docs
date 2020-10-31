@@ -5,7 +5,7 @@ prev: /recipes/authoring/
 next: /recipes/authoring/kata/
 ---
 
-# General Remarks
+# General Remarks on Creating Content
 
 _This page is a stub._
 

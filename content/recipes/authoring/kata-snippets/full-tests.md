@@ -5,6 +5,6 @@ prev: /recipes/kata-snippets/sample-tests/
 next: /recipes/kata-snippets/preloaded/
 ---
 
-# Full Test Suite
+# Writing Full Test Suite
 
 _This page is a stub._

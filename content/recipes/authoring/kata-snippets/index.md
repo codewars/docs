@@ -4,7 +4,7 @@ sidebar: authoring
 next: /recipes/kata-snippets/description/
 ---
 
-# Codewars Authoring Guidelines
+# Writing Kata Snippets
 
 _This page is a stub._
 
