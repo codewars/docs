@@ -101,6 +101,33 @@ module.exports = {
           },
         ],
       },
+      {
+        name: "authoring",
+        sections: [
+          {
+            title: "Content Types",
+            items: [
+              "/recipes/authoring/kata/",
+              "/recipes/authoring/kata/general/",
+              "/recipes/authoring/kata/",
+              "/recipes/authoring/translation/",
+              "/recipes/authoring/kumite/"
+            ],
+          },
+          {
+            title: "Kata Elements",
+            items: [
+              "/recipes/kata-snippets/",
+              "/recipes/kata-snippets/description/",
+              "/recipes/kata-snippets/coding-general/",
+              "/recipes/kata-snippets/sample-tests/",
+              "/recipes/kata-snippets/full-tests/",
+              "/recipes/kata-snippets/preloaded/",
+              "/recipes/kata-snippets/proposed-solution/"
+            ],
+          },
+        ],
+      },
     ],
   },
   plugins: [
