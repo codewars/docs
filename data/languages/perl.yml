@@ -1,0 +1,12 @@
+name: Perl
+status: beta
+timeout: 12s
+testFrameworks:
+  - id: test
+    name: "Test::More"
+versions:
+  - id: v5.30
+    name: v5.30
+    packages:
+      - name: DateTime
+        url: https://metacpan.org/pod/DateTime
