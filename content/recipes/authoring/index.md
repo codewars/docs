@@ -1,7 +1,7 @@
 ---
 kind: recipe
 sidebar: authoring
-next: /recipes/authoring/kata/general/
+next: /recipes/authoring/general/
 ---
 
 # Codewars Authoring Guidelines

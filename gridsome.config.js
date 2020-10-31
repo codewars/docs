@@ -107,8 +107,8 @@ module.exports = {
           {
             title: "Content Types",
             items: [
-              "/recipes/authoring/kata/",
-              "/recipes/authoring/kata/general/",
+              "/recipes/authoring/",
+              "/recipes/authoring/general/",
               "/recipes/authoring/kata/",
               "/recipes/authoring/translation/",
               "/recipes/authoring/kumite/",
