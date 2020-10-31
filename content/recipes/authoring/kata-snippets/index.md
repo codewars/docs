@@ -1,7 +1,7 @@
 ---
 kind: recipe
 sidebar: authoring
-next: /recipes/kata-snippets/description/
+next: /recipes/authoring/kata-snippets/description/
 ---
 
 # Writing Kata Snippets

@@ -1,8 +1,8 @@
 ---
 kind: recipe
 sidebar: authoring
-prev: /recipes/kata-snippets/coding-general/
-next: /recipes/kata-snippets/full-tests/
+prev: /recipes/authoring/kata-snippets/coding-general/
+next: /recipes/authoring/kata-snippets/full-tests/
 ---
 
 # Writing Sample Tests

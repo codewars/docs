@@ -1,7 +1,7 @@
 ---
 kind: recipe
 sidebar: authoring
-prev: /recipes/kata-snippets/preloaded/
+prev: /recipes/authoring/kata-snippets/preloaded/
 ---
 
 # Writing Proposed Solution

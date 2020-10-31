@@ -1,8 +1,8 @@
 ---
 kind: recipe
 sidebar: authoring
-prev: /recipes/kata-snippets/
-next: /recipes/kata-snippets/coding-general/
+prev: /recipes/authoring/kata-snippets/
+next: /recipes/authoring/kata-snippets/coding-general/
 ---
 
 # Writing Kata Description

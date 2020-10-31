@@ -1,8 +1,8 @@
 ---
 kind: recipe
 sidebar: authoring
-prev: /recipes/kata-snippets/description/
-next: /recipes/kata-snippets/sample-tests/
+prev: /recipes/authoring/kata-snippets/description/
+next: /recipes/authoring/kata-snippets/sample-tests/
 ---
 
 # General Kata Coding Guidelines
