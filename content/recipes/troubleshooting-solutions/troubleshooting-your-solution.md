@@ -1,7 +1,6 @@
 ---
 description: ""
 kind: recipe
-sidebar: "docs"
 ---
 
 # Troubleshooting Your Solution
