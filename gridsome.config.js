@@ -111,7 +111,7 @@ module.exports = {
               "/recipes/authoring/kata/general/",
               "/recipes/authoring/kata/",
               "/recipes/authoring/translation/",
-              "/recipes/authoring/kumite/"
+              "/recipes/authoring/kumite/",
             ],
           },
           {
@@ -123,7 +123,7 @@ module.exports = {
               "/recipes/kata-snippets/sample-tests/",
               "/recipes/kata-snippets/full-tests/",
               "/recipes/kata-snippets/preloaded/",
-              "/recipes/kata-snippets/proposed-solution/"
+              "/recipes/kata-snippets/proposed-solution/",
             ],
           },
         ],
