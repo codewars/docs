@@ -53,7 +53,7 @@ Some kata require solutions to be fast, or to fall into some performance categor
 - **Performance tests can be implemented in terms of random tests.** Usually, it's not reqired to have separate sections for random tests and performance tests. Testing of performance can be driven by size of random inputs. But still, to make debugging easier, it can be worth in some cases to have a set of separate random tests with small inputs.
 - If difficulty of a tested kata is related to the size of the input, it's usually **better to have a few tests with large input, that thousands of tests with small input.** 200 tests with very large numbers or arrays is usually better than 10_000 tests with small ones (but see remarks on size of inputs above).
 - **Difference beetwen accepted and rejected solutions should be easy to spot.** Ideally, tests for accepted solutions should complete very fast, and tests for rejected solutions should take very long. Otherwise, you risk that solutions with valid complexity characteristics will time out, and users will be frustrated looking for micro-optimizations. This approach usually calls for very large inputs, so be careful! 
-- **Performance tests should be consistent between runs.** It whould not happen that one and the same solution sometimes passes, and sometimes fails, depending on randomized inputs.
+- **Performance tests should be consistent between runs.** It should not happen that one and the same solution sometimes passes, and sometimes fails, depending on randomized inputs.
 
 ## Tests of Additional Restrictions
 
