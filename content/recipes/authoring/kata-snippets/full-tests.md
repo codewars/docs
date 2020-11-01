@@ -7,9 +7,9 @@ next: /recipes/authoring/kata-snippets/preloaded/
 
 # Writing Full Test Suite
 
-This article contains a set of guidelines, which can be used by kata authors to create good test suites for their kata.
+This article contains a set of guidelines, which can be used by kata authors to create good test suites for their kata. They were collected to help to ensure that kata, translations, and their test suites are of sufficient quality and users' experience with tests will be as good as possible. Failing to comply with below guidelines should be reported, preferrably during a review before the content gets approved, as an issue with request for fix. In case of severe violations, kata or language version can be retired, moved back to beta state, or rejected.
 
-**NOTE:** there are really many kinds of kata, and some guidelines might simply not apply to some of them. There are puzzles, hackmes, kata which mess with internals of language runtime, and some types of challenges require special ways of testing. But still, guidelines found below apply to majority of kata in some extent, and when used, kata author can be sure that their tests will be clear, efficient, reliable, and easy to debug.  
+NOTE: There are many kinds of kata, and some guidelines might simply not apply to some of them. There are puzzles, hackmes, kata which mess with internals of language runtime, and some types of challenges require special ways of testing. But still, guidelines found below apply to majority of kata in some extent, and when used, kata author can be sure that their tests will be clear, efficient, reliable, and easy to debug.  
 
 ## General Guidelines
 
