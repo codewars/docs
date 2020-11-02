@@ -7,30 +7,47 @@ next: /recipes/authoring/kumite/
 
 # Creating a Translation
 
-_This page is a stub._
+This article contains a set of guidelines, which can be used by translators to create good translations to existing kata. They were collected to help ensure that translations are of sufficient quality and users' experience will be as good as possible.
+
+The guidelines should be used by translators and reviewers to verify whether translation which is about to be introduced into Codewars is of sufficient quality. Conformance with them should be verified before the translation is published, and before it's approved.
+
+Failing to comply with the below guidelines should be reported as an issue or a comment requesting for a fix. In case of severe violations, affected translation can be rejected, or even deleted.
+
+## General translation guidelines
+
+- **Respect [General Content Guidelines](/recipes/authoring/general/).**
+- **Translations should improve the overall quality of the kata.**. Sub-optimal quality of existing, approved translations should not be used as an argument for low quality of the translation. In particular:
+  - Description can be clarified, if necessary.
+  - Test suite can use different structure than other translations. **[Random tests](/recipes/authoring/kata-snippets/full-tests/#random-tests), [full test suite](/recipes/authoring/kata-snippets/full-tests/) and  [sample tests](/recipes/authoring/kata-snippets/sample-tests/) should conform to Codewars quality guidelines.**
+- If, while translation is created, some serious problems are spotted in other language versions, they should be fixed or raised as appropriate issues in the kata discourse.
 
 
-> in unordered fashion:
-> 
-> * make preferably the description language agnostic (if the author is ok with te idea), but if not possible, don't forget to add the relevant codeblocks
-> 
-> wanted changes, compared to the original language:
-> 
-> * adding random tests (required)
-> * adding sample tests (required)
-> * clarifying the description if needed (only if the author is ok, if he's active)
-> * build a better organisation of the test suite
-> 
-> things where you need to "stay in line"
-> 
-> * respect the performances requirements of the original language. If needed decrease/increase the number of tests
-> * respect the perf of the original solution
-> * respect the overall setup of the initial solution (except for translations "from/to Java/C#" and alike where you adapt to what's the more loical
-> * all tests must be translated (unless irrelevant in the translated language)
-> 
-> things to be careful about: (_**these ones will have to be in "create a kata" too**_)
-> 
-> * write readable/maintainable code => golfed ref solutions like Giacommo cas used to do are to be avoided
-> * isolate completely ref and user code: when mutable data structures are used as input, either compute the expected result before sending the inputs to the user, or send copies to the user (deep copies if needed)
-> * respect the naming conventions of the translated language
+## Conformance to overall kata idea
 
+Translation should not substantially change overall idea of the kata. It should be as consistent as possible with the original version in terms of difficulty, required performance, and overall composition. In particular:
+
+- **Respect the performance requirements of the kata.** If, for example, it's agreed that kata should accept only (sub)linear solutions, make sure that translated tests reject solutions of higher computational complexity. Languages and runtimes differ in terms of performance, so increase/decrease amount of test cases and input ranges when necessary.
+- If possible, your translation should hold to **original author's idea**. In case of doubts, you can always ask them for opinion, or use initial language version as a baseline. However, especially for older kata, it may happen that initial version (and other older versions) are outdated, and concept of the kata evolved. You can ask kata contributors or other users for opinion and ideas how to proceed.
+- **Avoid translations to languages which cannot support the idea of the kata.** For example, there's no use in translating a big integer arithmetic kata to Python, which supports arbitrary precision integers natively. Do not translate kata into languages where difficulty would signifficantly differ: from high level languages to NASM or BF, or into lnaguages where kata can be solved with easy to use, advanced features of standard library (or other available libraries).
+
+
+## Description
+
+- **Respect guidelines for [Writing a Kata Description](/recipes/authoring/kata-snippets/description/).**
+- **Use [Codewars Markdown Extensions](/references/markdown/extensions/#sequential-code-blocks)** to organize language specific parts of description, if present. Add sections specific to your language if necessary.
+- If possible, **avoid displaying many language variants to the user**. Use conditional paragraphs to display information revelant to the currently viewed language.
+- If the language version can pass tests successfuly only when run with some specific language runtime, it should be specified in the description.
+
+
+## Code components
+
+- **Respect [General Coding Guidelines](/recipes/authoring/kata-snippets/coding-general/), coding guidelines of your [language](/languages/), and guidelines specific for particular kata code components ([sample tests](/recipes/authoring/kata-snippets/sample-tests/), [full test suite](/recipes/authoring/kata-snippets/full-tests/), [preloaded code](/recipes/authoring/kata-snippets/preloaded/) and [proposed solution](/recipes/authoring/kata-snippets/proposed-solution/)).
+- If possible, **sample tests and fixed tests should use the same inputs in all translations.** It's not always possible between languages, but when done, it makes support of users much easier. When a question about failed test pops up in kata discourse, it can save follow-up questions for attempted language, etc.
+
+
+## Review process
+
+- **Translation must be reviewed before it's approved.** If reviewer is not familiar with the language of the translation, they should ask other users for help.
+- **Any issues found during review should be posted** as translation comments.
+- Unfortunately, approval of translation cannot be easily blocked by raising issues. If translation has many issues, cannot be easily fixed, and there's justified concern that it could be approved prematurely while not keeping up to quality standards, **it should be rejected**.
+- After translation is approved, it becomes **responsibility of all the parties: the approver, the translator, and the kata author** (in this order) to fix any potential issues which might come up later, when users attempt to submit their solutions.
