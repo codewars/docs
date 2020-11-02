@@ -37,7 +37,7 @@ It(does_not_pretty_print_type_without_stringizer)
 {
   Point1d actual   = { 2 };
   Point1d expected = { 1 };
-  Assert::That(expected, Equals(actual));
+  Assert::That(actual, Equals(expected));
 }
 ```
 
@@ -57,7 +57,7 @@ It(does_not_pretty_print_type_without_stringizer)
 {
   std::vector<Point1d> actual   = { { 1 }, { 2 }  };
   std::vector<Point1d> expected = { { 1 }, { 3 }  };      
-  Assert::That(expected, Equals(actual));
+  Assert::That(actual, Equals(expected));
 }
 ```
 
@@ -106,16 +106,16 @@ Such definition causes that your custom type is now displayed properly, even if 
 
 It(should_pretty_print_custom_class_with_ostream_operator)
 {
-  Point2d start {0,  0};
-  Point2d end   {7, -2};
-  Assert::That(start, Equals(end));
+  Point2d actual   {0,  0};
+  Point2d expected {7, -2};
+  Assert::That(actual, Equals(expected));
 }
 
 It(should_pretty_print_vector_of_elements_of_custom_type_with_ostream_operator)
 {
   std::vector<Point2d> actual   = { {0, 0}, {2, 2}  };
   std::vector<Point2d> expected = { {1, 1}  };      
-  Assert::That(expected, Equals(actual));
+  Assert::That(actual, Equals(expected));
 }
 ```
 
@@ -126,8 +126,8 @@ Now your custom types are displayed properly in assertion messages:
     Expected: equal to (7, -2)
     Actual: (0, 0)
   should_pretty_print_vector_of_elements_of_custom_type_with_ostream_operator
-    Expected: equal to [ (0, 0), (2, 2) ]
-    Actual: [ (1, 1) ]
+    Expected: equal to [ (1, 1) ]
+    Actual: [ (0, 0), (2, 2) ]
 ```
 
 
@@ -180,21 +180,21 @@ It(should_pretty_print_vector_of_elements_of_non_custom_type)
 {
   std::vector<std::pair<int, std::string>> actual   = { {1, "a"}, {2, "b"}  };
   std::vector<std::pair<int, std::string>> expected = { {1, "a"}  };      
-  Assert::That(expected, Equals(actual));
+  Assert::That(actual, Equals(expected));
 }
 
 It(should_pretty_print_custom_class_with_stringizer)
 {
-  Point3d start {0,  0, 0};
-  Point3d end   {7, -2, 5};
-  Assert::That(start, Equals(end));
+  Point3d actual   {0,  0, 0};
+  Point3d expected {7, -2, 5};
+  Assert::That(actual, Equals(expected));
 }
 
 It(should_pretty_print_vector_of_elements_of_custom_type_with_stringizer)
 {
   std::vector<Point3d> actual   = { {0, 0, 0}, {2, 2, 5}  };
   std::vector<Point3d> expected = { {1, 1, 1}  };      
-  Assert::That(expected, Equals(actual));
+  Assert::That(actual, Equals(expected));
 }
 ```
 
@@ -202,14 +202,14 @@ This way you get meaningful output for types which were unsupported:
 
 ```
   should_pretty_print_vector_of_elements_of_non_custom_type
-    Expected: equal to [ (num: 1, atr= "a"), (num: 2, atr= "b") ]
-    Actual: [ (num: 1, atr= "a") ]
+    Expected: equal to [ (num: 1, atr= "a") ]
+    Actual: [ (num: 1, atr= "a"), (num: 2, atr= "b") ]
   should_pretty_print_custom_class_with_stringizer
     Expected: equal to (7, -2, 5)
     Actual: (0, 0, 0)
   should_pretty_print_vector_of_elements_of_custom_type_with_stringizer
-    Expected: equal to [ (0, 0, 0), (2, 2, 5) ]
-    Actual: [ (1, 1, 1) ]
+    Expected: equal to [ (1, 1, 1) ]
+    Actual: [ (0, 0, 0), (2, 2, 5) ]
 ```
 
 This way you can also create a universal template which would solve many issues with Codewars kata: a stringizer for any pair!
@@ -235,7 +235,7 @@ It(should_pretty_print_vector_of_pairs_of_custom_type)
 {
   std::vector<std::pair<std::string, Point2d>> actual   = { {"A", {0, 0}}, { "B", {2, 2}}  };
   std::vector<std::pair<std::string, Point2d>> expected = { {"A", {1, 1}}  };      
-  Assert::That(expected, Equals(actual));
+  Assert::That(actual, Equals(expected));
 }
 
 ```
@@ -244,8 +244,8 @@ You can get meaningful assertion messages for any `std::pair<F, T>`, as long as 
 
 ```
 should_pretty_print_vector_of_pairs_of_custom_type
-  Expected: equal to [ (A, (0, 0)), (B, (2, 2)) ]
-  Actual: [ (A, (1, 1)) ]
+  Expected: equal to [ (A, (1, 1)) ]
+  Actual: [ (A, (0, 0)), (B, (2, 2)) ]
 ```
 
 ## Additional info
