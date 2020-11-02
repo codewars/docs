@@ -7,7 +7,11 @@ next: /recipes/authoring/kata-snippets/preloaded/
 
 # Writing a Full Test Suite
 
-This article contains a set of guidelines, which can be used by kata authors to create good test suites for their kata. They were collected to help ensure that kata, translations, and their test suites are of sufficient quality and users' experience with tests will be as good as possible. Failing to comply with the below guidelines should be reported as an issue requesting for a fix, preferably during a review before the content gets approved. In case of severe violations, affected kata or translation can be retired, moved back to beta state, or rejected.
+This article contains a set of guidelines, which can be used by kata authors to create good test suites for their kata. They were collected to help ensure that kata, translations, and their test suites are of sufficient quality and users' experience with tests will be as good as possible.
+
+The guidelines should be used by kata authors, translators, and reviewers, to verify whether new content which is about to be introduced into Codewars is of sufficient quality. Conformance with them should be verified before kata or translation is published by its author, and approved by a reviewer.
+
+Failing to comply with the below guidelines should be reported as an issue requesting for a fix. In case of severe violations, affected kata or translation can be retired, moved back to beta state, or rejected.
 
 NOTE: There are many kinds of kata, and some guidelines might simply not apply to some of them. There are puzzles, hackmes, kata which mess with internals of the language runtime, and some types of challenges require special ways of testing. But still, the guidelines found below apply to the majority of kata to some extent, and when used, kata authors can be sure that their tests will be clear, efficient, reliable, and easy to debug.
 
