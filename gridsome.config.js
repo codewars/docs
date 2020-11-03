@@ -123,7 +123,7 @@ module.exports = {
               "/recipes/authoring/kata-snippets/sample-tests/",
               "/recipes/authoring/kata-snippets/full-tests/",
               "/recipes/authoring/kata-snippets/preloaded/",
-              "/recipes/authoring/kata-snippets/proposed-solution/",
+              "/recipes/authoring/kata-snippets/reference-solution/",
             ],
           },
         ],
