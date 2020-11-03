@@ -74,7 +74,9 @@ module.exports = {
             color: theme("colors.typo.high"),
             borderColor: theme("colors.ui.border"),
             borderWidth: "1px",
-            padding: theme("spacing.1"),
+            padding: "0 0.15em",
+            // Fix line break within padding
+            display: "inline-block",
             borderRadius: theme("borderRadius.default"),
             fontWeight: null,
           },
