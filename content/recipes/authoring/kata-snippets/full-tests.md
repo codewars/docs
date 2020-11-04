@@ -41,7 +41,7 @@ Some test suites require a reference solution to generate the expected value(s) 
   - Reference solution being accessible to users by mistake
   - Input mutation by the user solution affecting the input passed to the reference solution
   - Incorrect implementation of the reference solution leading to rejection of valid user solutions
-- **Reference solution should not be revealed to the user.** When an assertion fails or the test suite crashes, some testing frameworks print fragments of source code which caused the failure to the console. It may happen that such printed failure messages or stack traces expose information about the solution which should not be revealed.
+- **The reference solution should not be revealed to the user.** When an assertion fails or the test suite crashes, some testing frameworks print fragments of source code which caused the failure to the console. It may happen that such printed failure messages or stack traces expose information about the solution which should not be revealed.
 - **The reference solution shouldn't be accessible to the user solution.** It should not be possible to implement the user solution as an alias or wrapper around the reference solution. The reference solution should be completely inaccessible outside the submit tests. In particular, it should not be a global and/or public function.
 Chek the [reference page for your language](/languages/) to see how to prevent this problem in your tests.
 
@@ -76,7 +76,7 @@ Some kata require solutions to be fast enough. For example, the author may only 
 - If the difficulty of a kata is roughly proportional to the size of the input, it's usually **better to have a few tests with large input rather than many with small inputs.** For example, 200 tests with huge numbers or arrays is usually better than 10,000 tests with small ones (but see remarks on size of inputs above).
 - **The difference between accepted and rejected solutions should be easy to spot.** Ideally, accepted solutions should complete well under the time limit, while rejected solutions should time out consistently. Otherwise, you risk that solutions with valid complexity characteristics will time out, and users will be frustrated looking for micro-optimizations. This approach usually calls for very large inputs, so be careful!
 - **Performance tests should be consistent between runs.** It should not happen that one and the same solution sometimes passes, and sometimes fails, depending on randomized inputs.
-- When you are going to reject solutions based on their performance, **make sure that what you measure is what you want**. It's possible that most of the available time will be consumed not by user solution, but, for example, by your input generators, or reference solution. Make sure that poor performance of your test suite does not affect the final decision whether the submitted solution is performant enough or not!
+- **Make sure that what you measure is what you want**, when solutions are to be rejected based on their performance. With huge inputs, the random generation may be more time-consuming than the computation of the expected result. Hence the overall timing indication in the output panel is generally useless to ensure that the performance tests are actually discriminating the different kinds of solutions as expected. The evaluation of the time actually used by the user's solution should be done (and compared to the reference solution if any) excluding the input generation time.
 
 ## Tests with Additional Restrictions
 
