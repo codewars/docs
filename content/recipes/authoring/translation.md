@@ -11,7 +11,7 @@ This article contains a set of guidelines, which can be used by translators to c
 
 The guidelines should be used by translators and reviewers to verify whether translations about to be introduced into Codewars are of sufficient quality. Conformance with them should be verified before the translation is published and before it's approved.
 
-Failing to comply with the below guidelines should be reported as an issue or a comment requesting for a fix. In case of severe violations, affected translation can be rejected, or even deleted.
+Failure to comply with the below guidelines is considered an issue and should be reported as such. In case of severe violations, the affected translation can be rejected or even deleted.
 
 ## General translation guidelines
 
@@ -26,7 +26,7 @@ Failing to comply with the below guidelines should be reported as an issue or a 
 
 A translation should not substantially change the overall idea of the kata. It should be as consistent as possible with the original version in terms of difficulty, required performance, and overall composition. In particular:
 
-- **Respect the performance requirements of the kata.** If, for example, it's agreed that kata should accept only (sub)linear solutions, make sure that translated tests reject solutions of higher computational complexity. Languages and runtimes differ in terms of performance, so increase/decrease amount of test cases and input ranges when necessary.
+- **Respect the performance requirements of the kata.** If, for example, it's agreed that the kata should accept only (sub)linear solutions, make sure that the translated tests reject solutions of higher computational complexity. Languages and runtimes differ in terms of performance, so increase/decrease the amount of test cases and input ranges accordingly.
 - If possible, your translation should hold to the **original author's idea**. In case of doubts, you can always ask them for opinions, or use the initial language version as a baseline. However, especially for older kata, it may happen that the initial version (and other older versions) are outdated, and the concept of the kata evolved. You can ask kata contributors or other users for opinion and ideas on how to proceed.
 - **Avoid translations to languages which cannot support the idea of the kata.** For example, there's no use in translating a big integer arithmetic kata to Python, which supports arbitrary precision integers natively. Do not translate kata into languages where the difficulty would significantly differ: from high level languages to NASM or BF, or into languages where the kata can be solved with easy to use, advanced features of the standard library (or other available libraries).
 
