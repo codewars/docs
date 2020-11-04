@@ -17,8 +17,8 @@ Failing to comply with the below guidelines should be reported as an issue or a 
 
 - **Respect the [General Content Guidelines](/recipes/authoring/general/).**
 - **Translations should improve the overall quality of the kata.** The sub-optimal quality of existing, approved translations should not be used as an excuse for authoring a low-quality translation. In particular:
-- The description can be clarified if necessary.
-  - Test suite can use different structure than other translations. **[Random tests](/recipes/authoring/kata-snippets/full-tests/#random-tests), [full test suite](/recipes/authoring/kata-snippets/full-tests/) and  [sample tests](/recipes/authoring/kata-snippets/sample-tests/) should conform to Codewars quality guidelines.**
+  - The description can be clarified if necessary.
+- The test suite may employ a different structure from that of other translations. **The [sample](/recipes/authoring/kata-snippets/sample-tests/) and [submit](/recipes/authoring/kata-snippets/full-tests/) tests (including [random tests](/recipes/authoring/kata-snippets/full-tests/#random-tests)) should conform to Codewars quality guidelines.**
 - If serious issues with other language versions are uncovered in the course of authoring a translation, they should be fixed or raised as appropriate issues in the kata discourse.
 
 
@@ -41,7 +41,7 @@ Translation should not substantially change overall idea of the kata. It should 
 
 ## Code components
 
-- **Respect [General Coding Guidelines](/recipes/authoring/kata-snippets/coding-general/), coding guidelines of your [language](/languages/), and guidelines specific for particular kata code components** ([sample tests](/recipes/authoring/kata-snippets/sample-tests/), [full test suite](/recipes/authoring/kata-snippets/full-tests/), [preloaded code](/recipes/authoring/kata-snippets/preloaded/) and [proposed solution](/recipes/authoring/kata-snippets/proposed-solution/)).
+- **Respect the [General Coding Guidelines](/recipes/authoring/kata-snippets/coding-general/), any conventions imposed by your [language](/languages/) and guidelines specific to each component of the kata**, e.g. the [preloaded](/recipes/authoring/kata-snippets/preloaded/) section, [complete solution](/recipes/authoring/kata-snippets/proposed-solution/), [sample tests](/recipes/authoring/kata-snippets/sample-tests/) and [submit tests](/recipes/authoring/kata-snippets/full-tests/).
 - If possible, **sample tests and fixed tests should remain consistent between translations.** It may not always be feasible due to inherent differences in programming languages, but doing so can save follow-up questions on the language a user is attempting the kata in when a question on failing tests is raised in the kata discourse.
 - Sometimes, description is not the best place to put some language specific information. For example, translator wants to add some information on arguments, data formats, memory management, etc. and keep the description language-agnostic at the same time. In such cases, it's allowed to put such information as an explanatory comment in "solution setup" snippet. 
 
