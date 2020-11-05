@@ -50,20 +50,11 @@
   }
 }
 
-/* Required to show the heading below the fixed header on anchor navigation.
- * https://stackoverflow.com/a/38106970
+/* Prevent the sticky header from covering the element scrolled to.
+ * The margin should be greater than the height of the sticky header.
  */
-h1,
-h2,
-h3,
-h4,
-div,
-strong {
-  &[id]::before {
-    content: "";
-
-    @apply invisible block -mt-16 h-16;
-  }
+[id] {
+  scroll-margin-top: 4rem;
 }
 
 @tailwind utilities;
