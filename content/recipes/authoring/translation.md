@@ -43,7 +43,7 @@ A translation should not substantially change the overall idea of the kata. It s
 
 - **Respect the [General Coding Guidelines](/recipes/authoring/kata-snippets/coding-general/), any conventions imposed by your [language](/languages/) and guidelines specific to each component of the kata**, e.g. the [preloaded](/recipes/authoring/kata-snippets/preloaded/) section, [reference solution](/recipes/authoring/kata-snippets/reference-solution/), [sample tests](/recipes/authoring/kata-snippets/sample-tests/) and [submission tests](/recipes/authoring/kata-snippets/full-tests/).
 - If possible, **sample tests and fixed tests should remain consistent between translations.** It may not always be feasible due to inherent differences in programming languages, but doing so can save follow-up questions on the language a user is attempting the kata in when a question on failing tests is raised in the kata discourse.
-- Sometimes, the description is not the best place to put some language specific information. For example, the translator may wish to add some information on arguments, data formats, memory management, etc. and keep the description language-agnostic at the same time. In such cases, it's allowed to put such information as an explanatory comments in the solution setup.
+- Sometimes, the description is not the best place to put some language specific information. For example, the translator may wish to add some information on arguments, data formats, memory management, etc. and keep the description language-agnostic at the same time. In such cases, it's allowed to put such information as an explanatory comment in the solution setup.
 
 
 ## Review process
