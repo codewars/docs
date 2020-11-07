@@ -7,7 +7,7 @@ next: /recipes/authoring/kata-snippets/reference-solution/
 
 # Writing Preloaded Code
 
-Reference Solution snippet, created by kata athor or translator, can be used to reduce boilerplate code, but when used incorrectly, it can cause lots of problems. To help keep kata quality good, it should conform to a set of guidelines presented below.
+Preloaded Code snippet, created by kata athor or translator, can be used to reduce boilerplate code, but when used incorrectly, it can cause lots of problems. To help keep kata quality good, it should conform to a set of guidelines presented below.
 
 This article contains a set of guidelines for kata authors and translators to create good code snippets for their kata. They were collected to help ensure that kata and translations are of sufficient quality and kata maintenance will be as easy as possible.
 
