@@ -1,8 +1,8 @@
 ---
 kind: recipe
 sidebar: authoring
-prev: /recipes/authoring/kata-snippets/submission-tests/
-next: /recipes/authoring/kata-snippets/proposed-solution/
+prev: /recipes/authoring/kata-snippets/full-tests/
+next: /recipes/authoring/kata-snippets/reference-solution/
 ---
 
 # Writing Preloaded Code
