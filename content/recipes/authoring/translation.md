@@ -18,8 +18,8 @@ Failure to comply with the below guidelines is considered an issue and should be
 - **Respect the [General Content Guidelines](/recipes/authoring/general/).**
 - **Translations should improve the overall quality of the kata.** The sub-optimal quality of existing, approved translations should not be used as an excuse for authoring a low-quality translation. In particular:
   - The description can be clarified if necessary.
-- The test suite may employ a different structure from that of other translations. **The [sample](/recipes/authoring/kata-snippets/sample-tests/) and [submission](/recipes/authoring/kata-snippets/full-tests/) tests (including [random tests](/recipes/authoring/kata-snippets/full-tests/#random-tests)) should conform to Codewars quality guidelines.**
-- If serious issues with other language versions are uncovered in the course of authoring a translation, they should be fixed or raised as appropriate issues in the kata discourse.
+  - The test suite may employ a different structure from that of other translations. **The [sample](/recipes/authoring/kata-snippets/sample-tests/) and [submission](/recipes/authoring/kata-snippets/full-tests/) tests (including [random tests](/recipes/authoring/kata-snippets/full-tests/#random-tests)) should conform to Codewars quality guidelines.**
+  - If serious issues with other language versions are uncovered in the course of authoring a translation, they should be fixed or raised as appropriate issues in the kata discourse.
 
 
 ## Conformance to overall kata idea
