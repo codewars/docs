@@ -1,7 +1,7 @@
 ---
 kind: recipe
 sidebar: authoring
-prev: /recipes/authoring/kata-snippets/full-tests/
+prev: /recipes/authoring/kata-snippets/submission-tests/
 next: /recipes/authoring/kata-snippets/proposed-solution/
 ---
 
