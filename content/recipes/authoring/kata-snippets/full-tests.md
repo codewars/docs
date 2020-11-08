@@ -51,7 +51,7 @@ Some test suites require a reference solution to generate the expected value(s) 
 Fixed tests are tests with predetermined inputs and outputs, and do not change between test runs.
 
 - **Each requirement should have a corresponding fixed test.** Every aspect of the specification in the kata description should be explicitly tested with at least one, possibly more, dedicated and properly labeled assertion(s). Fixed tests are usually easier to debug, so ideally a fixed test should fail before the corresponding scenario is tested with random tests.
-- **Tests should check not only valid inputs but also invalid inputs and edge cases if the problem allows them**. `null` inputs, empty arrays, empty strings, etc. should all be tested with fixed tests, unless the kata description _explicitly_ states that such inputs need not be considered. Random tests are not a replacement for carefully designed assertions for edge cases.
+- **Tests should check the solution with edge cases and cases that require special handling.** For example, empty arrays and empty strings should be covered by fixed tests unless the kata description _explicitly_ states that such inputs need not be considered.
 
 
 ## Random Tests
