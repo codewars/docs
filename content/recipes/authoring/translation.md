@@ -22,7 +22,7 @@ Failure to comply with the below guidelines is considered an issue and should be
   - If serious issues with other language versions are uncovered in the course of authoring a translation, they should be fixed or raised as appropriate issues in the kata discourse.
 
 
-## Conformance to overall kata idea
+## Conformity to overall kata idea
 
 A translation should not substantially change the overall idea of the kata. It should be as consistent as possible with the original version in terms of difficulty, required performance, and overall composition. In particular:
 
