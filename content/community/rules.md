@@ -13,6 +13,8 @@ As a worldwide community, diversity is one of our huge strengths, but it can als
 
 This isn't an exhaustive list of things that you can't do. Rather, take it in the spirit in which it's intended — a guide to make it easier to be excellent to each other. We expect it to be followed in spirit as much as in the letter.
 
+## Rules
+
 **Be considerate.** Codewars may have "war" in the name but it is actually a respectful and polite community. You will be interacting with users from across the globe, who have different personal opinions and come from different backgrounds and cultures. We are all here for the same thing, to learn and improve. The Codewars community has developers of all skill levels actively participating on the site and in discussions. If you are an experienced programmer, remember that others may not be. We are all learning, we just may be at different stages in that process.
 
 **Be patient.** This mostly applies to forums, mailing lists, and code contributions (i.e. asynchronous forms of communication). It is possible that your question or code contribution or suggestion might not receive an immediate response. Be patient and consider the norms of the community. One reminder ping is welcome, many reminder pings in rapid succession are not a good display of patience. Similarly, posting the same question in multiple threads is frowned upon and should not be done.
@@ -26,6 +28,7 @@ Be nice. Everyone in the Codewars community should feel welcome, regardless of t
 **Please do not post your solutions on Github**. We realize you would like to use these challenges as your resume, but you should have side-projects for that. If a Code Warrior is unable to find a solution online, then they are further encouraged to complete the task themselves - which will enable them to get more value out of their time spent. 
 
 ## Policy
+
 Harassment includes offensive verbal comments related to gender, age, sexual orientation, disability, physical appearance, body size, race, religion, intelligence, professional experience, or contributed content. Any form of deliberate intimidation and stalking will also be considered harassment. 
 
 Participants asked to stop any harassing behavior are expected to comply immediately. If any content is found with inappropriate content it will be taken down. 
