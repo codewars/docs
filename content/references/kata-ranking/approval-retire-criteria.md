@@ -9,11 +9,11 @@ kind: reference
 As an author gets more katas approved, they become established as an experienced kata maker, and less votes will be needed for their future kata to be approved. The following table lists the requirements for a beta kata to be able to be approved:
 
 <table>
-<thead>
+<thead align="center">
 <tr>
-<th>Average assessed rank</th>
+<th align="left">Average assessed rank</th>
 <th>Required satisfaction %</th>
-<th colspan="4">Required votes (by # of author's approved kata)</th>
+<th colspan="4">Required votes<br>(by number of author's approved kata)</th>
 </tr>
 <tr>
 <th></th>
@@ -24,7 +24,7 @@ As an author gets more katas approved, they become established as an experienced
 <th>30+</th>
 </tr>
 </thead>
-<tbody>
+<tbody align="center">
 <tr>
 <td>White</td>
 <td>80+</td>
@@ -74,7 +74,7 @@ To be able to approve a kata, the user needs to have [`Approve Kata` privilege](
 
 Low quality kata are automatically retired. Current rules are:
 
-1. If 4 or more votes and satisfaction percent is `0` (4+ consecutive "Not Satisfied" as the only votes)
+1. If 4 or more votes and satisfaction percent is `0` (4+ consecutive "Not Satisfied" as the only votes)  
 1. If a kata collected enough votes to be approved (see above) and the satisfaction rate is less than or equal to the half of the required satisfaction.
 
 This feature needs improvement and any feedback is appreciated. Please comment on [#1672](https://github.com/codewars/codewars.com/issues/1672).
