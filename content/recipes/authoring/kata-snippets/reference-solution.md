@@ -4,9 +4,9 @@ sidebar: authoring
 prev: /recipes/authoring/kata-snippets/preloaded/
 ---
 
-# Writing Reference Solution
+# Writing a Reference Solution
 
-Reference Solution snippet, created by kata athor or translator, has a very important role in kata maintenance process. To help keep kata quality good, it should conform to a set of guidelines presented below. 
+The reference solution snippet, created by the kata author or translator, has a very important role in the kata maintenance process. To help keep kata quality good, it should conform to a set of guidelines presented below. 
 
 This article contains a set of guidelines for kata authors and translators to create good code snippets for their kata. They were collected to help ensure that kata and translations are of sufficient quality and kata maintenance will be as easy as possible.
 
