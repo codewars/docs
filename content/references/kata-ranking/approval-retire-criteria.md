@@ -73,7 +73,6 @@ To be able to approve a kata, the user needs to have [`Approve Kata` privilege](
 ## Auto-Retire
 
 Low quality kata are automatically retired. Current rules are:
-
 1. If 4 or more votes and satisfaction percent is `0` (4+ consecutive "Not Satisfied" as the only votes)
 1. If a kata collected enough votes to be approved (see above) and the satisfaction rate is less than or equal to the half of the required satisfaction.
 
