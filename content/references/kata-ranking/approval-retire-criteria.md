@@ -9,9 +9,9 @@ kind: reference
 As an author gets more katas approved, they become established as an experienced kata maker, and less votes will be needed for their future kata to be approved. The following table lists the requirements for a beta kata to be able to be approved:
 
 <table>
-<thead align="center">
+<thead align="right">
 <tr>
-<th>Average assessed rank</th>
+<th align="left">Average assessed rank</th>
 <th>Required satisfaction %</th>
 <th colspan="4">Required votes<br>(by number of author's approved kata)</th>
 </tr>
@@ -24,9 +24,9 @@ As an author gets more katas approved, they become established as an experienced
 <th>30+</th>
 </tr>
 </thead>
-<tbody align="center">
+<tbody align="right">
 <tr>
-<td>White</td>
+<td align="left">White</td>
 <td>80+</td>
 <td>12</td>
 <td>10</td>
@@ -34,7 +34,7 @@ As an author gets more katas approved, they become established as an experienced
 <td>6</td>
 </tr>
 <tr>
-<td>Yellow</td>
+<td align="left">Yellow</td>
 <td>80+</td>
 <td>10</td>
 <td>8</td>
@@ -42,7 +42,7 @@ As an author gets more katas approved, they become established as an experienced
 <td>5</td>
 </tr>
 <tr>
-<td>Blue</td>
+<td align="left">Blue</td>
 <td>75+</td>
 <td>8</td>
 <td>6</td>
@@ -50,7 +50,7 @@ As an author gets more katas approved, they become established as an experienced
 <td>4</td>
 </tr>
 <tr>
-<td>Purple</td>
+<td align="left">Purple</td>
 <td>70+</td>
 <td>5</td>
 <td>4</td>
