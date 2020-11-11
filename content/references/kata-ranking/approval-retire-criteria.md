@@ -10,7 +10,7 @@ As an author gets more katas approved, they become established as an experienced
 
 <table>
 <thead>
-<tr>
+<tr aligne="center">
 <th>Average assessed rank</th>
 <th>Required satisfaction %</th>
 <th colspan="4">Required votes<br>(by number of author's approved kata)</th>
