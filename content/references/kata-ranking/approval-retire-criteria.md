@@ -15,7 +15,7 @@ As an author gets more katas approved, they become established as an experienced
 <th>Required satisfaction %</th>
 <th colspan="4">Required votes (by # of author's approved kata)</th>
 </tr>
-<tr>
+<tr align="center">
 <th></th>
 <th></th>
 <th>&lt;10</th>
@@ -27,35 +27,35 @@ As an author gets more katas approved, they become established as an experienced
 <tbody>
 <tr>
 <td>White</td>
-<td>80+</td>
-<td>12</td>
-<td>10</td>
-<td>8</td>
-<td>6</td>
+<td align="right">80+</td>
+<td align="right">12</td>
+<td align="right">10</td>
+<td align="right">8</td>
+<td align="right">6</td>
 </tr>
 <tr>
 <td>Yellow</td>
-<td>80+</td>
-<td>10</td>
-<td>8</td>
-<td>7</td>
-<td>5</td>
+<td align="right">80+</td>
+<td align="right">10</td>
+<td align="right">8</td>
+<td align="right">7</td>
+<td align="right">5</td>
 </tr>
 <tr>
 <td>Blue</td>
-<td>75+</td>
-<td>8</td>
-<td>6</td>
-<td>5</td>
-<td>4</td>
+<td align="right">75+</td>
+<td align="right">8</td>
+<td align="right">6</td>
+<td align="right">5</td>
+<td align="right">4</td>
 </tr>
 <tr>
 <td>Purple</td>
-<td>70+</td>
-<td>5</td>
-<td>4</td>
-<td>3</td>
-<td>3</td>
+<td align="right">70+</td>
+<td align="right">5</td>
+<td align="right">4</td>
+<td align="right">3</td>
+<td align="right">3</td>
 </tr>
 </tbody>
 </table>
@@ -73,7 +73,8 @@ To be able to approve a kata, the user needs to have [`Approve Kata` privilege](
 ## Auto-Retire
 
 Low quality kata are automatically retired. Current rules are:
-1. If 4 or more votes and satisfaction percent is `0` (4+ consecutive "Not Satisfied" as the only votes)
+
+1. If 4 or more votes and satisfaction percent is `0` (4+ consecutive "Not Satisfied" as the only votes)  
 1. If a kata collected enough votes to be approved (see above) and the satisfaction rate is less than or equal to the half of the required satisfaction.
 
 This feature needs improvement and any feedback is appreciated. Please comment on [#1672](https://github.com/codewars/codewars.com/issues/1672).
