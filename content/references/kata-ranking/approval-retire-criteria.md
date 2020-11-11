@@ -11,9 +11,9 @@ As an author gets more katas approved, they become established as an experienced
 <table>
 <thead>
 <tr>
-<th>Level</th>
+<th>Average assessed rank</th>
 <th>Required satisfaction %</th>
-<th colspan="4">Required amount of votes (by # of author's approved kata)</th>
+<th colspan="4">Required votes (by # of author's approved kata)</th>
 </tr>
 <tr>
 <th></th>
@@ -60,11 +60,20 @@ As an author gets more katas approved, they become established as an experienced
 </tbody>
 </table>
 
+To determine whether a kata is eligible for approval, following procedure is used:
+1. There should be no pending issues.
+2. `votes count` is calculated as total amount of satisfaction votes cast on a kata.
+3. `votes score` is calculated as sum of votes multiplied by [voting power](/references/gamification/privileges/) multiplier of a user cating a vote.
+4. `required votes` and minimum satisfaction rating are determined from the table above.
+5. Kata is approvable, when requirement for minimum satisfaction rating is met, and one of following is satisfied: `votes count >= required votes` or `votes count >= 3 AND votes score >= required votes`.
+
+To be able to approve a kata, user needs to have [`Approve Kata` privilege](/references/gamification/privileges/).
+
 ## Auto-Retire
 
 Low quality kata are automatically retired. Current rules are:
 
 1. If 4 or more votes and satisfaction percent is `0` (4+ consecutive "Not Satisfied" as the only votes)
-2. If kata collected enough votes to be approved or more (see table above), and satisfaction percent is less than or equal to the half of the required satisfaction.
+2. If kata collected enough votes to be approved or more (see above), and satisfaction percent is less than or equal to the half of the required satisfaction.
 
 This feature needs improvement and any feedback is appreciated. Please comment on [#1672](https://github.com/codewars/codewars.com/issues/1672).
