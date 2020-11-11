@@ -13,7 +13,7 @@ As an author gets more katas approved, they become established as an experienced
 <tr>
 <th>Average assessed rank</th>
 <th>Required satisfaction %</th>
-<th colspan="4">Required votes (by # of author's approved kata)</th>
+<th colspan="4">Required votes<br>(by number of author's approved kata)</th>
 </tr>
 <tr align="center">
 <th></th>
@@ -27,35 +27,35 @@ As an author gets more katas approved, they become established as an experienced
 <tbody>
 <tr>
 <td>White</td>
-<td align="right">80+</td>
-<td align="right">12</td>
-<td align="right">10</td>
-<td align="right">8</td>
-<td align="right">6</td>
+<td align="center">80+</td>
+<td align="center">12</td>
+<td align="center">10</td>
+<td align="center">8</td>
+<td align="center">6</td>
 </tr>
 <tr>
 <td>Yellow</td>
-<td align="right">80+</td>
-<td align="right">10</td>
-<td align="right">8</td>
-<td align="right">7</td>
-<td align="right">5</td>
+<td align="center">80+</td>
+<td align="center">10</td>
+<td align="center">8</td>
+<td align="center">7</td>
+<td align="center">5</td>
 </tr>
 <tr>
 <td>Blue</td>
-<td align="right">75+</td>
-<td align="right">8</td>
-<td align="right">6</td>
-<td align="right">5</td>
-<td align="right">4</td>
+<td align="center">75+</td>
+<td align="center">8</td>
+<td align="center">6</td>
+<td align="center">5</td>
+<td align="center">4</td>
 </tr>
 <tr>
 <td>Purple</td>
-<td align="right">70+</td>
-<td align="right">5</td>
-<td align="right">4</td>
-<td align="right">3</td>
-<td align="right">3</td>
+<td align="center">70+</td>
+<td align="center">5</td>
+<td align="center">4</td>
+<td align="center">3</td>
+<td align="center">3</td>
 </tr>
 </tbody>
 </table>
