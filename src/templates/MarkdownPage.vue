@@ -160,6 +160,7 @@ const findPage = (path) => {
 
 <style>
 @import "prism-themes/themes/prism-material-oceanic.css";
+@import "gridsome-plugin-remark-container/themes/classic.css";
 
 code[class*="language-"],
 pre[class*="language-"] {

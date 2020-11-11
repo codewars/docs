@@ -140,7 +140,11 @@ module.exports = {
         remark: {
           externalLinksTarget: "_blank",
           externalLinksRel: ["noopener", "noreferrer"],
-          plugins: ["remark-attr", "@gridsome/remark-prismjs"],
+          plugins: [
+            "remark-attr",
+            "@gridsome/remark-prismjs",
+            "gridsome-plugin-remark-container",
+          ],
         },
         refs: {
           // Each documentation should belong to a single kind.
