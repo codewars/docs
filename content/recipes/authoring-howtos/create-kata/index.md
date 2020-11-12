@@ -2,7 +2,7 @@
 kind: recipe
 ---
 
-# Creating a kata
+# Creating a Kata
 
 TBD
 
