@@ -2,7 +2,7 @@
 kind: recipe
 ---
 
-# Creating a translation
+# Creating a Translation
 
 _TBD: this page was imported from old CW wiki and needs to be reviewied/redacted._
 

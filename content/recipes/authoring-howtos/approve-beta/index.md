@@ -2,7 +2,7 @@
 kind: recipe
 ---
 
-# Approving a beta kata
+# Approving a Beta Kata
 
 TBD
 

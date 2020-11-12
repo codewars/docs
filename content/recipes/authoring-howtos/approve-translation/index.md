@@ -2,7 +2,7 @@
 kind: recipe
 ---
 
-# Approving a translation
+# Approving a Translation
 
 TODO:
 
