@@ -2,13 +2,18 @@
 kind: recipe
 ---
 
-# Reviewing a translation
+# Approving a translation
 
 TODO:
 
+- how to review
+  - verify guidelines
+- conditions for translation being approvable
 - reviewing issues
-- checking consistency
-- reading code
+- discussion
+- how to approve
+- grounds for rejection
+- further maintenance
 
 _TBD: this page was imported from old CW wiki and needs to be reviewied/redacted._
 
