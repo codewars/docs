@@ -7,35 +7,7 @@ next: /recipes/authoring/kata-snippets/coding-general/
 
 # Writing a Kata Description
 
-Kata description, created by the kata author, is a crucial part of every kata presenting the task and all requirements ot a user attempting it. Descriptions have to be written with a special attention, because bad descriptions are one of the most common reasons for a bad user experience with a kata. To ensure the quality of the kata, it should conform to a set of guidelines presented below.
-
-This article contains a set of guidelines for kata authors and translators to create good descriptions for their kata. They were collected to help ensure that kata and translations are of sufficient quality and user experience will be as good as possible.
-
-The guidelines should be used by kata authors, translators and reviewers to verify whether new content about to be introduced to Codewars is of sufficient quality. Conformance with them should be verified before a kata or translation is published by its author and approved by a reviewer.
-
-:::tip Important note
-Failure to comply with the below guidelines should be considered an issue to be addressed and reported as such. In case of severe violations, the affected kata or translation may be retired, moved back to beta or rejected.
-:::
-
-:::note Important note
-Failure to comply with the below guidelines should be considered an issue to be addressed and reported as such. In case of severe violations, the affected kata or translation may be retired, moved back to beta or rejected.
-:::
-
-:::details Important note
-Failure to comply with the below guidelines should be considered an issue to be addressed and reported as such. In case of severe violations, the affected kata or translation may be retired, moved back to beta or rejected.
-:::
-
-:::important Important note
-Failure to comply with the below guidelines should be considered an issue to be addressed and reported as such. In case of severe violations, the affected kata or translation may be retired, moved back to beta or rejected.
-:::
-
-:::warning Important note
-Failure to comply with the below guidelines should be considered an issue to be addressed and reported as such. In case of severe violations, the affected kata or translation may be retired, moved back to beta or rejected.
-:::
-
-:::danger Important note
-Failure to comply with the below guidelines should be considered an issue to be addressed and reported as such. In case of severe violations, the affected kata or translation may be retired, moved back to beta or rejected.
-:::
+Kata description, created by the kata author, is a crucial part of every kata, presenting the task and all requirements to a user attempting it. Descriptions have to be written with a special attention, because bad descriptions are one of the most common reasons for a bad user experience with a kata. To ensure the quality of the kata, its description should conform to a set of guidelines presented below.
 
 ## General
 
