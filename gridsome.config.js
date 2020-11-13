@@ -121,7 +121,7 @@ module.exports = {
               "/recipes/authoring/kata-snippets/description/",
               "/recipes/authoring/kata-snippets/coding-general/",
               "/recipes/authoring/kata-snippets/sample-tests/",
-              "/recipes/authoring/kata-snippets/full-tests/",
+              "/recipes/authoring/kata-snippets/submission-tests/",
               "/recipes/authoring/kata-snippets/preloaded/",
               "/recipes/authoring/kata-snippets/reference-solution/",
             ],
@@ -140,7 +140,11 @@ module.exports = {
         remark: {
           externalLinksTarget: "_blank",
           externalLinksRel: ["noopener", "noreferrer"],
-          plugins: ["remark-attr", "@gridsome/remark-prismjs"],
+          plugins: [
+            "remark-attr",
+            "@gridsome/remark-prismjs",
+            "gridsome-plugin-remark-container",
+          ],
         },
         refs: {
           // Each documentation should belong to a single kind.

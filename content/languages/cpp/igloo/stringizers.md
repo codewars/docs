@@ -9,11 +9,11 @@ tags:
 
 # Adding Custom Stringizers
 
-**NOTE:** code snippets in this article omit `#include` directives for brevity. You must remember about including required header files!
+**NOTE:** code snippets in this article omit `#include` directives for brevity. You must remember to include the required header files!
 
 ## `[unsupported type]` displayed in assertion messages
 
-C++ kata currently use [Igloo](https://github.com/joakimkarlsson/igloo) testing framework with [Snowhouse](https://github.com/banditcpp/snowhouse) assertions library to run kata tests and verify test results. Known headache related to Snowhouse library is that, sometimes, it produces very unhelpful assertion messages:
+C++ kata currently use the [Igloo](https://github.com/joakimkarlsson/igloo) testing framework with the [Snowhouse](https://github.com/banditcpp/snowhouse) assertion library to run kata tests and verify test results. Known headaches related to Snowhouse is that it sometimes produces very unhelpful assertion messages:
 
 ```
   does_not_pretty_print_type_without_stringizer
@@ -21,7 +21,7 @@ C++ kata currently use [Igloo](https://github.com/joakimkarlsson/igloo) testing 
     Actual: [ [unsupported type], [unsupported type] ]
 ```
 
-Such situation occurs when your tests perform some assertions on types which have not defined the operation of stringification, which could be used by the Snowhouse framework to conveniently compose the assertion message:
+Such a situation occurs when your tests perform some assertions on types which have not defined the operation of stringification, which could be used by the Snowhouse framework to conveniently compose the assertion message:
 
 ```cpp
 //your custom type:
@@ -41,7 +41,7 @@ It(does_not_pretty_print_type_without_stringizer)
 }
 ```
 
-Type `Point1d` cannot be stringified, so assertion message displayed in test output panel is very confusing:
+Type `Point1d` cannot be stringified, so the assertion message displayed in the test output panel is very confusing:
 
 ```
   does_not_pretty_print_type_without_stringizer
@@ -49,7 +49,7 @@ Type `Point1d` cannot be stringified, so assertion message displayed in test out
     Actual: [unsupported type]
 ```
 
-Very similar thing happens when assertion verifies collections (for example `std::vector`) of such types. While `std::vector` template itself can be stringified, elements stored inside might be not:
+A similar thing happens when an assertion verifies collections (for example `std::vector`) of such types. While the `std::vector` template itself can be stringified, elements stored inside might not:
 
 ```cpp
 //assertion in test:
@@ -68,17 +68,17 @@ Test output:
     Actual: [ [unsupported type], [unsupported type] ]
 ```
 
-Not only your custom types can be affected by this issue. Snowhouse may be not able to stringify many built-in, standard, or 3rd party types. Basically, every type which does not define its version of output stream operator (`operator <<`) is affected, and `std::pair` template is a very common case of such type for Codewars kata.
+Not only your custom types can be affected by this issue. Snowhouse may be not able to stringify many built-in, standard, or 3rd party types. Basically, every type which does not define its version of the output stream operator (`operator <<`) is affected, and the `std::pair` template is a very common case of such types for Codewars kata.
 
 ## Solutions
 
-To make a stringification of unsupported types possible, you have to provide one (or both) of code snippets: definition of `operator <<` for your type, or specialization of `snowhouse::Stringizer<T>` template. Snippets should be located just where your custom types are, usually in **Preloaded** part.
+To make a stringification of unsupported types possible, you have to provide one (or both) of code snippets: definition of `operator <<` for your type, or specialization of `snowhouse::Stringizer<T>` template. Snippets should be located just where your custom types are, usually in **Preloaded**.
 
 ### Stringification with `operator <<`
 
 `operator <<` is the easiest option to provide stringification, but it can be used only with types you control. You can add `operator <<` for types you created for the kata, but not for 3rd party, external, or standard types, like for example `std::pair`. For them, you have to use specialized `Stringizer<T>` ([see below](#stringification-with-stringizert)).
 
-Definition of `operator <<` for Snowhouse does not differ from implementation of any other output stream operator for C++ types:
+Definition of `operator <<` for Snowhouse does not differ from the implementation of any other output stream operator for C++ types:
 
 ```cpp
 //Preloaded section
@@ -99,7 +99,7 @@ std::ostream& operator<<(std::ostream& stream, const Point2d& a)
 }
 ```
 
-Such definition causes that your custom type is now displayed properly, even if it's an element of a container:
+Such definition allows your custom type to now be displayed properly, even if it's an element of a container:
 
 ```cpp
 //Tests
@@ -133,7 +133,7 @@ Now your custom types are displayed properly in assertion messages:
 
 ### Stringification with `Stringizer<T>`
 
-Sometimes, definition of `operator <<` cannot be used for stringification. You cannot add it to types which you do not own, or you cannot re-define it for types which already have it defined, but not in a way you'd like to. Or maybe you just prefer this way rather than `operator <<`. In such cases, Snowhouse framework allows you to use a `snowhouse::Stringizer<T>` template specialized for the type you want to stringify.
+Sometimes, the definition of `operator <<` cannot be used for stringification. You cannot add it to types which you do not own and you cannot re-define it for types which already have it defined, but not in a way you'd like to. Or maybe you just prefer this way rather than `operator <<`. In such cases, Snowhouse allows you to use a `snowhouse::Stringizer<T>` template specialized for the type you want to stringify.
 
 ```cpp
 
