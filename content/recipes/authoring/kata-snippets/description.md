@@ -29,7 +29,7 @@ When questions or requests for improvements, clarifications, or examples pop up 
   - additional notes, explanations, technical details, follow-ups.  
 Above is just an example; not all sections are necessary if not applicable, and authors can use another structure if they like. However, related pieces of information should be together: explaining inputs in 3-4 different places isn't a good idea.
 - **Descriptions should be consise, but precise.** Description of a task should be possibly short, because long descriptions suggest that task is either not very well defined, or is very complex. Fabularized or themed descriptions are OK as long as they don't get in a way of understanding the problem.
-- It's usually recommended to describe general aspects first, and then go further into details, edge cases, and finally, exceptions. Descriptions structured this way are usually easier to follow.
+- It's usually recommended to describe general aspects first, and then go further into details, edge cases and explanations of how malformed input should be handled, if applicable. Descriptions structured this way are usually easier to follow.
 
 
 ## Requirements
@@ -52,7 +52,7 @@ Above is just an example; not all sections are necessary if not applicable, and 
 
 ## Other
 
-- **Description can contain links and references** to external sources of knowledge, articles, honts, explanations, papers.
+- **Description can contain links and references** to external sources of knowledge, articles, explanations and papers. Keep in mind that external links create dependencies. Links that change over time may render a kata unusable and introduce a maintenance issue. 
 - **Description can contain links to related kata**: other variants of the task, difficulty levels, challenge versions. Links should go in both directions, for example easier kata should link to difficult one, and vice versa.
 - **Consider adding necessary preloaded code to the description.** As explained in a (related part)(/recipes/authoring/kata-snippets/preloaded/#accessibility-of-preloaded-code), preloaded code is not visible to users attempting the kata, so they cannot easily set up their local environment to work on the attempted kata. It's strongly recommended to provide everything necessary to solve the kata in a local IDE.
 - **Description should list all necessary credits** if some elements of a kata are inspired by other sources which require proper attribution. Even if it's not required, it's still a proper thing to do.
