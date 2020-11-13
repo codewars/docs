@@ -18,7 +18,7 @@ Failure to comply with the below guidelines should be considered an issue to be 
 
 ## General
 
-- Some of these guidelines do not apply to every type of kata. Use where applicable, so not use where not.
+- Some of these guidelines do not apply to every type of kata. Use where applicable, do not use where not.
 - Keep as language neutral as possible
 - Descriptions should be written in English. Proofread, ask for help if necessary.
 - Ask others if it's clear enough, consider their suggestions
@@ -37,16 +37,16 @@ Failure to comply with the below guidelines should be considered an issue to be 
 - Describe all requirements and edge cases, leave no surprises
 - Provide examples, use images when helpful. Avoid "see sample tests for more examples".
 - Describe or hint the difficulty: input ranges, volume of tests, minimum expected complexity, etc.
-
+- If some questions repeat often, redact description 
 
 ## Structure
 
 - split the description into meaningfull sections. Example:
-- overwiew/context (if needed)
-- task
-- input/output
-- rules/details
-- notes / technical details
+  - overwiew/context (if needed)
+  - task
+  - input/output
+  - rules/details
+  - notes / technical details
 - try to regroup informations of the same kind: explaining inputs specificities at 3-4 different places isn't a good idea
 - the task section must stay _**short**_. Its goal is only to give an idea about what's going on. Going right there into details will just lose the user. So stay consise but precise.
 - it's generally better to explain going from general things to details/exceptions/edge cases. Not the opposite.
