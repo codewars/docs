@@ -45,8 +45,8 @@ Above is just an example; not all sections are necessary if not applicable, and 
 
 - **Use [Markdown capabilities](/references/markdown/)** to format and structure descriptions appropriately. You can use headers and lines to introduce sections, lists and tables to collect various items, links to provide references, code markup to introduce code inline or in blocks, and basic text formatting for styling. Do not abuse it though; avoid visual noise and excessive formatting.
 - **Use proper header levels.** Do not use `# Title` to introduce sections, consider `## Second level` or `### Third level` headers for organization.
-- **Use [Sequential Code Blocks](/references/markdown/extensions/#sequential-code-blocks) for blocks of code, examples, etc.
-- **Avoid descriptions mentioning many languages.** Use [Language Conditional Rendering](/references/markdown/extensions/#conditional-rendering) for language-specific paragraphs and sections. Including multiple languages in a single sentence or paragraph (_"Return `null` for Java/C#/Scala, `None` for Python, `Nothing` for Haskell, `NULL` for C/C++, `nil` for Swift/Ruby"_) is noisy and harms description readability.
+- **Use [Sequential Code Blocks](/references/markdown/extensions/#sequential-code-blocks)** for blocks of code, examples, etc.
+- **Avoid descriptions mentioning many languages.** Use [Language Conditional Rendering](/references/markdown/extensions/#conditional-rendering) for language-specific paragraphs and sections. Including multiple languages in a single sentence or paragraph (_"Return `null` for Java/C#/Scala, `None` for Python, `Nothing` for Haskell, `NULL` for C/C++, `nil` for Swift/Ruby"_) is noisy and makes the description difficult to read, and kata difficult to maintain.
 - **Avoid HTML.** Interactions between embedded HTML and Markdown or theming are not well-defined and can break unexpectedly. HTML used for styling can give wrong results after CSS is updated or can not work well with visual themes (for example dark or light mode). HTML **can** be used as long as there's a valid purpose and the author is aware of the downsides.
 
 
