@@ -11,10 +11,11 @@ Kata description, created by the kata author, is a crucial part of every kata pr
 
 This article contains a set of guidelines for kata authors and translators to create good descriptions for their kata. They were collected to help ensure that kata and translations are of sufficient quality and user experience will be as good as possible.
 
+:::warning
 The guidelines should be used by kata authors, translators and reviewers to verify whether new content about to be introduced to Codewars is of sufficient quality. Conformance with them should be verified before a kata or translation is published by its author and approved by a reviewer.
 
 Failure to comply with the below guidelines should be considered an issue to be addressed and reported as such. In case of severe violations, the affected kata or translation may be retired, moved back to beta or rejected.
-
+:::
 
 ## General
 
