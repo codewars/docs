@@ -22,22 +22,22 @@ When questions or requests for improvements, clarifications, or examples pop up 
 ## Structure
 
 - **Description should be structured into meaningful parts**, for example:
-  - overwiew, general context, or introduction,
-  - general statement of a task user has to solve,
+  - overview, general context, or introduction,
+  - general statement of a task the user has to solve,
   - description of input and output, potentially with examples,
   - detailed rules and requirements,
   - additional notes, explanations, technical details, follow-ups.  
-Above is just an example; not all sections are necessary if not applicable, and authors can use another structure if they like. However, related pieces of information should be together: explaining inputs in 3-4 different places isn't a good idea.
-- **Descriptions should be consise, but precise.** Description of a task should be possibly short, because long descriptions suggest that task is either not very well defined, or is very complex. Fabularized or themed descriptions are OK as long as they don't get in a way of understanding the problem.
+The above is just an example; not all sections are necessary unless applicable, and authors can use another structure if they like. However, related pieces of information should be together: explaining inputs in 3-4 different places isn't a good idea.
+- **Descriptions should be concise, but precise.** The description of a task should be as short as possible, because long descriptions suggest that the task is either not very well defined, or is very complex. Descriptions accompanied with a theme or storyline are acceptable as long as they don't get in the way of understanding the problem.
 - It's usually recommended to describe general aspects first, and then go further into details, edge cases and explanations of how malformed input should be handled, if applicable. Descriptions structured this way are usually easier to follow.
 
 
 ## Requirements
 
-- **Description should clearly state all requirements** the user is expected to fulfill to complete the kata. Unless the kata is a puzzle, users should not be given test cases which enforce requirements not mentioned in the description. Description should _explicitly_, _very clearly_ state which inputs have to be handled, which inputs do not have to be considered, and how to handle exceptional situations. When a test case fails, there should always be a point in the description which would explain why the particular test failed.
+- **The description should clearly state all requirements** the user is expected to fulfil to complete the kata. Unless the kata is a puzzle, users should not be given test cases which enforce requirements not mentioned in the description. The description should _explicitly_, _unambiguously_ state which inputs have to be handled, which inputs do not have to be considered, and how to handle exceptional situations. When a test case fails, there should always be a point in the description which would explain why the particular test failed.
 - Descriptions should provide **examples of inputs and outputs for some representative scenarios**. Provide as many examples as you think necessary.
-  - **Avoid things like _"See sample tests for more examples"_**. To see sample tests, users have to enter the kata trainer, what can mark the kata as unfinished in their profile.
-  - **Use images when helpful, but prefer text if it's sufficient to communicate the idea.** Currently, Codewars does not allow attaching files to a kata which makes hosting images externally a default solution. Alternatively, a HTML image with Base-64 encoded content or an SVG can be included in the description. This is preferred because external image hosts create a dependency on another website which may become stale over time, rendering the kata unusable. Make sure that image does not break the layout of the kata page. When using images, take into consideration users with small screen widths and visual impairments.
+  - **Avoid things like _"See sample tests for more examples"_**. To see the sample tests, users have to enter the kata trainer, which marks the kata as unfinished in their profile.
+  - **Use images when helpful, but prefer text if it's sufficient to communicate the idea.** Currently, Codewars does not allow attaching files to a kata which makes hosting images externally a default solution. Alternatively, a HTML image with Base-64 encoded content or an SVG can be included in the description. This is preferred because external image hosts create a dependency on another website which may become stale over time, rendering the kata unusable. Make sure that the image does not break the layout of the kata page. When using images, take into consideration users with small screen widths and visual impairments.
 - **Describe or hint the difficulty.** It's a very frustrating experience when a user comes up with solution returning correct answers, only to find out that it times out upon submission. Provide information about input ranges, volume of tests, expected complexity class, etc. 
 
 
@@ -53,6 +53,6 @@ Above is just an example; not all sections are necessary if not applicable, and 
 ## Other
 
 - **Description can contain links and references** to external sources of knowledge, articles, explanations and papers. Keep in mind that external links create dependencies. Links that change over time may render a kata unusable and introduce a maintenance issue. 
-- **Description can contain links to related kata**: other variants of the task, difficulty levels, challenge versions. Links should go in both directions, for example easier kata should link to difficult one, and vice versa.
+- **Description can contain links to related kata**: other variants of the task, difficulty levels, challenge versions. Links should go in both directions, for example the easier kata should link to the more difficult version and vice versa.
 - **Consider adding necessary preloaded code to the description.** As explained in a (related part)(/recipes/authoring/kata-snippets/preloaded/#accessibility-of-preloaded-code), preloaded code is not visible to users attempting the kata, so they cannot easily set up their local environment to work on the attempted kata. It's strongly recommended to provide everything necessary to solve the kata in a local IDE.
 - **Description should list all necessary credits** if some elements of a kata are inspired by other sources which require proper attribution. Even if it's not required, it's still a proper thing to do.
