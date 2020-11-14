@@ -64,19 +64,17 @@ module.exports = {
             color: theme("colors.typo.low"),
           },
           "code::before": {
-            content: '""',
+            content: "none",
           },
           "code::after": {
-            content: '""',
+            content: "none",
           },
           code: {
             // color: theme("colors.gray.900"),
             color: theme("colors.typo.high"),
             borderColor: theme("colors.ui.border"),
             borderWidth: "1px",
-            padding: "0 0.15em",
-            // Fix line break within padding
-            display: "inline-block",
+            padding: theme("spacing.1"),
             borderRadius: theme("borderRadius.default"),
             fontWeight: null,
           },

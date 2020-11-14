@@ -11,10 +11,6 @@ prev: /languages/python/
 
 Codewars currently uses a [custom test framework][test-framework-repo] to test Python.
 
-The framework is automatically imported and assigned to `test`.
-
-> NOTE: It's aliased to `Test` for historical reasons, but the use is discouraged.
-
 ## Overview
 
 The test framework allowes to write named groups of tests holding other named groups of tests, containing themselves assertions.
@@ -22,6 +18,8 @@ The test framework allowes to write named groups of tests holding other named gr
 The basic setup for the tests follows this example:
 
 ```python
+import codewars_test as test
+
 @test.describe('Fixed Tests')
 def example_tests():
 
@@ -43,6 +41,10 @@ def example_tests():
 def rnd_tests():
     ...
 ```
+
+:::warning Deprecation
+The package `codewars_test` does not exist for Python older than v3.8 where the test framework is implicitly imported and assigned to `test` and `Test`. This behavior is deprecated and the explicit import is required.
+:::
 
 The above produces an output similar to the following:
 
