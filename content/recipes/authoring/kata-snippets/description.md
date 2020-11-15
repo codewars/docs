@@ -38,7 +38,7 @@ The above is just an example; not all sections are necessary unless applicable, 
 - Descriptions should provide **examples of inputs and outputs for some representative scenarios**. Provide as many examples as you think necessary.
   - **Avoid things like _"See sample tests for more examples"_**. To see the sample tests, users have to enter the kata trainer, which marks the kata as unfinished in their profile.
   - **Use images when helpful, but prefer text if it's sufficient to communicate the idea.** Currently, Codewars does not allow attaching files to a kata which makes hosting images externally a default solution. Alternatively, a HTML image with Base-64 encoded content or an SVG can be included in the description. This is preferred because external image hosts create a dependency on another website which may become stale over time, rendering the kata unusable. Make sure that the image does not break the layout of the kata page. When using images, take into consideration users with small screen widths and visual impairments.
-- **Describe or hint the difficulty.** It's a very frustrating experience when a user comes up with solution returning correct answers, only to find out that it times out upon submission. Provide information about input ranges, volume of tests, expected complexity class, etc. 
+- **Describe or hint on the difficulty.** It's a very frustrating experience when a user comes up with a solution returning the correct answers, only to find out that it times out upon submission. Provide information about input ranges, volume of tests, expected complexity class, etc.
 
 
 ## Formatting
