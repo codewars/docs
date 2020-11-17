@@ -27,14 +27,14 @@ module.exports = {
           {
             title: "Getting Started",
             items: [
-              "/getting-started/",
-              "/getting-started/registering/",
-              "/getting-started/setting-up/",
-              "/getting-started/finding-kata/",
-              "/getting-started/solving-kata/",
-              "/getting-started/kata-solved/",
-              "/getting-started/solutions/",
-              "/getting-started/community/",
+              "/training/getting-started/",
+              "/training/getting-started/registering/",
+              "/training/getting-started/setting-up/",
+              "/training/getting-started/finding-kata/",
+              "/training/getting-started/solving-kata/",
+              "/training/getting-started/kata-solved/",
+              "/training/getting-started/solutions/",
+              "/training/getting-started/community/",
             ],
           },
         ],
@@ -104,26 +104,24 @@ module.exports = {
       {
         name: "authoring",
         sections: [
+          // TODO Tutorials
+          // {
+          //   title: "Tutorials",
+          //   items: [
+          //     "/authoring/tutorials/",
+          //   ],
+          // },
           {
-            title: "Content Types",
+            title: "Guidelines",
             items: [
-              "/recipes/authoring/",
-              "/recipes/authoring/general/",
-              "/recipes/authoring/kata/",
-              "/recipes/authoring/translation/",
-              "/recipes/authoring/kumite/",
-            ],
-          },
-          {
-            title: "Kata Elements",
-            items: [
-              "/recipes/authoring/kata-snippets/",
-              "/recipes/authoring/kata-snippets/description/",
-              "/recipes/authoring/kata-snippets/coding-general/",
-              "/recipes/authoring/kata-snippets/sample-tests/",
-              "/recipes/authoring/kata-snippets/full-tests/",
-              "/recipes/authoring/kata-snippets/preloaded/",
-              "/recipes/authoring/kata-snippets/reference-solution/",
+              "/authoring/guidelines/",
+              "/authoring/guidelines/description/",
+              "/authoring/guidelines/coding/",
+              "/authoring/guidelines/sample-tests/",
+              "/authoring/guidelines/submission-tests/",
+              "/authoring/guidelines/preloaded/",
+              "/authoring/guidelines/reference-solution/",
+              "/authoring/guidelines/translation/",
             ],
           },
         ],
@@ -140,7 +138,11 @@ module.exports = {
         remark: {
           externalLinksTarget: "_blank",
           externalLinksRel: ["noopener", "noreferrer"],
-          plugins: ["remark-attr", "@gridsome/remark-prismjs"],
+          plugins: [
+            "remark-attr",
+            "@gridsome/remark-prismjs",
+            "gridsome-plugin-remark-container",
+          ],
         },
         refs: {
           // Each documentation should belong to a single kind.

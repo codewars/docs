@@ -16,7 +16,7 @@
         </div>
         <div class="flex justify-center mt-8 text-center">
           <g-link
-            to="/getting-started/"
+            to="/training/getting-started/"
             class="flex items-center px-6 py-4 ml-auto text-2xl font-bold leading-none text-white border rounded-lg shadow-lg bg-ui-primary border-ui-primary transition-all duration-200 ease-out transform hover:shadow-xl hover:-translate-y-1"
           >
             Get started
