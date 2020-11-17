@@ -13,4 +13,6 @@ Users earn new privileges as their Honor grows. These can be divided in a couple
 - Content curation: a user can approve kata and translations after reviewing them, or edit kata to fix issues.
 - Moderation: a user is able to mark comments as spoilers, unmark them, or mark issues as resolved.
 
-Privileges are earned by reaching a certain level of Honor. The exact required amounts to gain some privilege is listed in [this table](/references/gamification//privileges/).
+Privileges are earned by reaching a certain level of Honor. The exact required amounts to gain some privilege is listed in [this table][privileges-reference].
+
+[privileges-reference]: /references/gamification/privileges/

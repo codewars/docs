@@ -12,7 +12,7 @@ The kata description, created by the kata author, is a crucial part of every kat
 
 ## General
 
-- **Description should hold to general [Content Quality Guidelines](/recipes/authoring/)** where applicable.
+- **Description should hold to general [Content Quality Guidelines][authoring-guidelines]** where applicable.
 - **Descriptions should be written in English.** The Codewars community is international and not every user can write English proficiently. Authors should ask other users for proofreading and spellchecking if necessary.
 - **All remarks and complaints about instructions not being clear should be considered with proper attention.** Authors should remember that after working on a kata for a long time, they understand it much better than others, and it's easy for them to miss some issues. Users may have completely different points of view, or simply understand things differently. Invite other users to provide feedback on description clarity, consider their suggestions, and integrate the feedback as appropriate.  
 When questions or requests for improvements, clarifications, or examples pop up particularly often, the description should be updated to address them.
@@ -43,10 +43,10 @@ The above is just an example; not all sections are necessary unless applicable, 
 
 ## Formatting
 
-- **Use [Markdown capabilities](/references/markdown/)** to format and structure descriptions appropriately. You can use headers and lines to introduce sections, lists and tables to collect various items, links to provide references, code markup to introduce code inline or in blocks, and basic text formatting for styling. Do not abuse it though; avoid visual noise and excessive formatting.
+- **Use [Markdown capabilities][markdown-reference]** to format and structure descriptions appropriately. You can use headers and lines to introduce sections, lists and tables to collect various items, links to provide references, code markup to introduce code inline or in blocks, and basic text formatting for styling. Do not abuse it though; avoid visual noise and excessive formatting.
 - **Use proper header levels.** Do not use `# Title` to introduce sections, consider `## Second level` or `### Third level` headers for organization.
-- **Use [Sequential Code Blocks](/references/markdown/extensions/#sequential-code-blocks)** for blocks of code, examples, etc.
-- **Avoid descriptions mentioning many languages.** Use [Language Conditional Rendering](/references/markdown/extensions/#conditional-rendering) for language-specific paragraphs and sections. Including multiple languages in a single sentence or paragraph (_"Return `null` for Java/C#/Scala, `None` for Python, `Nothing` for Haskell, `NULL` for C/C++, `nil` for Swift/Ruby"_) is noisy and makes the description difficult to read, and kata difficult to maintain.
+- **Use [Sequential Code Blocks][sequential-code-blocks]** for blocks of code, examples, etc.
+- **Avoid descriptions mentioning many languages.** Use [Language Conditional Rendering][conditional-rendering] for language-specific paragraphs and sections. Including multiple languages in a single sentence or paragraph (_"Return `null` for Java/C#/Scala, `None` for Python, `Nothing` for Haskell, `NULL` for C/C++, `nil` for Swift/Ruby"_) is noisy and makes the description difficult to read, and kata difficult to maintain.
 - **Avoid HTML.** Interactions between embedded HTML and Markdown or theming are not well-defined and can break unexpectedly. HTML used for styling can give wrong results after CSS is updated or can not work well with visual themes (for example dark or light mode). HTML **can** be used as long as there's a valid purpose and the author is aware of the downsides.
 
 
@@ -54,5 +54,11 @@ The above is just an example; not all sections are necessary unless applicable, 
 
 - **Description can contain links and references** to external sources of knowledge, articles, explanations and papers. Keep in mind that external links create dependencies. Links that change over time may render a kata unusable and introduce a maintenance issue. 
 - **Description can contain links to related kata**: other variants of the task, difficulty levels, challenge versions. Links should go in both directions, for example the easier kata should link to the more difficult version and vice versa.
-- **Consider adding necessary preloaded code to the description.** As explained in a [related part](/recipes/authoring/kata-snippets/preloaded/#accessibility-of-preloaded-code), preloaded code is not visible to users attempting the kata, so they cannot easily set up their local environment to work on the attempted kata. It's strongly recommended to provide everything necessary to solve the kata in a local IDE.
+- **Consider adding necessary preloaded code to the description.** As explained in a [related part][preloaded-accessibility], preloaded code is not visible to users attempting the kata, so they cannot easily set up their local environment to work on the attempted kata. It's strongly recommended to provide everything necessary to solve the kata in a local IDE.
 - **Description should list all necessary credits** if some elements of a kata are inspired by other sources which require proper attribution. Even if it's not required, it's still a proper thing to do.
+
+[authoring-guidelines]: /recipes/authoring/
+[markdown-reference]: /references/markdown/
+[sequential-code-blocks]: /references/markdown/extensions/#sequential-code-blocks
+[conditional-rendering]: /references/markdown/extensions/#conditional-rendering
+[preloaded-accessibility]: /recipes/authoring/kata-snippets/preloaded/#accessibility-of-preloaded-code
