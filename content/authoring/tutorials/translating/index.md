@@ -1,8 +1,8 @@
 ---
-kind: recipe
+kind: tutorial
 ---
 
-# Creating a Translation
+# How to translate a kata
 
 _TBD: this page was imported from old CW wiki and needs to be reviewied/redacted._
 
