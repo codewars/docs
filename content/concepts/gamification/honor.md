@@ -18,7 +18,7 @@ You can earn honor when you accomplish certain things or goals or by some action
 - Authoring related activities, like publishing a beta kata, creating a translation, or having your kata approved,
 - Community related activities, for example voting on kata satisfaction, rating a beta kata, upvotes and downvotes collected on your posts and solutions
 
-You may find the exact amount of Honor points earned for all kinds of situations in [this reference](/references/gamification/honor/).
+You may find the exact amount of Honor points earned for all kinds of situations in [this reference][honor-reference].
 
 ## Honor Breakdown
 
@@ -49,3 +49,6 @@ You can determine the level of your achievements in comparison with overall Code
 
 - **Leaderboards**: Codewars manages differents kinds of [leaderboards (TODO: link to leaderboards reference)]() which show users with highest amount of Honor considering different kinds of situations/actions.
 - **Honor Percentile**: Stat which shows your position relative to all other Codewars users. For example, a 20% percentile value means that 20% of all Codewars' users have more Honor points than you, and that you have more Honor points than 80% of all users. This value is calculated according to your overall Honor.
+
+
+[honor-reference]: /references/gamification/honor/
