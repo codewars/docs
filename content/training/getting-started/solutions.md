@@ -1,7 +1,7 @@
 ---
 sidebar: getting-started
-prev: "/getting-started/kata-solved/"
-next: "/getting-started/community/"
+prev: "/training/getting-started/kata-solved/"
+next: "/training/getting-started/community/"
 ---
 
 # Viewing Solutions

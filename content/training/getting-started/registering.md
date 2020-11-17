@@ -1,7 +1,7 @@
 ---
 sidebar: getting-started
-prev: "/getting-started/"
-next: "/getting-started/setting-up/"
+prev: "/training/getting-started/"
+next: "/training/getting-started/setting-up/"
 ---
 
 # Registering
@@ -42,6 +42,6 @@ Great, your account is registered!
 
 ## Next steps
 
-You have successfully created your account and registered it with Codewars. You are strongly recommended to [set up](/getting-started/setting-up/) your account and training routine, but if you wish, you can go straight to your [dashboard](https://www.codewars.com/dashboard) or even find your [next challenges to solve](/getting-started/finding-kata/).
+You have successfully created your account and registered it with Codewars. You are strongly recommended to [set up](/training/getting-started/setting-up/) your account and training routine, but if you wish, you can go straight to your [dashboard](https://www.codewars.com/dashboard) or even find your [next challenges to solve](/training/getting-started/finding-kata/).
 
 Your training with Codewars has just began. Good luck!

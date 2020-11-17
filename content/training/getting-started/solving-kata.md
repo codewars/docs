@@ -1,7 +1,7 @@
 ---
 sidebar: getting-started
-prev: "/getting-started/finding-kata/"
-next: "/getting-started/kata-solved/"
+prev: "/training/getting-started/finding-kata/"
+next: "/training/getting-started/kata-solved/"
 ---
 
 # Solving Kata

@@ -1,7 +1,7 @@
 ---
 sidebar: getting-started
-prev: "/getting-started/solving-kata/"
-next: "/getting-started/solutions/"
+prev: "/training/getting-started/solving-kata/"
+next: "/training/getting-started/solutions/"
 ---
 
 # When a Kata is Solved

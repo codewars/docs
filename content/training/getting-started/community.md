@@ -1,6 +1,6 @@
 ---
 sidebar: getting-started
-prev: "/getting-started/solutions/"
+prev: "/training/getting-started/solutions/"
 ---
 
 # Community
