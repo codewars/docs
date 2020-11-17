@@ -1,8 +1,0 @@
----
-kind: recipe
-sidebar: authoring
----
-
-# Creating a Kumite
-
-_This page is a stub._
