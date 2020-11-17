@@ -5,14 +5,14 @@ sidebar: explanation-kata
 
 # Translations
 
-Codewars supports a variety of [programming languages](/languages/) and every kata can be available in more than one language. Users may choose any language available to solve the kata and do so in as many languages as they wish. After gaining the required privileges, users who solved the kata are allowed to create or review translations to make the kata available in new languages, therefore for a larger audience.
+Codewars supports a variety of [programming languages][languages] and every kata can be available in more than one language. Users may choose any language available to solve the kata and do so in as many languages as they wish. After gaining the required privileges, users who solved the kata are allowed to create or review translations to make the kata available in new languages, therefore for a larger audience.
 
 ## Training on a selected language
 
 When the user enters the trainer to solve a kata, they can select a language to train on. Some kata are available in many languages, some in just a few, and some only in one or two. If a kata is not available in your favorite language, you must select another language you are familiar with or wait until a translation in your preferred language is created and approved.
 Completing a kata in only one language is enough to mark the kata as solved, however, there are things to gain from completing it in other languages too:
 
-- Your [language rank](/concepts/gamification/ranks/#user-rank-breakdown) progresses for every language you solved the kata with (but Honor and overall rank progress are awarded only once per kata).
+- Your [language rank][ranks-breakdown] progresses for every language you solved the kata with (but Honor and overall rank progress are awarded only once per kata).
 - You unlock the access to solutions of other users in this language.
 - You can view full test suite for completed languages (TODO: explain where).
 
@@ -41,7 +41,7 @@ Creating a new translation means writing code snippets required for every kata t
 - **Tests** which are run against user's solution when they consider their solution ready. All the tests run in this snipped must pass to consider the kata solved.
 - **Preloaded** snippet, which contains code not visible to users, and availale for both sample tests and full tests.
 
-The description is shared among all languages so changing it in your translation will change it for all languages. If you need to add some language specific information in the description, you can use Codewars specific extensions for Markdown formatting: [Sequential Code Blocks](/references/markdown/extensions/#sequential-code-blocks) or [Language Conditional Rendering](/references/markdown/extensions/#conditional-rendering).
+The description is shared among all languages so changing it in your translation will change it for all languages. If you need to add some language specific information in the description, you can use Codewars specific extensions for Markdown formatting: [Sequential Code Blocks][sequential-code-blocks] or [Language Conditional Rendering][conditional-rendering].
 
 The translation does not have to be finished in one go. It can be saved and kept in draft state as long as necessary. When the translator considers it ready, it can be published which places it in a "pending" state and becomes available for other users to review, approve, edit or reject. Only one translation may be published for any given kata and language. For example, if a published Java translation already exists then a new one may be created but not published until the former is rejected.
 
@@ -59,7 +59,7 @@ After a translation is published, the translator is advised to post a comment in
 Translators are rewarded for their contribution upon approval of their translation:
 
 - The translator earns rank progress for the individual language in which the translation was authored in, equivalent to solving the kata in that language.
-- The translator gains twice the [honor](/references/gamification/honor/#other) compared to solving the kata.
+- The translator gains twice the [honor][honor-reference-other] compared to solving the kata.
 - If the kata is in beta, rank and honor rewards are granted upon approval of the kata itself.
 - The translator is listed as a [coauthor (TODO: explain)]() of the kata.
 
@@ -67,7 +67,7 @@ _WARNING: Currently, the co-author flag seems to be affected by a bug which only
 
 ## Reviewing and working with pending translations
 
-When a translation is published, it's put into a pending state and awaits for review and approval. Users who earned related [privileges](/references/gamification/privileges/) can search for them, review them, and approve or reject them.
+When a translation is published, it's put into a pending state and awaits for review and approval. Users who earned related [privileges][privileges-reference] can search for them, review them, and approve or reject them.
 Currently, pending translations can be found in one of following ways:
 
 - Reading through the kata discourse and searching for posts where translators announced the fact that they published a translation. Translators are encouraged to post a message labelled as **Suggestion** in the kata discourse with a link and information about the language of the translation, so others could find it easily.
@@ -93,7 +93,7 @@ After a review is completed, the reviewer can finalize it with one of following 
 
 ### Approving a translation
 
-Pending translations can be approved by either the kata author at any time, or any user with the [privilege to coauthor](/references/gamification/privileges/) under following conditions:
+Pending translations can be approved by either the kata author at any time, or any user with the [privilege to coauthor][privileges-reference] under following conditions:
 
 - the approver is not the author of the translation, and
   - translation is older than a week, or
@@ -134,3 +134,11 @@ Sometimes a kata needs to be fixed due to an issue, be it a bug in the reference
   - it requires privileges which are available only to experienced users,
   - it invalidates existing forks, what may cause merge conflicts for modified snippets if someone publishes a fork of this translation sometime in the future,
   - direct edits are not subject to the review process and other users cannot verify the introduced changes.
+
+
+[languages]: /languages/
+[ranks-breakdown]: /concepts/gamification/ranks/#user-rank-breakdown
+[sequential-code-blocks]: /references/markdown/extensions/#sequential-code-blocks
+[conditional-rendering]: /references/markdown/extensions/#conditional-rendering
+[honor-reference-other]: /references/gamification/honor/#other
+[privileges-reference]: /references/gamification/privileges/
