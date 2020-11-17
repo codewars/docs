@@ -1,6 +1,6 @@
 ---
 sidebar: authoring
-next: /authoring/tutorials/
+next: /authoring/kata/
 ---
 
 # Overview
