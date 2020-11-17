@@ -1,8 +1,8 @@
 ---
-kind: recipe
 sidebar: authoring
+next: /authoring/tutorials/
 ---
 
-# Creating a Kumite
+# Overview
 
 _This page is a stub._

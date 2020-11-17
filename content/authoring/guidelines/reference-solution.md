@@ -1,7 +1,8 @@
 ---
-kind: recipe
+kind: reference
 sidebar: authoring
-prev: /recipes/authoring/kata-snippets/preloaded/
+prev: /authoring/guidelines/preloaded/
+next: /authoring/guidelines/translation/
 ---
 
 # Writing a Reference Solution
@@ -21,4 +22,4 @@ Failure to comply with the below guidelines should be considered an issue to be 
 - For reasons mentioned above, when a kata is translated, **the meaning of the reference solution from the initial version should be preserved**{id="keep-reqs"}. It's especially important for performance oriented kata. The reference solution of a translation should not significantly stand out from the original one. They do not have to be totally equivalent, and they can use different techniques, but they should correspond in terms of performance, handling of edge cases and invalid inputs, etc. The reference solution of a translation should not be significantly better or worse than the original one.
 
 
-[authoring-guidelines-general-coding]: /recipes/authoring/kata-snippets/coding-general/
+[authoring-guidelines-general-coding]: /authoring/guidelines/coding/

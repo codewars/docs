@@ -1,8 +1,7 @@
 ---
-kind: recipe
+kind: reference
 sidebar: authoring
-prev: /recipes/authoring/kata/
-next: /recipes/authoring/kumite/
+prev: /authoring/guidelines/reference-solution/
 ---
 
 # Creating a Translation
@@ -58,14 +57,14 @@ When issues with the translation are found during its review, they should be rep
 - After a translation is approved, it becomes **the responsibility of all parties involved: the translator, the user who approved the translation, and the kata author**, to fix any potential issues which might come up later when users attempt to submit their solutions.
 
 
-[authoring-guidelines-description]: /recipes/authoring/kata-snippets/description/
-[authoring-guidelines-general-coding]: /recipes/authoring/kata-snippets/coding-general/
-[authoring-guidelines-general]: /recipes/authoring/general/
-[authoring-guidelines-preloaded]: /recipes/authoring/kata-snippets/preloaded/
-[authoring-guidelines-reference-solution]: /recipes/authoring/kata-snippets/reference-solution/
-[authoring-guidelines-sample-tests]: /recipes/authoring/kata-snippets/sample-tests/
-[authoring-guidelines-submission-tests-random]: /recipes/authoring/kata-snippets/submission-tests/#random-tests
-[authoring-guidelines-submission-tests]: /recipes/authoring/kata-snippets/submission-tests/
+[authoring-guidelines-description]: /authoring/guidelines/description/
+[authoring-guidelines-general-coding]: /authoring/guidelines/coding/
+[authoring-guidelines-general]: /authoring/guidelines/
+[authoring-guidelines-preloaded]: /authoring/guidelines/preloaded/
+[authoring-guidelines-reference-solution]: /authoring/guidelines/reference-solution/
+[authoring-guidelines-sample-tests]: /authoring/guidelines/sample-tests/
+[authoring-guidelines-submission-tests-random]: /authoring/guidelines/submission-tests/#random-tests
+[authoring-guidelines-submission-tests]: /authoring/guidelines/submission-tests/
 [languages]: /languages/
 [markdown-extensions]: /references/markdown/extensions/
-[markdown-extension-conditional-rendering]: references/markdown/extensions/#conditional-rendering
+[markdown-extension-conditional-rendering]: /references/markdown/extensions/#conditional-rendering

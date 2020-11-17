@@ -1,8 +1,8 @@
 ---
-kind: recipe
+kind: reference
 sidebar: authoring
-prev: /recipes/authoring/kata-snippets/
-next: /recipes/authoring/kata-snippets/coding-general/
+prev: /authoring/guidelines/
+next: /authoring/guidelines/coding/
 ---
 
 # Writing a Kata Description
@@ -57,8 +57,8 @@ The above is just an example; not all sections are necessary unless applicable, 
 - **Consider adding necessary preloaded code to the description.** As explained in a [related part][preloaded-accessibility], preloaded code is not visible to users attempting the kata, so they cannot easily set up their local environment to work on the attempted kata. It's strongly recommended to provide everything necessary to solve the kata in a local IDE.
 - **Description should list all necessary credits** if some elements of a kata are inspired by other sources which require proper attribution. Even if it's not required, it's still a proper thing to do.
 
-[authoring-guidelines]: /recipes/authoring/
+[authoring-guidelines]: /authoring/guidelines/
+[preloaded-accessibility]: /authoring/guidelines/preloaded/#accessibility-of-preloaded-code
 [markdown-reference]: /references/markdown/
 [sequential-code-blocks]: /references/markdown/extensions/#sequential-code-blocks
 [conditional-rendering]: /references/markdown/extensions/#conditional-rendering
-[preloaded-accessibility]: /recipes/authoring/kata-snippets/preloaded/#accessibility-of-preloaded-code

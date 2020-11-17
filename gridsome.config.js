@@ -104,26 +104,24 @@ module.exports = {
       {
         name: "authoring",
         sections: [
+          // TODO Tutorials
+          // {
+          //   title: "Tutorials",
+          //   items: [
+          //     "/authoring/tutorials/",
+          //   ],
+          // },
           {
-            title: "Content Types",
+            title: "Guidelines",
             items: [
-              "/recipes/authoring/",
-              "/recipes/authoring/general/",
-              "/recipes/authoring/kata/",
-              "/recipes/authoring/translation/",
-              "/recipes/authoring/kumite/",
-            ],
-          },
-          {
-            title: "Kata Elements",
-            items: [
-              "/recipes/authoring/kata-snippets/",
-              "/recipes/authoring/kata-snippets/description/",
-              "/recipes/authoring/kata-snippets/coding-general/",
-              "/recipes/authoring/kata-snippets/sample-tests/",
-              "/recipes/authoring/kata-snippets/submission-tests/",
-              "/recipes/authoring/kata-snippets/preloaded/",
-              "/recipes/authoring/kata-snippets/reference-solution/",
+              "/authoring/guidelines/",
+              "/authoring/guidelines/description/",
+              "/authoring/guidelines/coding/",
+              "/authoring/guidelines/sample-tests/",
+              "/authoring/guidelines/submission-tests/",
+              "/authoring/guidelines/preloaded/",
+              "/authoring/guidelines/reference-solution/",
+              "/authoring/guidelines/translation/",
             ],
           },
         ],

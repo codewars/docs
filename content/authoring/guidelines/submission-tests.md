@@ -1,8 +1,8 @@
 ---
-kind: recipe
+kind: reference
 sidebar: authoring
-prev: /recipes/authoring/kata-snippets/sample-tests/
-next: /recipes/authoring/kata-snippets/preloaded/
+prev: /authoring/guidelines/sample-tests/
+next: /authoring/guidelines/preloaded/
 ---
 
 # Writing Submission Tests
@@ -88,7 +88,7 @@ Some kata may impose additional restrictions on submitted solutions unrelated to
 - Restrictions of the form "do not use X" or "you must use Y" are seldom a good idea since they are extremely difficult (or downright infeasible) to reliably enforce. See [this article (TODO: write the article)]() for details.
 
 
-[authoring-guidelines-general-coding]: /recipes/authoring/kata-snippets/coding-general/
-[authoring-guidelines-reference-solution]: /recipes/authoring/kata-snippets/reference-solution/
+[authoring-guidelines-general-coding]: /authoring/guidelines/coding/
+[authoring-guidelines-reference-solution]: /authoring/guidelines/reference-solution/
 [languages]: /languages/
 [randomized-tests]: /glossary/#randomized-tests

@@ -1,8 +1,8 @@
 ---
-kind: recipe
+kind: reference
 sidebar: authoring
-prev: /recipes/authoring/kata-snippets/full-tests/
-next: /recipes/authoring/kata-snippets/reference-solution/
+prev: /authoring/guidelines/submission-tests/
+next: /authoring/guidelines/reference-solution/
 ---
 
 # Writing Preloaded Code
@@ -24,5 +24,5 @@ Failure to comply with the below guidelines should be considered an issue to be 
 - **Do not hide useful information in the preloaded code snippet.** The preloaded code snippet can be used to reduce boilerplate, and its code is available to all other parts of the solution. It may be tempting to put data or types in preloaded code which should be shared among the user solution, sample tests, and submission tests. However, since the contents of preloaded code is not displayed anywhere in the user interface, important information needed to solve the challenge may be hidden from the user. This is especially problematic for users who would like to work on the kata in their local IDE, but now are missing some pieces necessary to set up their local environment. If you use the preloaded code snippet to reduce boilerplate code, consider adding necessary information to the kata description as well, preferably in a [language conditional block][markdown-extensions].
 
 
-[authoring-guidelines-general]: /recipes/authoring/general/
+[authoring-guidelines-general]: /authoring/guidelines/
 [markdown-extensions]: /references/markdown/extensions/
