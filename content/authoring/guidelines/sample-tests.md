@@ -25,5 +25,9 @@ Sample tests are a part of every kata which is often very underappreciated by bo
 - **Sample tests should be fixed, predictable, and repeatable.** Avoid sample tests which are random or change between the runs.
 - Initial tests should compile correctly and it should be possible to run them.
 - **Test cases from sample tests should appear also in submission tests**, possibly as a part of fixed tests.
-- If possible, **sample tests should be easy to reproduce in user's local environment.** Many users work on their solutions with their local IDE, and it's very helpful for them to have all required information available. Preloaded snippet is especially problematic for them because it's not directly visible and it makes it difficult to reproduce sample tests locally. If your sample tests rely on anything from preloaded code, consider relevant guidelines related to [description](/authoring/guidleines/description/) and [preloaded code](/authoring/guidleines/preloaded/).
+- If possible, **sample tests should be easy to reproduce in user's local environment.** Many users work on their solutions with their local IDE, and it's very helpful for them to have all required information available. Preloaded snippet is especially problematic for them because it's not directly visible and it makes it difficult to reproduce sample tests locally. If your sample tests rely on anything from preloaded code, consider relevant guidelines related to [description][authoring-guidelines-description] and [preloaded code][authoring-guidelines-preloaded].
 
+
+[authoring-guidelines-general-coding]: /authoring/guidelines/coding/
+[authoring-guidelines-description]: /authoring/guidelines/description/
+[authoring-guidelines-preloaded]: /authoring/guidelines/preloaded/
