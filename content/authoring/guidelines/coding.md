@@ -17,7 +17,7 @@ To make kata maintenance not a terrible experience, kata code has to follow guid
 There are no guidelines which are applicable always and in every case. Some of them have exceptions, or can be not applicable to every kind of task. Some tasks violate them on purpose, like debugging kata or code golf exercises. Sometimes guidelines are difficult to enforce, for example on a code which has been already written and poses big effort to fix. In justified cases, some or all coding guidelines can be omitted, but when it happens, the reason for that should be clearly visible. 
 :::
 
-- All code components should follow general [Content Quality Gudelines](/recipes/authoring/).
+- All code components should follow general [Content Quality Gudelines](/authoring/guidelines/).
 - Once again, **write maintainable code.** Remeber that you do not write code for yourself, or for the code runner, but for other users. When writing code, don't play smart, don't be funny.
 - **Every code snippet being a part of a kata should follow the coding guidelines.** The fact that some snippets are not directly visible to the user is not a reason to treat it without appropriate attention.
 - **Stick to rules commonly recognized for your [language](/languages/)**. Know and follow its naming conventions, coding rules, and best practices.
