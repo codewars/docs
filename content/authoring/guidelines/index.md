@@ -25,10 +25,10 @@ Failure to comply with the guidelines should be considered an issue to be addres
 Authors and reviewers who repeatedly violate or ignore rules and as a result introduce bad quality content to the system can have their authoring or approval privileges revoked, and offending content can be withdrawn.
 :::
 
-## General Guidelins
+## General Guidelines
 
 - **Conform to quality guidelines when creating new content.** Do not take shortcuts, don't be lazy. Know what are quality requirements for kata, translations, descriptions, and code. Do not push your responsibility to reviewers.
 - **When reviewing, verify conformance of the content with the quality guidelines.** Do not count on authors to get everything right.
 - **Keep responsibility for all content you approved or created.** You should actively maintain all content you introduced into Codewars: fix issues, consider suggestions, answer questions.
-- Whenever possible, **improve any content of insufficient quality.** Fix any long standing bugs you find, remove the most annoying issues. Leave every kata you visit in better shape than you found it. It especially means that if the content created by you does not keep up to quality standards, others are allowed to improve it.
+- Whenever possible, **improve any content of insufficient quality.** Fix any long-standing bugs you find, remove the most annoying issues. Leave every kata you visit in better shape than you found it. It especially means that if the content created by you does not keep up to quality standards, others are allowed to improve it.
 - Remember that you can always **ask others for help.** Whenever you need someone to proofread your description, answer any questions about how Codewars works, or just give any advice on the content you're working on.
