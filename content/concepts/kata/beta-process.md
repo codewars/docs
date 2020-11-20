@@ -17,7 +17,7 @@ Some of the steps are available only after earning the required privilege, but e
 
 ### Attempting the Kata
 
-Training on a kata and solving it is the first step to verify its quality, but also a very effective one. Reading through the description, users can check if it's clear enough, or something needs to be reworded or explained in a clearer way. When tests are run, reviewers can verify if they are sufficient, or whether assertion messages are clear and easy to understand. Users can check whether their experience with the kata meets all [Kata authoring best practices](/recipes/create-kata/best-practices/). When any issues are found, users can raise issues or suggest changes in kata discourse.
+Training on a kata and solving it is the first step to verify its quality, but also a very effective one. Reading through the description, users can check if it's clear enough, or something needs to be reworded or explained in a clearer way. When tests are run, reviewers can verify if they are sufficient, or whether assertion messages are clear and easy to understand. Users can check whether their experience with the kata meets all [Kata authoring best practices][authoring-best-practices]. When any issues are found, users can raise issues or suggest changes in kata discourse.
 
 While solving a beta kata, users are encouraged to go beyond just finding and submitting a working solution. It's very helpful when people solving the kata do some additional effort and test the tests themselves a bit: verify if test suite handles incorrect answers gracefully (for example, if it does not crash on `null`s), if assertion messages are clear enough, etc.
 
@@ -25,7 +25,7 @@ When kata is successfully solved, user unlocks further steps of the review proce
 
 ### Satisfaction vote
 
-Users with [sufficient privileges](/references/gamification/privileges/#privileges) are able to vote on kata quality. They can cast one of three possible votes:
+Users with [sufficient privileges][privileges-reference] are able to vote on kata quality. They can cast one of three possible votes:
 
 - **Satisfied**
 - **Somewhat satisfied**
@@ -39,7 +39,7 @@ Kata author assigns initial difficulty rank estimation to their kata, but they d
 
 ### Reviewing Code
 
-Users with sufficient privileges can enter the kata editor and view the code of all code snippets. Reading through them is a great way to find potential issues with tests, examples, or reference solution. Reviewers can check insides of the kata and verify whether it stands up to [Kata authoring best practices](/recipes/create-kata/best-practices/). Any discovered problems can be fixed right away in the code, or reviewers can raise issues or suggest improvements in the kata discourse.
+Users with sufficient privileges can enter the kata editor and view the code of all code snippets. Reading through them is a great way to find potential issues with tests, examples, or reference solution. Reviewers can check insides of the kata and verify whether it stands up to [Kata authoring best practices][authoring-best-practices]. Any discovered problems can be fixed right away in the code, or reviewers can raise issues or suggest improvements in the kata discourse.
 
 ### Reviewing Issues, Suggestions and Questions
 
@@ -47,4 +47,9 @@ Some beta kata, especially ones created a long time ago, can have some issues or
 
 ## Kata Approval and Retirement
 
-After a kata has received [enough approval votes](/references/kata-ranking/approval-retire-criteria/) from the community, all issues are fixed, and the community reached a consensus on its ranking, it's ready for the final step to come out of beta. At this point, sufficiently privileged users can review it to make sure all these criteria have been met (see [How to Review a Beta Kata](/recipes/review-beta/)), and release it as an official kata onto the site!
+After a kata has received [enough approval votes][approval-criteria] from the community, all issues are fixed, and the community reached a consensus on its ranking, it's ready for the final step to come out of beta. At this point, sufficiently privileged users can review it to make sure all these criteria have been met (see [How to Review a Beta Kata][authoring-tutorials-reviewing]), and release it as an official kata onto the site!
+
+[authoring-best-practices]: /recipes/authoring-howtos/create-kata/best-practices/
+[privileges-reference]: /references/gamification/privileges/#privileges
+[approval-criteria]: /references/kata-ranking/approval-retire-criteria/
+[authoring-tutorials-reviewing]: /recipes/review-beta/

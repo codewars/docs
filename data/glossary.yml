@@ -332,13 +332,13 @@
 - term: Trainer (kata)
   description: |
     This is the place where you write your code to complete a task.
-  see: /getting-started/solving-kata/
+  see: /training/getting-started/solving-kata/
 
 - term: Trainer suggestions
   description: |
     Trainer suggestions are the Kata that are showing up at the top of the dashboard. Those suggestions can be tweaked at some point, either through the profile of the user or directly through the dashboard.  
 
-    See [training setup](/getting-started/setting-up/#training-setup).
+    See [training setup](/training/getting-started/setting-up/#training-setup).
 
 - term: Translation
   description: |
