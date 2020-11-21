@@ -7,23 +7,23 @@ next: /authoring/guidelines/sample-tests/
 
 # General Kata Coding Guidelines
 
-Coding guidelines are usually a very big topic for programmers. Programmers like them, and programmers hate them. Programmers fight for them, and they fight against them. Coding guidelines can be very helpful, but can be also very difficult to define, establish, follow, and enforce.
+Coding guidelines can be a controversial topic for programmers. Programmers like them, and programmers hate them. Programmers fight for them, and they fight against them. Coding guidelines can be very helpful, but can be also very difficult to define, establish, follow, and enforce.
 
-Kata are 90% code [citation needed]. But this code is not only compiled, run, and used to verify the correctness of user solutions by the automatic runner. Just like every other piece of code, it also needs to be debugged, fixed, updated, and maintained. Even if you write the most perfect code in the world, sooner or later it will be read by someone. Someone will want to learn from it, or someone will want to update it when some incompatible changes are introduced to the runner. Or there will be a bug which has to be handled. But even if your code is written perfectly and has no bugs, sooner or later it will have to be maintained in some way. And it's your responsibility to make it as easy as possible. Otherwise, users won't want to fix the kata and improve its quality, because no one wants to work with bad code.
+Kata code is not only used to verify the correctness of user solutions by the code runner; it also needs to be usable, understandable and maintainable by other users in the Codewars community. As such, all code in a kata, whether visible or invisible to the user, should adhere to a high standard of quality to ensure it can support these goals.
 
-To avoid making kata maintenance a terrible experience, kata code has to follow the guidelines collected below.
+To ensure kata maintenance is possible and pleasant, kata code must follow the guidelines below.
 
 :::note
-There are no guidelines which are applicable to every possible case. Some of them have exceptions, or may not be applicable to every kind of task. Some tasks violate them on purpose, like debugging kata or code golf exercises. Sometimes guidelines are difficult to enforce, for example on code which has already been written and poses a big effort to fix. In justified cases, some or all coding guidelines may be omitted, but when it happens, the reason for that should be clearly visible.
+There are no code quality guidelines which are applicable to every scenario. Some kata styles such as debugging kata or code golf exercises may involve breaching a commonly-held guideline. Sometimes guidelines are difficult to enforce, for example on code which has already been written and poses a big effort to fix. In justified cases, some coding guidelines may be omitted.
 :::
 
 - All code components should follow general [Content Quality Guidelines](/authoring/guidelines/).
 - Once again, **write maintainable code.** Remember that you do not write code for yourself, or for the code runner, but for other users. When writing code, don't play smart and don't be funny.
-- **Every code snippet being a part of a kata should follow the coding guidelines.** The fact that some snippets are not directly visible to the user is not a reason to treat it without appropriate attention.
+- **Every code snippet in a kata should follow the coding guidelines.** The fact that some snippets are not directly visible to the user is not a reason to treat it without appropriate attention.
 - **Stick to rules commonly recognized for your [language](/languages/)**. Know and follow its naming conventions, coding rules, and best practices.
-- **Respect widely recognized standards and conventions related to software design and programming.** Avoid antipatterns and bad practices.
+- **Respect widely-recognized standards and conventions related to software design and programming.** Avoid antipatterns and bad practices.
 - **Be familiar with concepts you want to handle and know how to work with them.**
   - When writing tests, know how unit testing is done, or how to generate random numbers.
-  - Be aware of common pitfalls, like floating point values and comparisons, overflow of arithmetic operations, concatenation of immutable strings, etc.
-  - When your task deals with some specific concepts like concurrency, cryptography, etc. know how they work and how to use them properly.
-- **Write comments** where you think they can be helpful. Put the name of the algorithm used by your reference solution. Explain the structure of tests. Describe your generators of random inputs. This will help maintainers and translators understand and stick to the original idea of your code.
+  - Be aware of common pitfalls, like floating point values and comparisons, overflow of arithmetic operations, concatenation of immutable strings, undefined behavior, race conditions, etc.
+  - When your task deals with specific concepts such as concurrency or cryptography, know how they work and how to use them properly.
+- **Write comments** where you think they can be helpful. For example, you might include a name, explanation or references for the algorithm used by your reference solution. Explain the structure of tests. Describe your generators of random inputs. This will help maintainers and translators understand and stick to the original idea of your code.
