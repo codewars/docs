@@ -8,10 +8,6 @@ prev: /authoring/guidelines/reference-solution/
 
 This article contains a set of guidelines, which can be used by translators to create good translations to existing kata. They were collected to help ensure that translations are of sufficient quality and users' experience will be as good as possible.
 
-The guidelines should be used by translators and reviewers to verify whether translations about to be introduced into Codewars are of sufficient quality. Conformance with them should be verified before the translation is published and before it's approved.
-
-Failure to comply with the below guidelines is considered an issue and should be reported as such. In case of severe violations, the affected translation can be rejected or even deleted.
-
 ## General translation guidelines
 
 - **Respect the [General Content Guidelines][authoring-guidelines-general].**

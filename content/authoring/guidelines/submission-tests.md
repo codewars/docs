@@ -9,10 +9,6 @@ next: /authoring/guidelines/preloaded/
 
 This article contains a set of guidelines for kata authors or translators to create good test suites for their kata. They were collected to help ensure that kata, translations and their test suites are of sufficient quality so that users' experience with tests will be as good as possible.
 
-These guidelines should be used by kata authors, translators and reviewers to verify whether new content about to be introduced to Codewars is qualitative enough before they are published or approved.
-
-Failure to comply with the below guidelines should be considered an issue to be addressed and reported as such. In case of severe violations, the affected kata may be retired or moved back to beta, or the translation rejected.
-
 NOTE: There are many kinds of kata, and some guidelines might simply not apply to some of them (puzzles, hackmes, kata which mess with internals of the language runtime, and some types of challenges that require special ways of testing). But still, the present guidelines apply at least to some extent for the vast majority of kata, and if they are followed, kata authors can be sure that their tests will be clear, efficient, reliable, and easy to debug and maintain.
 
 

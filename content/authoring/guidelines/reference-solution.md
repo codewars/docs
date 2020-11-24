@@ -11,10 +11,6 @@ The reference solution snippet, created by the kata author or translator, has a 
 
 This article contains a set of guidelines for kata authors and translators to create good code snippets for their kata. They were collected to help ensure that kata and translations are of sufficient quality and kata maintenance will be as easy as possible.
 
-The guidelines should be used by kata authors, translators and reviewers to verify whether new content about to be introduced to Codewars is of sufficient quality. Conformance with them should be verified before a kata or translation is published by its author and approved by a reviewer.
-
-Failure to comply with the below guidelines should be considered an issue to be addressed and reported as such. In case of severe violations, the affected kata or translation may be retired, moved back to beta or rejected.
-
 ## General Guidelines
 
 - **Conform to [General Coding Guidelines][authoring-guidelines-general-coding]**{id="general"}: the reference solution is code too, and, as such, should keep up to code quality standards. It will make maintenance of the kata much easier, and the readability of the reference solution can be very helpful for future maintainers and translators. The reference solution is not for you to write, but for others to read.

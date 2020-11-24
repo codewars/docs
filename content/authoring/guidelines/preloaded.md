@@ -11,11 +11,6 @@ The preloaded code snippet, created by the kata author or translator, can be use
 
 This article contains a set of guidelines for kata authors and translators to create good code snippets for their kata. They were collected to help ensure that kata and translations are of sufficient quality and kata maintenance will be as easy as possible.
 
-The guidelines should be used by kata authors, translators and reviewers to verify whether new content about to be introduced to Codewars is of sufficient quality. Conformance with them should be verified before a kata or translation is published by its author and approved by a reviewer.
-
-Failure to comply with the below guidelines should be considered an issue to be addressed and reported as such. In case of severe violations, the affected kata or translation may be retired, moved back to beta or rejected.
-
-
 ## Accessibility of Preloaded Code
 
 - The preloaded code snippet is code, and, as such, should conform to [Codewars General Coding Guidelines][authoring-guidelines-general].
