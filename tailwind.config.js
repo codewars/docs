@@ -288,5 +288,8 @@ module.exports = {
       display: ["dark"],
     },
   },
-  plugins: [require("@tailwindcss/typography")({ modifiers: [] })],
+  plugins: [
+    require("@tailwindcss/typography")({ modifiers: [] }),
+    require("@tailwindcss/forms"),
+  ],
 };
