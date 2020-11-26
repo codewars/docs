@@ -3,22 +3,22 @@
 
 :root {
   /* 3 Typography colors: base/low/high contrast */
-  --color-typo-low: theme("colors.oc-gray.7");
-  --color-typo-base: theme("colors.oc-gray.8");
-  --color-typo-high: theme("colors.oc-gray.9");
-  --color-ui-background: theme("colors.oc-gray.0");
-  --color-ui-sidebar: theme("colors.oc-gray.4");
-  --color-ui-border: theme("colors.oc-gray.3");
+  --color-typo-low: theme("colors.tgray.700");
+  --color-typo-base: theme("colors.tgray.800");
+  --color-typo-high: theme("colors.tgray.900");
+  --color-ui-background: theme("colors.tgray.50");
+  --color-ui-sidebar: theme("colors.tgray.400");
+  --color-ui-border: theme("colors.tgray.300");
   --color-ui-primary: theme("colors.brand");
 }
 
 html.dark {
-  --color-typo-low: theme("colors.oc-gray.6");
-  --color-typo-base: theme("colors.oc-gray.5");
-  --color-typo-high: theme("colors.oc-gray.4");
-  --color-ui-background: theme("colors.oc-gray.9");
-  --color-ui-sidebar: theme("colors.oc-gray.8");
-  --color-ui-border: theme("colors.oc-gray.7");
+  --color-typo-low: theme("colors.tgray.600");
+  --color-typo-base: theme("colors.tgray.500");
+  --color-typo-high: theme("colors.tgray.400");
+  --color-ui-background: theme("colors.tgray.900");
+  --color-ui-sidebar: theme("colors.tgray.800");
+  --color-ui-border: theme("colors.tgray.700");
 }
 
 * {
