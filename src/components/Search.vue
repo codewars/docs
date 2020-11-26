@@ -16,7 +16,7 @@
         ref="input"
         type="search"
         :value="query"
-        class="block w-full py-2 pl-10 pr-4 border-2 rounded-lg border-oc-gray-3 bg-oc-gray-3 focus:bg-oc-gray-2 dark:border-oc-gray-8 dark:bg-oc-gray-8 dark-focus:bg-oc-gray-9"
+        class="block w-full py-2 pl-10 pr-4 border-2 rounded-lg border-oc-gray-3 bg-oc-gray-3 focus:bg-oc-gray-2 dark:border-oc-gray-8 dark:bg-oc-gray-8 dark:focus:bg-oc-gray-9"
         :class="{ 'rounded-b-none': showResult }"
         placeholder="Search Documentation..."
         @focus="focused = true"

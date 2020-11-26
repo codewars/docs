@@ -175,7 +175,8 @@ module.exports = {
         options.plugins.unshift(
           require("postcss-import"),
           require("tailwindcss")(),
-          require("postcss-nesting")
+          require("postcss-nesting"),
+          require("autoprefixer")
         );
         return options;
       });

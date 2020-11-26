@@ -12,7 +12,7 @@
   --color-ui-primary: theme("colors.brand");
 }
 
-.dark-mode {
+html.dark {
   --color-typo-low: theme("colors.oc-gray.6");
   --color-typo-base: theme("colors.oc-gray.5");
   --color-typo-high: theme("colors.oc-gray.4");

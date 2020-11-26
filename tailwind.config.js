@@ -1,105 +1,12 @@
 module.exports = {
   purge: {
     content: ["./content/**/*.md", "./src/**/*.vue", "./src/**/*.js"],
-    options: {
-      whitelist: ["dark-mode"],
-    },
   },
+  darkMode: "class",
   theme: {
-    darkSelector: ".dark-mode",
-    typography: (theme) => ({
-      default: {
-        // Commented out properties are the defaults and are kept for reference.
-        css: {
-          // color: theme("colors.gray.700"),
-          color: theme("colors.typo.base"),
-          '[class~="lead"]': {
-            // color: theme("colors.gray.700"),
-            color: theme("colors.typo.base"),
-          },
-          a: {
-            // color: theme("colors.gray.900"),
-            color: theme("colors.typo.high"),
-          },
-          strong: {
-            // color: theme("colors.gray.900"),
-            color: theme("colors.typo.high"),
-          },
-          "ol > li::before": {
-            // color: theme("colors.gray.600"),
-            color: theme("colors.typo.low"),
-          },
-          "ul > li::before": {
-            // backgroundColor: theme("colors.gray.400"),
-            backgroundColor: theme("colors.ui.border"),
-          },
-          hr: {
-            // borderColor: theme("colors.gray.300"),
-            borderColor: theme("colors.ui.border"),
-          },
-          blockquote: {
-            // color: theme("colors.gray.900"),
-            color: theme("colors.typo.base"),
-            // borderLeftColor: theme("colors.gray.300"),
-            borderLeftColor: theme("colors.ui.border"),
-          },
-          h1: {
-            // color: theme("colors.gray.900"),
-            color: theme("colors.typo.high"),
-          },
-          h2: {
-            // color: theme("colors.gray.900"),
-            color: theme("colors.typo.high"),
-          },
-          h3: {
-            // color: theme("colors.gray.900"),
-            color: theme("colors.typo.high"),
-          },
-          h4: {
-            // color: theme("colors.gray.900"),
-            color: theme("colors.typo.high"),
-          },
-          "figure figcaption": {
-            // color: theme("colors.gray.600"),
-            color: theme("colors.typo.low"),
-          },
-          "code::before": {
-            content: "none",
-          },
-          "code::after": {
-            content: "none",
-          },
-          code: {
-            // color: theme("colors.gray.900"),
-            color: theme("colors.typo.high"),
-            borderColor: theme("colors.ui.border"),
-            borderWidth: "1px",
-            padding: theme("spacing.1"),
-            borderRadius: theme("borderRadius.default"),
-            fontWeight: null,
-          },
-          pre: {
-            // color: theme("colors.gray.300"),
-            color: theme("colors.typo.high"),
-            // backgroundColor: theme("colors.gray.800"),
-            backgroundColor: "inherit",
-          },
-          thead: {
-            // color: theme("colors.gray.900"),
-            color: theme("colors.typo.high"),
-            // borderBottomColor: theme("colors.gray.400"),
-            borderBottomColor: theme("colors.ui.border"),
-          },
-          "tbody tr": {
-            // borderBottomColor: theme("colors.gray.300"),
-            borderBottomColor: theme("colors.ui.border"),
-          },
-        },
-      },
-    }),
     extend: {
       borderColor: {
-        default: "var(--color-ui-border)",
+        DEFAULT: "var(--color-ui-border)",
       },
       colors: {
         typo: {
@@ -278,37 +185,108 @@ module.exports = {
       screens: {
         xxl: "1400px",
       },
+      typography: (theme) => ({
+        DEFAULT: {
+          // Commented out properties are the defaults and are kept for reference.
+          css: {
+            // color: theme("colors.gray.700"),
+            color: theme("colors.typo.base"),
+            '[class~="lead"]': {
+              // color: theme("colors.gray.700"),
+              color: theme("colors.typo.base"),
+            },
+            a: {
+              // color: theme("colors.gray.900"),
+              color: theme("colors.typo.high"),
+            },
+            "a code": {
+              // color: theme("colors.gray.900"),
+              color: theme("colors.typo.high"),
+            },
+            strong: {
+              // color: theme("colors.gray.900"),
+              color: theme("colors.typo.high"),
+            },
+            "ol > li::before": {
+              // color: theme("colors.gray.600"),
+              color: theme("colors.typo.low"),
+            },
+            "ul > li::before": {
+              // backgroundColor: theme("colors.gray.400"),
+              backgroundColor: theme("colors.ui.border"),
+            },
+            hr: {
+              // borderColor: theme("colors.gray.300"),
+              borderColor: theme("colors.ui.border"),
+            },
+            blockquote: {
+              // color: theme("colors.gray.900"),
+              color: theme("colors.typo.base"),
+              // borderLeftColor: theme("colors.gray.300"),
+              borderLeftColor: theme("colors.ui.border"),
+            },
+            h1: {
+              // color: theme("colors.gray.900"),
+              color: theme("colors.typo.high"),
+            },
+            h2: {
+              // color: theme("colors.gray.900"),
+              color: theme("colors.typo.high"),
+            },
+            h3: {
+              // color: theme("colors.gray.900"),
+              color: theme("colors.typo.high"),
+            },
+            h4: {
+              // color: theme("colors.gray.900"),
+              color: theme("colors.typo.high"),
+            },
+            "figure figcaption": {
+              // color: theme("colors.gray.600"),
+              color: theme("colors.typo.low"),
+            },
+            "code::before": {
+              content: "none",
+            },
+            "code::after": {
+              content: "none",
+            },
+            code: {
+              // color: theme("colors.gray.900"),
+              color: theme("colors.typo.high"),
+              borderColor: theme("colors.ui.border"),
+              borderWidth: "1px",
+              padding: theme("spacing.1"),
+              borderRadius: theme("borderRadius.DEFAULT"),
+              fontWeight: null,
+            },
+            pre: {
+              // color: theme("colors.gray.300"),
+              color: theme("colors.typo.high"),
+              // backgroundColor: theme("colors.gray.800"),
+              backgroundColor: "inherit",
+            },
+            thead: {
+              // color: theme("colors.gray.900"),
+              color: theme("colors.typo.high"),
+              // borderBottomColor: theme("colors.gray.400"),
+              borderBottomColor: theme("colors.ui.border"),
+            },
+            "tbody tr": {
+              // borderBottomColor: theme("colors.gray.300"),
+              borderBottomColor: theme("colors.ui.border"),
+            },
+          },
+        },
+      }),
     },
   },
   variants: {
-    backgroundColor: [
-      "responsive",
-      "hover",
-      "focus",
-      "dark",
-      "dark-hover",
-      "dark-focus",
-    ],
-    borderColor: [
-      "responsive",
-      "hover",
-      "focus",
-      "dark",
-      "dark-hover",
-      "dark-focus",
-    ],
-    textColor: [
-      "responsive",
-      "hover",
-      "focus",
-      "dark",
-      "dark-hover",
-      "dark-focus",
-    ],
-    display: ["responsive", "dark"],
+    // Disable responsive variants for now
+    typography: [],
+    extend: {
+      display: ["dark"],
+    },
   },
-  plugins: [
-    require("tailwindcss-dark-mode")(),
-    require("@tailwindcss/typography"),
-  ],
+  plugins: [require("@tailwindcss/typography")({ modifiers: [] })],
 };
