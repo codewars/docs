@@ -142,6 +142,14 @@ module.exports = {
             "remark-attr",
             "@gridsome/remark-prismjs",
             [
+              "gridsome-remark-figure-caption",
+              {
+                figureClassName: "w-full",
+                imageClassName: "object-contain mx-auto",
+                captionClassName: "text-center",
+              },
+            ],
+            [
               "gridsome-plugin-remark-container",
               {
                 icons: "svg",

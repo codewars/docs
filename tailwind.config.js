@@ -2,7 +2,12 @@ const colors = require("tailwindcss/colors");
 
 module.exports = {
   purge: {
-    content: ["./content/**/*.md", "./src/**/*.vue", "./src/**/*.js"],
+    content: [
+      "gridsome.config.js",
+      "./content/**/*.md",
+      "./src/**/*.vue",
+      "./src/**/*.js",
+    ],
   },
   darkMode: "class",
   theme: {
