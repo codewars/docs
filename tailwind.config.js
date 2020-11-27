@@ -28,6 +28,17 @@ module.exports = {
           border: "var(--color-ui-border)",
         },
         brand: "#b1361e",
+        // Remark container colors
+        note: colors.coolGray[600],
+        "note-content": colors.coolGray[500],
+        tip: colors.emerald[600],
+        "tip-content": colors.emerald[600],
+        info: colors.lightBlue[500],
+        "info-content": colors.lightBlue[700],
+        warning: colors.orange[500],
+        "warning-content": colors.orange[700],
+        caution: colors.red[600],
+        "caution-content": colors.red[500],
       },
       spacing: {
         sm: "24rem",

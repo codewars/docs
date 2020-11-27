@@ -1,12 +1,12 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 
-@import "gridsome-plugin-remark-container/themes/classic.css";
 @import "prism-themes/themes/prism-vsc-dark-plus.css";
 @import "./css/variables.css";
 @import "./css/code-blocks.css";
 @import "./css/theme-transition.css";
 @import "./css/prose-extras.css";
 @import "./css/scroll.css";
+@import "./css/remark-container.css";
 
 @import "tailwindcss/utilities";
