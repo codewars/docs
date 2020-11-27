@@ -16,7 +16,7 @@
         ref="input"
         type="search"
         :value="query"
-        class="block w-full py-2 pl-10 pr-4 border-2 rounded-lg border-oc-gray-3 bg-oc-gray-3 focus:bg-oc-gray-2 dark:border-oc-gray-8 dark:bg-oc-gray-8 dark-focus:bg-oc-gray-9"
+        class="block w-full py-2 pl-10 pr-4 border-2 rounded-md placeholder-tgray-400 dark:placeholder-tgray-600 bg-tgray-50 dark:bg-tgray-800 border-tgray-300 dark:border-tgray-800 focus:outline-none focus:ring-1 focus:ring-cgray-300 dark:focus:ring-tgray-600 focus:border-cgray-300 dark:focus:border-tgray-600 dark:focus:bg-tgray-900"
         :class="{ 'rounded-b-none': showResult }"
         placeholder="Search Documentation..."
         @focus="focused = true"
@@ -30,7 +30,7 @@
     </label>
     <div
       v-if="showResult"
-      class="fixed inset-x-0 z-50 overflow-y-auto border-2 border-t-0 rounded-lg rounded-t-none shadow-lg results sm:bottom-auto sm:absolute bg-oc-gray-2 dark:bg-oc-gray-9 border-oc-gray-3 dark:border-oc-gray-8"
+      class="results fixed inset-x-0 z-50 overflow-y-auto border-2 border-t-0 rounded-none rounded-b-md shadow-md sm:bottom-auto sm:absolute bg-tgray-50 dark:bg-tgray-900 border-tgray-300 dark:border-tgray-700"
       style="max-height: calc(100vh - 120px)"
     >
       <ul class="px-4 py-2 m-0">
@@ -54,7 +54,7 @@
             :to="result.path + result.anchor"
             class="block p-2 -mx-2 text-base font-bold rounded-lg"
             :class="{
-              'bg-ui-sidebar text-ui-primary': focusIndex === index,
+              'text-ui-primary': focusIndex === index,
             }"
           >
             <span v-if="result.value === result.title">
