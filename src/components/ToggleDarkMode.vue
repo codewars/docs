@@ -9,7 +9,7 @@
 </template>
 
 <script>
-const DARK_MODE = "dark-mode";
+const DARK_MODE = "dark";
 
 export default {
   data() {

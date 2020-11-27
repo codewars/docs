@@ -157,18 +157,3 @@ const findPage = (path) => {
   }
 };
 </script>
-
-<style>
-@import "prism-themes/themes/prism-material-oceanic.css";
-@import "gridsome-plugin-remark-container/themes/classic.css";
-
-code[class*="language-"],
-pre[class*="language-"] {
-  &::-moz-selection,
-  &::selection,
-  & ::-moz-selection,
-  & ::selection {
-    background: #727272;
-  }
-}
-</style>

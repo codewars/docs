@@ -1,60 +1,12 @@
-@tailwind base;
-@tailwind components;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
 
-:root {
-  /* 3 Typography colors: base/low/high contrast */
-  --color-typo-low: theme("colors.oc-gray.7");
-  --color-typo-base: theme("colors.oc-gray.8");
-  --color-typo-high: theme("colors.oc-gray.9");
-  --color-ui-background: theme("colors.oc-gray.0");
-  --color-ui-sidebar: theme("colors.oc-gray.4");
-  --color-ui-border: theme("colors.oc-gray.3");
-  --color-ui-primary: theme("colors.brand");
-}
+@import "prism-themes/themes/prism-vsc-dark-plus.css";
+@import "./css/variables.css";
+@import "./css/code-blocks.css";
+@import "./css/theme-transition.css";
+@import "./css/prose-extras.css";
+@import "./css/scroll.css";
+@import "./css/remark-container.css";
 
-.dark-mode {
-  --color-typo-low: theme("colors.oc-gray.6");
-  --color-typo-base: theme("colors.oc-gray.5");
-  --color-typo-high: theme("colors.oc-gray.4");
-  --color-ui-background: theme("colors.oc-gray.9");
-  --color-ui-sidebar: theme("colors.oc-gray.8");
-  --color-ui-border: theme("colors.oc-gray.7");
-}
-
-* {
-  transition-property: color, background-color, border-color;
-  transition-duration: 200ms;
-  transition-timing-function: ease-in-out;
-}
-
-.prose {
-  & h1,
-  & h2,
-  & h3,
-  & h4 {
-    &:hover {
-      & a::before {
-        @apply opacity-100;
-      }
-    }
-
-    & a {
-      &::before {
-        content: "#";
-        margin-left: -1em;
-        padding-right: 1em;
-
-        @apply text-ui-primary absolute opacity-0 float-left;
-      }
-    }
-  }
-}
-
-/* Prevent the sticky header from covering the element scrolled to.
- * The margin should be greater than the height of the sticky header.
- */
-[id] {
-  scroll-margin-top: 4rem;
-}
-
-@tailwind utilities;
+@import "tailwindcss/utilities";
