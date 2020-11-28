@@ -41,4 +41,5 @@ This article contains a set of guidelines, which can be used by authors to creat
   - For existing kata with thousands of solutions, code style issues (for example name of solution function) probably can wait.
   - For a kata which is still in beta, all solutions can be invalidated if necessary.
 
-  [gitter-kata-authoring]: https://gitter.im/Codewars/codewars.com/kata-authoring-help
+
+[gitter-kata-authoring]: https://gitter.im/Codewars/codewars.com/kata-authoring-help
