@@ -2,7 +2,6 @@
 prev: /community/teams/
 ---
 
-
 # Community Code of Conduct
 
 The purpose of our Community Code of Conduct is to ensure that all participants in the Codewars community have the best possible experience. We are all here to help each other learn, grow our skillsets and have a good time!
