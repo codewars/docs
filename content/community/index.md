@@ -1,6 +1,7 @@
 ---
 kind: concept
-next: /community/teams/
+sidebar: community
+next: /community/moderation/
 ---
 
 # Codewars Community

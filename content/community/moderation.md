@@ -1,4 +1,5 @@
 ---
+sidebar: community
 prev: /community/
 next: /community/rules/
 ---
