@@ -45,7 +45,7 @@ The description is shared among all languages so changing it in your translation
 
 The translation does not have to be finished in one go. It can be saved and kept in draft state as long as necessary. When the translator considers it ready, it can be published which places it in a "pending" state and becomes available for other users to review, approve, edit or reject. Only one translation may be published for any given kata and language. For example, if a published Java translation already exists then a new one may be created but not published until the former is rejected.
 
-Unfortunately, there is currently no reliable way to prevent approval of translations of insufficient quality. Unlike beta kata, translations are not subject to any kind of beta process, and comments in the translation discourse cannot be labelled as issues. That's why it's very important to make sure that published translations comply with [translation authoring guidelines (TODO)]().
+Unfortunately, there is currently no reliable way to prevent approval of translations of insufficient quality. Unlike beta kata, translations are not subject to any kind of beta process, and comments in the translation discourse cannot be labelled as issues. That's why it's very important to make sure that published translations comply with [translation authoring guidelines][translation-authoring-guidelines].
 
 After a translation is published, the translator is advised to post a comment in the kata discourse with a link to their translation fork labelled as **Suggestion**. This will notify other users about the fact and it will be easier for others to find such pending translations.
 
@@ -82,7 +82,7 @@ When reviewing a translation, users can perform following steps:
 - **Reading the code and description**.
 - **Running the tests** against a couple of solutions, to verify if test suite gracefully handles some unexpected answers and eventual crashes of the solution. Unfortunately, testing tests of a translation is currently rather cumbersome. One possibility is to fork the translation, replace "Solution" snippet with your solution, run tests, and discard the fork afterwards. Another way is to create a new kumite from scratch and copy/paste code snippets from the translation under review to your kumite.
 - **Reading the comments** to check if there are any remarks from other reviewers and whether they still hold or were addressed appropriately. Be aware that comments under translations cannot be labelled as an **Issue** or **Suggestion**, so there are no additional markers for the severity of the comment. They also cannot be marked as spoilers, so don't reveal too many details about the solution in your comment, if possible.
-- **Verifying** if the translation holds to [translation authoring guidelines (TODO)]().
+- **Verifying** if the translation holds to [translation authoring guidelines][translation-authoring-guidelines].
 
 After a review is completed, the reviewer can finalize it with one of following actions:
 
@@ -142,3 +142,4 @@ Sometimes a kata needs to be fixed due to an issue, be it a bug in the reference
 [conditional-rendering]: /references/markdown/extensions/#conditional-rendering
 [honor-reference-other]: /references/gamification/honor/#other
 [privileges-reference]: /references/gamification/privileges/
+[translation-authoring-guidelines]: /authoring/guidelines/translation/
