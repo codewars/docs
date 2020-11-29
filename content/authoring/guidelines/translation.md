@@ -2,6 +2,7 @@
 kind: reference
 sidebar: authoring
 prev: /authoring/guidelines/reference-solution/
+next: /authoring/guidelines/kata/
 ---
 
 # Creating a Translation
