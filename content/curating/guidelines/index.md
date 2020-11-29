@@ -6,7 +6,7 @@ next: /curating/guidelines/kata/
 ---
 
 
-# Codewars Content Curation Guidelines
+# Content Curation Guidelines
 
 _This page is a stub._
 

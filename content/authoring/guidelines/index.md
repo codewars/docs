@@ -5,7 +5,7 @@ prev: /authoring/
 next: /authoring/guidelines/description/
 ---
 
-# Codewars Content Authoring Guidelines
+# Content Authoring Guidelines
 
 ## Overview
 
