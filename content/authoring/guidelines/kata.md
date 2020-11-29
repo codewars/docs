@@ -21,7 +21,7 @@ This article contains a set of guidelines, which can be used by authors to creat
 - **Keep kata focused on one task.** Avoid distractions, do not add other, smaller, "side" requirements which do not add too much value to the task itself. 
 - **Make requirements very clear.** If kata is not a puzzle, describe everything that will be tested and leave no surprises. The reason for every failing test case should be evidently visible in the description of the kata.
 - **Use ideas that can be easily translated,** if they are not the main point of the kata. It is generally OK to use code constructs idiomatic for the language of the author's choice, but be aware when such idioms can cause problems to translators. Sooner or later someone will translate the kata to another programming language, and if the translator is not able to efficiently handle the original, idiomatic approach, the quality or consistency of the translation can suffer.
-- **Do not use requirements which cannot be reliably tested, enforced, or expressed in terms of a kata.** Some requirements simply do not translate well into a kata, and code restrictions (_"Do not use X", or _"You have to use Y"_) is one example of such.
+- **Do not use requirements which cannot be reliably tested, enforced, or expressed in terms of a kata.** Some requirements simply do not translate well into a kata, and code restrictions (_"Do not use X"_, or _"You have to use Y"_) is one example of such.
 
 
 ## Before publishing
