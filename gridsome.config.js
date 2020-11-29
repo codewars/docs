@@ -147,12 +147,10 @@ module.exports = {
           },
           {
             title: "See Also",
-            items: [
-              "/authoring/guidelines/",
-            ],
+            items: ["/authoring/guidelines/"],
           },
         ],
-      },      
+      },
     ],
   },
   plugins: [
