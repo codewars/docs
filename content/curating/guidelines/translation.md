@@ -1,4 +1,7 @@
-
+---
+sidebar: curating
+prev: /curating/guidelines/kata/
+---
 
 # Translations
 

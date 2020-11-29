@@ -1,4 +1,8 @@
-
+---
+sidebar: curating
+prev: /curating/guidelines/
+next: /curating/guidelines/translation/
+---
 
 
 # Kata

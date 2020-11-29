@@ -127,6 +127,32 @@ module.exports = {
           },
         ],
       },
+      {
+        name: "curating",
+        sections: [
+          // TODO Recipes
+          // {
+          //   title: "HOWTOs",
+          //   items: [
+          //     "/curating/howtos/",
+          //   ],
+          // },
+          {
+            title: "Guidelines",
+            items: [
+              "/curating/guidelines/",
+              "/curating/guidelines/kata/",
+              "/curating/guidelines/translation/",
+            ],
+          },
+          {
+            title: "See Also",
+            items: [
+              "/authoring/guidelines/",
+            ],
+          },
+        ],
+      },      
     ],
   },
   plugins: [
