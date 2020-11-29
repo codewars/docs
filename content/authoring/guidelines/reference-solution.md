@@ -7,15 +7,14 @@ next: /authoring/guidelines/translation/
 
 # Writing a Reference Solution
 
-The reference solution snippet, created by the kata author or translator, has a very important role in the kata maintenance process. To help keep kata quality good, it should conform to a set of guidelines presented below. 
+:::note
+On this page, term "Reference Solution" refers to a separate code snippet provided by a kata author or translator, which is used by Codewars to verify correctness of the kata while it's being published.
 
-This article contains a set of guidelines for kata authors and translators to create good code snippets for their kata. They were collected to help ensure that kata and translations are of sufficient quality and kata maintenance will be as easy as possible.
+For guidelines related to the piece of code used by submissions tests to generate expected answers, see [Reference Solution][authoring-guidelines-tests-solution] section on [Writing Submission Tests][authoring-guidelines-tests] page.
+:::
 
-## General Guidelines
-
-- **Conform to [General Coding Guidelines][authoring-guidelines-general-coding]**{id="general"}: the reference solution is code too, and, as such, should keep up to code quality standards. It will make maintenance of the kata much easier, and the readability of the reference solution can be very helpful for future maintainers and translators. The reference solution is not for you to write, but for others to read.
-- When creating a new kata, especially a performance oriented one, the reference solution should reflect **the minimal solution intended by the kata author to pass**{id="minimal-ref"}. Sometimes maintainers and translators are not sure what the author's original intention behind the kata was in terms of its difficulty, edge cases and additional restrictions. The reference solution of the initial language version can then be used as a baseline for other translations.
-- For reasons mentioned above, when a kata is translated, **the meaning of the reference solution from the initial version should be preserved**{id="keep-reqs"}. It's especially important for performance oriented kata. The reference solution of a translation should not significantly stand out from the original one. They do not have to be totally equivalent, and they can use different techniques, but they should correspond in terms of performance, handling of edge cases and invalid inputs, etc. The reference solution of a translation should not be significantly better or worse than the original one.
-
+The reference solution **should conform to [General Coding Guidelines][authoring-guidelines-general-coding]** because it must be maintained, unlike other submitted solutions. Always think about the future maintainers and translators.
 
 [authoring-guidelines-general-coding]: /authoring/guidelines/coding/
+[authoring-guidelines-tests]: /authoring/guidelines/submission-tests/
+[authoring-guidelines-tests-solution]: /authoring/guidelines/submission-tests/#reference-solution
