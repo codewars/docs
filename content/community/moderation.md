@@ -6,7 +6,7 @@ next: /community/rules/
 
 # Moderation
 
-Codewars is very much community based, and it heavily relies on its users to provide the site with the content, keep its quality high, and help other users. To keep such a large and complex place as Codewars in order, and make community and content management easier, two teams of users with access to some additional tools and privileges were created: Administrators, and Moderators. Their task is to support users working with the plaform, monitor for potential issues, and react, handling the issues appropriately.  
+Codewars is very much community based, and it heavily relies on its users to provide the site with the content, keep its quality high, and help other users. To keep such a large and complex place as Codewars in order, and make community and content management easier, two teams of users with access to some additional tools and privileges were created: Administrators, and Moderators. Their task is to support users working with the platform, monitor for potential issues, and react, handling the issues appropriately.  
 
 
 ## Administrators
