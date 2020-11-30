@@ -8,10 +8,6 @@ next: /curating/guidelines/kata/
 
 # Content Curation Guidelines
 
-_This page is a stub._
-
-## Overview
-
 This set of pages contains guidelines for reviewers to help them establish whether reviewed kata or translations adhere to the community's quality standards.
 
 The guidelines should be used by reviewers to verify whether new content about to be introduced to Codewars is of sufficient quality. Conformity to these guidelines is a prerequisite for approving a kata or translation.

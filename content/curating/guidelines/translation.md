@@ -22,7 +22,8 @@ The guidelines are to be followed by every user reviewing and potentially approv
 ## Approval
 
 - A translation can be approved only if the review confirms that it is of sufficient quality, it holds to all applicable quality guidelines, and all reported issues have been addressed.
-- Approver should **mark suggestion posts announcing the translation as resolved**.
+- You should **mark suggestion posts announcing the translation as resolved**.
+- **Keep responsibility for the issues in the translation you approved.** You should actively maintain all problems which slipped through your review and ended up in an approved translation: fix issues, consider suggestions, answer questions.
 
 
 ## Rejection
@@ -33,7 +34,7 @@ The guidelines are to be followed by every user reviewing and potentially approv
 
 ## Maintenance
 
-- After a translation is approved, it becomes **the responsibility of all parties involved: the translator, the user who approved the translation, and the kata author**, to fix any potential issues which might come up later when users attempt to submit their solution.
+- After a translation is approved, it becomes **the responsibility of all the parties involved: the translator, the kata author, and the reviewer**, to fix any potential issues which might come up later when users attempt to submit their solution.
 - Whenever possible, **improve any content of insufficient quality** by fixing bugs and identifying and addressing usability issues. Leave every kata you visit in better shape than you found it.
 
 
