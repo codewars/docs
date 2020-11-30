@@ -5,33 +5,37 @@ prev: /curating/guidelines/kata/
 
 # Translations
 
-_This page is a stub._
+This article contains a set of guidelines, which can be used by reviewers to determine whether a pending translation meets quality requirements to be approved and become available for users to train on. They were collected to help ensure that translations are of sufficient quality and users' experience will be as good as possible.
 
-This article contains a set of guidelines, which can be used by translators to create good translations to existing kata. They were collected to help ensure that translations are of sufficient quality and users' experience will be as good as possible.
-
+:::note
+The guidelines are to be followed by every user reviewing and potentially approving a translation, including the author of the translated kata.
+:::
 
 ## Review
 
-- verify authoring guidelines
-- **Translations should improve the overall quality of the kata.** The sub-optimal quality of existing, approved translations should not be used as an excuse for authoring a low-quality translation. If serious issues with other language versions are uncovered while translating, they should be fixed in the translation and appropriate issues should be raised about all other concerned languages in the kata discourse.
 - **The translation must be reviewed before it's approved.** If the reviewer is not familiar with the language of the translation, they should ask other users for help.
-When issues with the translation are found during its review, they should be reported and discussed in the comment section of the translation so that the translator can be notified and handle them.
-- TODO: Feedback
+- **The review should be as complete as possible,** including all applicable steps mentioned in [Reviewing a Translation HOWTO][howto-review-translation]
+- **Always verify conformity to [translation authoring guidelines][guidelines-authoring-translation] when reviewing.** Know what are quality requirements for translations and its components (description,  code snippets). Make sure they were followed by the author.
+- Reviewers and users other than original translator are allowed to **fix issues in pending translations.**
 
 
 ## Approval
 
+- A translation can be approved only if the review confirms that it is of sufficient quality, it holds to all applicable quality guidelines, and all reported issues have been addressed.
+- Approver should **mark suggestion posts announcing the translation as resolved**.
+
 
 ## Rejection
 
-- If a translation has too many issues or cannot be easily fixed, and there's justified concern that it could be approved prematurely while not keeping up to quality standards, **it can be rejected**.
-
+- If a translation has too many issues or cannot be easily fixed, and there's justified concern that it could be approved prematurely while not keeping up to quality standards, **it should be rejected**.
+- **Reason why the translation was rejected should be stated** in translation comments section.
+- Translation does not have to be rejected and can be left in pending state if it has some issues, all of them are reported, but the translation cannot be approved without editing (for example, due to desription merge conflict). 
 
 ## Maintenance
 
-- After a translation is approved, it becomes **the responsibility of all parties involved: the translator, the user who approved the translation, and the kata author**, to fix any potential issues which might come up later when users attempt to submit their solut
+- After a translation is approved, it becomes **the responsibility of all parties involved: the translator, the user who approved the translation, and the kata author**, to fix any potential issues which might come up later when users attempt to submit their solution.
+- Whenever possible, **improve any content of insufficient quality** by fixing bugs and identifying and addressing usability issues. Leave every kata you visit in better shape than you found it.
 
 
-
-
-
+[guidelines-authoring-translation]: /authoring/guidelines/translation/
+[howto-review-translation]: /curating/translation/?review

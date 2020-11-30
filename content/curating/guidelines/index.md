@@ -23,10 +23,3 @@ Since the guidelines were introduced after many kata had been created, older kat
 :::warning Important note
 Reviewers who repeatedly violate or ignore rules and introduce poor-quality content to the system can have their approval privileges revoked and offending content withdrawn.
 :::
-
-## General Guidelines
-
-- **Always verify conformity to authoring guidelines when reviewing content.** Know what are quality requirements for kata, translations, descriptions, and code, and make sure they were followed by the author.
-- **Keep responsibility for all content you approved.** You should actively maintain all content you introduced into Codewars: fix issues, consider suggestions, answer questions.
-- Whenever possible, **improve any content of insufficient quality** by fixing bugs and identifying and addressing usability issues. Leave every kata you visit in better shape than you found it.
-- Remember that you can always **ask others for help.** 
