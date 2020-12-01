@@ -6,44 +6,50 @@ next: /community/rules/
 
 # Moderation
 
-Codewars is very much community based, and it heavily relies on its users to provide the site with the content, keep its quality high, and help other users. To keep such a large and complex place as Codewars in order, and make community and content management easier, two teams of users with access to some additional tools and privileges were created: Administrators, and Moderators. Their task is to support users working with the platform, monitor for potential issues, and react, handling the issues appropriately.  
+The Codewars community is moderated by admins and moderators. In short, admins are [Qualified](https://www.qualified.io/) employees who develops Codewars, and moderators are a small team of users chosen by the admins to act as delegetes.
 
 
-## Administrators
+## Admins
 
-Administrators are people who maintain Codewars, and who are responsible for its overall shape. They handle the most critical issues, like:
-- Development and maintenance of the Codewars platform,
-- Fixing platform bugs related to Codewars functions, user interface, code runner,
-- Managing user accounts,
-- Handling severe cases of violations of rules.
+Admins are [Qualified](https://www.qualified.io) employees responsible for Codewars itself.
 
-Currently, active users with Administrator status are:
+Example responsibilities include:
+- Development and maintenance of the Codewars platform and services like Code Runner
+- Leading and managing the moderator team
+- Providing tools for the moderator team
+- Providing guidance and making final decisions when necessary
+- Handling account and billing issues
+- Handling any cases escalated by moderators
 
-- [kazk](https://www.codewars.com/users/kazk)
+### Members
+
+**Active**
+- [kazk](https://www.codewars.com/users/kazk) (Kaz, Senior Software Developer at Qualified)
+
+**Inactive**
+- [alchemy](https://www.codewars.com/users/alchemy) (Nathan, CEO of Qualified)
+- [jhoffner](https://www.codewars.com/uses/jhoffner) (Jake, CTO of Qualified)
+- [OverZealous](https://www.codewars.com/users/OverZealous) (Phil, Senior Frontend Developer at Qualified)
+- [ggorlen](https://www.codewars.com/users/ggorlen) (Greg, Content Lead at Qualified)
 
 They can be recognized by the symbol of a crown (👑) displayed next to their username.
 
-<!--
-### Codewars and Qualified
-
-_TODO: I have completely no idea what to put here._
-
--->
-
 ## Moderators
 
-Moderators are a small team of users selected by Administrators to support them in handling some tasks related to the community and Codewars content. Moderators have tools and privileges which help with maintenance of content and with handling of some community issues. Moderators have access to tools which allow them to:
-- Moderate discourses,
-- Manage submitted solutions: re-test them, flag as cheats, etc.
-- Identify cheaters, plagiarists, and users who do not play the game fair,
-- Handle abusers and revoke their privileges,
-- Accept or reject changes to documentation submitted by users.
+Moderators are a small team of active users selected by admins and are responsible for supervising users' activities. They have earned the trust of the admins from years of contributions and are given access to moderation tools and extra privileges.
 
-Moderators also serve as intermediaries between Codewars users and Administrators, or vice versa. They can pass announcements from maintainers, or support users in communication when some issue needs to be brought to the attention of Administrators.
+Example responsibilities include:
+- Providing support
+- Moderating discussions
+- Managing submitted solutions (re-testing, flagging as cheats, etc.)
+- Identifying and punishing cheaters, plagiarists, and users who do not play the game fairly
+- Handling abusers and revoking their privileges
+- Accepting and rejecting changes to the documentation
+- Serving as intermediaries between users and admins
 
 Moderators need to stick to the [Codewars Code of Conduct](/community/rules/), they can use the site as every other user, and they are obliged to play the game fair. When they misbehave, violate rules, or abuse their privileges, their moderator status may be revoked.
 
-Currently, users with Moderator status are:
+### Members
 
 - [Blind4Basics](https://www.codewars.com/users/Blind4Basics)
 - [Chrono79](https://www.codewars.com/users/Chrono79)
@@ -58,8 +64,8 @@ They can be recognized by the symbol of a shield (🛡️) displayed next to the
 
 ## How to get in touch
 
-All kinds of issues are to be reported to the [Codewars Github board](https://github.com/codewars/codewars.com/issues) using an appropriate issue template if available. There are already issues dedicated to handling [spammers](https://github.com/codewars/codewars.com/issues/1493) and [cheaters](https://github.com/codewars/codewars.com/issues/1378).
+All kinds of issues are to be reported on [GitHub](https://github.com/codewars/codewars.com/issues) using an appropriate issue template if available. There are already issues dedicated to handling [spammers](https://github.com/codewars/codewars.com/issues/1493) and [cheaters](https://github.com/codewars/codewars.com/issues/1378).
 
-Issues which should not be exposed publicly or should be brought directly to the attention of Administrators should be reported via email to <info@codewars.com>. For security issues, please read our [security policy](https://github.com/codewars/codewars.com/security/policy).
+Issues which should not be exposed publicly or should be brought directly to the attention of admins should be reported via email to <info@codewars.com>. For security issues, please read our [security policy](https://github.com/codewars/codewars.com/security/policy).
 
 Many members of the moderation team (but not all of them) can be reached via [Gitter](https://gitter.im/Codewars/codewars.com). Message them directly or post on one of the public channels if you need their assistance.
