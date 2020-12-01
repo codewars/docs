@@ -28,7 +28,7 @@ Example responsibilities include:
 
 **Inactive**
 - [alchemy](https://www.codewars.com/users/alchemy) (Nathan, CEO of Qualified)
-- [jhoffner](https://www.codewars.com/uses/jhoffner) (Jake, CTO of Qualified)
+- [jhoffner](https://www.codewars.com/users/jhoffner) (Jake, CTO of Qualified)
 - [OverZealous](https://www.codewars.com/users/OverZealous) (Phil, Senior Frontend Developer at Qualified)
 - [ggorlen](https://www.codewars.com/users/ggorlen) (Greg, Content Lead at Qualified)
 
