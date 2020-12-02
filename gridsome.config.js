@@ -127,6 +127,19 @@ module.exports = {
           },
         ],
       },
+      {
+        name: "community",
+        sections: [
+          {
+            title: "Community",
+            items: [
+              "/community/",
+              "/community/moderation/",
+              "/community/rules/",
+            ],
+          },
+        ],
+      },
     ],
   },
   plugins: [
