@@ -4,17 +4,17 @@ kind: recipe
 
 # Adding Images to Kata Descriptions
 
-Currently, it's not possible to attach any files or additional assets to a kata, but many autors would like to illustrate their descriptions with images. There are plans to indroduce possibility of uploading and attaching files to the descriptions, but until it's implemented, authors have to resort to other techniques. There's a few them, and each of them has its advantages and disadvantages.
+Currently, it's not possible to attach any files or additional assets to a kata, but many authors would like to illustrate their descriptions with images. There are plans to introduce the possibility of uploading and attaching files to the descriptions, but until it's implemented, authors have to resort to other techniques. There are a few of them, and each of them has its advantages and disadvantages.
 
 ## Rule one: avoid images
 
 While eye-catching and potentially helpful, images put in kata descriptions quite often proved to cause problems. They can become problematic in many ways:
 
-- Authors tend to think that an image can be a replacement for a good description. However, kata description should be composed in such a way that when image becomes for some reason unavailable or has to be removed, the problem is still described in sufficient details.
-- Images incur additional maintenance cost. Description can be easily updated, but images are not easy to modify and have to be redrawn. When a description is modified but image is not, they become out of sync.
+- Authors tend to think that an image can be a replacement for a good description. However, kata description should be composed in such a way that when the image becomes for some reason unavailable or has to be removed, the problem is still described in sufficient detail.
+- Images incur additional maintenance costs. Description can be easily updated, but images are not easy to modify and have to be redrawn. When a description is modified but an image is not, they become out of sync.
 - Images cause problems with layout. It's difficult to get their size right, they look differently for users with different screen sizes, resolutions, or screen orientations. An image can appear to look nice on a computer screen, but can break things for mobile users.
 - Authors often miss the fact that images can look bad when combined with theming. When an image looks good when viewed with a dark theme, it can look really bad in light mode, and vice versa.
-- Images are a subject to licensing, copyright, and intellectual property rights. Authors happen to use images they are not allowed to, or fail to give a proper credit.
+- Images are subject to licensing, copyright, and intellectual property rights. Authors happen to use images they are not allowed to, or fail to give proper credit.
 
 However, if you are sure that adding an image to a kata description is a good idea, there are some options available.
 
@@ -67,12 +67,11 @@ Many Markdown applications, including Codewars GUI, allow you to use HTML tags i
 
 ### Pros
 
-- It's quire easy. Image markup just needs to be pasted into the kata editor, it does not require additional processing, encoding, etc.
+- It's quite easy. Image markup just needs to be pasted into the kata editor, it does not require additional processing, encoding, etc.
 - At least it should be readable better than encoded image data.
 
 ### Cons
 
 - Even simple SVG images can be still large, inflating the description significantly,
 - Effects of mixing HTML and Markdown together are not always well defined and can change over time.
-
 
