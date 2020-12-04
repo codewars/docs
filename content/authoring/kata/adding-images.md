@@ -6,6 +6,11 @@ kind: recipe
 
 Currently, it's not possible to attach any files or additional assets to a kata, but many authors would like to illustrate their descriptions with images. There are plans to introduce the possibility of uploading and attaching files to descriptions, but until it's implemented, authors have to resort to other techniques. There are a few of them, and each of them has its advantages and disadvantages.
 
+:::note
+Images used to be necessary to present equations and formulas. Since support for KaTeX was introduced into Codewars, it's no longer the case. Math formulas can be embedded into descriptions using [Codewars Support for Math Typesetting][markdown-extension-math].
+:::
+
+
 ## Rule one: avoid images
 
 While eye-catching and potentially helpful, images put in kata descriptions quite often proved to cause problems. They can become problematic in many ways:
@@ -72,6 +77,8 @@ Many Markdown applications, including Codewars GUI, allow you to use HTML tags i
 
 ### Cons
 
-- Simple-looking SVGs often require a significant amount of code anyway, inflating the kata description. However, they can be minified or optmized with some additional tools  (for example [SVGOMG](https://jakearchibald.github.io/svgomg/)), or by removing unnecessary parts of markup and metadata.
+- Simple-looking SVGs often require a significant amount of code anyway, inflating the kata description. However, they can be minified or optmized with some additional tools  (for example [SVGOMG][svgomg]]), or by removing unnecessary parts of markup and metadata.
 - The results of mixing HTML with Markdown are ill-defined and subject to change.
 
+[svgomg]: https://jakearchibald.github.io/svgomg/
+[markdown-extension-math]: /references/markdown/extensions/#math-typesetting
