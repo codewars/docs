@@ -11,7 +11,7 @@ Images used to be necessary to present equations and formulas. Since support for
 :::
 
 
-## Rule one: avoid images
+## Avoid Images
 
 While eye-catching and potentially helpful, images put in kata descriptions quite often proved to cause problems. They can become problematic in many ways:
 
@@ -24,7 +24,7 @@ While eye-catching and potentially helpful, images put in kata descriptions quit
 However, if you are sure that adding an image to a kata description is a good idea, there are some options available.
 
 
-## Externally hosted images
+## Using Image Hosting Service
 
 To use this method, an image has to be uploaded to some third party hosting service, and referred to with appropriate Markdown:
 
@@ -42,7 +42,7 @@ To use this method, an image has to be uploaded to some third party hosting serv
 - Externally hosted images is a dependency which is difficult to control and manage. It cannot be easily updated, it can expire after some time, be removed, or simply disappear.
 
 
-## Inline images with encoded content
+## Using Data URLs
 
 Markdown supports not only images referenced by URL, but just like for `<img>` elements, image data can be embedded directly into a document with a so-called _data URL_:
 
@@ -66,9 +66,9 @@ Markdown supports not only images referenced by URL, but just like for `<img>` e
 - Additional tools are needed to encode image data as Base-64, gzip, or URL.
 
 
-## SVG in HTML markup
+## Inlining SVG
 
-Many Markdown applications, including Codewars GUI, allow you to use HTML tags in Markdown-formatted text. This allows you to use SVG images directly within a kata description, and it will be rendered as an image.
+Codewars allows a safe subset of HTML in Markdown including `<svg>`, so it's possible to use SVG images directly within a kata description.
 
 ### Pros
 
