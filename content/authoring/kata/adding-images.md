@@ -77,7 +77,7 @@ Codewars allows a safe subset of HTML in Markdown including `<svg>`, so it's pos
 
 ### Cons
 
-- Simple-looking SVGs often require a significant amount of code anyway, inflating the kata description. However, they can be minified or optmized with some additional tools  (for example [SVGOMG][svgomg]]), or by removing unnecessary parts of markup and metadata.
+- Simple-looking SVGs often require a significant amount of code anyway, inflating the kata description. However, they can be minified or optmized with some additional tools  (for example [SVGOMG][svgomg]), or by removing unnecessary parts of markup and metadata.
 - The results of mixing HTML with Markdown are ill-defined and subject to change.
 
 [svgomg]: https://jakearchibald.github.io/svgomg/
