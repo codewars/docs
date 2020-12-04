@@ -72,5 +72,6 @@ Many Markdown applications, including Codewars GUI, allow you to use HTML tags i
 
 ### Cons
 
-- Simple-looking SVGs often require a significant amount of code anyway, inflating the kata description.
+- Simple-looking SVGs often require a significant amount of code anyway, inflating the kata description. However, they can be minified or optmized with some additional tools  (for example [SVGOMG](https://jakearchibald.github.io/svgomg/)), or by removing unnecessary parts of markup and metadata.
 - The results of mixing HTML with Markdown are ill-defined and subject to change.
+
