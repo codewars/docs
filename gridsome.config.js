@@ -61,10 +61,10 @@ module.exports = {
               "/concepts/kata/translations/",
             ],
           },
-          {
+         /* {
             title: "How to...",
             items: ["/recipes/solve-kata/", "/recipes/create-kata/"],
-          },
+          },*/
         ],
       },
       {
