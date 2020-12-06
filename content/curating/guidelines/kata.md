@@ -11,8 +11,8 @@ This article contains a set of guidelines, which can be used by reviewers to det
 
 ## Review
 
-- **The kata must be reviewed before it's approved.** See [Reviewing a Kata HOWTO][howto-review-kata] for more details on how to review a kata.
-- **The review should be as complete as possible,** including all applicable steps mentioned in [Reviewing a Kata HOWTO][howto-review-kata]. If the reviewer is not able to perform a complete review, they should ask other users for help.
+- **The kata must be reviewed before it's approved.** See [Curating a Kata HOWTO][howto-review-kata] for more details on how to review a kata.
+- **The review should be as complete as possible,** including all applicable steps mentioned in [Curating a Kata HOWTO][howto-review-kata]. If the reviewer is not able to perform a complete review, they should ask other users for help.
 - **Conformity to [kata authoring guidelines][guidelines-authoring-kata] should be verified.** All applicable guideliness should be followed by the author.
 
 
@@ -41,4 +41,4 @@ This article contains a set of guidelines, which can be used by reviewers to det
 
 
 [guidelines-authoring-kata]: /authoring/guidelines/kata/
-[howto-review-kata]: /curating/kata/?review
+[howto-review-kata]: /curating/kata/#review

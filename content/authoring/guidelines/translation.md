@@ -5,7 +5,7 @@ prev: /authoring/guidelines/reference-solution/
 next: /authoring/guidelines/kata/
 ---
 
-# Creating a Translation
+# Translation Authoring Guidelines
 
 This article contains a set of guidelines, which can be used by translators to create good translations to existing kata. They were collected to help ensure that translations are of sufficient quality and users' experience will be as good as possible.
 

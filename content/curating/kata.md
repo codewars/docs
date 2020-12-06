@@ -12,7 +12,7 @@ Some of the steps are available only after earning the required privilege, but e
 
 ### Attempting the Kata
 
-Training on a kata and solving it is the first step to verify its quality, but also a very effective one. Reading through the description, users can check if it's clear enough, or something needs to be reworded or explained in a clearer way. When tests are run, reviewers can verify if they are sufficient, or whether assertion messages are clear and easy to understand. Users can check whether their experience with the kata meets all [Kata authoring best practices][authoring-best-practices]. When any issues are found, users can raise issues or suggest changes in kata discourse.
+Training on a kata and solving it is the first step to verify its quality, but also a very effective one. Reading through the description, users can check if it's clear enough, or something needs to be reworded or explained in a clearer way. When tests are run, reviewers can verify if they are sufficient, or whether assertion messages are clear and easy to understand. Users can check whether their experience with the kata meets all expectations. When any issues are found, users can raise issues or suggest changes in kata discourse.
 
 When kata is successfully solved, user unlocks further steps of the review process.
 
@@ -46,7 +46,7 @@ After a review is completed, the reviewer can finalize it with one of following 
 - **Fixing problems found during the review,** if privileges allow.
 - **Approving the kata**, if it fulfills all required conditions (see below).
 
-Users performing a review should hold to [Kata Curating Guidelines](kata-curating-guidelines).
+Users performing a review should hold to [Kata Curating Guidelines][kata-curating-guidelines].
 
 ## Reward for Reviewers
 
@@ -70,5 +70,6 @@ Some kata, especially ones created a long time ago, can have some issues or sugg
 Sufficiently privileged users are encouraged to fix any reported problems and improve quality of affected kata whenever possible.
 
 [kata-curating-guidelines]: /curating/guidelines/kata/
+[kata-authoring-guidelines]: /authoring/guidelines/kata/
 [privileges-reference]: /references/gamification/privileges/#privileges
 [approval-criteria]: /references/kata-ranking/approval-retire-criteria/

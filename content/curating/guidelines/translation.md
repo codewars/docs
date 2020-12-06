@@ -14,7 +14,7 @@ The guidelines are to be followed by every user reviewing and potentially approv
 ## Review
 
 - **The translation must be reviewed before it's approved.** If the reviewer is not familiar with the language of the translation, they should ask other users for help.
-- **The review should be as complete as possible,** including all applicable steps mentioned in [Reviewing a Translation HOWTO][howto-review-translation]
+- **The review should be as complete as possible,** including all applicable steps mentioned in [Curating a Translation HOWTO][howto-review-translation]
 - **Conformity to [translation authoring guidelines][guidelines-authoring-translation] should be verified.** All applicable guideliness should be followed by the translator.
 - Reviewers and users other than original translator are allowed to **fix issues in pending translations.**
 
@@ -38,4 +38,4 @@ The guidelines are to be followed by every user reviewing and potentially approv
 
 
 [guidelines-authoring-translation]: /authoring/guidelines/translation/
-[howto-review-translation]: /curating/translation/?review
+[howto-review-translation]: /curating/translation/#review
