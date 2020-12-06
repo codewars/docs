@@ -6,7 +6,7 @@ next: /curating/guidelines/kata/
 ---
 
 
-# Content Curation Guidelines
+# Curating Guidelines Overview
 
 This set of pages contains guidelines for reviewers to help them establish whether reviewed kata or translations adhere to the community's quality standards.
 

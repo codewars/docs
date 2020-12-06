@@ -1,3 +1,7 @@
+---
+sidebar: curating
+---
+
 # Curating a Translation
 
 Unfortunately, there is currently no reliable way to prevent approval of translations of insufficient quality. Unlike beta kata, translations are not subject to any kind of beta process, and comments in the translation discourse cannot be labelled as issues. That's why it's very important to make sure that published translations are of sufficient quality.
@@ -11,7 +15,7 @@ Currently, pending translations can be found in one of following ways:
 - Navigating to `https://www.codewars.com/kata/kata-id/translations` page, which lists all translations in two sections: pending ones at the top, and closed ones (approved and rejected) below.
 - A small group of users has been granted the privilege of accessing the page with a list of all pending translations eligible for approval by them. This is the most convenient way of searching for pending translations, but not available to every user at the moment.
 
-### Reviewing a translation
+### Review
 
 Before a pending translation is accepted and a new language becomes available for a kata, it needs to be reviewed and determined whether it holds up to Codewars quality standards.
 When reviewing a translation, users can perform following steps:
@@ -66,11 +70,15 @@ It's worth noting that rejected translations are not wasted work. They are still
 
 Sometimes a kata needs to be fixed due to an issue, be it a bug in the reference solution, typos in the description or the lack of test coverage. Fixes and improvements to approved translations can be done in one of two ways:
 
-- If a translation was created with translations panel, its most recent version can be forked, modified, and published. Afterwards it has to go through the usual translation review process and wait until another user approves it. However, translations created directly within the kata editor cannot be forked.
+- If a translation was created with translations panel, the most recent fork can be forked again, modified, and published. Afterwards it has to go through the usual translation review process and wait until another user approves it. However, translations created directly within the kata editor cannot be forked.
 - A translation may be modified directly with the kata editor. This method allows for immediate changes without waiting for approval, but it also has some drawbacks:
   - it requires privileges which are available only to experienced users,
   - it invalidates existing forks, what may cause merge conflicts for modified snippets if someone publishes a fork of this translation sometime in the future,
   - direct edits are not subject to the review process and other users cannot verify the introduced changes.
 
+:::warning
+The way how kata edits are currently handled, existing pending forks can be very easily outdated by direct edits of the kata. When creating a fork based on some other, existing fork, you have to make sure that it contains the most current state of its language and does not overwrite or revert changes introduced with the kata editor.
+:::
 
+[translation-authoring-guidelines]: /authoring/guidelines/translation/
 [privileges-reference]: /references/gamification/privileges/

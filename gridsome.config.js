@@ -130,13 +130,14 @@ module.exports = {
       {
         name: "curating",
         sections: [
-          // TODO Recipes
-          // {
-          //   title: "HOWTOs",
-          //   items: [
-          //     "/curating/howtos/",
-          //   ],
-          // },
+          {
+            title: "Curating",
+            items: [
+              "/curating/",
+              "/curating/kata/",
+              "/curating/translation/",
+            ],
+          },
           {
             title: "Guidelines",
             items: [

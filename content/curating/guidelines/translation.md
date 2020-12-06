@@ -3,7 +3,7 @@ sidebar: curating
 prev: /curating/guidelines/kata/
 ---
 
-# Translations
+# Translation Curating Guidelines
 
 This article contains a set of guidelines, which can be used by reviewers to determine whether a pending translation meets quality requirements to be approved and become available for users to train on. They were collected to help ensure that translations are of sufficient quality and users' experience will be as good as possible.
 
@@ -15,15 +15,15 @@ The guidelines are to be followed by every user reviewing and potentially approv
 
 - **The translation must be reviewed before it's approved.** If the reviewer is not familiar with the language of the translation, they should ask other users for help.
 - **The review should be as complete as possible,** including all applicable steps mentioned in [Reviewing a Translation HOWTO][howto-review-translation]
-- **Always verify conformity to [translation authoring guidelines][guidelines-authoring-translation] when reviewing.** Know what are quality requirements for translations and its components (description,  code snippets). Make sure they were followed by the author.
+- **Conformity to [translation authoring guidelines][guidelines-authoring-translation] should be verified.** All applicable guideliness should be followed by the translator.
 - Reviewers and users other than original translator are allowed to **fix issues in pending translations.**
 
 
 ## Approval
 
 - A translation can be approved only if the review confirms that it is of sufficient quality, it holds to all applicable quality guidelines, and all reported issues have been addressed.
-- You should **mark suggestion posts announcing the translation as resolved**.
-- **Keep responsibility for the issues in the translation you approved.** You should actively maintain all problems which slipped through your review and ended up in an approved translation: fix issues, consider suggestions, answer questions.
+- **Suggestion posts announcing the translation should be marked as resolved**.
+- **Approvers should keep responsibility for the issues in translations they approved.** You should actively maintain all problems which slipped through your review and ended up in an approved translation: fix issues, consider suggestions, answer questions.
 
 
 ## Rejection
@@ -34,8 +34,7 @@ The guidelines are to be followed by every user reviewing and potentially approv
 
 ## Maintenance
 
-- After a translation is approved, it becomes **the responsibility of all the parties involved: the translator, the kata author, and the reviewer**, to fix any potential issues which might come up later when users attempt to submit their solution.
-- Whenever possible, **improve any content of insufficient quality** by fixing bugs and identifying and addressing usability issues. Leave every kata you visit in better shape than you found it.
+- After a translation is approved, it becomes **the responsibility the translator and the kata author** to fix any potential issues which might come up later when users attempt to submit their solution.
 
 
 [guidelines-authoring-translation]: /authoring/guidelines/translation/
