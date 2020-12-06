@@ -139,7 +139,7 @@ module.exports = {
             ],
           },
           {
-            title: "Guidelines",
+            title: "Curating Guidelines",
             items: [
               "/curating/guidelines/",
               "/curating/guidelines/kata/",
