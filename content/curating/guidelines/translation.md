@@ -15,7 +15,7 @@ The guidelines are to be followed by every user reviewing and potentially approv
 
 - **The translation must be reviewed before it's approved.** If the reviewer is not familiar with the language of the translation, they should ask other users for help.
 - **The review should be as complete as possible,** including all applicable steps mentioned in [Curating a Translation HOWTO][howto-review-translation]
-- **Conformity to [translation authoring guidelines][guidelines-authoring-translation] should be verified.** All applicable guideliness should be followed by the translator.
+- **Conformity to [translation authoring guidelines][guidelines-authoring-translation] should be verified.** All applicable guidelines should be followed by the translator.
 - Reviewers and users other than the original translator are allowed to **fix issues in pending translations.**
 
 
@@ -29,12 +29,12 @@ The guidelines are to be followed by every user reviewing and potentially approv
 ## Rejection
 
 - If a translation has too many issues or cannot be easily fixed, and there's justified concern that it could be approved prematurely while not keeping up to quality standards, **it should be rejected**.
-- **Reason why the translation was rejected should be stated** in translation comments section.
-- Translation does not have to be rejected and can be left in pending state if it has some issues, all of them are reported, but the translation cannot be approved without editing (for example, due to desription merge conflict). 
+- **Reason why the translation was rejected should be stated** in the translation comments section.
+- Translation does not have to be rejected and can be left in pending state if it has some issues, all of them are reported, but the translation cannot be approved without editing (for example, due to description merge conflict). 
 
 ## Maintenance
 
-- After a translation is approved, it becomes **the responsibility the translator and the kata author** to fix any potential issues which might come up later when users attempt to submit their solution.
+- After a translation is approved, it becomes **the responsibility of the translator and the kata author** to fix any potential issues which might come up later when users attempt to submit their solution.
 
 
 [guidelines-authoring-translation]: /authoring/guidelines/translation/

@@ -4,7 +4,7 @@ sidebar: curating
 
 # Curating a Kata
 
-This article is meant to explain how to ensure a high quakity of a kata, before it leaves the beta state, and after it's accepted.
+This article is meant to explain how to ensure a high quality of a kata before it leaves the beta state, and after it's accepted.
 
 ## Beta process and working with beta kata
 
@@ -32,15 +32,15 @@ Kata author assigns initial difficulty rank estimation to their kata, but they d
 
 ### Review
 
-Before a beta kata is accepted and a becomes available for users to train on, it needs to be reviewed and determined whether it holds up to Codewars quality standards.
-When reviewing a beta kata, users can perform following steps:
+Before a beta kata is accepted and becomes available for users to train on, it needs to be reviewed and determined whether it holds up to Codewars quality standards.
+When reviewing a beta kata, users can perform the following steps:
 
 - **Reading the code and description**.
 - **Running the tests** against a couple of solutions, to verify if test suite gracefully handles some unexpected answers and eventual crashes of the solution, or if assertion messages are clear enough, etc.
 - **Reading the comments** to check if there are any remarks from other reviewers and whether they still hold or were addressed appropriately.
 - **Verifying** if the kata holds to [kata authoring guidelines][kata-authoring-guidelines].
 
-After a review is completed, the reviewer can finalize it with one of following actions:
+After a review is completed, the reviewer can finalize it with one of the following actions:
 
 - **Leaving a properly labeled comment** with remarks, suggestions and issues which should be addressed by the author.
 - **Fixing problems found during the review,** if privileges allow.
