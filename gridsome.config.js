@@ -150,6 +150,19 @@ module.exports = {
             title: "See Also",
             items: ["/authoring/guidelines/"],
           },
+        ]
+      },
+      {
+        name: "community",
+        sections: [
+          {
+            title: "Community",
+            items: [
+              "/community/",
+              "/community/moderation/",
+              "/community/rules/",
+            ],
+          },
         ],
       },
     ],
