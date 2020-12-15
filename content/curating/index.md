@@ -11,4 +11,4 @@ To support users in assuring good quality of kata and translations, a set of hel
 
 This section of the documentation is meant mostly for reviewers, approvers, and maintainers, who would like to work with existing content created by other users. Kata authors and translators can find helpful documentation in areas related to [authoring][docs-authoring].
 
-[docs-authoring]: [/authoring/]
+[docs-authoring]: /authoring/

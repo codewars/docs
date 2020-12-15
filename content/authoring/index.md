@@ -12,5 +12,5 @@ To support users in creating good quality kata and translations, a set of help p
 This section of documentation is meant mostly for authors and translators, who would like to introduce new challenges and make them available for other users. Additionally, reviewers should use [guidelines]() collected here to verify whether the reviewed piece of content meets all quality requirements, as described in documentation related to [curating of content][docs-curating].
 
 
-[guidelines-authoring]: [/authoring/guidelines/]
-[docs-curating]: [/curating/]
+[guidelines-authoring]: /authoring/guidelines/
+[docs-curating]: /curating/
