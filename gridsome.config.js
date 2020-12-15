@@ -61,7 +61,7 @@ module.exports = {
               "/concepts/kata/translations/",
             ],
           },
-         /* {
+          /* {
             title: "How to...",
             items: ["/recipes/solve-kata/", "/recipes/create-kata/"],
           },*/
@@ -132,11 +132,7 @@ module.exports = {
         sections: [
           {
             title: "Curating",
-            items: [
-              "/curating/",
-              "/curating/kata/",
-              "/curating/translation/",
-            ],
+            items: ["/curating/", "/curating/kata/", "/curating/translation/"],
           },
           {
             title: "Curating Guidelines",
@@ -150,7 +146,7 @@ module.exports = {
             title: "See Also",
             items: ["/authoring/guidelines/"],
           },
-        ]
+        ],
       },
       {
         name: "community",
