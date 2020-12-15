@@ -1,5 +1,6 @@
 ---
 kind: tutorial
+sidebar: authoring
 ---
 
 # How to translate a kata
