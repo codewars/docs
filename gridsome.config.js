@@ -109,7 +109,7 @@ module.exports = {
             items: [
               "/authoring/",
               "/authoring/kata/",
-              "/authoring/translations/",
+              "/authoring/translation/",
             ],
           },
           {
