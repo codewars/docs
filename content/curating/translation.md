@@ -4,7 +4,7 @@ sidebar: curating
 
 # Curating a Translation
 
-Unfortunately, there is currently no reliable way to prevent approval of translations of insufficient quality. Unlike beta kata, translations are not subject to any kind of beta process, and comments in the translation discourse cannot be labelled as issues. That's why it's very important to make sure that published translations are of sufficient quality.
+Unfortunately, there is currently no reliable way to prevent approval of translations of insufficient quality. Unlike beta kata, translations are not subject to any kind of beta process, and comments in the translation discourse cannot be labeled as issues. That's why it's very important to make sure that published translations are of sufficient quality.
 
 ## Reviewing and working with pending translations
 
