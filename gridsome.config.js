@@ -104,13 +104,14 @@ module.exports = {
       {
         name: "authoring",
         sections: [
-          // TODO Tutorials
-          // {
-          //   title: "Tutorials",
-          //   items: [
-          //     "/authoring/tutorials/",
-          //   ],
-          // },
+          {
+            title: "Authoring",
+            items: [
+              "/authoring/",
+              "/authoring/kata/",
+              "/authoring/translations/",
+            ],
+          },
           {
             title: "Guidelines",
             items: [
