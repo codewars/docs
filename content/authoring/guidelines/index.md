@@ -1,7 +1,7 @@
 ---
 kind: reference
 sidebar: authoring
-prev: /authoring/
+prev: /authoring/translation/
 next: /authoring/guidelines/description/
 ---
 
