@@ -1,5 +1,6 @@
 ---
 sidebar: curating
+next: /curating/kata/
 ---
 
 # Content Curation

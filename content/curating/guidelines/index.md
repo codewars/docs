@@ -1,7 +1,7 @@
 ---
 kind: reference
 sidebar: curating
-prev: /curating/
+prev: /curating/translation/
 next: /curating/guidelines/kata/
 ---
 

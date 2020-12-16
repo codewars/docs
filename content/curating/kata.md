@@ -1,5 +1,7 @@
 ---
 sidebar: curating
+prev: /curating/
+next: /curating/translation/
 ---
 
 # Curating a Kata
