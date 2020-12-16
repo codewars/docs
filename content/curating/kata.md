@@ -50,6 +50,11 @@ After a review is completed, the reviewer can finalize it with one of the follow
 
 Users performing a review should hold to [Kata Curating Guidelines][kata-curating-guidelines].
 
+### Review comments
+
+When a reviewer writes a post pointing out the spotted issues which need to be fixed, it should be done in a way which actually instructs the author how to fix them. Sometimes, authors can be not aware that some specific issue might occur, or why this might be a problem. When a reviewer wants to signal such issue, it should be done in a way which would minimize the need for follow-up questions and additional explanations. Initially it might seem as more effort for reviewer, but this additional effort might be finally worth it if it helps to resolve the problems easier.
+
+
 ## Reward for Reviewers
 
 Reviewers earn an _additional_ 2 honor for every Beta Kata they solve, in order to reward them for taking the risk of solving a Kata with potential issues. Then, leaving a satisfaction vote and rank assessment on said Beta Kata grants  1 _extra_ honor _each_, in order to reward the reviewer for taking the time to leave valuable feedback on said Kata. Finally, if the Kata is approved, the reviewer will also receive the honor and rank progress for the official Kata. Therefore, it is in everyone's interest to leave the satisfaction vote and rank assessment on every completed Beta Kata.

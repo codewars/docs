@@ -34,6 +34,12 @@ After a review is completed, the reviewer can finalize it with one of the follow
 - **Approving the translation**, which introduces a new language to the kata available for solving.
 - **Rejecting the translation** if it cannot be fixed.
 
+Users performing a review should hold to [Translation Curating Guidelines][translation-curating-guidelines].
+
+### Review comments
+
+When a reviewer writes a post pointing out the spotted issues which need to be fixed, it should be done in a way which actually instructs the translator how to fix them. Sometimes, translators can be not aware that some specific issue might occur, or why this might be a problem. When a reviewer wants to signal such issue, it should be done in a way which would minimize the need for follow-up questions and additional explanations. Initially it might seem as more effort for reviewer, but this additional effort might be finally worth it if it helps to resolve the problems easier.
+
 ### Approving a translation
 
 Pending translations can be approved by either the kata author at any time, or any user with the [privilege to coauthor][privileges-reference] under the following conditions:
@@ -82,5 +88,6 @@ Sometimes a kata needs to be fixed due to an issue, be it a bug in the reference
 The way how kata edits are currently handled, existing pending forks can be very easily outdated by direct edits of the kata. When creating a fork based on some other, existing fork, you have to make sure that it contains the most current state of its language and does not overwrite or revert changes introduced with the kata editor.
 :::
 
+[translation-curating-guidelines]: /curating/guidelines/translation/
 [translation-authoring-guidelines]: /authoring/guidelines/translation/
 [privileges-reference]: /references/gamification/privileges/
