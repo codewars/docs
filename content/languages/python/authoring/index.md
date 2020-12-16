@@ -1,6 +1,6 @@
 # Creating Python Kata
 
-This article is meant as help for kata authors and translators who would like to create new content in Python programming language. It attempts to explain how to create and organize things in a way conforming to [authoring guidelines][], what are the most common pitfalls, and how to avoid them.
+This article is meant as help for kata authors and translators who would like to create new content in Python programming language. It attempts to explain how to create and organize things in a way conforming to [authoring guidelines](/authoring/guidelines/), what are the most common pitfalls, and how to avoid them.
 
 
 ## General info
@@ -36,25 +36,40 @@ For details, see reference pages on [sequential code blocks](/references/markdow
 ## Requirements
 
 Some concepts available in Python do not translate well into other languages, and should be avoided if possible:
-- Mixed return types (_"Return result, or string 'Error' if no result can be found."_),
+- Mixed return types (_"Return result, or string 'Error' if no result can be found."_).
 
 Some kata should not be translated into Python, because it can be difficult to keep their initial idea:
 - Python standard library is very rich and has many utilities available, so some requirements become very easy (`itertools`, combinatorics, `numpy`),
-- Python supports big integers natively, so kata which rely on implementation of arbitrary precision integer arithmetic become trivial in Python,
-- It's very difficult to block things in Python, because most of internals can be easily overriden or reconfigured
+- Python supports big integers natively, so kata which rely on implementation of arbitrary precision integer arithmetic become trivial in Python.
+
 
 ## Coding
 
-- Stick to PEP
+Python code should stick to generally recognized Python conventions, with [PEP-8](https://www.python.org/dev/peps/pep-0008/) being most widely accepted.
+
 
 ## Tests
 
-- Python Codewars testing framework
-  - entry per `it` or per `assert`?
+### Testing framework
+
+Python kata use [Codewars Python testing framework](/languages/python/codewars-test/) to implement and execute tests. You should read its reference page to find out how to use `describe` and `it` blocks for [organization and grouping](/languages/python/codewars-test/#grouping-tests), what are available [assertions](/languages/python/codewars-test/#assertions), etc. 
+
+You should notice that Python testing framework produces one test output entry per assertion, so test output panel can get trashed easily.
+
+### Random utilities
+
+Python has a very rich [random library](https://docs.python.org/3.8/library/random.html), which can be used to easily generate random integers in requested ranges, generate floating point numbers, or samplie and shuffle collections. Functions available there allow for very convenient construction of various random input generators.
+
+### 
+
+
+
+### Calling assertions
+
+
+
 - Mutation of input
 - code in assertion message and stacktrace
-- Random utilities
-- test case generators
 - Accessibility of ref solution
 - location of solution file
 - How to provide test framework locally?
