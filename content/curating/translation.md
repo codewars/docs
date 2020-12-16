@@ -38,7 +38,7 @@ Users performing a review should hold to [Translation Curating Guidelines][trans
 
 ### Review comments
 
-When a reviewer writes a post pointing out the spotted issues which need to be fixed, it should be done in a way which actually instructs the translator how to fix them. Sometimes, translators can be not aware that some specific issue might occur, or why this might be a problem. When a reviewer wants to signal such issue, it should be done in a way which would minimize the need for follow-up questions and additional explanations. Initially it might seem as more effort for reviewer, but this additional effort might be finally worth it if it helps to resolve the problems easier.
+When a reviewer writes a post pointing out the spotted issues which need to be fixed, it should be done in a way which actually instructs the translator how to fix them. Sometimes, authors can be not aware that some specific issue might occur, or why this might be a problem, and reviewers with their short remarks leave them even more clueless. When a reviewer wants to signal such issue, it should be done in a way which would minimize the need for follow-up questions and additional explanations. Initially it might seem as more effort for reviewer, but this additional effort might be finally worth it if it helps to resolve the problems easier.
 
 ### Approving a translation
 
