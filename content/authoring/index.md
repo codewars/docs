@@ -9,7 +9,7 @@ All content available on Codewars is created by members of the Codewars communit
 
 To support users in creating good quality kata and translations, a set of help pages was created with articles related to content authoring activities: tutorials explaining how to create and translate a kata, and reference of guidelines and requirements which every author should follow to make sure that a piece of content created by them meets quality criteria.
 
-This section of documentation is meant mostly for authors and translators, who would like to introduce new challenges and make them available for other users. Additionally, reviewers should use [guidelines]() collected here to verify whether the reviewed piece of content meets all quality requirements, as described in documentation related to [curating of content][docs-curating].
+This section of documentation is meant mostly for authors and translators, who would like to introduce new challenges and make them available for other users. Additionally, reviewers should use [guidelines][guidelines-authoring] collected here to verify whether the reviewed piece of content meets all quality requirements, as described in documentation related to [curating of content][docs-curating].
 
 
 [guidelines-authoring]: /authoring/guidelines/
