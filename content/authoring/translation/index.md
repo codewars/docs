@@ -1,6 +1,8 @@
 ---
 kind: tutorial
 sidebar: authoring
+prev: /authoring/kata/
+next: /authoring/guidelines/
 ---
 
 # How to translate a kata
