@@ -76,6 +76,16 @@ When some problem with a kata is identified, it should be reported as an Issue o
 Some kata, especially ones created a long time ago, can have some issues or suggestions which are still pending, but have been already fixed or are not applicable anymore because the kata has changed. It's very helpful when such old issues are reviewed and marked as resolved if they are not valid anymore. It can also happen that there are posts in the kata discourse which report some problem, but are not labelled appropriately. It's generally a good idea to re-raise such issues as new posts with the correct label, as it should help other users to find them and eventually fix them.
 Sufficiently privileged users are encouraged to fix any reported problems and improve the quality of affected kata whenever possible.
 
+<!--
+## Maintenance
+
+- fix descriptions
+- add random tests
+- organize test suites with `describe`/`it`
+- add random generators
+
+ -->
+
 [kata-curating-guidelines]: /curating/guidelines/kata/
 [kata-authoring-guidelines]: /authoring/guidelines/kata/
 [privileges-reference]: /references/gamification/privileges/#privileges
