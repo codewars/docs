@@ -17,6 +17,7 @@ The guidelines are to be followed by every user reviewing and potentially approv
 - **The review should be as complete as possible,** including all applicable steps mentioned in [Curating a Translation HOWTO][howto-review-translation]
 - **Conformity to [translation authoring guidelines][guidelines-authoring-translation] should be verified.** All applicable guidelines should be followed by the translator.
 - Reviewers and users other than the original translator are allowed to **fix issues in pending translations.**
+- Posts which provide information on issues encountered during the review **should contain information helpful for fixing them.** Feedback of the form _"This and that is wrong."_ is not very constructive nor helpful to the translator. Feedback post should provide some guidance, hints, or links to articles explaining how to fix the problems.
 
 
 ## Approval
