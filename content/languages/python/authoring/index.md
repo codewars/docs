@@ -4,7 +4,7 @@ languages: [python]
 sidebar: "language:python"
 ---
 
-# Creating Python Kata
+# Creating a Python Kata
 
 This article is meant as help for kata authors and translators who would like to create new content in Python programming language. It attempts to explain how to create and organize things in a way conforming to [authoring guidelines](/authoring/guidelines/), what are the most common pitfalls, and how to avoid them.
 
@@ -13,12 +13,12 @@ This article is not a standalone tutorial on creating a kata or translation. It'
 
 ## General info
 
-Any help related to Python in context of Codewars can be found on [Python reference](/languages/python/) page.
+Any information related to Python setup in context of Codewars, language version, available modules, and setup of the code runner, can be found on [Python reference](/languages/python/) page.
 
 
 ## Description
 
-Python code blocks can be inserted with following Markdown:
+Python code blocks can be inserted with Python-specific part in [sequential code blocks](/references/markdown/extensions/#sequential-code-blocks):
 
 ~~~
 ```python
@@ -28,7 +28,7 @@ Python code blocks can be inserted with following Markdown:
 ```
 ~~~
 
-Python-specific paragraphs can be inserted with following Markdown:
+Python-specific paragraphs can be inserted with [language conditional rendering](/references/markdown/extensions/#conditional-rendering):
 
 ```
 ~~~if:python
@@ -44,16 +44,13 @@ Python-specific paragraphs can be inserted with following Markdown:
 ~~~
 ```
 
-For details, see reference pages on [sequential code blocks](/references/markdown/extensions/#sequential-code-blocks) and [language conditional rendering](/references/markdown/extensions/#conditional-rendering).
-
-
 ## Tasks and Requirements
 
-Some concepts available in Python do not translate well into other languages, and should be avoided if possible:
-- Mixed return types (_"Return result, or string 'Error' if no result can be found."_).
+Some language constructs and features available in Python do not translate well into other languages, and should be avoided if possible:
+- Dynamic typig (ab)used in not recommended ways, for example mixed return types (_"Return result, or string 'Error' if no result can be found."_).
 
 Some kata should not be translated into Python, because it can be difficult to keep their initial idea:
-- Python standard library is very rich and has many utilities available  (for example, `itertools`, combinatorics functions, `numpy`), so some requirements become very easy,
+- Python standard library is very rich and has many utilities available  (for example, `itertools`, combinatorics functions, `numpy`), so some requirements become very easy to implement, not matching the rank of the kata,
 - Python supports big integers natively, so kata which rely on implementation of arbitrary precision integer arithmetic become trivial in Python.
 
 
@@ -74,10 +71,16 @@ You should notice that Python testing framework produces one test output entry p
 
 Python has a rich [random library](https://docs.python.org/3.8/library/random.html), which can be used to easily generate random integers in requested ranges, generate floating point numbers, or sample and shuffle collections. Functions available there allow for very convenient construction of various random input generators.
 
+:::warning
+Python runner is currently affected by a performance issue (reported as [codewars/runner#58](https://github.com/codewars/runner/issues/58)), which sometimes causes generation of large amounts of random numbers to be noticeably slower. Majority of kata should not be affected by it in a meaningful way, but it can sometimes be a problem for performance tests generating large, random sets of data.  
+See the linked issue for details and possible workarounds.
+:::
+
+
 ### Input mutation
 
 Issues caused by input mutation are particularly difficult to deal with, because it can lead to bugs which are very subtle, confusing, and difficult to diagnose. When the input is mutated in uncontrolled way, tests may sometimes appear to randomly crash, give incorrect results, or produce confusing logs and assertion messages. Unfortunately, instances of many commonly used data types and classes, are mutable. To avoid problematic situations, following precautions should be taken:
-- Ideally, inputs should be immutable (but it's unfortunately not always possible). Otherwise,
+- Ideally, inputs should be immutable (but unfortunately it's not always possible). Otherwise,
 - Requirements on the mutation of input should be always specified in description _and enforced_. If user solution is required to not modify the received data, there should be a dedicated test case or assertion for that. 
 - If input mutation is allowed for user solutions, reference solution (if used) should not modify it anyway. If it does, it _must_ receive a (deep) copy of the input. Data which was mutated by a reference solution _must not_ be used in any way afterwards (as an input for user solution, or to compose logs or diagnostic messages, etc).
 - Input which could be potentially modified by a user solution _must not_ be used afterwards. It must not be used as an input for the reference solution, to compose diagnostic messages, or anything else. If necessary, a (deep) copy should be created and passed to the user solution.
@@ -99,6 +102,8 @@ To avoid above problems, calls to assertion functions should respect some rules:
 - If a reference solution is used to calculate expected value, it _must_ be either called _before_ user solution, or receive a (deep) copy of input data.
 - Assertion message _must not_ be composed from a mutable data which could be potentially modified by a user or reference soltion.  
 - Appropriate assertion function should be used for a given test. `assert_equals` is not suitable in all situations. Use `assert_approx_equals` for floating point comparisons, `expect` for tests on boolean values, `expect_error` to test error handling.
+- Some additional attention should be paid to the order of parameters passed to assertion functions. It differs between various assertion libraries, and it happens to be quite often confused by authors, mixing up `actual` and `expected` in assertion messages. For Python Testing framework, the order is `(actual, expected)`.
+- One somewhat distinctive feature of Python assertions is that by default, a failed assertion does not cause a test case to fail early. It can lead to unexpected crashes when an actual value had already been asserted to be invalid, but execution of the current test case was not stopped and following assertions continue to refer to it. This behavior can be ovrriden by passing `allow_raise=True` argument to the assertion functions which supports it.
 
 
 ## Additional restrictions
@@ -131,6 +136,13 @@ def fixed_tests():
         test.assert_equals(0, sum_array([]), "Invalid answer for empty array")
         test.assert_equals(2, sum_array([2]), "Invalid answer for one element array")
 
+    @it('Input should not be modified')
+    def do_not_mutate_input():
+        arr = random.shuffle([i for i in range(100)])
+        arr_copy = arr[:]
+        test.assert_equals(arr_copy, arr, 'Input array was modified')
+
+
 @describe('Random tests')
 def random_tests():
 
@@ -146,7 +158,7 @@ def random_tests():
         for _ in range(50):
             test_cases.append(generate_small_test_case())
 
-        #second type of input: edge case of single element array (a few of them)
+        #second type of input: potential edge case of single element array (a few of them)
         for _ in range(10):
             test_cases.append(generate_single_element_edge_case())
 
@@ -195,5 +207,4 @@ def random_tests():
             actual = sum_array(input)
             
             test.assert_equals(actual, expected)
-
 ```
