@@ -103,7 +103,7 @@ To avoid above problems, calls to assertion functions should respect some rules:
 - Assertion message _must not_ be composed from a mutable data which could be potentially modified by a user or reference soltion.  
 - Appropriate assertion function should be used for a given test. `assert_equals` is not suitable in all situations. Use `assert_approx_equals` for floating point comparisons, `expect` for tests on boolean values, `expect_error` to test error handling.
 - Some additional attention should be paid to the order of parameters passed to assertion functions. It differs between various assertion libraries, and it happens to be quite often confused by authors, mixing up `actual` and `expected` in assertion messages. For Python Testing framework, the order is `(actual, expected)`.
-- One somewhat distinctive feature of Python assertions is that by default, a failed assertion does not cause a test case to fail early. It can lead to unexpected crashes when an actual value had already been asserted to be invalid, but execution of the current test case was not stopped and following assertions continue to refer to it. This behavior can be ovrriden by passing `allow_raise=True` argument to the assertion functions which supports it.
+- One somewhat distinctive feature of Python assertions is that by default, a failed assertion does not cause a test case to fail early. It can lead to unexpected crashes when an actual value had already been asserted to be invalid, but execution of the current test case was not stopped and following assertions continue to refer to it. This behavior can be ovrriden by passing `allow_raise=True` argument to the assertion functions which support it.
 
 
 ## Additional restrictions
@@ -140,6 +140,9 @@ def fixed_tests():
     def do_not_mutate_input():
         arr = random.shuffle([i for i in range(100)])
         arr_copy = arr[:]
+        #call user solution and ignore the result
+        sum_array(arr_copy)
+        #arr_copy should not be modified
         test.assert_equals(arr_copy, arr, 'Input array was modified')
 
 
