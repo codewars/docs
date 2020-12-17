@@ -8,7 +8,7 @@ sidebar: "language:python"
 
 This article is meant as help for kata authors and translators who would like to create new content in Python programming language. It attempts to explain how to create and organize things in a way conforming to [authoring guidelines](/authoring/guidelines/), what are the most common pitfalls, and how to avoid them.
 
-This article is not a standalone tutorial on creating a kata or translation. It's meant to be a complementary, Python-specific part to more general set of HOWTOs and guidelines related to [content authoring](/authoring/). 
+This article is not a standalone tutorial on creating kata or translations. It's meant to be a complementary, Python-specific part to a more general set of HOWTOs and guidelines related to [content authoring](/authoring/). 
 
 
 ## General info
@@ -47,7 +47,7 @@ Python-specific paragraphs can be inserted with [language conditional rendering]
 ## Tasks and Requirements
 
 Some language constructs and features available in Python do not translate well into other languages, and should be avoided if possible:
-- Dynamic typig (ab)used in not recommended ways, for example mixed return types (_"Return result, or string 'Error' if no result can be found."_).
+- Dynamic typing (ab)used in not recommended ways, for example, mixed return types (_"Return result, or string 'Error' if no result can be found."_).
 
 Some kata should not be translated into Python, because it can be difficult to keep their initial idea:
 - Python standard library is very rich and has many utilities available  (for example, `itertools`, combinatorics functions, `numpy`), so some requirements become very easy to implement, not matching the rank of the kata,
@@ -65,24 +65,24 @@ Python code should stick to generally recognized Python conventions, with [PEP-8
 
 Python kata use [Codewars Python testing framework](/languages/python/codewars-test/) to implement and execute tests. You should read its reference page to find out how to use `describe` and `it` blocks for [organization and grouping](/languages/python/codewars-test/#grouping-tests), what are available [assertions](/languages/python/codewars-test/#assertions), etc. 
 
-You should notice that Python testing framework produces one test output entry per assertion, so test output panel can get very noisy.
+You should notice that the Python testing framework produces one test output entry per assertion, so the test output panel can get very noisy.
 
 ### Random utilities
 
 Python has a rich [random library](https://docs.python.org/3.8/library/random.html), which can be used to easily generate random integers in requested ranges, generate floating point numbers, or sample and shuffle collections. Functions available there allow for very convenient construction of various random input generators.
 
 :::warning
-Python runner is currently affected by a performance issue (reported as [codewars/runner#58](https://github.com/codewars/runner/issues/58)), which sometimes causes generation of large amounts of random numbers to be noticeably slower. Majority of kata should not be affected by it in a meaningful way, but it can sometimes be a problem for performance tests generating large, random sets of data.  
+Python runner is currently affected by a performance issue (reported as [codewars/runner#58](https://github.com/codewars/runner/issues/58)), which sometimes causes the generation of large amounts of random numbers to be noticeably slower. The majority of kata should not be affected by it in a meaningful way, but it can sometimes be a problem for performance tests generating large, random sets of data.  
 See the linked issue for details and possible workarounds.
 :::
 
 
 ### Input mutation
 
-Issues caused by input mutation are particularly difficult to deal with, because it can lead to bugs which are very subtle, confusing, and difficult to diagnose. When the input is mutated in uncontrolled way, tests may sometimes appear to randomly crash, give incorrect results, or produce confusing logs and assertion messages. Unfortunately, instances of many commonly used data types and classes, are mutable. To avoid problematic situations, following precautions should be taken:
+Issues caused by input mutation are particularly difficult to deal with, because it can lead to bugs that are very subtle, confusing, and difficult to diagnose. When the input is mutated in an uncontrolled way, tests may sometimes appear to randomly crash, give incorrect results, or produce confusing logs and assertion messages. Unfortunately, instances of many commonly used data types and classes, are mutable. To avoid problematic situations, the following precautions should be taken:
 - Ideally, inputs should be immutable (but unfortunately it's not always possible). Otherwise,
-- Requirements on the mutation of input should be always specified in description _and enforced_. If user solution is required to not modify the received data, there should be a dedicated test case or assertion for that. 
-- If input mutation is allowed for user solutions, reference solution (if used) should not modify it anyway. If it does, it _must_ receive a (deep) copy of the input. Data which was mutated by a reference solution _must not_ be used in any way afterwards (as an input for user solution, or to compose logs or diagnostic messages, etc).
+- Requirements on the mutation of input should be always specified in description _and enforced_. If the user solution is required to not modify the received data, there should be a dedicated test case or assertion for that. 
+- If input mutation is allowed for user solutions, the reference solution (if used) should not modify it anyway. If it does, it _must_ receive a (deep) copy of the input. Data which was mutated by a reference solution _must not_ be used in any way afterwards (as an input for user solution, or to compose logs or diagnostic messages, etc).
 - Input which could be potentially modified by a user solution _must not_ be used afterwards. It must not be used as an input for the reference solution, to compose diagnostic messages, or anything else. If necessary, a (deep) copy should be created and passed to the user solution.
 
 ### Reference solution
@@ -103,14 +103,14 @@ To avoid above problems, calls to assertion functions should respect some rules:
 - Assertion message _must not_ be composed from a mutable data which could be potentially modified by a user or reference soltion.  
 - Appropriate assertion function should be used for a given test. `assert_equals` is not suitable in all situations. Use `assert_approx_equals` for floating point comparisons, `expect` for tests on boolean values, `expect_error` to test error handling.
 - Some additional attention should be paid to the order of parameters passed to assertion functions. It differs between various assertion libraries, and it happens to be quite often confused by authors, mixing up `actual` and `expected` in assertion messages. For Python Testing framework, the order is `(actual, expected)`.
-- One somewhat distinctive feature of Python assertions is that by default, a failed assertion does not cause a test case to fail early. It can lead to unexpected crashes when an actual value had already been asserted to be invalid, but execution of the current test case was not stopped and following assertions continue to refer to it. This behavior can be ovrriden by passing `allow_raise=True` argument to the assertion functions which support it.
+- One somewhat distinctive feature of Python assertions is that by default, a failed assertion does not cause a test case to fail early. It can lead to unexpected crashes when an actual value had already been asserted to be invalid, but the execution of the current test case was not stopped and following assertions continue to refer to it. This behavior can be overridden by passing the `allow_raise=True` argument to the assertion functions which support it.
 
 
 ## Additional restrictions
 
 ### Accessing solution file
 
-Some kata (for example, code golf challenges or anti-cheat tests) would like to access and read user solution file as text. It's possible and can be done by reading a file located at `/workspace/solution.txt`.
+Some kata (for example, code-golf challenges or anti-cheat tests) would like to access and read the user solution file as text. It's possible and can be done by reading a file located at `/workspace/solution.txt`.
 
 ### Blocking modules
 
@@ -119,7 +119,7 @@ _TBD_
 
 ## Example test suite
 
-Below you can find an example test suite which covers most common scenarios mentioned in this article. Note that it does not present all possible techniques, so actual test suites can use different structure, as long as they keep to established conventions and do not violate authoring guidelines.
+Below you can find an example test suite that covers most of the common scenarios mentioned in this article. Note that it does not present all possible techniques, so actual test suites can use a different structure, as long as they keep to established conventions and do not violate authoring guidelines.
 
 
 ```python
