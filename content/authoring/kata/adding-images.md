@@ -60,7 +60,7 @@ In addition to images referenced by URL, Markdown supports image data embedded i
 
 Data URLs do not require third party hosting service, as the image data is embedded directly into a kata description.
 
-But this way has a series of disadvantages. Encoded image data is usually very large, and description is inflated terribly. Therefore, it works well only for small images. The MIME type matching the image format has to be looked up. Browsers differ in requirements for MIME types, encodings, and data URL formats. Some browsers require the data to be URL encoded, while others do not. Also the formats of data URLs, names of encodings, and other details differ between browsers. To encodeimage data as Base-64, gzip, or URL, additional tools need to be used.
+But this way has a series of disadvantages. Encoded image data is usually very large, and description is inflated terribly. Therefore, it works well only for small images. The MIME type matching the image format has to be looked up. Browsers differ in requirements and interpretation of MIME types, encodings, and details of data URL formats. Some browsers require the data to be URL encoded, while others do not. To encode image data as Base-64, gzip, or URL, additional tools need to be used.
 
 ### Examples
 
