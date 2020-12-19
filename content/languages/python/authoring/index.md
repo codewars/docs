@@ -52,7 +52,7 @@ Some language constructs and features available in Python do not translate well 
 Some kata should not be translated into Python, because it can be difficult to keep their initial idea:
 - The Python standard library is very rich and has many utilities available (e.g. `itertools`, combinatorics functions, `numpy`), so some nontrivial requirements in other languages become trivial in Python,
 - Python supports big integers natively, so kata that rely on the implementation of arbitrary precision integer arithmetic become trivial in Python.
-
+- Codewars runner provide a set of preinstalled packages, which are available for users solving kata. They can be real game changer when it comes to difficulty of a Python transltation. For example, `numpy` can make many matrix manipulation kata much easier.
 
 ## Coding
 
@@ -71,11 +71,22 @@ You should notice that the Python testing framework produces one test output ent
 
 Python has a rich [random library](https://docs.python.org/3.8/library/random.html), which can be used to easily generate random integers in requested ranges, generate floating point numbers, or sample and shuffle collections. Functions available there allow for very convenient construction of various random input generators.
 
+Some useful functions include:
+- [`random.randrange(stop)`](https://docs.python.org/3.8/library/random.html#random.randrange) - returns a randomly selected element from range `[0, stop)`.
+- [`random.randrange(start, stop[, step])`](https://docs.python.org/3.8/library/random.html#random.randrange) - returns a randomly selected element from a range equivalent to `range(start, stop, step)`.
+- [`random.randint(a, b)`](https://docs.python.org/3.8/library/random.html#random.randint) - returns a random integer `N` such that `a <= N <= b`.
+- [`random.shuffle(x[, random])`](https://docs.python.org/3.8/library/random.html#random.shuffle) - shuffles the sequence `x` in place.
+- [`random.sample(population, k)`](https://docs.python.org/3.8/library/random.html#random.sample) - returns a `k` length list of unique elements chosen from the `population` sequence or set.
+- [`random.random()`](https://docs.python.org/3.8/library/random.html#random.random) - returns the next random floating point number in the range `[0.0, 1.0)`.
+
 :::warning
 The Python runner is currently affected by a performance issue (reported as [codewars/runner#58](https://github.com/codewars/runner/issues/58)) which sometimes causes the generation of large amounts of random numbers to be noticeably slower. The majority of kata should not be affected by it in any significant way, but it can sometimes be a problem for performance tests generating large, random sets of data.
 See the linked issue for details and possible workarounds.
 :::
 
+### Additional packages
+
+Codewars runner provide a set of preinstalled packages, which are available not only for users solving a kata, but can be also used by authors to build tests and genertors of test cases. For example, `numpy` can be used to make generation of matrices easier.
 
 ### Input mutation
 
