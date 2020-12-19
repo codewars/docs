@@ -78,7 +78,7 @@ There are many online tools available which can convert an image to Base64 (for 
 Codewars allows a safe subset of HTML in Markdown including `<svg>`, so it's possible to use SVG images directly within a kata description.
 
 The image markup can be pasted directly into the kata editor without additional processing or encoding, and usually it's more readable than encoded image data.
-But still, even simple-looking SVGs often require a significant amount of code anyway, inflating the kata description. However, they can be minified or optmized with some additional tools  (for example [SVGOMG][svgomg]), or by removing unnecessary parts of markup and metadata.Additionally, results of mixing HTML with Markdown are ill-defined and subject to change.
+But still, even simple-looking SVGs often require a significant amount of code anyway, inflating the kata description. However, they can be minified or optmized with some additional tools  (for example [SVGOMG][svgomg]), or by removing unnecessary parts of markup and Metadata. Additionally, results of mixing HTML with Markdown are ill-defined and subject to change.
 
 
 [svgomg]: https://jakearchibald.github.io/svgomg/
