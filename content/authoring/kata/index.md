@@ -9,6 +9,4 @@ prev: /authoring/translation/
 
 _This page is a stub._
 
-<!--
-TODO Teach how to author a kata
---->
+
