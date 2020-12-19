@@ -50,7 +50,7 @@ Some language constructs and features available in Python do not translate well 
 - Abuse of dynamic typing, e.g. mixed return types (_"Return the result, or the string 'Error' if no result can be found."_).
 
 Some kata should not be translated into Python, because it can be difficult to keep their initial idea:
-- The Python standard library is very rich and has many utilities available (e.g. `itertools`, combinatorics functions, `numpy`), so some nontrivial requirements in other languages become trivial in Python,
+- The Python standard library is very rich and has many utilities available (e.g. `itertools`, combinatorics functions), so some nontrivial requirements in other languages become trivial in Python,
 - Python supports big integers natively, so kata that rely on the implementation of arbitrary precision integer arithmetic become trivial in Python.
 - The Codewars runner provides a set of preinstalled packages which are available for users solving the kata. They can be a real game-changer when it comes to the difficulty of a Python translation. For example, `numpy` can make many matrix manipulation kata much easier.
 
