@@ -86,7 +86,7 @@ See the linked issue for details and possible workarounds.
 
 ### Additional packages
 
-Codewars runner provide a set of preinstalled packages, which are available not only for users solving a kata, but can be also used by authors to build tests and genertors of test cases. For example, `numpy` can be used to make generation of matrices easier.
+The Codewars runner provides a set of preinstalled packages, which are available not only for users solving a kata, but can be also used by authors to build tests and generators of test cases. For example, `numpy` can be used to make the generation of matrices easier.
 
 ### Input mutation
 
