@@ -20,7 +20,6 @@ This article contains a set of guidelines, which can be used by reviewers to det
 
 - **The satisfaction rating should indicate quality of kata as a concept, not its current state of condition in terms of open issues which can be fixed.** If you think the kata itself is valuable but you simply have some issues with it, then you should select "Somewhat" and create an issue instead. If you think the kata is really great, other than the issues, then you can choose "Very". Do not choose "None" simply because the kata has an issue but it is otherwise a good kata.
 - **When casting a vote for difficulty rating, reviewers should consider a broader picture than just their own skills.** It's true that the way how difficulty rankings are handled by Codewars is far from perfect, and not balanced well. It's also true that difficulty level is not easy to estimate, because what is easy for one, can be difficult for another, and vice versa. The way how difficulty ranking works will be hopefully improved in the future, but until then, your votes should not throw the system deliberately off-balance.
-- Posts which provide information on issues encountered during the review **should contain information helpful for fixing them.** Feedback of the form _"This and that is wrong."_ is not very constructive nor helpful to the author. Feedback post should provide some guidance, hints, or links to articles explaining how to fix the problems.
 
 
 ## Approval
