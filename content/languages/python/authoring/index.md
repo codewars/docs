@@ -98,7 +98,7 @@ Issues caused by input mutation are particularly difficult to deal with, because
 
 ### Reference solution
 
-If the test suite happens to use a reference solution to calculate expected values (what [should be avoided](/authoring/guidelines/submission-tests/#reference-solution), but is not always possible), or some kind of reference data, precalculated arrays, etc., it can be redefined, overwritten, or accessed directly by the user solution. To avoid this, it should be defined in a scope local to the testing function, `it` block, or `describe` block. The reference solution or data _must not_ be defined in [Preloaded code](/authoring/guidelines/preloaded/).
+If the test suite happens to use a reference solution to calculate expected values (which [should be avoided](/authoring/guidelines/submission-tests/#reference-solution), but is not always possible), or some kind of reference data, precalculated arrays, etc., it can be redefined, overwritten, or accessed directly by the user solution. To avoid this, it should be defined in a scope local to the testing function, `it` block, or `describe` block. The reference solution or data _must not_ be defined in [Preloaded code](/authoring/guidelines/preloaded/).
 
 ### Calling assertions
 
