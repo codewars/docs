@@ -19,3 +19,16 @@ Since the guidelines were introduced after many kata had been created, older kat
 :::warning Important note
 Reviewers who repeatedly violate or ignore rules and introduce poor-quality content to the system can have their approval privileges revoked and offending content withdrawn.
 :::
+
+
+## Communicating as a Reviewer
+
+Effective communication is one of the most important skills of a reviewer. Peer reviews, and code reviews, have been a subject to a lot of research and countless articles, papers, books, and blogs describe their advantages, disadvantages, the ways how to conduct them, and how _not_ to do them. The gist of the idea is described very nicely in the paper [_"Humanizing Peer Reviews"_](https://www.processimpact.com/articles/humanizing_reviews.pdf) by Karl E. Wiegers, paragraph _"Tips for the Reviewer"_ on page 2, and can be summarized in context of Codewars in a following way:
+
+> **Reviewers should focus on what they observed about the product, thoughtfully selecting the words they use to raise an issue.** Saying, “I didn’t see where these variables were initialized” is likely to elicit a constructive response; the more accusatory “You didn’t initialize these variables” might get the author’s hackles up. You might phrase your comments in the form of a question: “Are we sure that another component doesn’t already provide that service?” Or, identify a point of confusion: “I didn’t see where this memory block is deallocated.” **Direct your comments to the work product, not to the author.** For example, say “This specification is missing Section 3.5 from the template” instead of “You left out section 3.5.” Reviewers and authors must work together outside the reviews, so each needs to maintain a level of professionalism and mutual respect to avoid strained relationships.
+>
+> [...]
+>
+> You do not want your reviews to create authors who look forward to retaliating against their tormentors. Moreover, an author who walks out of a review meeting feeling personally attacked or professionally insulted will not voluntarily submit his work for review again. **Bugs are the bad guys in a review, not the author or the reviewers. The leaders of the review initiative should strive to create a culture of constructive criticism, in which team members seek to learn from their peers and do a better job the next time.** Managers should encourage and reward those who initially participate in reviews and make useful contributions, regardless of the review outcomes.
+
+Some summary and follow-up reading on code reviews can be also found in this nice article on _Palantir Blog_: [_"Code Review Best Practices"_](https://medium.com/palantir/code-review-best-practices-19e02780015f).
