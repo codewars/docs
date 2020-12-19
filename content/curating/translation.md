@@ -23,7 +23,7 @@ Before a pending translation is accepted and a new language becomes available fo
 When reviewing a translation, users can perform the following steps:
 
 - **Reading the code and description**.
-- **Running the tests** against a couple of solutions, to verify if test suite gracefully handles some unexpected answers and eventual crashes of the solution. Unfortunately, testing tests of a translation is currently rather cumbersome. One possibility is to fork the translation, replace "Solution" snippet with your solution, run tests, and discard the fork afterwards. Another way is to create a new kumite from scratch and copy/paste code snippets from the translation under review to your kumite.
+- **Running the tests** against a couple of solutions, to verify if the test suite gracefully handles some unexpected answers and eventual crashes of the solution. Unfortunately, testing tests of a translation is currently rather cumbersome. One possibility is to fork the translation, replace the "Solution" snippet with your own solution, run tests, and discard the fork afterwards. Another way is to create a new kumite from scratch and copy/paste code snippets from the translation under review to your kumite.
 - **Reading the comments** to check if there are any remarks from other reviewers and whether they still hold or were addressed appropriately. Be aware that comments under translations cannot be labelled as an **Issue** or **Suggestion**, so there are no additional markers for the severity of the comment. They also cannot be marked as spoilers, so don't reveal too many details about the solution in your comment, if possible.
 - **Verifying** if the translation holds to [translation authoring guidelines][translation-authoring-guidelines].
 
@@ -38,7 +38,7 @@ Users performing a review should hold to [Translation Curating Guidelines][trans
 
 ### Review comments
 
-When a reviewer writes a post pointing out the spotted issues which need to be fixed, it should be done in a way which actually instructs the translator how to fix them. Sometimes, authors can be not aware that some specific issue might occur, or why this might be a problem, and reviewers with their short remarks leave them even more clueless. When a reviewer wants to signal such issue, it should be done in a way which would minimize the need for follow-up questions and additional explanations. Initially it might seem as more effort for reviewer, but this additional effort might be finally worth it if it helps to resolve the problems easier.
+When a reviewer writes a post pointing out the spotted issues which need to be fixed, it should be done in a way which actually instructs the translator how to fix them. Sometimes, authors can be unaware that some specific issue might occur, or why this might be a problem, and reviewers with their short remarks leave them even more clueless. When a reviewer wants to signal such an issue, it should be done in a way which would minimize the need for follow-up questions and additional explanations. Initially it might seem as more effort from the reviewer, but this additional effort may ease the resolution of problems further down the line.
 
 ### Approving a translation
 
@@ -52,7 +52,7 @@ When the translation is approved, a new language is immediately available for so
 
 The user who approved the translation should also go through the kata discourse and mark suggestions posted by the translator as resolved.
 
-**NOTE:** at the time of writing, a user who _approves_ a translation is marked as a **kata contributor**. Users with the "contributor" flag seem to be affected by a bug preventing them from earning any future points they would be rewarded for authoring activities on kata they contributed to. Be aware that as a result, approving a translation will render you ineligible for honor points you would otherwise earn by translating, editing or fixing the kata in the future unless the bug is fixed.
+**NOTE:** at the time of writing, a user who _approves_ a translation is marked as a **kata contributor**. Users with the "contributor" flag seem to be affected by a bug preventing them from earning any future points they would be rewarded for authoring activities on kata they contributed to. Be aware that as a result, approving a translation will render you ineligible for honor points you would otherwise earn by translating, editing or fixing the kata in the future until the bug is fixed.
 
 ### Merge Issues
 
