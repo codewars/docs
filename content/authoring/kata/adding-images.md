@@ -49,7 +49,7 @@ To use this method, an image has to be uploaded to some third party hosting serv
 
 Adding images this way is easy to do, and does not require a lot of Markdown which would inflate the description significantly. It also works for all types of images supported by browsers.
 
-However, the downside is that it requires an external hosting service. Some services do not allow for linking uploaded images directly, or put some other limitations on access to them. Additionally, externally hosted images is a dependency which is difficult to control and manage. It cannot be easily updated, it can expire after some time, be removed, or simply disappear.
+However, the downside is that it requires an external hosting service. Some services do not allow for linking uploaded images directly or put some other limitations on access to them. Additionally, externally hosted images are a dependency that is difficult to control and manage. It cannot be easily updated, it can expire after some time, be removed, or simply disappear.
 
 
 ## Using Data URLs
@@ -58,7 +58,7 @@ In addition to images referenced by URL, Markdown supports image data embedded i
 
 `![image title](data:<mediatype>;<encoding>,<data>)`
 
-Data URLs do not require third party hosting service, as the image data is embedded directly into a kata description.
+Data URLs do not require a third-party hosting service, as the image data is embedded directly into a kata description.
 
 But this method has a series of disadvantages. The encoded image data is usually very large, inflating the description terribly. Therefore, it works well only for small images. The MIME type matching the image format has to be looked up. Browsers differ in requirements and interpretation of MIME types, encodings, and details of data URL formats. Some browsers require the data to be URL encoded, while others do not. To encode image data as Base-64, gzip, or URL, additional tools need to be used.
 
@@ -78,7 +78,7 @@ There are many online tools available which can convert an image to Base64 (for 
 Codewars allows a safe subset of HTML in Markdown including `<svg>`, so it's possible to use SVG images directly within a kata description.
 
 The image markup can be pasted directly into the kata editor without additional processing or encoding, and usually it's more readable than encoded image data.
-But still, even simple-looking SVGs often require a significant amount of code anyway, inflating the kata description. However, they can be minified or optmized with some additional tools  (for example [SVGOMG][svgomg]), or by removing unnecessary parts of markup and Metadata. Additionally, results of mixing HTML with Markdown are ill-defined and subject to change.
+But still, even simple-looking SVGs often require a significant amount of code anyway, inflating the kata description. However, they can be minified or optimized with some additional tools (for example [SVGOMG][svgomg]), or by removing unnecessary parts of markup and Metadata. Additionally, the results of mixing HTML with Markdown are ill-defined and subject to change.
 
 
 [svgomg]: https://jakearchibald.github.io/svgomg/
