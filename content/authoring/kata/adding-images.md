@@ -38,18 +38,18 @@ ASCII-art is able to represent surprisingly many concepts, being quite simple at
 ```
 ~~~
 
-Drawing ASCII images can be supported by a variety of tools (for example, [ASCIIflow](http://asciiflow.com/)). It can be sufficient for representing simple charts and diagrams, but won't be enough for more detailed or colorfum images.
+Drawing ASCII images can be supported by a variety of tools (for example, [ASCIIflow](http://asciiflow.com/)). It can be sufficient for representing simple charts and diagrams, but won't be enough for more detailed or colorful images.
 
 
-## Using Image Hosting Service
+## Using an Image Hosting Service
 
 To use this method, an image has to be uploaded to some third party hosting service, and referred to with appropriate Markdown:
 
 `![image title](http://path.to/image.jpg)`
 
-Adding image this way is easy to do, and does not require a lot of Markdown which would inflate description significantly. It also works for all types of images supported by browsers.
+Adding images this way is easy to do, and does not require a lot of Markdown which would inflate the description significantly. It also works for all types of images supported by browsers.
 
-However, the downside is that it requires an external hosting service. Some services do not allow for linking uploaded images directly, or put some other limitations on access to them. Additionally, externally hosted image is a dependency which is difficult to control and manage. It cannot be easily updated, it can expire after some time, be removed, or simply disappear.
+However, the downside is that it requires an external hosting service. Some services do not allow for linking uploaded images directly, or put some other limitations on access to them. Additionally, externally hosted images is a dependency which is difficult to control and manage. It cannot be easily updated, it can expire after some time, be removed, or simply disappear.
 
 
 ## Using Data URLs
@@ -60,7 +60,7 @@ In addition to images referenced by URL, Markdown supports image data embedded i
 
 Data URLs do not require third party hosting service, as the image data is embedded directly into a kata description.
 
-But this way has a series of disadvantages. Encoded image data is usually very large, and description is inflated terribly. Therefore, it works well only for small images. The MIME type matching the image format has to be looked up. Browsers differ in requirements and interpretation of MIME types, encodings, and details of data URL formats. Some browsers require the data to be URL encoded, while others do not. To encode image data as Base-64, gzip, or URL, additional tools need to be used.
+But this method has a series of disadvantages. The encoded image data is usually very large, inflating the description terribly. Therefore, it works well only for small images. The MIME type matching the image format has to be looked up. Browsers differ in requirements and interpretation of MIME types, encodings, and details of data URL formats. Some browsers require the data to be URL encoded, while others do not. To encode image data as Base-64, gzip, or URL, additional tools need to be used.
 
 ### Examples
 
