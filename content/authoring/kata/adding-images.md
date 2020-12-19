@@ -68,6 +68,10 @@ But this method has a series of disadvantages. The encoded image data is usually
 - `![image title](data:image/svg+xml;base64,Base64 encoded data)` - a Base64 encoded SVG XML image
 - `![image title](data:image/svg+xml;utf8,URL encoded SVG XML)` - an URL encoded SVG XML image
 
+### Tools
+
+There are many online tools available which can convert an image to Base64 (for example [this one](https://www.motobit.com/util/base64-decoder-encoder.asp)), or generate a data URL from an image file, for example converters available on [BASE64 Guru](https://base64.guru/converter/encode/image) or [ezgif.com](https://ezgif.com/image-to-datauri). 
+
 
 ## Inlining SVG
 
