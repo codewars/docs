@@ -67,7 +67,7 @@ Once you have fixed the description merge issues you can publish the translation
 Sometimes the best course of action is to simply reject a pending translation.
 Some possible reasons could be:
 
-- translation is outdated and kata changed a lot since the translation has been published,
+- translation is outdated and the kata changed a lot since the translation has been published,
 - translation is of bad quality and fixing it is too much work,
 - some user authored a newer, better translation and they cannot publish it since there can only be one pending translation per language per kata,
 - there's a justified concern that someone might approve a translation of insufficient quality before its issues are fixed.

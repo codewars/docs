@@ -6,7 +6,7 @@ next: /curating/translation/
 
 # Curating a Kata
 
-This article is meant to explain how to ensure a high quality of a kata before it leaves the beta state, and after it's accepted.
+This article is meant to explain how to ensure a kata is high quality before it leaves the beta state, and after it's accepted.
 
 ## Beta process and working with beta kata
 
