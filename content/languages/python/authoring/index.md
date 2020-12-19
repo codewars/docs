@@ -51,7 +51,7 @@ Some language constructs and features available in Python do not translate well 
 
 Some kata should not be translated into Python, because it can be difficult to keep their initial idea:
 - The Python standard library is very rich and has many utilities available (e.g. `itertools`, combinatorics functions, `numpy`), so some nontrivial requirements in other languages become trivial in Python,
-- Python supports big integers natively, so kata which rely on implementation of arbitrary precision integer arithmetic become trivial in Python.
+- Python supports big integers natively, so kata that rely on the implementation of arbitrary precision integer arithmetic become trivial in Python.
 
 
 ## Coding
