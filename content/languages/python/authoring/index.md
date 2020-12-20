@@ -88,14 +88,6 @@ See the linked issue for details and possible workarounds.
 
 The Codewars runner provides a set of preinstalled packages, which are available not only for users solving a kata, but can be also used by authors to build tests and generators of test cases. For example, `numpy` can be used to make the generation of matrices easier.
 
-### Input mutation
-
-Issues caused by input mutation are particularly difficult to deal with, because it can lead to bugs that are very subtle, confusing, and difficult to diagnose. When the input is mutated in an uncontrolled way, tests may sometimes appear to randomly crash, give incorrect results, or produce confusing logs and assertion messages. Unfortunately, instances of many commonly used data types and classes, are mutable. To avoid problematic situations, the following precautions should be taken:
-- Ideally, inputs should be immutable (but unfortunately it's not always possible). Otherwise,
-- Requirements on the mutation of input should always be specified in the description _and properly enforced_. If the received data should not be modified by the user solution, there should be an assertion for that.
-- If input mutation is allowed for user solutions, the reference solution (if used) should not modify it anyway. If it does, it _must_ receive a (deep) copy of the input. Data mutated by the reference solution _must not_ be used in any way afterwards (as an input for user solution, or to compose logs or diagnostic messages, etc).
-- Input which could be potentially modified by a user solution _must not_ be used afterwards. It must not be used as an input for the reference solution, to compose diagnostic messages, or anything else. If necessary, a (deep) copy should be created and passed to the user solution.
-
 ### Reference solution
 
 If the test suite happens to use a reference solution to calculate expected values (which [should be avoided](/authoring/guidelines/submission-tests/#reference-solution), but is not always possible), or some kind of reference data, precalculated arrays, etc., it can be redefined, overwritten, or accessed directly by the user solution. To avoid this, it should be defined in a scope local to the testing function, `it` block, or `describe` block. The reference solution or data _must not_ be defined in [Preloaded code](/authoring/guidelines/preloaded/).
