@@ -4,16 +4,16 @@ languages: [python]
 sidebar: "language:python"
 ---
 
-# Creating a Python Kata
+# Python: creating and translating a kata
 
-This article is meant as help for kata authors and translators who would like to create new content in Python. It attempts to explain how to create and organize things in a way conforming to [authoring guidelines](/authoring/guidelines/), the most common pitfalls and how to avoid them.
+This article is meant as help for kata authors and translators who would like to create new content in Python. It attempts to explain how to create and organize things in a way conforming to [authoring guidelines](/authoring/guidelines/), what are the most common pitfalls, and how to avoid them.
 
-This article is not a standalone tutorial on creating kata or translations. It's meant to be a complementary, Python-specific part of a more general set of HOWTOs and guidelines related to [content authoring](/authoring/).
+This article is not a standalone tutorial on creating kata or translations. It's meant to be a complementary, Python-specific part of a more general set of HOWTOs and guidelines related to [content authoring](/authoring/) explaining how to create a Python version of a kata in a way which conforms to authoring guidelines and best practices. If you are going to create a Python translation of a kata, or a new kata in Python from scratch, please make yourself familiar with the aforementioned documents related to authoring in general. 
 
 
 ## General info
 
-Any information related to the Python setup on Codewars, language version, available modules, and setup of the code runner can be found in the [Python reference](/languages/python/) page.
+Any information related to the Python setup on Codewars, language version, available modules, and setup of the code runner can be found on the [Python reference](/languages/python/) page.
 
 
 ## Description
