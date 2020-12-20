@@ -1,5 +1,5 @@
 ---
-kind: recipe
+kind: tutorial
 languages: [python]
 sidebar: "language:python"
 ---
