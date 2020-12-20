@@ -115,6 +115,7 @@ To avoid the above problems, calls to assertion functions should respect the fol
 - Appropriate assertion functions should be used for each given test. `assert_equals` is not suitable in all situations. Use `assert_approx_equals` for floating point comparisons, `expect` for tests on boolean values, `expect_error` to test error handling.
 - Some additional attention should be paid to the order of parameters passed to assertion functions. It differs between various assertion libraries, and it happens to be quite often confused by authors, mixing up `actual` and `expected` in assertion messages. For the Python testing framework, the order is `(actual, expected)`.
 - One somewhat distinctive feature of Python assertions is that by default, a failed assertion does not cause a test case to fail early. It can lead to unexpected crashes when an actual value had already been asserted to be invalid, but the execution of the current test case was not stopped and following assertions continue to refer to it. This behavior can be overridden by passing the `allow_raise=True` argument to the assertion functions which support it.
+- To avoid unexpected crashes in tests, it's recommended to perform some additional assertions before assuming that the answer returned by user solution has some particular type, form, or value. For example, if the test suite sorts returned list to verify its correctness, explicit assertion should be added to check whether returned object is actually a list, and not, for exaple, `None`.
 
 
 ## Additional restrictions
