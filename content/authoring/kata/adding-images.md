@@ -4,7 +4,7 @@ kind: recipe
 
 # Adding Images to Kata Descriptions
 
-Currently, it's not possible to attach any files or additional assets to a kata, but many authors would like to illustrate their descriptions with images. There are plans to introduce the possibility of uploading and attaching files to descriptions, but until it's implemented, authors have to resort to other techniques. There are a few of them, and each of them has its advantages and disadvantages.
+Currently, it's not possible to attach any files or additional assets to a kata, but many authors would like to illustrate their descriptions with images. There are plans to introduce the possibility of uploading and attaching files to descriptions. However, until attaching images is implemented, authors have to resort to other techniques, each with advantages and disadvantages.
 
 :::note
 Images used to be necessary to present equations and formulas. Since support for KaTeX was introduced into Codewars, it's no longer the case. Math formulas can be embedded into descriptions using [Codewars Support for Math Typesetting][markdown-extension-math].
@@ -49,7 +49,7 @@ To use this method, an image has to be uploaded to some third party hosting serv
 
 Adding images this way is easy to do, and does not require a lot of Markdown which would inflate the description significantly. It also works for all types of images supported by browsers.
 
-However, the downside is that it requires an external hosting service. Some services do not allow for linking uploaded images directly or put some other limitations on access to them. Additionally, externally hosted images are a dependency that is difficult to control and manage. It cannot be easily updated, it can expire after some time, be removed, or simply disappear.
+However, the downside is that this requires an external hosting service. Some services do not allow for linking uploaded images directly or put some other limitations on access to them. Additionally, externally-hosted images are a dependency that is difficult to control and manage. These images cannot be easily updated and can expire or become unavailable.
 
 
 ## Using Data URLs
@@ -78,7 +78,7 @@ There are many online tools available which can convert an image to Base64 (for 
 Codewars allows a safe subset of HTML in Markdown including `<svg>`, so it's possible to use SVG images directly within a kata description.
 
 The image markup can be pasted directly into the kata editor without additional processing or encoding, and usually it's more readable than encoded image data.
-But still, even simple-looking SVGs often require a significant amount of code anyway, inflating the kata description. However, they can be minified or optimized with some additional tools (for example [SVGOMG][svgomg]), or by removing unnecessary parts of markup and Metadata. Additionally, the results of mixing HTML with Markdown are ill-defined and subject to change.
+But still, even simple-looking SVGs often require a significant amount of code, inflating the kata description. However, they can be minified or optimized with some additional tools (for example [SVGOMG][svgomg]), or by removing unnecessary parts of markup and Metadata. Additionally, the results of mixing HTML with Markdown are ill-defined and subject to change.
 
 
 [svgomg]: https://jakearchibald.github.io/svgomg/
