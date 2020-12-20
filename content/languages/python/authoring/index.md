@@ -96,14 +96,11 @@ If the test suite happens to use a reference solution to calculate expected valu
 
 The Python testing framework provides a set of useful [assertions](/languages/python/codewars-test/#assertions), but when used incorrectly, they can cause a series of problems:
 - Stacktraces of a crashing user solution can reveal details which should not be visible,
-- Calling the user and reference solutions in the wrong order may mutate the input in an undesirable way allowing for abuse or leading to bugs,
 - Use of an assertion not suitable for the given case may lead to incorrect test results,
 - Incorrectly used assertions may produce confusing or unhelpful messages.
 
 To avoid the above problems, calls to assertion functions should respect the following rules:
-- Expected and actual values should be calculated _before_ invoking an assertion. Parameters passed to the assertion should not be function call expressions, but values calculated directly beforehand.
-- If a reference solution is used to calculate the expected value, it _must_ be invoked _before_ the user solution or receive a deep copy of the input data.
-- Assertion messages _must not_ be composed from mutable data potentially modified by the user or reference solution.
+- Expected value should be calculated _before_ invoking an assertion. `expected` parameter passed to the assertion should not be a function call expression, but a value calculated directly beforehand.
 - Appropriate assertion functions should be used for each given test. `assert_equals` is not suitable in all situations. Use `assert_approx_equals` for floating point comparisons, `expect` for tests on boolean values, `expect_error` to test error handling.
 - Some additional attention should be paid to the order of parameters passed to assertion functions. It differs between various assertion libraries, and it happens to be quite often confused by authors, mixing up `actual` and `expected` in assertion messages. For the Python testing framework, the order is `(actual, expected)`.
 - One somewhat distinctive feature of Python assertions is that by default, a failed assertion does not cause a test case to fail early. It can lead to unexpected crashes when an actual value had already been asserted to be invalid, but the execution of the current test case was not stopped and following assertions continue to refer to it. This behavior can be overridden by passing the `allow_raise=True` argument to the assertion functions which support it.
