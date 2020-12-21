@@ -38,7 +38,7 @@ Before a beta kata is accepted and becomes available for users to train on, it n
 When reviewing a beta kata, users can perform the following steps:
 
 - **Reading the code and description**.
-- **Running the tests** against a couple of solutions, to verify if test suite gracefully handles some unexpected answers and eventual crashes of the solution, or if assertion messages are clear enough, etc.
+- **Running the tests** against a couple of solutions, to verify if the test suite gracefully handles some unexpected answers and eventual crashes of the solution, or if assertion messages are clear enough, etc.
 - **Reading the comments** to check if there are any remarks from other reviewers and whether they still hold or were addressed appropriately.
 - **Verifying** if the kata holds to [kata authoring guidelines][kata-authoring-guidelines].
 
@@ -52,7 +52,7 @@ Users performing a review should hold to [Kata Curating Guidelines][kata-curatin
 
 ### Review comments
 
-When a reviewer writes a post pointing out the spotted issues which need to be fixed, it should be done in a way which actually instructs the author how to fix them. Sometimes, authors can be not aware that some specific issue might occur, or why this might be a problem, and reviewers with their short remarks leave them even more clueless. When a reviewer wants to signal such issue, it should be done in a way which would minimize the need for follow-up questions and additional explanations. Initially it might seem as more effort for reviewer, but this additional effort might be finally worth it if it helps to resolve the problems easier.
+When a reviewer writes a post pointing out the spotted issues which need to be fixed, it should be done in a way which actually instructs the author how to fix them. Sometimes, authors can be unaware that some specific issue might occur, or why it might be a problem, and reviewers with their short remarks leave them even more clueless. When a reviewer wants to signal such an issue, it should be done in a way which minimizes the need for follow-up questions and additional explanations. Initially it might seem as more effort from the reviewer, but this additional effort may ease the resolution of problems further down the line.
 
 
 ## Reward for Reviewers
@@ -67,7 +67,7 @@ After a kata has received [enough approval votes][approval-criteria] from the co
 
 ## Kata retirement
 
-After a kata gets [retired][approval-criteria], it's removed from a pool of beta kata and cannot be completed nor approved anymore. All users who completed it keep their points, but the kata itself is not listed anymore and can be accessed only by direct links. Retirement is final, retired kata cannot be un-retired.
+After a kata gets [retired][approval-criteria], it's removed from a pool of beta kata and can neither be completed nor approved anymore. All users who completed it keep their points, but the kata itself is not listed anymore and can be accessed only by direct links. Retirement is final and cannot be undone.
 
 
 ## Maintenance
