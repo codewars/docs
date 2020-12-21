@@ -197,17 +197,17 @@ def random_tests():
         inputs = generate_small_inputs()
         for input in inputs:
 
-            #call reference solution first.
+            #call reference solution first, in separate statement.
             #we know it does not mutate the array, so no copy is needed
-            expected = reference_sum_array(input)
+            expected = reference_solution(input)
 
             #call user solution and get actual answer.
             #since the input is used after this call to compose
             #the assertion message, a copy is passed
-            actual = sum_array(input[:])
+            actual = user_solution(input[:])
             
             #Call assertion function.
-            #Custom assertion message is used to help with diagnosing failures.
+            #Custom assertion message is used to help users with diagnosing failures.
             #Assertion message uses original, non-modified input.
             test.assert_equals(actual, expected, f'Input: {input}')
 
@@ -218,8 +218,8 @@ def random_tests():
         
         for input in large_inputs:
             
-            #expected answer calculated first
-            expected = reference_sum_array(input)
+            #expected answer calculated first, on separate line
+            expected = reference_solution(input)
             
             #assertion message composed before the user solution has a chance
             #to mutate the input array
@@ -227,7 +227,5 @@ def random_tests():
 
             #actual answer calculated as second.
             #no copy is made because input is not used anymore
-            actual = sum_array(input)
-            
-            test.assert_equals(actual, expected, message)
+            test.assert_equals(user_solution(input), expected, message)
 ```
