@@ -5,7 +5,7 @@ prev: /authoring/guidelines/reference-solution/
 next: /authoring/guidelines/kata/
 ---
 
-# Creating a Translation
+# Translation Authoring Guidelines
 
 This article contains a set of guidelines, which can be used by translators to create good translations to existing kata. They were collected to help ensure that translations are of sufficient quality and users' experience will be as good as possible.
 
@@ -46,14 +46,11 @@ A translation should substantially change neither the overall idea nor the requi
 - Sometimes, the description is not the best place to put some language specific information. For example, the translator may wish to add some information on arguments, data formats, memory management, etc. and keep the description language-agnostic at the same time. In such cases, it's allowed to put such information as an explanatory comment in the solution setup.
 
 
-## Review process
+## Maintenance
 
-- **The translation must be reviewed before it's approved.** If the reviewer is not familiar with the language of the translation, they should ask other users for help.
-When issues with the translation are found during its review, they should be reported and discussed in the comment section of the translation so that the translator can be notified and handle them.
-- If a translation has too many issues or cannot be easily fixed, and there's justified concern that it could be approved prematurely while not keeping up to quality standards, **it can be rejected**.
-- After a translation is approved, it becomes **the responsibility of all parties involved: the translator, the user who approved the translation, and the kata author**, to fix any potential issues which might come up later when users attempt to submit their solutions.
+- **You are responsible for your translations.** As long as you're an active Codewars user, you should address quality issues in translations you authored: fix issues, consider suggestions, and answer questions, which might come up later when users attempt to submit their solutions. See [translation curation guidelines][translation-curation-guidelines] for more guidelines on maintenance of translations.
 
-
+[translation-curation-guidelines]: /curating/guidelines/translation/
 [authoring-guidelines-description]: /authoring/guidelines/description/
 [authoring-guidelines-general-coding]: /authoring/guidelines/coding/
 [authoring-guidelines-general]: /authoring/guidelines/
