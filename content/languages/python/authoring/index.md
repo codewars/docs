@@ -6,7 +6,7 @@ sidebar: "language:python"
 
 # Python: creating and translating a kata
 
-This article is meant as help for kata authors and translators who would like to create new content in Python. It attempts to explain how to create and organize things in a way conforming to [authoring guidelines](/authoring/guidelines/), what are the most common pitfalls, and how to avoid them.
+This article is meant as help for kata authors and translators who would like to create new content in Python. It attempts to explain how to create and organize things in a way conforming to [authoring guidelines](/authoring/guidelines/), the most common pitfalls and how to avoid them.
 
 This article is not a standalone tutorial on creating kata or translations. It's meant to be a complementary, Python-specific part of a more general set of HOWTOs and guidelines related to [content authoring](/authoring/) explaining how to create a Python version of a kata in a way which conforms to authoring guidelines and best practices. If you are going to create a Python translation of a kata, or a new kata in Python from scratch, please make yourself familiar with the aforementioned documents related to authoring in general. 
 
@@ -100,7 +100,7 @@ The Python testing framework provides a set of useful [assertions](/languages/py
 - Incorrectly used assertions may produce confusing or unhelpful messages.
 
 To avoid the above problems, calls to assertion functions should respect the following rules:
-- Expected value should be calculated _before_ invoking an assertion. `expected` parameter passed to the assertion should not be a function call expression, but a value calculated directly beforehand.
+- The expected value should be calculated _before_ invoking an assertion. The `expected` parameter passed to the assertion should not be a function call expression, but a value calculated directly beforehand.
 - Appropriate assertion functions should be used for each given test. `assert_equals` is not suitable in all situations. Use `assert_approx_equals` for floating point comparisons, `expect` for tests on boolean values, `expect_error` to test error handling.
 - Some additional attention should be paid to the order of parameters passed to assertion functions. It differs between various assertion libraries, and it happens to be quite often confused by authors, mixing up `actual` and `expected` in assertion messages. For the Python testing framework, the order is `(actual, expected)`.
 - One somewhat distinctive feature of Python assertions is that by default, a failed assertion does not cause a test case to fail early. It can lead to unexpected crashes when an actual value had already been asserted to be invalid, but the execution of the current test case was not stopped and following assertions continue to refer to it. This behavior can be overridden by passing the `allow_raise=True` argument to the assertion functions which support it.
