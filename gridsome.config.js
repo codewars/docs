@@ -61,10 +61,10 @@ module.exports = {
               "/concepts/kata/translations/",
             ],
           },
-          {
+          /* {
             title: "How to...",
             items: ["/recipes/solve-kata/", "/recipes/create-kata/"],
-          },
+          },*/
         ],
       },
       {
@@ -104,13 +104,14 @@ module.exports = {
       {
         name: "authoring",
         sections: [
-          // TODO Tutorials
-          // {
-          //   title: "Tutorials",
-          //   items: [
-          //     "/authoring/tutorials/",
-          //   ],
-          // },
+          {
+            title: "Authoring",
+            items: [
+              "/authoring/",
+              "/authoring/kata/",
+              "/authoring/translation/",
+            ],
+          },
           {
             title: "Guidelines",
             items: [
@@ -124,6 +125,27 @@ module.exports = {
               "/authoring/guidelines/translation/",
               "/authoring/guidelines/kata/",
             ],
+          },
+        ],
+      },
+      {
+        name: "curating",
+        sections: [
+          {
+            title: "Curating",
+            items: ["/curating/", "/curating/kata/", "/curating/translation/"],
+          },
+          {
+            title: "Curating Guidelines",
+            items: [
+              "/curating/guidelines/",
+              "/curating/guidelines/kata/",
+              "/curating/guidelines/translation/",
+            ],
+          },
+          {
+            title: "See Also",
+            items: ["/authoring/guidelines/"],
           },
         ],
       },
