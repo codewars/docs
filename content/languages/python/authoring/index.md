@@ -129,20 +129,21 @@ def fixed_tests():
 
     @it('Regular cases')
     def regular_cases():
-        test.assert_equals(6, sum_array([1, 2, 3]))
-        test.assert_equals(5, sum_array([2, 3]))
+        test.assert_equals(6, user_solution([1, 2, 3]))
+        test.assert_equals(5, user_solution([2, 3]))
 
     @it('Edge cases')
     def edge_cases():
-        test.assert_equals(0, sum_array([]), "Invalid answer for empty array")
-        test.assert_equals(2, sum_array([2]), "Invalid answer for one element array")
+        test.assert_equals(0, user_solution([]), "Invalid answer for empty array")
+        test.assert_equals(2, user_solution([2]), "Invalid answer for one element array")
 
     @it('Input should not be modified')
     def do_not_mutate_input():
-        arr = random.shuffle([i for i in range(100)])
+        arr = list(range(100))
+        random.shuffle(arr)
         arr_copy = arr[:]
         #call user solution and ignore the result
-        sum_array(arr_copy)
+        user_solution(arr_copy)
         #arr_copy should not be modified
         test.assert_equals(arr_copy, arr, 'Input array was modified')
 
@@ -151,22 +152,31 @@ def fixed_tests():
 def random_tests():
 
     #non-global reference solution
-    def reference_sum_array(arr):
-        return sum(arr)
+    def reference_solution(arr):
+        # calculate and return reference answer
 
     #generate data for test cases with small inputs
-    def generate_small_test_cases():    
+    #this test case generator combines a few types of input
+    #in one collection
+    def ():    
         test_cases = []
         
         #first type of input: regular array of small inputs (many of them)
         for _ in range(50):
             test_cases.append(generate_small_test_case())
+        
+        #another type of input: array with potentially tricky numbers
+        #(possibly many of them)
+        for _ in range(50):
+            test_cases.append(generate_small_tricky_test_case())
 
-        #second type of input: potential edge case of single element array (a few of them)
+        #potential edge case of single element array (a few of them)
         for _ in range(10):
             test_cases.append(generate_single_element_edge_case())
 
-        #third type of input: edge case of empty array (one is usually enough)
+        #another edge case: empty array
+        #Not always necessary, usually fixed test is enough.
+        #If present, there's no need for more than one.
         test_cases.append([])
 
         #randomly shuffle test cases to make their order unpredictable
@@ -174,9 +184,12 @@ def random_tests():
 
         return test_cases
 
+    #Generator for large test cases, can be used for performance tests.
+    #Can generate structure and types of test cases similar to the
+    #generate_small_test_cases, but can also add more tricky cases,
+    #or skip on edge cases if they were sufficiently tested in the smaller set.
     def generate_large_cases():
         #... actual implementation
-        pass
 
     @it('Small inputs')
     def small_inputs():
@@ -189,11 +202,13 @@ def random_tests():
             expected = reference_sum_array(input)
 
             #call user solution and get actual answer.
-            #since the input is used after this call, a copy is passed
+            #since the input is used after this call to compose
+            #the assertion message, a copy is passed
             actual = sum_array(input[:])
             
-            #call assertion function. Assertion message uses original,
-            #non-modified input.
+            #Call assertion function.
+            #Custom assertion message is used to help with diagnosing failures.
+            #Assertion message uses original, non-modified input.
             test.assert_equals(actual, expected, f'Input: {input}')
 
     @it('Large random tests')
@@ -206,9 +221,13 @@ def random_tests():
             #expected answer calculated first
             expected = reference_sum_array(input)
             
-            #actual answer calculated second.
+            #assertion message composed before the user solution has a chance
+            #to mutate the input array
+            message = f'Invalid answer for array of length {len(input)}'
+
+            #actual answer calculated as second.
             #no copy is made because input is not used anymore
             actual = sum_array(input)
             
-            test.assert_equals(actual, expected)
+            test.assert_equals(actual, expected, message)
 ```
