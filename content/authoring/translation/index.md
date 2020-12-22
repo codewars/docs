@@ -4,9 +4,9 @@ kind: tutorial
 
 # How to translate a kata
 
-_TBD: this page was imported from old CW wiki and needs to be reviewied/redacted._
+_TBD: this page was imported from the old CW wiki and needs to be reviewed/redacted._
 
-TODO: this page would relate to creating both initial langiuage version, as well as new translation
+TODO: this page would relate to creating both initial language version, as well as a new translation
 
 ## Remarks on translating
 

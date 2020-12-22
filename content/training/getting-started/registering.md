@@ -18,15 +18,15 @@ Choose whatever language you like, want to learn, or are familiar with. Here you
 
 ## Your first challenge
 
-It's an entry level task which you need to solve to prove your dedication and commitment to learning. Let's see...
+It's an entry-level task which you need to solve to prove your dedication and commitment to learning. Let's see...
 
 ![first task](./img/registering_02_multiply_initial.png)
 
-Task says: "The code does not execute properly. Try to figure out why." Let's take a closer look at it... Of course! Some tiny detail is missing, and it causes compilation error! Let's put it in place, fix the code, and click `SUBMIT`. Server will process our solution and... after a short while, tests report is presented to you. If you made a mistake and your answer is not correct, don't worry! Just click `TRY AGAIN` and fix your solution.
+Task says: "The code does not execute properly. Try to figure out why." Let's take a closer look at it... Of course! Some tiny detail is missing, and it causes a compilation error! Let's put it in place, fix the code, and click `SUBMIT`. The server will process our solution and... after a short while, the test report is presented to you. If you made a mistake and your answer is not correct, don't worry! Just click `TRY AGAIN` and fix your solution.
 
 ![retry](./img/registering_03_multiply_wrong_answer.png)
 
-If your answer is correct, you will experience the best little thing in a life of a coder _[citation needed]_: **green tests**! Congratulations!
+If your answer is correct, you will experience the best little thing in the life of a coder _[citation needed]_: **green tests**! Congratulations!
 
 ![success](./img/registering_04_multiply_success.png)
 

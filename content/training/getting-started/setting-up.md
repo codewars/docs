@@ -29,7 +29,7 @@ You can find all options described in detail [here (TODO: insert link to actual 
 
 - **Email**, **Username** - authentication details entered by you upon registration
 - **Clan** - fill this in if you'd like to team up with your friends, group, or organization. More on Codewars clans can be found [here (TODO: link to clans doc)]()
-- **Development Experience** - select any option which you feel describes you the best. If you are making your first steps in the world of programming, just pick "Learning to Program". If you are a seasoned programmer who wants to train their coding-fu, improve their skills, and probably learn somethng new, you can choose "Senior Developer".
+- **Development Experience** - select any option which you feel describes you the best. If you are making your first steps in the world of programming, just pick "Learning to Program". If you are a seasoned programmer who wants to train their coding-fu, improve their skills, and probably learn something new, you can choose "Senior Developer".
 
 ### Preferences
 
@@ -37,7 +37,7 @@ You can find all options described in detail [here (TODO: insert link to actual 
 - **Default Catalog List View** - default setting for **"Status"** filter on kata [search page (TODO: link to docs on kata search page)](). Beginners are advised to set it to **"Approved Only"**, but if you want to participate in [beta evaluation process (TODO: link to docs on beta process)](), you can set it to any value you like.
 - **Red Subscription** - donating some money, you can support Codewars and get some great features. Check more information on [Codewars RED](https://www.codewars.com/subscription).
 
-Now you just need to clik `UPDATE` to have your settings stored in the database. Anytime you need to change your settings, you can always come back to **Account Settings** panel and perform necessary changes.
+Now you just need to click `UPDATE` to have your settings stored in the database. Anytime you need to change your settings, you can always come back to the **Account Settings** panel and perform the necessary changes.
 
 ## Training setup
 
@@ -54,9 +54,9 @@ You can enter your training setup panel by navigating with [this link](https://w
 
 </div>
 
-Again, detailed description can be found in [UI documentation (TODO: insert link to actual documentation of UI)](), but things needed to get you started are briefly explaned below:
+Again, a detailed description can be found in [UI documentation (TODO: insert link to actual documentation of UI)](), but things needed to get you started are briefly explained below:
 
-- **Would you like to receive our newsletter with weekly challenges?** - choose "Yes" to receive a weekly email with some suggested tasks to solve. Email contains a choice of Codewars problems of every difficulty, so you will be always able to find something what would suit you. Participating in Weekly Coding Challenge is a great way to keep yourself motivated! If you do not want to receive the email, just pick "No".
-- **Choose the language you wish to train on** - you can select from a large list of languages available on Codewars. You can select one, but if you want, you can select more. During your training, Codewars suggests you tasks which are available in languages you choose here. If you are not sure if you want to select some language or not, don't worry! You can always switch to any language available for currently trained task.
+- **Would you like to receive our newsletter with weekly challenges?** - choose "Yes" to receive a weekly email with some suggested tasks to solve. The email contains a choice of Codewars problems of every difficulty, so you will be always able to find something what would suit you. Participating in the Weekly Coding Challenge is a great way to keep yourself motivated! If you do not want to receive the email, just pick "No".
+- **Choose the language you wish to train on** - you can select from a large list of languages available on Codewars. You can select one, but if you want, you can select more. During your training, Codewars suggests you tasks which are available in languages you choose here. If you are not sure if you want to select some language or not, don't worry! You can always switch to any language available for the currently trained task.
 
 Remember that if you would like to change your setting later, you will always be able to do so by navigating to your Training Setup panel. If you configured everything here, just click `SAVE` and you will be redirected back to your dashboard.
