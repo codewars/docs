@@ -23,7 +23,7 @@ The easiest way of getting started is to use the personal trainer on the dashboa
 
 </div>
 
-The personal trainer suggests that you a kata based on the selected language and focus area. You can either train on the suggested kata or skip to see the next suggestion.
+The personal trainer suggests to you a kata based on the selected language and focus area. You can either train on the suggested kata or skip to see the next suggestion.
 
 For newer developers, we recommend that you pick the "Fundamentals" focus track, which will randomly select easier kata for you to train on.
 
