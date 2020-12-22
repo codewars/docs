@@ -56,7 +56,22 @@ Some kata should not be translated into Python, because it can be difficult to k
 
 ## Coding
 
+
+### Code style
+
 Python code should stick to generally recognized Python conventions, with [PEP-8](https://www.python.org/dev/peps/pep-0008/) being most widely accepted.
+
+
+### Imports
+
+It is strongly recommended to import solution modules explicitly. Possible modules are:
+- `solution`, containing user's submitted solution,
+- `preloaded`, containing preloaded code,
+- `codewars_test`, containing [Codewars Python testing framework](/languages/python/codewars-test/).
+
+When any of these imports is missing, then, for compatibility reasons, it will be automatically added by Codewars preprocessor when solution is built. However, relying on this behavior is discouraged, as it's considered deprecated and might change in the future.
+
+If a user solution is expected to use functions or classes from `preloaded` module, it's recommended to add required imports to "initial solution" code snippet.
 
 
 ## Tests
@@ -90,7 +105,7 @@ The Codewars runner provides a set of preinstalled packages, which are available
 
 ### Reference solution
 
-If the test suite happens to use a reference solution to calculate expected values (which [should be avoided](/authoring/guidelines/submission-tests/#reference-solution), but is not always possible), or some kind of reference data, precalculated arrays, etc., it can be redefined, overwritten, or accessed directly by the user solution. To avoid this, it should be defined in a scope local to the testing function, `it` block, or `describe` block. The reference solution or data _must not_ be defined in [Preloaded code](/authoring/guidelines/preloaded/).
+If the test suite happens to use a reference solution to calculate expected values (which [should be avoided](/authoring/guidelines/submission-tests/#reference-solution), but is not always possible), or some kind of reference data, precalculated arrays, etc., it can be redefined, overwritten, or accessed directly by the user solution. To avoid this, it should be defined in a scope local to the testing function, `it` block, or `describe` block. The reference solution or data _must not_ be defined in top-level scope of test suite, nor in [Preloaded code](/authoring/guidelines/preloaded/).
 
 ### Calling assertions
 
@@ -124,6 +139,12 @@ Below you can find an example test suite that covers most of the common scenario
 
 
 ```python
+
+#import modules explicitly
+import codewars_test as test
+import preloaded
+from solution import user_solution
+
 @describe('Fixed tests')
 def fixed_tests():
 
