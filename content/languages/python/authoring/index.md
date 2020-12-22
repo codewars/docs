@@ -145,20 +145,20 @@ import codewars_test as test
 import preloaded
 from solution import user_solution
 
-@describe('Fixed tests')
+@test.describe('Fixed tests')
 def fixed_tests():
 
-    @it('Regular cases')
+    @test.it('Regular cases')
     def regular_cases():
         test.assert_equals(6, user_solution([1, 2, 3]))
         test.assert_equals(5, user_solution([2, 3]))
 
-    @it('Edge cases')
+    @test.it('Edge cases')
     def edge_cases():
         test.assert_equals(0, user_solution([]), "Invalid answer for empty array")
         test.assert_equals(2, user_solution([2]), "Invalid answer for one element array")
 
-    @it('Input should not be modified')
+    @test.it('Input should not be modified')
     def do_not_mutate_input():
         arr = list(range(100))
         random.shuffle(arr)
@@ -169,7 +169,7 @@ def fixed_tests():
         test.assert_equals(arr_copy, arr, 'Input array was modified')
 
 
-@describe('Random tests')
+@test.describe('Random tests')
 def random_tests():
 
     #non-global reference solution
@@ -212,7 +212,7 @@ def random_tests():
     def generate_large_cases():
         #... actual implementation
 
-    @it('Small inputs')
+    @test.it('Small inputs')
     def small_inputs():
         
         inputs = generate_small_inputs()
@@ -232,7 +232,7 @@ def random_tests():
             #Assertion message uses original, non-modified input.
             test.assert_equals(actual, expected, f'Input: {input}')
 
-    @it('Large random tests')
+    @test.it('Large random tests')
     def large_random_tests():
         
         large_inputs = generate_large_cases()
