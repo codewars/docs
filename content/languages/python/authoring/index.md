@@ -8,12 +8,12 @@ sidebar: "language:python"
 
 This article is meant as help for kata authors and translators who would like to create new content in Python. It attempts to explain how to create and organize things in a way conforming to [authoring guidelines](/authoring/guidelines/), the most common pitfalls and how to avoid them.
 
-This article is not a standalone tutorial on creating kata or translations. It's meant to be a complementary, Python-specific part of a more general set of HOWTOs and guidelines related to [content authoring](/authoring/) explaining how to create a Python version of a kata in a way which conforms to authoring guidelines and best practices. If you are going to create a Python translation of a kata, or a new kata in Python from scratch, please make yourself familiar with the aforementioned documents related to authoring in general. 
+This article is not a standalone tutorial on creating kata or translations. It's meant to be a complementary, Python-specific part of a more general set of HOWTOs and guidelines related to [content authoring](/authoring/) explaining how to create a Python version of a kata in a way that conforms to authoring guidelines and best practices. If you are going to create a Python translation of a kata, or a new kata in Python from scratch, please make yourself familiar with the aforementioned documents related to authoring in general. 
 
 
 ## General info
 
-Any information related to the Python setup on Codewars, language version, available modules, and setup of the code runner can be found on the [Python reference](/languages/python/) page.
+Any information related to the Python setup on Codewars, the language version, available modules, and setup of the code runner can be found on the [Python reference](/languages/python/) page.
 
 
 ## Description
@@ -71,7 +71,7 @@ It is strongly recommended to import solution modules explicitly. Possible modul
 
 When any of these imports are missing, then, for compatibility reasons, it will be automatically added by Codewars preprocessor when the solution is built. However, relying on this behavior is discouraged, as it's considered deprecated and might change in the future.
 
-If a user solution is expected to use functions or classes from `preloaded` module, it's recommended to add required imports to "initial solution" code snippet.
+If a user solution is expected to use functions or classes from the `preloaded` module, it's recommended to add required imports to the "initial solution" code snippet.
 
 
 ## Tests
@@ -84,7 +84,7 @@ You should notice that the Python testing framework produces one test output ent
 
 ### Random utilities
 
-Python has a rich [random library](https://docs.python.org/3.8/library/random.html), which can be used to easily generate random integers in requested ranges, generate floating point numbers, or sample and shuffle collections. Functions available there allow for very convenient construction of various random input generators.
+Python has a rich [random library](https://docs.python.org/3.8/library/random.html), which can be used to easily generate random integers in requested ranges, generate floating-point numbers, or sample and shuffle collections. Functions available there allow for very convenient construction of various random input generators.
 
 Some useful functions include:
 - [`random.randrange(stop)`](https://docs.python.org/3.8/library/random.html#random.randrange) - returns a randomly selected element from range `[0, stop)`.
@@ -92,7 +92,7 @@ Some useful functions include:
 - [`random.randint(a, b)`](https://docs.python.org/3.8/library/random.html#random.randint) - returns a random integer `N` such that `a <= N <= b`.
 - [`random.shuffle(x[, random])`](https://docs.python.org/3.8/library/random.html#random.shuffle) - shuffles the sequence `x` in place.
 - [`random.sample(population, k)`](https://docs.python.org/3.8/library/random.html#random.sample) - returns a `k` length list of unique elements chosen from the `population` sequence or set.
-- [`random.random()`](https://docs.python.org/3.8/library/random.html#random.random) - returns the next random floating point number in the range `[0.0, 1.0)`.
+- [`random.random()`](https://docs.python.org/3.8/library/random.html#random.random) - returns the next random floating-point number in the range `[0.0, 1.0)`.
 
 :::warning
 The Python runner is currently affected by a performance issue (reported as [codewars/runner#58](https://github.com/codewars/runner/issues/58)) which sometimes causes the generation of large amounts of random numbers to be noticeably slower. The majority of kata should not be affected by it in any significant way, but it can sometimes be a problem for performance tests generating large, random sets of data.
@@ -110,7 +110,7 @@ If the test suite happens to use a reference solution to calculate expected valu
 ### Calling assertions
 
 The Python testing framework provides a set of useful [assertions](/languages/python/codewars-test/#assertions), but when used incorrectly, they can cause a series of problems:
-- Stacktraces of a crashing user solution can reveal details which should not be visible,
+- Stacktraces of a crashing user solution can reveal details that should not be visible,
 - Use of an assertion not suitable for the given case may lead to incorrect test results,
 - Incorrectly used assertions may produce confusing or unhelpful messages.
 
@@ -118,7 +118,7 @@ To avoid the above problems, calls to assertion functions should respect the fol
 - The expected value should be calculated _before_ invoking an assertion. The `expected` parameter passed to the assertion should not be a function call expression, but a value calculated directly beforehand.
 - Appropriate assertion functions should be used for each given test. `assert_equals` is not suitable in all situations. Use `assert_approx_equals` for floating point comparisons, `expect` for tests on boolean values, `expect_error` to test error handling.
 - Some additional attention should be paid to the order of parameters passed to assertion functions. It differs between various assertion libraries, and it happens to be quite often confused by authors, mixing up `actual` and `expected` in assertion messages. For the Python testing framework, the order is `(actual, expected)`.
-- One somewhat distinctive feature of Python assertions is that by default, a failed assertion does not cause a test case to fail early. It can lead to unexpected crashes when an actual value had already been asserted to be invalid, but the execution of the current test case was not stopped and following assertions continue to refer to it. This behavior can be overridden by passing the `allow_raise=True` argument to the assertion functions which support it.
+- One somewhat distinctive feature of Python assertions is that by default, a failed assertion does not cause a test case to fail early. It can lead to unexpected crashes when an actual value had already been asserted to be invalid, but the execution of the current test case was not stopped and following assertions continue to refer to it. This behavior can be overridden by passing the `allow_raise=True` argument to the assertion functions that support it.
 - To avoid unexpected crashes in tests, it's recommended to perform some additional assertions before assuming that the answer returned by the user solution has some particular type, form, or value. For example, if the test suite sorts the returned list to verify its correctness, an explicit assertion should be added to check whether the returned object is actually a list, and not, for example, `None`.
 
 
