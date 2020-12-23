@@ -70,7 +70,7 @@ Available modules in the context of Codewars are:
 - `preloaded`, containing preloaded code,
 - `codewars_test`, containing the [Codewars Python testing framework](/languages/python/codewars-test/).
 
-When any of these imports are missing, then, for compatibility reasons, it will be automatically added by Codewars preprocessor when the solution is built. However, relying on this behavior is discouraged, as it's considered deprecated and might change in the future.
+When any of these imports are missing, then, for compatibility reasons, it will be automatically added by Codewars' preprocessor when the solution is built. However, relying on this behavior is discouraged as it's deprecated and subject to change in the future.
 
 If a user solution is expected to use functions or classes from the `preloaded` module, it's recommended to add required imports to the "initial solution" code snippet.
 
