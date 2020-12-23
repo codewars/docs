@@ -6,9 +6,9 @@ sidebar: "language:python"
 
 # Python: creating and translating a kata
 
-This article is meant as help for kata authors and translators who would like to create new content in Python. It attempts to explain how to create and organize things in a way conforming to [authoring guidelines](/authoring/guidelines/), the most common pitfalls and how to avoid them.
+This article is meant as help for kata authors and translators who would like to create new content in Python. It attempts to explain how to create and organize things in a way conforming to [authoring guidelines](/authoring/guidelines/), shows the most common pitfalls and how to avoid them.
 
-This article is not a standalone tutorial on creating kata or translations. It's meant to be a complementary, Python-specific part of a more general set of HOWTOs and guidelines related to [content authoring](/authoring/) explaining how to create a Python version of a kata in a way that conforms to authoring guidelines and best practices. If you are going to create a Python translation of a kata, or a new kata in Python from scratch, please make yourself familiar with the aforementioned documents related to authoring in general. 
+This article is not a standalone tutorial on creating kata or translations. It's meant to be a complementary, Python-specific part of a more general set of HOWTOs and guidelines related to [content authoring](/authoring/). If you are going to create a Python translation, or a new Python kata from scratch, please make yourself familiar with the aforementioned documents related to authoring in general first. 
 
 
 ## General info
@@ -179,7 +179,7 @@ def random_tests():
     #generate data for test cases with small inputs
     #this test case generator combines a few types of input
     #in one collection
-    def ():    
+    def generate_small_inputs():    
         test_cases = []
         
         #first type of input: regular array of small inputs (many of them)
