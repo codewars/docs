@@ -13,7 +13,7 @@ This article is not a standalone tutorial on creating kata or translations. It's
 
 ## General info
 
-Any information related to the Python setup on Codewars, the language version, available modules, and setup of the code runner can be found on the [Python reference](/languages/python/) page.
+Any technical information related to the Python setup on Codewars can be found on the [Python reference](/languages/python/) page (language versions, available modules, and setup of the code runner).
 
 
 ## Description
@@ -46,12 +46,12 @@ Python-specific paragraphs can be inserted with [language conditional rendering]
 
 ## Tasks and Requirements
 
-Some language constructs and features available in Python do not translate well into other languages, and should be avoided if possible:
-- Abuse of dynamic typing, e.g. mixed return types (_"Return the result, or the string 'Error' if no result can be found."_).
+Some concepts don't always translate well to or from Python. Because of this, some constructs should be avoided and some translations just shouldn't be done.
+- Avoid returning different data types depending on the situation (_"Return the result, or the string 'Error' if no result can be found..."_). Python is dynamically typed which is not be the case for some other languages. Returning `None` might be appropriate in some situations, but raising an exception might be better in others.
 
-Some kata should not be translated into Python, because it can be difficult to keep their initial idea:
-- The Python standard library is very rich and has many utilities available (e.g. `itertools`, combinatorics functions), so some nontrivial requirements in other languages become trivial in Python,
-- Python supports big integers natively, so kata that rely on the implementation of arbitrary precision integer arithmetic become trivial in Python.
+Some kata just should not be translated into Python because it can be difficult to keep their initial idea:
+- The Python standard library is very rich and has many utilities available (e.g. `itertools`, combinatorics functions), so some nontrivial requirements in other languages could become trivial in Python,
+- Python supports big integers natively, so kata that rely on the implementation of arbitrary precision integer arithmetic would become trivial in Python.
 - The Codewars runner provides a set of preinstalled packages which are available for users solving the kata. They can be a real game-changer when it comes to the difficulty of a Python translation. For example, `numpy` can make many matrix manipulation kata much easier.
 
 ## Coding
@@ -64,7 +64,8 @@ Python code should stick to generally recognized Python conventions, with [PEP-8
 
 ### Imports
 
-It is strongly recommended to import solution modules explicitly. Possible modules are:
+For further compatibility reasons, it is strongly recommended to import solution modules explicitly.  
+Available modules in the context of Codewars are:
 - `solution`, containing the user's submitted solution,
 - `preloaded`, containing preloaded code,
 - `codewars_test`, containing the [Codewars Python testing framework](/languages/python/codewars-test/).
@@ -80,7 +81,7 @@ If a user solution is expected to use functions or classes from the `preloaded` 
 
 Python kata use the [Codewars Python testing framework](/languages/python/codewars-test/) to implement and execute tests. You should read its reference page to find out how to use `describe` and `it` blocks for [organization and grouping](/languages/python/codewars-test/#grouping-tests), what [assertions](/languages/python/codewars-test/#assertions) are available, etc.
 
-You should notice that the Python testing framework produces one test output entry per assertion, so the test output panel can get very noisy.
+You should notice that the Python testing framework produces one test output entry per assertion (and even 2 in [some special situations](/languages/python/codewars-test/#timeout-utility)), so the test output panel can get very noisy.
 
 ### Random utilities
 
@@ -105,7 +106,9 @@ The Codewars runner provides a set of preinstalled packages, which are available
 
 ### Reference solution
 
-If the test suite happens to use a reference solution to calculate expected values (which [should be avoided](/authoring/guidelines/submission-tests/#reference-solution), but is not always possible), or some kind of reference data, precalculated arrays, etc., it can be redefined, overwritten, or accessed directly by the user solution. To avoid this, it should be defined in a scope local to the testing function, `it` block, or `describe` block. The reference solution or data _must not_ be defined in the top-level scope of the test suite, nor in the [Preloaded code](/authoring/guidelines/preloaded/).
+If the test suite happens to use a reference solution to calculate expected values (which [should be avoided](/authoring/guidelines/submission-tests/#reference-solution) when possible), or some kind of reference data like precalculated arrays, etc., it must not be possible for the user to redefine, overwrite or directly access its contents. To prevent this, it should be defined in a scope local to the testing function, a `it` or a `describe` block.
+
+The reference solution or data ___must not___ be defined in the top-level scope of the test suite or in the [Preloaded code](/authoring/guidelines/preloaded/).
 
 ### Calling assertions
 
@@ -122,7 +125,7 @@ To avoid the above problems, calls to assertion functions should respect the fol
 - To avoid unexpected crashes in tests, it's recommended to perform some additional assertions before assuming that the answer returned by the user solution has some particular type, form, or value. For example, if the test suite sorts the returned list to verify its correctness, an explicit assertion should be added to check whether the returned object is actually a list, and not, for example, `None`.
 
 
-## Additional restrictions
+## Kata with additional restrictions
 
 ### Accessing the solution file
 
