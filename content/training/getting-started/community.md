@@ -11,17 +11,17 @@ Codewars gathers users with many different skills and levels of experience. Thei
 
 If you want to discuss some particular kata, you can use its discourse page to do so.
 
-It's a good place to ask for explanations, search for help about solution, add your opinion on it, or report problems. You can label your post with one of possible labels when appropriate:
+It's a good place to ask for explanations, search for help about your solution, add your opinion on it, or report problems. You can label your post with one of the following possible labels when appropriate:
 
-- **Question** - if description is not clear, you need help, got stuck, or you cannot get your solution to work,
-- **Suggestion** - if you have an idea how author could change the kata, its description, or tests, to make it better,
-- **Issue** - if you think the kata is broken, and author needs to fix it in some way.
+- **Question** - if the description is not clear, you need help, got stuck, or you cannot get your solution to work,
+- **Suggestion** - if you have an idea how the author could change the kata, its description, or tests, to make it better,
+- **Issue** - if you think the kata is broken, and the author needs to fix it in some way.
 
 See this [detailed documentation (TODO: direct link to Labels reference? same link than the one at the end of the "Communication" part)]() about the different kinds of labels and their use.
 
-Discourse posts support [Markdown formatting (TODO: link to Markdown reference)](), so you can use some styling, or present your code neatly with [code formatting blocks (TODO: direct link to chapter on code blocks in Markdown docs)]().
+Discourse posts support [Markdown formatting (TODO: link to Markdown reference)](), so you can use some styling, or present your code neatly with [code formatting blocks (TODO: direct link to a chapter on code blocks in Markdown docs)]().
 
-You should also mark your posts with **Spoiler** flag if they contain some code (even not fully working one), or reveal some significant details of the solution.
+You should also mark your posts with the **Spoiler** flag if they contain some code (even not fully working one), or reveal some significant details of the solution.
 
 ## Communication
 

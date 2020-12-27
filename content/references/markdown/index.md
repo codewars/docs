@@ -39,7 +39,7 @@ ___here, italic and bold___
 
 ## Displaying code
 
-Use code spans and code blocks to show the text as is. Use code block to show the syntax highlighted code.
+Use code spans and code blocks to show the text as-is. Use code block to show the syntax highlighted code.
 
 ### Code span
 
@@ -73,7 +73,7 @@ def hello_world():
 ```
 ````
 
-If you're writing a kata description, see [Codewars' extensions][extensions] like sequential and language specific blocks.
+If you're writing a kata description, see [Codewars' extensions][extensions] like sequential and language-specific blocks.
 
 
 

@@ -7,18 +7,15 @@ prev: /references/markdown/
 
 # Codewars' Markdown Extensions
 
-Codewars adds few Markdown extensions for writing kata descriptions.
-
-
+Codewars adds a few Markdown extensions for writing kata descriptions.
 
 ## Sequential Code Blocks
 
 Used to display [code blocks](/references/markdown/#code-block) only in the language selected by the user.
 
-
 ### Details
 
-- Each code block must have info string set to a valid language ID. To find the language ID, visit its documentation from the [languages page](/languages/).
+- Each code block must have an info string set to a valid language ID. To find the language ID, visit its documentation from the [languages page](/languages/).
 - The order of the code blocks/languages doesn't matter.
 - To avoid rendering errors/problems:
   - Always put an empty line before and after the complete group of code blocks
@@ -70,7 +67,7 @@ If the selected language is java, this block is showing up in the description, r
 ### Details
 
 * The language name in the info string has to match a valid language ID. To find the language ID, visit its documentation from the [languages page](/languages/).
-* To obtain proper rendering, language specific blocks need an empty line before and after them, just like code blocks.
+* To obtain proper rendering, language-specific blocks need an empty line before and after them, just like code blocks.
 * You can use Markdown inside conditional blocks, but [be careful when inserting code blocks](/references/markdown/extensions/#using-code-blocks-inside-conditional-blocks).
 * You can use different kinds of conditions or assigned them to groups of languages using the following syntaxes:
   - `if:language`

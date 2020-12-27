@@ -8,7 +8,7 @@ next: /authoring/guidelines/translation/
 # Writing a Reference Solution
 
 :::note
-On this page, term "Reference Solution" refers to a separate code snippet provided by a kata author or translator, which is used by Codewars to verify correctness of the kata while it's being published.
+On this page, the term "Reference Solution" refers to a separate code snippet provided by a kata author or translator, which is used by Codewars to verify the correctness of the kata while it's being published.
 
 For guidelines related to the piece of code used by submissions tests to generate expected answers, see [Reference Solution][authoring-guidelines-tests-solution] section on [Writing Submission Tests][authoring-guidelines-tests] page.
 :::

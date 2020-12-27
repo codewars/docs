@@ -7,7 +7,7 @@ next: /authoring/guidelines/submission-tests/
 
 # Writing Sample Tests
 
-Sample tests are a part of every kata which is often underappreciated by both kata authors and solvers. Bad sample tests can cause a lot of frustration, while a good suite of them often increases overall satisfaction of users from solving the kata. To make sample tests as good as possible, follow the guidelines collected below.
+Sample tests are a part of every kata which is often underappreciated by both kata authors and solvers. Bad sample tests can cause a lot of frustration, while a good suite of them often increases the overall satisfaction of users from solving the kata. To make sample tests as good as possible, follow the guidelines collected below.
 
 - **Conform to [General Coding Guidelines][authoring-guidelines-general-coding]**: tests should adhere to code quality standards as much as any other provided code.
 - Sample tests are **not a replacement for a good description.** The description alone should be enough to enable the user to complete the kata. Sample tests should be treated as supporting the description and never be the only source of information necessary to complete the kata.
@@ -16,7 +16,7 @@ Sample tests are a part of every kata which is often underappreciated by both ka
 - **The test suite should be organized**, splitting the tests into different groups and subgroups. Each test framework provides tools to do that, generally with a possibility to give meaningful names to each (sub)group.
 - Sample tests can be used as additional examples for a couple of aspects:
   - In some languages, for example C, they serve as a good example on how the solution function is called, how input and output parameters are passed to it, how memory management is handled, etc.
-  - Sample tests, in addition to the kata description, can clarify handling of edge cases, inputs which should be handled in some exceptional way, or errors.
+  - Sample tests, in addition to the kata description, can clarify the handling of edge cases, inputs which should be handled in some exceptional way, or errors.
   - Test cases provided by the author show how to use the testing framework and assertion libraries to the users who'd like to add their own tests.
   - One or two test cases with large inputs can serve as a hint on performance requirements, enabling users to check that their solution meets efficiency standards before submitting. These tests can be initially disabled with a note that they can be enabled if the user wants to verify the performance of their solution.
 - **Sample tests should be fixed, predictable, and repeatable.** Avoid sample tests which are random or change between the runs.

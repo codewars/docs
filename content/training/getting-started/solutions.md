@@ -10,7 +10,7 @@ next: "/training/getting-started/community/"
 
 Viewing accepted solutions, be it after solving a kata or after unlocking them, is one of the best ways to learn. Other users could have different ideas for solving the task. Their solutions can be clearer, shorter, faster, or use functions you did not know existed. You can learn a lot while studying them, and it's very often worthwhile to at least briefly read over them.
 
-If some solution caught your special attention, you can write a post in solution's discourse section to praise it, criticize in some way, or ask questions about it.
+If some solution caught your special attention, you can write a post in the solution's discourse section to praise it, criticize it in some way, or ask questions about it.
 
 ## Voting
 
