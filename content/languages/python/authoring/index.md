@@ -98,11 +98,11 @@ def tests_with_generated_test_cases()
 
 ```
 
-This technique is liked by authors familiar with testing frameworks which provide parametrized or generated test cases out of the box, like NUnit, or JUnit. However, some caution is needed when this approach is used. Test suites organized this way can become large and can flood test output panel with many entries, making it unreadable or causing performance problems in client browsers.
+This technique is liked by authors familiar with testing frameworks that provide parametrized or generated test cases out of the box, like NUnit, or JUnit. However, some caution is needed when this approach is used. Test suites organized like this can become large and can flood the test output panel with many entries, making it unreadable or causing performance problems in client browsers.
 
 #### Decorated functions
 
-To create and present test output, Python testing framework uses parameters of `describe` and `it` decorators, and ignores actual names of decorated functions. Since the names are often redundant with titles of `describe` or `it` sections, they can be replaced with some placeholder name, for example `_`:
+To create and present test output, the Python testing framework uses parameters of `describe` and `it` decorators, and ignores actual names of decorated functions. Since the names are often redundant with titles of `describe` or `it` sections, they can be replaced with some placeholder name, for example, `_`:
 
 ```python
 @test.describe('Fixed tests')
@@ -143,7 +143,7 @@ Some useful functions include:
 - [`random.random()`](https://docs.python.org/3.8/library/random.html#random.random) - returns the next random floating-point number in the range `[0.0, 1.0)`.
 - [`random.shuffle(x[, random])`](https://docs.python.org/3.8/library/random.html#random.shuffle) - shuffles the sequence `x` in place.
 - [`random.sample(population, k)`](https://docs.python.org/3.8/library/random.html#random.sample) - returns a `k` length list of unique elements chosen from the `population` sequence or set.
-- [`random.choices(population[, ...], k=1)`](https://docs.python.org/3.8/library/random.html#random.choices) - extracts `k` elements of the `population` (possibly outputing the same element several times).
+- [`random.choices(population[, ...], k=1)`](https://docs.python.org/3.8/library/random.html#random.choices) - extracts `k` elements of the `population` (possibly outputting the same element several times).
 
 :::warning
 The Python runner is currently affected by a performance issue (reported as [codewars/runner#58](https://github.com/codewars/runner/issues/58)) which sometimes causes the generation of large amounts of random numbers to be noticeably slower. The majority of kata should not be affected by it in any significant way, but it can sometimes be a problem for performance tests generating large, random sets of data.
