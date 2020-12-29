@@ -10,11 +10,52 @@ next: /languages/python/authoring/
 
 # Python Codewars Test Framework
 
-Codewars currently uses a [custom test framework][test-framework-repo] to test Python.
+To run Python tests, Codewars currently uses a custom test framework, published and available in [this GitHub repository][test-framework-repo].
 
 ## Overview
 
-The test framework allows writing named groups of tests holding other named groups of tests, containing assertions.
+The test framework provides facilities to create named, hierarchical groups of tests, as well as individual test cases.
+
+Additionally, the framework provides a set of functions performing assertions on various conditions: equality, error handling, truthness, etc.
+
+
+## `codewars_test` module
+
+All functions, decorators, and assertions provided by the framework are defined in `codewars_test` Python module.
+
+:::warning Deprecation
+Python runner for verions prior to Python 3.8 does not contain the `codewars_test` module. The testing framework is imported implicitly and aliased as `test` and `Test`. This behavior is deprecated and for the Python 3.8 kata the explicit import is required.
+:::
+
+## Organization of tests
+
+Tests in Python testing framework are composed from functions decorated with a set of Python decorators. All such functions are automatically discovered and run. The final result for every test block is determined by contained assertions, and reported along with its measured execution time.
+
+
+### `@describe` - test groups
+
+Functions decorated with `@describe` represent a group of logically related test cases.
+
+`@describe` functions can contain another, nested test groups (functions decorated with `@describe`), or individual test cases (functions decorated with `@it`, see below).
+
+Test groups cannot contain assertions.
+
+
+### `@it` - test cases
+
+Functions decorated with `@it` represent a single test case. They can be defined inside of a function decorated with `@describe`, or can be top level functions.
+
+`@it` functions can contain only assertions, and cannot nest another test cases nor test groups.
+
+
+### Assertions
+
+Assertions can be located only inside of a test case (a function decorated with `@it`). They must not be located directly under a test group (a function decorated with `@describe`), or in the top level of test.
+
+Note that failed assertions do not stop the execution of the enclosing test case by default. See [Failing Early](#failing-early) on how to control this behavior.
+
+
+### Example
 
 The basic setup for the tests follows this example:
 
@@ -43,10 +84,6 @@ def rnd_tests():
     ...
 ```
 
-:::warning Deprecation
-The package `codewars_test` does not exist for Python versions older than v3.8 where the test framework is implicitly imported and assigned to `test` and `Test`. This behavior is deprecated and the explicit import is required.
-:::
-
 The above produces an output similar to the following:
 
 <div class="block dark:hidden">
@@ -60,42 +97,6 @@ The above produces an output similar to the following:
 
 </div>
 
-Note that test cases don't stop on failure by default. See [Failing Early](#failing-early) to change this behavior.
-
-## Grouping Tests
-
-The groups are created using the following decorators:
-
-```python
-@test.describe(test_name)
-def _():
-
-    @test.it(test_case_name)
-    def _():
-        ...
-
-    @test.describe(subgroup_name)
-    def _():
-      ...
-
-        @test.it(test_case_subgroup_name)
-        def _():
-            ...
-```
-
-Those decorators automatically run the decorated function to launch the tests.
-
-Both kinds of blocks are timed: once the decorated function ends its execution, the time spent in the function will be displayed at the end of the block (note: for the elapsed time to be visible, the block must be deployed).
-
-### Test Group
-
-`describe` block groups test cases (`it`). Nesting is allowed as shown above.
-
-Always put assertions inside `it` and not directly in `describe`.
-
-### Test Case
-
-`it` creates a test case containing assertion(s). Nesting will result in incorrect output.
 
 ## Failing Early
 
@@ -104,69 +105,61 @@ Some of the functions below can accept a named argument `allow_raise=False`.
 If you change its value to `True`, the tests contained inside the current block will be interrupted at the first failed test. The executions are then going back to the parent block if it exists and the next part is executed.
 On some computation-heavy Kata, it may be a good idea to use this feature so that the user has not to wait a long time before getting feedback (or possibly before timing out, and in that case, they might never get any feedback at all, which may be cumbersome).
 
+
 ## Assertions
 
 ### Equality tests
 
 ```python
-test.assert_equals(actual, expected)                        # default message: <actual> should equal <expected>
-test.assert_equals(actual, expected, message)
 test.assert_equals(actual, expected, message=None, allow_raise=False)
 ```
 
 Checks that the actual value equals the expected value.  
+
 Note that because Python's equality operator checks for deep equality by default, you don't have to compare the contents of the array element by element yourself when you want to compare values as lists, tuples, sets, etc.
+
+Default message is _"<actual> should equal <expected>"_.
 
 This function is usually the main building block of a Kata's test cases.
 
 ### Non-equality tests
 
 ```python
-test.assert_not_equals(actual, unexpected)                  # default message: <actual> should not equal <expected>
-test.assert_not_equals(actual, unexpected, message)
 test.assert_not_equals(actual, expected, message=None, allow_raise=False)
 ```
 
 Checks that the actual value does not equal the (un)expected value.
+Default message is _"<actual> should not equal <expected>"_.
 
 ### Approximate equality tests
 
-If the computations of the tests imply some floats, the exact value returned by the user may depend on the order of the different computations and he might end up with a value considered correct but not strictly equal to the expected one. For example:
-
 ```python
-a,b = 170*115/100, 170*(115/100)
-test.assert_equals(a,b)             #   ->    195.5 should equal 195.49999999999997
-```
-
-So, in this case, **you need to use this function to check the value instead of `assert_equals`**:
-
-```python
-test.assert_approx_equals(actual, expected)
 test.assert_approx_equals(actual, expected, margin=1e-9, message=None, allow_raise=False)
-
-# default message: <actual> should be close to <expected> with absolute or relative margin of <margin>
 ```
 
-Checks if the actual value is close enough to the expected one, with a default relative or absolute value of `1e-9`.
-
-The comparison is done like this:
+Checks if the actual value is close enough to the expected one, with a default relative or absolute value of `margin`. The comparison is performed in following way:
 
 ```python
 div = max(abs(actual), abs(expected), 1)
 is_good = abs((actual - expected) / div) < margin
 ```
 
-So you can compare either big or small float values without problems.
+So you can compare either big or small floating-point values without problems.
+
+Default message is _"<actual> should be close to <expected> with absolute or relative margin of <margin>"_.
 
 ### Truthness tests
 
 ```python
-test.expect(bool)                            # default message: Value is not what was expected
-test.expect(bool, message)
+test.expect(expected, message=None)
 ```
 
-Checks if the passed value is truthy. This function can be helpful when you test something which cannot be tested using other functions.  
-However, since this function's default failure message is not helpful at all, **you're strongly advised to provide your own helpful message, or even to _not_ use** `test.expect`. To build custom assertion functions, you could/should use the two following ones instead.
+Checks if the passed value is truthy. This function can be helpful when you test something which cannot be tested using other assertion functions.  
+
+However, since this function's default failure message is not very helpful, **you're strongly advised to provide your own helpful message**.
+
+Default message: _"Value is not what was expected"_.
+
 
 ### Pass and fail
 
