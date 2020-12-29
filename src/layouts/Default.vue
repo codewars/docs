@@ -78,6 +78,16 @@ query {
       }
     }
   }
+
+  allLanguages: allLanguage {
+    edges {
+      node {
+        id
+        path
+        title: name
+      }
+    }
+  }
 }
 </static-query>
 
@@ -144,6 +154,9 @@ export default {
     pages() {
       return this.$static.allMarkdownPage.edges.map((edge) => edge.node);
     },
+    languages() {
+      return this.$static.allLanguages.edges.map((edge) => edge.node);
+    },
     sidebarStyle() {
       return {
         top: this.headerHeight + "px",
@@ -163,7 +176,20 @@ export default {
       // Use `field:value` to generate sidebar sections based on some criteria.
       const [field, value] = this.sidebar.split(":", 2);
       if (field === "language") {
-        return this.genSidebarSections(this.findLanguagePages(value));
+        // Show the language page at the top.
+        const page = this.languages.find((x) => x.id === value);
+        return [
+          {
+            title: page.title,
+            items: [
+              {
+                title: "Overview",
+                path: page.path,
+              },
+            ],
+          },
+          ...this.genSidebarSections(this.findLanguagePages(value)),
+        ];
       }
 
       const def = this.$static.metadata.settings.sidebar.find(
