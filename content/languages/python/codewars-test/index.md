@@ -216,14 +216,6 @@ test.expect_no_error(msg, f, OSError)          # Pass
 
 ## Timeout Utility
 
-```python
-@test.timeout(sec)                      # default message: Exceeded time limit of <sec> seconds
-def some_function():
-    #do some heavy tests here...
-    for _ in ad_nauseam():
-        test.assert_equals(count_atoms_in_universe(), expected)
-```
-
 Runs the decorated function within the time limit.  
 
 `sec` is the amount of time allowed. It is expressed in seconds and can be given as an integer or float.  
@@ -234,6 +226,16 @@ Decorated function is required to not throw any exception. If an error is raised
 :::warning
 Timed test should contain at least one assertion which verifies the result returned by the user solution. Otherwise, the test will be considered passed just if it happens to finish in time below the requested time limit, even if it would return incorrect answer.
 :::
+
+### Example
+
+```python
+@test.timeout(sec)                      # default message: Exceeded time limit of <sec> seconds
+def some_function():
+    #do some heavy tests here...
+    for _ in ad_nauseam():
+        test.assert_equals(count_atoms_in_universe(), expected)
+```
 
 ## Acknowledgements
 
