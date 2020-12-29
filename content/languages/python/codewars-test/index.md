@@ -118,7 +118,7 @@ Checks that the actual value equals the expected value.
 
 Note that because Python's equality operator checks for deep equality by default, you don't have to compare the contents of the array element by element yourself when you want to compare values as lists, tuples, sets, etc.
 
-Default message is _"<actual> should equal <expected>"_.
+Default message is _"\<actual\> should equal \<expected\>"_.
 
 This function is usually the main building block of a Kata's test cases.
 
@@ -129,7 +129,7 @@ test.assert_not_equals(actual, expected, message=None, allow_raise=False)
 ```
 
 Checks that the actual value does not equal the (un)expected value.
-Default message is _"<actual> should not equal <expected>"_.
+Default message is _"\<actual\> should not equal \<expected\>"_.
 
 ### Approximate equality tests
 
@@ -146,12 +146,12 @@ is_good = abs((actual - expected) / div) < margin
 
 So you can compare either big or small floating-point values without problems.
 
-Default message is _"<actual> should be close to <expected> with absolute or relative margin of <margin>"_.
+Default message is _"\<actual\> should be close to \<expected\> with absolute or relative margin of \<margin\>"_.
 
 ### Truthness tests
 
 ```python
-test.expect(expected, message=None)
+test.expect(passed=None, message=None, allow_raise=False)
 ```
 
 Checks if the passed value is truthy. This function can be helpful when you test something which cannot be tested using other assertion functions.  
