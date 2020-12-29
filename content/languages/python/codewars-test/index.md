@@ -5,6 +5,7 @@ tags:
   - testing
 sidebar: "language:python"
 prev: /languages/python/
+next: /languages/python/authoring/
 ---
 
 # Python Codewars Test Framework

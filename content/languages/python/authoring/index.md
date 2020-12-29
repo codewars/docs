@@ -2,6 +2,7 @@
 kind: tutorial
 languages: [python]
 sidebar: "language:python"
+prev: /languages/python/codewars-test/
 ---
 
 # Python: creating and translating a kata
