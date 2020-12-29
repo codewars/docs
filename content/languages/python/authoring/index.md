@@ -80,7 +80,7 @@ If a user solution is expected to use functions or classes from the `preloaded` 
 
 ### Testing framework
 
-Python kata use the [Codewars Python testing framework](/languages/python/codewars-test/) to implement and execute tests. You should read its reference page to find out how to use `describe` and `it` blocks for [organization and grouping](/languages/python/codewars-test/#grouping-tests), what [assertions](/languages/python/codewars-test/#assertions) are available, etc.
+Python kata use the [Codewars Python testing framework](/languages/python/codewars-test/) to implement and execute tests. You should read its reference page to find out how to use `describe` and `it` blocks for [organization and grouping](/languages/python/codewars-test/#organization-of-tests), what [assertions](/languages/python/codewars-test/#assertions-1) are available, etc.
 
 
 #### Dynamically generated test cases
@@ -163,7 +163,7 @@ The reference solution or data ___must not___ be defined in the top-level scope 
 
 ### Calling assertions
 
-The Python testing framework provides a set of useful [assertions](/languages/python/codewars-test/#assertions), but when used incorrectly, they can cause a series of problems:
+The Python testing framework provides a set of useful [assertions](/languages/python/codewars-test/#assertions-1), but when used incorrectly, they can cause a series of problems:
 - Stacktraces of a crashing user solution can reveal details that should not be visible,
 - Use of an assertion not suitable for the given case may lead to incorrect test results,
 - Incorrectly used assertions may produce confusing or unhelpful messages.
