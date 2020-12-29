@@ -81,7 +81,56 @@ If a user solution is expected to use functions or classes from the `preloaded` 
 
 Python kata use the [Codewars Python testing framework](/languages/python/codewars-test/) to implement and execute tests. You should read its reference page to find out how to use `describe` and `it` blocks for [organization and grouping](/languages/python/codewars-test/#grouping-tests), what [assertions](/languages/python/codewars-test/#assertions) are available, etc.
 
-You should notice that the Python testing framework produces one test output entry per assertion (and even 2 in [some special situations](/languages/python/codewars-test/#timeout-utility)), so the test output panel can get very noisy.
+
+#### Dynamically generated test cases
+
+It's possible to put functions decorated with `it` in a loop and use them as a construct similar to parametrized test cases known from other testing frameworks, for example:
+
+```python
+@test.describe("Generated test cases")
+def tests_with_generated_test_cases()
+    test_cases = generate_test_cases()
+    for msg, input, expected in test_case:
+        @test.it(msg)
+        def _():
+            actual = user_solution(input)
+            test.assert_equals(actual, expected)
+
+```
+
+This technique is liked by authors familiar with testing frameworks which provide parametrized or generated test cases out of the box, like NUnit, or JUnit. However, some caution is needed when this approach is used. Test suites organized this way can become large and can flood test output panel with many entries, making it unreadable or causing performance problems in client browsers.
+
+#### Decorated functions
+
+To create and present test output, Python testing framework uses parameters of `describe` and `it` decorators, and ignores actual names of decorated functions. Since the names are often redundant with titles of `describe` or `it` sections, they can be replaced with some placeholder name, for example `_`:
+
+```python
+@test.describe('Fixed tests')
+def _():
+
+    @test.it('Odd numbers'):
+    def _():
+        ...some assertions...
+
+    @test.it('Even numbers'):
+    def _():
+        ...some assertions...
+
+@test.describe('Random tests')
+def _():
+
+    @test.it('Small inputs'):
+    def _():
+        ...some assertions...
+
+    @test.it('Large inputs'):
+    def _():
+        ...some assertions...        
+```
+
+#### Test feedback
+
+You should notice that the Python testing framework produces one test output entry per assertion (or even more in [some special situations](/languages/python/codewars-test/#timeout-utility)), so the test output panel can get very noisy.
 
 ### Random utilities
 
@@ -91,9 +140,10 @@ Some useful functions include:
 - [`random.randrange(stop)`](https://docs.python.org/3.8/library/random.html#random.randrange) - returns a randomly selected element from range `[0, stop)`.
 - [`random.randrange(start, stop[, step])`](https://docs.python.org/3.8/library/random.html#random.randrange) - returns a randomly selected element from a range equivalent to `range(start, stop, step)`.
 - [`random.randint(a, b)`](https://docs.python.org/3.8/library/random.html#random.randint) - returns a random integer `N` such that `a <= N <= b`.
+- [`random.random()`](https://docs.python.org/3.8/library/random.html#random.random) - returns the next random floating-point number in the range `[0.0, 1.0)`.
 - [`random.shuffle(x[, random])`](https://docs.python.org/3.8/library/random.html#random.shuffle) - shuffles the sequence `x` in place.
 - [`random.sample(population, k)`](https://docs.python.org/3.8/library/random.html#random.sample) - returns a `k` length list of unique elements chosen from the `population` sequence or set.
-- [`random.random()`](https://docs.python.org/3.8/library/random.html#random.random) - returns the next random floating-point number in the range `[0.0, 1.0)`.
+- [`random.choices(population[, ...], k=1)`](https://docs.python.org/3.8/library/random.html#random.choices) - extracts `k` elements of the `population` (possibly outputing the same element several times).
 
 :::warning
 The Python runner is currently affected by a performance issue (reported as [codewars/runner#58](https://github.com/codewars/runner/issues/58)) which sometimes causes the generation of large amounts of random numbers to be noticeably slower. The majority of kata should not be affected by it in any significant way, but it can sometimes be a problem for performance tests generating large, random sets of data.
@@ -123,17 +173,6 @@ To avoid the above problems, calls to assertion functions should respect the fol
 - Some additional attention should be paid to the order of parameters passed to assertion functions. It differs between various assertion libraries, and it happens to be quite often confused by authors, mixing up `actual` and `expected` in assertion messages. For the Python testing framework, the order is `(actual, expected)`.
 - One somewhat distinctive feature of Python assertions is that by default, a failed assertion does not cause a test case to fail early. It can lead to unexpected crashes when an actual value had already been asserted to be invalid, but the execution of the current test case was not stopped and following assertions continue to refer to it. This behavior can be overridden by passing the `allow_raise=True` argument to the assertion functions that support it.
 - To avoid unexpected crashes in tests, it's recommended to perform some additional assertions before assuming that the answer returned by the user solution has some particular type, form, or value. For example, if the test suite sorts the returned list to verify its correctness, an explicit assertion should be added to check whether the returned object is actually a list, and not, for example, `None`.
-
-
-## Kata with additional restrictions
-
-### Accessing the solution file
-
-Some kata (for example, code-golf challenges or anti-cheat tests) would like to access and read the user solution file as text. It's possible and can be done by reading a file located at `/workspace/solution.txt`.
-
-### Blocking modules
-
-_TBD_
 
 
 ## Example test suite
