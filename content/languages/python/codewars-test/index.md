@@ -19,7 +19,7 @@ The test framework provides facilities to create named, hierarchical groups of t
 Additionally, the framework provides a set of functions performing assertions on various conditions: equality, error handling, truthness, etc.
 
 
-## `codewars_test` module
+## Module `codewars_test`
 
 All functions, decorators, and assertions provided by the framework are defined in `codewars_test` Python module.
 
@@ -32,7 +32,7 @@ Python runner for verions prior to Python 3.8 does not contain the `codewars_tes
 Tests in Python testing framework are composed from functions decorated with a set of Python decorators. All such functions are automatically discovered and run. The final result for every test block is determined by contained assertions, and reported along with its measured execution time.
 
 
-### `@describe` - test groups
+### Test groups: `@describe`
 
 Functions decorated with `@describe` represent a group of logically related test cases.
 
@@ -41,7 +41,7 @@ Functions decorated with `@describe` represent a group of logically related test
 Test groups cannot contain assertions.
 
 
-### `@it` - test cases
+### Test cases: `@it`
 
 Functions decorated with `@it` represent a single test case. They can be defined inside of a function decorated with `@describe`, or can be top level functions.
 
@@ -51,6 +51,8 @@ Functions decorated with `@it` represent a single test case. They can be defined
 ### Assertions
 
 Assertions can be located only inside of a test case (a function decorated with `@it`). They must not be located directly under a test group (a function decorated with `@describe`), or in the top level of test.
+
+Every assertion generates separate log entry in the test output.
 
 Note that failed assertions do not stop the execution of the enclosing test case by default. See [Failing Early](#failing-early) on how to control this behavior.
 
@@ -100,10 +102,9 @@ The above produces an output similar to the following:
 
 ## Failing Early
 
-Some of the functions below can accept a named argument `allow_raise=False`.
+Most of assertion functions can accept a named argument `allow_raise=False`.
 
-If you change its value to `True`, the tests contained inside the current block will be interrupted at the first failed test. The executions are then going back to the parent block if it exists and the next part is executed.
-On some computation-heavy Kata, it may be a good idea to use this feature so that the user has not to wait a long time before getting feedback (or possibly before timing out, and in that case, they might never get any feedback at all, which may be cumbersome).
+If you change its value to `True`, the tests contained inside the current block will be interrupted at the first failed test. The execution goes back to the parent block if it exists and the next part is executed.
 
 
 ## Assertions
@@ -156,7 +157,7 @@ test.expect(passed=None, message=None, allow_raise=False)
 
 Checks if the passed value is truthy. This function can be helpful when you test something which cannot be tested using other assertion functions.  
 
-However, since this function's default failure message is not very helpful, **you're strongly advised to provide your own helpful message**.
+However, since this function's default failure message is not very helpful, **it's strongly advised to provide better, custom message**.
 
 Default message: _"Value is not what was expected"_.
 
@@ -171,23 +172,21 @@ test.fail(message)
 Simply generates a passed or a failed test with a message.
 If your test method is very complicated or you need a special procedure to test something, these functions are probably a good choice.
 
+
 ### Error tests
 
 ```python
-test.expect_error(message, function)
 test.expect_error(message, function, exception=Exception)
 ```
 
-Checks that invoking `function` throws an exception.
-If the argument `exception` is used, the raised exception must be an instance of that exception to consider the test as passed.
+Checks whether invoked `function` throws an exception. Raised exception must be an instance of a type specified with `exception` argument.
 
-- _Catching any exception:_ `Exception` is a catch-all type. So you can check _if a function throws anything_ doing the call without the `exception` argument.
-- _Catching specific exception(s):_ the `exception` argument can be a specific kind of exception class or even a tuple of multiple exception classes. The user throwing anyone of the specified exceptions will pass the test.
+The `exception` argument can specify a single type or a tuple of multiple exception types. Assertion is satisfied when the raised exception is an instance of at least one of specified types.
 
-Examples:
+#### Example
 
 ```python
-f=lambda: {}[0]      # Raises Exception >> LookupError >> KeyError
+f=lambda: {}[0]      # Raises KeyError, which is a subtype of LookupError and Exception
 
 test.expect_error(msg, f)                      # Pass
 test.expect_error(msg, f, LookupError)         # Pass
@@ -198,17 +197,17 @@ test.expect_error(msg, f, (OSError, KeyError)) # Pass
 ### No-error tests
 
 ```python
-test.expect_no_error(message, function)
 test.expect_no_error(message, function, exception=BaseException)
 ```
 
-Checks this time that invoking `function` does **_not_** throw an exception of type `exception`.
+Checks whether invoked `function` does not throw an exception of a type specified by `exception`.
 
-- Just like in `expect_error`, the `exception` parameter can be a tuple of multiple exception types or can be left unspecified too.
-- If during the execution of `function` an exception is raised that does _not_ match with the parameter `exception`, it is silently caught and the test is considered a pass.
+The `exception` argument can specify a single type or a tuple of multiple exception types. Assertion is satisfied when no exception is raised, or when the raised exception is _not_ an instance of at least one of specified types. If during the execution of `function` an exception is raised that does _not_ match the parameter `exception`, it is silenced and the test is considered passed.
+
+#### Example
 
 ```python
-f=lambda: {}[0]      # Raises Exception >> LookupError >> KeyError
+f=lambda: {}[0]      # Raises KeyError, which is a subtype of LookupError and Exception
 
 test.expect_no_error(msg, f)                   # Fail
 test.expect_no_error(msg, f, LookupError)      # Fail
@@ -226,15 +225,15 @@ def some_function():
 ```
 
 Runs the decorated function within the time limit.  
+
 `sec` is the amount of time allowed. It is expressed in seconds and can be given as an integer or float.  
 Generates a failed assertion when the function fails to complete in time, and its execution is terminated immediately.
 
-If the code of the user raises an exception during the executions, the error message becomes `Should not throw any exceptions inside timeout: <Exception()>`.
+Decorated function is required to not throw any exception. If an error is raised during its execution, the test is considered failed and the error message becomes _"Should not throw any exceptions inside timeout: \<Exception()\>"_. This requirement is enforced by wrapping the inner function with `expect_no_error`, and as a side effect, one extra "test passed" entry is emitted for a collection of tests run inside a timeout wrapper.
 
-Note:  
-Using the timeout utility, you will get an extra assertion due to the issue of being impossible to catch exceptions thrown from a child process.  
-[The patch (Feb 2019)](https://github.com/Codewars/python-test-framework/pull/1) used to resolve this enforces that **the function does not throw _any_ exceptions.** This is done by wrapping the inner function with `expect_no_error`; as a side effect, you get that one extra "test passed" for a collection of tests run inside a timeout wrapper.
-_Corollary:_ don't forget to write assertions in timed tests, otherwise that "test" will be considered a pass even if the function of the user is returning the wrong value.
+:::warning
+Timed test should contain at least one assertion which verifies the result returned by the user solution. Otherwise, the test will be considered passed just if it happens to finish in time below the requested time limit, even if it would return incorrect answer.
+:::
 
 ## Acknowledgements
 
