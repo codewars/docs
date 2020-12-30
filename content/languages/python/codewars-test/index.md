@@ -28,7 +28,7 @@ The Python runner for versions prior to Python 3.8 does not contain the `codewar
 :::
 
 :::note
-For simplicity, thorough the rest of this article it's assumed that `codewars_test` module is imported and aliased as `test` with following statement:
+For simplicity, through the rest of this article it's assumed that the `codewars_test` module is imported and aliased as `test` with the following statement:
 
 ```python
 import codewars_test as test

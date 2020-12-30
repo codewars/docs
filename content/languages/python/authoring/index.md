@@ -76,7 +76,7 @@ When any of these imports are missing, then, for compatibility reasons, it will 
 If a user solution is expected to use functions or classes from the `preloaded` module, it's recommended to add required imports to the "initial solution" code snippet.
 
 :::note
-For simplicity, thorough the rest of this article it's assumed that `codewars_test` module is imported and aliased as `test` with following statement:
+For simplicity, through the rest of this article it's assumed that the `codewars_test` module is imported and aliased as `test` with the following statement:
 
 ```python
 import codewars_test as test
