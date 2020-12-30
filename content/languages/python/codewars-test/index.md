@@ -5,15 +5,69 @@ tags:
   - testing
 sidebar: "language:python"
 prev: /languages/python/
+next: /languages/python/authoring/
 ---
 
 # Python Codewars Test Framework
 
-Codewars currently uses a [custom test framework][test-framework-repo] to test Python.
+To run Python tests, Codewars currently uses a custom test framework, published and available in [this GitHub repository][test-framework-repo].
 
 ## Overview
 
-The test framework allows writing named groups of tests holding other named groups of tests, containing assertions.
+The test framework provides facilities to create named, hierarchical groups of tests, as well as individual test cases.
+
+Additionally, the framework provides a set of functions performing assertions on various conditions: equality, error handling, truthness, etc.
+
+
+## Module `codewars_test`
+
+All functions, decorators, and assertions provided by the framework are defined in `codewars_test` Python module.
+
+:::warning Deprecation
+The Python runner for versions prior to Python 3.8 does not contain the `codewars_test` module. The testing framework is imported implicitly and aliased as `test` and `Test`. This behavior is deprecated and for the Python 3.8 kata, the explicit import is required.
+:::
+
+:::note
+For simplicity, through the rest of this article it's assumed that the `codewars_test` module is imported and aliased as `test` with the following statement:
+
+```python
+import codewars_test as test
+```
+
+This is a convention used in many Python kata, but it's not a requirement, and authors can choose to import the module in any way they find suitable for them.
+:::
+
+## Organization of tests
+
+Tests in the Python testing framework are composed of functions decorated with a set of Python decorators. All such functions are automatically discovered and run. The final result for every test block is determined by contained assertions and reported along with its measured execution time.
+
+
+### Test groups: `@test.describe`
+
+Functions decorated with `@test.describe` represent a group of logically related test cases.
+
+`@test.describe` functions can contain more nested test groups (functions decorated with `@test.describe`) or individual test cases (functions decorated with `@test.it`, see below).
+
+Test groups cannot contain assertions.
+
+
+### Test cases: `@test.it`
+
+Functions decorated with `@test.it` represent a single test case. They can be defined inside of a function decorated with `@test.describe`, or can be top level functions.
+
+`@test.it` functions can contain only assertions, and cannot nest other test cases or test groups.
+
+
+### Assertions
+
+Assertions can be located only inside of a test case (a function decorated with `@test.it`). They must not be located directly under a test group (a function decorated with `@test.describe`), or in the top level of test.
+
+Every assertion generates a separate log entry in the test output.
+
+Note that failed assertions do not stop the execution of the enclosing test case by default. See [Failing Early](#failing-early) on how to control this behavior.
+
+
+### Example
 
 The basic setup for the tests follows this example:
 
@@ -42,10 +96,6 @@ def rnd_tests():
     ...
 ```
 
-:::warning Deprecation
-The package `codewars_test` does not exist for Python versions older than v3.8 where the test framework is implicitly imported and assigned to `test` and `Test`. This behavior is deprecated and the explicit import is required.
-:::
-
 The above produces an output similar to the following:
 
 <div class="block dark:hidden">
@@ -59,113 +109,68 @@ The above produces an output similar to the following:
 
 </div>
 
-Note that test cases don't stop on failure by default. See [Failing Early](#failing-early) to change this behavior.
-
-## Grouping Tests
-
-The groups are created using the following decorators:
-
-```python
-@test.describe(test_name)
-def _():
-
-    @test.it(test_case_name)
-    def _():
-        ...
-
-    @test.describe(subgroup_name)
-    def _():
-      ...
-
-        @test.it(test_case_subgroup_name)
-        def _():
-            ...
-```
-
-Those decorators automatically run the decorated function to launch the tests.
-
-Both kinds of blocks are timed: once the decorated function ends its execution, the time spent in the function will be displayed at the end of the block (note: for the elapsed time to be visible, the block must be deployed).
-
-### Test Group
-
-`describe` block groups test cases (`it`). Nesting is allowed as shown above.
-
-Always put assertions inside `it` and not directly in `describe`.
-
-### Test Case
-
-`it` creates a test case containing assertion(s). Nesting will result in incorrect output.
 
 ## Failing Early
 
-Some of the functions below can accept a named argument `allow_raise=False`.
+Most assertion functions can accept a named argument `allow_raise=False`.
 
-If you change its value to `True`, the tests contained inside the current block will be interrupted at the first failed test. The executions are then going back to the parent block if it exists and the next part is executed.
-On some computation-heavy Kata, it may be a good idea to use this feature so that the user has not to wait a long time before getting feedback (or possibly before timing out, and in that case, they might never get any feedback at all, which may be cumbersome).
+If you change its value to `True`, the tests contained inside the current block will be interrupted at the first failed test. The execution goes back to the parent block if it exists and the next part is executed.
+
 
 ## Assertions
 
 ### Equality tests
 
 ```python
-test.assert_equals(actual, expected)                        # default message: <actual> should equal <expected>
-test.assert_equals(actual, expected, message)
 test.assert_equals(actual, expected, message=None, allow_raise=False)
 ```
 
 Checks that the actual value equals the expected value.  
+
 Note that because Python's equality operator checks for deep equality by default, you don't have to compare the contents of the array element by element yourself when you want to compare values as lists, tuples, sets, etc.
+
+Default message is _"\<actual\> should equal \<expected\>"_.
 
 This function is usually the main building block of a Kata's test cases.
 
 ### Non-equality tests
 
 ```python
-test.assert_not_equals(actual, unexpected)                  # default message: <actual> should not equal <expected>
-test.assert_not_equals(actual, unexpected, message)
 test.assert_not_equals(actual, expected, message=None, allow_raise=False)
 ```
 
 Checks that the actual value does not equal the (un)expected value.
+Default message is _"\<actual\> should not equal \<expected\>"_.
 
 ### Approximate equality tests
 
-If the computations of the tests imply some floats, the exact value returned by the user may depend on the order of the different computations and he might end up with a value considered correct but not strictly equal to the expected one. For example:
-
 ```python
-a,b = 170*115/100, 170*(115/100)
-test.assert_equals(a,b)             #   ->    195.5 should equal 195.49999999999997
-```
-
-So, in this case, **you need to use this function to check the value instead of `assert_equals`**:
-
-```python
-test.assert_approx_equals(actual, expected)
 test.assert_approx_equals(actual, expected, margin=1e-9, message=None, allow_raise=False)
-
-# default message: <actual> should be close to <expected> with absolute or relative margin of <margin>
 ```
 
-Checks if the actual value is close enough to the expected one, with a default relative or absolute value of `1e-9`.
-
-The comparison is done like this:
+Checks if the actual value is close enough to the expected one, with a default relative or absolute value of `margin`. The comparison is performed like this:
 
 ```python
 div = max(abs(actual), abs(expected), 1)
 is_good = abs((actual - expected) / div) < margin
 ```
 
-So you can compare either big or small float values without problems.
+So you can compare either big or small floating-point values without problems.
+
+Default message is _"\<actual\> should be close to \<expected\> with absolute or relative margin of \<margin\>"_.
 
 ### Truthness tests
 
 ```python
-test.expect(bool)                            # default message: Value is not what was expected
-test.expect(bool, message)
+test.expect(passed=None, message=None, allow_raise=False)
 ```
 
-Checks if the passed value is truthy. This function can be helpful when you test something which cannot be tested using other functions.  
-However, since this function's default failure message is not helpful at all, **you're strongly advised to provide your own helpful message, or even to _not_ use** `test.expect`. To build custom assertion functions, you could/should use the two following ones instead.
+Checks if the passed value is truthy. This function can be helpful when you test something which cannot be tested using other assertion functions.  
+
+However, since this function's default failure message is not very helpful, **it's strongly advised to provide better, custom message**.
+
+Default message: _"Value is not what was expected"_.
+
 
 ### Pass and fail
 
@@ -177,23 +182,21 @@ test.fail(message)
 Simply generates a passed or a failed test with a message.
 If your test method is very complicated or you need a special procedure to test something, these functions are probably a good choice.
 
+
 ### Error tests
 
 ```python
-test.expect_error(message, function)
 test.expect_error(message, function, exception=Exception)
 ```
 
-Checks that invoking `function` throws an exception.
-If the argument `exception` is used, the raised exception must be an instance of that exception to consider the test as passed.
+Checks whether invoked `function` throws an exception. Raised exception must be an instance of a type specified with `exception` argument.
 
-- _Catching any exception:_ `Exception` is a catch-all type. So you can check _if a function throws anything_ doing the call without the `exception` argument.
-- _Catching specific exception(s):_ the `exception` argument can be a specific kind of exception class or even a tuple of multiple exception classes. The user throwing anyone of the specified exceptions will pass the test.
+The `exception` argument can specify a single type or a tuple of multiple exception types. The assertion is satisfied when the raised exception is an instance of at least one of the specified types.
 
-Examples:
+#### Example
 
 ```python
-f=lambda: {}[0]      # Raises Exception >> LookupError >> KeyError
+f=lambda: {}[0]      # Raises KeyError, which is a subtype of LookupError and Exception
 
 test.expect_error(msg, f)                      # Pass
 test.expect_error(msg, f, LookupError)         # Pass
@@ -204,17 +207,17 @@ test.expect_error(msg, f, (OSError, KeyError)) # Pass
 ### No-error tests
 
 ```python
-test.expect_no_error(message, function)
 test.expect_no_error(message, function, exception=BaseException)
 ```
 
-Checks this time that invoking `function` does **_not_** throw an exception of type `exception`.
+Checks whether invoked `function` does not throw an exception of a type specified by `exception`.
 
-- Just like in `expect_error`, the `exception` parameter can be a tuple of multiple exception types or can be left unspecified too.
-- If during the execution of `function` an exception is raised that does _not_ match with the parameter `exception`, it is silently caught and the test is considered a pass.
+The `exception` argument can specify a single type or tuple of multiple exception types. The assertion is satisfied when no exception is raised, or when the raised exception is _not_ an instance of at least one of specified types. If during the execution of `function` an exception is raised that does _not_ match the parameter `exception`, it is silenced and the test is considered passed.
+
+#### Example
 
 ```python
-f=lambda: {}[0]      # Raises Exception >> LookupError >> KeyError
+f=lambda: {}[0]      # Raises KeyError, which is a subtype of LookupError and Exception
 
 test.expect_no_error(msg, f)                   # Fail
 test.expect_no_error(msg, f, LookupError)      # Fail
@@ -223,6 +226,19 @@ test.expect_no_error(msg, f, OSError)          # Pass
 
 ## Timeout Utility
 
+Runs a function decorated with `@test.timeout` within the time limit.  
+
+`sec` is the amount of time allowed. It is expressed in seconds and can be given as an integer or float.  
+Generates a failed assertion when the function fails to complete in time, and its execution is terminated immediately.
+
+The decorated function is required to not throw any exceptions. If an error is raised during its execution, the test is considered failed and the error message becomes _"Should not throw any exceptions inside timeout: \<Exception()\>"_. This requirement is enforced by wrapping the inner function with `expect_no_error`, and as a side effect, one extra "test passed" entry is emitted for a collection of tests run inside a timeout wrapper.
+
+:::warning
+Timed tests should contain at least one assertion which verifies the result returned by the user solution. Otherwise, the test will be considered passed just if it happens to finish in time below the requested time limit, even if it would return an incorrect answer.
+:::
+
+### Example
+
 ```python
 @test.timeout(sec)                      # default message: Exceeded time limit of <sec> seconds
 def some_function():
@@ -230,17 +246,6 @@ def some_function():
     for _ in ad_nauseam():
         test.assert_equals(count_atoms_in_universe(), expected)
 ```
-
-Runs the decorated function within the time limit.  
-`sec` is the amount of time allowed. It is expressed in seconds and can be given as an integer or float.  
-Generates a failed assertion when the function fails to complete in time, and its execution is terminated immediately.
-
-If the code of the user raises an exception during the executions, the error message becomes `Should not throw any exceptions inside timeout: <Exception()>`.
-
-Note:  
-Using the timeout utility, you will get an extra assertion due to the issue of being impossible to catch exceptions thrown from a child process.  
-[The patch (Feb 2019)](https://github.com/Codewars/python-test-framework/pull/1) used to resolve this enforces that **the function does not throw _any_ exceptions.** This is done by wrapping the inner function with `expect_no_error`; as a side effect, you get that one extra "test passed" for a collection of tests run inside a timeout wrapper.
-_Corollary:_ don't forget to write assertions in timed tests, otherwise that "test" will be considered a pass even if the function of the user is returning the wrong value.
 
 ## Acknowledgements
 
