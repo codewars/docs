@@ -78,7 +78,7 @@ The most commonly used assertions include:
 See the [Chai docs](https://www.chaijs.com/api/assert/) for all the methods.
 
 :::note
-When comparing arrays over 40 elements long, [the `truncateThreshold` option](https://www.chaijs.com/guide/styles/#configtruncatethreshold) should be set to `0` to make sure that the arrays will not be truncated in an error message. If the array is hundreds/thousands of elements long, do not do this as it will flood the console.
+The [`truncateThreshold` option](https://www.chaijs.com/guide/styles/#configtruncatethreshold) controls how arrays are stringified when `expected` and `actual` values are prepared for display in assertion messages. Setting it to 0 provides the most detailed feedback even for large arrays, but then assertion messages can flood the console and make the output difficult to read.
 
 ```javascript
 chai.config.truncateThreshold = 0;
