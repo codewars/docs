@@ -75,6 +75,15 @@ When any of these imports are missing, then, for compatibility reasons, it will 
 
 If a user solution is expected to use functions or classes from the `preloaded` module, it's recommended to add required imports to the "initial solution" code snippet.
 
+:::note
+For simplicity, thorough the rest of this article it's assumed that `codewars_test` module is imported and aliased as `test` with following statement:
+
+```python
+import codewars_test as test
+```
+
+This is a convention used in many Python kata, but it's not a requirement, and authors can choose to import the module in any way they find suitable for them.
+:::
 
 ## Tests
 
@@ -82,10 +91,9 @@ If a user solution is expected to use functions or classes from the `preloaded` 
 
 Python kata use the [Codewars Python testing framework](/languages/python/codewars-test/) to implement and execute tests. You should read its reference page to find out how to use `describe` and `it` blocks for [organization and grouping](/languages/python/codewars-test/#organization-of-tests), what [assertions](/languages/python/codewars-test/#assertions-1) are available, etc.
 
-
 #### Dynamically generated test cases
 
-It's possible to put functions decorated with `it` in a loop and use them as a construct similar to parametrized test cases known from other testing frameworks, for example:
+It's possible to put functions decorated with `@test.it` in a loop and use them as a construct similar to parametrized test cases known from other testing frameworks, for example:
 
 ```python
 @test.describe("Generated test cases")
@@ -103,7 +111,7 @@ This technique is liked by authors familiar with testing frameworks that provide
 
 #### Decorated functions
 
-To create and present test output, the Python testing framework uses parameters of `describe` and `it` decorators, and ignores actual names of decorated functions. Since the names are often redundant with titles of `describe` or `it` sections, they can be replaced with some placeholder name, for example, `_`:
+To create and present test output, the Python testing framework uses parameters of `@test.describe` and `@test.it` decorators, and ignores actual names of decorated functions. Since the names are often redundant with titles of `describe` or `it` sections, they can be replaced with some placeholder name, for example, `_`:
 
 ```python
 @test.describe('Fixed tests')
@@ -170,7 +178,7 @@ The Python testing framework provides a set of useful [assertions](/languages/py
 
 To avoid the above problems, calls to assertion functions should respect the following rules:
 - The expected value should be calculated _before_ invoking an assertion. The `expected` parameter passed to the assertion should not be a function call expression, but a value calculated directly beforehand.
-- Appropriate assertion functions should be used for each given test. `assert_equals` is not suitable in all situations. Use `assert_approx_equals` for floating point comparisons, `expect` for tests on boolean values, `expect_error` to test error handling.
+- Appropriate assertion functions should be used for each given test. `test.assert_equals` is not suitable in all situations. Use `test.assert_approx_equals` for floating point comparisons, `test.expect` for tests on boolean values, `test.expect_error` to test error handling.
 - Some additional attention should be paid to the order of parameters passed to assertion functions. It differs between various assertion libraries, and it happens to be quite often confused by authors, mixing up `actual` and `expected` in assertion messages. For the Python testing framework, the order is `(actual, expected)`.
 - One somewhat distinctive feature of Python assertions is that by default, a failed assertion does not cause a test case to fail early. It can lead to unexpected crashes when an actual value had already been asserted to be invalid, but the execution of the current test case was not stopped and following assertions continue to refer to it. This behavior can be overridden by passing the `allow_raise=True` argument to the assertion functions that support it.
 - To avoid unexpected crashes in tests, it's recommended to perform some additional assertions before assuming that the answer returned by the user solution has some particular type, form, or value. For example, if the test suite sorts the returned list to verify its correctness, an explicit assertion should be added to check whether the returned object is actually a list, and not, for example, `None`.

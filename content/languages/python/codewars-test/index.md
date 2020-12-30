@@ -27,30 +27,40 @@ All functions, decorators, and assertions provided by the framework are defined 
 The Python runner for versions prior to Python 3.8 does not contain the `codewars_test` module. The testing framework is imported implicitly and aliased as `test` and `Test`. This behavior is deprecated and for the Python 3.8 kata, the explicit import is required.
 :::
 
+:::note
+For simplicity, thorough the rest of this article it's assumed that `codewars_test` module is imported and aliased as `test` with following statement:
+
+```python
+import codewars_test as test
+```
+
+This is a convention used in many Python kata, but it's not a requirement, and authors can choose to import the module in any way they find suitable for them.
+:::
+
 ## Organization of tests
 
 Tests in the Python testing framework are composed of functions decorated with a set of Python decorators. All such functions are automatically discovered and run. The final result for every test block is determined by contained assertions and reported along with its measured execution time.
 
 
-### Test groups: `@describe`
+### Test groups: `@test.describe`
 
-Functions decorated with `@describe` represent a group of logically related test cases.
+Functions decorated with `@test.describe` represent a group of logically related test cases.
 
-`@describe` functions can contain more nested test groups (functions decorated with `@describe`) or individual test cases (functions decorated with `@it`, see below).
+`@test.describe` functions can contain more nested test groups (functions decorated with `@test.describe`) or individual test cases (functions decorated with `@test.it`, see below).
 
 Test groups cannot contain assertions.
 
 
-### Test cases: `@it`
+### Test cases: `@test.it`
 
-Functions decorated with `@it` represent a single test case. They can be defined inside of a function decorated with `@describe`, or can be top level functions.
+Functions decorated with `@test.it` represent a single test case. They can be defined inside of a function decorated with `@test.describe`, or can be top level functions.
 
-`@it` functions can contain only assertions, and cannot nest other test cases or test groups.
+`@test.it` functions can contain only assertions, and cannot nest other test cases or test groups.
 
 
 ### Assertions
 
-Assertions can be located only inside of a test case (a function decorated with `@it`). They must not be located directly under a test group (a function decorated with `@describe`), or in the top level of test.
+Assertions can be located only inside of a test case (a function decorated with `@test.it`). They must not be located directly under a test group (a function decorated with `@test.describe`), or in the top level of test.
 
 Every assertion generates a separate log entry in the test output.
 
@@ -216,7 +226,7 @@ test.expect_no_error(msg, f, OSError)          # Pass
 
 ## Timeout Utility
 
-Runs the decorated function within the time limit.  
+Runs a function decorated with `@test.timeout` within the time limit.  
 
 `sec` is the amount of time allowed. It is expressed in seconds and can be given as an integer or float.  
 Generates a failed assertion when the function fails to complete in time, and its execution is terminated immediately.
