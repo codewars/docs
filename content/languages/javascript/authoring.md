@@ -55,6 +55,9 @@ _TODO: Finish this_
 
 ### Testing framework
 
+
+JavaScript kata should use [Mocha](https://mochajs.org/) to implement and execute tests, and [Chai](https://www.chaijs.com/) as the assertion library.
+
 :::note
 For simplicity, through the rest of this article it's assumed that the `chai` package is imported and `assert` is extracted from it with the following statement:
 
@@ -66,7 +69,7 @@ const assert = chai.assert;
 This is a convention used in many JavaScript kata, but it's not a requirement, and authors can choose to import the package in any way they find suitable for them. Also, the `should` or `expect` style can also be used from `chai`.
 :::
 
-JavaScript kata should use [Chai](https://www.chaijs.com/) to implement and execute tests. The most commonly used assertions include:
+The most commonly used assertions include:
 
 - [`assert.strictEqual(actual, expected[, message])`](https://www.chaijs.com/api/assert/#method_strictequal) - Asserts that `actual === expected`.
 - [`assert.deepEqual(actual, expected[, message])`](https://www.chaijs.com/api/assert/#method_deepequal) - Asserts that two arrays or objects have the same values. `strictEqual` does not work since arrays and objects are reference types in JS.
@@ -76,9 +79,11 @@ See the [Chai docs](https://www.chaijs.com/api/assert/) for all the methods.
 
 :::note
 When comparing arrays over 40 elements long, [the `truncateThreshold` option](https://www.chaijs.com/guide/styles/#configtruncatethreshold) should be set to `0` to make sure that the arrays will not be truncated in an error message. If the array is hundreds/thousands of elements long, do not do this as it will flood the console.
+
 ```javascript
 chai.config.truncateThreshold = 0;
 ```
+
 :::
 
 #### Dynamically generated test cases
