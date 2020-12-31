@@ -53,10 +53,59 @@ _TODO: Finish this_
 
 ## Tests
 
-### Testing framework
+### Mocha
 
+JavaScript kata should use [Mocha](https://mochajs.org/) to implement and execute tests.
 
-JavaScript kata should use [Mocha](https://mochajs.org/) to implement and execute tests, and [Chai](https://www.chaijs.com/) as the assertion library.
+#### Test grouping functions
+
+To create and present test output, Mocha uses parameters of the `describe` and `it` functions:
+
+```javascript
+describe('Fixed tests', () => {
+  it('Odd numbers', () => {
+    // some assertions...
+  });
+
+  it('Even numbers', () => {
+    // some assertions...
+  });
+});
+
+describe('Random tests', () => {
+  it('Small inputs', () => {
+    // some assertions...
+  });
+
+  it('Large inputs', () => {
+    // some assertions...
+  });
+});
+```
+
+`describe` blocks can contain `describe` or `it` blocks, but `it` blocks can only contain assertions.
+
+#### Dynamically generated test cases
+
+It's possible to put functions decorated with `it` in a loop and use them as a construct similar to parameterized test cases known from other testing frameworks, for example:
+
+```javascript
+describe("Generated test cases", () => {
+  const testCases = generateTestCases();
+  testCases.forEach(([msg, input, expected]) => {
+    it(msg, () => {
+      const actual = userSolution(input);
+      assert.strictEqual(actual, expected);
+    });
+  });
+});
+```
+
+This technique is liked by authors familiar with testing frameworks that provide parameterized or generated test cases out of the box, like NUnit or JUnit. However, some caution is needed when this approach is used. Test suites organized like this can become large and can flood the test output panel with many entries, making it unreadable or causing performance problems in client browsers.
+
+### Chai
+
+JavaScript kata should use [Chai](https://www.chaijs.com/) as the assertion library.
 
 :::note
 For simplicity, through the rest of this article it's assumed that the `chai` package is imported and `assert` is extracted from it with the following statement:
@@ -86,53 +135,7 @@ chai.config.truncateThreshold = 0;
 
 :::
 
-#### Dynamically generated test cases
-
-It's possible to put functions decorated with `it` in a loop and use them as a construct similar to parameterized test cases known from other testing frameworks, for example:
-
-```javascript
-describe("Generated test cases", () => {
-  const testCases = generateTestCases();
-  testCases.forEach(([msg, input, expected]) => {
-    it(msg, () => {
-      const actual = userSolution(input);
-      assert.strictEqual(actual, expected);
-    });
-  });
-});
-```
-
-This technique is liked by authors familiar with testing frameworks that provide parameterized or generated test cases out of the box, like NUnit or JUnit. However, some caution is needed when this approach is used. Test suites organized like this can become large and can flood the test output panel with many entries, making it unreadable or causing performance problems in client browsers.
-
-#### Test grouping functions
-
-To create and present test output, Mocha uses parameters of the `describe` and `it` functions:
-
-```javascript
-describe('Fixed tests', () => {
-  it('Odd numbers', () => {
-    // some assertions...
-  });
-
-  it('Even numbers', () => {
-    // some assertions...
-  });
-});
-
-describe('Random tests', () => {
-  it('Small inputs', () => {
-    // some assertions...
-  });
-
-  it('Large inputs', () => {
-    // some assertions...
-  });
-});
-```
-
-`describe` blocks can contain `describe` or `it` blocks, but `it` blocks can **only** contain assertions.
-
-#### Test feedback
+### Test feedback
 
 _TODO: put a paragraph here about how Mocha handles multiple assertions in `it` blocks?_
 
