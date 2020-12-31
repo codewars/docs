@@ -62,6 +62,7 @@ It(does_not_pretty_print_type_without_stringizer)
 ```
 
 Test output:
+
 ```
   does_not_pretty_print_vector_of_type_without_stringizer
     Expected: equal to [ [unsupported type], [unsupported type] ]
