@@ -174,4 +174,110 @@ _TODO_
 
 Below you can find an example test suite that covers most of the common scenarios mentioned in this article. Note that it does not present all possible techniques, so actual test suites can use a different structure, as long as they keep to established conventions and do not violate authoring guidelines.
 
-_TODO: add example test suite_
+```javascript
+const chai = require('chai');
+const assert = chai.assert;
+const _ = require('lodash');
+chai.config.truncateThreshold = 0;
+
+describe('Fixed tests', () => {
+  it('Regular cases', () => {
+    assert.strictEqual(6, userSolution([1, 2, 3]));
+    assert.strictEqual(5, userSolution([2, 3]));
+  });
+
+  it('Edge cases', () => {
+    assert.strictEqual(0, userSolution([]), "Invalid answer for empty array");
+    assert.strictEqual(2, userSolution([2]), "Invalid answer for one element array");
+  });
+
+  it('Input should not be modified', () => {
+    const arr = _.shuffle(_.range(1, 100));
+    const arrCopy = [...arr];
+    // call user solution and ignore the result
+    userSolution(arrCopy);
+    // arrCopy should not be modified
+    assert.deepEqual(arrCopy, arr, 'Input array was modified');
+  });
+});
+
+describe('Random tests', () => {
+  function referenceSolution(arr) {
+    // calculate and return reference answer
+  }
+
+  // generate data for test cases with small inputs
+  // this test case generator combines a few types of input
+  // in one collection
+  function generateSmallInputs() {   
+    const testCases = [];
+    
+    // first type of input: regular array of small inputs (many of them)
+    for (let i = 0; i < 50; i++) {
+      testCases.push(generateSmallTestCase());
+    }
+    
+    // another type of input: array with potentially tricky numbers
+    // (possibly many of them)
+    for (let i = 0; i < 50; i++) {
+      testCases.push(generateSmallTrickyTestCase());
+    }
+
+    // potential edge case of single element array (a few of them)
+    for (let i = 0; i < 10; i++) {
+      testCases.push(generateSingleElementTestCase());
+    }
+
+    // another edge case: empty array
+    // Not always necessary, usually fixed test is enough.
+    // If present, there's no need for more than one.
+    testCases.push([]);
+
+    // randomly shuffle test cases to make their order unpredictable
+    return _.shuffle(testCases);
+  }
+
+  // Generator for large test cases, can be used for performance tests.
+  // Can generate structure and types of test cases similar to the
+  // generateSmallTestCases, but can also add more tricky cases,
+  // or skip on edge cases if they were sufficiently tested in the smaller set.
+  function generateLargeCases() {
+    // ... actual implementation
+  }
+
+  it('Small inputs', () => {
+    const inputs = generateSmallInputs();
+    inputs.forEach(input => {
+      // call reference solution first, in separate statement.
+      // we know it does not mutate the array, so no copy is needed
+      const expected = referenceSolution(input);
+
+      // call user solution and get actual answer.
+      // since the input is used after this call to compose
+      // the assertion message, a copy is passed
+      const actual = userSolution([...input]);
+      
+      // Call assertion function.
+      // Custom assertion message is used to help users with diagnosing failures.
+      // Assertion message uses original, non-modified input.
+      assert.strictEqual(actual, expected, `Input: ${input}`);
+    });
+  });
+
+  it('Large random tests', () => {
+    const largeInputs = generateLargeCases();
+    largeInputs.forEach(input => {
+      // expected answer calculated first, on separate line
+      const expected = referenceSolution(input);
+      
+      // assertion message composed before the user solution has a chance
+      // to mutate the input array
+      const message = `Invalid answer for array of length ${input.length}`;
+
+      // actual answer calculated as second.
+      // no copy is made because input is not used anymore
+      assert.strictEqual(userSolution(input), expected, message);
+    });
+  });
+});
+```
