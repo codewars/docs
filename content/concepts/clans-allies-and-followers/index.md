@@ -1,13 +1,19 @@
+---
+kind: concept
+---
+
+# Followers, Allies and Clans
+
 You can associate yourself with other Codewars users in 3 different ways. 
 
 ## Following
 
 You can follow any warrior. There are two reasons why you would want to follow someone. 
 
-#### Allies
+### Allies
 If you follow someone and they follow you back, you become allies. More on that later. 
 
-#### Solutions 
+### Solutions 
 
 When viewing the solutions of a kata, you can choose to only see those from users you are following. This is a great way to easily find solutions from warriors you respect or know personally.
 
