@@ -49,7 +49,9 @@ JavaScript-specific paragraphs can be inserted with [language conditional render
 Some concepts don't always translate well to or from JavaScript. Because of this, some constructs should be avoided and some translations just shouldn't be done.
 - Avoid returning different data types depending on the situation (_"Return the result, or the string 'Error' if no result can be found..."_). JavaScript is dynamically typed, which is not the case for some other languages. Returning `null` might be appropriate in some situations, but throwing an error might be better in others.
 
-_TODO: Finish this_
+Some kata just should not be translated into JavaScript because it can be difficult to keep their initial idea:
+- Some kata might be meant for another language specifically. For example, a kata about learning to use Python's `itertools.takewhile` function to do something should not be translated to JavaScript.
+- The Codewars runner provides a set of preinstalled packages that are available for users solving the kata. They can be a real game-changer when it comes to the difficulty of a JavaScript translation. For example, `lodash` or `ramda` include many helpful utilities, which could make some kata trivial that wouldn't be trivial in other languages.
 
 ## Tests
 
@@ -137,7 +139,7 @@ chai.config.truncateThreshold = 0;
 
 ### Test feedback
 
-_TODO: put a paragraph here about how Mocha handles multiple assertions in `it` blocks?_
+Unlike Python or Ruby's test framework, Mocha handles combines multiple assertions in an `it` block into just one. For example, if all the assertions pass, then it will just show one `Test Passed`, and not a `Test Passed` for every single assertion. And if a test fails, it will not show all the other tests before/after it that passed/failed, it will only show the first failed test.
 
 ### Generating random numbers
 
