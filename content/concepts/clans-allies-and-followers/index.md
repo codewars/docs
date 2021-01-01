@@ -1,5 +1,6 @@
 ---
-kind: concept
+sidebar: followers
+next: /concepts/clans-allies-and-followers/followers/
 ---
 
 # Followers, Allies and Clans
