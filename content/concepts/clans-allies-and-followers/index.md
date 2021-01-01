@@ -3,7 +3,7 @@ sidebar: followers
 next: /concepts/clans-allies-and-followers/followers/
 ---
 
-# Followers, Allies and Clans
+# Overwiew
 
 You can associate yourself with other Codewars users in 3 different ways. 
 
