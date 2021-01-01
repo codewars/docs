@@ -10,12 +10,7 @@ prev: /concepts/clans-allies-and-followers/
 You can follow any warrior, be it a friend, a colleague, your students, or just anyone you'd like to track their Codewars carreer. Following someone opens for you a couple of new possibilities.
 
 
-## Followers boards
-
-On your profile page, you can find `Social` tab, which contains a couple of leaderboards. One of them, titled **"Following"**, contains a list and honor ranking of all users followed by you. Another one, titled **"Followers"**, provides similar list of your followers.
-
-
-### How to follow someone?
+## How to follow someone?
 
 To follow a user, you need to visit their profile page, and click the `Follow` button:
 
@@ -31,6 +26,11 @@ To follow a user, you need to visit their profile page, and click the `Follow` b
 </div>
 
 If you have already followed the user, the `Follow` button is replaced by `Unfollow` one. You can use it to stop following someone.
+
+
+## Followers boards
+
+On your profile page, you can find `Social` tab, which contains a couple of leaderboards. One of them, titled **"Following"**, contains a list and honor ranking of all users followed by you. Another one, titled **"Followers"**, provides similar list of your followers.
 
 
 ## Filtering solutions 
