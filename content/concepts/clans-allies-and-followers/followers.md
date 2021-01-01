@@ -30,12 +30,12 @@ If you have already followed the user, the `Follow` button is replaced by `Unfol
 
 ## Followers boards
 
-On your profile page, you can find `Social` tab, which contains a couple of leaderboards. One of them, titled **"Following"**, contains a list and honor ranking of all users followed by you. Another one, titled **"Followers"**, provides similar list of your followers.
+On your profile page, you can find the `Social` tab, which contains a couple of leaderboards. One of them, titled **"Following"**, contains a list and honor ranking of all users followed by you. Another one, titled **"Followers"**, provides a similar list of your followers.
 
 
 ## Filtering solutions 
 
-When viewing the solutions of a kata, you can choose to see only these from users you are following. This is a great way to easily find solutions from warriors you respect or know personally.
+When viewing the solutions of a kata, you can choose to see only those from users you are following. This is a great way to easily find solutions from warriors you respect or know personally.
 
 <div class="block dark:hidden">
 
