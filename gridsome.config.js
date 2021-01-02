@@ -169,6 +169,7 @@ module.exports = {
           {
             title: "User Interface",
             items: [
+              "/references/gui/",
               "/references/gui/kata-creator/",
               "/references/gui/kata-trainer/",
             ],
