@@ -174,7 +174,7 @@ module.exports = {
             ],
           },
         ],
-      },      
+      },
     ],
   },
   plugins: [
