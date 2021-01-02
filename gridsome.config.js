@@ -43,7 +43,7 @@ module.exports = {
         name: "explanation-kata",
         sections: [
           {
-            title: "Solving",
+            title: "Training",
             items: [
               "/concepts/kata/",
               "/concepts/kata/training-routines/",
@@ -51,6 +51,7 @@ module.exports = {
               "/concepts/kata/solutions/",
               "/concepts/kata/discourse/",
               "/concepts/kata/collections/",
+              "/concepts/kumite/",
             ],
           },
           {
