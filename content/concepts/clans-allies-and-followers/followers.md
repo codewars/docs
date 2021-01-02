@@ -32,6 +32,16 @@ If you have already followed the user, the `Follow` button is replaced by `Unfol
 
 On your profile page, you can find `Social` tab, which contains a couple of leaderboards. One of them, titled **"Following"**, contains a list and honor ranking of all users followed by you. Another one, titled **"Followers"**, provides similar list of your followers.
 
+<div class="block dark:hidden">
+
+![Followers boards](./img/followers-board_light.png)
+
+</div>
+<div class="hidden dark:block">
+
+![Followers boards](./img/followers-board_dark.png)
+
+</div>
 
 ## Filtering solutions 
 
