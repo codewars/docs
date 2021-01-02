@@ -13,7 +13,7 @@ prev: /references/gui/kata-editor/
 
 The kata trainer is the interface you use for completing kata. 
 
-![Kata Trainer](./kata-trainer.md)
+![Kata Trainer](./kata-trainer.png)
 
 ## Editors
 
