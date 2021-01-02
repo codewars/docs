@@ -10,4 +10,4 @@ Each kata is crafted for and by the community. Kata are created by other users r
 Not every user is able to perform a full review of a beta kata, but every user can help in some way! Users are strongly encouraged to participate in the beta evaluation of kata awaiting their approval. For more details, see [Curating of a Kata][curating-kata].
 
 
-[curating-kata]: /cuating/kata/
+[curating-kata]: /curating/kata/
