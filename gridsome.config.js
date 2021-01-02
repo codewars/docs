@@ -163,6 +163,18 @@ module.exports = {
           },
         ],
       },
+      {
+        name: "reference-gui",
+        sections: [
+          {
+            title: "User Interface",
+            items: [
+              "/references/gui/kata-creator/",
+              "/references/gui/kata-trainer/",
+            ],
+          },
+        ],
+      },      
     ],
   },
   plugins: [
