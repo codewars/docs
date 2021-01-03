@@ -163,6 +163,20 @@ module.exports = {
           },
         ],
       },
+      {
+        name: "followers",
+        sections: [
+          {
+            title: "Followers, Allies & Clans",
+            items: [
+              "/concepts/clans-allies-and-followers/",
+              "/concepts/clans-allies-and-followers/followers/",
+              "/concepts/clans-allies-and-followers/allies/",
+              "/concepts/clans-allies-and-followers/clans/",
+            ],
+          },
+        ],
+      },
     ],
   },
   plugins: [
