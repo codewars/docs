@@ -172,9 +172,9 @@ module.exports = {
               "/references/ui/",
               "/references/ui/kata-editor/",
               "/references/ui/kata-trainer/",
-            ]
-          }
-        ]
+            ],
+          },
+        ],
       },
       {
         name: "followers",
