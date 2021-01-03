@@ -1,8 +1,8 @@
 ---
 kind: reference
-sidebar: reference-gui
-prev: /references/gui/
-next: /references/gui/kata-trainer/
+sidebar: reference-ui
+prev: /references/ui/
+next: /references/ui/kata-trainer/
 ---
 
 # Kata Editor

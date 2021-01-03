@@ -1,10 +1,10 @@
 ---
 kind: reference
-sidebar: reference-gui
-next: /references/gui/kata-editor/
+sidebar: reference-ui
+next: /references/ui/kata-editor/
 ---
 
-# Codewars GUI reference
+# Codewars UI Reference
 
 :::note
 *This page is a stub, please consider contributing to it.*

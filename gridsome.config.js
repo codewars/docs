@@ -164,14 +164,14 @@ module.exports = {
         ],
       },
       {
-        name: "reference-gui",
+        name: "reference-ui",
         sections: [
           {
             title: "User Interface",
             items: [
-              "/references/gui/",
-              "/references/gui/kata-editor/",
-              "/references/gui/kata-trainer/",
+              "/references/ui/",
+              "/references/ui/kata-editor/",
+              "/references/ui/kata-trainer/",
             ],
           },
         ],

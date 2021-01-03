@@ -1,7 +1,7 @@
 ---
 kind: reference
-sidebar: reference-gui
-prev: /references/gui/kata-editor/
+sidebar: reference-ui
+prev: /references/ui/kata-editor/
 ---
 
 
