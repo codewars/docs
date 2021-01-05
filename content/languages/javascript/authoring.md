@@ -162,7 +162,7 @@ However, to make this simpler, the [lodash](https://lodash.com) library includes
 
 ### Additional packages
 
-The Codewars runner provides a set of preinstalled packages, which are available not only for users solving a kata, but can be also used by authors to build tests and generators of test cases. For example, `lodash` can be used to make it easier to generate random numbers/arrays.
+The Codewars runner provides a set of preinstalled packages, which are available not only for users solving a kata, but can be also used by authors to build tests and generators of test cases.
 
 ### Reference solution
 
