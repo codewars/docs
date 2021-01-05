@@ -137,13 +137,9 @@ chai.config.truncateThreshold = 0;
 
 :::
 
-### Test feedback
-
-Unlike Python or Ruby's test framework, Mocha handles combines multiple assertions in an `it` block into just one. For example, if all the assertions pass, then it will just show one `Test Passed`, and not a `Test Passed` for every single assertion. And if a test fails, it will not show all the other tests before/after it that passed/failed, it will only show the first failed test.
-
 ### Generating random numbers
 
-JavaScript provides a simple [`Math.random`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random) function that returns a random floating-point number between `0` and `1`. You can use this to generate random numbers by multiplying it by another number, like `5`, and then flooring it, which returns a random number between 0 and **4**. Here's a simple utility to generate a random number between a lower and upper limit, inclusive:
+JavaScript provides a simple [`Math.random`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random) function that returns a random floating-point number between `0` and `1`. You can use this to generate random numbers by multiplying it by another number, like `5`, and then flooring it, which returns a random number between `0` and **4**. Here's a simple utility to generate a random number between a lower and upper limit, inclusive:
 
 ```javascript
 function random(lower, upper) {
