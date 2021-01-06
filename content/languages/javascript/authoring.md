@@ -89,7 +89,7 @@ describe('Random tests', () => {
 
 #### Dynamically generated test cases
 
-It's possible to put functions decorated with `it` in a loop and use them as a construct similar to parameterized test cases known from other testing frameworks, for example:
+It's possible to put calls to `it` in a loop and use them as a construct similar to parameterized test cases known from other testing frameworks, for example:
 
 ```javascript
 describe("Generated test cases", () => {
@@ -149,7 +149,7 @@ function random(lower, upper) {
 random(1, 10); // inclusive random number between 1 and 10
 ```
 
-However, to make this simpler, the [lodash](https://lodash.com) library includes some helpful functions to ease this:
+However, to make this simpler, the [lodash](https://lodash.com) library includes some helpful functions:
 
 - [`_.random(lower, upper[, floating])`](https://lodash.com/docs#random) - Generates a random number between `lower` and `upper`, inclusively.
 - [`_.shuffle(array)`](https://lodash.com/docs#shuffle) - Returns shuffled `array`.
@@ -200,6 +200,8 @@ describe('Fixed tests', () => {
 });
 
 describe('Random tests', () => {
+
+  // reference solution enclosed in a local scope of `describe`
   function referenceSolution(arr) {
     // calculate and return reference answer
   }
