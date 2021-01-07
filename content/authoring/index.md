@@ -12,7 +12,7 @@ This section of the documentation is meant mostly for authors and translators, w
 To support users in creating good quality kata and translations, a set of help pages were created with articles related to content authoring activities: tutorials explaining how to create and translate a kata, and a reference of [guidelines][guidelines-authoring] and requirements that every author should follow to make sure that a piece of content created by them meets quality criteria.
 
 For more details, see help pages related to creating a specific type of content:
-- [Creating a kata](/content/authoring/kata/)
-- [Creating a translation](/content/authoring/translation/)
+- [Creating a kata](/authoring/kata/)
+- [Creating a translation](/authoring/translation/)
 
 [guidelines-authoring]: /authoring/guidelines/
