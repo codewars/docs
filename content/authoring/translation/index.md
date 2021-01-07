@@ -4,7 +4,7 @@ prev: /authoring/kata/
 next: /authoring/guidelines/
 ---
 
-## Translating a Kata
+# Translations
 
 _TBD: improve this stub_
 

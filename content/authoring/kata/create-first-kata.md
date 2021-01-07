@@ -10,14 +10,112 @@ Okay, so you might have completed many (all?) of the published katas on Codewars
 
 There is an obvious elephant in the room: Where do the katas come from? Obviously they didn't come out of nowhere like inside a stone or from a big bang, so clearly someone, or *something*, must have created the kata.
 
-Being intrigued, you looked at the [[Kata Creator|Kata-Creator]] again. Maybe you should create a kata.
+Creating a kata is a totally different kind of task from solving a kata. You might be able to solve a purple kata in under an hour, and still get flummoxed by the process of making a new kata. Being a good player doesn't always make you a good level maker, after all. What authors sometimes do not realize is the fact that creating a good quality kata is much harder than solving it.
 
-Creating a kata is a totally different kind of task from solving a kata. You might be able to solve a purple kata in under an hour, and still get flummoxed by the process of making a new kata. Being a good player doesn't always make you a good level maker, after all. 
+While a kata with minor problems can be easily fixed, a kata with fundamental issues will get stuck in the beta process forever, collecting negative feedback through the time. You don't want that.
 
-While a kata with minor problems can be easily fixed, a kata with fundamental issues will get stuck in the beta process forever. You don't want that.
 
-_TODO: How to enter the kata creator view, kata editor reference_
-_TODO: Stick to guidelines (redact or remove redundant parts from this article)_
+## Support for authors
+
+To support you with this difficult task, a set of help pages has been created with following types of information:
+- [tutorials](/tutorials/), for users who are still figuring things out,
+- [guidelines](/authoring/guidelines/), which need to be respected to meet the Codewars quality criteria. It is strongly recommended to become familiar with these, otherwise you risk that your kata will meet with bad reception, harsh remarks, and many reported issues.
+- [HOWTOs](/recipes/) explaining how to realize some commonly occuring tasks, or solve commonly repeating problems,
+- [Language specific pages](/languages/) with code snippets, examples, and information related to specific programming languages.
+
+You can also reach directly to community to ask questions and seek for advice of experienced users on [kata-authoring-help](https://gitter.im/Codewars/codewars.com/kata-authoring-help) Gitter chat.
+
+
+## Requirements
+
+To create a new kata, you need to earn the ["Create Kata" privilege](/references/gamification/privileges/). After reaching the required amount of Honor, the privilege is granted and you can select the **"New Kata"** option from their profile menu:
+
+<div class="block dark:hidden">
+
+![Allies board on user dashboard](./img/new_kata-light.png)
+
+</div>
+<div class="hidden dark:block">
+
+![Allies board on user dashboard](./img/new_kata-dark.png)
+
+</div>
+
+
+## Setting up the kata
+
+Kata are edited with the kata editor tool, described in the [Kata Editor UI reference](/references/ui/kata-editor/#what-is-the-kata-editor). To fully set up the kata you have to provide some basic information, as well as to write some code in language(s) of your choice.
+
+
+### Kata Properties
+
+#### Name
+
+The name is used to uniquely identify a kata. You can be creative with the name that you use. Best practice is to use a name that gives other users a good idea of what type of challenge they will be getting themselves into.
+
+
+#### Discipline
+
+The discipline is the category that the kata belongs to. You should pick the category that best describes what the kata is intended to focus on. As of now there are four categories:
+
+- Fundamentals - Focuses on core language and API knowledge.
+- Algorithms - Focuses on the logic required to complete the task.
+- Bug Fixes - Focuses on taking existing code, determining the issue and fixing it.
+- Refactoring - Focuses on taking existing code and making it better.
+- Puzzles
+
+
+#### Estimated rank
+
+_TBD_
+
+
+#### Tags
+
+_TBD_
+
+
+#### Allow Cntributors?
+
+_TBD_
+
+
+### Description
+
+The description field is used to provide instructions to the users who will be training on the kata. This field recognizes [[Github/Codewars flavored markdown|Markdown-Formatting]]. You can use the preview tab to see the markdown.
+
+For complex katas you may need to create a lengthy description in order to fully describe the requirements. For easier katas it is best to keep the description as short and concise as possible. Feel free to use code block examples within the description. It is always best to use the three back tick (```) code block style instead of indentation.
+
+
+### Code Snippets
+
+_TBD: intro_
+
+
+#### Complete Solution
+
+When creating your kata you will probably want to start with the final solution and test fixture code blocks. If you are used to TDD then you will write your tests within the test fixture and then you will create a fully working solution within the final solution code block. If you need to load some preloaded code then you may need to do that before working on the final solution code block.
+
+#### Initial Solution
+
+After you have a working solution then you will want to next focus on getting the code setup for how other users will initially see it. The way in which you setup your initial solution code will depend heavily on the discipline that you have selected. For bug and refactor disciplines you will end up needing to include almost working or already fully working code within this block. For reference and algorithm disciplines you will likely only include skeleton code. Perhaps an empty function/method called "solution" or some other code that has missing code that needs to be completed. Sometimes you may just want to include some comments to help get the user started, but no actual code.
+
+The initial solution block is required so you will have to include something (at the very least some comments) in order for the kata to be able to be published.
+
+#### Preloaded
+
+The preloaded code block is an optional feature that you can use if you need it. Its useful for when you want to load some code that mimics an API that your kata is based around. Its also useful if you want to define some code that needs to be used within the solution, but shouldn't be editable within the solution itself. For example maybe you want to create a kata that asks a user to add an item to an array. It would be better to define the array within the preloaded code block so that the user already has the array created for them, and will be more likely to just add an item to the array using the appropriate array method, instead of updating the array constructor to include the value (and bypassing using an array method all together).
+
+#### Test Cases
+
+The test fixture is used to write code that will validate the kata solution.
+The entire set of code in this block acts as a single test case. To validate solution code
+you can use the Test.expect(passed_boolean, optional_message) method. More advanced testing methods are also available. Check out the kata test framework documentation for more information.
+
+
+#### Example Test Cases
+
+_TBD_
 
 
 ## Use a novel/unique idea, avoid creating duplicate katas

@@ -38,21 +38,6 @@ The description field is used to provide instructions to the users who will be t
 
 For complex katas you may need to create a lengthy description in order to fully describe the requirements. For easier katas it is best to keep the description as short and concise as possible. Feel free to use code block examples within the description. It is always best to use the three back tick (```) code block style instead of indentation.
 
-### Describing code examples for multiple languages
-
-The markdown we provide adds an additional feature useful for displaying code blocks of multiple languages. If you use the ``` [language name] markdown format for indicating which code syntax should be used then you can define all of the languages examples within the description field. When your markdown is displayed it will filter out the languages that are not relevant (based off of the current context). In order for this to work you must use the language's full name and have your examples grouped together without any additional content in between them.
-
-The following is an example of how to provide example code blocks for both javascript and coffeescript:
-
-~~~
-```javascript
-var a = []
-```
-```coffeescript
-a = []
-```
-~~~
-
 ### Final Solution
 
 When creating your kata you will probably want to start with the final solution and test fixture code blocks. If you are used to TDD then you will write your tests within the test fixture and then you will create a fully working solution within the final solution code block. If you need to load some preloaded code then you may need to do that before working on the final solution code block.

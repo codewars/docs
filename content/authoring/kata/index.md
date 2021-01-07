@@ -4,9 +4,18 @@ next: /authoring/
 prev: /authoring/translation/
 ---
 
-## Creating a Kata
+# Kata
 
 _TBD: improve this stub_
+
+## Requirements
+
+To create a new kata, a user needs to earn the ["Create Kata" privilege][reference-privileges]. After reaching the required amount of Honor, the privilege is granted and the user can select the **"New Kata"** option from their profile menu.
+
+
+## Kata Editor
+
+Kata are created by filling the 
 
 Users new to creating kata can use [tutorial(TODO)](/authoring/kata/).
 
@@ -17,5 +26,5 @@ Every kata author should follow [kata authoring guidelines](/authoring/guideline
 After being published, every kata goes through the [beta process](/concepts/kata/beta-process/) and is subject to a series of [reviews](/curating/kata/).
 
 
-
+[reference-privileges]: /references/gamification/privileges/
 [docs-curating]: /curating/
