@@ -1,4 +1,7 @@
-
+---
+kind: tutorial
+sidebar: authoring
+---
 
 
 # Creating your first kata

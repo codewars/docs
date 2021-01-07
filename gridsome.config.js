@@ -127,6 +127,12 @@ module.exports = {
               "/authoring/guidelines/kata/",
             ],
           },
+          {
+            title: "Tutorials",
+            items: [
+              "/authoring/kata/create-first-kata/",
+            ],
+          },
         ],
       },
       {
