@@ -129,9 +129,7 @@ module.exports = {
           },
           {
             title: "Tutorials",
-            items: [
-              "/authoring/kata/create-first-kata/",
-            ],
+            items: ["/authoring/kata/create-first-kata/"],
           },
         ],
       },
