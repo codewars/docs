@@ -32,19 +32,19 @@ To create a new kata, you need to earn the ["Create Kata" privilege](/references
 
 <div class="block dark:hidden">
 
-![Allies board on user dashboard](./img/new_kata-light.png)
+!["New Kata" menu command](./img/new_kata-light.png)
 
 </div>
 <div class="hidden dark:block">
 
-![Allies board on user dashboard](./img/new_kata-dark.png)
+!["New Kata" menu command](./img/new_kata-dark.png)
 
 </div>
 
 
 ## Setting up the kata
 
-Kata are edited with the kata editor tool, described in the [Kata Editor UI reference](/references/ui/kata-editor/#what-is-the-kata-editor). To fully set up the kata you have to provide some basic information, as well as to write some code in language(s) of your choice.
+Kata are edited with the kata editor tool, described in the [Kata Editor UI reference](/references/ui/kata-editor/). To fully set up the kata you have to provide some basic information, as well as write some code in language(s) of your choice.
 
 
 ### Kata Properties
@@ -392,3 +392,4 @@ So unless revealing the expected result would spoil the kata, you should not hid
 
 _TODO: Announcing a kata and asking for feedback_
 _TODO: Responsibility and maintenance_
+_TODO: Common pitfalls_
