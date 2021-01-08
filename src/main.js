@@ -9,21 +9,21 @@ export default function (Vue, { router, head, isClient }) {
 
   // The default Gridsome behaviour with a fix to make `scroll-margin-top` work.
   // https://github.com/gridsome/gridsome/issues/1361#issuecomment-709534494
-  router.options.scrollBehavior = async (to, from, saved) => {
-    if (saved) return saved;
-
-    if (to.hash) {
+  router.options.scrollBehavior = (to, from, saved) => {
+    return new Promise((resolve) => {
+      if (saved) return resolve(saved);
+      if (!to.hash) return resolve({ x: 0, y: 0 });
       const elem = document.querySelector(to.hash);
-      if (elem) {
-        return {
+      if (!elem) return resolve({ selector: to.hash });
+
+      // HACK delay scolling to the anchor to prevent the change in text width from affecting scroll top.
+      setTimeout(() => {
+        resolve({
           selector: to.hash,
           offset: { y: parseFloat(getComputedStyle(elem).scrollMarginTop) },
-        };
-      }
-      return { selector: to.hash };
-    }
-
-    return { x: 0, y: 0 };
+        });
+      }, 500);
+    });
   };
 
   router.beforeEach((to, _from, next) => {
