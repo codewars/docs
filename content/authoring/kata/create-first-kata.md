@@ -28,7 +28,7 @@ You can also reach directly to community to ask questions and seek for advice of
 
 ## Requirements
 
-To create a new kata, you need to earn the ["Create Kata" privilege](/references/gamification/privileges/). After reaching the required amount of Honor, the privilege is granted and you can select the **"New Kata"** option from their profile menu:
+To create a new kata, you need to earn the ["Create Kata" privilege](/references/gamification/privileges/). After reaching the required amount of 300 Honor points, the privilege is granted and you can select the **"New Kata"** option from their profile menu:
 
 <div class="block dark:hidden">
 
