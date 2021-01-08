@@ -224,9 +224,7 @@ Remember: just like in real life, if we failed a test, we want to know:
 
 So unless revealing the expected result would spoil the kata, you should not hide them. Consult the documentation of testing framework used by your [language](/languages/) and pick the best method for your tests.
 
-Writing good test suites is very difficult, often the most difficult part of creatign a kata. It often requires more code than the actual solution, and any flaws in the test suite can heavily impact the overall quality and experience of users with the kata. Make sure you follow [quality guidelines for submssion tests](/authoring/guidelines/submission-tests/) when writing them.
-
-
+Writing good test suites is very difficult, often the most difficult part of creatign a kata. It often requires more code than the actual solution, and any flaws in the test suite can heavily impact the overall quality and experience of users with the kata. Make sure you follow [quality guidelines for submssion tests](/authoring/guidelines/submission-tests/) when writing them, as they will help you to avoid many common pitfalls awaiting for inexperienced authors.
 
 
 #### Example Test Cases
@@ -239,6 +237,30 @@ Since sample tests can significantly impact user experience of a kata, they have
 
 
 
-_TODO: Announcing a kata and asking for feedback_
-_TODO: Responsibility and maintenance_
-_TODO: Common pitfalls_
+## Before publishing
+
+When you have finally written all the code, prettified the description, and verified the tests, you consider your kata good to go. But this is a very good moment to take a step back and hold back with publishing the kata, at least for a short while. While working on your kata you were focused on it so much, that it's very probable that you missed some issues or possible improvements. If you rush publishing it, you risk others will find problems you missed, and your kata will be downvoted, or even insta-retired.
+
+### Train on your kata
+
+Good first step is to train on your own kata. Getting in the shoes of a potential user is a nice way of checking what others will see and experience while training on your task. Although it's not possible to complete a kata being still in draft, it's still possible to train on it. Just open your kata in the trainer, and try to solve it, as any other user would do. This way, you can spot some problems with tests you have not thought about before.
+
+### Verify quality guidelines
+
+The next step would be to read through [authoring guidelines](/authoring/guidelines/) once again, and use them as a check-list to verify that your kata conforms to the applicable ones. Remember that the guidelines were collected basing on community's experience with many bad quality kata published back in the days, so take them seriously and approach them with proper attention. If you do not understand some guideline or you are not sure if your kata violates it or not, just ask more experienced users for advice.
+
+### Ask for a review of your draft
+
+Drafts of kata cannot be found and searched for, but can be accessed by other users with direct links. You can share the link to your not yet published kata with others, and they will be able to read the description, train on the kata, and provide some feedback, before getting a chance to downvote it. Sharing a link to a draft is a very good vay to get a quick feedback about the most obvious problems.
+
+
+## After publishing
+
+After you publish your kata, it becomes a subject to the [beta evaluation](/concepts/kata/beta-process/). Power users immediately jump on it, knowing they _will_ find problems, the kata discussion section will be flooded with issue reports marked with red labels, and the red, sad faced button of "Not Satisfied" vote will cause the satisfaction rating drop to 20%. Unless there won't be any serious issues. It may be discouraging at first, especially for new authors, but when you think about it, it makes sense: after all, no one wants a bad kata to get out of beta, right? That's why it's important to make sure that when a kata is published, it's already in as good shape as possible.
+
+But still, no matter how hard you try, it's not possible to make everyone satisfied. Your kata may receive many satisfied votes, but even then, some users might not like it. Do not worry about this too much. Consider their remarks, and think a bit about them. Maybe they are right, and the kata needs some improvements? Listen to everyone, answer their questions, consider suggestions, and fix issues popping up. Also, do not rush things too much. If someone says something you are not sure about, just wait for another opinion. Users often do not agree with each other, so you can receive two mutually exclusive opinions. It can be difficult sometimes, but you just need to pass on one of them, or find some balance in between. Research shows \[citation needed] that kata with authors actively maintaining them leave beta quite quickly, while some kata can be retired within minutes, or, even worse, stay in beta forever, if authors do not want to fix problems.
+
+After the kata collects enough of positive feedback, it leaves beta state and becomes available for everyone to train on and earn their points. Now it will draw even more attention, and potentially thousands of users will submit their solutions, possibly finding new problems reporting new issues, and raising new suggestions. Your task, as an author, is to actively maintain the kata. This will encourage others to train on it more, provide translations to other languages, and enjoy it in full extent.
+
+
+Congratulations! Your first Codewars kata is a success!
