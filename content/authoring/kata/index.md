@@ -15,7 +15,7 @@ To create a new kata, a user needs to earn the ["Create Kata" privilege][referen
 
 ## Kata Editor
 
-Kata are created by filling the 
+Kata are created with the [kata editor](/references/ui/kata-editor/)
 
 Users new to creating kata may refer to the [tutorial(TODO)](/authoring/kata/).
 
