@@ -58,7 +58,7 @@ Points needing particular attention:
 Some concepts don't always translate well to or from C. Because of this, some constructs should be avoided and some translations just shouldn't be done. Some high level languages, like Pyton or Javascript, reside on the exactly opposite end of the spectrum than C, and translating kata between them and C can result in signiicant differences in difficulty, requirements, and design of the solution.
 - C is a language of much lower level than many other popular languages available on Codewars. For this reason, many kata, even if their task can be translated to C directly, can turn out much harder in C than in original language. There's many kata which were originally creates as very easy and beginner friendly (for example 8 kyu), after translating into C, and adding aspects like memory management, or two dimensional C arrays, etc. they are not so easy anymore, and newbies complain that kata ranked 8 kyu is too difficult for them while it should be an entry level task.  
 - C is statically typed, so any task which depends on dynamic typing can be difficult to translate into C, and attempts of forcing a C kata to reflect dynamically typed interface can lead to ideas which enforce a really bad design.
-- There's just a few additional libraries available for C, so almost everything has to be implemented manually by the author or the user. Kata which take advantage of additional packages installed for other languages, become much mor difficult in C.
+- There's just a few additional libraries available for C runner, so almost everything has to be implemented manually by the author or the user. Kata which take advantage of additional packages installed for other languages become much more difficult in C.
 
 ## Coding
 
@@ -86,13 +86,13 @@ Whenever a kata needs to return a string or an array, C authors tend to use the 
 
 Possible ways of handling memory management are described in the [Memory Management in C kata](/languages/c/authoring/memory-management-techniques/) article. But whichever approach is chosen, even the most obvious one, it should be described either in the kata description (preferrably in in a C-specific paragraph), or in the initial solution stub as a comment, and in sample tests as an example of a call to the solution.
 
-<!--
 ## Tests
 
 ### Testing framework
 
-Python kata use the [Codewars Python testing framework](/languages/python/codewars-test/) to implement and execute tests. You should read its reference page to find out how to use `describe` and `it` blocks for [organization and grouping](/languages/python/codewars-test/#organization-of-tests), what [assertions](/languages/python/codewars-test/#assertions-1) are available, etc.
+C kata use the [Criterion testing framework](/languages/c/criterion/) to implement and execute tests. You should read its reference page to find out how to structure tests into groups and test cases, what assertions are available, etc.
 
+<!--
 #### Dynamically generated test cases
 
 It's possible to put functions decorated with `@test.it` in a loop and use them as a construct similar to parametrized test cases known from other testing frameworks, for example:
