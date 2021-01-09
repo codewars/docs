@@ -19,11 +19,11 @@ While a kata with minor problems can be easily fixed, a kata with fundamental is
 
 To support you with this difficult task, a set of help pages has been created with following types of information:
 - [tutorials](/tutorials/), for users who are still figuring things out,
-- [guidelines](/authoring/guidelines/), which need to be respected to meet the Codewars quality criteria. It is strongly recommended to become familiar with these, otherwise you risk that your kata will meet with bad reception, harsh remarks, and many reported issues.
+- [guidelines](/authoring/guidelines/), which need to be respected to meet the Codewars quality criteria. It is strongly recommended to become familiar with these, otherwise you risk that your kata will be met with bad reception, harsh remarks, and many reported issues.
 - [HOWTOs](/recipes/) explaining how to realize some commonly occuring tasks, or solve commonly repeating problems,
 - [Language specific pages](/languages/) with code snippets, examples, references and tutorials related to specific programming languages.
 
-You can also reach directly to community to ask questions and seek for advice of experienced users on [kata-authoring-help](https://gitter.im/Codewars/codewars.com/kata-authoring-help) Gitter chat.
+You can also reach out directly to the community to ask questions and seek for advice of experienced users on the [kata-authoring-help](https://gitter.im/Codewars/codewars.com/kata-authoring-help) Gitter channel.
 
 
 ## Requirements
@@ -66,14 +66,14 @@ Then, maybe you can decide whether to retreat, or make a **harder** version of t
 
 #### Use a novel/original idea
 
-If you find yourself worrying about hitting duplicates all the time, then try to push yourself to think out-of-the-box. Don't worry, coming up with good ideas are hard! But if you can make sure your ideas are always novel and/or original, then you can be almost certain nobody will have taken the flag before you.
+If you find yourself worrying about hitting duplicates all the time, try to push yourself to think out-of-the-box. Don't worry, coming up with good ideas is hard! But if you can ensure that your ideas are always novel and original, you can be almost certain nobody will have taken the flag before you.
 
 It also has a side benefit of making people think that you're clever, which will be reflected on the [[satisfaction rating|Satisfaction Rating]].
 
 
-#### Solve more katas
+#### Solve more kata
 
-Naturally, when you've already solved 10 fibonacci katas, solving another one will make you very nauseous, making you naturally allergic to duplicates ;-)
+Naturally, when you've already solved 10 fibonacci kata, solving another one will make you very nauseous, making you naturally allergic to duplicates ;-)
 
 
 #### Solve more katas (again)
