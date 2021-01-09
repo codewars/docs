@@ -84,7 +84,7 @@ Unlike many modern, high level languages, C does not manage memory automatically
 
 Whenever a kata needs to return a string or an array, C authors tend to use the naive technique of allocating the memory in the solution function, and freeing it in the test suite. This approach mimics the behavior known from other languages where returning an array or object from inside of user solution is perfectly valid, but it's hardly ever a valid way of working with unmanaged memory.
 
-Possible ways of handling memory management are described in the [Memory Management in C kata](/languages/c/authoringmemory-management-techniques/) article. But whichever approach is chosen, even the most obvious one, it should be described either in the kata description (preferrably in in a C-specific paragraph), or in the initial solution stub as a comment, and in sample tests as an example of a call to the solution.
+Possible ways of handling memory management are described in the [Memory Management in C kata](/languages/c/authoring/memory-management-techniques/) article. But whichever approach is chosen, even the most obvious one, it should be described either in the kata description (preferrably in in a C-specific paragraph), or in the initial solution stub as a comment, and in sample tests as an example of a call to the solution.
 
 <!--
 ## Tests
