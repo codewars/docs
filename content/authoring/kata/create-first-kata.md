@@ -80,7 +80,7 @@ Naturally, when you've already solved 10 fibonacci kata, solving another one wil
 
 While the minimum honor for creating a kata is merely 300 honor, if you try to create a kata with just 300 honor, it'll most likely inadvertently be bad.
 
-Why? With just 300 honor, you haven't even get a grasp of what katas are actually like.
+Why? With just 300 honor, you haven't even got a grasp of what kata are actually like.
 
 Anyone can reach 300 honor in a very short time, from a few hours to a day or two. This is, obviously, far from enough. Thus, you need to train more.
 
@@ -88,18 +88,18 @@ Solving more kata to gain more experience can help one significantly in the foll
 
 - Getting more experienced will help you *understand* how hard your kata is, so that you can tune your kata to your desire easily.
 - As you train more, you tend to know what the most efficient solution for a kata is. This is crucial to performance and golf katas: you don't want to make a performance kata when you can only write sub-par solutions! You'll get pwned hard by veterans ;-)
-- Actually encountering kata issues and looking at comment sections will let you understand the common issues people will raise. Learn from the history, and don't make the same mistake again!
-- Looking at solutions (and more importantly, solution comment sections) will give you insight to what'd be good practice
-- It also allows you to see how others write their tests. Writing good tests are **hard**, especially if your kata is also hard.
+- Actually encountering kata issues and looking at comment sections will let you understand the common issues people will raise. Learn from history and don't make the same mistake again!
+- Looking at solutions (and more importantly, solution comment sections) will give you insight to what constitutes good practice
+- It also allows you to see how others write their tests. Writing good tests is**hard**, especially if your kata is also hard.
 
 
 ## Stick to the intent, focus on one key thing per kata
 
-If you ask people to do 10 katas about 10 different things, that's okay.
+If you ask people to do 10 kata about 10 different things, that's okay.
 
-But if you ask people to do 1 kata which needs to do 10 different things depending on some arbitrary conditions, nobody will ever like the kata. Juggling 10 object at once is not fun.
+But if you ask people to do 1 kata which needs to do 10 different things depending on some arbitrary conditions, nobody will ever like the kata. Juggling 10 objects at once is not fun.
 
-This often happens for unbalanced katas - while they're asking for doing one thing, because of how the kata is written the actual difficulty lies on something **completely unrelated** to the proposed intent of the kata itself, e.g doing a task with a very unnatural and hard to work with input format.
+This often happens for unbalanced kata - while they're asking for one thing, because of how the kata is written the actual difficulty lies on something **completely unrelated** to the proposed intent of the kata itself, e.g doing a task with a very unnatural and hard to work with input format.
 
 If you find that your kata is too long, mostly from these symptoms:
 - your kata has a very long description
@@ -108,7 +108,7 @@ If you find that your kata is too long, mostly from these symptoms:
 
 you might want to break up your kata in separate parts if appropriate.
 
-Quoting power user @JohanWiltink's comment on one of the beta katas:
+Quoting power user @JohanWiltink's comment on one of the beta kata:
 
 > And, again, you're doing multiple unrelated things in one kata. Totally unrelated, neither of them trivial this time. What is the intent, what is the pointe of this kata?
 >
@@ -140,7 +140,7 @@ The discipline is the category that the kata belongs to. You should pick the cat
 
 #### Estimated rank
 
-Here you specify how difficult you think your kata is. This value is used as an initial estimate for the kata difficulty, and will be refined while collecting rank votes from other users who solved it. Your perception on the difficulty of your katra might differ from what community might think and estimate, so your kata may end up finally accepted with higher or lower rank.
+Here you specify how difficult you think your kata is. This value is used as an initial estimate for the kata difficulty, and will be refined while collecting rank votes from other users who solved it. Your perception on the difficulty of your kata might differ from what the community might think and estimate, so your kata may end up approved with a higher or lower rank.
 
 
 #### Tags
@@ -175,7 +175,7 @@ To keep the kata easy to maintain, every snippet is a subject to quality guideli
 
 #### Complete Solution
 
-You need to provide a solution to your own kata, to prove that it can be solved at all. Author's solution is run every time the kata is published, to verify correctness of tests and of general kata setup.
+You need to provide a solution to your own kata, to prove that it can be solved at all. The author's solution is run every time the kata is published, to verify the correctness of tests and of the general kata setup.
 
 #### Initial Solution
 
