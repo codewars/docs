@@ -12,7 +12,7 @@ There is an obvious elephant in the room: Where do the katas come from? Obviousl
 
 Creating a kata is a totally different kind of task from solving a kata. You might be able to solve a purple kata in under an hour, and still get flummoxed by the process of making a new kata. Being a good player doesn't always make you a good level maker, after all. What authors sometimes do not realize is the fact that creating a good quality kata is much harder than solving it.
 
-While a kata with minor problems can be easily fixed, a kata with fundamental issues will get stuck in the beta process forever, collecting negative feedback through the time. You don't want that.
+While a kata with minor problems can be easily fixed, a kata with fundamental issues will get stuck in the beta process forever, collecting negative feedback over time. You don't want that.
 
 
 ## Support for authors
