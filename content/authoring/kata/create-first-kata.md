@@ -179,7 +179,7 @@ You need to provide a solution to your own kata, to prove that it can be solved 
 
 #### Initial Solution
 
-Initial solution is what users are provided with when they start training on your kata. The way in which you setup your initial solution code will depend heavily on the discipline that you have selected. For bug and refactor disciplines you will end up needing to include almost working or already fully working code within this block. For reference and algorithm disciplines you will likely only include skeleton code. Perhaps an empty function/method or some other code that has gaps which need to be filled in. Sometimes you may just want to include some comments to help get the user started, but no actual code.
+Initial solution is what users are provided with when they start training on your kata. The way in which you set up your initial solution code will depend heavily on the discipline that you have selected. For bug and refactor disciplines you will end up needing to include an almost working or already fully working solution within this block. For fundamentals and algorithm disciplines you will likely only include skeleton code, such as an empty function/method or some other code that has gaps which need to be filled in. Sometimes you may just want to include some comments to help get the user started, but no actual code.
 
 However, imagine the following scenario (assuming a statically typed language): you train on a Kata that requires you to implement multiple functions, but the Initial Solution does not give you the relevant function signatures and hence fails to compile. You frantically read through the Kata description and Sample Test Cases to figure out the function signatures you need to add: the name of each function, the number of arguments to each function, the type of each argument, the return type of the function ... After fumbling with the Initial Solution for a full 15 minutes, you finally get it to compile. _Now_ you can actually focus on the task at hand. Not cool, right?
 
@@ -193,21 +193,23 @@ The initial solution block is required so you will have to include something (at
 
 The preloaded code block is an optional feature that you can use if you need it. The code from the preloaded snippet cannot be edited by the user, but it's available for all other snippets (solution and tests) to use. Its useful for when you want to load some code that mimics an API that your kata is based around. Its also useful if you want to define some code that needs to be used within the solution, but shouldn't be editable within the solution itself. For example, it can contain classes or constants which should be common for both solution and tests.
 
-Working with preloaded code is sometimes tricky, and that's why a set of [guidelines](/authoring/guidelines/preloaded/) related to this particular snipped is created.
+Working with preloaded code is sometimes tricky, and that's why a set of [guidelines](/authoring/guidelines/preloaded/) related to this particular snipped has been created.
 
 #### Test Cases
 
-The **Test Cases** editor is used to write submission tests: code that will validate the kata solution. Tests are not visible to the user, and the user solution needs to pass them to consider the kata completed. Every language on Codewars is set up to provide you with a testing framework, which you can use to write test cases, organize them into groups, and assert on tested conditions. You can find out what testing framework you need to use by visiting the [reference page of your language](/languages/). 
+The **Test Cases** editor is used to write submission tests: code that will validate the kata solution. Tests are not visible to the user, and the user solution needs to pass them for the kata to be considered completed. Every language on Codewars is set up to provide you with a testing framework which you can use to write test cases, organize them into groups, and assert on tested conditions. You can find out what testing framework you need to use by visiting the [reference page of your language](/languages/).
 
 While the old kata are usually lazy and only have a few tests, nowadays if you try to pull off the same trick you'll instantly get yelled at with all the `Needs random tests!!!!!11!1` and your satisfaction rating plummets to 0%.
 
 The key thing about tests is that a test should perform two things:
-1. Accept all conforming solutions
-2. Reject all non-conforming solutions
 
-Some people might think that only point 1 is necessary, which is obviously untrue: test that accepts **everything** is pointless. Good tests will let the correct solutions -- *and only* the correct solutions -- pass.
+1. Accept all conforming solutions
+1. Reject all non-conforming solutions
+
+Some people might think that only point 1 is necessary, but this is not true: tests that accept **everything** are pointless. Good tests will let *all* correct solutions -- and *only* correct solutions -- to pass.
 
 For normal kata, a good set of tests should cover all of these aspects:
+
 - Test basic functionality
 - Has full coverage (if that's impossible, at least have decent coverage)
 - Cover edge cases thoroughly
@@ -219,19 +221,20 @@ The first three should be put into fixed tests. The fourth item should be put in
 Random test cases are test cases that cannot be predicted. Most kata have them (except for the really old ones) and they are usually in addition to some static tests. Using both static and random test cases with make it both easy for warriors to see what they are supposed to do, as well as make it impossible to write a solution that just pattern match the inputs (i.e return hard-coded outputs depending on a fixed set of inputs). Random tests are also good at finding edge cases.
 
 Remember: just like in real life, if we failed a test, we want to know:
-- what was the input
-- expected and actual result
+
+- the input
+- the expected and actual results
 
 So unless revealing the expected result would spoil the kata, you should not hide them. Consult the documentation of testing framework used by your [language](/languages/) and pick the best method for your tests.
 
-Writing good test suites is very difficult, often the most difficult part of creatign a kata. It often requires more code than the actual solution, and any flaws in the test suite can heavily impact the overall quality and experience of users with the kata. Make sure you follow [quality guidelines for submssion tests](/authoring/guidelines/submission-tests/) when writing them, as they will help you to avoid many common pitfalls awaiting for inexperienced authors.
+Writing good test suites is very difficult, often the most difficult part of creating a kata. It often requires more code than the actual solution, and any flaws in the test suite can heavily impact the overall quality and experience of users with the kata. Make sure you follow [quality guidelines for submission tests](/authoring/guidelines/submission-tests/) when writing them, as they will help you to avoid many common pitfalls awaiting for inexperienced authors.
 
 
 #### Example Test Cases
 
-Example test cases is a small set of tests which user can see and modify while working on their solution. These are some basic test cases that users will see when they load the kata. Sample tests are written in the same way as submission tests, using the testing framework set up for your language.
+Example test cases is a small set of tests which the user can see and modify while working on their solution. These are some basic test cases that users will see when they load the kata. Sample tests are written in the same way as submission tests, using the testing framework set up for your language.
 
-They are not necessary, but they are really good to have, so users can get the idea how the solution is called and tested.You can include a few tests to get someone started, though of course if you're lazy you can just copy the fixed test cases from the actual tests over there. Just don't copy your reference solution there as well. Unless you intend the users to write tests themselves, or tey are not applicable for your kata (Example: [Defuse the bombs](https://www.codewars.com/kata/defuse-the-bombs/)), it's usually considered a good practice to provide example test cases to the users.
+Except in circumstances where providing sample tests to the user would spoil the kata (such as [Defuse the bombs](https://www.codewars.com/kata/defuse-the-bombs/)), they are absolutely **required** as users can get an idea of how the solution is called and tested. You should include a few tests to get someone started, though of course if you're lazy you can just copy over the fixed assertions in your submission tests to serve as the sample tests. Just remember *not* to copy your reference solution there as well. **It is a Kata issue if there are no sample tests** unless strong justification can be provided against them for a particular Kata.
 
 Since sample tests can significantly impact user experience of a kata, they have a dedicated set of [sample tests authoring guidelines](/authoring/guidelines/sample-tests/).
 
@@ -239,28 +242,28 @@ Since sample tests can significantly impact user experience of a kata, they have
 
 ## Before publishing
 
-When you have finally written all the code, prettified the description, and verified the tests, you consider your kata good to go. But this is a very good moment to take a step back and hold back with publishing the kata, at least for a short while. While working on your kata you were focused on it so much, that it's very probable that you missed some issues or possible improvements. If you rush publishing it, you risk others will find problems you missed, and your kata will be downvoted, or even insta-retired.
+When you have finally written all the code, prettified the description and verified the tests, you consider your kata good to go. But this is a very good moment to take a step back and hold back with publishing the kata, at least for a short while. While working on your kata you were focused on it so much, it's very probable that you missed some issues or possible improvements. If you rush publishing it, you risk others will find problems you missed, and your kata will be downvoted, or even insta-retired.
 
 ### Train on your kata
 
-Good first step is to train on your own kata. Getting in the shoes of a potential user is a nice way of checking what others will see and experience while training on your task. Although it's not possible to complete a kata being still in draft, it's still possible to train on it. Just open your kata in the trainer, and try to solve it, as any other user would do. This way, you can spot some problems with tests you have not thought about before.
+A good first step is to train on your own kata. Getting in the shoes of a potential user is a nice way of checking what others will see and experience while training on your task. Although it's not possible to complete a kata being still in draft, it's still possible to train on it. Just open your kata in the trainer and try to solve it as any other user would do. This way, you can spot some problems with tests you may not have thought about before.
 
 ### Verify quality guidelines
 
-The next step would be to read through [authoring guidelines](/authoring/guidelines/) once again, and use them as a check-list to verify that your kata conforms to the applicable ones. Remember that the guidelines were collected basing on community's experience with many bad quality kata published back in the days, so take them seriously and approach them with proper attention. If you do not understand some guideline or you are not sure if your kata violates it or not, just ask more experienced users for advice.
+The next step would be to read through [authoring guidelines](/authoring/guidelines/) once again, and use them as a checklist to verify that your kata conforms to the applicable ones. Remember that the guidelines were collected based on the community's experience with many bad quality kata published back in the days, so take them seriously and approach them with proper attention. If you do not understand some guideline or you are not sure whether your kata violates it, just ask more experienced users for advice.
 
 ### Ask for a review of your draft
 
-Drafts of kata cannot be found and searched for, but can be accessed by other users with direct links. You can share the link to your not yet published kata with others, and they will be able to read the description, train on the kata, and provide some feedback, before getting a chance to downvote it. Sharing a link to a draft is a very good vay to get a quick feedback about the most obvious problems.
+Drafts of kata cannot be found and searched for, but can be accessed by other users with direct links. You can share the link to your not yet published kata with others, and they will be able to read the description, train on the kata, and provide some feedback, before getting a chance to downvote it. Sharing a link to a draft is a very good vay to get quick feedback about the most obvious problems.
 
 
 ## After publishing
 
-After you publish your kata, it becomes a subject to the [beta evaluation](/concepts/kata/beta-process/). Power users immediately jump on it, knowing they _will_ find problems, the kata discussion section will be flooded with issue reports marked with red labels, and the red, sad faced button of "Not Satisfied" vote will cause the satisfaction rating drop to 20%. Unless there won't be any serious issues. It may be discouraging at first, especially for new authors, but when you think about it, it makes sense: after all, no one wants a bad kata to get out of beta, right? That's why it's important to make sure that when a kata is published, it's already in as good shape as possible.
+After you publish your kata, it becomes subject to [beta evaluation](/concepts/kata/beta-process/). Power users immediately jump on it, knowing they _will_ find problems, the kata discussion section will be flooded with issue reports marked with red labels, and the red, sad faced button of the "Not Satisfied" vote will cause the satisfaction rating to drop to 20%. Unless there aren't any serious issues. It may be discouraging at first, especially for new authors, but when you think about it, it makes sense: after all, no one wants a bad kata to get out of beta, right? That's why it's important to make sure that when a kata is published, it's already in as good a shape as possible.
 
 But still, no matter how hard you try, it's not possible to make everyone satisfied. Your kata may receive many satisfied votes, but even then, some users might not like it. Do not worry about this too much. Consider their remarks, and think a bit about them. Maybe they are right, and the kata needs some improvements? Listen to everyone, answer their questions, consider suggestions, and fix issues popping up. Also, do not rush things too much. If someone says something you are not sure about, just wait for another opinion. Users often do not agree with each other, so you can receive two mutually exclusive opinions. It can be difficult sometimes, but you just need to pass on one of them, or find some balance in between. Research shows \[citation needed] that kata with authors actively maintaining them leave beta quite quickly, while some kata can be retired within minutes, or, even worse, stay in beta forever, if authors do not want to fix problems.
 
-After the kata collects enough of positive feedback, it leaves beta state and becomes available for everyone to train on and earn their points. Now it will draw even more attention, and potentially thousands of users will submit their solutions, possibly finding new problems reporting new issues, and raising new suggestions. Your task, as an author, is to actively maintain the kata. This will encourage others to train on it more, provide translations to other languages, and enjoy it in full extent.
+After the kata collects enough positive feedback, it leaves the beta phase and becomes available for everyone to train on and earn their points. Now it will draw even more attention, and potentially thousands of users will submit their solutions, possibly finding new problems reporting new issues, and raising new suggestions. Your task, as an author, is to actively maintain the kata. This will encourage others to train on it more, provide translations to other languages, and enjoy it in its full extent.
 
 
 Congratulations! Your first Codewars kata is a success!
