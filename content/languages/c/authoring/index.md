@@ -8,7 +8,40 @@ sidebar: "language:c"
 
 This article is meant as help for kata authors and translators who would like to create new content in C. It attempts to explain how to create and organize things in a way conforming to [authoring guidelines](/authoring/guidelines/), shows the most common pitfalls and how to avoid them.
 
-This article is not a standalone tutorial on creating kata or translations. It's meant to be a complementary, C-specific part of a more general set of HOWTOs and guidelines related to [content authoring](/authoring/). If you are going to create a Python translation, or a new Python kata from scratch, please make yourself familiar with the aforementioned documents related to authoring in general first. 
+This article is not a standalone tutorial on creating kata or translations. It's meant to be a complementary, C-specific part of a more general set of HOWTOs and guidelines related to [content authoring](/authoring/). If you are going to create a C translation, or a new C kata from scratch, please make yourself familiar with the aforementioned documents related to authoring in general first. 
+
+## General info
+
+Any technical information related to the C setup on Codewars can be found on the [C reference](/languages/c/) page (language versions, available modules, and setup of the code runner).
+
+
+## Description
+
+C code blocks can be inserted with C-specific part in [sequential code blocks](/references/markdown/extensions/#sequential-code-blocks):
+
+~~~
+```c
+
+...your code here...
+
+```
+~~~
+
+C-specific paragraphs can be inserted with [language conditional rendering](/references/markdown/extensions/#conditional-rendering):
+
+```
+~~~if:c
+
+...text visible only for C description...
+
+~~~
+
+~~~if-not:c
+
+...text not visible in C description...
+
+~~~
+```
 
 _TBD_
 
@@ -21,38 +54,6 @@ Points needing particular attention:
 - random utilities, `RAND_MAX`, `srand`
 
 <!--
-## General info
-
-Any technical information related to the Python setup on Codewars can be found on the [Python reference](/languages/python/) page (language versions, available modules, and setup of the code runner).
-
-
-## Description
-
-Python code blocks can be inserted with Python-specific part in [sequential code blocks](/references/markdown/extensions/#sequential-code-blocks):
-
-~~~
-```python
-
-...your code here...
-
-```
-~~~
-
-Python-specific paragraphs can be inserted with [language conditional rendering](/references/markdown/extensions/#conditional-rendering):
-
-```
-~~~if:python
-
-...text visible only for Python description...
-
-~~~
-
-~~~if-not:python
-
-...text not visible in Python description...
-
-~~~
-```
 
 ## Tasks and Requirements
 
