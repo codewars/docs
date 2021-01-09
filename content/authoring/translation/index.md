@@ -8,9 +8,9 @@ next: /authoring/guidelines/
 
 _TBD: improve this stub_
 
-New translators can use [tutorial(TODO)](/authoring/translation/).
+New translators may refer to the [tutorial(TODO)](/authoring/translation/).
 
-Some [languages](/languages/) also have a page dedicated to creating a kata, with code examples and best practices.
+Some [languages](/languages/) also have a page dedicated to authoring kata, with code examples and best practices.
 
 Every translator should follow [translation authoring guidelines](/authoring/guidelines/translation/).
 

@@ -13,5 +13,4 @@ next: /references/ui/kata-trainer/
 
 ## What is the Kata Editor?
 
-The Kata Editor is the authoring tool used to create and modify kata. It is accessible through the profile menu, found in the top right corner of this site. Only users who have earned the [[Create Kata|Privileges]] privilege.
-
+The Kata Editor is the authoring tool used to create and modify kata. It is accessible through the profile menu found in the top right corner of this site. Only users who have earned the [[Create Kata|Privileges]] privilege may access the Kata Editor.
