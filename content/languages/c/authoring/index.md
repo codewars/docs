@@ -66,15 +66,25 @@ Some concepts don't always translate well to or from C. Because of this, some co
 
 Unlike for example Python or Java, there's no single guide for C code style, or even no set of naming conventions, which would be widely adopted and agreed upon by C programmers. There are traditional naming conventions using `snake_case`, there are Win32 API naming conventions using `PascalCase`, there are GNU guidelines, Microsoft guidelines, Google guidelines, and some of them contradictory to each other. Just use whatever set of guidelines you like, but when you do, use it consistently.
 
-### Includes
+### Header files
 
-Not as much of a problem for C as it is for C++, but still, C authors often forget to include required header files, or just leave them out deliberately because "it works" even when some of the files are not included. It happens mostly due to two reasons:
+Not as much of a problem for C as it is for C++, but still, C authors often forget to include required header files, or just leave them out deliberately because "it works" even when some of the files are not included. It happens mostly due to following reasons:
 - Compiler provides implicit declaration of a function, when it's encountered in the code and was not declared. However, this behavior is not standard and is now deprecated. You need to explicitly include header files for library functions you use, or declare them in some other way.
-- Some header files include other header files indirectly, for example, file `foo.h` contains line `#include <bar.h>`, which might appear to make the explicit inlude for `bar.h` unnecessary. It's not true though, because the file `foo.h` might change one day, or might depend on some compiler settings or command line options, and after some changes to the cnfiguration of the C runner, the `bar.h` might be not included there anymore. That's why every file (i.e. code snippet) of a kata should explicitly include all required header files declaring functions used in it.
+- Some header files include other header files indirectly, for example, file `foo.h` contains line `#include <bar.h>`, which might appear to make the explicit include for `bar.h` unnecessary. It's not true though, because the file `foo.h` might change one day, or might depend on some compiler settings or command line options, and after some changes to the cnfiguration of the C runner, the `bar.h` might be not included there anymore. That's why every file (i.e. code snippet) of a kata should explicitly include all required header files declaring functions used in it.
+- Author might think that header files for the testing framework are included automatically by the code runner. It is not the case though, and test suites need to include `criterion/criterion.h` explicitly.
 
 ### Compilation warnings
 
 Compiler options related to warnings used by C runner are somewhat strict and require some discipline to get the code to compile cleanly. `-Wall` and `-Wextra` cause that warnings can be numerous, and some of them are very pedantic. However, code of C kata should still compile in a clean way, without any warnings logged to the console. Even when a warnig does not cause any problem with tests, users get distracted by them and blame them for failing tests.
+
+
+### Memory management
+
+Unlike many modern, high level languages, C does not manage memory automatically. Manual memory management is a very vast and complex topic, with many possible ways of achieving the goal depending on a specific case, cave-ats, and pitfalls.
+
+Whenever a kata needs to return a string or an array, C authors tend to use the naive technique of allocating the memory in the solution function, and freeing it in the test suite. This approach mimics the behavior known from other languages where returning an array or object from inside of user solution is perfectly valid, but it's hardly ever a valid way of working with unmanaged memory.
+
+Possible ways of handling memory management are described in the [Memory Management in C kata](/languages/c/authoringmemory-management-techniques/) article. But whichever approach is chosen, even the most obvious one, it should be described either in the kata description (preferrably in in a C-specific paragraph), or in the initial solution stub as a comment, and in sample tests as an example of a call to the solution.
 
 <!--
 ## Tests
