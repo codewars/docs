@@ -48,53 +48,35 @@ _TBD_
 Points needing particular attention:
 - memory management: show possible ways, common pitfalls, good practices
 - assertions: Criterion assertions are macros with poor default messages
-- includes
 - bloated preloaded
 - compilation warnings
 - random utilities, `RAND_MAX`, `srand`
 
-<!--
 
 ## Tasks and Requirements
 
-Some concepts don't always translate well to or from Python. Because of this, some constructs should be avoided and some translations just shouldn't be done.
-- Avoid returning different data types depending on the situation (_"Return the result, or the string 'Error' if no result can be found..."_). Python is dynamically typed which is not be the case for some other languages. Returning `None` might be appropriate in some situations, but raising an exception might be better in others.
-
-Some kata just should not be translated into Python because it can be difficult to keep their initial idea:
-- The Python standard library is very rich and has many utilities available (e.g. `itertools`, combinatorics functions), so some nontrivial requirements in other languages could become trivial in Python,
-- Python supports big integers natively, so kata that rely on the implementation of arbitrary precision integer arithmetic would become trivial in Python.
-- The Codewars runner provides a set of preinstalled packages which are available for users solving the kata. They can be a real game-changer when it comes to the difficulty of a Python translation. For example, `numpy` can make many matrix manipulation kata much easier.
+Some concepts don't always translate well to or from C. Because of this, some constructs should be avoided and some translations just shouldn't be done. Some high level languages, like Pyton or Javascript, reside on the exactly opposite end of the spectrum than C, and translating kata between them and C can result in signiicant differences in difficulty, requirements, and design of the solution.
+- C is a language of much lower level than many other popular languages available on Codewars. For this reason, many kata, even if their task can be translated to C directly, can turn out much harder in C than in original language. There's many kata which were originally creates as very easy and beginner friendly (for example 8 kyu), after translating into C, and adding aspects like memory management, or two dimensional C arrays, etc. they are not so easy anymore, and newbies complain that kata ranked 8 kyu is too difficult for them while it should be an entry level task.  
+- C is statically typed, so any task which depends on dynamic typing can be difficult to translate into C, and attempts of forcing a C kata to reflect dynamically typed interface can lead to ideas which enforce a really bad design.
+- There's just a few additional libraries available for C, so almost everything has to be implemented manually by the author or the user. Kata which take advantage of additional packages installed for other languages, become much mor difficult in C.
 
 ## Coding
 
-
 ### Code style
 
-Python code should stick to generally recognized Python conventions, with [PEP-8](https://www.python.org/dev/peps/pep-0008/) being most widely accepted.
+Unlike for example Python or Java, there's no single guide for C code style, or even no set of naming conventions, which would be widely adopted and agreed upon by C programmers. There are traditional naming conventions using `snake_case`, there are Win32 API naming conventions using `PascalCase`, there are GNU guidelines, Microsoft guidelines, Google guidelines, and some of them contradictory to each other. Just use whatever set of guidelines you like, but when you do, use it consistently.
 
+### Includes
 
-### Imports
+Not as much of a problem for C as it is for C++, but still, C authors often forget to include required header files, or just leave them out deliberately because "it works" even when some of the files are not included. It happens mostly due to two reasons:
+- Compiler provides implicit declaration of a function, when it's encountered in the code and was not declared. However, this behavior is not standard and is now deprecated. You need to explicitly include header files for library functions you use, or declare them in some other way.
+- Some header files include other header files indirectly, for example, file `foo.h` contains line `#include <bar.h>`, which might appear to make the explicit inlude for `bar.h` unnecessary. It's not true though, because the file `foo.h` might change one day, or might depend on some compiler settings or command line options, and after some changes to the cnfiguration of the C runner, the `bar.h` might be not included there anymore. That's why every file (i.e. code snippet) of a kata should explicitly include all required header files declaring functions used in it.
 
-For further compatibility reasons, it is strongly recommended to import solution modules explicitly.  
-Available modules in the context of Codewars are:
-- `solution`, containing the user's submitted solution,
-- `preloaded`, containing preloaded code,
-- `codewars_test`, containing the [Codewars Python testing framework](/languages/python/codewars-test/).
+### Compilation warnings
 
-When any of these imports are missing, then, for compatibility reasons, it will be automatically added by Codewars' preprocessor when the solution is built. However, relying on this behavior is discouraged as it's deprecated and subject to change in the future.
+Compiler options related to warnings used by C runner are somewhat strict and require some discipline to get the code to compile cleanly. `-Wall` and `-Wextra` cause that warnings can be numerous, and some of them are very pedantic. However, code of C kata should still compile in a clean way, without any warnings logged to the console. Even when a warnig does not cause any problem with tests, users get distracted by them and blame them for failing tests.
 
-If a user solution is expected to use functions or classes from the `preloaded` module, it's recommended to add required imports to the "initial solution" code snippet.
-
-:::note
-For simplicity, through the rest of this article it's assumed that the `codewars_test` module is imported and aliased as `test` with the following statement:
-
-```python
-import codewars_test as test
-```
-
-This is a convention used in many Python kata, but it's not a requirement, and authors can choose to import the module in any way they find suitable for them.
-:::
-
+<!--
 ## Tests
 
 ### Testing framework
