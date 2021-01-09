@@ -84,7 +84,7 @@ Why? With just 300 honor, you haven't even get a grasp of what katas are actuall
 
 Anyone can reach 300 honor in a very short time, from a few hours to a day or two. This is, obviously, far from enough. Thus, you need to train more.
 
-Solving more kata with more experiences can help one very significantly on these aspects:
+Solving more kata to gain more experience can help one significantly in the following aspects:
 
 - Getting more experienced will help you *understand* how hard your kata is, so that you can tune your kata to your desire easily.
 - As you train more, you tend to know what the most efficient solution for a kata is. This is crucial to performance and golf katas: you don't want to make a performance kata when you can only write sub-par solutions! You'll get pwned hard by veterans ;-)
