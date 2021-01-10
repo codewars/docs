@@ -32,6 +32,15 @@ Test(add_test, should_add_integers, .description = "should add integers") {
 }
 ```
 
+## Assertions
+
+_TBD_
+
+[Assertions reference](https://criterion.readthedocs.io/en/master/assert.html) in Criterion documentation.
+
+- assert vs except
+- messages
+
 <!--
 TODO: Finish this reference
 TODO: Add tutorial and link to it

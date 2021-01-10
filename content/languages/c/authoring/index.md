@@ -111,31 +111,31 @@ Solution function should be redeclared in the file with submission tests. Such r
 
 ### Calling assertions
 
-- assertions: Criterion assertions are macros with poor default messages
-
-The Python testing framework provides a set of useful [assertions](/languages/python/codewars-test/#assertions-1), but when used incorrectly, they can cause a series of problems:
+Criterion testing framework provides a set of useful [assertions](/languages/c/criterion/#assertions), but when used incorrectly, they can cause a series of problems:
 - Stacktraces of a crashing user solution can reveal details that should not be visible,
 - Use of an assertion not suitable for the given case may lead to incorrect test results,
 - Incorrectly used assertions may produce confusing or unhelpful messages.
 
 To avoid the above problems, calls to assertion functions should respect the following rules:
 - The expected value should be calculated _before_ invoking an assertion. The `expected` parameter passed to the assertion should not be a function call expression, but a value calculated directly beforehand.
-- Appropriate assertion functions should be used for each given test. `test.assert_equals` is not suitable in all situations. Use `test.assert_approx_equals` for floating point comparisons, `test.expect` for tests on boolean values, `test.expect_error` to test error handling.
-- Some additional attention should be paid to the order of parameters passed to assertion functions. It differs between various assertion libraries, and it happens to be quite often confused by authors, mixing up `actual` and `expected` in assertion messages. For the Python testing framework, the order is `(actual, expected)`.
-- One somewhat distinctive feature of Python assertions is that by default, a failed assertion does not cause a test case to fail early. It can lead to unexpected crashes when an actual value had already been asserted to be invalid, but the execution of the current test case was not stopped and following assertions continue to refer to it. This behavior can be overridden by passing the `allow_raise=True` argument to the assertion functions that support it.
-- To avoid unexpected crashes in tests, it's recommended to perform some additional assertions before assuming that the answer returned by the user solution has some particular type, form, or value. For example, if the test suite sorts the returned list to verify its correctness, an explicit assertion should be added to check whether the returned object is actually a list, and not, for example, `None`.
+- Appropriate assertion functions should be used for each given test. `cr_assert_eq` is not suitable in all situations. Use `cr_assert_float_eq` for floating point comparisons, `cr_assert` for tests on boolean values, `cr_assert_str_*` to test strings and `cr_assert_arr_*` to test arrays.
+- Some additional attention should be paid to the order of parameters passed to assertion macros. It differs between various assertion libraries, and it happens to be quite often confused by authors, mixing up `actual` and `expected` in assertion messages. For the C testing framework, the order is `(actual, expected)`.
+- To avoid unexpected crashes in tests, it's recommended to perform some additional assertions before assuming that the answer returned by the user solution has some particular form, or size. For example, if the solution returns a pointer (possibly pointing to an array), an explicit assertion should be added to check whether the returned pointer is valid, and not, for example, `NULL`; size of the returned array, potentially reported by an output paramter, should be verified before accessing an element which could tunr nout ot be located outside of its bounds.
 
 
 ### Preloaded
 
 _TBD_
+
 - bloated preloaded
 
-<!--
 ## Example test suite
 
 Below you can find an example test suite that covers most of the common scenarios mentioned in this article. Note that it does not present all possible techniques, so actual test suites can use a different structure, as long as they keep to established conventions and do not violate authoring guidelines.
 
+_TBD_
+
+<!--
 
 ```python
 
