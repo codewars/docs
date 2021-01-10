@@ -139,15 +139,19 @@ As C is a quite low level language, it often requires some boilerplate code to i
 Below you can find an example test suite that covers most of the common scenarios mentioned in this article. Note that it does not present all possible techniques, so actual test suites can use a different structure, as long as they keep to established conventions and do not violate authoring guidelines.
 
 ```c
+//include headers for Criterion
 #include <criterion/criterion.h>
 
+//include all required headers
 #include <math.h>
 #include <time.h>
 #include <stdlib.h>
 #include <stddef.h>
 
+//redeclare the user solution
 void square_every_item(double items[], int size);
 
+//reference solution defined as static
 static void square_every_item_ref(double items[], int size)
 {
     for(int i = 0; i<size; ++i)
@@ -156,19 +160,22 @@ static void square_every_item_ref(double items[], int size)
     }
 }
 
+//custom comparer for floating point values
 static int cmp_double_fuzzy_equal(double* a, double* b) {
   double diff = *a - *b;
   return fabs(diff) < 1e-10 ? 0 : diff;
 }
 
-static void fill_random_array(double array[], int size) {
+//random test case generator
+static void fill_random_array(double array[], int size) {  
   for(int i=0; i<size; ++i) {
+    //use rand to generate doubles
     array[i] = (double)rand() / RAND_MAX * 100;
   }
 }
 
+//helper function
 static int get_mismatch_position(double actual[], double reference[], int size) {
-  
   for(int i=0; i<size; ++i) {
     if(cmp_double_fuzzy_equal(actual+i, reference+i))
       return i;
@@ -176,20 +183,24 @@ static int get_mismatch_position(double actual[], double reference[], int size) 
   return -1;
 }
 
+//setup function, called by test suite setup macro below
 void setup_random_tests(void) {
   srand(time(NULL));
 }
 
+//a test case of fixed_tests suite for primary scenario
 Test(fixed_tests, example_array) {
   
   double items[5]    = { 0.0, 1.1,  2.2,  3.3,   4.4 };  
   double expected[5] = { 0.0, 1.21, 4.84, 10.89, 19.36 };
     
   square_every_item(items, 5);
+  
+  //assertion macro suitable for arrays of doubles
   cr_assert_arr_eq_cmp(items, expected, 5, cmp_double_fuzzy_equal);
 }
 
-
+//a test case of fixed_tests suite for potential edge case
 Test(fixed_tests, empty_array) {
   
   const double dummy = 42.5;
@@ -199,8 +210,10 @@ Test(fixed_tests, empty_array) {
   cr_assert_eq(items[0], dummy, "Empty array should not be tampered with.");
 }
 
+//setup of the test suite, if necessary
 TestSuite(random_tests, .init=setup_random_tests);
 
+//a set of small random tests, with verbose debugging messages
 Test(random_tests, small_arrays) {
   
   double input[10];
@@ -209,15 +222,22 @@ Test(random_tests, small_arrays) {
   
   for(int i=0; i<10; ++i) {
     
+    //generate test case
     int array_size = rand() % 10 + 1;
     fill_random_array(input, array_size);
     
+    //kata requires the input to be mutated, so tests need to copy it, because
+    //input array is used after calling user and reference solution
     memcpy(reference, input, sizeof(double) * array_size);
     square_every_item_ref(reference, array_size);
     
+    //copy is made from original input, and not from an array fed to
+    //the reference solution
     memcpy(actual, input, sizeof(double) * array_size);    
     square_every_item(actual, array_size);
-    
+
+    //assertion uses custom message to avoid confusing test output
+    //it also uses data from original, non-mutated input array
     int invalid_position = get_mismatch_position(actual, reference, array_size);
     cr_assert_arr_eq_cmp(actual, reference, array_size, cmp_double_fuzzy_equal,
                          "Invalid answer at position %d for input value %f, expected %f but got %f",
@@ -228,6 +248,7 @@ Test(random_tests, small_arrays) {
   }
 }
 
+//a set of large random tests, with not so detailed debugging messages
 Test(random_tests, large_arrays) {
   
   double array[1000];
@@ -235,12 +256,17 @@ Test(random_tests, large_arrays) {
   
   for(int i=0; i<10; ++i) {
     
+    //generate test cases
     int array_size = rand() % 1000 + 1;
     fill_random_array(array, array_size);
+    
+    //since original array is no used after tests, it's enough to create only one copy
     memcpy(reference, array, sizeof(double) * array_size);
+    
     square_every_item_ref(reference, array_size);
     square_every_item(array, array_size);
     
+    //assertion uses custom message
     cr_assert_arr_eq_cmp(array, reference, array_size, cmp_double_fuzzy_equal, "Invalid answer for arrays of size %d", array_size);
   }
 }
