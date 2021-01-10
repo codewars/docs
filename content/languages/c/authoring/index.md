@@ -109,6 +109,7 @@ The reference solution or data ___must not___ be defined in the [Preloaded code]
 
 Solution function should be redeclared in the file with submission tests. Such redeclaration prevents a compilation warning about implicitly declared functions, and additionally stops users from from tampering with the prototype of the solution function, for example to remove constness of parameters, or change types of parameters, etc.
 
+
 ### Calling assertions
 
 Criterion testing framework provides a set of useful [assertions](/languages/c/criterion/#assertions), but when used incorrectly, they can cause a series of problems:
@@ -120,14 +121,14 @@ To avoid the above problems, calls to assertion functions should respect the fol
 - The expected value should be calculated _before_ invoking an assertion. The `expected` parameter passed to the assertion should not be a function call expression, but a value calculated directly beforehand.
 - Appropriate assertion functions should be used for each given test. `cr_assert_eq` is not suitable in all situations. Use `cr_assert_float_eq` for floating point comparisons, `cr_assert` for tests on boolean values, `cr_assert_str_*` to test strings and `cr_assert_arr_*` to test arrays.
 - Some additional attention should be paid to the order of parameters passed to assertion macros. It differs between various assertion libraries, and it happens to be quite often confused by authors, mixing up `actual` and `expected` in assertion messages. For the C testing framework, the order is `(actual, expected)`.
-- To avoid unexpected crashes in tests, it's recommended to perform some additional assertions before assuming that the answer returned by the user solution has some particular form, or size. For example, if the solution returns a pointer (possibly pointing to an array), an explicit assertion should be added to check whether the returned pointer is valid, and not, for example, `NULL`; size of the returned array, potentially reported by an output paramter, should be verified before accessing an element which could tunr nout ot be located outside of its bounds.
+- To avoid unexpected crashes in tests, it's recommended to perform some additional assertions before assuming that the answer returned by the user solution has some particular form, or size. For example, if the solution returns a pointer (possibly pointing to an array), an explicit assertion should be added to check whether the returned pointer is valid, and not, for example, `NULL`; size of the returned array, potentially reported by an output paramter, should be verified before accessing an element which could turn out to be located outside of its bounds.
+- Default messages produced by assertion macros are confusing, so authors should provide custom messages for failed assertions.
 
 
-### Preloaded
+## Preloaded
 
-_TBD_
+As C is a quite low level language, it often requires some boilerplate code to implment non-trivial tests, checks, and assertions. It can be tempting to to put some code which would be common to sample tests and submission tests in the Preloaded snippet, but this approach sometimes proves to be problematic (see [here](/authoring/guidelines/preloaded/#accessibility-of-preloaded-code) why), and can cause some headaches for users who are interested in training on the kata locally, or checking how the user solution is called, etc. It's strongly discouraged to use preloaded code to make the code common for test snippets, if it would hide some information or implementation details interesting to the user. 
 
-- bloated preloaded
 
 ## Example test suite
 
