@@ -16,7 +16,7 @@ _TBD_
 - two functions: solution with allocation, deallocation. Bookkeeping information managed by user or passed as additional `void*`
 - one function: accept buffer+size, return retsult or error and required size
 - avoid string constants, use named symbols
-
+- reporting size:output param, structure, sentinel teminators
 ## Two-dimensional arrays
 
 - N+1 allocations
