@@ -9,7 +9,7 @@ tags:
 
 # Criterion
 
-Criterion testing framework is available in its [Github repository](https://github.com/Snaipe/Criterion). Reference for Criterion API can be found here: https://criterion.readthedocs.io/en/master/intro.html . 
+The Criterion testing framework is available in its [Github repository](https://github.com/Snaipe/Criterion). Reference for the Criterion API can be found here: [https://criterion.readthedocs.io/en/master/intro.html](https://criterion.readthedocs.io/en/master/intro.html).
 
 ## Basic Setup
 

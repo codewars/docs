@@ -45,7 +45,7 @@ C-specific paragraphs can be inserted with [language conditional rendering](/ref
 
 ## Tasks and Requirements
 
-Some concepts don't always translate well to or from C. Because of this, some constructs should be avoided and some translations just shouldn't be done. Some high level languages, like Pyton or Javascript, reside on the exactly opposite end of the spectrum than C, and translating kata between them and C can result in signiicant differences in difficulty, requirements, and design of the solution.
+Some concepts don't always translate well to or from C. Because of this, some constructs should be avoided and some translations just shouldn't be done. Some high-level languages, like Python or JavasScript, reside on the exact opposite end of the spectrum than C, and translating kata between them and C can result in significant differences in difficulty, requirements, and design of the solution.
 - C is a language of much lower level than many other popular languages available on Codewars. For this reason, many kata, even if their task can be translated to C directly, can turn out much harder in C than in original language. There's many kata which were originally created as very easy and beginner friendly (for example 8 kyu). But after translating into C, and adding aspects like memory management, or two dimensional C arrays, etc. they are not so easy anymore, and newbies complain that kata ranked 8 kyu is too difficult for them while it should be an entry level task.  
 - C is statically typed, so any task which depends on dynamic typing can be difficult to translate into C, and attempts of forcing a C kata to reflect dynamically typed interface can lead to ideas which enforce a really bad design.
 - There's just a few additional libraries available for C runner, so almost everything has to be implemented manually by the author or the user. Kata which take advantage of additional packages installed for other languages become much more difficult in C.
@@ -54,7 +54,7 @@ Some concepts don't always translate well to or from C. Because of this, some co
 
 ### Code style
 
-Unlike for example Python or Java, there's no single guide for C code style, or even no set of naming conventions, which would be widely adopted and agreed upon by C programmers. There are traditional naming conventions using `snake_case`, there are Win32 API naming conventions using `PascalCase`, there are GNU guidelines, Microsoft guidelines, Google guidelines, and some of them contradictory to each other. Just use whatever set of guidelines you like, but when you do, use it consistently.
+Unlike for example Python or Java, there's no single guide for C code style, or even a set of naming conventions, which would be widely adopted and agreed upon by C programmers. There are traditional naming conventions using `snake_case`, there are Win32 API naming conventions using `PascalCase`, there are GNU guidelines, Microsoft guidelines, Google guidelines, and some of them contradictory to each other. Just use whatever set of guidelines you like, but when you do, use it consistently.
 
 ### Header files
 
@@ -65,12 +65,12 @@ Not as much of a problem for C as it is for C++, but still, C authors often forg
 
 ### Compilation warnings
 
-Compiler options related to warnings used by C runner are somewhat strict and require some discipline to get the code to compile cleanly. `-Wall` and `-Wextra` cause that warnings can be numerous, and some of them are very pedantic. However, code of C kata should still compile in a clean way, without any warnings logged to the console. Even when a warnig does not cause any problem with tests, users get distracted by them and blame them for failing tests.
+Compiler options related to warnings used by C runner are somewhat strict and require some discipline to get the code to compile cleanly. `-Wall` and `-Wextra` cause that warnings can be numerous, and some of them are very pedantic. However, code of C kata should still compile in a clean way, without any warnings logged to the console. Even when a warning does not cause any problem with tests, users get distracted by them and blame them for failing tests.
 
 
 ### Memory management
 
-Unlike many modern, high level languages, C does not manage memory automatically. Manual memory management is a very vast and complex topic, with many possible ways of achieving the goal depending on a specific case, cave-ats, and pitfalls.
+Unlike many modern, high-level languages, C does not manage memory automatically. Manual memory management is a very vast and complex topic, with many possible ways of achieving the goal depending on a specific case, caveats, and pitfalls.
 
 Whenever a kata needs to return a string or an array, C authors tend to use the naive technique of allocating the memory in the solution function, and freeing it in the test suite. This approach mimics the behavior known from other languages where returning an array or object from inside of user solution is perfectly valid, but it's hardly ever a valid way of working with unmanaged memory.
 
@@ -111,7 +111,7 @@ The reference solution or data ___must not___ be defined in the [Preloaded code]
 
 ### Redeclaration of user solution
 
-Solution function should be redeclared in the file with submission tests. Such redeclaration prevents a compilation warning about implicitly declared functions, and additionally stops users from from tampering with the prototype of the solution function, for example to remove constness of parameters, or change types of parameters, etc.
+Solution function should be redeclared in the file with submission tests. Such redeclaration prevents a compilation warning about implicitly declared functions, and additionally stops users from tampering with the prototype of the solution function, for example, to remove constness of parameters, or change types of parameters, etc.
 
 ### Input mutation
 
@@ -129,13 +129,13 @@ To avoid the above problems, calls to assertion functions should respect the fol
 - The expected value should be calculated _before_ invoking an assertion. The `expected` parameter passed to the assertion should not be a function call expression, but a value calculated directly beforehand.
 - Appropriate assertion functions should be used for each given test. `cr_assert_eq` is not suitable in all situations. Use `cr_assert_float_eq` for floating point comparisons, `cr_assert` for tests on boolean values, `cr_assert_str_*` to test strings and `cr_assert_arr_*` to test arrays.
 - Some additional attention should be paid to the order of parameters passed to assertion macros. It differs between various assertion libraries, and it happens to be quite often confused by authors, mixing up `actual` and `expected` in assertion messages. For the C testing framework, the order is `(actual, expected)`.
-- To avoid unexpected crashes in tests, it's recommended to perform some additional assertions before assuming that the answer returned by the user solution has some particular form, or size. For example, if the solution returns a pointer (possibly pointing to an array), an explicit assertion should be added to check whether the returned pointer is valid, and not, for example, `NULL`; size of the returned array, potentially reported by an output paramter, should be verified before accessing an element which could turn out to be located outside of its bounds.
+- To avoid unexpected crashes in tests, it's recommended to perform some additional assertions before assuming that the answer returned by the user solution has some particular form, or size. For example, if the solution returns a pointer (possibly pointing to an array), an explicit assertion should be added to check whether the returned pointer is valid, and not, for example, `NULL`; the size of the returned array, potentially reported by an output parameter, should be verified before accessing an element which could turn out to be located outside of its bounds.
 - Default messages produced by assertion macros are confusing, so authors should provide custom messages for failed assertions.
 
 
 ## Preloaded
 
-As C is a quite low level language, it often requires some boilerplate code to implment non-trivial tests, checks, and assertions. It can be tempting to put some code which would be common to sample tests and submission tests in the Preloaded snippet, but this approach sometimes proves to be problematic (see [here](/authoring/guidelines/preloaded/#accessibility-of-preloaded-code) why), and can cause some headaches for users who are interested in training on the kata locally, or checking how the user solution is called, etc. It's strongly discouraged to use preloaded code to make the code common for test snippets, if it would hide some information or implementation details interesting to the user. 
+As C is a quite low-level language, it often requires some boilerplate code to implement non-trivial tests, checks, and assertions. It can be tempting to put some code that would be common to sample tests and submission tests in the Preloaded snippet, but this approach sometimes proves to be problematic (see [here](/authoring/guidelines/preloaded/#accessibility-of-preloaded-code) why), and can cause some headaches for users who are interested in training on the kata locally, or checking how the user solution is called, etc. It's strongly discouraged to use preloaded code to make the code common for test snippets if it would hide some information or implementation details interesting to the user. 
 
 
 ## Example test suite
