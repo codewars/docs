@@ -12,7 +12,7 @@ This article is not a standalone tutorial on creating kata or translations. It's
 
 ## General info
 
-Any technical information related to the C setup on Codewars can be found on the [C reference](/languages/c/) page (language versions, available modules, and setup of the code runner).
+Any technical information related to the C setup on Codewars can be found on the [C reference](/languages/c/) page (language versions, available libraries, and setup of the code runner).
 
 
 ## Description
@@ -86,16 +86,20 @@ Criterion supports many features which can be very helpful, but (unfortunately) 
 
 ### Test feedback
 
-You should notice that the report hooks used by Codewars test runnerproduce one test output entry per assertion, so the test output panel can get very noisy.
+You should notice that the report hooks used by Codewars test runner produce one test output entry per assertion, so the test output panel can get very noisy.
 
 
 ### Random utilities
 
-_ TBD_
+Unlike some other languages, C does not provide too many means of generating random numbers which could be used to build random tests. `stdlib.h` header provides the `rand` function which, while being quite simple, satisfies majority of needs, but sometimes can be tricky to be used correctly.
 
-- `rand` and `srand`
-- `/dev/urandom`
-- `MAX_RAND`
+Before `rand` is called for the first time, it must be seeded with `srand`. A call to `srand` should be performed only once, in the setup phase of the random tests. `srand` usually uses current time as a seed, so authors need to include `time.h` before using `time` function.
+
+`rand` can return integers only up to `RAND_MAX`. There's no standard-compliant way to generate random values of types `unsigned int`, `long`, or `double`. Authors which would like to generate random values out of domain of `rand` have to craft them manually. _(TODO: create article with snippets with RNGs for types other than `int`)_
+
+Additionally, value of `RAND_MAX` might differ on different platforms, or even change. For current Codewars setup it's `2^32-1`, but there are some common platforms with `RAND_MAX` being as small as `2^16-1`. This makes the code using `rand` even less portable, and while portability might not be a big concern for Codewars kata, it could turn out to be an issue for users trying to reproduce random tests locally.
+
+An alternative to `rand` could be using random devices, like `/dev/urandom`. This way of generating random numbers could partially alleviate the issue of the `rand` being capped at `RAND_MAX`, but also could inflate amount of the bolierplate code and could cause additional problems with portability.
 
 
 ### Reference solution
@@ -127,7 +131,7 @@ To avoid the above problems, calls to assertion functions should respect the fol
 
 ## Preloaded
 
-As C is a quite low level language, it often requires some boilerplate code to implment non-trivial tests, checks, and assertions. It can be tempting to to put some code which would be common to sample tests and submission tests in the Preloaded snippet, but this approach sometimes proves to be problematic (see [here](/authoring/guidelines/preloaded/#accessibility-of-preloaded-code) why), and can cause some headaches for users who are interested in training on the kata locally, or checking how the user solution is called, etc. It's strongly discouraged to use preloaded code to make the code common for test snippets, if it would hide some information or implementation details interesting to the user. 
+As C is a quite low level language, it often requires some boilerplate code to implment non-trivial tests, checks, and assertions. It can be tempting to put some code which would be common to sample tests and submission tests in the Preloaded snippet, but this approach sometimes proves to be problematic (see [here](/authoring/guidelines/preloaded/#accessibility-of-preloaded-code) why), and can cause some headaches for users who are interested in training on the kata locally, or checking how the user solution is called, etc. It's strongly discouraged to use preloaded code to make the code common for test snippets, if it would hide some information or implementation details interesting to the user. 
 
 
 ## Example test suite
