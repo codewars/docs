@@ -6,7 +6,7 @@ sidebar: "language:c"
 
 # Memory Management in C kata
 
-_TBD_
+
 
 ## Arrays and strings
 
@@ -17,6 +17,8 @@ _TBD_
 - one function: accept buffer+size, return retsult or error and required size
 - avoid string constants, use named symbols
 - reporting size:output param, structure, sentinel teminators
+
+
 ## Two-dimensional arrays
 
 - N+1 allocations
