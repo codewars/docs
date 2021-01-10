@@ -138,120 +138,111 @@ As C is a quite low level language, it often requires some boilerplate code to i
 
 Below you can find an example test suite that covers most of the common scenarios mentioned in this article. Note that it does not present all possible techniques, so actual test suites can use a different structure, as long as they keep to established conventions and do not violate authoring guidelines.
 
-_TBD_
+```c
+#include <criterion/criterion.h>
 
-<!--
+#include <math.h>
+#include <time.h>
+#include <stdlib.h>
+#include <stddef.h>
 
-```python
+void square_every_item(double items[], int size);
 
-#import modules explicitly
-import codewars_test as test
-import preloaded
-from solution import user_solution
+static void square_every_item_ref(double items[], int size)
+{
+    for(int i = 0; i<size; ++i)
+    {
+      items[i] *= items[i];
+    }
+}
 
-@test.describe('Fixed tests')
-def fixed_tests():
+static int cmp_double_fuzzy_equal(double* a, double* b) {
+  double diff = *a - *b;
+  return fabs(diff) < 1e-10 ? 0 : diff;
+}
 
-    @test.it('Regular cases')
-    def regular_cases():
-        test.assert_equals(6, user_solution([1, 2, 3]))
-        test.assert_equals(5, user_solution([2, 3]))
+static void fill_random_array(double array[], int size) {
+  for(int i=0; i<size; ++i) {
+    array[i] = (double)rand() / RAND_MAX * 100;
+  }
+}
 
-    @test.it('Edge cases')
-    def edge_cases():
-        test.assert_equals(0, user_solution([]), "Invalid answer for empty array")
-        test.assert_equals(2, user_solution([2]), "Invalid answer for one element array")
+static int get_mismatch_position(double actual[], double reference[], int size) {
+  
+  for(int i=0; i<size; ++i) {
+    if(cmp_double_fuzzy_equal(actual+i, reference+i))
+      return i;
+  }
+  return -1;
+}
 
-    @test.it('Input should not be modified')
-    def do_not_mutate_input():
-        arr = list(range(100))
-        random.shuffle(arr)
-        arr_copy = arr[:]
-        #call user solution and ignore the result
-        user_solution(arr_copy)
-        #arr_copy should not be modified
-        test.assert_equals(arr_copy, arr, 'Input array was modified')
+void setup_random_tests(void) {
+  srand(time(NULL));
+}
+
+Test(fixed_tests, example_array) {
+  
+  double items[5]    = { 0.0, 1.1,  2.2,  3.3,   4.4 };  
+  double expected[5] = { 0.0, 1.21, 4.84, 10.89, 19.36 };
+    
+  square_every_item(items, 5);
+  cr_assert_arr_eq_cmp(items, expected, 5, cmp_double_fuzzy_equal);
+}
 
 
-@test.describe('Random tests')
-def random_tests():
+Test(fixed_tests, empty_array) {
+  
+  const double dummy = 42.5;
+  double items[1] = { dummy };
+  
+  square_every_item(items, 0);
+  cr_assert_eq(items[0], dummy, "Empty array should not be tampered with.");
+}
 
-    #non-global reference solution
-    def reference_solution(arr):
-        # calculate and return reference answer
+TestSuite(random_tests, .init=setup_random_tests);
 
-    #generate data for test cases with small inputs
-    #this test case generator combines a few types of input
-    #in one collection
-    def generate_small_inputs():    
-        test_cases = []
-        
-        #first type of input: regular array of small inputs (many of them)
-        for _ in range(50):
-            test_cases.append(generate_small_test_case())
-        
-        #another type of input: array with potentially tricky numbers
-        #(possibly many of them)
-        for _ in range(50):
-            test_cases.append(generate_small_tricky_test_case())
+Test(random_tests, small_arrays) {
+  
+  double input[10];
+  double actual[10];  
+  double reference[10];
+  
+  for(int i=0; i<10; ++i) {
+    
+    int array_size = rand() % 10 + 1;
+    fill_random_array(input, array_size);
+    
+    memcpy(reference, input, sizeof(double) * array_size);
+    square_every_item_ref(reference, array_size);
+    
+    memcpy(actual, input, sizeof(double) * array_size);    
+    square_every_item(actual, array_size);
+    
+    int invalid_position = get_mismatch_position(actual, reference, array_size);
+    cr_assert_arr_eq_cmp(actual, reference, array_size, cmp_double_fuzzy_equal,
+                         "Invalid answer at position %d for input value %f, expected %f but got %f",
+                         invalid_position, 
+                         input[invalid_position], 
+                         reference[invalid_position], 
+                         actual[invalid_position]);
+  }
+}
 
-        #potential edge case of single element array (a few of them)
-        for _ in range(10):
-            test_cases.append(generate_single_element_edge_case())
+Test(random_tests, large_arrays) {
+  
+  double array[1000];
+  double reference[1000];
+  
+  for(int i=0; i<10; ++i) {
+    
+    int array_size = rand() % 1000 + 1;
+    fill_random_array(array, array_size);
+    memcpy(reference, array, sizeof(double) * array_size);
+    square_every_item_ref(reference, array_size);
+    square_every_item(array, array_size);
+    
+    cr_assert_arr_eq_cmp(array, reference, array_size, cmp_double_fuzzy_equal, "Invalid answer for arrays of size %d", array_size);
+  }
+}
 
-        #another edge case: empty array
-        #Not always necessary, usually fixed test is enough.
-        #If present, there's no need for more than one.
-        test_cases.append([])
-
-        #randomly shuffle test cases to make their order unpredictable
-        random.shuffle(test_cases)
-
-        return test_cases
-
-    #Generator for large test cases, can be used for performance tests.
-    #Can generate structure and types of test cases similar to the
-    #generate_small_test_cases, but can also add more tricky cases,
-    #or skip on edge cases if they were sufficiently tested in the smaller set.
-    def generate_large_cases():
-        #... actual implementation
-
-    @test.it('Small inputs')
-    def small_inputs():
-        
-        inputs = generate_small_inputs()
-        for input in inputs:
-
-            #call reference solution first, in separate statement.
-            #we know it does not mutate the array, so no copy is needed
-            expected = reference_solution(input)
-
-            #call user solution and get actual answer.
-            #since the input is used after this call to compose
-            #the assertion message, a copy is passed
-            actual = user_solution(input[:])
-            
-            #Call assertion function.
-            #Custom assertion message is used to help users with diagnosing failures.
-            #Assertion message uses original, non-modified input.
-            test.assert_equals(actual, expected, f'Input: {input}')
-
-    @test.it('Large random tests')
-    def large_random_tests():
-        
-        large_inputs = generate_large_cases()
-        
-        for input in large_inputs:
-            
-            #expected answer calculated first, on separate line
-            expected = reference_solution(input)
-            
-            #assertion message composed before the user solution has a chance
-            #to mutate the input array
-            message = f'Invalid answer for array of length {len(input)}'
-
-            #actual answer calculated as second.
-            #no copy is made because input is not used anymore
-            test.assert_equals(user_solution(input), expected, message)
 ```
--->
