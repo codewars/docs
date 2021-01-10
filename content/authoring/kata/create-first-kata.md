@@ -90,7 +90,7 @@ Solving more kata to gain more experience can help one significantly in the foll
 - As you train more, you tend to know what the most efficient solution for a kata is. This is crucial to performance and golf katas: you don't want to make a performance kata when you can only write sub-par solutions! You'll get pwned hard by veterans ;-)
 - Actually encountering kata issues and looking at comment sections will let you understand the common issues people will raise. Learn from history and don't make the same mistake again!
 - Looking at solutions (and more importantly, solution comment sections) will give you insight to what constitutes good practice
-- It also allows you to see how others write their tests. Writing good tests is**hard**, especially if your kata is also hard.
+- It also allows you to see how others write their tests. Writing good tests is **hard**, especially if your kata is also hard.
 
 
 ## Stick to the intent, focus on one key thing per kata
@@ -191,7 +191,7 @@ The initial solution block is required so you will have to include something (at
 
 #### Preloaded
 
-The preloaded code block is an optional feature that you can use if you need it. The code from the preloaded snippet cannot be edited by the user, but it's available for all other snippets (solution and tests) to use. Its useful for when you want to load some code that mimics an API that your kata is based around. Its also useful if you want to define some code that needs to be used within the solution, but shouldn't be editable within the solution itself. For example, it can contain classes or constants which should be common for both solution and tests.
+The preloaded code block is an optional feature that you can use if you need it. The code from the preloaded snippet cannot be edited by the user, but it's available for all other snippets (solution and tests) to use. It's useful for when you want to load some code that mimics an API that your kata is based around. It's also useful if you want to define some code that needs to be used within the solution, but shouldn't be editable within the solution itself. For example, it can contain classes or constants which should be common for both solution and tests.
 
 Working with preloaded code is sometimes tricky, and that's why a set of [guidelines](/authoring/guidelines/preloaded/) related to this particular snipped has been created.
 
