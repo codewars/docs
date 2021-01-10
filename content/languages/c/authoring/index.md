@@ -113,6 +113,10 @@ The reference solution or data ___must not___ be defined in the [Preloaded code]
 
 Solution function should be redeclared in the file with submission tests. Such redeclaration prevents a compilation warning about implicitly declared functions, and additionally stops users from from tampering with the prototype of the solution function, for example to remove constness of parameters, or change types of parameters, etc.
 
+### Input mutation
+
+General guidelines for submission tests contain a section related to [input mutation](/authoring/guidelines/submission-tests/#input-mutation) and how to prevent users from abusing it to work around kata requirements. Since C does not have reference semantics, it might appear that C kata are not affected by this problem, but it's not completely true. While data is passed to user solution by value, it indeed cannot be easily modified by user solution. However when data is passed indirectly, by a pointer or as an array, it can be modified _even when it's marked as `const`_. Constness of a function argument can be forcefuly cast away by a user and then they would be able to modify values passed as `const T*` or as elements of `const T[]`. It's usually not a problem in "real world" C programming, but on Codewars, users can take advantage on vulnerable test suites and modify their behavior this way. After calling a user solution, tests should not rely on the state of such values and they should consider them as potentially modified by a user.
+
 
 ### Calling assertions
 
