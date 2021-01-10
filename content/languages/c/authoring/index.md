@@ -54,18 +54,18 @@ Some concepts don't always translate well to or from C. Because of this, some co
 
 ### Code style
 
-Unlike for example Python or Java, there's no single guide for C code style, or even a set of naming conventions, which would be widely adopted and agreed upon by C programmers. There are traditional naming conventions using `snake_case`, there are Win32 API naming conventions using `PascalCase`, there are GNU guidelines, Microsoft guidelines, Google guidelines, and some of them contradictory to each other. Just use whatever set of guidelines you like, but when you do, use it consistently.
+Unlike for example Python or Java, there's no single guide for C code style, or even a set of naming conventions, which would be widely adopted and agreed upon by C programmers. Traditional naming conventions are using `snake_case`, Win32 API naming conventions are using `PascalCase`, there are GNU guidelines, Microsoft guidelines, Google guidelines, and some of them contradictory to each other. Just use whatever set of guidelines you like, but when you do, use it consistently.
 
 ### Header files
 
-Not as much of a problem for C as it is for C++, but still, C authors often forget to include required header files, or just leave them out deliberately because "it works" even when some of the files are not included. It happens mostly due to following reasons:
-- Compiler provides implicit declaration of a function, when it's encountered in the code and was not declared. However, this behavior is not standard and is now deprecated. You need to explicitly include header files for library functions you use, or declare them in some other way.
-- Some header files include other header files indirectly, for example, file `foo.h` contains line `#include <bar.h>`, which might appear to make the explicit include for `bar.h` unnecessary. It's not true though, because the file `foo.h` might change one day, or might depend on some compiler settings or command line options, and after some changes to the cnfiguration of the C runner, the `bar.h` might be not included there anymore. That's why every file (i.e. code snippet) of a kata should explicitly include all required header files declaring functions used in it.
+Not as much of a problem for C as it is for C++, but still, C authors often forget to include required header files, or just leave them out deliberately because "it works" even when some of the files are not included. It happens mostly due to the following reasons:
+- The compiler provides an implicit declaration of a function, when it's encountered in the code and was not declared. However, this behavior is not standard and is now deprecated. You need to explicitly include header files for library functions you use or declare them in some other way.
+- Some header files include other header files indirectly, for example, file `foo.h` contains line `#include <bar.h>`, which might appear to make the explicit include for `bar.h` unnecessary. It's not true though, because the file `foo.h` might change one day, or might depend on some compiler settings or command line options, and after some changes to the configuration of the C runner, the `bar.h` might be not included there anymore. That's why every file (i.e. code snippet) of a kata should explicitly include all required header files declaring functions used in it.
 - Author might think that header files for the testing framework are included automatically by the code runner. It is not the case though, and test suites need to include `criterion/criterion.h` explicitly.
 
 ### Compilation warnings
 
-Compiler options related to warnings used by C runner are somewhat strict and require some discipline to get the code to compile cleanly. `-Wall` and `-Wextra` cause that warnings can be numerous, and some of them are very pedantic. However, code of C kata should still compile in a clean way, without any warnings logged to the console. Even when a warning does not cause any problem with tests, users get distracted by them and blame them for failing tests.
+Compiler options related to warnings used by C runner are somewhat strict and require some discipline to get the code to compile cleanly. `-Wall` and `-Wextra` cause that warnings can be numerous, and some of them are very pedantic. However, code of C kata should still compile cleanly, without any warnings logged to the console. Even when a warning does not cause any problem with tests, users get distracted by them and blame them for failing tests.
 
 
 ### Memory management
@@ -84,24 +84,24 @@ Possible ways of handling memory management are described in the [Memory Managem
 
 C kata use the [Criterion testing framework](/languages/c/criterion/) to implement and execute tests. Read its reference page to find out how to structure tests into groups and test cases, what assertions are available, etc.
 
-Criterion supports many features which can be very helpful, but (unfortunately) are not commonly used by C authors. It allows for parametrized tests, setting up additional data, test fixture setup and teardown, custom descriptions, etc. 
+Criterion supports many features that can be very helpful, but (unfortunately) are not commonly used by C authors. It allows for parameterized tests, setting up additional data, test fixture setup, teardown, custom descriptions, etc. 
 
 ### Test feedback
 
-You should notice that the report hooks used by Codewars test runner produce one test output entry per assertion, so the test output panel can get very noisy.
+You should notice that the report hooks used by the Codewars test runner produce one test output entry per assertion, so the test output panel can get very noisy.
 
 
 ### Random utilities
 
-Unlike some other languages, C does not provide too many means of generating random numbers which could be used to build random tests. `stdlib.h` header provides the `rand` function which, while being quite simple, satisfies majority of needs, but sometimes can be tricky to be used correctly.
+Unlike some other languages, C does not provide too many means of generating random numbers which could be used to build random tests. `stdlib.h` header provides the `rand` function which, while being quite simple, satisfies the majority of needs, but sometimes can be tricky to be used correctly.
 
-Before `rand` is called for the first time, it must be seeded with `srand`. A call to `srand` should be performed only once, in the setup phase of the random tests. `srand` usually uses current time as a seed, so authors need to include `time.h` before using `time` function.
+Before `rand` is called for the first time, it must be seeded with `srand`. A call to `srand` should be performed only once, in the setup phase of the random tests. `srand` usually uses the current time as a seed, so authors need to include `time.h` before using the `time` function.
 
-`rand` can return integers only up to `RAND_MAX`. There's no standard-compliant way to generate random values of types `unsigned int`, `long`, or `double`. Authors which would like to generate random values out of domain of `rand` have to craft them manually. _(TODO: create article with snippets with RNGs for types other than `int`)_
+`rand` can return integers only up to `RAND_MAX`. There's no standard-compliant way to generate random values of types `unsigned int`, `long`, or `double`. Authors who would like to generate random values out of the domain of `rand` have to craft them manually. _(TODO: create article with snippets with RNGs for types other than `int`)_
 
-Additionally, value of `RAND_MAX` might differ on different platforms, or even change. For current Codewars setup it's `2^32-1`, but there are some common platforms with `RAND_MAX` being as small as `2^16-1`. This makes the code using `rand` even less portable, and while portability might not be a big concern for Codewars kata, it could turn out to be an issue for users trying to reproduce random tests locally.
+Additionally, the value of `RAND_MAX` might differ on different platforms, or even change. For the current Codewars setup it's `2^32-1`, but there are some common platforms with `RAND_MAX` being as small as `2^16-1`. This makes the code using `rand` even less portable, and while portability might not be a big concern for Codewars kata, it could turn out to be an issue for users trying to reproduce random tests locally.
 
-An alternative to `rand` could be using random devices, like `/dev/urandom`. This way of generating random numbers could partially alleviate the issue of the `rand` being capped at `RAND_MAX`, but also could inflate amount of the bolierplate code and could cause additional problems with portability.
+An alternative to `rand` could be using random devices, like `/dev/urandom`. This way of generating random numbers could partially alleviate the issue of the `rand` being capped at `RAND_MAX`, but also could inflate the amount of the boilerplate code and could cause additional problems with portability.
 
 
 ### Reference solution
@@ -171,7 +171,7 @@ static void square_every_item_ref(double items[], int size)
     }
 }
 
-//custom comparer for floating point values
+//custom comparer for floating-point values
 static int cmp_double_fuzzy_equal(double* a, double* b) {
   double diff = *a - *b;
   return fabs(diff) < 1e-10 ? 0 : diff;
