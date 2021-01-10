@@ -43,16 +43,6 @@ C-specific paragraphs can be inserted with [language conditional rendering](/ref
 ~~~
 ```
 
-_TBD_
-
-Points needing particular attention:
-- memory management: show possible ways, common pitfalls, good practices
-- assertions: Criterion assertions are macros with poor default messages
-- bloated preloaded
-- compilation warnings
-- random utilities, `RAND_MAX`, `srand`
-
-
 ## Tasks and Requirements
 
 Some concepts don't always translate well to or from C. Because of this, some constructs should be avoided and some translations just shouldn't be done. Some high level languages, like Pyton or Javascript, reside on the exactly opposite end of the spectrum than C, and translating kata between them and C can result in signiicant differences in difficulty, requirements, and design of the solution.
@@ -90,88 +80,38 @@ Possible ways of handling memory management are described in the [Memory Managem
 
 ### Testing framework
 
-C kata use the [Criterion testing framework](/languages/c/criterion/) to implement and execute tests. You should read its reference page to find out how to structure tests into groups and test cases, what assertions are available, etc.
+C kata use the [Criterion testing framework](/languages/c/criterion/) to implement and execute tests. Read its reference page to find out how to structure tests into groups and test cases, what assertions are available, etc.
 
-<!--
-#### Dynamically generated test cases
+Criterion supports many features which can be very helpful, but (unfortunately) are not commonly used by C authors. It allows for parametrized tests, setting up additional data, test fixture setup and teardown, custom descriptions, etc. 
 
-It's possible to put functions decorated with `@test.it` in a loop and use them as a construct similar to parametrized test cases known from other testing frameworks, for example:
+### Test feedback
 
-```python
-@test.describe("Generated test cases")
-def tests_with_generated_test_cases()
-    test_cases = generate_test_cases()
-    for msg, input, expected in test_case:
-        @test.it(msg)
-        def _():
-            actual = user_solution(input)
-            test.assert_equals(actual, expected)
+You should notice that the report hooks used by Codewars test runnerproduce one test output entry per assertion, so the test output panel can get very noisy.
 
-```
-
-This technique is liked by authors familiar with testing frameworks that provide parametrized or generated test cases out of the box, like NUnit, or JUnit. However, some caution is needed when this approach is used. Test suites organized like this can become large and can flood the test output panel with many entries, making it unreadable or causing performance problems in client browsers.
-
-#### Decorated functions
-
-To create and present test output, the Python testing framework uses parameters of `@test.describe` and `@test.it` decorators, and ignores actual names of decorated functions. Since the names are often redundant with titles of `describe` or `it` sections, they can be replaced with some placeholder name, for example, `_`:
-
-```python
-@test.describe('Fixed tests')
-def _():
-
-    @test.it('Odd numbers'):
-    def _():
-        ...some assertions...
-
-    @test.it('Even numbers'):
-    def _():
-        ...some assertions...
-
-@test.describe('Random tests')
-def _():
-
-    @test.it('Small inputs'):
-    def _():
-        ...some assertions...
-
-    @test.it('Large inputs'):
-    def _():
-        ...some assertions...        
-```
-
-#### Test feedback
-
-You should notice that the Python testing framework produces one test output entry per assertion (or even more in [some special situations](/languages/python/codewars-test/#timeout-utility)), so the test output panel can get very noisy.
 
 ### Random utilities
 
-Python has a rich [random library](https://docs.python.org/3.8/library/random.html), which can be used to easily generate random integers in requested ranges, generate floating-point numbers, or sample and shuffle collections. Functions available there allow for very convenient construction of various random input generators.
+_ TBD_
 
-Some useful functions include:
-- [`random.randrange(stop)`](https://docs.python.org/3.8/library/random.html#random.randrange) - returns a randomly selected element from range `[0, stop)`.
-- [`random.randrange(start, stop[, step])`](https://docs.python.org/3.8/library/random.html#random.randrange) - returns a randomly selected element from a range equivalent to `range(start, stop, step)`.
-- [`random.randint(a, b)`](https://docs.python.org/3.8/library/random.html#random.randint) - returns a random integer `N` such that `a <= N <= b`.
-- [`random.random()`](https://docs.python.org/3.8/library/random.html#random.random) - returns the next random floating-point number in the range `[0.0, 1.0)`.
-- [`random.shuffle(x[, random])`](https://docs.python.org/3.8/library/random.html#random.shuffle) - shuffles the sequence `x` in place.
-- [`random.sample(population, k)`](https://docs.python.org/3.8/library/random.html#random.sample) - returns a `k` length list of unique elements chosen from the `population` sequence or set.
-- [`random.choices(population[, ...], k=1)`](https://docs.python.org/3.8/library/random.html#random.choices) - extracts `k` elements of the `population` (possibly outputting the same element several times).
+- `rand` and `srand`
+- `/dev/urandom`
+- `MAX_RAND`
 
-:::warning
-The Python runner is currently affected by a performance issue (reported as [codewars/runner#58](https://github.com/codewars/runner/issues/58)) which sometimes causes the generation of large amounts of random numbers to be noticeably slower. The majority of kata should not be affected by it in any significant way, but it can sometimes be a problem for performance tests generating large, random sets of data.
-See the linked issue for details and possible workarounds.
-:::
-
-### Additional packages
-
-The Codewars runner provides a set of preinstalled packages, which are available not only for users solving a kata, but can be also used by authors to build tests and generators of test cases. For example, `numpy` can be used to make the generation of matrices easier.
 
 ### Reference solution
 
-If the test suite happens to use a reference solution to calculate expected values (which [should be avoided](/authoring/guidelines/submission-tests/#reference-solution) when possible), or some kind of reference data like precalculated arrays, etc., it must not be possible for the user to redefine, overwrite or directly access its contents. To prevent this, it should be defined in a scope local to the testing function, a `it` or a `describe` block.
+If the test suite happens to use a reference solution to calculate expected values (which [should be avoided](/authoring/guidelines/submission-tests/#reference-solution) when possible), or some kind of reference data like precalculated arrays, etc., it must not be possible for the user to call it, redefine, overwrite or directly access its contents. To prevent this, it should be defined as `static` in the tests implementation file.
 
-The reference solution or data ___must not___ be defined in the top-level scope of the test suite or in the [Preloaded code](/authoring/guidelines/preloaded/).
+The reference solution or data ___must not___ be defined in the [Preloaded code](/authoring/guidelines/preloaded/).
+
+
+### Redeclaration of user solution
+
+Solution function should be redeclared in the file with submission tests. Such redeclaration prevents a compilation warning about implicitly declared functions, and additionally stops users from from tampering with the prototype of the solution function, for example to remove constness of parameters, or change types of parameters, etc.
 
 ### Calling assertions
+
+- assertions: Criterion assertions are macros with poor default messages
 
 The Python testing framework provides a set of useful [assertions](/languages/python/codewars-test/#assertions-1), but when used incorrectly, they can cause a series of problems:
 - Stacktraces of a crashing user solution can reveal details that should not be visible,
@@ -186,6 +126,12 @@ To avoid the above problems, calls to assertion functions should respect the fol
 - To avoid unexpected crashes in tests, it's recommended to perform some additional assertions before assuming that the answer returned by the user solution has some particular type, form, or value. For example, if the test suite sorts the returned list to verify its correctness, an explicit assertion should be added to check whether the returned object is actually a list, and not, for example, `None`.
 
 
+### Preloaded
+
+_TBD_
+- bloated preloaded
+
+<!--
 ## Example test suite
 
 Below you can find an example test suite that covers most of the common scenarios mentioned in this article. Note that it does not present all possible techniques, so actual test suites can use a different structure, as long as they keep to established conventions and do not violate authoring guidelines.
