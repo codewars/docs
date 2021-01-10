@@ -46,7 +46,7 @@ C-specific paragraphs can be inserted with [language conditional rendering](/ref
 ## Tasks and Requirements
 
 Some concepts don't always translate well to or from C. Because of this, some constructs should be avoided and some translations just shouldn't be done. Some high-level languages, like Python or JavasScript, reside on the exact opposite end of the spectrum than C, and translating kata between them and C can result in significant differences in difficulty, requirements, and design of the solution.
-- C is a language of much lower level than many other popular languages available on Codewars. For this reason, many kata, even if their task can be translated to C directly, can turn out much harder in C than in original language. There's many kata which were originally created as very easy and beginner friendly (for example 8 kyu). But after translating into C, and adding aspects like memory management, or two dimensional C arrays, etc. they are not so easy anymore, and newbies complain that kata ranked 8 kyu is too difficult for them while it should be an entry level task.  
+- C is a language of much lower level than many other popular languages available on Codewars. For this reason, many kata, even if their task can be translated to C directly, can turn out much harder in C than in original language. There's many kata which were originally created as very easy and beginner friendly (for example 8 kyu). But after translating into C, and adding aspects like memory management, or two dimensional C arrays, etc. they are not so easy anymore, and newbies complain that kata ranked 8 kyu is too difficult for them while it should be an entry level task.
 - C is statically typed, so any task which depends on dynamic typing can be difficult to translate into C, and attempts of forcing a C kata to reflect dynamically typed interface can lead to ideas which enforce a really bad design.
 - There's just a few additional libraries available for C runner, so almost everything has to be implemented manually by the author or the user. Kata which take advantage of additional packages installed for other languages become much more difficult in C.
 
@@ -73,6 +73,8 @@ Compiler options related to warnings used by C runner are somewhat strict and re
 Unlike many modern, high-level languages, C does not manage memory automatically. Manual memory management is a very vast and complex topic, with many possible ways of achieving the goal depending on a specific case, caveats, and pitfalls.
 
 Whenever a kata needs to return a string or an array, C authors tend to use the naive technique of allocating the memory in the solution function, and freeing it in the test suite. This approach mimics the behavior known from other languages where returning an array or object from inside of user solution is perfectly valid, but it's hardly ever a valid way of working with unmanaged memory.
+
+One of the consequences of non-managed memory is that it's strongly recommended to avoid requirement of returning string constants from C solution, especially when translating kata from other languages. Returning a string in other languages is not a problem, but in C it always rises questions of who and how should allocate it. Consider replacing the string with some simpler data type (eventually aliased with a `typedef`), and/or provide some symbolic constants for available values. For exmple, if for Python version the requirement would be to _Return string `'You won!'` if you won the game, `'You lost :('` if you were defeated, and `'It's a draw'` if there is no winner._, C should preferably use constants of `WON`, `LOST` and `DRAW`. If author decides to keep raw C-strings as elements of the kata interface, they should clearly specify required alloction scheme.
 
 Possible ways of handling memory management are described in the [Memory Management in C kata](/languages/c/authoring/memory-management-techniques/) article. But whichever approach is chosen, even the most obvious one, it should be described either in the kata description (preferrably in in a C-specific paragraph), or in the initial solution stub as a comment, and in sample tests as an example of a call to the solution.
 
@@ -131,6 +133,11 @@ To avoid the above problems, calls to assertion functions should respect the fol
 - Some additional attention should be paid to the order of parameters passed to assertion macros. It differs between various assertion libraries, and it happens to be quite often confused by authors, mixing up `actual` and `expected` in assertion messages. For the C testing framework, the order is `(actual, expected)`.
 - To avoid unexpected crashes in tests, it's recommended to perform some additional assertions before assuming that the answer returned by the user solution has some particular form, or size. For example, if the solution returns a pointer (possibly pointing to an array), an explicit assertion should be added to check whether the returned pointer is valid, and not, for example, `NULL`; the size of the returned array, potentially reported by an output parameter, should be verified before accessing an element which could turn out to be located outside of its bounds.
 - Default messages produced by assertion macros are confusing, so authors should provide custom messages for failed assertions.
+
+
+### Testability
+
+In C, not everything can be easily tested. It's not possible to reliably verify the size or bounds of returned buffer, or a correctness of returned pointer. It's difficult to test for conditions which result in a crash or undefined behavior. It cannot be reliably verified whether there's no memory leaks and if all allocated memory were correctly released. Sometimes the only way is to skip some checks or crash the tests.
 
 
 ## Preloaded
