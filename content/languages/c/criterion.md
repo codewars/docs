@@ -36,7 +36,7 @@ Test(add_test, should_add_integers, .description = "should add integers") {
 
 _TBD_
 
-[Assertions reference](https://criterion.readthedocs.io/en/master/assert.html) in Criterion documentation.
+[Assertions reference](https://criterion.readthedocs.io/en/master/assert.html) can be found in the Criterion documentation.
 
 - assert vs except
 - messages
