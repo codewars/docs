@@ -6,9 +6,9 @@ sidebar: authoring
 
 # Creating your first kata
 
-Okay, so you might have completed many (all?) of the published katas on Codewars. But... that's only half of the battle.
+Okay, so you might have completed many (all?) of the published kata on Codewars. But... that's only half of the battle.
 
-There is an obvious elephant in the room: Where do the katas come from? Obviously they didn't come out of nowhere like inside a stone or from a big bang, so clearly someone, or *something*, must have created the kata.
+There is an obvious elephant in the room: Where do the kata come from? Obviously they didn't come out of nowhere like inside a stone or from a big bang, so clearly someone, or *something*, must have created the kata.
 
 Creating a kata is a totally different kind of task from solving a kata. You might be able to solve a purple kata in under an hour, and still get flummoxed by the process of making a new kata. Being a good player doesn't always make you a good level maker, after all. What authors sometimes do not realize is the fact that creating a good quality kata is much harder than solving it.
 
@@ -45,12 +45,12 @@ To create a new kata, you need to earn the ["Create Kata" privilege](/references
 
 ## Kata Idea
 
-At the time of writing, there are already **over 6500** published kata, and almost 2500 beta kata. It's a vast red ocean out there - if you're still sticking to ideas like Fizzbuzz, Fibonacci numbers or Caesar/ROT cipher, it's pretty much `99.999999...%` chance that someone has done this before you.
+At the time of writing, there are already **over 6500** approved kata, and almost 2500 beta kata. It's a vast red ocean out there - if you're still sticking to ideas like Fizzbuzz, Fibonacci numbers or Caesar/ROT cipher, it's pretty much `99.999999...%` chance that someone has done this before you.
 
-This is bad because creating a kata about them again constitutes a **duplicate** kata, and we certainly don't want 100 Fizzbuzz katas out in the wild. When a duplicate is found it will be retired, which basically means it gets taken out of the kata catalog.
+This is bad because creating a kata about them again constitutes a **duplicate** kata, and we certainly don't want 100 Fizzbuzz kata out in the wild. When a duplicate is found it will be retired, which basically means it gets taken out of the kata catalog.
 
 
-### How to not step on the minefield of duplicate katas
+### How to not step on the minefield of duplicate kata
 
 
 #### Search for keywords to see if someone has done the idea before
@@ -59,7 +59,7 @@ As we all know, before you even engage your enemies, you need to send scouts for
 
 For example, while [Peano](https://www.codewars.com/kata/search/?q=peano) and [Church](https://www.codewars.com/kata/search/?q=church) numbers are definitely not easy, as the search results clearly shows, they've been done many times already.
 
-In a way, knowing the katas in the wild is very similar to knowing your enemies: you get to see how others write the same kata, other people's (sometimes) brilliant solution in these katas.
+In a way, knowing the kata in the wild is very similar to knowing your enemies: you get to see how others write the same kata, other people's (sometimes) brilliant solution in these kata.
 
 Then, maybe you can decide whether to retreat, or make a **harder** version of the kata as return if you feel the existing one is too lackluster/easy.
 
@@ -68,7 +68,7 @@ Then, maybe you can decide whether to retreat, or make a **harder** version of t
 
 If you find yourself worrying about hitting duplicates all the time, try to push yourself to think out-of-the-box. Don't worry, coming up with good ideas is hard! But if you can ensure that your ideas are always novel and original, you can be almost certain nobody will have taken the flag before you.
 
-It also has a side benefit of making people think that you're clever, which will be reflected on the [[satisfaction rating|Satisfaction Rating]].
+It also has a side benefit of making people think that you're clever, which will be reflected on the satisfaction rating.
 
 
 #### Solve more kata
@@ -76,7 +76,7 @@ It also has a side benefit of making people think that you're clever, which will
 Naturally, when you've already solved 10 fibonacci kata, solving another one will make you very nauseous, making you naturally allergic to duplicates ;-)
 
 
-#### Solve more katas (again)
+#### Solve more kata (again)
 
 While the minimum honor for creating a kata is merely 300 honor, if you try to create a kata with just 300 honor, it'll most likely inadvertently be bad.
 
@@ -87,7 +87,7 @@ Anyone can reach 300 honor in a very short time, from a few hours to a day or tw
 Solving more kata to gain more experience can help one significantly in the following aspects:
 
 - Getting more experienced will help you *understand* how hard your kata is, so that you can tune your kata to your desire easily.
-- As you train more, you tend to know what the most efficient solution for a kata is. This is crucial to performance and golf katas: you don't want to make a performance kata when you can only write sub-par solutions! You'll get pwned hard by veterans ;-)
+- As you train more, you tend to know what the most efficient solution for a kata is. This is crucial to performance and golf kata: you don't want to make a performance kata when you can only write sub-par solutions! You'll get pwned hard by veterans ;-)
 - Actually encountering kata issues and looking at comment sections will let you understand the common issues people will raise. Learn from history and don't make the same mistake again!
 - Looking at solutions (and more importantly, solution comment sections) will give you insight to what constitutes good practice
 - It also allows you to see how others write their tests. Writing good tests is **hard**, especially if your kata is also hard.
@@ -108,12 +108,6 @@ If you find that your kata is too long, mostly from these symptoms:
 
 you might want to break up your kata in separate parts if appropriate.
 
-Quoting power user @JohanWiltink's comment on one of the beta kata:
-
-> And, again, you're doing multiple unrelated things in one kata. Totally unrelated, neither of them trivial this time. What is the intent, what is the pointe of this kata?
->
-> (Please note: a pointe is not a point. I'm not implying this kata is pointless. If anything, it seems overpointed - in width, not in depth.)
-
 
 ## Setting up the kata
 
@@ -129,7 +123,7 @@ The name is used to uniquely identify a kata. You can be creative with the name 
 
 #### Discipline
 
-The discipline is the category that the kata belongs to. You should pick the category that best describes what the kata is intended to focus on. As of now there are four categories:
+The discipline is the category that the kata belongs to. You should pick the category that best describes what the kata is intended to focus on. As of now there are five categories:
 
 - Fundamentals - Focuses on core language and API knowledge.
 - Algorithms - Focuses on the logic required to complete the task.
@@ -157,13 +151,13 @@ You can check the list of [privileges](/references/gamification/privileges/#priv
 
 ### Description
 
-The description field is used to provide instructions to the users who will be training on the kata. This field recognizes [Github flavored markdown](https://docs.codewars.com/references/markdown/) with a set of [Codewars extensions](https://docs.codewars.com/references/markdown/extensions/). You can use the `Preview` tab to see how it will look like when presented to users.
+The description field is used to provide instructions to the users who will be training on the kata. This field recognizes [Github flavored markdown](/references/markdown/) with a set of [Codewars extensions](/references/markdown/extensions/). You can use the `Preview` tab to see how it will look like when presented to users.
 
-Have you encountered that feeling when you're met with a requirement you can't understand because it's poorly and inadequately written, and you still have to fulfill the requirement? Don't let yourself be the guy who wrote this. If you ended up conjuring such hot garbage, everyone will just stay 10 miles away from you and your katas, and nobody will finish them at all.
+Have you encountered that feeling when you're met with a requirement you can't understand because it's poorly and inadequately written, and you still have to fulfill the requirement? Don't let yourself be the one who wrote that. If you ended up conjuring such hot garbage, everyone will just stay 10 miles away from you and your kata, and nobody will finish them at all.
 
 Fortunately, if your kata description is not very good, people will be eager to point this out in the comments, so you have more than enough chances to fix them.
 
-Writing good descriptions is a difficult task, and you should refer to ["Writing a Kata Description" guidelines](https://docs.codewars.com/authoring/guidelines/description/) to ensure that your description is of sufficient quality.
+Writing good descriptions is a difficult task, and you should refer to ["Writing a Kata Description" guidelines](/authoring/guidelines/description/) to ensure that your description is of sufficient quality.
 
 
 ### Code Snippets
@@ -181,13 +175,12 @@ You need to provide a solution to your own kata, to prove that it can be solved 
 
 Initial solution is what users are provided with when they start training on your kata. The way in which you set up your initial solution code will depend heavily on the discipline that you have selected. For bug and refactor disciplines you will end up needing to include an almost working or already fully working solution within this block. For fundamentals and algorithm disciplines you will likely only include skeleton code, such as an empty function/method or some other code that has gaps which need to be filled in. Sometimes you may just want to include some comments to help get the user started, but no actual code.
 
-However, imagine the following scenario (assuming a statically typed language): you train on a Kata that requires you to implement multiple functions, but the Initial Solution does not give you the relevant function signatures and hence fails to compile. You frantically read through the Kata description and Sample Test Cases to figure out the function signatures you need to add: the name of each function, the number of arguments to each function, the type of each argument, the return type of the function ... After fumbling with the Initial Solution for a full 15 minutes, you finally get it to compile. _Now_ you can actually focus on the task at hand. Not cool, right?
+However, imagine the following scenario (assuming a statically typed language): you train on a kata that requires you to implement multiple functions, but the Initial Solution does not give you the relevant function signatures and hence fails to compile. You frantically read through the kata description and the sample test cases to figure out the function signatures you need to add: the name of each function, the number of arguments to each function, the type of each argument, the return type of the function ... After fumbling with the initial solution for a full 15 minutes, you finally get it to compile. _Now_ you can actually focus on the task at hand. Not cool, right?
 
-_Unless_ the focus of your Kata is debugging (and how often do you encounter debugging Kata that are even remotely enjoyable?) or your Kata involves some deep C++ compile-time metaprogramming where 50% of the challenge itself is to make the code compile, you most certainly do not want the solver to waste their precious time fixing the Initial Solution just to get it to compile. The Initial Solution should provide the solver with a dummy implementation that "works" out of the box (possibly with runtime errors) such that (s)he can start replacing the dummy implementations with his / her own code straight away. **It is a Kata issue if the Initial Solution fails to compile, especially if it introduces unnecessary overhead for the solver.**
+_Unless_ the focus of your kata is debugging or your kata involves some deep C++ compile-time metaprogramming where 50% of the challenge itself is to make the code compile, you most certainly do not want the solver to waste their precious time fixing the initial solution just to get it to compile. The initial solution should provide the solver with a dummy implementation that "works" out of the box (possibly with runtime errors) such that they can start replacing the dummy implementations with their own code straight away. **It is a kata issue if the initial solution fails to compile, especially if it introduces unnecessary overhead for the solver.**
 
-Note that similar principles apply to interpreted languages (e.g. JavaScript, Python, Ruby): the Initial Solution should not contain syntax errors and / or (top-level) reference errors which may prevent the solver from getting started with the task immediately.
+Note that similar principles apply to interpreted languages (e.g. JavaScript, Python, Ruby): the initial solution should not contain syntax errors and / or (top-level) reference errors which may prevent the solver from getting started with the task immediately.
 
-The initial solution block is required so you will have to include something (at the very least some comments) in order for the kata to be able to be published.
 
 #### Preloaded
 
@@ -234,7 +227,7 @@ Writing good test suites is very difficult, often the most difficult part of cre
 
 Example test cases is a small set of tests which the user can see and modify while working on their solution. These are some basic test cases that users will see when they load the kata. Sample tests are written in the same way as submission tests, using the testing framework set up for your language.
 
-Except in circumstances where providing sample tests to the user would spoil the kata (such as [Defuse the bombs](https://www.codewars.com/kata/defuse-the-bombs/)), they are absolutely **required** as users can get an idea of how the solution is called and tested. You should include a few tests to get someone started, though of course if you're lazy you can just copy over the fixed assertions in your submission tests to serve as the sample tests. Just remember *not* to copy your reference solution there as well. **It is a Kata issue if there are no sample tests** unless strong justification can be provided against them for a particular Kata.
+Except in circumstances where providing sample tests to the user would spoil the kata (such as [Defuse the bombs](https://www.codewars.com/kata/defuse-the-bombs/)), they are absolutely **required** as users can get an idea of how the solution is called and tested. You should include a few tests to get someone started, though of course if you're lazy you can just copy over the fixed assertions in your submission tests to serve as the sample tests. Just remember *not* to copy your reference solution there as well. **It is a kata issue if there are no sample tests** unless strong justification can be provided against them for a particular kata.
 
 Since sample tests can significantly impact user experience of a kata, they have a dedicated set of [sample tests authoring guidelines](/authoring/guidelines/sample-tests/).
 
@@ -254,7 +247,7 @@ The next step would be to read through [authoring guidelines](/authoring/guideli
 
 ### Ask for a review of your draft
 
-Drafts of kata cannot be found and searched for, but can be accessed by other users with direct links. You can share the link to your not yet published kata with others, and they will be able to read the description, train on the kata, and provide some feedback, before getting a chance to downvote it. Sharing a link to a draft is a very good vay to get quick feedback about the most obvious problems.
+Drafts of kata cannot be found and searched for, but can be accessed by other users with direct links. You can share the link to your not yet published kata with others, and they will be able to read the description, train on the kata, and provide some feedback, before getting a chance to downvote it. Sharing a link to a draft is a very good way to get quick feedback about the most obvious problems.
 
 
 ## After publishing
