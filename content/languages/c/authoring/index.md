@@ -268,7 +268,7 @@ Test(random_tests, large_arrays) {
   for(int i=0; i<10; ++i) {
     
     //generate test cases
-    int array_size = rand() % 1000 + 1;
+    int array_size = rand() % 200 + 801;
     fill_random_array(array, array_size);
     
     //since original array is no used after tests, it's enough to create only one copy
