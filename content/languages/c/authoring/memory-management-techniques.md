@@ -18,6 +18,7 @@ sidebar: "language:c"
 In a vast majority of cases when a kata requires the solution to allocate memory, authors choose the naive approach of allocating the memory in the solution, and releasing it with `free` in the test suite after performing all necessary assertions:
 
 Solution:
+
 ```c
 //get all prime numbers less than upto
 int* get_primes(int upto, int* size) {
@@ -30,6 +31,7 @@ int* get_primes(int upto, int* size) {
 ```
 
 Test suite:
+
 ```c
 Test(fixed_tests, should_return_2_and_3_for_4) {
     
