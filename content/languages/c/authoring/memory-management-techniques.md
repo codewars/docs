@@ -6,12 +6,21 @@ sidebar: "language:c"
 
 # Memory Management in C kata
 
+_TBD: intro_
+
+<!--
 - SRP
 - strdup and asprintf are nonstandard
-- structures vs output params
 - avoid string constants, use named symbols
+-->
+
+
+It often happens that the solution function has to accept and return more values than just these related to the kata task itself. There can be more parameters required for tracking the memory, sizes of allocated buffers, statuses, etc. Depending on exact requirements, these parameters can be passed in and returned as separate function arguments, or can be packed together into some kind of structure. Examples in this article assume the former, but authors are free to decide otherwise.
+
 
 ## Arrays and strings
+
+Since C-strings and arrays of other types are similar from the perspective of memory management, this article uses examples of integer arrays. However most of the techniques presented here applies equally to handling memory holding integers, floats, characters, zero-terminated or not.
 
 
 ### Naive approach: `malloc` in the solution and `free` in tests
@@ -65,7 +74,7 @@ One set of possible techniques assumes that the caller (i.e. the test suite) is 
 The biggest problem with this philosophy is that the test suite does not always know how much memory the solution would need to fit all the requested results in. But there are a few possible ways to resolve this issue.
 
 
-#### When the size is known upfront
+#### When the size is known upfront: use preallocated buffer
 
 Sometimes it's perfectly known how large the result will be before the solution is called. For example, if the test suite asks to generate `n` Fibonacci numbers, it means that the resulting array needs to have the size of at least `n`. Sometimes the exact size is not known exactly, but it's possible to accurately estimate it's upper bound: for example, a function which removes punctuation from a string needs to work on a buffer at least as large as an input string, but the result can turn out to be a bit smaller. In such cases, the test suite can allocate the buffer which would be big enough to keep the result, and pass it to the solution function:
 
@@ -115,7 +124,7 @@ Test(random_tests, large_inputs) {
 ```
 
 
-#### Query for the size, and then allocate
+#### When the size is not known, but is easy to calculate: ask and allocate
 
 Another possible approach is to ask user to implement _two_ functions: one which would return the size needed to fit the result, and another one to perform actual operation. For example:
 
@@ -191,7 +200,7 @@ Test(random_tests, large_inputs) {
 This approach is used when the size of the answer cannot be easily inferred by the test suite, but can be efficiently calculated by the user, potentially without the overhead of calculating the actual solution.
 
 
-#### Assume (or guess) the initial size and reallocate if too small
+#### When the size is not known, and difficult to calculate: assume (or guess) the initial size and reallocate if too small
 
 This approach is a combination of the two above. It has a somewhat complex interface, but allows for a performance compromise when the size of the result is not known upfront, and cannot be efficiently estimated without performing actual calculations. General scheme is that the test suite passes in some preallocated buffer, and when solution determines that the buffer is too small, it reports an error. The tests can use some strategy to grow the buffer and retry the solution. When the call to solution succeeds, it fills the buffer with the result and reports its size.
 
@@ -199,16 +208,9 @@ Kata task:
 
 > Given an interer `n > 1`, calculate Fibonacci numbers up to `n`.
 
-Preloaded:
-
-```c
-typedef enum EStatus {OK, BUFFER_TOO_SMALL} Status;
-```
-
 Solution:
 
 ```c
-#include <stdio.h>
 
 typedef enum EStatus {OK = 0, BUFFER_TOO_SMALL} Status;
 
@@ -285,17 +287,21 @@ Test(random_tests, large_inputs) {
         
         //when the solution concludes that the buffer is too small,
         //resize it and call the solution once again
+        int retries = 0;
         while(status == BUFFER_TOO_SMALL) {
             array_size *= 2;
             array = realloc(array, sizeof(int) * array_size);
             status = calculate_fibonaccis(upto, array, array_size, &calculated_count);
+
+            if(retries++ > MAX_RETRIES) {
+                //... protect agains ill-behaving solutions which are not able to get the correct status
+            }
         }
         
         //You can perform assertions on the status and returned size here, or
         //you can create a separate suite(s) just to test them separately
 
         //...perform assertions, verify correctness of returned numbers...
-
     }
 
     //release the memory after the test
@@ -306,14 +312,19 @@ Test(random_tests, large_inputs) {
 
 ### Memory managed by the solution
 
+Opposite of memory managed by the test suite is the approach of pushing the responsibility to the user. This way, tests do not need to worry about problematic aspects of memory management, kata authors give freedom of implementation to users, and can reduce the boilerplate required to implement memory management.
+
+
 #### Symmetric functions for allocation and deallocation
 
-Two functions: solution with allocation, deallocation. Bookkeeping information managed by user or passed as additional `void*`
+This idea basically boils down to asking users to provide their equivalents of allocation and deallocation functions. Solution function is responsible not only for solving the task, but also for allocation of the memory, and storing of book-keeping information. Clean-up function is responsible for releasing resources.
+
+There's many possible ways of implementing this approach, and it usually ends up being similar to the [naive approach](#naive-approach-malloc-in-the-solution-and-free-in-tests) described in the beginning. As it is very useful for more complex memory structures, a couple of examples can be found in the section on [Two-dimensional arrays](#two-dimensional-arrays).
 
 
 ## Two-dimensional arrays
 
-- TOC + N+1 allocations
+- TOC + N allocations
 - Flat
 - TOC + Flat
 - TOC: size vs sentinel terminator
