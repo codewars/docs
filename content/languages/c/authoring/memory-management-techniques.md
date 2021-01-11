@@ -115,14 +115,92 @@ Test(random_tests, large_inputs) {
 ```
 
 
+#### Query for the size, and then allocate
 
-#### two functions: get size, allocate in tests, run solution
-#### one function: accept buffer+size, return retsult or error and required size
+One possible approach is to ask user to implement _two_ functions: one which would return the size needed to fit the result, and another one to perform actual operation. For example:
+
+Kata task:
+
+> Given a positive integer `n`, return all terms of `n` top rows of Pascal's triangle, row by row, flattened into a single array.
+
+Solution:
+
+```c
+//Function which counts amount of terms to be returned
+int count_elements_of_pascal_triangle(int rows) {
+    return rows * (rows + 1) / 2;
+}
+
+//Function performing actual calculations
+void get_elements_of_pascal_triangle(int rows, int elements[]) {
+    //...calculate elements of Pascal's triangle and store them in elements array
+}
+```
+
+Tests:
+
+```c
+Test(fixed_tests, should_work_for_3) {
+
+    int rows = 3;
+    
+    //array allocated on stack,
+    //top three rows have 6 terms
+    int terms[6]; 
+
+    //pass the array to the function, and expect
+    //it to be filled with the result
+    get_elements_of_pascal_triangle(3, terms);
+
+    //...perform assertions, verify correctness of returned numbers...
+
+    //no need to deallocate the array
+}
+
+Test(random_tests, large_inputs) {
+
+    const int MAX_TEST = 1000;
+
+    //ten random tests
+    for(int i=0; i<10; ++i) {
+
+        //randomize the input
+        int rows = rand() % MAX_TEST + 1;
+
+        //query the solution for required size of the answer
+        int terms_count = count_elements_of_pascal_triangle(rows);
+
+        //You can perform assertions on the returned size here, or
+        //you can create a separate suite just to test the
+        //count_elements_of_pascal_triangle function
+
+        //dynamically allocate an array large enough to fit the answer
+        int* array = malloc(sizeof(int) * terms_count);
+
+        //use the allocated array when calling the user's solution
+        get_elements_of_pascal_triangle(rows, array);
+
+        //...perform assertions, verify correctness of returned numbers...
+
+        //release the memory after the test
+        free(array);
+    }
+}
+```
+
+This approach is used when the size of the answer cannot be easily inferred by the test suite, but can be efficiently calculated by the user, potentially without the overhead of calculating the actual solution.
+
+
+#### Guess the size and reallocate if too small
+
+
 
 
 ### Memory managed by the solution
 
-#### two functions: solution with allocation, deallocation. Bookkeeping information managed by user or passed as additional `void*`
+#### Symmetric functions for allocation and deallocation
+
+Two functions: solution with allocation, deallocation. Bookkeeping information managed by user or passed as additional `void*`
 
 
 ## Two-dimensional arrays
