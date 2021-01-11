@@ -9,6 +9,7 @@ sidebar: "language:c"
 - SRP
 - strdup and asprintf are nonstandard
 - structures vs output params
+- avoid string constants, use named symbols
 
 ## Arrays and strings
 
@@ -53,18 +54,23 @@ Test(fixed_tests, should_return_2_and_3_for_4) {
 This approach mimics the behavior of higher level languages, where functions are able to allocate and return arrays without problems. It seems a natural way for many authors, but, sometimes surplrisingly for them, it's often a bad one. It's often bad from the design point of view, but, even worse, in production setups it can be straight invalid and can lead to crashes.
 
 
-
+### Memory managed by tests
 
 - pass in a preallocated buffer (use size hints if possible)
 - two functions: get size, allocate in tests, run solution
-- two functions: solution with allocation, deallocation. Bookkeeping information managed by user or passed as additional `void*`
 - one function: accept buffer+size, return retsult or error and required size
-- avoid string constants, use named symbols
-- reporting size:output param, structure, sentinel teminators
+
+
+### Memory managed by the solution
+
+- two functions: solution with allocation, deallocation. Bookkeeping information managed by user or passed as additional `void*`
 
 
 ## Two-dimensional arrays
 
-- N+1 allocations
+- TOC + N+1 allocations
 - Flat
 - TOC + Flat
+- TOC: size vs sentinel terminator
+
+
