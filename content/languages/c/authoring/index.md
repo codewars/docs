@@ -99,7 +99,7 @@ Before `rand` is called for the first time, it must be seeded with `srand`. A ca
 
 `rand` can return integers only up to `RAND_MAX`. There's no standard-compliant way to generate random values of types `unsigned int`, `long`, or `double`. Authors who would like to generate random values out of the domain of `rand` have to craft them manually. _(TODO: create article with snippets with RNGs for types other than `int`)_
 
-Additionally, the value of `RAND_MAX` might differ on different platforms, or even change. For the current Codewars setup it's `2^32-1`, but there are some common platforms with `RAND_MAX` being as small as `2^16-1`. This makes the code using `rand` even less portable, and while portability might not be a big concern for Codewars kata, it could turn out to be an issue for users trying to reproduce random tests locally.
+Additionally, the value of `RAND_MAX` might differ on different platforms, or even change. For the current Codewars setup it's `2^31-1`, but there are some common platforms with `RAND_MAX` being as small as `2^15-1`. This makes the code using `rand` even less portable, and while portability might not be a big concern for Codewars kata, it could turn out to be an issue for users trying to reproduce random tests locally.
 
 An alternative to `rand` could be using random devices, like `/dev/urandom`. This way of generating random numbers could partially alleviate the issue of the `rand` being capped at `RAND_MAX`, but also could inflate the amount of the boilerplate code and could cause additional problems with portability.
 
