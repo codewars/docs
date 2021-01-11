@@ -117,7 +117,7 @@ Test(random_tests, large_inputs) {
 
 #### Query for the size, and then allocate
 
-One possible approach is to ask user to implement _two_ functions: one which would return the size needed to fit the result, and another one to perform actual operation. For example:
+Another possible approach is to ask user to implement _two_ functions: one which would return the size needed to fit the result, and another one to perform actual operation. For example:
 
 Kata task:
 
@@ -191,9 +191,117 @@ Test(random_tests, large_inputs) {
 This approach is used when the size of the answer cannot be easily inferred by the test suite, but can be efficiently calculated by the user, potentially without the overhead of calculating the actual solution.
 
 
-#### Guess the size and reallocate if too small
+#### Assume (or guess) the initial size and reallocate if too small
 
+This approach is a combination of the two above. It has a somewhat complex interface, but allows for a performance compromise when the size of the result is not known upfront, and cannot be efficiently estimated without performing actual calculations. General scheme is that the test suite passes in some preallocated buffer, and when solution determines that the buffer is too small, it reports an error. The tests can use some strategy to grow the buffer and retry the solution. When the call to solution succeeds, it fills the buffer with the result and reports its size.
 
+Kata task:
+
+> Given an interer `n > 1`, calculate Fibonacci numbers up to `n`.
+
+Preloaded:
+
+```c
+typedef enum EStatus {OK, BUFFER_TOO_SMALL} Status;
+```
+
+Solution:
+
+```c
+#include <stdio.h>
+
+typedef enum EStatus {OK = 0, BUFFER_TOO_SMALL} Status;
+
+Status calculate_fibonaccis(int upto, int* array, int array_size, int* calculated_count) {
+
+    *calculated_count = 0;
+  
+    if(array_size < 3) return BUFFER_TOO_SMALL;
+    array[0] = 0;
+    array[1] = 1;
+
+    *calculated_count = 2;
+    for(int i=2; ; ++i, ++*calculated_count) {
+      
+        int fib = array[i-1] + array[i-2];
+        if(fib > upto)
+            break;
+
+        if(*calculated_count < array_size)
+            array[*calculated_count] = fib;
+        else
+            return BUFFER_TOO_SMALL;
+    }
+
+    return OK;
+}
+```
+
+Tests:
+
+```c
+typedef enum EStatus {OK=0, BUFFER_TOO_SMALL} Status;
+
+Status calculate_fibonaccis(int upto, int* array, int array_size, int* calculated_count);
+
+Test(fixed_tests, should_work_for_7) {
+
+    int upto = 7;
+    
+    //array allocated on stack, large enough to hold many numbers
+    int terms[20]; 
+    int size = 20;
+    int calculated_count;
+
+    //pass the array to the function, and expect it to be filled with the result
+    Status status = calculate_fibonaccis(upto, terms, size, &calculated_count);
+
+    //assert that status = OK
+    //assert that calculated_count = 6
+    //assert that elements are 0,1,1,2,3,5
+
+    //no need to deallocate the array
+}
+
+Test(random_tests, large_inputs) {
+
+    const int MAX_TEST = 1000;
+
+    //initially allocated array, will grow if necessary
+    int array_size = 20;
+    int* array = malloc(sizeof(int) * array_size);
+
+    //ten random tests
+    for(int i=0; i<10; ++i) {
+
+        //randomize the input
+        int upto = rand() % MAX_TEST + 5;
+        
+
+        int calculated_count;
+        
+        //call the user's solution and pass the initially allocated array
+        Status status = calculate_fibonaccis(upto, array, array_size, &calculated_count);
+        
+        //when the solution concludes that the buffer is too small,
+        //resize it and call the solution once again
+        while(status == BUFFER_TOO_SMALL) {
+            array_size *= 2;
+            array = realloc(array, sizeof(int) * array_size);
+            status = calculate_fibonaccis(upto, array, array_size, &calculated_count);
+        }
+        
+        //You can perform assertions on the status and returned size here, or
+        //you can create a separate suite(s) just to test them separately
+
+        //...perform assertions, verify correctness of returned numbers...
+
+    }
+
+    //release the memory after the test
+    free(array);
+}
+```
 
 
 ### Memory managed by the solution
