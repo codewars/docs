@@ -6,7 +6,7 @@ sidebar: "language:c"
 
 # C: creating and translating a kata
 
-This article is meant as help for kata authors and translators who would like to create new content in C. It attempts to explain how to create and organize things in a way conforming to [authoring guidelines](/authoring/guidelines/), shows the most common pitfalls and how to avoid them.
+This article is meant for kata authors and translators who would like to create new content in C. It attempts to explain how to create and organize things in a way conforming to [authoring guidelines](/authoring/guidelines/), shows the most common pitfalls and how to avoid them.
 
 This article is not a standalone tutorial on creating kata or translations. It's meant to be a complementary, C-specific part of a more general set of HOWTOs and guidelines related to [content authoring](/authoring/). If you are going to create a C translation, or a new C kata from scratch, please make yourself familiar with the aforementioned documents related to authoring in general first. 
 
@@ -48,24 +48,24 @@ C-specific paragraphs can be inserted with [language conditional rendering](/ref
 Some concepts don't always translate well to or from C. Because of this, some constructs should be avoided and some translations just shouldn't be done. Some high-level languages, like Python or JavaScript, reside on the exact opposite end of the spectrum than C, and translating kata between them and C can result in significant differences in difficulty, requirements, and design of the solution.
 - C is much lower-level than many other popular languages available on Codewars. For this reason, many kata, even if their task can be translated to C directly, can turn out much harder in C than in the original language. There are many kata that were originally created as very easy and beginner-friendly (for example 8 kyu). But after translating into C, and adding aspects like memory management, or two dimensional C arrays, etc. they are not so easy anymore, and newbies complain that kata ranked 8 kyu is too difficult for them while it should be an entry-level task.
 - C is statically typed, so any task that depends on dynamic typing can be difficult to translate into C, and attempts of forcing a C kata to reflect a dynamically typed interface can lead to ideas that enforce a really bad design.
-- There are just a few additional libraries available for C runner, so almost everything has to be implemented manually by the author or the user. Kata that take advantage of additional packages installed for other languages become much more difficult in C.
+- There are just a few additional libraries available for the C runner, so almost everything has to be implemented manually by the author or the user. Kata that take advantage of additional packages installed for other languages become much more difficult in C.
 
 ## Coding
 
 ### Code style
 
-Unlike for example Python or Java, there's no single guide for C code style, or even a set of naming conventions, which would be widely adopted and agreed upon by C programmers. Traditional naming conventions are using `snake_case`, Win32 API naming conventions are using `PascalCase`, there are GNU guidelines, Microsoft guidelines, Google guidelines, and some of them contradictory to each other. Just use whatever set of guidelines you like, but when you do, use it consistently.
+Unlike for example Python or Java, there's no single guide for C code style, or even a set of naming conventions, which would be widely adopted and agreed upon by C programmers. Traditional naming conventions are using `snake_case`, Win32 API naming conventions are using `PascalCase`, there are GNU guidelines, Microsoft guidelines, Google guidelines, and some of them contradict each other. Just use whatever set of guidelines you like, but when you do, use it consistently.
 
 ### Header files
 
 Not as much of a problem for C as it is for C++, but still, C authors often forget to include required header files, or just leave them out deliberately because "it works" even when some of the files are not included. It happens mostly due to the following reasons:
 - The compiler provides an implicit declaration of a function, when it's encountered in the code and was not declared. However, this behavior is not standard and is now deprecated. You need to explicitly include header files for library functions you use or declare them in some other way.
 - Some header files include other header files indirectly, for example, file `foo.h` contains line `#include <bar.h>`, which might appear to make the explicit include for `bar.h` unnecessary. It's not true though, because the file `foo.h` might change one day, or might depend on some compiler settings or command line options, and after some changes to the configuration of the C runner, the `bar.h` might be not included there anymore. That's why every file (i.e. code snippet) of a kata should explicitly include all required header files declaring functions used in it.
-- Author might think that header files for the testing framework are included automatically by the code runner. It is not the case though, and test suites need to include `criterion/criterion.h` explicitly.
+- The author might think that header files for the testing framework are included automatically by the code runner. That is not the case though, and test suites need to include `criterion/criterion.h` explicitly.
 
 ### Compilation warnings
 
-Compiler options related to warnings used by C runner are somewhat strict and require some discipline to get the code to compile cleanly. `-Wall` and `-Wextra` cause that warnings can be numerous, and some of them are very pedantic. However, code of C kata should still compile cleanly, without any warnings logged to the console. Even when a warning does not cause any problem with tests, users get distracted by them and blame them for failing tests.
+Compiler options related to warnings used by the C runner are somewhat strict and require some discipline to get the code to compile cleanly. `-Wall` and `-Wextra` may cause numerous warnings and some of them are very pedantic. However, code of C kata should still compile cleanly, without any warnings logged to the console. Even when a warning does not cause any problem with tests, users get distracted by them and blame them for failing tests.
 
 
 ### Memory management
@@ -74,9 +74,9 @@ Unlike many modern, high-level languages, C does not manage memory automatically
 
 Whenever a kata needs to return a string or an array, C authors tend to use the naive technique of allocating the memory in the solution function, and freeing it in the test suite. This approach mimics the behavior known from other languages where returning an array or object from inside of user solution is perfectly valid, but it's hardly ever a valid way of working with unmanaged memory.
 
-One of the consequences of non-managed memory is that it's strongly recommended to avoid requirement of returning string constants from C solution, especially when translating kata from other languages. Returning a string in other languages is not a problem, but in C it always rises questions of who and how should allocate it. Consider replacing the string with some simpler data type (eventually aliased with a `typedef`), and/or provide some symbolic constants for available values. For exmple, if for Python version the requirement would be to _Return string `'You won!'` if you won the game, `'You lost :('` if you were defeated, and `'It's a draw'` if there is no winner._, C should preferably use constants of `WON`, `LOST` and `DRAW`. If author decides to keep raw C-strings as elements of the kata interface, they should clearly specify required alloction scheme.
+One of the consequences of unmanaged memory is that it's strongly recommended against returning string constants from C functions, especially when translating kata from other languages. Returning a string in other languages is not a problem, but in C it always raises questions of who should allocate it and how it should be allocated. Consider replacing the string with some simpler data type (eventually aliased with a `typedef`), and/or provide some symbolic constants for available values. For example, if the requirement for the Python version is to _Return the string `'You won!'` if you won the game, `'You lost :('` if you were defeated, and `'It's a draw'` if there is no winner._, C should preferably use the constants `WON`, `LOST` and `DRAW`. If the author decides to keep raw C-strings as elements of the kata interface, they should clearly specify the required allocation scheme.
 
-Possible ways of handling memory management are described in the [Memory Management in C kata](/languages/c/authoring/memory-management-techniques/) article. But whichever approach is chosen, even the most obvious one, it should be described either in the kata description (preferrably in in a C-specific paragraph), or in the initial solution stub as a comment, and in sample tests as an example of a call to the solution.
+Possible ways of handling memory management are described in the [Memory Management in C kata](/languages/c/authoring/memory-management-techniques/) article. But whichever approach is chosen, even the most obvious one, it should be described either in the kata description (preferably in in a C-specific paragraph), or in the initial solution stub as a comment, and in sample tests as an example of a call to the solution.
 
 ## Tests
 
@@ -113,7 +113,7 @@ The reference solution or data ___must not___ be defined in the [Preloaded code]
 
 ### Redeclaration of user solution
 
-Solution function should be redeclared in the file with submission tests. Such redeclaration prevents a compilation warning about implicitly declared functions, and additionally stops users from tampering with the prototype of the solution function, for example, to remove constness of parameters, or change types of parameters, etc.
+The solution function should be re-declared in the file with submission tests. Such re-declaration prevents a compilation warning about implicitly declared functions, and additionally stops users from tampering with the prototype of the solution function, for example, to remove const-ness of parameters, or change types of parameters, etc.
 
 ### Input mutation
 
@@ -122,7 +122,7 @@ General guidelines for submission tests contain a section related to [input muta
 
 ### Calling assertions
 
-Criterion testing framework provides a set of useful [assertions](/languages/c/criterion/#assertions), but when used incorrectly, they can cause a series of problems:
+Criterion provides a set of useful [assertions](/languages/c/criterion/#assertions), but when used incorrectly, they can cause a series of problems:
 - Stacktraces of a crashing user solution can reveal details that should not be visible,
 - Use of an assertion not suitable for the given case may lead to incorrect test results,
 - Incorrectly used assertions may produce confusing or unhelpful messages.
@@ -137,7 +137,7 @@ To avoid the above problems, calls to assertion functions should respect the fol
 
 ### Testability
 
-In C, not everything can be easily tested. It's not possible to reliably verify the size or bounds of returned buffer, or a correctness of returned pointer. It's difficult to test for conditions which result in a crash or undefined behavior. It cannot be reliably verified whether there's no memory leaks and if all allocated memory were correctly released. Sometimes the only way is to skip some checks or crash the tests.
+In C, not everything can be easily tested. It's not possible to reliably verify the size or bounds of a returned buffer, or the validity of a returned pointer. It's difficult to test for conditions which result in a crash or undefined behavior. It cannot be reliably verified whether there's no memory leaks and if all allocated memory were correctly released. Sometimes the only way is to skip some checks or crash the tests.
 
 
 ## Preloaded
