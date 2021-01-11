@@ -162,11 +162,21 @@ The Codewars runner provides a set of preinstalled packages, which are available
 
 ### Reference solution
 
-_TODO_
+If the test suite happens to use a reference solution to calculate expected values (which [should be avoided](/authoring/guidelines/submission-tests/#reference-solution) when possible), or some kind of reference data like precalculated arrays, etc., it must not be possible for the user to redefine, overwrite or directly access its contents. To prevent this, it should be defined in a scope local to the testing function, an `it` or `describe` block.
+
+The reference solution or data ___must not___ be defined in the top-level scope of the test suite or in the [Preloaded code](/authoring/guidelines/preloaded/).
 
 ### Calling assertions
 
-_TODO_
+Chai provides a large set of useful [assertions](https://www.chaijs.com/api/assert/), but when used incorrectly, they can cause a series of problems:
+- Use of an assertion not suitable for the given case may lead to incorrect test results,
+- Incorrectly used assertions may produce confusing or unhelpful messages.
+
+To avoid the above problems, calls to assertion functions should respect the following rules:
+- The expected value should be calculated _before_ invoking an assertion. The `expected` parameter passed to the assertion should not be a function call expression, but a value calculated directly beforehand.
+- Appropriate assertion functions should be used for each given test. `assert.strictEqual` is not suitable in all situations. Use `assert.approximately` for floating-point comparisons, `assert.isOk` for tests on boolean values, and `assert.throws` to test error handling.
+- Some additional attention should be paid to the order of parameters passed to assertion functions. It differs between various assertion libraries, and it happens to be quite often confused by authors, mixing up `actual` and `expected` in assertion messages. In Chai, the order is `(actual, expected)`.
+- To avoid unexpected crashes in tests, it's recommended to perform some additional assertions before assuming that the answer returned by the user solution has some particular type, form, or value. For example, if the test suite sorts the returned array to verify its correctness, an explicit assertion should be added to check whether the returned object is actually an array, and not, for example, `null`.
 
 ## Example test suite
 
