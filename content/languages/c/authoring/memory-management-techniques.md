@@ -27,6 +27,8 @@ Since C-strings and arrays of other types are similar from the perspective of me
 
 In a vast majority of cases when a kata requires the solution to allocate memory, authors choose the naive approach of allocating the memory in the solution, and releasing it with `free` in the test suite after performing all necessary assertions:
 
+<details>
+
 Solution:
 
 ```c
@@ -64,6 +66,8 @@ Test(fixed_tests, should_return_2_and_3_for_4) {
 }
 ```
 
+</details>
+
 This approach mimics the behavior of higher level languages, where functions are able to allocate and return arrays without problems. It seems a natural way for many authors, but, sometimes surplrisingly for them, it's often a bad one. It's often bad from the design point of view, but, even worse, in production setups it can be straight invalid and can lead to crashes.
 
 
@@ -78,6 +82,7 @@ The biggest problem with this philosophy is that the test suite does not always 
 
 Sometimes it's perfectly known how large the result will be before the solution is called. For example, if the test suite asks to generate `n` Fibonacci numbers, it means that the resulting array needs to have the size of at least `n`. Sometimes the exact size is not known exactly, but it's possible to accurately estimate it's upper bound: for example, a function which removes punctuation from a string needs to work on a buffer at least as large as an input string, but the result can turn out to be a bit smaller. In such cases, the test suite can allocate the buffer which would be big enough to keep the result, and pass it to the solution function:
 
+<details>
 
 ```c
 Test(fixed_tests, small_inputs) {
@@ -123,10 +128,13 @@ Test(random_tests, large_inputs) {
 }
 ```
 
+</details>
 
 #### When the size is not known, but is easy to calculate: ask and allocate
 
 Another possible approach is to ask user to implement _two_ functions: one which would return the size needed to fit the result, and another one to perform actual operation. For example:
+
+<details>
 
 Kata task:
 
@@ -196,6 +204,8 @@ Test(random_tests, large_inputs) {
     }
 }
 ```
+
+</details>
 
 This approach is used when the size of the answer cannot be easily inferred by the test suite, but can be efficiently calculated by the user, potentially without the overhead of calculating the actual solution.
 
@@ -318,8 +328,6 @@ Test(random_tests, large_inputs) {
 
 </details>
 
-
-
 ### Memory managed by the solution
 
 Opposite of memory managed by the test suite is the approach of pushing the responsibility to the user. This way, tests do not need to worry about problematic aspects of memory management, kata authors give freedom of implementation to users, and can reduce the boilerplate required to implement memory management.
@@ -329,16 +337,98 @@ Opposite of memory managed by the test suite is the approach of pushing the resp
 
 This idea basically boils down to asking users to provide their equivalents of allocation and deallocation functions. Solution function is responsible not only for solving the task, but also for allocation of the memory, and storing of book-keeping information. Clean-up function is responsible for releasing resources.
 
-There's many possible ways of implementing this approach, and it usually ends up being similar to the [naive approach](#naive-approach-malloc-in-the-solution-and-free-in-tests) described in the beginning. As it is very useful for more complex memory structures, a couple of examples can be found in the section on [Two-dimensional arrays](#two-dimensional-arrays).
+There's many possible ways of implementing this approach, and it usually ends up being similar to the [naive approach](#naive-approach-malloc-in-the-solution-and-free-in-tests) described in the beginning. Example implementation could be similar to:
+
+<details>
+
+Kata task:
+
+> Given initial generation of a Game of Life population, return the state and the size of the game world after `n` generations.
+
+Solution:
+
+```c
+//solution function, which allocates all required memory and solves the task
+char** game_of_life(int generations, char** initial_generation, int* world_h, int* world_w) {
+
+    char** world = ...; //allocating memory for the world map
+    
+    for(int i=0 i < generations; ++i) {
+        //... actual game, which potentially requires additional (re)allocations
+    }
+
+    //return the final state of the game world to the caller
+    return world;
+}
+
+//clean-up function
+void destroy_world(char** world) {
+    //... deallocate all memory appropriately in a way
+    //which matches how the game_of_life allocated it.
+}
+```
+
+Tests:
+
+```c
+int world_w = 3, world_h = 3;
+char** initial_generation = ...; //set up a GoL glider
+int generations = 25;
+
+//invoke solution function, which allocates memory
+char** actual = game_of_life(generations, initial_generation, &world_h, &world_w);
+
+//... perform assertions on the world map and verify the state of its cells
+
+//call the clean-up function, which deallocates all memory
+destroy_world(actual);
+```
+
+</details>
+
+As this approach very useful for more complex memory structures, a couple of examples can be found in the section on [Two-dimensional arrays](#two-dimensional-arrays).
 
 
 ## Two-dimensional arrays
 
 Some kata require the user solution to return a two-dimensional array, for example a 2D matrix, or an array of C-strings. Such scenarios are a bit more complex, because not only the higher order array has to be properly managed, but all its individual entries as well. Exact approach selected for allocation of such structure depends on the scenario, because different techniques are suitable for square or rectangular arrays, jagged arrays, arrays of null-terminated strings, etc.
 
+
+Memory for 2D arrays can be managed both by test suite, or the user solution. As long as the size of the 2D array is known before calling a solution and does not change through the course of calculations, test suite can choose to perform all necessary allocations, and pass the memory to the solution function ready to use. This is a very good approach when working with chessboards, sudokus, matrices and mazes of predetermined sizes, etc. However, when it would be the case that the size of the answer cannot be easily determined beforehand, the technique with clean-up function provided by the user turns out to be helpful. User provided clean-up function is used in the examples below, but authors can choose to manage the memory in the test suite if it fits the task of their kata.
+
+
 ### Naive approach: N+1 allocations
 
+This is the most common, and also the worst possible approach of using dynamically allocated memory. It tends to be slow, causes excessive memory fragmentation, and is usually inferior to available alternatives.
 
+<details>
+
+```c
+char** game_of_life(int generations, char** initial_generation, int* world_h, int* world_w) {
+
+     //allocating memory for the world map, row by row
+    char** world = malloc(sizeof(char*) * world_h);
+    for(int i=0; i < world_h; ++i)
+        world[i] = malloc(world_w);
+    
+    for(int i=0 i < generations; ++i) {
+        //... actual game, which potentially requires additional (re)allocations...
+    }
+
+    //return the final state of the game world to the caller
+    return world;
+}
+
+void destroy_world(char** world, int world_h) {
+    
+    //... deallocate all memory also row by row
+    for(int i=0; i < world_h; ++i)
+        free(world[i]);
+    free(world);
+}
+```
+
+</details>
 
 ### Flat array
 
@@ -346,11 +436,76 @@ Very often overlooked, but a very good approach to represent 2D arrays is to sto
 
 This way, complexity of memory management is greatly reduced, because whole necessary memory can be allocated and freed with a single call to `malloc` (or equivalent) and `free`.
 
-Drawbacks of this approach is that the interface of the solution does not resemble its logical structure, i.e. elements of a matrix cannot be accessed with, for example, `matrix[row][col]`, but with `matrix[row * size + col]`.
+Drawbacks of this approach is that the interface of the solution does not resemble its logical structure, i.e. elements of a matrix cannot be accessed with, for example, `matrix[row][col]`, but with `matrix[row * size + col]`. It also fits best rectangular arrays (i.e. arrays with equal length of all rows).
 
+<details>
 
+```c
+char* game_of_life(int generations, char* initial_generation, int* world_h, int* world_w) {
 
-- TOC + Flat
-- TOC: size vs sentinel terminator
+     //allocating a linear buffer of memory for the world map
+    char* world = malloc(world_h * world_w);
+    
+    for(int i=0 i < generations; ++i) {
+        //... actual game, which potentially requires additional (re)allocations...
+        
+        //...
+        world[i * world_w + j] = 'x'; //set a cell as alive
+    }
 
+    //return the final state of the game world to the caller
+    return world;
+}
 
+void destroy_world(char* world) {
+    //... deallocate all memory at once
+    free(world);
+}
+```
+
+</details>
+
+### Flat buffer with an array of rows
+
+This method minimizes the array of allocations down to two, and allows for accessing the elements as whey were stored in a two-dimensional array. It uses two dynamically allocated buffers: One large buffer to store entries of the array in a flat array, and one smaller buffer which serves as an array of pointers to individual rows:
+
+<details>
+
+```c
+char* game_of_life(int generations, char* initial_generation, int* world_h, int* world_w) {
+
+     //allocating a large  linear buffer of memory for the world map
+    char** world_data = malloc(world_h * world_w);
+    //allocating smaller array to hold pointers to rows
+    char* world_rows = malloc(world_h);
+    for(int i=0; i < world_h; ++i)
+        //put rows into the array
+        world_rows[i] = world_data + i * world_w;
+
+    for(int i=0 i < generations; ++i) {
+        //... actual game, which potentially requires additional (re)allocations...
+        
+        //...
+        world_rows[i][j] = 'x'; //set a cell as alive
+    }
+
+    //return the final state of the game world to the caller
+    return world_rows;
+}
+
+void destroy_world(char** world_rows) {
+
+    //... deallocate large buffer, which starts at the
+    //first row of the 2D array
+    free(world[0]);
+
+    //deallocate the smaller buffer
+    free(world_rows);
+}
+```
+
+</details>
+
+This method is somewhat problematic when the length of the internal arrrays is a subject to change thorough the calculations. While both buffers can be easily reallocated to grow or shrink (for example to add new rows), changing the width of the array causes that the data in rows needs to be manually "shifted apart", and entries in the rows array need to be updated.
+
+This approach is also requires additional book-keeping when used for jagged arrays, unless entries of adjacent rows are clearly separated (as it happens for, for example, an array of C-strings).
