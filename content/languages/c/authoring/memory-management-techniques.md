@@ -324,8 +324,22 @@ There's many possible ways of implementing this approach, and it usually ends up
 
 ## Two-dimensional arrays
 
-- TOC + N allocations
-- Flat
+Some kata require the user solution to return a two-dimensional array, for example a 2D matrix, or an array of C-strings. Such scenarios are a bit more complex, because not only the higher order array has to be properly managed, but all its individual entries as well. Exact approach selected for allocation of such structure depends on the scenario, because different techniques are suitable for square or rectangular arrays, jagged arrays, arrays of null-terminated strings, etc.
+
+### Naive approach: N+1 allocations
+
+
+
+### Flat array
+
+Very often overlooked, but a very good approach to represent 2D arrays is to store them in a regular, linear array of `T[ ]`. It can be effectively used when bounds between inner arrays can be efficiently determined, for example each row of a matrix has a well known length, rows of a Pascal's triangle have precisely defined, although different, lengths, and string entries are clearly terminated.
+
+This way, complexity of memory management is greatly reduced, because whole necessary memory can be allocated and freed with a single call to `malloc` (or equivalent) and `free`.
+
+Drawbacks of this approach is that the interface of the solution does not resemble its logical structure, i.e. elements of a matrix cannot be accessed with, for example, `matrix[row][col]`, but with `matrix[row * size + col]`.
+
+
+
 - TOC + Flat
 - TOC: size vs sentinel terminator
 
