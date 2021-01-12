@@ -74,7 +74,7 @@ Unlike many modern, high-level languages, C does not manage memory automatically
 
 Whenever a kata needs to return a string or an array, C authors tend to use the naive technique of allocating the memory in the solution function, and freeing it in the test suite. This approach mimics the behavior known from other languages where returning an array or object from inside of the user's solution is perfectly valid, but it's hardly ever a valid way of working with unmanaged memory.
 
-One of the consequences of unmanaged memory is that it's strongly recommended against returning string constants from C functions, especially when translating kata from other languages. Returning a string in other languages is not a problem, but in C it always raises questions of who should allocate it and how it should be allocated. Consider replacing the string with some simpler data type (eventually aliased with a `typedef`), and/or provide some symbolic constants for available values. For example, if the requirement for the Python version is: _Return the string 'Black' if a black pawn will be captured first, 'White' if a white one, and 'None' if all pawns are safe._, C version should preferably provide and use the named constants `BLACK`, `WHITE` and `NONE`. If the author decides to keep raw C-strings as elements of the kata interface, they should clearly specify the required allocation scheme.
+One of the consequences of unmanaged memory is that it's strongly recommended against returning string constants from C functions, especially when translating kata from other languages. Returning a string in other languages is not a problem, but in C it always raises questions of who should allocate it and how it should be allocated. Consider replacing the string with some simpler data type (eventually aliased with a `typedef`), and/or provide some symbolic constants for available values. For example, if the requirement for the JavaScript version is: _"Return the string 'BLACK' if a black pawn will be captured first, 'WHITE' if a white one, and 'NONE' if all pawns are safe."_, C version should preferably provide and use the named constants `BLACK`, `WHITE` and `NONE`. If the author decides to keep raw C-strings as elements of the kata interface, they should clearly specify the required allocation scheme.
 
 Possible ways of handling memory management are described in the [Memory Management in C kata](/languages/c/authoring/memory-management-techniques/) article. But whichever approach is chosen, even the most obvious one, it should be described either in the kata description (preferably in in a C-specific paragraph), or in the initial solution stub as a comment, and in sample tests as an example of a call to the solution.
 
@@ -259,7 +259,7 @@ Test(random_tests, small_arrays) {
 //a set of large random tests, with not so detailed debugging messages
 Test(random_tests, large_arrays) {
   
-  double array[1000];     //small enough to be declared on the stack,
+  double array[1000];     //small enough to be allocated on the stack,
   double reference[1000]; //but you can use dynamic memory if necessary.
   
   for(int i=0; i<10; ++i) {
