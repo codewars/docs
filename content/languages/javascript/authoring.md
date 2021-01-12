@@ -50,7 +50,7 @@ Some concepts don't always translate well to or from JavaScript. Because of this
 - Avoid returning different data types depending on the situation (_"Return the result, or the string 'Error' if no result can be found..."_). JavaScript is dynamically typed, which is not the case for some other languages. Returning `null` might be appropriate in some situations, but throwing an error might be better in others.
 
 Some kata just should not be translated into JavaScript because it can be difficult to keep their initial idea:
-- Some kata might be meant for another language specifically. For example, a kata about `Python: Learning Classes` to do something should probably not be translated to JavaScript, even though JS has classes too.
+- Some kata might be meant for another language specifically. For example, a kata about `Python: Learning Classes` should probably not be translated to JavaScript, even though JS has `class` syntax.
 - The Codewars runner provides a set of preinstalled packages that are available for users solving the kata. They can be a real game-changer when it comes to the difficulty of a JavaScript translation. For example, `lodash` or `ramda` include many helpful utilities, which could make some kata trivial that wouldn't be trivial in other languages.
 
 ## Tests
