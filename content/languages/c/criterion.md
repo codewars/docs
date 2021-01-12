@@ -9,6 +9,8 @@ tags:
 
 # Criterion
 
+The Criterion testing framework is available in its [Github repository](https://github.com/Snaipe/Criterion). Reference for the Criterion API can be found here: [https://criterion.readthedocs.io/en/master/intro.html](https://criterion.readthedocs.io/en/master/intro.html).
+
 ## Basic Setup
 
 ```c
@@ -29,6 +31,15 @@ Test(add_test, should_add_integers, .description = "should add integers") {
   cr_assert_eq(expected, add(a, a), "add(%d, %d) == %d", a, b, expected);
 }
 ```
+
+## Assertions
+
+_TBD_
+
+[Assertions reference](https://criterion.readthedocs.io/en/master/assert.html) can be found in the Criterion documentation.
+
+- assert vs except
+- messages
 
 <!--
 TODO: Finish this reference
