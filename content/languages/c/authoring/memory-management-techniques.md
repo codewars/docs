@@ -204,6 +204,13 @@ This approach is used when the size of the answer cannot be easily inferred by t
 
 This approach is a combination of the two above. It has a somewhat complex interface, but allows for a performance compromise when the size of the result is not known upfront, and cannot be efficiently estimated without performing actual calculations. General scheme is that the test suite passes in some preallocated buffer, and when solution determines that the buffer is too small, it reports an error. The tests can use some strategy to grow the buffer and retry the solution. When the call to solution succeeds, it fills the buffer with the result and reports its size.
 
+:::info
+This paragraph is probably too complex and not suitable for Codewars kata. It will be probably removed.
+:::
+
+<details>
+
+
 Kata task:
 
 > Given an interer `n > 1`, calculate Fibonacci numbers up to `n`.
@@ -308,6 +315,9 @@ Test(random_tests, large_inputs) {
     free(array);
 }
 ```
+
+</details>
+
 
 
 ### Memory managed by the solution
