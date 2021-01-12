@@ -9,7 +9,7 @@ tags:
 
 # Criterion
 
-Criterion testing framework is available in its [Github repository](https://github.com/Snaipe/Criterion). Reference for Criterion API can be found here: https://criterion.readthedocs.io/en/master/intro.html . 
+The Criterion testing framework is available in its [Github repository](https://github.com/Snaipe/Criterion). Reference for the Criterion API can be found here: [https://criterion.readthedocs.io/en/master/intro.html](https://criterion.readthedocs.io/en/master/intro.html).
 
 ## Basic Setup
 
@@ -36,7 +36,7 @@ Test(add_test, should_add_integers, .description = "should add integers") {
 
 _TBD_
 
-[Assertions reference](https://criterion.readthedocs.io/en/master/assert.html) in Criterion documentation.
+[Assertions reference](https://criterion.readthedocs.io/en/master/assert.html) can be found in the Criterion documentation.
 
 - assert vs except
 - messages
