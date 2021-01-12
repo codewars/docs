@@ -74,7 +74,7 @@ Unlike many modern, high-level languages, C does not manage memory automatically
 
 Whenever a kata needs to return a string or an array, C authors tend to use the naive technique of allocating the memory in the solution function, and freeing it in the test suite. This approach mimics the behavior known from other languages where returning an array or object from inside of the user's solution is perfectly valid, but it's hardly ever a valid way of working with unmanaged memory.
 
-One of the consequences of unmanaged memory is that it's strongly recommended against returning string constants from C functions, especially when translating kata from other languages. Returning a string in other languages is not a problem, but in C it always raises questions of who should allocate it and how it should be allocated. Consider replacing the string with some simpler data type (eventually aliased with a `typedef`), and/or provide some symbolic constants for available values. For example, if the requirement for the Python version is to _Return the string `'You won!'` if you won the game, `'You lost :('` if you were defeated, and `'It's a draw'` if there is no winner._, C should preferably use the constants `WON`, `LOST` and `DRAW`. If the author decides to keep raw C-strings as elements of the kata interface, they should clearly specify the required allocation scheme.
+One of the consequences of unmanaged memory is that it's strongly recommended against returning string constants from C functions, especially when translating kata from other languages. Returning a string in other languages is not a problem, but in C it always raises questions of who should allocate it and how it should be allocated. Consider replacing the string with some simpler data type (eventually aliased with a `typedef`), and/or provide some symbolic constants for available values. For example, if the requirement for the Python version is: _Return the string 'Black' if a black pawn will be captured first, 'White' if a white one, and 'None' if all pawns are safe._, C version should preferably provide and use the named constants `BLACK`, `WHITE` and `NONE`. If the author decides to keep raw C-strings as elements of the kata interface, they should clearly specify the required allocation scheme.
 
 Possible ways of handling memory management are described in the [Memory Management in C kata](/languages/c/authoring/memory-management-techniques/) article. But whichever approach is chosen, even the most obvious one, it should be described either in the kata description (preferably in in a C-specific paragraph), or in the initial solution stub as a comment, and in sample tests as an example of a call to the solution.
 
@@ -110,10 +110,6 @@ If the test suite happens to use a reference solution to calculate expected valu
 
 The reference solution or data ___must not___ be defined in the [Preloaded code](/authoring/guidelines/preloaded/).
 
-
-### Redeclaration of user solution
-
-The solution function should be re-declared in the file with submission tests. Such re-declaration prevents a compilation warning about implicitly declared functions, and additionally stops users from tampering with the prototype of the solution function, for example, to remove const-ness of parameters, or change types of parameters, etc.
 
 ### Input mutation
 
@@ -158,14 +154,15 @@ Below you can find an example test suite that covers most of the common scenario
 #include <time.h>
 #include <stdlib.h>
 #include <stddef.h>
+#include <stdint.h>
 
 //redeclare the user solution
-void square_every_item(double items[], int size);
+void square_every_item(double items[], size_t size);
 
 //reference solution defined as static
-static void square_every_item_ref(double items[], int size)
+static void square_every_item_ref(double items[], size_t size)
 {
-    for(int i = 0; i<size; ++i)
+    for(size_t i = 0; i<size; ++i)
     {
       items[i] *= items[i];
     }
@@ -178,20 +175,20 @@ static int cmp_double_fuzzy_equal(double* a, double* b) {
 }
 
 //random test case generator
-static void fill_random_array(double array[], int size) {  
-  for(int i=0; i<size; ++i) {
+static void fill_random_array(double array[], size_t size) {  
+  for(size_t i=0; i<size; ++i) {
     //use rand to generate doubles
     array[i] = (double)rand() / RAND_MAX * 100;
   }
 }
 
 //helper function
-static int get_mismatch_position(double actual[], double reference[], int size) {
-  for(int i=0; i<size; ++i) {
+static size_t get_mismatch_position(double actual[], double reference[], size_t size) {
+  for(size_t i=0; i<size; ++i) {
     if(cmp_double_fuzzy_equal(actual+i, reference+i))
       return i;
   }
-  return -1;
+  return SIZE_MAX;
 }
 
 //setup function, called by test suite setup macro below
@@ -234,7 +231,7 @@ Test(random_tests, small_arrays) {
   for(int i=0; i<10; ++i) {
     
     //generate test case
-    int array_size = rand() % 10 + 1;
+    size_t array_size = rand() % 10 + 1;
     fill_random_array(input, array_size);
     
     //kata requires the input to be mutated, so tests need to copy it, because
@@ -249,9 +246,9 @@ Test(random_tests, small_arrays) {
 
     //assertion uses custom message to avoid confusing test output
     //it also uses data from original, non-mutated input array
-    int invalid_position = get_mismatch_position(actual, reference, array_size);
+    size_t invalid_position = get_mismatch_position(actual, reference, array_size);
     cr_assert_arr_eq_cmp(actual, reference, array_size, cmp_double_fuzzy_equal,
-                         "Invalid answer at position %d for input value %f, expected %f but got %f",
+                         "Invalid answer at position %zu for input value %f, expected %f but got %f",
                          invalid_position, 
                          input[invalid_position], 
                          reference[invalid_position], 
@@ -262,13 +259,13 @@ Test(random_tests, small_arrays) {
 //a set of large random tests, with not so detailed debugging messages
 Test(random_tests, large_arrays) {
   
-  double array[1000];
-  double reference[1000];
+  double array[1000];     //small enough to be declared on the stack,
+  double reference[1000]; //but you can use dynamic memory if necessary.
   
   for(int i=0; i<10; ++i) {
     
     //generate test cases
-    int array_size = rand() % 200 + 801;
+    size_t array_size = rand() % 200 + 801;
     fill_random_array(array, array_size);
     
     //since original array is no used after tests, it's enough to create only one copy
@@ -278,8 +275,7 @@ Test(random_tests, large_arrays) {
     square_every_item(array, array_size);
     
     //assertion uses custom message
-    cr_assert_arr_eq_cmp(array, reference, array_size, cmp_double_fuzzy_equal, "Invalid answer for arrays of size %d", array_size);
+    cr_assert_arr_eq_cmp(array, reference, array_size, cmp_double_fuzzy_equal, "Invalid answer for arrays of size %zu", array_size);
   }
 }
-
 ```
