@@ -337,7 +337,7 @@ Opposite of memory managed by the test suite is the approach of pushing the resp
 
 This idea basically boils down to asking users to provide their equivalents of allocation and deallocation functions. Solution function is responsible not only for solving the task, but also for allocation of the memory, and storing of book-keeping information. Clean-up function is responsible for releasing resources.
 
-There's many possible ways of implementing this approach, and it usually ends up being similar to the [naive approach](#naive-approach-malloc-in-the-solution-and-free-in-tests) described in the beginning. Example implementation could be similar to:
+There's many possible ways of implementing the allocation scheme and corresponding clean-up function, and its usage usually ends up being similar to the [naive approach](#naive-approach-malloc-in-the-solution-and-free-in-tests) described in the beginning. Example implementation could be similar to:
 
 <details>
 
@@ -467,7 +467,7 @@ void destroy_world(char* world) {
 
 ### Flat buffer with an array of rows
 
-This method minimizes the array of allocations down to two, and allows for accessing the elements as whey were stored in a two-dimensional array. It uses two dynamically allocated buffers: One large buffer to store entries of the array in a flat array, and one smaller buffer which serves as an array of pointers to individual rows:
+This method minimizes the number of allocations down to two, and allows for accessing the elements as if they were stored in a two-dimensional array. It uses two dynamically allocated buffers: One large buffer to store entries of the array in a flat array, and one smaller buffer which serves as an array of pointers to individual rows:
 
 <details>
 
@@ -506,6 +506,6 @@ void destroy_world(char** world_rows) {
 
 </details>
 
-This method is somewhat problematic when the length of the internal arrrays is a subject to change thorough the calculations. While both buffers can be easily reallocated to grow or shrink (for example to add new rows), changing the width of the array causes that the data in rows needs to be manually "shifted apart", and entries in the rows array need to be updated.
+This method is somewhat problematic when the width of the internal arrrays is a subject to change thorough the calculations. While both buffers can be easily reallocated to grow or shrink (for example to add new rows), changing the width of the array causes that the data in rows needs to be manually "shifted apart", and entries in the rows array need to be updated.
 
 This approach is also requires additional book-keeping when used for jagged arrays, unless entries of adjacent rows are clearly separated (as it happens for, for example, an array of C-strings).
