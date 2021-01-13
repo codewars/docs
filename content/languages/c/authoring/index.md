@@ -72,7 +72,14 @@ Compiler options related to warnings used by the C runner are somewhat strict an
 
 Unlike many modern, high-level languages, C does not manage memory automatically. Manual memory management is a very vast and complex topic, with many possible ways of achieving the goal depending on a specific case, caveats, and pitfalls.
 
-Data hidden behind pointers can be arranged in many possible ways. Whenever a kata passes in a pointer to the user's solution, or requires it to return or manipulate a pointer or data referenced by it, it should **explicitly** and **clearly** provide all information necessary to carry out the operation correctly. The information can be put either in a [language-specific paragraph](#description) in the kata description, or as a comment in the ["Solution setup" snippet](/authoring/guidelines/sample-tests/). When necessary, sample tests should present an example of how data is composed, passed to the user solution, fetched from it, worked on, and cleaned up afterwards. When the structure, layout, or allocation scheme of a pointed data is not described, users cannot know how to implement requirements without causing either a crash or a memory leak. Authors can choose the ownership strategy their kata should use, and the memory can be managed either by the test suite, by the user, or both. However they should be aware what are the advantages and disadvantages of each such strategy, and when and which applies the best. 
+Data hidden behind pointers can be arranged in many possible ways. Whenever a kata passes in a pointer to the user's solution, or requires it to return or manipulate a pointer or data referenced by a pointer, it should **explicitly** and **clearly** provide all information necessary to carry out the operation correctly. The information can be put in one or more of following places:
+
+- The code itself. Specifying that a pointer points to `const` data can serve as a hint that it has not been allocated dynamically and won't be freed. Size hints for array parameters can help understanding how arays are organized, etc. Correctly specified types can be very helpful, but not always sufficient.
+- [Language-specific paragraph](#description) in the kata description.
+- As a comment in the ["Solution setup" snippet](/authoring/guidelines/sample-tests/).
+- When necessary, sample tests should present an example of how data is composed, passed to the user solution, fetched from it, worked on, and cleaned up afterwards.
+
+When the structure, layout, or allocation scheme of a pointed data is not described, users cannot know how to implement requirements without causing either a crash or a memory leak. Authors can choose the ownership strategy their kata should use, and the memory can be managed either by the test suite, by the user, or both. However they should be aware what are the advantages and disadvantages of each such strategy, and when and which applies the best. 
 
 Possible ways of handling memory management are described in the [Memory Management in C kata](/languages/c/authoring/memory-management-techniques/) article.
 
