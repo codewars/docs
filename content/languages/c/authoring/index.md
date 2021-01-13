@@ -68,15 +68,16 @@ Not as much of a problem for C as it is for C++, but still, C authors often forg
 Compiler options related to warnings used by the C runner are somewhat strict and require some discipline to get the code to compile cleanly. `-Wall` and `-Wextra` may cause numerous warnings and some of them are very pedantic. However, code of C kata should still compile cleanly, without any warnings logged to the console. Even when a warning does not cause any problem with tests, users get distracted by them and blame them for failing tests.
 
 
-### Memory management
+### Working with pointers and memory management
 
 Unlike many modern, high-level languages, C does not manage memory automatically. Manual memory management is a very vast and complex topic, with many possible ways of achieving the goal depending on a specific case, caveats, and pitfalls.
 
-Whenever a kata needs to return a string or an array, C authors tend to use the naive technique of allocating the memory in the solution function, and freeing it in the test suite. This approach mimics the behavior known from other languages where returning an array or object from inside of the user's solution is perfectly valid, but it's hardly ever a valid way of working with unmanaged memory.
+Data hidden behind pointers can be arranged in many possible ways. Whenever a kata passes in a pointer to the user's solution, or requires it to return or manipulate a pointer or data referenced by it, it should **explicitly** and **clearly** provide all information necessary to carry out the operation correctly. The information can be put either in a [language-specific paragraph](#description) in the kata description, or as a comment in the ["Solution setup" snippet](/authoring/guidelines/sample-tests/). When necessary, sample tests should present an example of how data is composed, passed to the user solution, fetched from it, worked on, and cleaned up afterwards. When the structure, layout, or allocation scheme of a pointed data is not described, users cannot know how to implement requirements without causing either a crash or a memory leak. Authors can choose the ownership strategy their kata should use, and the memory can be managed either by the test suite, by the user, or both. However they should be aware what are the advantages and disadvantages of each such strategy, and when and which applies the best. 
+
+Possible ways of handling memory management are described in the [Memory Management in C kata](/languages/c/authoring/memory-management-techniques/) article.
 
 One of the consequences of unmanaged memory is that it's strongly recommended against returning string constants from C functions, especially when translating kata from other languages. Returning a string in other languages is not a problem, but in C it always raises questions of who should allocate it and how it should be allocated. Consider replacing the string with some simpler data type (eventually aliased with a `typedef`), and/or provide some symbolic constants for available values. For example, if the requirement for the JavaScript version is: _"Return the string 'BLACK' if a black pawn will be captured first, 'WHITE' if a white one, and 'NONE' if all pawns are safe."_, C version should preferably provide and use the named constants `BLACK`, `WHITE` and `NONE`. If the author decides to keep raw C-strings as elements of the kata interface, they should clearly specify the required allocation scheme.
 
-Possible ways of handling memory management are described in the [Memory Management in C kata](/languages/c/authoring/memory-management-techniques/) article. But whichever approach is chosen, even the most obvious one, it should be described either in the kata description (preferably in in a C-specific paragraph), or in the initial solution stub as a comment, and in sample tests as an example of a call to the solution.
 
 ## Tests
 
