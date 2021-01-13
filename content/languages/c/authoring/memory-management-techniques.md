@@ -68,7 +68,7 @@ Test(fixed_tests, should_return_2_and_3_for_4) {
 
 </details>
 
-This approach mimics the behavior of higher level languages, where functions are able to allocate and return arrays without problems. It seems a natural way for many authors, but, sometimes surplrisingly for them, it's often a bad one. It's often bad from the design point of view, but, even worse, in production setups it can be straight invalid and can lead to crashes.
+This approach mimics the behavior of higher level languages, where functions are able to allocate and return arrays without problems. It seems a natural way for many authors, but, sometimes surprisingly for them, it's often a bad one. It's often bad from a design point of view, but, even worse, in production setups it can be straight invalid and can lead to crashes.
 
 
 ### Memory managed by tests
@@ -132,13 +132,13 @@ Test(random_tests, large_inputs) {
 
 #### When the size is not known, but is easy to calculate: ask and allocate
 
-Another possible approach is to ask user to implement _two_ functions: one which would return the size needed to fit the result, and another one to perform actual operation. For example:
+Another possible approach is to ask the user to implement _two_ functions: one which would return the size needed to fit the result, and another one to perform the actual operation. For example:
 
 <details>
 
 Kata task:
 
-> Given a positive integer `n`, return all terms of `n` top rows of Pascal's triangle, row by row, flattened into a single array.
+> Given a positive integer `n`, return all terms in the top `n` rows of Pascal's triangle flattened into a single array.
 
 Solution:
 
@@ -212,7 +212,7 @@ This approach is used when the size of the answer cannot be easily inferred by t
 
 #### When the size is not known, and difficult to calculate: assume (or guess) the initial size and reallocate if too small
 
-This approach is a combination of the two above. It has a somewhat complex interface, but allows for a performance compromise when the size of the result is not known upfront, and cannot be efficiently estimated without performing actual calculations. General scheme is that the test suite passes in some preallocated buffer, and when solution determines that the buffer is too small, it reports an error. The tests can use some strategy to grow the buffer and retry the solution. When the call to solution succeeds, it fills the buffer with the result and reports its size.
+This approach is a combination of the two above. It has a somewhat complex interface, but allows for a performance compromise when the size of the result is not known upfront, and cannot be efficiently estimated without performing actual calculations. The general scheme is that the test suite passes in some pre-allocated buffer, and when the solution determines that the buffer is too small, it reports an error. The tests can then employ various strategies to grow the buffer and retry the solution. When the call to the solution succeeds, it fills the buffer with the result and reports its size.
 
 :::info
 This paragraph is probably too complex and not suitable for Codewars kata. It will be probably removed.
@@ -223,7 +223,7 @@ This paragraph is probably too complex and not suitable for Codewars kata. It wi
 
 Kata task:
 
-> Given an interer `n > 1`, calculate Fibonacci numbers up to `n`.
+> Given an integer `n > 1`, calculate Fibonacci numbers up to `n`.
 
 Solution:
 
@@ -330,20 +330,20 @@ Test(random_tests, large_inputs) {
 
 ### Memory managed by the solution
 
-Opposite of memory managed by the test suite is the approach of pushing the responsibility to the user. This way, tests do not need to worry about problematic aspects of memory management, kata authors give freedom of implementation to users, and can reduce the boilerplate required to implement memory management.
+The opposite of managing memory in the test suite is the approach of delegating the responsibility to the solver. This way, tests do not need to worry about problematic aspects of memory management, kata authors give freedom of implementation to users, and can reduce the boilerplate required to implement memory management.
 
 
 #### Symmetric functions for allocation and deallocation
 
-This idea basically boils down to asking users to provide their equivalents of allocation and deallocation functions. Solution function is responsible not only for solving the task, but also for allocation of the memory, and storing of book-keeping information. Clean-up function is responsible for releasing resources.
+This idea basically boils down to asking users to provide their equivalents of allocation and de-allocation functions. The solution function is responsible not only for solving the task, but also for allocation of memory and storing of book-keeping information. The clean-up function is responsible for releasing resources.
 
-There's many possible ways of implementing the allocation scheme and corresponding clean-up function, and its usage usually ends up being similar to the [naive approach](#naive-approach-malloc-in-the-solution-and-free-in-tests) described in the beginning. Example implementation could be similar to:
+There are many possible ways of implementing the allocation scheme and corresponding clean-up function, and its usage usually ends up being similar to the [naive approach](#naive-approach-malloc-in-the-solution-and-free-in-tests) described in the beginning. An example implementation could be similar to:
 
 <details>
 
 Kata task:
 
-> Given initial generation of a Game of Life population, return the state and the size of the game world after `n` generations.
+> Given the initial generation of a Game of Life population, return the state and size of the game world after `n` generations.
 
 Solution:
 
@@ -391,15 +391,15 @@ As this approach very useful for more complex memory structures, a couple of exa
 
 ## Two-dimensional arrays
 
-Some kata require the user solution to return a two-dimensional array, for example a 2D matrix, or an array of C-strings. Such scenarios are a bit more complex, because not only the higher order array has to be properly managed, but all its individual entries as well. Exact approach selected for allocation of such structure depends on the scenario, because different techniques are suitable for square or rectangular arrays, jagged arrays, arrays of null-terminated strings, etc.
+Some kata require the user solution to return a two-dimensional array, for example a 2D matrix, or an array of C-strings. Such scenarios are a bit more complex, because not only does the higher order array have to be properly managed, but all its individual entries as well. The exact approach selected for allocation of such structures depend on the scenario, because different techniques are suitable for square or rectangular arrays, jagged arrays, arrays of null-terminated strings, etc.
 
 
-Memory for 2D arrays can be managed both by test suite, or the user solution. As long as the size of the 2D array is known before calling a solution and does not change through the course of calculations, test suite can choose to perform all necessary allocations, and pass the memory to the solution function ready to use. This is a very good approach when working with chessboards, sudokus, matrices and mazes of predetermined sizes, etc. However, when it would be the case that the size of the answer cannot be easily determined beforehand, the technique with clean-up function provided by the user turns out to be helpful. User provided clean-up function is used in the examples below, but authors can choose to manage the memory in the test suite if it fits the task of their kata.
+Memory for 2D arrays can be managed by the test suite or the user solution. As long as the size of the 2D array is known before calling a solution and does not change through the course of calculations, the test suite can choose to perform all necessary allocations and pass the memory to the solution function ready to use. This is a very good approach when working with chessboards, sudokus, matrices and mazes of predetermined sizes, etc. However, in the case that the size of the answer cannot be easily determined beforehand, the technique with clean-up function provided by the user turns out to be helpful. A user provided clean-up function is used in the examples below, but authors can choose to manage the memory in the test suite if it fits the task of their kata.
 
 
 ### Naive approach: N+1 allocations
 
-This is the most common, and also the worst possible approach of using dynamically allocated memory. It tends to be slow, causes excessive memory fragmentation, and is usually inferior to available alternatives.
+This is the most common yet worst possible approach of using dynamically allocated memory. It tends to be slow, causes excessive memory fragmentation and is usually inferior to available alternatives.
 
 <details>
 
@@ -434,9 +434,12 @@ void destroy_world(char** world, int world_h) {
 
 Very often overlooked, but a very good approach to represent 2D arrays is to store them in a regular, linear array of `T[ ]`. It can be effectively used when bounds between inner arrays can be efficiently determined, for example each row of a matrix has a well known length, rows of a Pascal's triangle have precisely defined, although different, lengths, and string entries are clearly terminated.
 
-This way, complexity of memory management is greatly reduced, because whole necessary memory can be allocated and freed with a single call to `malloc` (or equivalent) and `free`.
+This way, the complexity of memory management is greatly reduced since all necessary memory can be allocated and freed with a single call to `malloc` (or equivalent) and `free`.
 
-Drawbacks of this approach is that the interface of the solution does not resemble its logical structure, i.e. elements of a matrix cannot be accessed with, for example, `matrix[row][col]`, but with `matrix[row * size + col]`. It also fits best rectangular arrays (i.e. arrays with equal length of all rows).
+Drawbacks of this approach include:
+
+- The solution does not resemble its logical structure, e.g. elements of a matrix cannot be accessed with, for example, `matrix[row][col]`, but with `matrix[row * size + col]`
+- It is best suited for perfectly rectangular arrays, i.e. arrays whose sub-arrays all have equal length
 
 <details>
 
@@ -506,6 +509,6 @@ void destroy_world(char** world_rows) {
 
 </details>
 
-This method is somewhat problematic when the width of the internal arrrays is a subject to change thorough the calculations. While both buffers can be easily reallocated to grow or shrink (for example to add new rows), changing the width of the array causes that the data in rows needs to be manually "shifted apart", and entries in the rows array need to be updated.
+This method is somewhat problematic when the width of the internal arrays is subject to change through calculations. While both buffers can be easily reallocated to grow or shrink (for example to add new rows), changing the width of the array requires the data in rows to be manually "shifted apart", and entries in the affected rows need to be updated.
 
-This approach is also requires additional book-keeping when used for jagged arrays, unless entries of adjacent rows are clearly separated (as it happens for, for example, an array of C-strings).
+This approach also requires additional book-keeping when used for jagged arrays, unless entries of adjacent rows are clearly separated, e.g. as it happens for an array of C-strings.
