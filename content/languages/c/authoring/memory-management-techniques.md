@@ -20,7 +20,7 @@ It often happens that the solution function has to accept and return more values
 
 ## Arrays and strings
 
-Since C-strings and arrays of other types are similar from the perspective of memory management, this article uses examples of integer arrays. However most of the techniques presented here applies equally to handling memory holding integers, floats, characters, zero-terminated or not.
+Since C-strings and arrays of other types are similar from the perspective of memory management, this article uses examples of integer arrays. However, most of the techniques presented here apply equally to handling memory holding integers, floats, and characters, zero-terminated or not.
 
 
 ### Naive approach: `malloc` in the solution and `free` in tests
@@ -68,7 +68,7 @@ Test(fixed_tests, should_return_2_and_3_for_4) {
 
 </details>
 
-This approach mimics the behavior of higher level languages, where functions are able to allocate and return arrays without problems. It seems a natural way for many authors, but, sometimes surprisingly for them, it's often a bad one. It's often bad from a design point of view, but, even worse, in production setups it can be straight invalid and can lead to crashes.
+This approach mimics the behavior of higher-level languages, where functions can allocate and return arrays without problems. It seems a natural way for many authors, but, sometimes surprisingly for them, it's often a bad one. It's often bad from a design point of view, but, even worse, in production setups, it can be straight invalid and can lead to crashes.
 
 
 ### Memory managed by tests
@@ -80,7 +80,7 @@ The biggest problem with this philosophy is that the test suite does not always 
 
 #### When the size is known upfront: use preallocated buffer
 
-Sometimes it's perfectly known how large the result will be before the solution is called. For example, if the test suite asks to generate `n` Fibonacci numbers, it means that the resulting array needs to have the size of at least `n`. Sometimes the exact size is not known exactly, but it's possible to accurately estimate its upper bound. For example, a function which removes punctuation from a string needs to work on a buffer at least as large as an input string, but the result can turn out to be a bit smaller. In such cases, the test suite can allocate the buffer which would be big enough to keep the result, and pass it to the solution function:
+Sometimes it's perfectly known how large the result will be before the solution is called. For example, if the test suite asks to generate `n` Fibonacci numbers, it means that the resulting array needs to have the size of at least `n`. Sometimes the exact size is not known exactly, but it's possible to accurately estimate its upper bound. For example, a function that removes punctuation from a string needs to work on a buffer at least as large as an input string, but the result can turn out to be a bit smaller. In such cases, the test suite can allocate the buffer which would be big enough to keep the result, and pass it to the solution function:
 
 <details>
 
@@ -335,7 +335,7 @@ The opposite of managing memory in the test suite is the approach of delegating 
 
 #### Symmetric functions for allocation and deallocation
 
-This idea basically boils down to asking users to provide their equivalents of allocation and de-allocation functions. The solution function is responsible not only for solving the task, but also for allocation of memory and storing of book-keeping information. The clean-up function is responsible for releasing resources.
+This idea boils down to asking users to provide their equivalents of allocation and de-allocation functions. The solution function is responsible not only for solving the task but also for allocation of memory and storing of book-keeping information. The clean-up function is responsible for releasing resources.
 
 There are many possible ways of implementing the allocation scheme and corresponding clean-up function, and its usage usually ends up being similar to the [naive approach](#naive-approach-malloc-in-the-solution-and-free-in-tests) described in the beginning. An example implementation could be similar to:
 
@@ -391,10 +391,10 @@ As this approach very useful for more complex memory structures, a couple of exa
 
 ## Two-dimensional arrays
 
-Some kata require the user solution to return a two-dimensional array, for example a 2D matrix, or an array of C-strings. Such scenarios are a bit more complex, because not only does the higher order array have to be properly managed, but all its individual entries as well. The exact approach selected for allocation of such structures depend on the scenario, because different techniques are suitable for square or rectangular arrays, jagged arrays, arrays of null-terminated strings, etc.
+Some kata require the user solution to return a two-dimensional array, for example, a 2D matrix, or an array of C-strings. Such scenarios are a bit more complex, because not only does the higher-order array have to be properly managed, but all its individual entries as well. The exact approach selected for the allocation of such structures depends on the scenario because different techniques are suitable for square or rectangular arrays, jagged arrays, arrays of null-terminated strings, etc.
 
 
-Memory for 2D arrays can be managed by the test suite or the user solution. As long as the size of the 2D array is known before calling a solution and does not change through the course of calculations, the test suite can choose to perform all necessary allocations and pass the memory to the solution function ready to use. This is a very good approach when working with chessboards, sudokus, matrices and mazes of predetermined sizes, etc. However, in the case that the size of the answer cannot be easily determined beforehand, the technique with clean-up function provided by the user turns out to be helpful. A user provided clean-up function is used in the examples below, but authors can choose to manage the memory in the test suite if it fits the task of their kata.
+Memory for 2D arrays can be managed by the test suite or the user solution. As long as the size of the 2D array is known before calling a solution and does not change through the course of calculations, the test suite can choose to perform all necessary allocations and pass the memory to the solution function ready to use. This is a very good approach when working with chessboards, sudokus, matrices and mazes of predetermined sizes, etc. However, in the case that the size of the answer cannot be easily determined beforehand, the technique with a clean-up function provided by the user turns out to be helpful. A user-provided clean-up function is used in the examples below, but authors can choose to manage the memory in the test suite if it fits the task of their kata.
 
 
 ### Naive approach: N+1 allocations
@@ -432,7 +432,7 @@ void destroy_world(char** world, int world_h) {
 
 ### Flat array
 
-Very often overlooked, but a very good approach to represent 2D arrays is to store them in a regular, linear array of `T[ ]`. It can be effectively used when bounds between inner arrays can be efficiently determined, for example each row of a matrix has a well known length, rows of a Pascal's triangle have precisely defined, although different, lengths, and string entries are clearly terminated.
+Very often overlooked, but a very good approach to represent 2D arrays is to store them in a regular, linear array of `T[ ]`. It can be effectively used when bounds between inner arrays can be efficiently determined, for example, each row of a matrix has a well-known length, rows of a Pascal's triangle have precisely defined, although different, lengths, and string entries are clearly terminated.
 
 This way, the complexity of memory management is greatly reduced since all necessary memory can be allocated and freed with a single call to `malloc` (or equivalent) and `free`.
 
