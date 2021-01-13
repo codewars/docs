@@ -76,8 +76,8 @@ Data hidden behind pointers can be arranged in many possible ways. Whenever a ka
 
 - The code itself. Specifying that a pointer points to `const` data can serve as a hint that it has not been allocated dynamically and won't be freed. Size hints for array parameters can help understanding how arays are organized, etc. Correctly specified types can be very helpful, but not always sufficient.
 - [Language-specific paragraph](#description) in the kata description.
-- As a comment in the ["Solution setup" snippet](/authoring/guidelines/sample-tests/).
-- When necessary, sample tests should present an example of how data is composed, passed to the user solution, fetched from it, worked on, and cleaned up afterwards.
+- As a comment in the "Solution setup" snippet.
+- When necessary, [sample tests](/authoring/guidelines/sample-tests/) should present an example of how data is composed, passed to the user solution, fetched from it, worked on, and cleaned up afterwards.
 
 When the structure, layout, or allocation scheme of a pointed data is not described, users cannot know how to implement requirements without causing either a crash or a memory leak. Authors can choose the ownership strategy their kata should use, and the memory can be managed either by the test suite, by the user, or both. However they should be aware what are the advantages and disadvantages of each such strategy, and when and which applies the best. 
 
