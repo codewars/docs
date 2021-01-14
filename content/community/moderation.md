@@ -36,7 +36,7 @@ They can be recognized by the symbol of a crown (👑) displayed next to their u
 
 ## Moderators
 
-Moderators are a small team of active users selected by admins and are responsible for supervising users's activities. They have earned the trust of the admins from years of contributions and are given access to moderation tools and extra privileges.
+Moderators are a small team of active users selected by admins and are responsible for supervising users' activities. They have earned the trust of the admins from years of contributions and are given access to moderation tools and extra privileges.
 
 Example responsibilities include:
 - Providing support
