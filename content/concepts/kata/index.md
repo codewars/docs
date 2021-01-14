@@ -38,4 +38,4 @@ Users can also contribute to existing kata in various ways:
 [kata-solutions]: /concepts/kata/solutions/
 [kata-satisfaction-rating]: /concepts/kata/satisfaction-rating/
 [kata-beta-process]: /concepts/kata/beta-process/
-[kata-translation]: /concepts/kata/translations/
+[kata-translations]: /concepts/kata/translations/
