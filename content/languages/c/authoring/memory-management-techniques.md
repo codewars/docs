@@ -29,7 +29,9 @@ Since C-strings and arrays of other types are similar from the perspective of me
 
 ## Memory Management Patterns
 
-Whenever a kata needs to return a string or an array, C authors tend to use the naive technique of allocating the memory in the solution function, and freeing it in the test suite. This approach mimics the behavior known from other languages where returning an array or object from inside of the user's solution is perfectly valid, but it's not always the best, or even correct, way of working with unmanaged memory. The memory can be managed either by the test suite, by the user, or both. Authors can choose the way how their kata should deal with memory and ownership strategy their kata should use. However, they should be aware of the advantages and disadvantages of each such strategy, and when and which applies the best. 
+In C, unlike for example Python, Java, C# or Javascript, dynamically allocated memory is not managed by the runtime. It's considered to be an external resource, just like a file, a DB or network connection, or a hardware device. The program itself has to take care of it properly, allocating it when necessary, and freeing when no longer needed.
+
+In a kata, the memory can be managed either by the test suite, by the user, or both. Authors can choose the way how their kata should deal with memory and ownership strategy their kata should use. However, they should be aware of the advantages and disadvantages of each such strategy, and when and which applies the best. 
 
 
 ### Statically allocated constant data
@@ -168,21 +170,28 @@ Test(random_tests, large_inputs) {
 
 </details>
 
-This technique is often overlooked by kata authors, but it's a technique which greatly simplifies the way how user solutions are built and how they communicate with the test suite. User's solution does not have to worry about allocations, error handling, and can focus on its task. Test suite can use any allocation technique it wants, like automatic allocation on the stack, or dynamic allocation on a heap. Buffer can be allocated once and reused accross calls.
+This technique is often overlooked by kata authors, but it greatly simplifies the way how user solutions are built and how they communicate with the test suite. User's solution does not have to worry about allocations or error handling, and can focus on its task. Test suite can use any allocation technique it wants, like automatic allocation on the stack, or dynamic allocation on a heap. Buffer can be allocated once and reused accros many test calls.
 
 The biggest problem with allocated memory is that its size has to be known or possible to estimate before calling the user's solution. It's very often the case, but sometimes such estimation is not possible or easy. There are ways to work around this problem and work with memory allocated by the caller even when its size is not known upfront, but they are out of scope of this article. In such cases, kata can use a memory allocated by the user.
 
 
 ### Mixed approach: `malloc` in the solution and `free` in tests
 
-In a vast majority of cases when a kata requires the solution to allocate memory, authors choose the naive approach of allocating the memory in the solution, and releasing it with `free` in the test suite after performing all necessary assertions:
+In a vast majority of cases when a kata requires the solution to allocate memory, authors choose the naive approach of allocating the memory in the solution, and releasing it with `free` in the test suite after performing all necessary assertions. This mimics the behavior known from high-level languages where returning an array or object from inside of the user's solution is perfectly valid, but it's not always the best, or even correct, way of working with unmanaged memory in C.
+
+This approach is useful when the size of the result is not known before the call. The solution is reponsible for finding the correct size and returning it along with the pointer to the buffer itself, and the test suite is responsible for freeing it after every call.
 
 <details>
+
+Kata task:
+
+> Given a natural nuber `n`, return all prime numbers up to and including `n`.
 
 Solution:
 
 ```c
 //get all prime numbers less than upto
+//use an output parameter to return the size of the result
 int* get_primes(int upto, int* size) {
 
     //the solution allocates required memory
@@ -218,24 +227,18 @@ Test(fixed_tests, should_return_2_and_3_for_4) {
 
 </details>
 
-This approach mimics the behavior of higher-level languages, where functions can allocate and return arrays without problems. It seems a natural way for many authors, but, sometimes surprisingly for them, it's often a bad one. It's often bad from a design point of view, but, even worse, in production setups, it can be straight invalid and can lead to crashes.
+This approach works in a way similar to functions like `strdup` or `asprintf`, which allocate required memory and pass its ownership to the caller. It's a good fit for Codewars kata because it's simple, effective, and works well in Codewars code runner.
 
-<!--
-- SRP
-- strdup and asprintf are nonstandard
--->
+Potential issue with the mixed approach is not related to Codewars, but to "real world" C coding and design. It might not work well for complex memory structures, or when a callee has to do advanced book-keeping and tracking of allocated memory. It also does not work well when passing data between modules (for example, between libraries, or from a library to main program).
 
 
 ### Memory managed by the solution
 
 The opposite of managing memory in the test suite is the approach of delegating the responsibility to the solver. This way, tests do not need to worry about problematic aspects of memory management, kata authors give freedom of implementation to users, and can reduce the boilerplate required to implement memory management.
 
-
-#### Symmetric functions for allocation and deallocation
-
 This idea boils down to asking users to provide their equivalents of allocation and de-allocation functions. The solution function is responsible not only for solving the task but also for allocation of memory and storing of book-keeping information. The clean-up function is responsible for releasing resources.
 
-There are many possible ways of implementing the allocation scheme and corresponding clean-up function, and its usage usually ends up being similar to the [naive approach](#naive-approach-malloc-in-the-solution-and-free-in-tests) described in the beginning. An example implementation could be similar to:
+There are many possible ways of implementing the allocation scheme and corresponding clean-up function, but example implementation could be similar to:
 
 <details>
 
@@ -273,18 +276,20 @@ int world_w = 3, world_h = 3;
 char** initial_generation = ...; //set up a GoL glider
 int generations = 25;
 
-//invoke solution function, which allocates memory
+//invoke solution function, which also allocates memory
 char** actual = game_of_life(generations, initial_generation, &world_h, &world_w);
 
 //... perform assertions on the world map and verify the state of its cells
 
 //call the clean-up function, which deallocates all memory
 destroy_world(actual);
+
+//...at this point memory is deallocated, no need to call free
 ```
 
 </details>
 
-As this approach very useful for more complex memory structures, a couple of examples can be found in the section on [Two-dimensional arrays](#two-dimensional-arrays).
+Memory management by a callee is not a common requirement for Codewars kata. It can be useful when the memory is structured in a complex way, or when it has to be tracked in some particular way. It mimics the behavior of C libraries, which often provide symmetrical de/allocation functions, and/or use opaque pointers as elements of their interface.
 
 
 ## Two-dimensional arrays
