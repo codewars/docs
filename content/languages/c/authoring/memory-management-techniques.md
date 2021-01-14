@@ -94,6 +94,8 @@ Test(fixed_tests, no_one_won) {
 
   //constants can be asserted on with cr_assert_eq
   cr_assert_eq(winner, NONE, "Expected: [%s], but was: [%s]", NONE, winner);
+
+  //...no clean-up necessary
 }
 ```
 
@@ -102,20 +104,25 @@ It is recommended to replace constant strings with some even simpler type, prefe
 </details>
 
 
-### Memory managed by tests
+### Memory managed by tests (i.e. caller)
 
-One set of possible techniques assumes that the caller (i.e. the test suite) is the owner of allocated memory and tests should be responsible for allocating and releasing it. Memory is always allocated by the test suite, and the test suite can decide whether it wants to use memory allocated automatically (i.e. on the stack), dynamically (for example with `malloc`), or in some other available way. The test suite is also responsible for releasing it, if necessary. Such allocated buffer is passed to the user's solution to work on, and it's filled with the requested data.
+One set of possible techniques assumes that the caller is the owner of allocated memory and tests should be responsible for allocating and releasing it. Memory is always allocated by the test suite, and the test suite can decide whether it wants to use memory allocated automatically (i.e. on the stack), dynamically (for example with `malloc`), or in some other available way. The test suite is also responsible for releasing it, if necessary. Such allocated buffer is passed to the user's solution to work on, and it's filled with the requested data.
 
-The biggest problem with this philosophy is that the test suite does not always know how much memory the solution would need to fit all the requested results in. But there are a few possible ways to resolve this issue.
-
-
-#### When the size is known upfront: use preallocated buffer
-
-Sometimes it's perfectly known how large the result will be before the solution is called. For example, if the test suite asks to generate `n` Fibonacci numbers, it means that the resulting array needs to have the size of at least `n`. Sometimes the exact size is not known exactly, but it's possible to accurately estimate its upper bound. For example, a function that removes punctuation from a string needs to work on a buffer at least as large as an input string, but the result can turn out to be a bit smaller. In such cases, the test suite can allocate the buffer which would be big enough to keep the result, and pass it to the solution function:
+Sometimes it's perfectly known how large the result will be before the solution is called, or it's possible to pre-allocate a buffer which will be large enough for every call. For example, if the test suite asks to generate `n` Fibonacci numbers, it means that the resulting array needs to have the size of at least `n`. Sometimes the exact size is not known exactly, but it's possible to accurately estimate its upper bound. For example, a function that removes punctuation from a string needs to work on a buffer at least as large as an input string, but the result can turn out to be a bit smaller. In such cases, the test suite can allocate the buffer which would be big enough to keep the result, and pass it to the solution function:
 
 <details>
 
+Solution:
+
 ```c
+//function prototype can use size hints
+void calculate_numbers(size_t n, int result [n]) {
+    //...actual calculations
+}
+```
+
+```c
+void calculate_numbers(size_t n, int result [n]);
 Test(fixed_tests, small_inputs) {
 
     //requested amount of nubers
@@ -161,206 +168,12 @@ Test(random_tests, large_inputs) {
 
 </details>
 
-#### When the size is not known, but is easy to calculate: ask and allocate
+This technique is often overlooked by kata authors, but it's a technique which greatly simplifies the way how user solutions are built and how they communicate with the test suite. User's solution does not have to worry about allocations, error handling, and can focus on its task. Test suite can use any allocation technique it wants, like automatic allocation on the stack, or dynamic allocation on a heap. Buffer can be allocated once and reused accross calls.
 
-Another possible approach is to ask the user to implement _two_ functions: one which would return the size needed to fit the result, and another one to perform the actual operation. For example:
-
-<details>
-
-Kata task:
-
-> Given a positive integer `n`, return all terms in the top `n` rows of Pascal's triangle flattened into a single array.
-
-Solution:
-
-```c
-//Function which counts amount of terms to be returned
-int count_elements_of_pascal_triangle(int rows) {
-    return rows * (rows + 1) / 2;
-}
-
-//Function performing actual calculations
-void get_elements_of_pascal_triangle(int rows, int elements[]) {
-    //...calculate elements of Pascal's triangle and store them in elements array
-}
-```
-
-Tests:
-
-```c
-Test(fixed_tests, should_work_for_3) {
-
-    int rows = 3;
-    
-    //array allocated on stack,
-    //top three rows have 6 terms
-    int terms[6]; 
-
-    //pass the array to the function, and expect
-    //it to be filled with the result
-    get_elements_of_pascal_triangle(3, terms);
-
-    //...perform assertions, verify correctness of returned numbers...
-
-    //no need to deallocate the array
-}
-
-Test(random_tests, large_inputs) {
-
-    const int MAX_TEST = 1000;
-
-    //ten random tests
-    for(int i=0; i<10; ++i) {
-
-        //randomize the input
-        int rows = rand() % MAX_TEST + 1;
-
-        //query the solution for required size of the answer
-        int terms_count = count_elements_of_pascal_triangle(rows);
-
-        //You can perform assertions on the returned size here, or
-        //you can create a separate suite just to test the
-        //count_elements_of_pascal_triangle function
-
-        //dynamically allocate an array large enough to fit the answer
-        int* array = malloc(sizeof(int) * terms_count);
-
-        //use the allocated array when calling the user's solution
-        get_elements_of_pascal_triangle(rows, array);
-
-        //...perform assertions, verify correctness of returned numbers...
-
-        //release the memory after the test
-        free(array);
-    }
-}
-```
-
-</details>
-
-This approach is used when the size of the answer cannot be easily inferred by the test suite, but can be efficiently calculated by the user, potentially without the overhead of calculating the actual solution.
+The biggest problem with allocated memory is that its size has to be known or possible to estimate before calling the user's solution. It's very often the case, but sometimes such estimation is not possible or easy. There are ways to work around this problem and work with memory allocated by the caller even when its size is not known upfront, but they are out of scope of this article. In such cases, kata can use a memory allocated by the user.
 
 
-#### When the size is not known, and difficult to calculate: assume (or guess) the initial size and reallocate if too small
-
-This approach is a combination of the two above. It has a somewhat complex interface, but allows for a performance compromise when the size of the result is not known upfront, and cannot be efficiently estimated without performing actual calculations. The general scheme is that the test suite passes in some pre-allocated buffer, and when the solution determines that the buffer is too small, it reports an error. The tests can then employ various strategies to grow the buffer and retry the solution. When the call to the solution succeeds, it fills the buffer with the result and reports its size.
-
-:::info
-This paragraph is probably too complex and not suitable for Codewars kata. It will be probably removed.
-:::
-
-<details>
-
-
-Kata task:
-
-> Given an integer `n > 1`, calculate Fibonacci numbers up to `n`.
-
-Solution:
-
-```c
-
-typedef enum EStatus {OK = 0, BUFFER_TOO_SMALL} Status;
-
-Status calculate_fibonaccis(int upto, int* array, int array_size, int* calculated_count) {
-
-    *calculated_count = 0;
-  
-    if(array_size < 3) return BUFFER_TOO_SMALL;
-    array[0] = 0;
-    array[1] = 1;
-
-    *calculated_count = 2;
-    for(int i=2; ; ++i, ++*calculated_count) {
-      
-        int fib = array[i-1] + array[i-2];
-        if(fib > upto)
-            break;
-
-        if(*calculated_count < array_size)
-            array[*calculated_count] = fib;
-        else
-            return BUFFER_TOO_SMALL;
-    }
-
-    return OK;
-}
-```
-
-Tests:
-
-```c
-typedef enum EStatus {OK=0, BUFFER_TOO_SMALL} Status;
-
-Status calculate_fibonaccis(int upto, int* array, int array_size, int* calculated_count);
-
-Test(fixed_tests, should_work_for_7) {
-
-    int upto = 7;
-    
-    //array allocated on stack, large enough to hold many numbers
-    int terms[20]; 
-    int size = 20;
-    int calculated_count;
-
-    //pass the array to the function, and expect it to be filled with the result
-    Status status = calculate_fibonaccis(upto, terms, size, &calculated_count);
-
-    //assert that status = OK
-    //assert that calculated_count = 6
-    //assert that elements are 0,1,1,2,3,5
-
-    //no need to deallocate the array
-}
-
-Test(random_tests, large_inputs) {
-
-    const int MAX_TEST = 1000;
-
-    //initially allocated array, will grow if necessary
-    int array_size = 20;
-    int* array = malloc(sizeof(int) * array_size);
-
-    //ten random tests
-    for(int i=0; i<10; ++i) {
-
-        //randomize the input
-        int upto = rand() % MAX_TEST + 5;
-        
-
-        int calculated_count;
-        
-        //call the user's solution and pass the initially allocated array
-        Status status = calculate_fibonaccis(upto, array, array_size, &calculated_count);
-        
-        //when the solution concludes that the buffer is too small,
-        //resize it and call the solution once again
-        int retries = 0;
-        while(status == BUFFER_TOO_SMALL) {
-            array_size *= 2;
-            array = realloc(array, sizeof(int) * array_size);
-            status = calculate_fibonaccis(upto, array, array_size, &calculated_count);
-
-            if(retries++ > MAX_RETRIES) {
-                //... protect agains ill-behaving solutions which are not able to get the correct status
-            }
-        }
-        
-        //You can perform assertions on the status and returned size here, or
-        //you can create a separate suite(s) just to test them separately
-
-        //...perform assertions, verify correctness of returned numbers...
-    }
-
-    //release the memory after the test
-    free(array);
-}
-```
-
-</details>
-
-
-### Naive approach: `malloc` in the solution and `free` in tests
+### Mixed approach: `malloc` in the solution and `free` in tests
 
 In a vast majority of cases when a kata requires the solution to allocate memory, authors choose the naive approach of allocating the memory in the solution, and releasing it with `free` in the test suite after performing all necessary assertions:
 
