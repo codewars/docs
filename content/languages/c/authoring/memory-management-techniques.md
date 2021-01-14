@@ -13,7 +13,7 @@ Unlike many modern, high-level languages, C does not manage memory automatically
 
 ### Specification
 
-Whenever a kata passes in a pointer to the user's solution or requires it to return or manipulate a pointer or data referenced by a pointer, it should **explicitly** and **clearly** provide all information necessary to carry out the operation correctly. See the paragraph on [related guidelines][guidelines](/languages/c/authoring/#working-with-pointers-and-memory-management) in ["C: creating and translating a kata"](/languages/c/authoring/) tutorial.
+Whenever a kata passes in a pointer to the user's solution or requires it to return or manipulate a pointer or data referenced by a pointer, it should **explicitly** and **clearly** provide all information necessary to carry out the operation correctly. See the paragraph on [related guidelines](/languages/c/authoring/#working-with-pointers-and-memory-management) in ["C: creating and translating a kata"](/languages/c/authoring/) tutorial.
 When the structure, layout, or allocation scheme of pointed data is not described, users cannot know how to implement requirements without causing either a crash or a memory leak.
 
 
@@ -24,19 +24,19 @@ It often happens that the solution function has to accept and return more values
 
 ### Arrays and strings
 
-Since C-strings and arrays of other types are similar from the perspective of memory management, this article uses examples of integer arrays. However, most of the techniques presented here apply equally to handling memory holding integers, floats, and characters, zero-terminated or not.
+Since C-strings and arrays of other types are similar from the perspective of memory management, most of the techniques presented here apply equally to handling memory holding integers, floats, and characters, zero-terminated or not.
 
 
 ## Memory Management Patterns
 
 In C, unlike for example Python, Java, C# or Javascript, dynamically allocated memory is not managed by the runtime. It's considered to be an external resource, just like a file, a DB or network connection, or a hardware device. The program itself has to take care of it properly, allocating it when necessary, and freeing when no longer needed.
 
-In a kata, the memory can be managed either by the test suite, by the user, or both. Authors can choose the way how their kata should deal with memory and ownership strategy their kata should use. However, they should be aware of the advantages and disadvantages of each such strategy, and when and which applies the best. 
+In a kata, the memory can be managed either by the test suite, by the user, or both. Authors can choose the way how their kata should deal with memory and they can pick any ownership strategy. However, they should be aware of the advantages and disadvantages of each such strategy, and when and which applies the best. 
 
 
 ### Statically allocated constant data
 
-The best way to avoid problems with memory allocation is to avoid unnecessary memory allocation. This advice might sound tricky, but there are simply many kata which require dynamic memory allocation or operation on data pointed by pointers, while it's not necessary and could be avoided. One commonly occuring example of such situation is when a kata requires returning a pointer to a string which could be replaced by a constant, which is used in particular when translating kata from other languages. Returning a string in high-level languages is not a problem, but in C it always raises questions of who should allocate it and how it should be allocated. Consider replacing the string with some simpler data type (eventually aliased with a `typedef`), and/or provide some symbolic constants for available values. For example, if the requirement for the JavaScript version is: _"Return the string 'BLACK' if a black pawn will be captured first, 'WHITE' if a white one, and 'NONE' if all pawns are safe."_, C version should preferably provide and use the named constants `BLACK`, `WHITE` and `NONE`. 
+The best way to avoid problems with memory allocation is to avoid unnecessary memory allocation. This advice might sound tricky, but there are simply many kata which require dynamic memory allocation or operation on data pointed by pointers, while it's simply not necessary and could be avoided. One commonly occuring example of such situation is when a kata requires returning a pointer to a string which could be replaced by a constant. It seems to appear particularly often when translating kata from other languages. Returning a string in high-level languages is not a problem, but in C it always raises questions of who should allocate it and how it should be allocated. Consider replacing the string with some simpler data type (eventually aliased with a `typedef`), and/or provide some symbolic constants for available values. For example, if the requirement for the JavaScript version is: _"Return the string 'BLACK' if a black pawn will be captured first, 'WHITE' if a white one, and 'NONE' if all pawns are safe."_, C version should preferably provide and use the named constants `BLACK`, `WHITE` and `NONE`. 
 
 <details>
 
@@ -334,9 +334,114 @@ free(world);
 
 </details>
 
+Advantage of individually allocated rows is that it works good for jagged arrays.
+
 This approach, although it seems to be simple, is affected by issues mostly related to performance. It tends to be slow, because every dynamic allocation requires a lookup of memory to be performed. It can also cause excessive memory fragmentation.
 
-Advantage of individually allocated rows is that ot works good for jagged arrays.
+Additionally, it is sometimes unnecessarily used to return an array of data (usualy strings) which could be turned into constants.
+
+
+### Array of `const` data
+
+This approach is related to [returning a statically allocated const data](#statically-allocated-constant-data), but extended to arrays. Some kata require the user to return an array of strings, which coud be turned into constants. In such case, the array itself can be allocated dynamically, but its entries do not have to be.
+
+<details>
+
+Kata task:
+
+> Return an array of strings `"LEFT"`, `"RIGHT"`, `"UP"`, `"DOWN"` which describe the path through the maze.
+
+
+<details>
+
+Preloaded:
+
+```c
+//Provide a typedef for constants.
+//If you really want to use strings for some reason, you can use
+//constants of type const char*, but it's recommended to take
+//this step even further and use an enum.
+typedef const char * Direction;
+
+//define constants
+Direction Left  = "LEFT";
+Direction Right = "RIGHT";
+Direction Up    = "UP";
+Direction Down  = "DOWN";
+```
+
+Solution:
+
+```c
+#include <stdlib.h>
+
+//Since Codewars does not allow header files for kata, declarations need to be repeated
+typedef const char * Direction;
+extern Direction Left;
+extern Direction Right;
+extern Direction Up;
+extern Direction Down;
+
+
+Direction* find_exit(size_t h, size_t w, char board[h][w], size_t* length) //typedef used for return type 
+{
+    Direction* path = malloc(sizeof(Direction) * ...);
+    int found = 0;
+    *length = 0;
+    while(!found) {
+        //put a named constant in the result array
+        path[(*length)++] = Left;
+
+        //...search for exit...
+    }
+    return path;
+}
+```
+
+Tests:
+
+```c
+#include <criterion/criterion.h>
+
+//Since Codewars does not allow header files for kata, declarations need to be repeated
+typedef const char * Direction;
+extern Direction Left;
+extern Direction Right;
+extern Direction Up;
+extern Direction Down;
+
+Direction* find_exit(size_t h, size_t w, char board[h][w], size_t* length);
+
+//helper function
+void setup_board(size_t w, size_t h, char board[h][w]) {
+  //...
+}
+
+Test(fixed_tests, short_path) {
+ 
+  char board[2][2];
+  setup_board(2, 2, board);
+  Direction expected[] = (Direction[]) { Left, Left };
+  
+  //call user's solution and get a result array and its size
+  size_t path_length;  
+  Direction* path = find_exit(2, 2, board, &path_length);
+
+  //verify the size
+  cr_assert_eq(path_length, 2);
+  for(size_t i=0; i < path_length; ++i) {
+    //constants can be asserted on with cr_assert_eq
+    cr_assert_eq(path[i], expected[i]);
+  }
+
+  //...clean up only array of entries, and not entries themselves
+  free(path);
+}
+```
+
+</details>
+
+Since array entries are statically allocated constants, they do not have to be explicitly allocated or freed.
 
 
 ### Flat array
