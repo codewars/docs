@@ -10,3 +10,4 @@ dist
 /schema.graphql
 .eslintcache
 .stylelintcache
+package-lock.json
