@@ -297,121 +297,89 @@ Memory management by a callee is not a common requirement for Codewars kata. It 
 Some kata require the user solution to return a two-dimensional array, for example, a 2D matrix, or an array of C-strings. Such scenarios are a bit more complex, because not only does the higher-order array have to be properly managed, but all its individual entries as well. The exact approach selected for the allocation of such structures depends on the scenario because different techniques are suitable for square or rectangular arrays, jagged arrays, arrays of null-terminated strings, etc.
 
 
-Memory for 2D arrays can be managed by the test suite or the user solution. As long as the size of the 2D array is known before calling a solution and does not change through the course of calculations, the test suite can choose to perform all necessary allocations and pass the memory to the solution function ready to use. This is a very good approach when working with chessboards, sudokus, matrices and mazes of predetermined sizes, etc. However, in the case that the size of the answer cannot be easily determined beforehand, the technique with a clean-up function provided by the user turns out to be helpful. A user-provided clean-up function is used in the examples below, but authors can choose to manage the memory in the test suite if it fits the task of their kata.
+Just as any memory, 2D arrays can be managed by the test suite, or the user solution, or both. As long as the size of the 2D array is known before calling a solution and does not change through the course of calculations, the test suite can choose to perform all necessary allocations and pass the memory to the solution function ready to use. This is a very good approach when working with chessboards, sudokus, matrices and mazes of predetermined sizes, etc. However, in the case that the size of the answer cannot be easily determined beforehand, the mixed approach or the memory management by a callee with a clean-up function provided by the user can be better.
 
+:::note Note on examples
+For simplicity, this section uses terms "2D array", "array of arrays" and "matrix" interchangeably and assume row-major order, i.e. data can be accessed with `array[row][col]`.
+:::
 
 ### Naive approach: N+1 allocations
 
-This is the most common yet worst possible approach of using dynamically allocated memory. It tends to be slow, causes excessive memory fragmentation and is usually inferior to available alternatives.
+This is the most common approach of using dynamically allocated multi-dimensional arrays. An array of pointers to rows is allocated first, and each row is allocated individually afterwrds.
 
 <details>
 
+Allocation:
+
 ```c
-char** game_of_life(int generations, char** initial_generation, int* world_h, int* world_w) {
+//allocate array of rows first
+char** world = malloc(sizeof(char*) * world_h);
+for(int i=0; i < world_h; ++i) {
 
-     //allocating memory for the world map, row by row
-    char** world = malloc(sizeof(char*) * world_h);
-    for(int i=0; i < world_h; ++i)
-        world[i] = malloc(world_w);
-    
-    for(int i=0 i < generations; ++i) {
-        //... actual game, which potentially requires additional (re)allocations...
-    }
-
-    //return the final state of the game world to the caller
-    return world;
+    //allocate every row individually
+    world[i] = malloc(world_w);
 }
+```    
 
-void destroy_world(char** world, int world_h) {
-    
-    //... deallocate all memory also row by row
-    for(int i=0; i < world_h; ++i)
-        free(world[i]);
-    free(world);
+Deallocation:
+
+```c
+//... deallocate all memory also row by row
+for(int i=0; i < world_h; ++i)
+    free(world[i]);
+
+free(world);
 }
 ```
 
 </details>
+
+This approach, although it seems to be simple, is affected by issues mostly related to performance. It tends to be slow, because every dynamic allocation requires a lookup of memory to be performed. It can also cause excessive memory fragmentation.
+
+Advantage of individually allocated rows is that ot works good for jagged arrays.
+
 
 ### Flat array
 
-Very often overlooked, but a very good approach to represent 2D arrays is to store them in a regular, linear array of `T[ ]`. It can be effectively used when bounds between inner arrays can be efficiently determined, for example, each row of a matrix has a well-known length, rows of a Pascal's triangle have precisely defined, although different, lengths, and string entries are clearly terminated.
+Very often overlooked, but a very good approach to represent 2D arrays is to store them in a regular, linear array of `T[ ]`, potentially supported by some type casts between linear buffer and two-dimensional matrix. It can be effectively used when bounds between inner arrays can be efficiently determined, for example, each row of a matrix has a well-known length, rows of a Pascal's triangle have precisely defined, although different, lengths, and string entries are clearly terminated.
+
+<details>
+
+```c
+//declaration of solution accepting a two-dimentional array
+void play_game_of_life(size_t world_h, size_t world_w, char world_2d[world_h][world_w]);
+
+size_t world_h = ...;
+size_t world_w = ...;
+
+//allocating a linear buffer of memory for the world map
+char* world_linear = malloc(world_h * world_w);
+
+//cast a linear buffer to a 2D array
+char (*world_2d)[world_h] = (char (*)[world_h])world_linear;
+
+for(size_t row = 0; row < world_h; ++row) {
+    for(size_t col = 0; col < world_w; ++col) {
+    
+        //...set up the world...
+
+        //access a cell in linear buffer, or
+        world_linear[row * world_w + col] = 'x'; //set a cell as alive
+
+        //access a cell in 2d array
+        world_2d[row][col] = ' '; //set a cell as dead
+    }
+}
+
+//pass the 2d array to user solution
+play_game_of_life(world_h, world_w, world_2d);
+
+//deallocate all memory at once
+free(world_linear);
+```
+
+</details>
 
 This way, the complexity of memory management is greatly reduced since all necessary memory can be allocated and freed with a single call to `malloc` (or equivalent) and `free`.
 
-Drawbacks of this approach include:
-
-- The solution does not resemble its logical structure, e.g. elements of a matrix cannot be accessed with, for example, `matrix[row][col]`, but with `matrix[row * size + col]`
-- It is best suited for perfectly rectangular arrays, i.e. arrays whose sub-arrays all have equal length
-
-<details>
-
-```c
-char* game_of_life(int generations, char* initial_generation, int* world_h, int* world_w) {
-
-     //allocating a linear buffer of memory for the world map
-    char* world = malloc(world_h * world_w);
-    
-    for(int i=0 i < generations; ++i) {
-        //... actual game, which potentially requires additional (re)allocations...
-        
-        //...
-        world[i * world_w + j] = 'x'; //set a cell as alive
-    }
-
-    //return the final state of the game world to the caller
-    return world;
-}
-
-void destroy_world(char* world) {
-    //... deallocate all memory at once
-    free(world);
-}
-```
-
-</details>
-
-### Flat buffer with an array of rows
-
-This method minimizes the number of allocations down to two, and allows for accessing the elements as if they were stored in a two-dimensional array. It uses two dynamically allocated buffers: One large buffer to store entries of the array in a flat array, and one smaller buffer which serves as an array of pointers to individual rows:
-
-<details>
-
-```c
-char* game_of_life(int generations, char* initial_generation, int* world_h, int* world_w) {
-
-     //allocating a large  linear buffer of memory for the world map
-    char** world_data = malloc(world_h * world_w);
-    //allocating smaller array to hold pointers to rows
-    char* world_rows = malloc(world_h);
-    for(int i=0; i < world_h; ++i)
-        //put rows into the array
-        world_rows[i] = world_data + i * world_w;
-
-    for(int i=0 i < generations; ++i) {
-        //... actual game, which potentially requires additional (re)allocations...
-        
-        //...
-        world_rows[i][j] = 'x'; //set a cell as alive
-    }
-
-    //return the final state of the game world to the caller
-    return world_rows;
-}
-
-void destroy_world(char** world_rows) {
-
-    //... deallocate large buffer, which starts at the
-    //first row of the 2D array
-    free(world[0]);
-
-    //deallocate the smaller buffer
-    free(world_rows);
-}
-```
-
-</details>
-
-This method is somewhat problematic when the width of the internal arrays is subject to change through calculations. While both buffers can be easily reallocated to grow or shrink (for example to add new rows), changing the width of the array requires the data in rows to be manually "shifted apart", and entries in the affected rows need to be updated.
-
-This approach also requires additional book-keeping when used for jagged arrays, unless entries of adjacent rows are clearly separated, e.g. as it happens for an array of C-strings.
+Drawback of this solution is that it is best suited for perfectly rectangular arrays, i.e. arrays whose sub-arrays all have equal length.
