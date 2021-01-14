@@ -341,7 +341,7 @@ Advantage of individually allocated rows is that ot works good for jagged arrays
 
 ### Flat array
 
-Very often overlooked, but a very good approach to represent 2D arrays is to store them in a regular, linear array of `T[ ]`, potentially supported by some type casts between linear buffer and two-dimensional matrix. It can be effectively used when bounds between inner arrays can be efficiently determined, for example, each row of a matrix has a well-known length, rows of a Pascal's triangle have precisely defined, although different, lengths, and string entries are clearly terminated.
+Very often overlooked, but a very good approach to represent 2D arrays is to store them in a regular, linear array of `T[ ]`, potentially supported by some type casts between linear buffer and two-dimensional matrix. 
 
 <details>
 
@@ -382,4 +382,6 @@ free(world_linear);
 
 This way, the complexity of memory management is greatly reduced since all necessary memory can be allocated and freed with a single call to `malloc` (or equivalent) and `free`.
 
-Drawback of this solution is that it is best suited for perfectly rectangular arrays, i.e. arrays whose sub-arrays all have equal length.
+Drawback of the version with casts between linear and 2D array is that it is best suited for perfectly rectangular arrays, i.e. arrays whose sub-arrays all have equal length.
+
+However, the version without casts can be effectively used when bounds between inner arrays can be efficiently determined, for example, each row of a matrix has a well-known length, rows of a Pascal's triangle have precisely defined, although different, lengths, and string entries are clearly terminated.
