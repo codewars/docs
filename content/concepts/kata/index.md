@@ -28,7 +28,7 @@ Users can also contribute to existing kata in various ways:
 - After a kata is solved, users can cast their [satisfaction vote][kata-satisfaction-rating] for a kata to let others know how they like it.
 - Users can solve [beta kata][kata-beta-process] to evaluate them before they get accepted.
 - Authors can create new kata and put them in [beta][kata-beta-process].
-- Translators can [create new language versions][kata-translations] (translations) of kata. 
+- Translators can [create new language versions][kata-translations] (translations) of kata.
 
 
 [training-routines]: /concepts/kata/training-routines/
