@@ -6,69 +6,37 @@ sidebar: "language:c"
 
 # Memory Management in C kata
 
-_TBD: intro_
+Unlike many modern, high-level languages, C does not manage memory automatically. Manual memory management is a very vast and complex topic, with many possible ways of achieving the goal depending on a specific case, caveats, and pitfalls.
 
-<!--
-- SRP
-- strdup and asprintf are nonstandard
-- avoid string constants, use named symbols
--->
+Whenever a kata needs to return a string or an array, C authors tend to use the naive technique of allocating the memory in the solution function, and freeing it in the test suite. This approach mimics the behavior known from other languages where returning an array or object from inside of the user's solution is perfectly valid, but it's hardly ever a valid way of working with unmanaged memory.
 
+ Authors can choose the way how their kata should deal with memory and ownership strategy their kata should use The memory can be managed either by the test suite, by the user, or both. However, they should be aware of the advantages and disadvantages of each such strategy, and when and which applies the best. 
+
+
+## General information
+
+
+### Interface
 
 It often happens that the solution function has to accept and return more values than just these related to the kata task itself. There can be more parameters required for tracking the memory, sizes of allocated buffers, statuses, etc. Depending on exact requirements, these parameters can be passed in and returned as separate function arguments, or can be packed together into some kind of structure. Examples in this article assume the former, but authors are free to decide otherwise.
 
+### Specification
 
-## Arrays and strings
+Whenever a kata passes in a pointer to the user's solution or requires it to return or manipulate a pointer or data referenced by a pointer, it should **explicitly** and **clearly** provide all information necessary to carry out the operation correctly. See the paragraph on [related guidelines][guidelines](/languages/c/authoring/#working-with-pointers-and-memory-management) in ["C: creating and translating a kata"](/languages/c/authoring/) tutorial.
+When the structure, layout, or allocation scheme of pointed data is not described, users cannot know how to implement requirements without causing either a crash or a memory leak.
+
+### Arrays and strings
 
 Since C-strings and arrays of other types are similar from the perspective of memory management, this article uses examples of integer arrays. However, most of the techniques presented here apply equally to handling memory holding integers, floats, and characters, zero-terminated or not.
 
 
-### Naive approach: `malloc` in the solution and `free` in tests
+## Memory Management Patterns
 
-In a vast majority of cases when a kata requires the solution to allocate memory, authors choose the naive approach of allocating the memory in the solution, and releasing it with `free` in the test suite after performing all necessary assertions:
 
-<details>
 
-Solution:
+### Statically allocated constant data
 
-```c
-//get all prime numbers less than upto
-int* get_primes(int upto, int* size) {
-
-    //the solution allocates required memory
-    int* result = malloc(sizeof(int) * ...);
-
-    //... fill result with primes
-    //...
-
-    *size = ...; //assign amount of primes
-    return result;
-}
-```
-
-Test suite:
-
-```c
-Test(fixed_tests, should_return_2_and_3_for_4) {
-    
-    int expected[] {2, 3}, expected_size = 2;
-    int actual_size;
-    
-    //call user solution and expect it to allocate the returned array
-    int* actual = get_primes(4, &actual_size);
-
-    //...assert on actual_size
-    //...assert on contents of actual
-
-    //after performing all necessary assertions,
-    //free the array allocated by the user solution
-    free(actual);
-}
-```
-
-</details>
-
-This approach mimics the behavior of higher-level languages, where functions can allocate and return arrays without problems. It seems a natural way for many authors, but, sometimes surprisingly for them, it's often a bad one. It's often bad from a design point of view, but, even worse, in production setups, it can be straight invalid and can lead to crashes.
+One of the consequences of unmanaged memory is that it's strongly recommended against returning string constants from C functions, especially when translating kata from other languages. Returning a string in other languages is not a problem, but in C it always raises questions of who should allocate it and how it should be allocated. Consider replacing the string with some simpler data type (eventually aliased with a `typedef`), and/or provide some symbolic constants for available values. For example, if the requirement for the JavaScript version is: _"Return the string 'BLACK' if a black pawn will be captured first, 'WHITE' if a white one, and 'NONE' if all pawns are safe."_, C version should preferably provide and use the named constants `BLACK`, `WHITE` and `NONE`. If the author decides to keep raw C-strings as elements of the kata interface, they should clearly specify the required allocation scheme.
 
 
 ### Memory managed by tests
@@ -327,6 +295,60 @@ Test(random_tests, large_inputs) {
 ```
 
 </details>
+
+
+### Naive approach: `malloc` in the solution and `free` in tests
+
+In a vast majority of cases when a kata requires the solution to allocate memory, authors choose the naive approach of allocating the memory in the solution, and releasing it with `free` in the test suite after performing all necessary assertions:
+
+<details>
+
+Solution:
+
+```c
+//get all prime numbers less than upto
+int* get_primes(int upto, int* size) {
+
+    //the solution allocates required memory
+    int* result = malloc(sizeof(int) * ...);
+
+    //... fill result with primes
+    //...
+
+    *size = ...; //assign amount of primes
+    return result;
+}
+```
+
+Test suite:
+
+```c
+Test(fixed_tests, should_return_2_and_3_for_4) {
+    
+    int expected[] {2, 3}, expected_size = 2;
+    int actual_size;
+    
+    //call user solution and expect it to allocate the returned array
+    int* actual = get_primes(4, &actual_size);
+
+    //...assert on actual_size
+    //...assert on contents of actual
+
+    //after performing all necessary assertions,
+    //free the array allocated by the user solution
+    free(actual);
+}
+```
+
+</details>
+
+This approach mimics the behavior of higher-level languages, where functions can allocate and return arrays without problems. It seems a natural way for many authors, but, sometimes surprisingly for them, it's often a bad one. It's often bad from a design point of view, but, even worse, in production setups, it can be straight invalid and can lead to crashes.
+
+<!--
+- SRP
+- strdup and asprintf are nonstandard
+-->
+
 
 ### Memory managed by the solution
 
