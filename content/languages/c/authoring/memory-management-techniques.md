@@ -8,20 +8,19 @@ sidebar: "language:c"
 
 Unlike many modern, high-level languages, C does not manage memory automatically. Manual memory management is a very vast and complex topic, with many possible ways of achieving the goal depending on a specific case, caveats, and pitfalls.
 
-Whenever a kata needs to return a string or an array, C authors tend to use the naive technique of allocating the memory in the solution function, and freeing it in the test suite. This approach mimics the behavior known from other languages where returning an array or object from inside of the user's solution is perfectly valid, but it's not always the best, or even correct, way of working with unmanaged memory. The memory can be managed either by the test suite, by the user, or both. Authors can choose the way how their kata should deal with memory and ownership strategy their kata should use. However, they should be aware of the advantages and disadvantages of each such strategy, and when and which applies the best. 
-
 
 ## General information
+
+### Specification
+
+Whenever a kata passes in a pointer to the user's solution or requires it to return or manipulate a pointer or data referenced by a pointer, it should **explicitly** and **clearly** provide all information necessary to carry out the operation correctly. See the paragraph on [related guidelines][guidelines](/languages/c/authoring/#working-with-pointers-and-memory-management) in ["C: creating and translating a kata"](/languages/c/authoring/) tutorial.
+When the structure, layout, or allocation scheme of pointed data is not described, users cannot know how to implement requirements without causing either a crash or a memory leak.
 
 
 ### Interface
 
 It often happens that the solution function has to accept and return more values than just these related to the kata task itself. There can be more parameters required for tracking the memory, sizes of allocated buffers, statuses, etc. Depending on exact requirements, these parameters can be passed in and returned as separate function arguments, or can be packed together into some kind of structure. Examples in this article assume the former, but authors are free to decide otherwise.
 
-### Specification
-
-Whenever a kata passes in a pointer to the user's solution or requires it to return or manipulate a pointer or data referenced by a pointer, it should **explicitly** and **clearly** provide all information necessary to carry out the operation correctly. See the paragraph on [related guidelines][guidelines](/languages/c/authoring/#working-with-pointers-and-memory-management) in ["C: creating and translating a kata"](/languages/c/authoring/) tutorial.
-When the structure, layout, or allocation scheme of pointed data is not described, users cannot know how to implement requirements without causing either a crash or a memory leak.
 
 ### Arrays and strings
 
@@ -30,11 +29,77 @@ Since C-strings and arrays of other types are similar from the perspective of me
 
 ## Memory Management Patterns
 
+Whenever a kata needs to return a string or an array, C authors tend to use the naive technique of allocating the memory in the solution function, and freeing it in the test suite. This approach mimics the behavior known from other languages where returning an array or object from inside of the user's solution is perfectly valid, but it's not always the best, or even correct, way of working with unmanaged memory. The memory can be managed either by the test suite, by the user, or both. Authors can choose the way how their kata should deal with memory and ownership strategy their kata should use. However, they should be aware of the advantages and disadvantages of each such strategy, and when and which applies the best. 
 
 
 ### Statically allocated constant data
 
-One of the consequences of unmanaged memory is that it's strongly recommended against returning string constants from C functions, especially when translating kata from other languages. Returning a string in other languages is not a problem, but in C it always raises questions of who should allocate it and how it should be allocated. Consider replacing the string with some simpler data type (eventually aliased with a `typedef`), and/or provide some symbolic constants for available values. For example, if the requirement for the JavaScript version is: _"Return the string 'BLACK' if a black pawn will be captured first, 'WHITE' if a white one, and 'NONE' if all pawns are safe."_, C version should preferably provide and use the named constants `BLACK`, `WHITE` and `NONE`. If the author decides to keep raw C-strings as elements of the kata interface, they should clearly specify the required allocation scheme.
+The best way to avoid problems with memory allocation is to avoid unnecessary memory allocation. This advice might sound tricky, but there are simply many kata which require dynamic memory allocation or operation on data pointed by pointers, while it's not necessary and could be avoided. One commonly occuring example of such situation is when a kata requires returning a pointer to a string which could be replaced by a constant, which is used in particular when translating kata from other languages. Returning a string in high-level languages is not a problem, but in C it always raises questions of who should allocate it and how it should be allocated. Consider replacing the string with some simpler data type (eventually aliased with a `typedef`), and/or provide some symbolic constants for available values. For example, if the requirement for the JavaScript version is: _"Return the string 'BLACK' if a black pawn will be captured first, 'WHITE' if a white one, and 'NONE' if all pawns are safe."_, C version should preferably provide and use the named constants `BLACK`, `WHITE` and `NONE`. 
+
+<details>
+
+Preloaded:
+
+```c
+//Provide a typedef for constants.
+//If you really want to use strings for some reason, you can use
+//constants of type const char*, but it's recommended to take
+//this step even further and use an enum.
+typedef const char * const Player;
+
+//define constants
+Player BLACK = "BLACK";
+Player WHITE = "WHITE";
+Player NONE  = "NONE";
+```
+
+Solution:
+
+```c
+
+//Since Codewars does not allow header files for kata, declarations need to be repeated
+typedef const char * const Player;
+extern Player BLACK;
+extern Player WHITE;
+extern Player NONE; 
+
+
+Player who_won(const char* board) //typedef used for return type 
+{
+    if(...) {
+      return BLACK;    //return constant instead of an allocated string
+    } else if (...) {
+      return WHITE;
+    } else {
+      return NONE;
+    }
+}
+```
+
+
+Tests:
+
+```c
+//Since Codewars does not allow header files for kata, declarations need to be repeated
+typedef const char * const Player;
+extern Player BLACK;
+extern Player WHITE;
+extern Player NONE; 
+
+Player who_won(const char* board);
+
+Test(fixed_tests, no_one_won) {
+ 
+  Player winner = who_won("B");
+
+  //constants can be asserted on with cr_assert_eq
+  cr_assert_eq(winner, NONE, "Expected: [%s], but was: [%s]", NONE, winner);
+}
+```
+
+It is recommended to replace constant strings with some even simpler type, preferrably an `enum`, but if authors really want to stick to strings for some reason, they can use them.
+
+</details>
 
 
 ### Memory managed by tests
