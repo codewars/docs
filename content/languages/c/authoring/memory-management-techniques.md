@@ -39,6 +39,7 @@ In a kata, the memory can be managed either by the test suite, by the user, or b
 The best way to avoid problems with memory allocation is to avoid unnecessary memory allocation. This advice might sound tricky, but there are simply many kata which require dynamic memory allocation or operation on data pointed by pointers, while it's simply not necessary and could be avoided. One commonly occuring example of such situation is when a kata requires returning a pointer to a string which could be replaced by a constant. It seems to appear particularly often when translating kata from other languages. Returning a string in high-level languages is not a problem, but in C it always raises questions of who should allocate it and how it should be allocated. Consider replacing the string with some simpler data type (eventually aliased with a `typedef`), and/or provide some symbolic constants for available values. For example, if the requirement for the JavaScript version is: _"Return the string 'BLACK' if a black pawn will be captured first, 'WHITE' if a white one, and 'NONE' if all pawns are safe."_, C version should preferably provide and use the named constants `BLACK`, `WHITE` and `NONE`. 
 
 <details>
+    <summary>Example</summary>
 
 Preloaded:
 
@@ -182,6 +183,7 @@ In a vast majority of cases when a kata requires the solution to allocate memory
 This approach is useful when the size of the result is not known before the call. The solution is reponsible for finding the correct size and returning it along with the pointer to the buffer itself, and the test suite is responsible for freeing it after every call.
 
 <details>
+    <summary>Example</summary>
 
 Kata task:
 
@@ -241,6 +243,7 @@ This idea boils down to asking users to provide their equivalents of allocation 
 There are many possible ways of implementing the allocation scheme and corresponding clean-up function, but example implementation could be similar to:
 
 <details>
+    <summary>Example</summary>
 
 Kata task:
 
@@ -308,6 +311,7 @@ For simplicity, this section uses terms "2D array", "array of arrays" and "matri
 This is the most common approach of using dynamically allocated multi-dimensional arrays. An array of pointers to rows is allocated first, and each row is allocated individually afterwrds.
 
 <details>
+    <summary>Example</summary>
 
 Allocation:
 
@@ -346,13 +350,12 @@ Additionally, it is sometimes unnecessarily used to return an array of data (usu
 This approach is related to [returning a statically allocated const data](#statically-allocated-constant-data), but extended to arrays. Some kata require the user to return an array of strings, which coud be turned into constants. In such case, the array itself can be allocated dynamically, but its entries do not have to be.
 
 <details>
+    <summary>Example</summary>
 
 Kata task:
 
 > Return an array of strings `"LEFT"`, `"RIGHT"`, `"UP"`, `"DOWN"` which describe the path through the maze.
 
-
-<details>
 
 Preloaded:
 
@@ -449,6 +452,7 @@ Since array entries are statically allocated constants, they do not have to be e
 Very often overlooked, but a very good approach to represent 2D arrays is to store them in a regular, linear array of `T[ ]`, potentially supported by some type casts between linear buffer and two-dimensional matrix. 
 
 <details>
+    <summary>Example</summary>
 
 ```c
 //declaration of solution accepting a two-dimentional array
