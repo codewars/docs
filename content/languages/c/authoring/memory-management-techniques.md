@@ -31,12 +31,12 @@ Since C-strings and arrays of other types are similar from the perspective of me
 
 In C, unlike for example Python, Java, C# or Javascript, dynamically allocated memory is not managed by the runtime. It's considered to be an external resource, just like a file, a DB or network connection, or a hardware device. The program itself has to take care of it properly, allocating it when necessary, and freeing when no longer needed.
 
-In a kata, the memory can be managed either by the test suite, by the user, or both. Authors can choose the way how their kata should deal with memory and they can pick any ownership strategy. However, they should be aware of the advantages and disadvantages of each such strategy, and when and which applies the best. 
+In kata, the memory can be managed either by the test suite, by the user, or both. Authors can choose the way how their kata should deal with memory and they can pick any ownership strategy. However, they should be aware of the advantages and disadvantages of each such strategy, and when and which applies the best. 
 
 
 ### Statically allocated constant data
 
-The best way to avoid problems with memory allocation is to avoid unnecessary memory allocation. This advice might sound tricky, but there are simply many kata which require dynamic memory allocation or operation on data pointed by pointers, while it's simply not necessary and could be avoided. One commonly occuring example of such situation is when a kata requires returning a pointer to a string which could be replaced by a constant. It seems to appear particularly often when translating kata from other languages. Returning a string in high-level languages is not a problem, but in C it always raises questions of who should allocate it and how it should be allocated. Consider replacing the string with some simpler data type (eventually aliased with a `typedef`), and/or provide some symbolic constants for available values. For example, if the requirement for the JavaScript version is: _"Return the string 'BLACK' if a black pawn will be captured first, 'WHITE' if a white one, and 'NONE' if all pawns are safe."_, C version should preferably provide and use the named constants `BLACK`, `WHITE` and `NONE`. 
+The best way to avoid problems with memory allocation is to avoid unnecessary memory allocation. This advice might sound tricky, but there are simply many kata that require dynamic memory allocation or operation on data pointed by pointers, while it's simply not necessary and could be avoided. One commonly occurring example of such a situation is when a kata requires returning a pointer to a string which could be replaced by a constant. It seems to appear particularly often when translating kata from other languages. Returning a string in high-level languages is not a problem, but in C it always raises questions of who should allocate it and how it should be allocated. Consider replacing the string with some simpler data type (eventually aliased with a `typedef`), and/or provide some symbolic constants for available values. For example, if the requirement for the JavaScript version is: _"Return the string 'BLACK' if a black pawn will be captured first, 'WHITE' if a white one, and 'NONE' if all pawns are safe."_, C version should preferably provide and use the named constants `BLACK`, `WHITE` and `NONE`. 
 
 <details>
     <summary>Example</summary>
@@ -338,16 +338,16 @@ free(world);
 
 </details>
 
-Advantage of individually allocated rows is that it works good for jagged arrays.
+The advantage of individually allocated rows is that it works well for jagged arrays.
 
 This approach, although it seems to be simple, is affected by issues mostly related to performance. It tends to be slow, because every dynamic allocation requires a lookup of memory to be performed. It can also cause excessive memory fragmentation.
 
-Additionally, it is sometimes unnecessarily used to return an array of data (usualy strings) which could be turned into constants.
+Additionally, it is sometimes unnecessarily used to return an array of data (usually strings) that could be turned into constants.
 
 
 ### Array of `const` data
 
-This approach is related to [returning a statically allocated const data](#statically-allocated-constant-data), but extended to arrays. Some kata require the user to return an array of strings, which coud be turned into constants. In such case, the array itself can be allocated dynamically, but its entries do not have to be.
+This approach is related to [returning a statically allocated const data](#statically-allocated-constant-data) but extended to arrays. Some kata require the user to return an array of strings, which could be turned into constants. In such a case, the array itself can be allocated dynamically, but its entries do not have to be.
 
 <details>
     <summary>Example</summary>
