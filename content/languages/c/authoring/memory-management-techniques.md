@@ -8,9 +8,7 @@ sidebar: "language:c"
 
 Unlike many modern, high-level languages, C does not manage memory automatically. Manual memory management is a very vast and complex topic, with many possible ways of achieving the goal depending on a specific case, caveats, and pitfalls.
 
-Whenever a kata needs to return a string or an array, C authors tend to use the naive technique of allocating the memory in the solution function, and freeing it in the test suite. This approach mimics the behavior known from other languages where returning an array or object from inside of the user's solution is perfectly valid, but it's hardly ever a valid way of working with unmanaged memory.
-
- Authors can choose the way how their kata should deal with memory and ownership strategy their kata should use The memory can be managed either by the test suite, by the user, or both. However, they should be aware of the advantages and disadvantages of each such strategy, and when and which applies the best. 
+Whenever a kata needs to return a string or an array, C authors tend to use the naive technique of allocating the memory in the solution function, and freeing it in the test suite. This approach mimics the behavior known from other languages where returning an array or object from inside of the user's solution is perfectly valid, but it's not always the best, or even correct, way of working with unmanaged memory. The memory can be managed either by the test suite, by the user, or both. Authors can choose the way how their kata should deal with memory and ownership strategy their kata should use. However, they should be aware of the advantages and disadvantages of each such strategy, and when and which applies the best. 
 
 
 ## General information
