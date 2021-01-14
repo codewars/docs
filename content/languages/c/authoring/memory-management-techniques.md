@@ -102,7 +102,7 @@ Test(fixed_tests, no_one_won) {
 }
 ```
 
-It is recommended to replace constant strings with some even simpler type, preferrably an `enum`, but if authors really want to stick to strings for some reason, they can use them.
+It is recommended to replace constant strings with some even simpler type, preferably an `enum`, but if authors really want to stick to strings for some reason, they can use them.
 
 </details>
 
@@ -111,7 +111,7 @@ It is recommended to replace constant strings with some even simpler type, prefe
 
 One set of possible techniques assumes that the caller is the owner of allocated memory and tests should be responsible for allocating and releasing it. Memory is always allocated by the test suite, and the test suite can decide whether it wants to use memory allocated automatically (i.e. on the stack), dynamically (for example with `malloc`), or in some other available way. The test suite is also responsible for releasing it, if necessary. Such allocated buffer is passed to the user's solution to work on, and it's filled with the requested data.
 
-Sometimes it's perfectly known how large the result will be before the solution is called, or it's possible to pre-allocate a buffer which will be large enough for every call. For example, if the test suite asks to generate `n` Fibonacci numbers, it means that the resulting array needs to have the size of at least `n`. Sometimes the exact size is not known exactly, but it's possible to accurately estimate its upper bound. For example, a function that removes punctuation from a string needs to work on a buffer at least as large as an input string, but the result can turn out to be a bit smaller. In such cases, the test suite can allocate the buffer which would be big enough to keep the result, and pass it to the solution function:
+Sometimes it's perfectly known how large the result will be before the solution is called, or it's possible to pre-allocate a buffer that will be large enough for every call. For example, if the test suite asks to generate `n` Fibonacci numbers, it means that the resulting array needs to have the size of at least `n`. Sometimes the exact size is not known exactly, but it's possible to accurately estimate its upper bound. For example, a function that removes punctuation from a string needs to work on a buffer at least as large as an input string, but the result can turn out to be a bit smaller. In such cases, the test suite can allocate the buffer which would be big enough to keep the result, and pass it to the solution function:
 
 <details>
 
@@ -171,23 +171,23 @@ Test(random_tests, large_inputs) {
 
 </details>
 
-This technique is often overlooked by kata authors, but it greatly simplifies the way how user solutions are built and how they communicate with the test suite. User's solution does not have to worry about allocations or error handling, and can focus on its task. Test suite can use any allocation technique it wants, like automatic allocation on the stack, or dynamic allocation on a heap. Buffer can be allocated once and reused accros many test calls.
+This technique is often overlooked by kata authors, but it greatly simplifies the way how user solutions are built and how they communicate with the test suite. The user's solution does not have to worry about allocations or error handling, and can focus on its task. The test suite can use any allocation technique it wants, like automatic allocation on the stack, or dynamic allocation on a heap. Buffers can be allocated once and reused across many test calls.
 
-The biggest problem with allocated memory is that its size has to be known or possible to estimate before calling the user's solution. It's very often the case, but sometimes such estimation is not possible or easy. There are ways to work around this problem and work with memory allocated by the caller even when its size is not known upfront, but they are out of scope of this article. In such cases, kata can use a memory allocated by the user.
+The biggest problem with allocated memory is that its size has to be known or possible to estimate before calling the user's solution. It's very often the case, but sometimes such estimation is not possible or easy. There are ways to work around this problem and work with memory allocated by the caller even when its size is not known upfront, but they are out of the scope of this article. In such cases, kata can use a memory allocated by the user.
 
 
 ### Mixed approach: `malloc` in the solution and `free` in tests
 
 In a vast majority of cases when a kata requires the solution to allocate memory, authors choose the naive approach of allocating the memory in the solution, and releasing it with `free` in the test suite after performing all necessary assertions. This mimics the behavior known from high-level languages where returning an array or object from inside of the user's solution is perfectly valid, but it's not always the best, or even correct, way of working with unmanaged memory in C.
 
-This approach is useful when the size of the result is not known before the call. The solution is reponsible for finding the correct size and returning it along with the pointer to the buffer itself, and the test suite is responsible for freeing it after every call.
+This approach is useful when the size of the result is not known before the call. The solution is responsible for finding the correct size and returning it along with the pointer to the buffer itself, and the test suite is responsible for freeing it after every call.
 
 <details>
     <summary>Example</summary>
 
 Kata task:
 
-> Given a natural nuber `n`, return all prime numbers up to and including `n`.
+> Given a natural number `n`, return all prime numbers up to and including `n`.
 
 Solution:
 
@@ -231,7 +231,7 @@ Test(fixed_tests, should_return_2_and_3_for_4) {
 
 This approach works in a way similar to functions like `strdup` or `asprintf`, which allocate required memory and pass its ownership to the caller. It's a good fit for Codewars kata because it's simple, effective, and works well in Codewars code runner.
 
-Potential issue with the mixed approach is not related to Codewars, but to "real world" C coding and design. It might not work well for complex memory structures, or when a callee has to do advanced book-keeping and tracking of allocated memory. It also does not work well when passing data between modules (for example, between libraries, or from a library to main program).
+A potential issue with the mixed approach is not related to Codewars, but to "real world" C coding and design. It might not work well for complex memory structures, or when a callee has to do advanced book-keeping and tracking of allocated memory. It also does not work well when passing data between modules (for example, between libraries, or from a library to the main program).
 
 
 ### Memory managed by the solution
@@ -303,12 +303,12 @@ Some kata require the user solution to return a two-dimensional array, for examp
 Just as any memory, 2D arrays can be managed by the test suite, or the user solution, or both. As long as the size of the 2D array is known before calling a solution and does not change through the course of calculations, the test suite can choose to perform all necessary allocations and pass the memory to the solution function ready to use. This is a very good approach when working with chessboards, sudokus, matrices and mazes of predetermined sizes, etc. However, in the case that the size of the answer cannot be easily determined beforehand, the mixed approach or the memory management by a callee with a clean-up function provided by the user can be better.
 
 :::note Note on examples
-For simplicity, this section uses terms "2D array", "array of arrays" and "matrix" interchangeably and assume row-major order, i.e. data can be accessed with `array[row][col]`.
+For simplicity, this section uses the terms "2D array", "array of arrays", and "matrix" interchangeably and assumes row-major order, i.e. data can be accessed with `array[row][col]`.
 :::
 
 ### Naive approach: N+1 allocations
 
-This is the most common approach of using dynamically allocated multi-dimensional arrays. An array of pointers to rows is allocated first, and each row is allocated individually afterwrds.
+This is the most common approach of using dynamically allocated multidimensional arrays. An array of pointers to rows is allocated first, and each row is allocated individually afterwards.
 
 <details>
     <summary>Example</summary>
@@ -449,7 +449,7 @@ Since array entries are statically allocated constants, they do not have to be e
 
 ### Flat array
 
-Very often overlooked, but a very good approach to represent 2D arrays is to store them in a regular, linear array of `T[ ]`, potentially supported by some type casts between linear buffer and two-dimensional matrix. 
+Very often overlooked, but a very good approach to represent 2D arrays is to store them in a regular, linear array of `T[ ]`, potentially supported by some type casts between a linear buffer and two-dimensional matrix. 
 
 <details>
     <summary>Example</summary>
@@ -491,6 +491,6 @@ free(world_linear);
 
 This way, the complexity of memory management is greatly reduced since all necessary memory can be allocated and freed with a single call to `malloc` (or equivalent) and `free`.
 
-Drawback of the version with casts between linear and 2D array is that it is best suited for perfectly rectangular arrays, i.e. arrays whose sub-arrays all have equal length. However, the version without casts can be effectively used when bounds between inner arrays can be efficiently determined, for example, each row of a matrix has a well-known length, rows of a Pascal's triangle have precisely defined, although different, lengths, and string entries are clearly terminated.
+The drawback of the version with casts between linear and 2D arrays is that it is best suited for perfectly rectangular arrays, i.e. arrays whose sub-arrays all have equal length. However, the version without casts can be effectively used when bounds between inner arrays can be efficiently determined, for example, each row of a matrix has a well-known length, rows of a Pascal's triangle have precisely defined, although different, lengths, and string entries are clearly terminated.
 
-This method also does not also fit perfectly the scenario when such array should be *returned* from a function. The function still has to specify its return type as `T*`, and the caller has to either work with linear form of the array, or perform the cast on its own.
+This method also does not fit perfectly the scenario when such an array should be *returned* from a function. The function still has to specify its return type as `T*`, and the caller has to either work with the linear form of the array or perform the cast on its own.
