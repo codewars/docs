@@ -36,7 +36,7 @@ In kata, the memory can be managed either by the test suite, by the user, or bot
 
 ### Statically allocated constant data
 
-The best way to avoid problems with memory allocation is to avoid unnecessary memory allocation. This advice might sound tricky, but there are simply many kata that require dynamic memory allocation or operation on data pointed by pointers, while it's simply not necessary and could be avoided. One commonly occurring example of such a situation is when a kata requires returning a pointer to a string which could be replaced by a constant. It seems to appear particularly often when translating kata from other languages. Returning a string in high-level languages is not a problem, but in C it always raises questions of who should allocate it and how it should be allocated. Consider replacing the string with some simpler data type (eventually aliased with a `typedef`), and/or provide some symbolic constants for available values. For example, if the requirement for the JavaScript version is: _"Return the string 'BLACK' if a black pawn will be captured first, 'WHITE' if a white one, and 'NONE' if all pawns are safe."_, C version should preferably provide and use the named constants `BLACK`, `WHITE` and `NONE`. 
+The best way to prevent problems with memory allocation is to avoid unnecessary memory allocation. This advice might sound tricky, but there are simply many kata that require dynamic memory allocation or operation on data pointed by pointers, while it's simply not necessary and could be avoided. One commonly occurring example of such a situation is when a kata requires returning a pointer to a string which could be replaced by a constant. It seems to appear particularly often when translating kata from other languages. Returning a string in high-level languages is not a problem, but in C it always raises questions of who should allocate it and how it should be allocated. Consider replacing the string with some simpler data type (eventually aliased with a `typedef`), and/or provide some symbolic constants for available values. For example, if the requirement for the JavaScript version is: _"Return the string 'BLACK' if a black pawn will be captured first, 'WHITE' if a white one, and 'NONE' if all pawns are safe."_, the C version should preferably provide and use the named constants `BLACK`, `WHITE` and `NONE`.
 
 <details>
     <summary>Example</summary>
@@ -102,7 +102,7 @@ Test(fixed_tests, no_one_won) {
 }
 ```
 
-It is recommended to replace constant strings with some even simpler type, preferably an `enum`, but if authors really want to stick to strings for some reason, they can use them.
+It is recommended to replace string constants with a simpler type, preferably an `enum`, but if authors really want to stick to strings for some reason, they can use them.
 
 </details>
 
@@ -232,9 +232,9 @@ Test(fixed_tests, should_return_2_and_3_for_4) {
 
 </details>
 
-This approach works in a way similar to functions like `strdup` or `asprintf`, which allocate required memory and pass its ownership to the caller. It's a good fit for Codewars kata because it's simple, effective, and works well in Codewars code runner.
+This approach works in a way similar to functions like `strdup` or `asprintf`, which allocate required memory and pass its ownership to the caller. It's a good fit for Codewars kata because it's simple, effective, and works well in Codewars' code runner.
 
-A potential issue with the mixed approach is not related to Codewars, but to "real world" C coding and design. It might not work well for complex memory structures, or when a callee has to do advanced book-keeping and tracking of allocated memory. It also does not work well when passing data between modules (for example, between libraries, or from a library to the main program).
+A potential issue with the mixed approach is not related to Codewars, but to "real world" C programming and design. It might not work well for complex memory structures, or when a callee has to do advanced book-keeping and tracking of allocated memory. It also does not work well when passing data between modules (for example, between libraries, or from a library to the main program).
 
 
 ### Memory managed by the solution
@@ -243,7 +243,7 @@ The opposite of managing memory in the test suite is the approach of delegating 
 
 This idea boils down to asking users to provide their equivalents of allocation and de-allocation functions. The solution function is responsible not only for solving the task but also for allocation of memory and storing of book-keeping information. The clean-up function is responsible for releasing resources.
 
-There are many possible ways of implementing the allocation scheme and corresponding clean-up function, but example implementation could be similar to:
+There are many possible ways of implementing the allocation scheme and corresponding clean-up function, but an example implementation could be:
 
 <details>
     <summary>Example</summary>
@@ -303,7 +303,7 @@ Memory management by a callee is not a common requirement for Codewars kata. It 
 Some kata require the user solution to return a two-dimensional array, for example, a 2D matrix, or an array of C-strings. Such scenarios are a bit more complex, because not only does the higher-order array have to be properly managed, but all its individual entries as well. The exact approach selected for the allocation of such structures depends on the scenario because different techniques are suitable for square or rectangular arrays, jagged arrays, arrays of null-terminated strings, etc.
 
 
-Just as any memory, 2D arrays can be managed by the test suite, or the user solution, or both. As long as the size of the 2D array is known before calling a solution and does not change through the course of calculations, the test suite can choose to perform all necessary allocations and pass the memory to the solution function ready to use. This is a very good approach when working with chessboards, sudokus, matrices and mazes of predetermined sizes, etc. However, in the case that the size of the answer cannot be easily determined beforehand, the mixed approach or the memory management by a callee with a clean-up function provided by the user can be better.
+Just as any form of memory, 2D arrays can be managed by the test suite, user solution, or both. As long as the size of the 2D array is known before calling a solution and does not change through the course of calculations, the test suite can choose to perform all necessary allocations and pass the memory to the solution function ready to use. This is a very good approach when working with chessboards, sudokus, matrices and mazes of predetermined sizes, etc. However, in the case that the size of the answer cannot be easily determined beforehand, the mixed approach or memory management by the callee with a clean-up function provided by the user can be better.
 
 :::note Note on examples
 For simplicity, this section uses the terms "2D array", "array of arrays", and "matrix" interchangeably and assumes row-major order, i.e. data can be accessed with `array[row][col]`.
@@ -343,7 +343,7 @@ free(world);
 
 The advantage of individually allocated rows is that it works well for jagged arrays.
 
-This approach, although it seems to be simple, is affected by issues mostly related to performance. It tends to be slow, because every dynamic allocation requires a lookup of memory to be performed. It can also cause excessive memory fragmentation.
+This approach, despite appearing to be simple, is affected by issues mostly related to performance. It tends to be slow since each dynamic allocation requires a memory lookup. It can also cause excessive memory fragmentation.
 
 Additionally, it is sometimes unnecessarily used to return an array of data (usually strings) that could be turned into constants.
 
