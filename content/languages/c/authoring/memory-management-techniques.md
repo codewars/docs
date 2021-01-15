@@ -36,36 +36,17 @@ In kata, the memory can be managed either by the test suite, by the user, or bot
 
 ### Statically allocated constant data
 
-The best way to prevent problems with memory allocation is to avoid unnecessary memory allocation. This advice might sound tricky, but there are simply many kata that require dynamic memory allocation or operation on data pointed by pointers, while it's simply not necessary and could be avoided. One commonly occurring example of such a situation is when a kata requires returning a pointer to a string which could be replaced by a constant. It seems to appear particularly often when translating kata from other languages. Returning a string in high-level languages is not a problem, but in C it always raises questions of who should allocate it and how it should be allocated. Consider replacing the string with some simpler data type (eventually aliased with a `typedef`), and/or provide some symbolic constants for available values. For example, if the requirement for the JavaScript version is: _"Return the string 'BLACK' if a black pawn will be captured first, 'WHITE' if a white one, and 'NONE' if all pawns are safe."_, the C version should preferably provide and use the named constants `BLACK`, `WHITE` and `NONE`.
+The best way to prevent problems with memory allocation is to avoid unnecessary memory allocation. This advice might sound tricky, but there are simply many kata that require dynamic memory allocation or operation on data pointed by pointers, while it's simply not necessary and could be avoided. One commonly occurring example of such a situation is when a kata requires returning a pointer to a string which could be replaced by a constant. It seems to appear particularly often when translating kata from other languages. Returning a string in high-level languages is not a problem, but in C it always raises questions of who should allocate it and how it should be allocated. Consider replacing the string with an `enum`. For example, if the requirement for the JavaScript version is: _"Return the string 'BLACK' if a black pawn will be captured first, 'WHITE' if a white one, and 'NONE' if all pawns are safe."_, the C version should preferably provide and use the named constants `BLACK`, `WHITE` and `NONE`.
 
 <details>
     <summary>Example</summary>
 
-Preloaded:
-
-```c
-//Provide a typedef for constants.
-//If you really want to use strings for some reason, you can use
-//constants of type const char*, but it's recommended to take
-//this step even further and use an enum.
-typedef const char * const Player;
-
-//define constants
-Player BLACK = "BLACK";
-Player WHITE = "WHITE";
-Player NONE  = "NONE";
-```
-
 Solution:
 
 ```c
-
 //Since Codewars does not allow header files for kata, declarations need to be repeated
-typedef const char * const Player;
-extern Player BLACK;
-extern Player WHITE;
-extern Player NONE; 
-
+//This definition has to be provided by the solution stub snippet.
+typedef enum Player { BLACK, WHITE, NONE } Player;
 
 Player who_won(const char* board) //typedef used for return type 
 {
@@ -79,30 +60,28 @@ Player who_won(const char* board) //typedef used for return type
 }
 ```
 
-
 Tests:
 
 ```c
 //Since Codewars does not allow header files for kata, declarations need to be repeated
-typedef const char * const Player;
-extern Player BLACK;
-extern Player WHITE;
-extern Player NONE; 
+typedef enum Player { BLACK, WHITE, NONE } Player;
 
 Player who_won(const char* board);
 
+//helper function
+static const char* stringify(Player player) {
+  static const char* const strings[] = {"BLACK", "WHITE", "NONE"};
+  return strings[player];
+}
+
 Test(fixed_tests, no_one_won) {
  
-  Player winner = who_won("B");
+  Player winner = who_won("BWWB");
 
-  //constants can be asserted on with cr_assert_eq
-  cr_assert_eq(winner, NONE, "Expected: [%s], but was: [%s]", NONE, winner);
-
-  //...no clean-up necessary
+  //remember to turn enum values into strings to get better error messages
+  cr_assert_eq(winner, NONE, "Expected: [%s], but was: [%s]", stringify(NONE), stringify(winner));
 }
 ```
-
-It is recommended to replace string constants with a simpler type, preferably an `enum`, but if authors really want to stick to strings for some reason, they can use them.
 
 </details>
 
@@ -348,106 +327,11 @@ This approach, despite appearing to be simple, is affected by issues mostly rela
 Additionally, it is sometimes unnecessarily used to return an array of data (usually strings) that could be turned into constants.
 
 
-### Array of `const` data
+### Array of string constants
 
-This approach is related to [returning a statically allocated const data](#statically-allocated-constant-data) but extended to arrays. Some kata require the user to return an array of strings, which could be turned into constants. In such a case, the array itself can be allocated dynamically, but its entries do not have to be.
+This approach is related to [returning a statically allocated const data](#statically-allocated-constant-data) but extended to arrays. Some kata require the user to return an array of strings, which could be turned into constants. In such a case, string constants should be replaced with `enum`, and just a one-dimensional, dynamically allocated array of enum values should be used.
 
-<details>
-    <summary>Example</summary>
-
-Kata task:
-
-> Return an array of strings `"LEFT"`, `"RIGHT"`, `"UP"`, `"DOWN"` which describe the path through the maze.
-
-
-Preloaded:
-
-```c
-//Provide a typedef for constants.
-//If you really want to use strings for some reason, you can use
-//constants of type const char*, but it's recommended to take
-//this step even further and use an enum.
-typedef const char * Direction;
-
-//define constants
-Direction Left  = "LEFT";
-Direction Right = "RIGHT";
-Direction Up    = "UP";
-Direction Down  = "DOWN";
-```
-
-Solution:
-
-```c
-#include <stdlib.h>
-
-//Since Codewars does not allow header files for kata, declarations need to be repeated
-typedef const char * Direction;
-extern Direction Left;
-extern Direction Right;
-extern Direction Up;
-extern Direction Down;
-
-
-Direction* find_exit(size_t h, size_t w, char board[h][w], size_t* length) //typedef used for return type 
-{
-    Direction* path = malloc(sizeof(Direction) * ...);
-    int found = 0;
-    *length = 0;
-    while(!found) {
-        //put a named constant in the result array
-        path[(*length)++] = Left;
-
-        //...search for exit...
-    }
-    return path;
-}
-```
-
-Tests:
-
-```c
-#include <criterion/criterion.h>
-
-//Since Codewars does not allow header files for kata, declarations need to be repeated
-typedef const char * Direction;
-extern Direction Left;
-extern Direction Right;
-extern Direction Up;
-extern Direction Down;
-
-Direction* find_exit(size_t h, size_t w, char board[h][w], size_t* length);
-
-//helper function
-void setup_board(size_t w, size_t h, char board[h][w]) {
-  //...
-}
-
-Test(fixed_tests, short_path) {
- 
-  char board[2][2];
-  setup_board(2, 2, board);
-  Direction expected[] = (Direction[]) { Left, Left };
-  
-  //call user's solution and get a result array and its size
-  size_t path_length;  
-  Direction* path = find_exit(2, 2, board, &path_length);
-
-  //verify the size
-  cr_assert_eq(path_length, 2);
-  for(size_t i=0; i < path_length; ++i) {
-    //constants can be asserted on with cr_assert_eq
-    cr_assert_eq(path[i], expected[i]);
-  }
-
-  //...clean up only array of entries, and not entries themselves
-  free(path);
-}
-```
-
-</details>
-
-Since array entries are statically allocated constants, they do not have to be explicitly allocated or freed.
+The only tricky part is stringification of the values if they are going to be displayed or used as a part of assertion messages.
 
 
 ### Flat array
