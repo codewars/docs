@@ -29,14 +29,14 @@ Since C-strings and arrays of other types are similar from the perspective of me
 
 ## Memory Management Patterns
 
-In C, unlike for example Python, Java, C# or Javascript, dynamically allocated memory is not managed by the runtime. It's considered to be a resource like any other, for example a file, a DB or network connection, or a hardware device. The program itself has to take care of it properly, allocating it when necessary, and freeing when no longer needed.
+In C, unlike for example Python, Java, C#, or Javascript, dynamically allocated memory is not managed by the runtime. It's considered to be a resource like any other, for example, a file, a DB or network connection, or a hardware device. The program itself has to take care of it properly, allocating it when necessary, and freeing when no longer needed.
 
 In kata, the memory can be managed either by the test suite, by the user, or both. Authors can choose the way how their kata should deal with memory and they can pick any ownership strategy. However, they should be aware of the advantages and disadvantages of each such strategy, and when and which applies the best. 
 
 
 ### Statically allocated constant data
 
-The best way to prevent problems with memory allocation is to avoid unnecessary memory allocation. This advice might sound tricky, but there are simply many kata that require dynamic memory allocation or operation on data pointed by pointers, while it's simply not necessary and could be avoided. One commonly occurring example of such a situation is when a kata requires returning a pointer to a string which could be replaced by a constant. It seems to appear particularly often when translating kata from other languages. Returning a string in high-level languages is not a problem, but in C it always raises questions of who should allocate it and how it should be allocated. Consider replacing the string with an `enum`. For example, if the requirement for the JavaScript version is: _"Return the string 'BLACK' if a black pawn will be captured first, 'WHITE' if a white one, and 'NONE' if all pawns are safe."_, the C version should preferably provide and use the named constants `BLACK`, `WHITE` and `NONE`.
+The best way to prevent problems with memory allocation is to avoid unnecessary memory allocation. This advice might sound tricky, but there are simply many kata that require dynamic memory allocation or operation on data pointed by pointers, while it's simply not necessary and could be avoided. One commonly occurring example of such a situation is when a kata requires returning a pointer to a string which could be replaced by a constant. It seems to appear particularly often when translating kata from other languages. Returning a string in high-level languages is not a problem, but in C it always raises questions of who should allocate it and how it should be allocated. Consider replacing the string with an `enum`. For example, if the requirement for the JavaScript version is: _"Return the string 'BLACK' if a black pawn will be captured first, 'WHITE' if a white one, and 'NONE' if all pawns are safe."_, the C version should preferably provide and use the named constants `BLACK`, `WHITE`, and `NONE`.
 
 <details>
     <summary>Example</summary>
