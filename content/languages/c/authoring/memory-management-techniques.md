@@ -29,7 +29,7 @@ Since C-strings and arrays of other types are similar from the perspective of me
 
 ## Memory Management Patterns
 
-In C, unlike for example Python, Java, C# or Javascript, dynamically allocated memory is not managed by the runtime. It's considered to be an external resource, just like a file, a DB or network connection, or a hardware device. The program itself has to take care of it properly, allocating it when necessary, and freeing when no longer needed.
+In C, unlike for example Python, Java, C# or Javascript, dynamically allocated memory is not managed by the runtime. It's considered to be a resource like any other, for example a file, a DB or network connection, or a hardware device. The program itself has to take care of it properly, allocating it when necessary, and freeing when no longer needed.
 
 In kata, the memory can be managed either by the test suite, by the user, or both. Authors can choose the way how their kata should deal with memory and they can pick any ownership strategy. However, they should be aware of the advantages and disadvantages of each such strategy, and when and which applies the best. 
 
