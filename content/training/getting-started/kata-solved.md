@@ -27,11 +27,11 @@ The rank level reflects your experience and knowledge you have gained by solving
 
 </div>
 
-More information on ranks and progress can be found [here (TODO: add link to docs on progress)]().
+More information on ranks and progress can be found [here](/concepts/gamification/ranks/).
 
 ### Honor
 
-Honor points are rewarded by contributing to Codewars in many ways, and solving a kata is one of them. By earning Honor points you gain additional [privileges (TODO: link to docs)]() and climb [leaderboards (TODO: link to docs)]().
+Honor points are rewarded by contributing to Codewars in many ways, and solving a kata is one of them. By earning Honor points you gain additional [privileges](/concepts/gamification/privileges/) and climb [leaderboards (TODO: link to docs)]().
 
 ## Feedback
 

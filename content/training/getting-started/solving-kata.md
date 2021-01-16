@@ -46,7 +46,7 @@ Some users like to write code golfed or creative/clever solutions, but most try 
 
 ## When tests fail over and over again
 
-Sometimes you just cannot get your solution right. The output panel is red after every attempt, kata might appear broken, or you receive some errors you do not understand and you have no idea what's going on. Don't worry, there are many ways to get help. See [Troubleshooting your Solution (TODO: add link to FAQ)]() FAQ to get some advice.
+Sometimes you just cannot get your solution right. The output panel is red after every attempt, kata might appear broken, or you receive some errors you do not understand and you have no idea what's going on. Don't worry, there are many ways to get help. See [Troubleshooting your Solution](/training/troubleshooting/) FAQ to get some advice.
 
 ## Unlocking solutions
 
