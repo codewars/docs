@@ -6,13 +6,9 @@ sidebar: authoring
 
 # Creating your first kata
 
-Okay, so you might have completed many (all?) of the published kata on Codewars. But... that's only half of the battle.
+On Codewars, kata are created by regular users, who decided to share their idea with the community and create a task others could train on. People can come up with great ideas, and well crafted kara are source of great fun for everyone. After solving some kata, everyone sooner or later wants to contribute and create something others would enjoy to work on. Additionally, creating a kata can be a great learning experience.
 
-There is an obvious elephant in the room: Where do the kata come from? Obviously they didn't come out of nowhere like inside a stone or from a big bang, so clearly someone, or *something*, must have created the kata.
-
-Creating a kata is a totally different kind of task from solving a kata. You might be able to solve a purple kata in under an hour, and still get flummoxed by the process of making a new kata. Being a good player doesn't always make you a good level maker, after all. What authors sometimes do not realize is the fact that creating a good quality kata is much harder than solving it.
-
-While a kata with minor problems can be easily fixed, a kata with fundamental issues will get stuck in the beta process forever, collecting negative feedback over time. You don't want that.
+However, authors sometimes do not realize the fact that creating a good quality kata is much harder than solving it. Creating a kata is a totally different kind of task from solving a kata. It requires much wider mindset and set of skills. Creating a kata is much closer to "professional" tasks: it requires you to design a task with a large set of target users in mind, write a solution, create tests for it, handle feedback from users, and maintain it by fixing bugs. Every kata is a small software product in itself, and goes through a small equivalent of a full software development lifecycle!
 
 
 ## Support for authors
@@ -153,9 +149,7 @@ You can check the list of [privileges](/references/gamification/privileges/#priv
 
 The description field is used to provide instructions to the users who will be training on the kata. This field recognizes [Github flavored markdown](/references/markdown/) with a set of [Codewars extensions](/references/markdown/extensions/). You can use the `Preview` tab to see how it will look like when presented to users.
 
-Have you encountered that feeling when you're met with a requirement you can't understand because it's poorly and inadequately written, and you still have to fulfill the requirement? Don't let yourself be the one who wrote that. If you ended up conjuring such hot garbage, everyone will just stay 10 miles away from you and your kata, and nobody will finish them at all.
-
-Fortunately, if your kata description is not very good, people will be eager to point this out in the comments, so you have more than enough chances to fix them.
+Description of a kata is the first thing others see and decides on the user's first impression. If description is good, users will be probably encouraged took into the kata further. If description is bad, people won't hesitate to point this out, rising issues and downvoting your kata.
 
 Writing good descriptions is a difficult task, and you should refer to ["Writing a Kata Description" guidelines](/authoring/guidelines/description/) to ensure that your description is of sufficient quality.
 
@@ -192,7 +186,7 @@ Working with preloaded code is sometimes tricky, and that's why a set of [guidel
 
 The **Test Cases** editor is used to write submission tests: code that will validate the kata solution. Tests are not visible to the user, and the user solution needs to pass them for the kata to be considered completed. Every language on Codewars is set up to provide you with a testing framework which you can use to write test cases, organize them into groups, and assert on tested conditions. You can find out what testing framework you need to use by visiting the [reference page of your language](/languages/).
 
-While the old kata are usually lazy and only have a few tests, nowadays if you try to pull off the same trick you'll instantly get yelled at with all the `Needs random tests!!!!!11!1` and your satisfaction rating plummets to 0%.
+Tests are very important aspect of every kata, and, after description, are probably the second factor determining its quality. Bad tests attract negative feedback and are a very common cause of auto-retirement for beta kata. Good tests, on the other hand, ore very appreciated by users training on your kata. Writing good test suites is very difficult, often the most difficult part of creating a kata. It often requires more code than the actual solution. Make sure you follow [quality guidelines for submission tests](/authoring/guidelines/submission-tests/) when writing them, as they will help you to avoid many common pitfalls awaiting for inexperienced authors.
 
 The key thing about tests is that a test should perform two things:
 
@@ -211,7 +205,7 @@ For normal kata, a good set of tests should cover all of these aspects:
 
 The first three should be put into fixed tests. The fourth item should be put into random tests (see below). Ideally the last item would be in isolation, or covered by random tests. The last item is optional.
 
-Random test cases are test cases that cannot be predicted. Most kata have them (except for the really old ones) and they are usually in addition to some static tests. Using both static and random test cases with make it both easy for warriors to see what they are supposed to do, as well as make it impossible to write a solution that just pattern match the inputs (i.e return hard-coded outputs depending on a fixed set of inputs). Random tests are also good at finding edge cases.
+Random test cases are test cases that cannot be predicted. Most kata have them (except for the really old ones) and they are usually in addition to some static tests. Using both static and random test cases with make it both easy for users to see what they are supposed to do, as well as make it impossible to write a solution that just pattern match the inputs (i.e. return hard-coded outputs depending on a fixed set of inputs). Random tests are also good at finding edge cases.
 
 Remember: just like in real life, if we failed a test, we want to know:
 
@@ -220,14 +214,14 @@ Remember: just like in real life, if we failed a test, we want to know:
 
 So unless revealing the expected result would spoil the kata, you should not hide them. Consult the documentation of testing framework used by your [language](/languages/) and pick the best method for your tests.
 
-Writing good test suites is very difficult, often the most difficult part of creating a kata. It often requires more code than the actual solution, and any flaws in the test suite can heavily impact the overall quality and experience of users with the kata. Make sure you follow [quality guidelines for submission tests](/authoring/guidelines/submission-tests/) when writing them, as they will help you to avoid many common pitfalls awaiting for inexperienced authors.
+
 
 
 #### Example Test Cases
 
 Example test cases is a small set of tests which the user can see and modify while working on their solution. These are some basic test cases that users will see when they load the kata. Sample tests are written in the same way as submission tests, using the testing framework set up for your language.
 
-Except in circumstances where providing sample tests to the user would spoil the kata (such as [Defuse the bombs](https://www.codewars.com/kata/defuse-the-bombs/)), they are absolutely **required** as users can get an idea of how the solution is called and tested. You should include a few tests to get someone started, though of course if you're lazy you can just copy over the fixed assertions in your submission tests to serve as the sample tests. Just remember *not* to copy your reference solution there as well. **It is a kata issue if there are no sample tests** unless strong justification can be provided against them for a particular kata.
+Except in circumstances where providing sample tests to the user would spoil the kata (such as [Defuse the bombs](https://www.codewars.com/kata/defuse-the-bombs/)), they are absolutely **required** as users can get an idea of how the solution is called and tested. You should include a few tests to get someone started, and the easiest way is just to copy over the fixed tests tests from the full test suite to serve as the sample tests. **It is a kata issue if there are no sample tests** unless strong justification can be provided against them for a particular kata.
 
 Since sample tests can significantly impact user experience of a kata, they have a dedicated set of [sample tests authoring guidelines](/authoring/guidelines/sample-tests/).
 
