@@ -19,7 +19,7 @@ It's a good place to ask for explanations, search for help about your solution, 
 
 See this [detailed documentation (TODO: direct link to Labels reference? same link than the one at the end of the "Communication" part)]() about the different kinds of labels and their use.
 
-Discourse posts support [Markdown formatting (TODO: link to Markdown reference)](), so you can use some styling, or present your code neatly with [code formatting blocks (TODO: direct link to a chapter on code blocks in Markdown docs)]().
+Discourse posts support [Markdown formatting](/references/markdown/), so you can use some styling, or present your code neatly with [code formatting blocks](/references/markdown/extensions/#sequential-code-blocks).
 
 You should also mark your posts with the **Spoiler** flag if they contain some code (even not fully working one), or reveal some significant details of the solution.
 
