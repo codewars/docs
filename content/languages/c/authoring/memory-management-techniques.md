@@ -155,12 +155,12 @@ Test(random_tests, large_inputs) {
 
 This technique is often overlooked by kata authors, but it greatly simplifies the way how user solutions are built and how they communicate with the test suite. The user's solution does not have to worry about allocations or error handling, and can focus on its task. The test suite can use any allocation technique it wants, like automatic allocation on the stack, or dynamic allocation on a heap. Buffers can be allocated once and reused across many test calls.
 
-The biggest problem with allocated memory is that its size has to be known or possible to estimate before calling the user's solution. It's very often the case, but sometimes such estimation is not possible or easy. There are ways to work around this problem and work with memory allocated by the caller even when its size is not known upfront, but they are out of the scope of this article. In such cases, kata can use a memory allocated by the user.
+The biggest problem with allocated memory is that its size has to be known or possible to estimate before calling the user's solution. It's very often the case, but sometimes such estimation is not possible or easy. There are ways to work around this problem and work with memory allocated by the caller even when its size is not known upfront, but they are out of the scope of this article. In such cases, kata can use memory allocated by the user.
 
 
 ### Mixed approach: `malloc` in the solution and `free` in tests
 
-In a vast majority of cases when a kata requires the solution to allocate memory, authors choose the naive approach of allocating the memory in the solution, and releasing it with `free` in the test suite after performing all necessary assertions. This mimics the behavior known from high-level languages where returning an array or object from inside of the user's solution is perfectly valid, but it's not always the best, or even correct, way of working with unmanaged memory in C.
+In the vast majority of cases when a kata requires the solution to allocate memory, authors choose the naive approach of allocating the memory in the solution, and releasing it with `free` in the test suite after performing all necessary assertions. This mimics the behavior known from high-level languages where returning an array or object from inside of the user's solution is perfectly valid, but it's not always the best, or even correct, way of working with unmanaged memory in C.
 
 This approach is useful when the size of the result is not known before the call. The solution is responsible for finding the correct size and returning it along with the pointer to the buffer itself, and the test suite is responsible for freeing it after every call.
 
