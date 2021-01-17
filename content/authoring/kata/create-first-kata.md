@@ -46,7 +46,7 @@ At the time of writing, there are already **over 6500** approved kata, and almos
 This is bad because creating a kata about them again constitutes a **duplicate** kata, and we certainly don't want 100 Fizzbuzz kata out in the wild. When a duplicate is found it will be retired, which basically means it gets taken out of the kata catalog.
 
 
-### How to not step on the minefield of duplicate kata
+### How to avoid creating a duplicate kata
 
 
 #### Search for keywords to see if someone has done the idea before
@@ -149,7 +149,7 @@ You can check the list of [privileges](/references/gamification/privileges/#priv
 
 The description field is used to provide instructions to the users who will be training on the kata. This field recognizes [Github flavored markdown](/references/markdown/) with a set of [Codewars extensions](/references/markdown/extensions/). You can use the `Preview` tab to see how it will look like when presented to users.
 
-Description of a kata is the first thing others see and decides on the user's first impression. If description is good, users will be probably encouraged took into the kata further. If description is bad, people won't hesitate to point this out, rising issues and downvoting your kata.
+The description of a kata is the first thing others see and decides on the user's first impression. If the description is good, users will be probably encouraged to take the kata further. If the description is bad, people won't hesitate to point this out, rising issues and downvoting your kata.
 
 Writing good descriptions is a difficult task, and you should refer to ["Writing a Kata Description" guidelines](/authoring/guidelines/description/) to ensure that your description is of sufficient quality.
 
@@ -186,7 +186,7 @@ Working with preloaded code is sometimes tricky, and that's why a set of [guidel
 
 The **Test Cases** editor is used to write submission tests: code that will validate the kata solution. Tests are not visible to the user, and the user solution needs to pass them for the kata to be considered complete. Every language on Codewars is set up to provide you with a testing framework that you can use to write test cases, organize them into groups, and assert on tested conditions. You can find out what testing framework you need to use by visiting the [reference page of your language](/languages/).
 
-Tests are a very important aspect of every kata, and, after description, are probably the second factor determining its quality. Bad tests attract negative feedback and are a very common cause of auto-retirement for beta kata. Good tests, on the other hand, are very appreciated by users training on your kata. Writing good test suites is very difficult, often the most difficult part of creating a kata. It often requires more code than the actual solution. Make sure you follow [quality guidelines for submission tests](/authoring/guidelines/submission-tests/) when writing them, as they will help you to avoid many common pitfalls awaiting inexperienced authors.
+Tests are a very important aspect of every kata, and, after the description, are probably the second factor determining its quality. Bad tests attract negative feedback and are a very common cause of auto-retirement for beta kata. Good tests, on the other hand, are highly appreciated by users training on your kata. Writing good test suites is very difficult, often the most difficult part of creating a kata. It often requires more code than the actual solution. Make sure you follow [quality guidelines for submission tests](/authoring/guidelines/submission-tests/) when writing them, as they will help you avoid many common pitfalls awaiting inexperienced authors.
 
 The key thing about tests is that a test should perform two things:
 
