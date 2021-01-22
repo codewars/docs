@@ -60,11 +60,6 @@ In a way, knowing the kata in the wild is very similar to knowing your enemies: 
 Then, maybe you can decide whether to retreat or make a **harder** version of the kata as a fallback if you feel the existing one is too lackluster/easy.
 
 
-#### Use a novel/original idea
-
-If you find yourself worrying about hitting duplicates all the time, try to push yourself to think out-of-the-box. Don't worry, coming up with good ideas is hard! But if you can ensure that your ideas are always novel and original, you can be almost certain nobody will have taken the flag before you.
-
-It also has a side benefit of making people think that you're clever, which will be reflected in the satisfaction rating.
 
 
 #### Solve more kata
@@ -149,7 +144,7 @@ You can check the list of [privileges](/references/gamification/privileges/#priv
 
 The description field is used to provide instructions to the users who will be training on the kata. This field recognizes [Github flavored markdown](/references/markdown/) with a set of [Codewars extensions](/references/markdown/extensions/). You can use the `Preview` tab to see how it will look like when presented to users.
 
-The description of a kata is the first thing others see and decides on the user's first impression. If the description is good, users will be probably encouraged to take the kata further. If the description is bad, people won't hesitate to point this out, rising issues and downvoting your kata.
+The description of a kata is the first thing others see and forms the basis of users' first impressions. If the description is good, users will probably be encouraged to take the kata further. Otherwise, people won't hesitate to raise issues and downvote your kata.
 
 Writing good descriptions is a difficult task, and you should refer to ["Writing a Kata Description" guidelines](/authoring/guidelines/description/) to ensure that your description is of sufficient quality.
 
