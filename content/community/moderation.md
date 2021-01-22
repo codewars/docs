@@ -65,9 +65,9 @@ They can be recognized by the symbol of a shield (🛡️) displayed next to the
 
 ## How to get in touch
 
-Many members of the moderation team (but not all of them) can be reached via [Gitter](https://gitter.im/Codewars/codewars.com). Message them directly or post on one of the public channels if you need their assistance.
+Many members of the moderation team can be reached via [Gitter](https://gitter.im/Codewars/codewars.com). Message them directly or post on one of the public channels if you need their assistance.
 
-Issues related to specific content (kata, translations, or solutions) which can be addressed only by moderators and admins can be reported on [content issues board](https://github.com/codewars/content-issues/issues). It's not completely organized yet, but new issues can be posted there and they will be dispatched appropriately.
+Issues related to specific content (kata, translations, or solutions) that can be addressed only by moderators and admins can be reported on the [content issues board](https://github.com/codewars/content-issues/issues). It's not completely organized yet, but new issues can be posted there and they will be dispatched appropriately.
 
 All kinds of issues related to the Codewars platform are to be reported on [GitHub](https://github.com/codewars/codewars.com/issues) using an appropriate issue template if available. There are already issues dedicated to handling [spammers](https://github.com/codewars/codewars.com/issues/1493) and [cheaters](https://github.com/codewars/codewars.com/issues/1378).
 
