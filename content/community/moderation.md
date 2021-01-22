@@ -60,7 +60,7 @@ Moderators need to stick to the [Codewars Code of Conduct](/community/rules/), t
 - [steffan153](https://www.codewars.com/users/steffan153)
 - [Unnamed](https://www.codewars.com/users/Unnamed)
 
-They can be recognized by the symbol of a shield (<svg height="20" fill="none" style="display: inline-block" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2a12 12 0 0 0 8.5 3a12 12 0 0 1 -8.5 15a12 12 0 0 1 -8.5 -15a12 12 0 0 0 8.5 -3"></path></svg>) displayed next to their username.
+They can be recognized by the symbol of a shield (🛡️) displayed next to their username.
 
 
 ## How to get in touch
