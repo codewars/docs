@@ -57,7 +57,7 @@ For example, while [Peano](https://www.codewars.com/kata/search/?q=peano) and [C
 
 In a way, knowing the kata in the wild is very similar to knowing your enemies: you get to see how others write the same kata and other people's (sometimes) brilliant solution in these kata.
 
-Then, maybe you can decide whether to retreat or make a **harder** version of the kata as a fallback if you feel the existing one is too lackluster/easy.
+Then, maybe you can decide whether to retreat or make a **harder** version of the kata in return if you feel the existing one is too lackluster/easy.
 
 
 
