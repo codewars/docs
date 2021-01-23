@@ -6,7 +6,7 @@ prev: /community/rules/
 
 # Moderator Features
 
-[Moderators](/community/moderation/#moderators) are a group of users selected to support users with handling problems related to content and community. They have access to tools and features not available to regular users, which can be used to solve problems reported by them. In particular, moderators can:
+[Moderators](/community/moderation/#moderators) are a group of users selected to support users with handling problems related to content and community. They have access to tools and features not available to regular users, which can be used to solve problems reported by community members. In particular, moderators can:
 
 - Handle problematic users, cheaters, and griefers:
   - Handle reports about dishonest users,
@@ -18,6 +18,6 @@ prev: /community/rules/
   - Force recalculation of broken satisfaction rating,
   - Force solution affected by the grouping bug to appear on the kata solutions page,
 - Ensure quality of content:
-  -Unpublish unapprovable or severely broken beta kata,
+  - Unpublish unapprovable or severely broken beta kata,
 - Hide solutions which can be considered spoilers,
 - Approve changes to documentation.
