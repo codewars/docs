@@ -159,6 +159,7 @@ module.exports = {
               "/community/",
               "/community/moderation/",
               "/community/rules/",
+              "/references/moderator-features.md",
             ],
           },
         ],

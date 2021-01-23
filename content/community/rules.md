@@ -1,6 +1,7 @@
 ---
 sidebar: community
 prev: /community/teams/
+next: /references/moderator-features.md
 ---
 
 # Community Code of Conduct
