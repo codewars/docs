@@ -1,6 +1,6 @@
 ---
 sidebar: community
-prev: /community/teams/
+prev: /community/moderation/
 next: /references/moderator-features/
 ---
 
