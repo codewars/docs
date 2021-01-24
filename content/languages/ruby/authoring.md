@@ -70,7 +70,7 @@ Ruby kata should use the [Codewars Ruby testing framework](/languages/ruby/codew
 
 #### Dynamically generated test cases
 
-It's possible to put functions decorated with `it` in a loop and use them as a construct similar to parameterized test cases known from other testing frameworks, for example:
+It's possible to put `it` blocks in a loop and use them as a construct similar to parameterized test cases known from other testing frameworks, for example:
 
 ```ruby
 describe "Generated test cases" do
