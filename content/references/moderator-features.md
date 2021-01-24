@@ -16,7 +16,7 @@ prev: /community/rules/
 - Manually fix effects of bugs:
   - Revalidate solutions which do not pass tests anymore but haven't been invalidated automatically,
   - Force recalculation of broken satisfaction rating,
-  - Force solution affected by the grouping bug to appear on the kata solutions page,
+  - Force solutions affected by the grouping bug to appear on the kata solutions page,
 - Ensure quality of content:
   - Unpublish unapprovable or severely broken beta kata,
 - Hide solutions which can be considered spoilers from kata solutions page (for example a highly optimized solution to an easy version of a 7 kyu kata which can be used to solve 2 kyu, challenge version),
