@@ -201,23 +201,23 @@ def fixed_tests():
 
     @test.it('Regular cases')
     def regular_cases():
-        test.assert_equals(6, user_solution([1, 2, 3]))
-        test.assert_equals(5, user_solution([2, 3]))
+        test.assert_equals(user_solution([1, 2, 3]), 6)
+        test.assert_equals(user_solution([2, 3]), 5)
 
     @test.it('Edge cases')
     def edge_cases():
-        test.assert_equals(0, user_solution([]), "Invalid answer for empty array")
-        test.assert_equals(2, user_solution([2]), "Invalid answer for one element array")
+        test.assert_equals(user_solution([]), 0, "Invalid answer for empty array")
+        test.assert_equals(user_solution([2]), 2, "Invalid answer for one element array")
 
     @test.it('Input should not be modified')
     def do_not_mutate_input():
-        arr = list(range(100))
-        random.shuffle(arr)
-        arr_copy = arr[:]
+        source_arr = list(range(100))
+        random.shuffle(source_arr)
+        arr_copy = source_arr[:]
         #call user solution and ignore the result
         user_solution(arr_copy)
         #arr_copy should not be modified
-        test.assert_equals(arr_copy, arr, 'Input array was modified')
+        test.assert_equals(arr_copy, source_arr, 'Input array was modified')
 
 
 @test.describe('Random tests')
