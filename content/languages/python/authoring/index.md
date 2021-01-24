@@ -165,7 +165,7 @@ The Codewars runner provides a set of preinstalled packages, which are available
 
 ### Reference solution
 
-If the test suite happens to use a reference solution to calculate expected values (which [should be avoided](/authoring/guidelines/submission-tests/#reference-solution) when possible), or some kind of reference data like precalculated arrays, etc., it must not be possible for the user to redefine, overwrite or directly access its contents. To prevent this, it should be defined in a scope local to the testing function, a `it` or a `describe` block.
+If the test suite happens to use a reference solution to calculate expected values (which [should be avoided](/authoring/guidelines/submission-tests/#reference-solution) when possible), or some kind of reference data like precalculated lists, etc., it must not be possible for the user to redefine, overwrite or directly access its contents. To prevent this, it should be defined in a scope local to the testing function, a `it` or a `describe` block.
 
 The reference solution or data ___must not___ be defined in the top-level scope of the test suite or in the [Preloaded code](/authoring/guidelines/preloaded/).
 
@@ -206,8 +206,8 @@ def fixed_tests():
 
     @test.it('Edge cases')
     def edge_cases():
-        test.assert_equals(user_solution([]), 0, "Invalid answer for empty array")
-        test.assert_equals(user_solution([2]), 2, "Invalid answer for one element array")
+        test.assert_equals(user_solution([]), 0, "Invalid answer for empty list")
+        test.assert_equals(user_solution([2]), 2, "Invalid answer for one element list")
 
     @test.it('Input should not be modified')
     def do_not_mutate_input():
@@ -217,7 +217,7 @@ def fixed_tests():
         #call user solution and ignore the result
         user_solution(arr_copy)
         #arr_copy should not be modified
-        test.assert_equals(arr_copy, source_arr, 'Input array was modified')
+        test.assert_equals(arr_copy, source_arr, 'Input list was modified')
 
 
 @test.describe('Random tests')
@@ -233,20 +233,20 @@ def random_tests():
     def generate_small_inputs():    
         test_cases = []
         
-        #first type of input: regular array of small inputs (many of them)
+        #first type of input: regular list of small inputs (many of them)
         for _ in range(50):
             test_cases.append(generate_small_test_case())
         
-        #another type of input: array with potentially tricky numbers
+        #another type of input: list with potentially tricky numbers
         #(possibly many of them)
         for _ in range(50):
             test_cases.append(generate_small_tricky_test_case())
 
-        #potential edge case of single element array (a few of them)
+        #potential edge case of single element list (a few of them)
         for _ in range(10):
             test_cases.append(generate_single_element_edge_case())
 
-        #another edge case: empty array
+        #another edge case: empty list
         #Not always necessary, usually fixed test is enough.
         #If present, there's no need for more than one.
         test_cases.append([])
@@ -270,7 +270,7 @@ def random_tests():
         for input in inputs:
 
             #call reference solution first, in separate statement.
-            #we know it does not mutate the array, so no copy is needed
+            #we know it does not mutate the list, so no copy is needed
             expected = reference_solution(input)
 
             #call user solution and get actual answer.
@@ -294,8 +294,8 @@ def random_tests():
             expected = reference_solution(input)
             
             #assertion message composed before the user solution has a chance
-            #to mutate the input array
-            message = f'Invalid answer for array of length {len(input)}'
+            #to mutate the input list
+            message = f'Invalid answer for list of length {len(input)}'
 
             #actual answer calculated as second.
             #no copy is made because input is not used anymore
