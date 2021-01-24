@@ -47,7 +47,7 @@ Example responsibilities include:
 - Accepting and rejecting changes to the documentation
 - Serving as intermediaries between users and admins
 
-List of moderator features can be seen on [moderator features](/references/moderator-features/) reference page.
+List of moderator features can be seen on the [moderator features](/references/moderator-features/) reference page.
 
 Moderators need to stick to the [Codewars Code of Conduct](/community/rules/), they can use the site as every other user, and they are obliged to play the game fair. When they misbehave, violate rules, or abuse their privileges, their moderator status may be revoked.
 
