@@ -163,7 +163,7 @@ module.exports = {
           },
           {
             title: "See also",
-            items: ["/references/moderator-features/"],
+            items: ["/community/moderation-tools/",],
           },
         ],
       },
