@@ -7,7 +7,7 @@ prev: /languages/ruby/codewars-test/
 
 # Ruby: creating and translating a kata
 
-This article is intended for kata authors and translators who would like to create new content in JavaScript. It attempts to explain how to create and organize things in a way conforming to [authoring guidelines](/authoring/guidelines/), shows the most common pitfalls, and how to avoid them.
+This article is intended for kata authors and translators who would like to create new content in Ruby. It attempts to explain how to create and organize things in a way conforming to [authoring guidelines](/authoring/guidelines/), shows the most common pitfalls, and how to avoid them.
 
 This article is not a standalone tutorial on creating kata or translations. It's meant to be a complementary, Ruby-specific part of a more general set of HOWTOs and guidelines related to [content authoring](/authoring/). If you are going to create a Ruby translation or a new Ruby kata from scratch, please make yourself familiar with the previously mentioned documents related to authoring in general first. 
 
