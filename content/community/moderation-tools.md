@@ -4,7 +4,7 @@ sidebar: community
 prev: /community/rules/
 ---
 
-# Moderator Features
+# Moderation Tools
 
 [Moderators](/community/moderation/#moderators) are a group of users selected to support users with handling problems related to content and community. They have access to tools and features not available to regular users, which can be used to solve problems reported by community members. In particular, moderators can:
 
