@@ -49,7 +49,7 @@ Some concepts don't always translate well to or from Ruby. Because of this, some
 - Avoid returning different data types depending on the situation (_"Return the result, or the string 'Error' if no result can be found..."_). Ruby is dynamically typed, which is not the case for some other languages. Returning `nil` might be appropriate in some situations, but throwing an error might be better in others.
 
 Some kata just should not be translated into Ruby because it can be difficult to keep their initial idea:
-- Some kata might be meant for another language specifically. For example, a kata about `Python: Learning Classes` should probably not be translated to Ruby, even though Ruby has `class` syntax.
+- Some kata might be meant for another language specifically. For example, a kata about `Python: Dunder Methods` should probably not be translated to Ruby, as Ruby doesn't have dunder methods.
 - The Ruby standard library is very rich and has many utilities available (e.g. `rotate`, `flatten`, `transpose`, `Prime`, etc.), so some non-trivial requirements in other languages could become trivial in Ruby.
 - Ruby supports big integers natively, so kata that rely on the implementation of arbitrary precision integer arithmetic would become trivial in Ruby.
 
