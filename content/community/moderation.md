@@ -1,7 +1,7 @@
 ---
 sidebar: community
 prev: /community/
-next: /community/rules/
+next: /community/moderation-tools/
 ---
 
 # Moderation

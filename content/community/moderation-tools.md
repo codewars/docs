@@ -1,7 +1,8 @@
 ---
 kind: reference
 sidebar: community
-prev: /community/rules/
+prev: /community/moderation/
+next: /community/rules/
 ---
 
 # Moderation Tools

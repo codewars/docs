@@ -158,12 +158,9 @@ module.exports = {
             items: [
               "/community/",
               "/community/moderation/",
+              "/community/moderation-tools/",
               "/community/rules/",
             ],
-          },
-          {
-            title: "See also",
-            items: ["/community/moderation-tools/"],
           },
         ],
       },
