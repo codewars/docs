@@ -14,9 +14,9 @@ next: /community/rules/
   - Flag solutions as cheat
   - Revoke privileges related to authoring
   - Remove dubious votes on beta kata
-- Manually fix effects of bugs:
+- Manually fix effects of some bugs:
   - Revalidate solutions which do not pass tests anymore but haven't been invalidated automatically
-  - Force recalculation of broken satisfaction rating
+  - Force recalculation of broken satisfaction rating on beta kata
   - Force solutions affected by the grouping bug to appear on the kata solutions page
 - Ensure quality of content:
   - Unpublish unapprovable or severely broken beta kata
