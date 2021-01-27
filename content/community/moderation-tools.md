@@ -22,3 +22,8 @@ next: /community/rules/
   - Unpublish unapprovable or severely broken beta kata
 - Hide solutions which can be considered spoilers from kata solutions page (for example a highly optimized solution to an easy version of a 7 kyu kata which can be used to solve 2 kyu, challenge version)
 - Approve changes to documentation
+- Manage Codewars repositories, boards, and chats:
+  - [codewars/codewars.com](https://github.com/codewars/codewars.com) GitHub repository
+  - [codewars/docs](https://github.com/codewars/docs) GitHub repository
+  - [codewars/content-issues](https://github.com/codewars/content-issues) GitHub repository
+  - [Codewars Gitter chats](https://gitter.im/Codewars/codewars.com)
