@@ -1,7 +1,7 @@
 ---
 sidebar: community
 prev: /community/moderation/
-next: /references/moderation-tools/
+next: /community/moderation-tools/
 ---
 
 # Community Code of Conduct
