@@ -246,12 +246,12 @@
 
 - term: Power user
   description: |
-    Codewars' users gain honor in different ways. Doing so, they progressively unlock some [privilegees](references/gamification/privileges), hence "powers".
+Codewars' users gain honor in different ways. Doing so, they progressively unlock some [privileges](references/gamification/privileges), hence "powers".
   acronym: PU
 
 - term: Preloaded (code/section)
   description: |
-    In a Kata, the preloaded section is code that is executed _before_ the solution of the user is defined. The code hold by this section isn't visible to the user but every function or variable defined there is accessible to him drugint the executions of his code.
+In a Kata, the preloaded section is code that is executed _before_ the user's solution. The code in this section isn't visible to the user but every function or variable defined there is accessible to the solution during execution.
 
     If you need/want to see the preloaded section of a Kata, open a fork of a solution _after_ you solved it and look to the `Preloaded` panel.
 
