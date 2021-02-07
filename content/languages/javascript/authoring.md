@@ -190,13 +190,13 @@ chai.config.truncateThreshold = 0;
 
 describe('Fixed tests', () => {
   it('Regular cases', () => {
-    assert.strictEqual(6, userSolution([1, 2, 3]));
-    assert.strictEqual(5, userSolution([2, 3]));
+    assert.strictEqual(userSolution([1, 2, 3]), 6);
+    assert.strictEqual(userSolution([2, 3]), 5);
   });
 
   it('Edge cases', () => {
-    assert.strictEqual(0, userSolution([]), "Invalid answer for empty array");
-    assert.strictEqual(2, userSolution([2]), "Invalid answer for one element array");
+    assert.strictEqual(userSolution([]), 0, "Invalid answer for empty array");
+    assert.strictEqual(userSolution([2]), 2, "Invalid answer for one element array");
   });
 
   it('Input should not be modified', () => {
