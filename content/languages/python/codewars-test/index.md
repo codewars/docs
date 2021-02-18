@@ -41,6 +41,8 @@ This is a convention used in many Python kata, but it's not a requirement, and a
 
 Tests in the Python testing framework are composed of functions decorated with a set of Python decorators. All such functions are automatically discovered and run. The final result for every test block is determined by contained assertions and reported along with its measured execution time.
 
+Test decorators are created in a way that decorated functions are immediatelly invoked and executed. As a result, they capture and use the current values of variables from enclosing scope.
+
 
 ### Test groups: `@test.describe`
 
