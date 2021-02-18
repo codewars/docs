@@ -40,7 +40,7 @@ console.info("Are they equal? ");
 console.info(a === b ? "Yes" : "No");   //prints: Yes
 ```
 
-Another surprising thing is that many values which have seemingly valid amount of digits also do not fit into a floating-point value! For example, `1.1`: it has only two significant digits, so it's well below the limit of 15. However, as it turns out, after converion to binary it becomes an infinite, repeatable fraction! just as `1/6` is represented in base 10 as 0.166(6)..., 11/10 when converted to binary becomes `0.00011(0011)...`, which, in turn, when stuffed on  52 bits, truncated, and rounded, becomes  `1.100000000000000088817841970012523233890533447265625`. There's no `1.1` in binary, and there's no floating-point value equal to `1.1`! Just see:
+Another surprising thing is that many values which have seemingly valid amount of digits also do not fit into a floating-point value! For example, `1.1`: it has only two significant digits, so it's well below the limit of 15. However, as it turns out, after converion to binary it becomes an infinite, repeatable fraction! just as `1/6` is represented in base 10 as 0.166(6)..., 11/10 when converted to binary becomes `1.00011(0011)...`, which, in turn, when stuffed on  52 bits, truncated, and rounded, becomes  `1.100000000000000088817841970012523233890533447265625`. There's no `1.1` in binary, and there's no floating-point value equal to `1.1`! Just see:
 
 ```javascript
 let a = 1.1; //tricky part! Variable a is not equal to 'real' 1.1
@@ -132,11 +132,13 @@ f2c_4: 1482.2222222222222
 
 Note how all functions converting between Fahrenheit and Celsius are equivalent from mathematical point of view, the only difference between them is the order of operations. However, they can, but do not have to, return different results for the same inputs. It's extremelly important point and a cause of serious bugs in many kata, which often reject valid solutions only because they used different formula or another order of operations.
 
-<!--
+
+-----
+
+TBD:
 - precision loss, non-associativity, conversions
 - comparison, assertions
 - formatting (also in assertion messages)
 - special values (inf, nan, -0.0)
 - alternatives
 - rounding, and why not rounding. Rounding modes
--->
