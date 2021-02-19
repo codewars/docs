@@ -163,7 +163,9 @@ Note how all functions converting between Fahrenheit and Celsius are equivalent 
 Below you can find some guidelines which will help you to get rid of floating-point problems from your kata. Generally, such problems can be split into two categories:
 - Design problems, where just the fact that floating point numbers are a part of the task requires some special approach for writing tests
 - Bugs in implementation, when for example a reference solution handles floating-point values incorrectly
+
 However you need to realize that some related issues are not easy to resolve, and may require some trade-offs, redesign, or changing the idea of your kata.
+
 
 
 ### Do not use floating-point numbers if not necessary
