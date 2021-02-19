@@ -19,7 +19,15 @@ Floating-point numbers are usually not specific to any particular language, syst
 
 <details>
 
-<summary>"Why"</summary>
+<summary>
+"Why"
+
+:::note
+The collapsed part is meant as an educational explanation to _why_ some constructs can pe problematic and attempts to provide some background and information so the article is not just a set of guidelines, but additionaly presents some examples and has some informational value. However such section turned out to be very long and probably distracting, that's why I am not sure whether it should be here.
+Let me know what you think, should I finish it and leave it here, move it to some different sub-page, or get rid of it completely.
+:::
+
+</summary>
 
 ## Strange things about floating-point values
 
@@ -143,6 +151,11 @@ Note how all functions converting between Fahrenheit and Celsius are equivalent 
 
 #### Rounding to n decimal places
 
+
+### Further reading
+
+- [THE FLOATING-POINT GUIDE: What Every Programmer Should Know About Floating-Point Arithmetic or Why don’t my numbers add up?](https://floating-point-gui.de/)
+
 </details>
 
 ## How to avoid problems with floating-point numbers?
@@ -208,13 +221,55 @@ Some testing frameworks used on Codewars unfortunately lack proper assertions. T
 
 #### Rounding does not help
 
-Sometimes authors try to work around the problems with floating-point comparisons in some strange ways, like rounding, stringification, or even other, worse things. However such workarounds are a bad thing and they only make things worse. Concept of _"rounding to n decimal places"_ is not well defined for floating-point numbers, and it does not always work as expected. Rounding to an integer value, be it floor, ceil, round to nearest, or truncation, also is not guaranteed to work and often leads to errors. Do not do this, or you will only make things worse. The easies way to get things right is to require no rounding, and use proper assertions with tolerance.
+Sometimes authors try to work around the problems with floating-point comparisons in some strange ways, like rounding, stringification, or even other, worse things. However such workarounds are a bad thing and they only make things worse. Concept of _"rounding to n decimal places"_ is not well defined for floating-point numbers, and it does not always work as expected. Rounding to an integer value, be it floor, ceil, round to nearest, or truncation, also is not guaranteed to work and often leads to errors. Do not do this, or you will only make things worse. The easiest way to get things right is to require no rounding, and use proper assertions with tolerance.
 
 
 ### Be careful when formatting
 
+Some existing kata can issue such a very confusing assertion message:
+
+```c
+Test(sample_test, test_basic) {
+  double actual = squareArea(1.1);
+  double expected = 1.21;
+  cr_assert_float_eq(actual, expected, 1e-9, "Expected %f +/- 1e-9, but was %f", expected, actual);
+}
+```
+
+```text
+Test Results:
+sample_test
+    test_basic
+        Expected 1.210000 +/- 1e-9, but was 1.210000
+```
+
+This issue is not limited only to C, other languages are also affected. 
+
+So... what's wrong? Why tests fail, if expected value and actual value are both `1.210000`?
+Most probably, two things are wrong:
+- User solution returns invalid answer, which does not fall into required tolerance, and
+- Tests display assertion message incorrectly, truncating some meaningful digits.
+
+Actually, both numbers are different, and actual answer is wrong by more than allowed tolerance. But when formatting floating-point values, many languages use only some part of digits, and truncate the least meaningful ones, even when they are still important. When you fix formatting of the message, you get better feedback:
+
+```c
+//note %.9f as format specifiers
+cr_assert_float_eq(actual, expected, 1e-9, "Expected %.9f +/- 1e-9, but was %.9f", expected, actual);
+```
+
+```text
+Test Results:
+sample_test
+    test_basic
+        Expected 1.210000000 +/- 1e-9, but was 1.210000343
+```
+
+You need to remember that whenever you print or format floating-point values as strings, they should always be formatted with at least as many significant digits as the tolerance used for comparisons.
 
 
 ### Use alternatives
 
+There are some ways to mitigate some issues related to floating-point numbers by using some other means, language constructs, classes, libraries, etc. Unfortunately, they are usually language-specific and can turn out to be problematic in kata, because translating kata between languages can become difficult. However, some possibilities are:
 
+- You can use arbitrary-precision decimal types or similar, for example `java.math.BigDecimal` in Java, `decimal` (floating-point decimal primitive type) in C#, `decimal` module in Python, etc.
+- If your kata uses rational numbers, storing numbers as a pair of numerator and denominator can help. Python provides `fractions` module which offers such types out of the box, and Haskell has `Rational`.
