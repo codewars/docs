@@ -169,9 +169,9 @@ It's not always possible, and not always easy, but some categories of problems c
 
 Some languages, expecially dynamically typed ones, are particularly susceptible to problems related to floating-point values. For example, JavaScript does not use integers at all, and all arithemtic calculations operate on floating-point numbers. Everything should be good as long as input, output, and intermediate, values stay accurate or do not exceed the value of `Number.MAX_SAFE_INTEGER`, but due to some bug this can happen, and when it happens, it can be difficult to spot.
 
-#### OVerflow
+#### Overflow
 
-One of such problems is overflow in Javascript. For example, consider a kata with following task: _"Given two natural numbers `a` and `b`, calculate and return their least common multiple." Random tests are careful enough to generate such values of `a` and `b`, which always should give the resulting LCM as less than `Number.MAX_SAFE_INTEGER`. However, the reference solution uses following implementation:
+One of such problems is overflow in Javascript. For example, consider a kata with following task: _"Given two natural numbers `a` and `b`, calculate and return their least common multiple."_ Random tests are careful enough to generate such values of `a` and `b`, which always should give the resulting LCM as less than `Number.MAX_SAFE_INTEGER`. However, the reference solution uses following implementation:
 
 ```javascript
 function lcm(a, b) {
@@ -188,11 +188,32 @@ You need to make sure that your reference solution is correct and can handle all
 In languages like JavaScript or Python, floating-point values can be introduced by mistake when performing division. JavaScript has no integer division operator, and operation of `a / b` always results in floating-point values. If you are interested in integer division, you need to remember to convert the result to integer by yourself. Python has two division operators: `a // b` for integer division (or, "real floor division"), and `a / b` for "real" division. Both operators can be easily confused, and `/` will convert integers to floats and return a float.
 
 
-### Use relative comparisons. Do not use strict equality
+### Use relative comparisons and avoid strict equality
 
-### Rounding does not help
+Have you ever encountered a problem that some solution does not pass because tests expect a slightly different value, even though you used right formula?
+
+```text
+Test Results:
+convert_temperature
+    given 2700 (steel melting point)
+        expected 1482.2222222222224 to equal 1482.2222222222222
+```
+
+This usually happens when tests use incorrect assertion and do not account for the fact that user's solution can return values which are not exactly the same as the ones produced by a reference solution, but still correct.
+
+To correctly test for floating-point values, tests should use a thing called _"approximate equality tests"_, _"fuzzy equality"_, or _"comparison with tolerance"_. Basically it boils down to using a dedicated assertion provided by a majority of popular testing frameworks or assertion libraries. Such asertions usually take as parameters an expected value, actual value, and a value of tolerance which tests agree on. Assertion accepts all answers which are equal to the expected result, or do not differ from it more than allowed.  
+To find out what assertions are appropriate for floating-point comparisons in your language you should go through the documentation of the testing framework you use. For example, for JavaScript it's `chai.assert.closeTo`, and for Python it's `codewars_test.assert_approx_equals`.  
+Some testing frameworks used on Codewars unfortunately lack proper assertions. This is the case for example for C++, or Ruby. In such case, you need to provide your own fuzzy comparison function. It's a difficult task to do it correctly though, so don't try to create one on your own. There's plenty of materials on Internet which will help you with this task, for example [this great guide](https://floating-point-gui.de/) and [its page](https://floating-point-gui.de/errors/comparison/) dedicated strictly for floating point comparisons.
+
+
+#### Rounding does not help
+
+Sometimes authors try to work around the problems with floating-point comparisons in some strange ways, like rounding, stringification, or even other, worse things. However such workarounds are a bad thing and they only make things worse. Concept of _"rounding to n decimal places"_ is not well defined for floating-point numbers, and it does not always work as expected. Rounding to an integer value, be it floor, ceil, round to nearest, or truncation, also is not guaranteed to work and often leads to errors. Do not do this, or you will only make things worse. The easies way to get things right is to require no rounding, and use proper assertions with tolerance.
+
 
 ### Be careful when formatting
+
+
 
 ### Use alternatives
 
