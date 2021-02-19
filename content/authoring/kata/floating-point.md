@@ -13,9 +13,15 @@ The article is not meant to be a comprehensive guide explainign what are floatin
 
 ## What are floating-point numbers?
 
-Floating-point numbers come in many different shapes and colors, but one (or, if you prefer, two) of them is the most widespread, the most common, and, at the same time, the most problematic for newbies (and not only). Whenever you see or use anything called `float`, `double`, `single-` or `double-precision floating point number`, `IEEE-754 number`, you need to be careful, because things can often turn out surprising and not as easy as one might think. Through the rest of the article, the term _"floating-point numbers"_ will refer specifically to **IEEE-754 double-precision values**, unless explicitly stated otherwise.
+Floating-point numbers come in many different shapes and colors, but one (or, if you prefer, two) of them is the most widespread, the most common, and, at the same time, the most problematic for newbies (and not only). Whenever you see or use anything called _"float"_, _"double"_, _"single-"_ or _"double-precision floating point number"_, _"IEEE-754 number"_, you need to be careful, because things can often turn out surprising and not as easy as one might think. Through the rest of the article, the term _"floating-point numbers"_ will refer specifically to **IEEE-754 double-precision values**, unless explicitly stated otherwise.
 
 Floating-point numbers are usually not specific to any particular language, system, or architecture. IEEE-754 numbers are widely adopted and used across many platforms, languages, and compilers. With some small exceptions, anything written in this article applies in the same way to Python, C, JavaScript, or Haskell.
+
+<details>
+
+<summary>"Why"</summary>
+
+## Strange things about floating-point values
 
 Floating-point numbers are useful, because they have capabilities not available to other simple types available in majority of languages:
 
@@ -23,10 +29,6 @@ Floating-point numbers are useful, because they have capabilities not available 
 - They have much wider range than integral types of the same size. Signed 64-bit integer data type can hold values up to ~9\*10<sup>18</sup>, while 64-bit floating-point value can go up to ~1.7\*10<sup>308</sup>.
 
 However, to achieve these goals, floating-point values trade off their _precision_, what more or less means that there are some values which cannot be represent exactly. They are capable of storing up to 52 bits, or approximately 15 decimal digits, and anything beyond this is lost. Values which would require better precision are internally rounded and stored just as approximations. And this leads to many problems which often can come up as surprising.
-
-
-## Strange things about floating-point values
-
 
 ### Representability
 
@@ -132,13 +134,66 @@ f2c_4: 1482.2222222222222
 
 Note how all functions converting between Fahrenheit and Celsius are equivalent from mathematical point of view, the only difference between them is the order of operations. However, they can, but do not have to, return different results for the same inputs. It's extremelly important point and a cause of serious bugs in many kata, which often reject valid solutions only because they used different formula or another order of operations.
 
+### Conversions
 
------
 
-TBD:
-- precision loss, non-associativity, conversions
-- comparison, assertions
-- formatting (also in assertion messages)
-- special values (inf, nan, -0.0)
-- alternatives
-- rounding, and why not rounding. Rounding modes
+### Rounding
+
+#### Rounding to integer
+
+#### Rounding to n decimal places
+
+</details>
+
+## How to avoid problems with floating-point numbers?
+
+Below you can find some guidelines which will help you to get rid of floating-point problems from your kata. Generally, such problems can be split into two categories:
+- Design problems, where just the fact that floating point numbers are a part of the task requires some special approach for writing tests
+- Bugs in implementation, when for example a reference solution handles floating-point values incorrectly
+However you need to realize that some related issues are not easy to resolve, and may require some trade-offs, redesign, or changing the idea of your kata.
+
+
+### Do not use floating-point numbers if not necessary
+
+For many kata, floating-point numbers are simply not necessary and they are added by authors just for fun, or because they think this way their kata will be cooler or more interesting. When first issues start to appear, things quickly prove otherwise. That's why it's recommended to simply not use floating-point numbers when they are not necessary, or do not add any special value to the task of the kata.  
+For example, kata which could look like _"return sum of an array"_ would work perfectly if all elements of the array were integers. Looping through the array and adding up its elements might seem to be trivial task, but when elements of the array are floating-point values, things suddenly get surprisingly complicated. You cannot use strict equality anymore, and `assertEqual` becomes useless.
+
+
+### Perform precise calculations
+
+Some kata accept integers as inputs, but to perform all needed calculation steps and get the final answer, their reference solution needs to use intermediate floating-point values. As it turns out, it's not always necessary. There are types of kata which in the begining might seem as requiring intermediate floating-point operations, but after some analysis it turns out that stated problem can be solved with integers, without risk of introducing floating-point inaccuracies through the course of calculations. For example, problems related to time: given an input of 20 minutes, reference solution might use an intermediate step which converts it to 0.333333333333333 of an hour, loosing some precision in the process. But if it choose representing all intermediate values in **seconds** instead, and store the value of 20 minutes as 1200 seconds, no precision would be lost, and it's highly probable that whole process would be affected by a smaller (or no) error.  
+It's not always possible, and not always easy, but some categories of problems can be solved in a way which does not introduce intermediate inaccuracies. Staying away from floating-point values is usually a good way to solve problems related to time units (hours, minutes, seconds), angles (expressed as degrees, angle minutes, and angle seconds), monetary values (dollars and cents), or any other mixed units of different magnitudes (for example meters and centimeters).
+
+
+### Know how floating-point values and operations work in your language
+
+Some languages, expecially dynamically typed ones, are particularly susceptible to problems related to floating-point values. For example, JavaScript does not use integers at all, and all arithemtic calculations operate on floating-point numbers. Everything should be good as long as input, output, and intermediate, values stay accurate or do not exceed the value of `Number.MAX_SAFE_INTEGER`, but due to some bug this can happen, and when it happens, it can be difficult to spot.
+
+#### OVerflow
+
+One of such problems is overflow in Javascript. For example, consider a kata with following task: _"Given two natural numbers `a` and `b`, calculate and return their least common multiple." Random tests are careful enough to generate such values of `a` and `b`, which always should give the resulting LCM as less than `Number.MAX_SAFE_INTEGER`. However, the reference solution uses following implementation:
+
+```javascript
+function lcm(a, b) {
+    return a * b / gcd(a, b); //gcd is a helper function to calculate greatest common divisor
+}
+```
+
+Can you see where potential problem is? Even though `a`, `b`, and final result are guaranteed to be less than `Number.MAX_SAFE_INTEGER`, intermediate value of `a * b` can overflow, resulting in incorrect result being returned. Now reference solution has a bug!
+
+You need to make sure that your reference solution is correct and can handle all test inputs which will be generated and fed to it. Otherwise, correctness of tests depends on the favor of random number generator, and some valid solutions might fail the tests in an unpredictable, and difficult to debug way.
+
+#### Division
+
+In languages like JavaScript or Python, floating-point values can be introduced by mistake when performing division. JavaScript has no integer division operator, and operation of `a / b` always results in floating-point values. If you are interested in integer division, you need to remember to convert the result to integer by yourself. Python has two division operators: `a // b` for integer division (or, "real floor division"), and `a / b` for "real" division. Both operators can be easily confused, and `/` will convert integers to floats and return a float.
+
+
+### Use relative comparisons. Do not use strict equality
+
+### Rounding does not help
+
+### Be careful when formatting
+
+### Use alternatives
+
+
