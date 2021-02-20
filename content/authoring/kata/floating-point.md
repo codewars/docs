@@ -40,17 +40,17 @@ However, to achieve these goals, floating-point values trade off their _precisio
 
 ### Representability
 
-As it was already mentioned, precision of a floating-point value is limited to 52 bits, or approx. 15 decimal digits. This means that some values simply cannot be stored in a floating-point variable. For example, value `10000000000000000` (or 1*10<sup>16</sup>) can be represented exactly, but there's no `10000000000000001`! How do you think, what will following code print?
+As it was already mentioned, precision of a floating-point value is limited to 53 bits, or approx. 15 decimal digits. This means that some values simply cannot be stored in a floating-point variable. For example, value `10000000000000000` (or 1*10<sup>16</sup>) can be represented exactly, but there's no `10000000000000001`! How do you think, what will following code print?
 
 ```javascript
 let a = 10000000000000000;
-let b = a + 1;    //tricky part! b is equal to 10000000000000000, and not 10000000000000001
+let b = a + 1;    //tricky part!
 
 console.info("Are they equal? ");
 console.info(a === b ? "Yes" : "No");   //prints: Yes
 ```
 
-Another surprising thing is that many values which have seemingly valid amount of digits also do not fit into a floating-point value! For example, `1.1`: it has only two significant digits, so it's well below the limit of 15. However, as it turns out, after converion to binary it becomes an infinite, repeatable fraction! just as `1/6` is represented in base 10 as 0.166(6)..., 11/10 when converted to binary becomes `1.00011(0011)...`, which, in turn, when stuffed on  52 bits, truncated, and rounded, becomes  `1.100000000000000088817841970012523233890533447265625`. There's no `1.1` in binary, and there's no floating-point value equal to `1.1`! Just see:
+Another surprising thing is that many values which have seemingly valid amount of digits also do not fit into a floating-point value! For example, 1.1: it has only two significant digits, so it's well below the limit of 15. However, as it turns out, after converion to binary it becomes an infinite, repeatable fraction! just as 1/6 is represented in base 10 as 0.166(6)..., 11/10 when converted to binary becomes 1.00011(0011)..., which, in turn, when stuffed on  52 bits, truncated, and rounded, becomes  1.100000000000000088817841970012523233890533447265625. There's no 1.1 in binary, and there's no floating-point value equal to 1.1! Just see:
 
 ```javascript
 let a = 1.1; //tricky part! Variable a is not equal to 'real' 1.1
@@ -67,7 +67,7 @@ Is the area equal to 1.21?
 No, it's 1.2100000000000002
 ```
 
-That's because variable `a` has never been equal to `1.1` to begin with! When you look at the code it might look like that, but compiler silently converted literal value `1.1` to the nearest representable floating-point value and stored `1.100000000000000088817841970012523233890533447265625` in variable `a`.
+That's because variable `a` has never been equal to 1.1 to begin with! When you look at the code it might look like that, but compiler silently converted literal value `1.1` to the nearest representable floating-point value and stored 1.100000000000000088817841970012523233890533447265625 in variable `a`.
 
 But wait, things get worse.
 
@@ -152,11 +152,8 @@ Note how all functions converting between Fahrenheit and Celsius are equivalent 
 #### Rounding to n decimal places
 
 
-### Further reading
-
-- [THE FLOATING-POINT GUIDE: What Every Programmer Should Know About Floating-Point Arithmetic or Why don’t my numbers add up?](https://floating-point-gui.de/)
-
 </details>
+
 
 ## How to avoid problems with floating-point numbers?
 
@@ -218,12 +215,12 @@ This usually happens when tests use incorrect assertion and do not account for t
 
 To correctly test for floating-point values, tests should use a thing called _"approximate equality tests"_, _"fuzzy equality"_, or _"comparison with tolerance"_. Basically it boils down to using a dedicated assertion provided by a majority of popular testing frameworks or assertion libraries. Such asertions usually take as parameters an expected value, actual value, and a value of tolerance which tests agree on. Assertion accepts all answers which are equal to the expected result, or do not differ from it more than allowed.  
 To find out what assertions are appropriate for floating-point comparisons in your language you should go through the documentation of the testing framework you use. For example, for JavaScript it's `chai.assert.closeTo`, and for Python it's `codewars_test.assert_approx_equals`.  
-Some testing frameworks used on Codewars unfortunately lack proper assertions. This is the case for example for C++, or Ruby. In such case, you need to provide your own fuzzy comparison function. It's a difficult task to do it correctly though, so don't try to create one on your own. There's plenty of materials on Internet which will help you with this task, for example [this great guide](https://floating-point-gui.de/) and [its page](https://floating-point-gui.de/errors/comparison/) dedicated strictly for floating point comparisons.
+Some testing frameworks used on Codewars unfortunately lack proper assertions. This is the case for example for Ruby. In such case, a function for fuzzy comparisons has to be provided. It's a difficult task to do it correctly though, so don't try to create one on your own. Request missing functionality on [Codewars code runner](https://github.com/codewars/runner/issues) board and necessary packages or functions will be added.
 
 
 #### Rounding does not help
 
-Sometimes authors try to work around the problems with floating-point comparisons in some strange ways, like rounding, stringification, or even other, worse things. However such workarounds are a bad thing and they only make things worse. Concept of _"rounding to n decimal places"_ is not well defined for floating-point numbers, and it does not always work as expected. Rounding to an integer value, be it floor, ceil, round to nearest, or truncation, also is not guaranteed to work and often leads to errors. Do not do this, or you will only make things worse. The easiest way to get things right is to require no rounding, and use proper assertions with tolerance.
+Sometimes authors try to work around the problems with floating-point comparisons in some strange ways, like rounding, stringification, or even other, worse things. However such workarounds are a bad thing and they only make things worse. Concept of _"rounding to n decimal places"_ is not well defined for floating-point numbers, and it does not always work as expected. Rounding to an integer value, be it floor, ceil, round to nearest, or truncation, also is not guaranteed to work as intended by the author and often leads to errors. Do not do this, or you will only make things worse. The easiest way to get things right is to require no rounding, and use proper assertions with tolerance.
 
 
 ### Be careful when formatting
@@ -273,5 +270,10 @@ You need to remember that whenever you print or format floating-point values as 
 
 There are some ways to mitigate some issues related to floating-point numbers by using some other means, language constructs, classes, libraries, etc. Unfortunately, they are usually language-specific and can turn out to be problematic in kata, because translating kata between languages can become difficult. However, some possibilities are:
 
-- You can use arbitrary-precision decimal types or similar, for example `java.math.BigDecimal` in Java, `decimal` (floating-point decimal primitive type) in C#, `decimal` module in Python, etc.
-- If your kata uses rational numbers, storing numbers as a pair of numerator and denominator can help. Python provides `fractions` module which offers such types out of the box, and Haskell has `Rational`.
+- If the kata task is related to decimal numbers (for example monetary values), you can use decimal types, for example `java.math.BigDecimal` in Java, `decimal` in C#, `decimal` module in Python, etc.
+- If domain of your kata is limited to rational numbers, storing values as a pair of numerator and denominator can help. Python provides `fractions` module which offers such types out of the box, and Haskell has `Rational`.
+
+
+## Further reading
+
+- [THE FLOATING-POINT GUIDE: What Every Programmer Should Know About Floating-Point Arithmetic or Why don’t my numbers add up?](https://floating-point-gui.de/)
