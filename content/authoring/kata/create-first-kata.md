@@ -38,45 +38,43 @@ To create a new kata, you need to earn the ["Create Kata" privilege](/references
 </div>
 
 
+## How to make a good kata?
 
-## Kata Idea
+Everyone enjoys good, wellcrafted kata, and no one likes to struggle with poorly authored challenges. However, especially for unexperienced authors, it's often difficult to tell what is good, what is bad, or why. There's a few aspects which can drastically influence experience of other users with your kata and, as a result, feedback it will receive.  
+
+
+### Kata Idea and Duplicates
 
 At the time of writing, there are already **over 6500** approved kata, and almost 2500 beta kata. It's a vast red ocean out there - if you're still sticking to ideas like Fizzbuzz, Fibonacci numbers, or Caesar/ROT cipher, it's pretty much 99.999999...% chance that someone has done this before you.
 
 This is bad because creating a kata about them again constitutes a **duplicate** kata, and we certainly don't want 100 Fizzbuzz kata out in the wild. When a duplicate is found it will be retired, which basically means it gets taken out of the kata catalog.
 
-
-### How to avoid creating a duplicate kata
-
-- Try hard to **come up with some novel and original idea.** It would mean not only creating some original theme or backstory, but the task should also ideally boil down to some new, interesting approach. There's already many kata which can be brought down to one of very popular ideas:
+To make sure users will like the idea presented in your kata, you can:
+- Try to **come up with some novel and original idea.** It would mean not only creating some original theme or backstory, but the task should also ideally boil down to some new, interesting approach. There's already many kata which can be brought down to one of very popular ideas:
   - Topics common when learnign programming. Fibonacci, fizz-buzz, factorial, there's already plenty of them.
   - Simple map/filter/reduce operations on a list or array. There's too many kata which require just to iterate over a sequence and pick/reject/transform some of its elements based on some simple criteria.
   - Calculating a result of a formula, be it mathematical, physical, or chemical. Substituting values into a formula has been done many times.
-  - Simple graph search. Patch finding, simple BFS, DFS, there's already [enough kata](https://www.codewars.com/collections/bfs-shitpost) to make it boring.
+  - Simple graph search. Simple patch finding, BFS, DFS, there's already [enough kata](https://www.codewars.com/collections/bfs-shitpost) to make it boring.
 - **[Search for keywords](https://www.codewars.com/kata/search/?q=&) to see if someone has done the idea before.** Many topics has been already extensively covered. There are many kata related to [Fibonacci numbers](https://www.codewars.com/kata/search/?q=fibonacci&), [factorials](https://www.codewars.com/kata/search/?q=factorial&&order_by=rank_id%20asc), [fizz-buzz](https://www.codewars.com/kata/search/?q=buzz&&order_by=rank_id%20asc), and other common topics. Even some very advanced topics have many similar kata. For example, while [Peano](https://www.codewars.com/kata/search/?q=peano) and [Church](https://www.codewars.com/kata/search/?q=church) numbers are definitely not easy, as the search results clearly show, they've been done many times already.
-- **Solve more kata.** This way you will get better feeling of what is already there and what topics appear often in search results. Naturally, when you've already solved 10 Fibonacci kata, solving another one will make you very nauseous, making you naturally allergic to duplicates ;-) Additionally, you will gain more experience with the platform, users, their opinions, and what they actually expect. Solving more kata to gain more experience can help one significantly in the following aspects:
-  - Getting more experienced will help you *understand* how hard your kata is, so that you can tune your kata to your desire easily.
-  - As you train more, you tend to know what the most efficient solution for a kata is. This is crucial to performance and golf kata: you don't want to make a performance kata when you can only write sub-par solutions! You'll get pwned hard by veterans ;-)
-  - Encountering kata issues and looking at comment sections will let you understand the common issues people will raise. Learn from history and don't make the same mistake again!
-  - Looking at solutions (and more importantly, solution comment sections) will give you an insight into what constitutes good practice.
-  - It also allows you to see how others write their tests. Writing good tests is **hard**, especially if your kata is also hard.
-- **Solve and review [beta kata](https://www.codewars.com/kata/search/my-languages?q=&&xids=completed&beta=true).** This way you can learn a lot from mistakes of others and see what are the most common ideas and mistakes of kata authors, how reviewers react to them, and what are possible ways to resolve them.
+- **Solve more kata.** This way you will get better feeling of what is already there and what topics appear often in search results. Naturally, when you've already solved 10 Fibonacci kata, solving another one will make you very nauseous, making you naturally allergic to duplicates ;-) 
 
 
-## Stick to the intent, focus on one key thing per kata
+### Kata quality
 
-If you ask people to do 10 kata about 10 different things, that's okay.
+Even the best idea won't save the kata if it's implemented poorly. Lucky for you, there's a set of [quality guidelines](/authoring/guidelines/) which, when followed, will ensure that all pieces of your kata will be created properly. There's quite a lot of them and in the beginning they might seem a bit intimidating, so try to read through them and understand them, before you apply them to your kata. Remember that whenever you have any problems understanding something, you can always [ask for help](https://gitter.im/Codewars/codewars.com/kata-authoring-help).
 
-But if you ask people to do 1 kata which needs to do 10 different things depending on some arbitrary conditions, nobody will ever like the kata. Juggling 10 objects at once is not fun.
 
-This often happens for unbalanced kata - while they're asking for one thing, because of how the kata is written the actual difficulty lies on something **completely unrelated** to the proposed intent of the kata itself, e.g doing a task with a very unnatural and hard to work with input format.
+### Learning from experience
 
-If you find that your kata is too long, mostly from these symptoms:
-- your kata has a very long description
-- a typical solution is very long and yet none of them is hard, the only difficulty is from the tediousness
-- your kata requires doing many things together,
+There's no better teacher than experience, that's why it's never a bad idea to solve more kata, learn more, and then come back to creating your own. It can help one significantly in the following aspects:
+- Getting more experienced will help you *understand* how hard your kata is, so that you can tune your kata to your desire easily.
+- As you train more, you tend to know what the most efficient solution for a kata is. This is crucial to performance and golf kata: you don't want to make a performance kata when you can only write sub-par solutions! You'll get pwned hard by veterans ;-)
+- Encountering kata issues and looking at comment sections will let you understand the common issues people will raise. Learn from history and don't make the same mistake again!
+- Looking at solutions (and more importantly, solution comment sections) will give you an insight into what constitutes good practice.
+- It also allows you to see how others write their tests. Writing good tests is **hard**, especially if your kata is also hard.
+- By solving and reviewing [beta kata](https://www.codewars.com/kata/search/my-languages?q=&&xids=completed&beta=true) you can learn a lot from mistakes of others and see what are the most common mistakes of kata authors, how reviewers react to them, and what are possible ways to resolve them.
 
-you might want to break up your kata into separate parts if appropriate.
+Be aware though that there's many old kata which were created long time ago and do not hold to current standards. Bad quality of an existing kata is not an excuse for creating another bad one!
 
 
 ## Setting up the kata
@@ -189,8 +187,6 @@ Remember: just like in real life, if we failed a test, we want to know:
 So unless revealing the expected result would spoil the kata, you should not hide them. Consult the documentation of the testing framework used by your [language](/languages/) and pick the best method for your tests.
 
 
-
-
 #### Example Test Cases
 
 Example test cases are a small set of tests that the user can see and modify while working on their solution. These are some basic test cases that users will see when they load the kata. Sample tests are written in the same way as submission tests, using the testing framework set up for your language.
@@ -198,7 +194,6 @@ Example test cases are a small set of tests that the user can see and modify whi
 Except in circumstances where providing sample tests to the user would spoil the kata (such as [Defuse the bombs](https://www.codewars.com/kata/defuse-the-bombs/)), they are absolutely **required** as users can get an idea of how the solution is called and tested. You should include a few tests to get someone started, and the easiest way is just to copy over the fixed tests from the full test suite to serve as the sample tests. **It is a kata issue if there are no sample tests** unless strong justification can be provided against them for a particular kata.
 
 Since sample tests can significantly impact the user experience of a kata, they have a dedicated set of [sample tests authoring guidelines](/authoring/guidelines/sample-tests/).
-
 
 
 ## Before publishing
