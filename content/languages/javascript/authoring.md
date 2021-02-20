@@ -105,6 +105,7 @@ describe("Generated test cases", () => {
 
 This technique is liked by authors familiar with testing frameworks that provide parameterized or generated test cases out of the box, like NUnit or JUnit. However, some caution is needed when this approach is used. Test suites organized like this can become large and can flood the test output panel with many entries, making it unreadable or causing performance problems in client browsers.
 
+
 ### Chai
 
 JavaScript kata should use [Chai](https://www.chaijs.com/) as the assertion library.
