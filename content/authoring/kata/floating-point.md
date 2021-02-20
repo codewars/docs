@@ -17,17 +17,11 @@ Floating-point numbers come in many different shapes and colors, but one (or, if
 
 Floating-point numbers are usually not specific to any particular language, system, or architecture. IEEE-754 numbers are widely adopted and used across many platforms, languages, and compilers. With some small exceptions, anything written in this article applies in the same way to Python, C, JavaScript, or Haskell.
 
-<details>
-
-<summary>
-"Why"
-
 :::note
 The collapsed part is meant as an educational explanation to _why_ some constructs can pe problematic and attempts to provide some background and information so the article is not just a set of guidelines, but additionaly presents some examples and has some informational value. However such section turned out to be very long and probably distracting, that's why I am not sure whether it should be here.
 Let me know what you think, should I finish it and leave it here, move it to some different sub-page, or get rid of it completely.
 :::
 
-</summary>
 
 ## Strange things about floating-point values
 
@@ -144,15 +138,20 @@ Note how all functions converting between Fahrenheit and Celsius are equivalent 
 
 ### Conversions
 
+_TBD_
 
 ### Rounding
 
+_TBD_
+
 #### Rounding to integer
+
+_TBD_
 
 #### Rounding to n decimal places
 
+_TBD_
 
-</details>
 
 
 ## How to avoid problems with floating-point numbers?
