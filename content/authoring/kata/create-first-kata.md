@@ -41,7 +41,7 @@ To create a new kata, you need to earn the ["Create Kata" privilege](/references
 
 ## Kata Idea
 
-At the time of writing, there are already **over 6500** approved kata, and almost 2500 beta kata. It's a vast red ocean out there - if you're still sticking to ideas like Fizzbuzz, Fibonacci numbers, or Caesar/ROT cipher, it's pretty much `99.999999...%` chance that someone has done this before you.
+At the time of writing, there are already **over 6500** approved kata, and almost 2500 beta kata. It's a vast red ocean out there - if you're still sticking to ideas like Fizzbuzz, Fibonacci numbers, or Caesar/ROT cipher, it's pretty much 99.999999...% chance that someone has done this before you.
 
 This is bad because creating a kata about them again constitutes a **duplicate** kata, and we certainly don't want 100 Fizzbuzz kata out in the wild. When a duplicate is found it will be retired, which basically means it gets taken out of the kata catalog.
 
@@ -49,39 +49,19 @@ This is bad because creating a kata about them again constitutes a **duplicate**
 ### How to avoid creating a duplicate kata
 
 
-#### Search for keywords to see if someone has done the idea before
-
-As we all know, before you even engage your enemies, you need to send scouts forward.
-
-For example, while [Peano](https://www.codewars.com/kata/search/?q=peano) and [Church](https://www.codewars.com/kata/search/?q=church) numbers are definitely not easy, as the search results clearly show, they've been done many times already.
-
-In a way, knowing the kata in the wild is very similar to knowing your enemies: you get to see how others write the same kata and other people's (sometimes) brilliant solution in these kata.
-
-Then, maybe you can decide whether to retreat or make a **harder** version of the kata in return if you feel the existing one is too lackluster/easy.
-
-
-
-
-#### Solve more kata
-
-Naturally, when you've already solved 10 Fibonacci kata, solving another one will make you very nauseous, making you naturally allergic to duplicates ;-)
-
-
-#### Solve more kata (again)
-
-While the minimum honor for creating a kata is merely 300 honor, if you try to create a kata with just 300 honor, it'll most likely inadvertently be bad.
-
-Why? With just 300 honor, you haven't even got a grasp of what kata are actually like.
-
-Anyone can reach 300 honor in a very short time, from a few hours to a day or two. This is, obviously, far from enough. Thus, you need to train more.
-
-Solving more kata to gain more experience can help one significantly in the following aspects:
-
-- Getting more experienced will help you *understand* how hard your kata is, so that you can tune your kata to your desire easily.
-- As you train more, you tend to know what the most efficient solution for a kata is. This is crucial to performance and golf kata: you don't want to make a performance kata when you can only write sub-par solutions! You'll get pwned hard by veterans ;-)
-- Encountering kata issues and looking at comment sections will let you understand the common issues people will raise. Learn from history and don't make the same mistake again!
-- Looking at solutions (and more importantly, solution comment sections) will give you an insight into what constitutes good practice.
-- It also allows you to see how others write their tests. Writing good tests is **hard**, especially if your kata is also hard.
+- Try hard to **come up with some novel and original idea.** It would mean not only creating some original theme or backstory, but the task should also ideally boil down to some new, interesting approach. There's already many kata which can be brought down to one of a very popular ideas:
+  - Topics common when learnign programming. Fibonacci, fizz-buzz, factorial, there's already plenty of them.
+  - Simple map/filter/reduce operations on a list or array. There's too many kata which require just to iterate over a sequence and pick/reject/transform some of its elements based on some simple criteria.
+  - Calculating a result of a formula, be it mathematical, physical, or chemical. Substituting values into a formula has been done many times.
+  - Simple graph search. Patch finding, simple BFS, DFS, there's already [enough kata](https://www.codewars.com/collections/bfs-shitpost) to make it boring.
+- **[Search for keywords](https://www.codewars.com/kata/search/?q=&) to see if someone has done the idea before.** Many topics has been already extensively covered. There are many kata related to [Fibonacci numbers](https://www.codewars.com/kata/search/?q=fibonacci&), [factorials](https://www.codewars.com/kata/search/?q=factorial&&order_by=rank_id%20asc), [fizz-buzz](https://www.codewars.com/kata/search/?q=buzz&&order_by=rank_id%20asc), and other common topics. Even some very advanced topics have many similar kata. For example, while [Peano](https://www.codewars.com/kata/search/?q=peano) and [Church](https://www.codewars.com/kata/search/?q=church) numbers are definitely not easy, as the search results clearly show, they've been done many times already.
+-  **Solve more kata.** This way you will get better feeling of what is already there and what topics appear often in search results.Naturally, when you've already solved 10 Fibonacci kata, solving another one will make you very nauseous, making you naturally allergic to duplicates ;-) Additionally, you will gain more experience with the platform, users, their opinions, and what they actually expect. Solving more kata to gain more experience can help one significantly in the following aspects:
+  - Getting more experienced will help you *understand* how hard your kata is, so that you can tune your kata to your desire easily.
+  - As you train more, you tend to know what the most efficient solution for a kata is. This is crucial to performance and golf kata: you don't want to make a performance kata when you can only write sub-par solutions! You'll get pwned hard by veterans ;-)
+  - Encountering kata issues and looking at comment sections will let you understand the common issues people will raise. Learn from history and don't make the same mistake again!
+  - Looking at solutions (and more importantly, solution comment sections) will give you an insight into what constitutes good practice.
+  - It also allows you to see how others write their tests. Writing good tests is **hard**, especially if your kata is also hard.
+- **Solve and review beta kata.** This way you can learn a lot from mistakes of others and see what are the most common ideas and mistakes of kata authors, how reviewers react to them, and what are possible ways to resolve them.
 
 
 ## Stick to the intent, focus on one key thing per kata
@@ -244,6 +224,8 @@ Drafts of kata cannot be found and searched for, but can be accessed by other us
 After you publish your kata, it becomes subject to [beta evaluation](/concepts/kata/beta-process/). Power users immediately jump on it, knowing they _will_ find problems, the kata discussion section will be flooded with issue reports marked with red labels, and the red, sad-faced button of the "Not Satisfied" vote will cause the satisfaction rating to drop to 20%. Unless there aren't any serious issues. It may be discouraging at first, especially for new authors, but when you think about it, it makes sense: after all, no one wants a bad kata to get out of beta, right? That's why it's important to make sure that when a kata is published, it's already in as good a shape as possible.
 
 But still, no matter how hard you try, it's not possible to make everyone satisfied. Your kata may receive many satisfied votes, but even then, some users might not like it. Do not worry about this too much. Consider their remarks, and think a bit about them. Maybe they are right, and the kata needs some improvements? Listen to everyone, answer their questions, consider suggestions, and fix issues popping up. Also, do not rush things too much. If someone says something you are not sure about, just wait for another opinion. Users often do not agree with each other, so you can receive two mutually exclusive opinions. It can be difficult sometimes, but you just need to pass on one of them, or find some balance in between. Research shows \[citation needed] that kata with authors actively maintaining them leave beta quite quickly, while some kata can be retired within minutes, or, even worse, stay in beta forever, if authors do not want to fix problems.
+
+After your kata gets published and it gains a couple of solutions, it's very probable that someone will translate it to some other language for you. This is great, but do not get excited about this. It's _recommended_ to hold back with approving new translations until the original version settles down, gets all isues resolved, and the kata matures a bit. When someone reports some design issue with your kata and it needs to be changed in some way, approved translations can make it difficult and they become additional maintenance effort. High maintenance cost is something you want to avoid at the early stage of a kata, when it's expected to change a lot. 
 
 After the kata collects enough positive feedback, it leaves the beta phase and becomes available for everyone to train on and earn their points. Now it will draw even more attention, and potentially thousands of users will submit their solutions, possibly finding new problems reporting new issues, and raising new suggestions. Your task, as an author, is to actively maintain the kata. This will encourage others to train on it more, provide translations to other languages, and enjoy it to its full extent.
 
