@@ -14,9 +14,9 @@ However, authors sometimes do not realize the fact that creating a good quality 
 ## Support for authors
 
 To support you with this difficult task, a set of help pages has been created with the following types of information:
-- [tutorials](/tutorials/), for users who are still figuring things out,
-- [guidelines](/authoring/guidelines/), which need to be respected to meet the Codewars quality criteria. It is strongly recommended to become familiar with these, otherwise you risk that your kata will be met with bad reception, harsh remarks, and many reported issues.
-- [HOWTOs](/recipes/) explaining how to realize some commonly occurring tasks, or solve commonly repeating problems,
+- [Tutorials](/tutorials/), for users who are still figuring things out.
+- [Guidelines](/authoring/guidelines/), which need to be respected to meet the Codewars quality criteria. It is strongly recommended to become familiar with these, otherwise you risk that your kata will be met with bad reception, harsh remarks, and many reported issues.
+- [HOWTOs](/recipes/) explaining how to realize some commonly occurring tasks, or solve commonly repeating problems.
 - [Language specific pages](/languages/) with code snippets, examples, references, and tutorials related to specific programming languages.
 
 You can also reach out directly to the community to ask questions and seek experienced users' advice on the [kata-authoring-help](https://gitter.im/Codewars/codewars.com/kata-authoring-help) Gitter channel.
@@ -48,20 +48,19 @@ This is bad because creating a kata about them again constitutes a **duplicate**
 
 ### How to avoid creating a duplicate kata
 
-
-- Try hard to **come up with some novel and original idea.** It would mean not only creating some original theme or backstory, but the task should also ideally boil down to some new, interesting approach. There's already many kata which can be brought down to one of a very popular ideas:
+- Try hard to **come up with some novel and original idea.** It would mean not only creating some original theme or backstory, but the task should also ideally boil down to some new, interesting approach. There's already many kata which can be brought down to one of very popular ideas:
   - Topics common when learnign programming. Fibonacci, fizz-buzz, factorial, there's already plenty of them.
   - Simple map/filter/reduce operations on a list or array. There's too many kata which require just to iterate over a sequence and pick/reject/transform some of its elements based on some simple criteria.
   - Calculating a result of a formula, be it mathematical, physical, or chemical. Substituting values into a formula has been done many times.
   - Simple graph search. Patch finding, simple BFS, DFS, there's already [enough kata](https://www.codewars.com/collections/bfs-shitpost) to make it boring.
 - **[Search for keywords](https://www.codewars.com/kata/search/?q=&) to see if someone has done the idea before.** Many topics has been already extensively covered. There are many kata related to [Fibonacci numbers](https://www.codewars.com/kata/search/?q=fibonacci&), [factorials](https://www.codewars.com/kata/search/?q=factorial&&order_by=rank_id%20asc), [fizz-buzz](https://www.codewars.com/kata/search/?q=buzz&&order_by=rank_id%20asc), and other common topics. Even some very advanced topics have many similar kata. For example, while [Peano](https://www.codewars.com/kata/search/?q=peano) and [Church](https://www.codewars.com/kata/search/?q=church) numbers are definitely not easy, as the search results clearly show, they've been done many times already.
--  **Solve more kata.** This way you will get better feeling of what is already there and what topics appear often in search results.Naturally, when you've already solved 10 Fibonacci kata, solving another one will make you very nauseous, making you naturally allergic to duplicates ;-) Additionally, you will gain more experience with the platform, users, their opinions, and what they actually expect. Solving more kata to gain more experience can help one significantly in the following aspects:
+- **Solve more kata.** This way you will get better feeling of what is already there and what topics appear often in search results. Naturally, when you've already solved 10 Fibonacci kata, solving another one will make you very nauseous, making you naturally allergic to duplicates ;-) Additionally, you will gain more experience with the platform, users, their opinions, and what they actually expect. Solving more kata to gain more experience can help one significantly in the following aspects:
   - Getting more experienced will help you *understand* how hard your kata is, so that you can tune your kata to your desire easily.
   - As you train more, you tend to know what the most efficient solution for a kata is. This is crucial to performance and golf kata: you don't want to make a performance kata when you can only write sub-par solutions! You'll get pwned hard by veterans ;-)
   - Encountering kata issues and looking at comment sections will let you understand the common issues people will raise. Learn from history and don't make the same mistake again!
   - Looking at solutions (and more importantly, solution comment sections) will give you an insight into what constitutes good practice.
   - It also allows you to see how others write their tests. Writing good tests is **hard**, especially if your kata is also hard.
-- **Solve and review beta kata.** This way you can learn a lot from mistakes of others and see what are the most common ideas and mistakes of kata authors, how reviewers react to them, and what are possible ways to resolve them.
+- **Solve and review [beta kata](https://www.codewars.com/kata/search/my-languages?q=&&xids=completed&beta=true).** This way you can learn a lot from mistakes of others and see what are the most common ideas and mistakes of kata authors, how reviewers react to them, and what are possible ways to resolve them.
 
 
 ## Stick to the intent, focus on one key thing per kata
