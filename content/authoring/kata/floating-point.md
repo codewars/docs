@@ -36,21 +36,21 @@ Floating-point numbers are useful, because they have capabilities not available 
 - They can hold fractional values, like 25.5 or -7.125. Fractions can be as small as ~1.7\*10<sup>-308</sup>
 - They have much wider range than integral types of the same size. Signed 64-bit integer data type can hold values up to ~9\*10<sup>18</sup>, while 64-bit floating-point value can go up to ~1.7\*10<sup>308</sup>.
 
-However, to achieve these goals, floating-point values trade off their _precision_, what more or less means that there are some values which cannot be represent exactly. They are capable of storing up to 53 bits, or approximately 15 decimal digits, and anything beyond this is lost. Values which would require better precision are internally rounded and stored just as approximations. And this leads to many problems which often can come up as surprising.
+However, to achieve these goals, floating-point values trade off their _precision_, which more or less means that there are some values which cannot be represented exactly. They are capable of storing up to 53 bits, or approximately 15 decimal digits, and anything beyond this is lost. Values which would require better precision are internally rounded and stored just as approximations. This leads to many problems which often can come up as surprising.
 
 ### Representability
 
-As it was already mentioned, precision of a floating-point value is limited to 53 bits, or approx. 15 decimal digits. This means that some values simply cannot be stored in a floating-point variable. For example, value 10000000000000000 (or 1*10<sup>16</sup>) can be represented exactly, but there's no 10000000000000001! How do you think, what will following code print?
+As it was already mentioned, precision of a floating-point value is limited to 53 bits, or approx. 15 decimal digits. This means that some values simply cannot be stored in a floating-point variable. For example, value 10000000000000000 (or 1*10<sup>16</sup>) can be represented exactly, but there's no 10000000000000001! What do you think the following code will print?
 
 ```javascript
 let a = 10000000000000000;
-let b = a + 1;    //tricky part!
+let b = 10000000000000001;    //tricky part!
 
 console.info("Are they equal? ");
 console.info(a === b ? "Yes" : "No");   //prints: Yes
 ```
 
-Another surprising thing is that many values which have seemingly valid amount of digits also do not fit into a floating-point value! For example, 1.1: it has only two significant digits, so it's well below the limit of 15. However, as it turns out, after converion to binary it becomes an infinite, repeatable fraction! just as 1/6 is represented in base 10 as 0.166(6)..., 11/10 when converted to binary becomes 1.00011(0011)..., which, in turn, when stuffed on  53 bits, truncated, and rounded, becomes  1.100000000000000088817841970012523233890533447265625. There's no 1.1 in binary, and there's no floating-point value equal to 1.1! Just see:
+Another surprising thing is that many values which appear to have a valid number of digits also do not fit into a floating-point value! For example, 1.1 has only two significant digits, so it's well below the limit of 15 digits. However, as it turns out, after conversion to binary it becomes a recurring fraction! Just as 1/6 is represented in base 10 as 0.166(6)..., 11/10 when converted to binary becomes 1.00011(0011)..., which, in turn, when stuffed on  53 bits, truncated, and rounded, becomes  1.100000000000000088817841970012523233890533447265625. There's no 1.1 in binary, and there's no floating-point value equal to 1.1! Just see:
 
 ```javascript
 let a = 1.1; //tricky part! Variable a is not equal to 'real' 1.1
@@ -67,7 +67,7 @@ Is the area equal to 1.21?
 No, it's 1.2100000000000002
 ```
 
-That's because variable `a` has never been equal to 1.1 to begin with! When you look at the code it might look like that, but compiler silently converted literal value `1.1` to the nearest representable floating-point value and stored 1.100000000000000088817841970012523233890533447265625 in variable `a`.
+That's because variable `a` has never been equal to 1.1 to begin with! When you look at the code it might look like that, but the compiler silently converted the literal value `1.1` to the nearest representable floating-point value and stored 1.100000000000000088817841970012523233890533447265625 in variable `a`.
 
 But wait, things get worse.
 
@@ -96,7 +96,7 @@ Is area equal to 1.21?
 No! It's 1.210000
 ```
 
-So, how is that 1.210000 is not equal to 1.21? The answer is: because `a` is not equal 1.210000. It's equal to 1.2100000000000002, but `printf` function by default formats `double` values with 6 decimal places, leaving out the rest. That's why you cannot see the whole value. Fractional tail is not displayed, but it's still there in the variable.
+So, how is that 1.210000 is not equal to 1.21? The answer is: because `a` is not equal to 1.210000. It's equal to 1.2100000000000002, but the `printf` function by default formats `double` values with 6 decimal places, leaving out the rest. That's why you cannot see the whole value. The fractional tail is not displayed, but it's still there in the variable.
 
 
 ### Arithmetic
@@ -244,7 +244,7 @@ sample_test
 
 This issue is not limited only to C, other languages are also affected. 
 
-So... what's wrong? Why tests fail, if expected value and actual value are both 1.210000?
+So... what's wrong? Why do the tests fail if the expected value and actual values are both 1.210000?
 Most probably, two things are wrong:
 - User solution returns invalid answer, which does not fall into required tolerance, and
 - Tests display assertion message incorrectly, truncating some meaningful digits.
@@ -271,7 +271,7 @@ You need to remember that whenever you print or format floating-point values as 
 There are some ways to mitigate some issues related to floating-point numbers by using some other means, language constructs, classes, libraries, etc. Unfortunately, they are usually language-specific and can turn out to be problematic in kata, because translating kata between languages can become difficult. However, some possibilities are:
 
 - If the kata task is related to decimal numbers (for example monetary values), you can use decimal types, for example `java.math.BigDecimal` in Java, `decimal` in C#, `decimal` module in Python, etc.
-- If domain of your kata is limited to rational numbers, storing values as a pair of numerator and denominator can help. Python provides `fractions` module which offers such types out of the box, and Haskell has `Rational`.
+- If domain of your kata is limited to rational numbers, storing values as a pair of integers (numerator, denominator) can help. Python provides a `fractions` module which offers such types out of the box, and Haskell has `Rational`.
 
 
 ## Further reading
