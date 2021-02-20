@@ -5,10 +5,10 @@ kind: tutorial
 # HOWTO Work with Floating-Point Numbers
 
 
-This article attempts to explain to kata authors what are the most common problems and pitfalls encountered when creating kata working with floating-point numbers, and how to avoid them.  
-Many freshly published kata turn out to have problems with handling precision of calculations, use incorrect assertions, or try to work around the problems in not totally correct way. This often causes that many valid solutions cannot pass the tests or pass tests inconsistently. Errors related to floating-point values are often difficult to reproduce, so whenever an issue is reported, authors immediately close it as _"works for me, you are doing something wrong"_. Incorrectly handled floating-point numbers can also cause confusing errors and assertion messages.
+This article attempts to explain to kata authors what the most common problems and pitfalls encountered when creating kata are when working with floating-point numbers, and how to avoid them.
+Many freshly published kata turn out to have problems with handling precision of calculations, using incorrect assertions, or trying to work around the problems in an incorrect manner. This often causes many valid solutions to fail the tests. Errors related to floating-point values are often difficult to reproduce, so whenever an issue is reported, authors immediately close it as _"works for me, you are doing something wrong"_. Incorrectly handled floating-point numbers can also cause confusing errors and assertion messages.
 
-The article is not meant to be a comprehensive guide explainign what are floating-point numbers in general, how they are represented, how they work internally, etc. It's meant to be targeted mostly to authors of Codewars kata to help them create content of better quality and avoid traps and pitfalls leading to problems with precision loss, comparisons, etc.
+The article is not meant to be a comprehensive guide explaining what floating-point numbers are in general, how they are represented, how they work internally, etc. It's meant to be targeted mostly to authors of Codewars kata to help them create content of better quality and avoid traps and pitfalls leading to problems with precision loss, comparisons, etc.
 
 
 ## What are floating-point numbers?
@@ -31,10 +31,10 @@ Let me know what you think, should I finish it and leave it here, move it to som
 
 ## Strange things about floating-point values
 
-Floating-point numbers are useful, because they have capabilities not available to other simple types available in majority of languages:
+Floating-point numbers are useful, because they have capabilities not available to other simple types available in the majority of languages:
 
 - They can hold fractional values, like 25.5 or -7.125. Fractions can be as small as ~1.7\*10<sup>-308</sup>
-- They have much wider range than integral types of the same size. Signed 64-bit integer data type can hold values up to ~9\*10<sup>18</sup>, while 64-bit floating-point value can go up to ~1.7\*10<sup>308</sup>.
+- They have a much wider range than integral types of the same size. Signed 64-bit integer data type can hold values up to ~9\*10<sup>18</sup>, while 64-bit floating-point value can go up to ~1.7\*10<sup>308</sup>.
 
 However, to achieve these goals, floating-point values trade off their _precision_, which more or less means that there are some values which cannot be represented exactly. They are capable of storing up to 53 bits, or approximately 15 decimal digits, and anything beyond this is lost. Values which would require better precision are internally rounded and stored just as approximations. This leads to many problems which often can come up as surprising.
 
@@ -60,7 +60,7 @@ console.info("Is the area equal to 1.21? ");
 console.info(area === 1.21 ? "Yes" : "No, it's " + area);
 ```
 
-Above program prints:
+The program above prints:
 
 ```text
 Is the area equal to 1.21? 
@@ -74,7 +74,7 @@ But wait, things get worse.
 
 ### String representation
 
-Things can get even weirder when you convert floating-point values to or from string. The way how floating-point values are formatted is not unified between all languages, and often it's not specified at all. For example, C setup on Codewars uses by default 6 digits of precision when converting `double` variables to string, and this can cause some really confusing effects:
+Things can get even weirder when you convert floating-point values to or from strings. The way how floating-point values are formatted is not unified between all languages, and often it's not specified at all. For example, the C setup on Codewars uses by default 6 digits of precision when converting `double` variables to string, and this can cause some really confusing effects:
 
 ```c
 double a = 1.1;
@@ -89,7 +89,7 @@ if(area == 1.21) {
 }
 ```
 
-Following program prints:
+The following program prints:
 
 ```text
 Is area equal to 1.21?
@@ -101,7 +101,7 @@ So, how is that 1.210000 is not equal to 1.21? The answer is: because `a` is not
 
 ### Arithmetic
 
-We are used to think about some arithmetic operations as associative, reversible, or having some other properties which do not hold when applied to floating-point numbers. For example, operations like multiplication or division are not guaranteed to be associative. When performing non-trivial sequence of arithmetic operations, it can turn out that final result depends on the order the operations were carried out, even if it would not matter from mathematical point of view!
+We are used to thinking of some arithmetic operations as associative, reversible, or having some other properties which do not hold when applied to floating-point numbers. For example, operations like multiplication or division are not guaranteed to be associative. When performing a non-trivial sequence of arithmetic operations, it can turn out that the final result depends on the order the operations, even if it would not matter from a mathematical point of view!
 
 ```javascript
 //a couple of functions which convert between Fahrenheit and Celsius
@@ -125,7 +125,7 @@ console.info(`f2c_3: ${f2c_3(degrees)}`);
 console.info(`f2c_4: ${f2c_4(degrees)}`);
 ```
 
-Above program prints:
+The above program prints:
 
 ```test
 Human body:
@@ -140,7 +140,7 @@ f2c_3: 1482.2222222222224
 f2c_4: 1482.2222222222222
 ```
 
-Note how all functions converting between Fahrenheit and Celsius are equivalent from mathematical point of view, the only difference between them is the order of operations. However, they can, but do not have to, return different results for the same inputs. It's extremelly important point and a cause of serious bugs in many kata, which often reject valid solutions only because they used different formula or another order of operations.
+Note how all functions converting between Fahrenheit and Celsius are equivalent from a mathematical point of view, the only difference between them is the order of operations. However, they can, but do not have to, return different results for the same inputs. It's an extremely important point and a cause of serious bugs in many kata, which often reject valid solutions only because they used a different formula or order of operations.
 
 ### Conversions
 
@@ -165,25 +165,25 @@ However you need to realize that some related issues are not easy to resolve, an
 
 
 
-### Do not use floating-point numbers if not necessary
+### Only use floating-point numbers when necessary
 
-For many kata, floating-point numbers are simply not necessary and they are added by authors just for fun, or because they think this way their kata will be cooler or more interesting. When first issues start to appear, things quickly prove otherwise. That's why it's recommended to simply not use floating-point numbers when they are not necessary, or do not add any special value to the task of the kata.  
-For example, kata which could look like _"return sum of an array"_ would work perfectly if all elements of the array were integers. Looping through the array and adding up its elements might seem to be trivial task, but when elements of the array are floating-point values, things suddenly get surprisingly complicated. You cannot use strict equality anymore, and `assertEqual` becomes useless.
+For many kata, floating-point numbers are simply not necessary and they are added by authors just for fun, or because they think this way their kata will be cooler or more interesting. When issues first start to appear, things quickly prove otherwise. That's why it's recommended to simply not use floating-point numbers when they are not necessary, or do not add any special value to the task of the kata.
+For example, kata which could look like _"return sum of an array"_ would work perfectly if all elements of the array were integers. Looping through the array and adding up its elements might appear trivial, but when elements of the array are floating-point values, things suddenly get surprisingly complicated. You cannot use strict equality anymore, and `assertEqual` becomes useless.
 
 
 ### Perform precise calculations
 
-Some kata accept integers as inputs, but to perform all needed calculation steps and get the final answer, their reference solution needs to use intermediate floating-point values. As it turns out, it's not always necessary. There are types of kata which in the begining might seem as requiring intermediate floating-point operations, but after some analysis it turns out that stated problem can be solved with integers, without risk of introducing floating-point inaccuracies through the course of calculations. For example, problems related to time: given an input of 20 minutes, reference solution might use an intermediate step which converts it to 0.333333333333333 of an hour, loosing some precision in the process. But if it choose representing all intermediate values in **seconds** instead, and store the value of 20 minutes as 1200 seconds, no precision would be lost, and it's highly probable that whole process would be affected by a smaller (or no) error.  
+Some kata accept integers as inputs, but to perform all needed calculation steps and get the final answer, their reference solution needs to use intermediate floating-point values. As it turns out, it's not always necessary. There are types of kata which in the beginning may seem to require intermediate floating-point operations, but after some analysis it turns out that the stated problem can be solved with integers, without the risk of introducing floating-point inaccuracies through the course of calculations. For example, problems related to time: given an input of 20 minutes, the reference solution might use an intermediate step which converts it to 0.333333333333333 of an hour, losing some precision in the process. But if it chose to represent all intermediate values in **seconds** instead, and store the value of 20 minutes as 1200 seconds, no precision would be lost.
 It's not always possible, and not always easy, but some categories of problems can be solved in a way which does not introduce intermediate inaccuracies. Staying away from floating-point values is usually a good way to solve problems related to time units (hours, minutes, seconds), angles (expressed as degrees, angle minutes, and angle seconds), monetary values (dollars and cents), or any other mixed units of different magnitudes (for example meters and centimeters).
 
 
 ### Know how floating-point values and operations work in your language
 
-Some languages, expecially dynamically typed ones, are particularly susceptible to problems related to floating-point values. For example, JavaScript does not use integers at all, and all arithemtic calculations operate on floating-point numbers. Everything should be good as long as input, output, and intermediate, values stay accurate or do not exceed the value of `Number.MAX_SAFE_INTEGER`, but due to some bug this can happen, and when it happens, it can be difficult to spot.
+Some languages, especially dynamically typed ones, are particularly susceptible to problems related to floating-point values. For example, JavaScript does not use integers at all, and all arithmetic calculations operate on floating-point numbers. Everything should be good as long as input, output, and intermediate values stay accurate or do not exceed the value of `Number.MAX_SAFE_INTEGER`, but due to some bug this can happen, and when it happens, it can be difficult to spot.
 
 #### Overflow
 
-One of such problems is overflow in Javascript. For example, consider a kata with following task: _"Given two natural numbers `a` and `b`, calculate and return their least common multiple."_ Random tests are careful enough to generate such values of `a` and `b`, which always should give the resulting LCM as less than `Number.MAX_SAFE_INTEGER`. However, the reference solution uses following implementation:
+One such problem is overflow in JavaScript. For example, consider a kata with the following task: _"Given two natural numbers `a` and `b`, calculate and return their least common multiple."_ Random tests are careful enough to generate such values of `a` and `b` which should always give a resulting LCM less than `Number.MAX_SAFE_INTEGER`. However, the reference solution uses following implementation:
 
 ```javascript
 function lcm(a, b) {
@@ -191,18 +191,18 @@ function lcm(a, b) {
 }
 ```
 
-Can you see where potential problem is? Even though `a`, `b`, and final result are guaranteed to be less than `Number.MAX_SAFE_INTEGER`, intermediate value of `a * b` can overflow, resulting in incorrect result being returned. Now reference solution has a bug!
+Can you see where the problem is? Even though `a`, `b`, and final result are guaranteed to be less than `Number.MAX_SAFE_INTEGER`, the intermediate value of `a * b` can overflow, resulting in an incorrect result being returned. Now the reference solution has a bug!
 
-You need to make sure that your reference solution is correct and can handle all test inputs which will be generated and fed to it. Otherwise, correctness of tests depends on the favor of random number generator, and some valid solutions might fail the tests in an unpredictable, and difficult to debug way.
+You need to make sure that your reference solution is correct and can handle all test inputs which will be generated and fed to it. Otherwise, the correctness of tests depends on the random number generator, and some valid solutions may fail the tests in an unpredictable manner.
 
 #### Division
 
-In languages like JavaScript or Python, floating-point values can be introduced by mistake when performing division. JavaScript has no integer division operator, and operation of `a / b` always results in floating-point values. If you are interested in integer division, you need to remember to convert the result to integer by yourself. Python has two division operators: `a // b` for integer division (or, "real floor division"), and `a / b` for "real" division. Both operators can be easily confused, and `/` will convert integers to floats and return a float.
+In languages like JavaScript or Python, floating-point values can be introduced by mistake when performing division. JavaScript has no integer division operator, so `a / b` always results in a floating-point value. If you are interested in integer division, you need to remember to convert the result to an integer by yourself. Python has two division operators: `a // b` for integer division (or, "real floor division"), and `a / b` for "real" division. Both operators can be easily confused, and `/` will convert integers to floats and return a float.
 
 
 ### Use relative comparisons and avoid strict equality
 
-Have you ever encountered a problem that some solution does not pass because tests expect a slightly different value, even though you used right formula?
+Have you ever encountered a problem that some solution does not pass because tests expect a slightly different value, even though you used the right formula?
 
 ```text
 Test Results:
@@ -211,9 +211,9 @@ convert_temperature
         expected 1482.2222222222224 to equal 1482.2222222222222
 ```
 
-This usually happens when tests use incorrect assertion and do not account for the fact that user's solution can return values which are not exactly the same as the ones produced by a reference solution, but still correct.
+This usually happens when tests use an incorrect assertion method and do not account for the fact that the user's solution can return a correct answer which is not identical to the one produced by the reference solution.
 
-To correctly test for floating-point values, tests should use a thing called _"approximate equality tests"_, _"fuzzy equality"_, or _"comparison with tolerance"_. Basically it boils down to using a dedicated assertion provided by a majority of popular testing frameworks or assertion libraries. Such asertions usually take as parameters an expected value, actual value, and a value of tolerance which tests agree on. Assertion accepts all answers which are equal to the expected result, or do not differ from it more than allowed.  
+To correctly test for floating-point values, tests should use _"approximate equality tests"_, _"fuzzy equality"_, or _"comparison with tolerance"_. Basically it boils down to using a dedicated assertion provided by the majority of popular testing frameworks or assertion libraries. Such assertions usually take as parameters the expected value, actual value, and a value of tolerance which the tests agree on. The assertion accepts all answers which are equal to the expected result, or do not differ from it beyond the provided tolerance.
 To find out what assertions are appropriate for floating-point comparisons in your language you should go through the documentation of the testing framework you use. For example, for JavaScript it's `chai.assert.closeTo`, and for Python it's `codewars_test.assert_approx_equals`.  
 Some testing frameworks used on Codewars unfortunately lack proper assertions. This is the case for example for Ruby. In such case, a function for fuzzy comparisons has to be provided. It's a difficult task to do it correctly though, so don't try to create one on your own. Request missing functionality on [Codewars code runner](https://github.com/codewars/runner/issues) board and necessary packages or functions will be added.
 
@@ -246,10 +246,10 @@ This issue is not limited only to C, other languages are also affected.
 
 So... what's wrong? Why do the tests fail if the expected value and actual values are both 1.210000?
 Most probably, two things are wrong:
-- User solution returns invalid answer, which does not fall into required tolerance, and
-- Tests display assertion message incorrectly, truncating some meaningful digits.
+- The user's solution returned an invalid answer outside of the required tolerance, and
+- The tests display the assertion message incorrectly, truncating some meaningful digits.
 
-Actually, both numbers are different, and actual answer is wrong by more than allowed tolerance. But when formatting floating-point values, many languages use only some part of digits, and truncate the least meaningful ones, even when they are still important. When you fix formatting of the message, you get better feedback:
+Actually, both numbers are different, and the actual answer differs from the expected value by an amount greater than the allowed tolerance. But when formatting floating-point values, most languages only display the first few digits. When you fix the formatting of the message, you get better feedback:
 
 ```c
 //note %.9f as format specifiers
