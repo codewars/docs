@@ -176,6 +176,35 @@ Some kata accept integers as inputs, but to perform all needed calculation steps
 It's not always possible, and not always easy, but some categories of problems can be solved in a way which does not introduce intermediate inaccuracies. Staying away from floating-point values is usually a good way to solve problems related to time units (hours, minutes, seconds), angles (expressed as degrees, angle minutes, and angle seconds), monetary values (dollars and cents), or any other mixed units of different magnitudes (for example meters and centimeters).
 
 
+### Do not use rounding (or stringification) to work around problems with precision
+
+Sometimes authors try to work around the problems with floating-point comparisons by converting the result of calculations to integer, or rounding to some _n_ decimal places, hoping that inaccurate part of calculations will be trucated, lost, or somehow neutralized. Sometimes authors require conversion of floating-point values to string with some amount of decimal digits. However such workarounds are a bad thing, they usually do not work as intended, and they only make things worse. No matter if you want to round to an integer or to some amount _n_ of decimal places, and what type of rounding (i.e. a _rounding mode_) you want to use: ceiling, flooring, truncating, to nearest, or to nearest even, each of them has a set of values for which it will fail.
+
+For example, let's assume that your kata would require rounding to a nearest integer. When tests are run, one of random tests might generate an input which after all calculations would conclude with a result of 13.5, and tests would expect a rounded answer of 14. Now, depending on details of implementations like exact formula, order of operations, used functions and libraries, user ___A___ comes up with the result of 13.50000000001, and user ___B___ arrives to 13.499999999999. Both answers are correct and valid from technical point of view, but after rounding to 14, user ___A___ gets their answer accepted, and the rounded answer of 13 from user ___B___ gets (incorrectly) rejected. Now user ___B___ creates an issue for your kata and complains that their valid solution does not pass tests. You verify tests with your reference solution, see no error, and resolve the issue as _"cannot reproduce"_. A couple of weeks later another user who happened to use the same formula as user ___B___ comes, does not pass the tests, and creates another issue, and so on... There's quite a number of kata on Codewars affected by similar issue, and half of the users attemting them might like them, and another half probably hates them.
+
+Conversions by flooring, ceiling, or truncating are affected by the same issue, just for another category of values. User ___A___ might come up with the result of 12.999999999999 before rounding, and user ___B___ with value 13.000000000001, and if tests expect a floored, ceiled, or truncated value, the answer from one user will be accepted, and from the other one - rejected.
+
+There are cases when rounding  or conversion to string are OK, but using them just to "fix" problems with precision of calculations only makes things worse. The easiest way to get things right is to require no rounding, and use proper assertions with tolerance (see below).
+
+
+### Use relative comparisons and avoid strict equality
+
+Have you ever encountered a problem that some solution does not pass because tests expect a slightly different value, even though you used the right formula?
+
+```text
+Test Results:
+convert_temperature
+    given 2700 (steel melting point)
+        expected 1482.2222222222224 to equal 1482.2222222222222
+```
+
+This usually happens when tests use an incorrect assertion method and do not account for the fact that the user's solution can return a correct answer which is not identical to the one produced by the reference solution.
+
+To correctly test for floating-point values, tests should use _"approximate equality tests"_, _"fuzzy equality"_, or _"comparison with tolerance"_. Basically it boils down to using a dedicated assertion provided by the majority of popular testing frameworks or assertion libraries. Such assertions usually take as parameters the expected value, actual value, and a value of tolerance which the tests agree on. The assertion accepts all answers which are equal to the expected result, or do not differ from it beyond the provided tolerance.
+To find out what assertions are appropriate for floating-point comparisons in your language you should go through the documentation of the testing framework you use. For example, for JavaScript it's `chai.assert.closeTo`, and for Python it's `codewars_test.assert_approx_equals`.  
+Some testing frameworks used on Codewars unfortunately lack proper assertions. This is the case for example for Ruby. In such case, a function for fuzzy comparisons has to be provided. It's a difficult task to do it correctly though, so don't try to create one on your own. Request missing functionality on [Codewars code runner](https://github.com/codewars/runner/issues) board and necessary packages or functions will be added.
+
+
 ### Know how floating-point values and operations work in your language
 
 Some languages, especially dynamically typed ones, are particularly susceptible to problems related to floating-point values. For example, JavaScript does not use integers at all, and all arithmetic calculations operate on floating-point numbers. Everything should be good as long as input, output, and intermediate values stay accurate or do not exceed the value of `Number.MAX_SAFE_INTEGER`, but due to some bug this can happen, and when it happens, it can be difficult to spot.
@@ -197,29 +226,6 @@ You need to make sure that your reference solution is correct and can handle all
 #### Division
 
 In languages like JavaScript or Python, floating-point values can be introduced by mistake when performing division. JavaScript has no integer division operator, so `a / b` always results in a floating-point value. If you are interested in integer division, you need to remember to convert the result to an integer by yourself. Python has two division operators: `a // b` for integer division (or, "real floor division"), and `a / b` for "real" division. Both operators can be easily confused, and `/` will convert integers to floats and return a float.
-
-
-### Use relative comparisons and avoid strict equality
-
-Have you ever encountered a problem that some solution does not pass because tests expect a slightly different value, even though you used the right formula?
-
-```text
-Test Results:
-convert_temperature
-    given 2700 (steel melting point)
-        expected 1482.2222222222224 to equal 1482.2222222222222
-```
-
-This usually happens when tests use an incorrect assertion method and do not account for the fact that the user's solution can return a correct answer which is not identical to the one produced by the reference solution.
-
-To correctly test for floating-point values, tests should use _"approximate equality tests"_, _"fuzzy equality"_, or _"comparison with tolerance"_. Basically it boils down to using a dedicated assertion provided by the majority of popular testing frameworks or assertion libraries. Such assertions usually take as parameters the expected value, actual value, and a value of tolerance which the tests agree on. The assertion accepts all answers which are equal to the expected result, or do not differ from it beyond the provided tolerance.
-To find out what assertions are appropriate for floating-point comparisons in your language you should go through the documentation of the testing framework you use. For example, for JavaScript it's `chai.assert.closeTo`, and for Python it's `codewars_test.assert_approx_equals`.  
-Some testing frameworks used on Codewars unfortunately lack proper assertions. This is the case for example for Ruby. In such case, a function for fuzzy comparisons has to be provided. It's a difficult task to do it correctly though, so don't try to create one on your own. Request missing functionality on [Codewars code runner](https://github.com/codewars/runner/issues) board and necessary packages or functions will be added.
-
-
-#### Rounding does not help
-
-Sometimes authors try to work around the problems with floating-point comparisons in some strange ways, like rounding, stringification, or even other, worse things. However such workarounds are a bad thing and they only make things worse. Concept of _"rounding to n decimal places"_ is not well defined for floating-point numbers, and it does not always work as expected. Rounding to an integer value, be it floor, ceil, round to nearest, or truncation, also is not guaranteed to work as intended by the author and often leads to errors. Do not do this, or you will only make things worse. The easiest way to get things right is to require no rounding, and use proper assertions with tolerance.
 
 
 ### Be careful when formatting
