@@ -167,7 +167,7 @@ The Codewars runner provides a set of preinstalled packages, which are available
 
 If the test suite happens to use a reference solution to calculate expected values (which [should be avoided](/authoring/guidelines/submission-tests/#reference-solution) when possible), or some kind of reference data like precalculated lists, etc., it must not be possible for the user to redefine, overwrite or directly access its contents. To prevent this, it should be defined in a scope local to the testing function, a `it` or a `describe` block.
 
-The reference solution or data ___must not___ be defined in the top-level scope of the test suite or in the [Preloaded code](/authoring/guidelines/preloaded/).
+The reference solution or data ___must not___ be defined in the [Preloaded code](/authoring/guidelines/preloaded/). The reference solution ___must not___ be defined in the top-level scope of the test suite.
 
 ### Calling assertions
 
