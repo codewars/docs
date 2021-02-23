@@ -93,7 +93,7 @@ For example, let's assume that your kata would require rounding to a nearest int
 
 Conversions by flooring, ceiling, or truncating are affected by the same issue, just for another category of values. User ___A___ might come up with the result of 12.999999999999 before rounding, and user ___B___ with value 13.000000000001, and if tests expect a floored, ceiled, or truncated value, the answer from one user will be accepted, and from the other one - rejected.
 
-There are cases when rounding  or conversion to string are OK, but using them just to "fix" problems with precision of calculations ps mpt such, and only makes things worse. The easiest way to get things right is to require no rounding, and use proper assertions with tolerance (see below).
+There are cases when rounding  or conversion to string are OK, but using them just to "fix" problems with precision of calculations is not such, and only makes things worse. The easiest way to get things right is to require no rounding, and use proper assertions with tolerance (see below).
 
 
 ### Use relative comparisons and avoid strict equality
