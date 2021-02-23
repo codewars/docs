@@ -187,6 +187,7 @@ There are some ways to mitigate some issues related to floating-point numbers by
 - If the kata task is related to decimal numbers (for example monetary values), you can use decimal types, for example `java.math.BigDecimal` in Java, `decimal` in C#, `decimal` module in Python, etc.
 - If domain of your kata is limited to rational numbers, storing values as a pair of integers (numerator, denominator) can help. Python provides a `fractions` module which offers such types out of the box, and Haskell has `Rational`.
 
+You should always consult documentation of your [language](/languages/) and available libraries to know what are possible options.
 
 ## Further reading
 
