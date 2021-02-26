@@ -18,9 +18,9 @@ Floating-point numbers come in many different shapes and colors, but one (or, if
 Floating-point numbers are usually not specific to any particular language, system, or architecture. IEEE-754 numbers are widely adopted and used across many platforms, languages, and compilers. With some small exceptions, anything written in this article applies in the same way to Python, C, JavaScript, or Haskell.
 
 
-## Wy are floating-point numbers problematic?
+## Why are floating-point numbers problematic?
 
-Technical details related to the inner representation of floating-point values and how they work are out of scope of this article, but the main problem with floating-point numbers in context of Codewars kata boils down to the fact that calculations which are equivalent from mathematical point of view, but implemented differently, can give slightly different results for the same inputs, and all of them are considered correct even if they are not equal one to each other.
+Technical details related to the inner representation of floating-point values and how they work are out of scope of this article, but the main problem with floating-point numbers in the context of Codewars kata boils down to the fact that calculations which are equivalent from a mathematical point of view, but implemented differently, can give slightly different results for the same inputs, and all of them are considered correct even if they are not equal to each other.
 
 We are used to thinking of some arithmetic operations as associative, reversible, or having some other properties which do not hold when applied to floating-point numbers. For example, operations like multiplication or division are not guaranteed to be associative. When performing a non-trivial sequence of arithmetic operations, it can turn out that the final result depends on the order the operations, even if it would not matter from a mathematical point of view. For example:
 
@@ -89,9 +89,9 @@ It's not always possible, and not always easy, but some categories of problems c
 
 Sometimes authors try to work around the problems with floating-point comparisons by converting the result of calculations to integer, or rounding to some _n_ decimal places, hoping that inaccurate part of calculations will be trucated, lost, or somehow neutralized. Sometimes authors require conversion of floating-point values to string with some amount of decimal digits. Such workarounds are a bad thing, they usually do not work as intended, and they only make things worse. No matter if you want to round to an integer or to some amount _n_ of decimal places, and what type of rounding (i.e. a _rounding mode_) you want to use: ceiling, flooring, truncating, to nearest, or to nearest even, each of them has a set of values for which it will fail.
 
-For example, let's assume that your kata would require rounding to a nearest integer. When tests are run, one of random tests might generate an input which after all calculations would conclude with a result of 13.5, and tests would expect a rounded answer of 14. Now, depending on details of implementation like exact formula, order of operations, used functions and libraries, user ___A___ comes up with the result of 13.50000000001, and user ___B___ arrives to 13.499999999999. Both answers are correct and valid from technical point of view, but after rounding to 14, user ___A___ gets their answer accepted, and the rounded answer of 13 from user ___B___ gets (incorrectly) rejected. Now user ___B___ creates an issue for your kata and complains that their valid solution does not pass tests. You verify tests with your reference solution, see no error, and resolve the issue as _"cannot reproduce"_. A couple of weeks later another user who happened to use the same formula as user ___B___ comes, does not pass the tests, and creates another issue, and so on... There's quite a number of kata on Codewars affected by similar issue, and half of the users attemting them might like them, and another half probably hates them.
+For example, let's assume that your kata would require rounding to the nearest integer. When tests are run, a random test might generate an input which after all calculations would conclude with a result of 13.5, and tests would expect a rounded answer of 14. Now, depending on details of implementation like the exact formula, order of operations, used functions and libraries, user ___A___ comes up with the result of 13.50000000001, and user ___B___ arrives to 13.499999999999. Both answers are correct and valid from a technical point of view, but after rounding to 14, user ___A___ gets their answer accepted, and the rounded answer of 13 from user ___B___ gets (incorrectly) rejected. Now user ___B___ creates an issue for your kata and complains that their valid solution does not pass tests. You verify the tests with your reference solution, see no error, and resolve the issue as _"irreproducible"_. A couple of weeks later another user who happened to use the same formula as user ___B___ comes, does not pass the tests, and creates another issue, and so on... There's quite a number of kata on Codewars affected by a similar issue, and half of the users attempting them might like them, while the other half probably hate them.
 
-Conversions by flooring, ceiling, or truncating are affected by the same issue, just for another category of values. User ___A___ might come up with the result of 12.999999999999 before rounding, and user ___B___ with value 13.000000000001, and if tests expect a floored, ceiled, or truncated value, the answer from one user will be accepted, and from the other one - rejected.
+Conversions by flooring, ceiling, or truncating are affected by the same issue, just for another category of values. User ___A___ might come up with the result of 12.999999999999 before rounding, and user ___B___ with value 13.000000000001, and if tests expect a floored, ceiled, or truncated value, the answer from one user will be accepted, and from the other one rejected.
 
 There are cases when rounding  or conversion to string are OK, but using them just to "fix" problems with precision of calculations is not such, and only makes things worse. The easiest way to get things right is to require no rounding, and use proper assertions with tolerance (see below).
 
@@ -111,7 +111,7 @@ This usually happens when tests use an incorrect assertion method and do not acc
 
 To correctly test for floating-point values, tests should use _"approximate equality tests"_, _"fuzzy equality"_, or _"comparison with tolerance"_. Basically it boils down to using a dedicated assertion provided by the majority of popular testing frameworks or assertion libraries. Such assertions usually take as parameters the expected value, actual value, and a value of tolerance which the tests agree on. The assertion accepts all answers which are equal to the expected result, or do not differ from it beyond the provided tolerance.
 To find out what assertions are appropriate for floating-point comparisons in your language you should go through the documentation of the testing framework you use. For example, for JavaScript it's `chai.assert.closeTo`, and for Python it's `codewars_test.assert_approx_equals`.  
-Some testing frameworks used on Codewars unfortunately lack proper assertions. This is the case for example for Ruby. In such case, a function for fuzzy comparisons has to be provided. It's a difficult task to do it correctly though, so don't try to create one on your own. Request missing functionality on [Codewars code runner](https://github.com/codewars/runner/issues) board and necessary packages or functions will be added.
+Some testing frameworks used on Codewars unfortunately lack proper assertions. This is the case for example for Ruby. In such case, a function for fuzzy comparisons has to be provided. It's a difficult task to do it correctly though, so don't try to create one on your own. Request missing functionality on the [Codewars code runner](https://github.com/codewars/runner/issues) board and necessary packages or functions will be added.
 
 
 ### Know how floating-point values and operations work in your language
@@ -120,7 +120,7 @@ Some languages, especially dynamically typed ones, are particularly susceptible 
 
 #### Overflow
 
-One such problem is overflow in JavaScript. For example, consider a kata with the following task: _"Given two natural numbers `a` and `b`, calculate and return their least common multiple."_ Random tests are careful enough to generate such values of `a` and `b` which should always give a resulting LCM less than `Number.MAX_SAFE_INTEGER`. However, the reference solution uses following implementation:
+One such problem is overflow in JavaScript. For example, consider a kata with the following task: _"Given two natural numbers `a` and `b`, calculate and return their least common multiple."_ Random tests are careful enough to generate such values of `a` and `b` which should always give a resulting LCM less than `Number.MAX_SAFE_INTEGER`. However, the reference solution uses the following implementation:
 
 ```javascript
 function lcm(a, b) {
@@ -128,7 +128,7 @@ function lcm(a, b) {
 }
 ```
 
-Can you see where the problem is? Even though `a`, `b`, and final result are guaranteed to be less than `Number.MAX_SAFE_INTEGER`, the intermediate value of `a * b` can overflow, resulting in an incorrect result being returned. Now the reference solution has a bug!
+Can you see where the problem is? Even though `a`, `b`, and the final result are guaranteed to be less than `Number.MAX_SAFE_INTEGER`, the intermediate value of `a * b` can overflow, resulting in an incorrect result being returned. Now the reference solution has a bug!
 
 You need to make sure that your reference solution is correct and can handle all test inputs which will be generated and fed to it. Otherwise, the correctness of tests depends on the random number generator, and some valid solutions may fail the tests in an unpredictable manner.
 
@@ -185,9 +185,9 @@ You need to remember that whenever you print or format floating-point values as 
 There are some ways to mitigate some issues related to floating-point numbers by using some other means, language constructs, classes, libraries, etc. Unfortunately, they are usually language-specific and can turn out to be problematic in kata, because translating kata between languages can become difficult. However, some possibilities are:
 
 - If the kata task is related to decimal numbers (for example monetary values), you can use decimal types, for example `java.math.BigDecimal` in Java, `decimal` in C#, `decimal` module in Python, etc.
-- If domain of your kata is limited to rational numbers, storing values as a pair of integers (numerator, denominator) can help. Python provides a `fractions` module which offers such types out of the box, and Haskell has `Rational`.
+- If the domain of your kata is limited to rational numbers, storing values as a pair of integers (numerator, denominator) can help. Python provides a `fractions` module which offers such types out of the box, and Haskell has `Rational`.
 
-You should always consult documentation of your [language](/languages/) and available libraries to know what are possible options.
+You should always consult the documentation for your [language](/languages/) and available libraries to know the possible options available.
 
 ## Further reading
 
