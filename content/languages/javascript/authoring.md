@@ -105,6 +105,7 @@ describe("Generated test cases", () => {
 
 This technique is liked by authors familiar with testing frameworks that provide parameterized or generated test cases out of the box, like NUnit or JUnit. However, some caution is needed when this approach is used. Test suites organized like this can become large and can flood the test output panel with many entries, making it unreadable or causing performance problems in client browsers.
 
+
 ### Chai
 
 JavaScript kata should use [Chai](https://www.chaijs.com/) as the assertion library.
@@ -162,9 +163,7 @@ The Codewars runner provides a set of preinstalled packages, which are available
 
 ### Reference solution
 
-If the test suite happens to use a reference solution to calculate expected values (which [should be avoided](/authoring/guidelines/submission-tests/#reference-solution) when possible), or some kind of reference data like precalculated arrays, etc., it must not be possible for the user to redefine, overwrite or directly access its contents. To prevent this, it should be defined in a scope local to the testing function, an `it` or `describe` block.
-
-The reference solution or data ___must not___ be defined in the top-level scope of the test suite or in the [Preloaded code](/authoring/guidelines/preloaded/).
+If the test suite happens to use a reference solution to calculate expected values (which [should be avoided](/authoring/guidelines/submission-tests/#reference-solution) when possible), or some kind of reference data like precalculated arrays, etc., it must not be possible for the user to redefine, overwrite or directly access its contents. To prevent this, it ___must not___ be defined in the [Preloaded code](/authoring/guidelines/preloaded/). Since Codewars runner puts the whole test suite in an anonymous function scope, reference solution can be placed anywhere in the test suite.
 
 ### Calling assertions
 
@@ -190,13 +189,13 @@ chai.config.truncateThreshold = 0;
 
 describe('Fixed tests', () => {
   it('Regular cases', () => {
-    assert.strictEqual(6, userSolution([1, 2, 3]));
-    assert.strictEqual(5, userSolution([2, 3]));
+    assert.strictEqual(userSolution([1, 2, 3]), 6);
+    assert.strictEqual(userSolution([2, 3]), 5);
   });
 
   it('Edge cases', () => {
-    assert.strictEqual(0, userSolution([]), "Invalid answer for empty array");
-    assert.strictEqual(2, userSolution([2]), "Invalid answer for one element array");
+    assert.strictEqual(userSolution([]), 0, "Invalid answer for empty array");
+    assert.strictEqual(userSolution([2]), 2, "Invalid answer for one element array");
   });
 
   it('Input should not be modified', () => {
