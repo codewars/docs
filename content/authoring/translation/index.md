@@ -1,13 +1,20 @@
 ---
-kind: tutorial
 sidebar: authoring
 prev: /authoring/kata/
 next: /authoring/guidelines/
 ---
 
-# How to translate a kata
+# Translations
 
-_TBD: this page was imported from the old CW wiki and needs to be reviewed/redacted._
+_TBD: improve this stub_
+
+New translators may refer to the [tutorial(TODO)](/authoring/translation/).
+
+Some [languages](/languages/) also have a page dedicated to authoring kata, with code examples and best practices.
+
+Every translator should follow [translation authoring guidelines](/authoring/guidelines/translation/).
+
+After being published, every translation goes through a series of [reviews](/curating/translation/) before it can be approved.
 
 <!--
 TODO: this page would relate to creating both initial language version, as well as new translation
