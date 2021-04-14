@@ -1,4 +1,6 @@
 .cache
+.docusaurus/
+.cache-loader
 /__tmp__/
 /dist/
 src/.temp

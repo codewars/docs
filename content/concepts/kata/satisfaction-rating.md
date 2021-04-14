@@ -1,9 +1,8 @@
 ---
+title: Satsfaction Rating
 kind: concept
-sidebar: explanation-kata
 ---
 
-# Kata satsfaction rating
 
 _TBD: this page was imported from old CW wiki and needs to be reviewied/redacted._
 

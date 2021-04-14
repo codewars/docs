@@ -1,13 +1,7 @@
 ---
-kind: reference
-sidebar: "language:bf"
-prev: /languages/bf/
-languages: [bf]
-tags:
-  - testing
+title: Codewars Test Framework
 ---
 
-# Codewars Test Framework
 
 > **DEPRECATED** Use Mocha
 

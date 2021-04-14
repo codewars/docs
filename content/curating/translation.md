@@ -1,10 +1,6 @@
 ---
-sidebar: curating
-prev: /curating/kata/
-next: /curating/guidelines/
+title: Reviewing a Translation
 ---
-
-# Curating a Translation
 
 Unfortunately, there is currently no reliable way to prevent approval of translations of insufficient quality. Unlike beta kata, translations are not subject to any kind of beta process, and comments in the translation discourse cannot be labeled as issues. That's why it's very important to make sure that published translations are of sufficient quality.
 
@@ -90,4 +86,4 @@ The way how kata edits are currently handled, existing pending forks can be very
 
 [translation-curating-guidelines]: /curating/guidelines/translation/
 [translation-authoring-guidelines]: /authoring/guidelines/translation/
-[privileges-reference]: /references/gamification/privileges/
+[privileges-reference]: /gamification/privileges/

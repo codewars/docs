@@ -1,11 +1,8 @@
 ---
+title: Authoring Ruby Content
+sidebar_label: Authoring
 kind: tutorial
-languages: [ruby]
-sidebar: "language:ruby"
-prev: /languages/ruby/codewars-test/
 ---
-
-# Ruby: creating and translating a kata
 
 This article is intended for kata authors and translators who would like to create new content in Ruby. It attempts to explain how to create and organize things in a way conforming to [authoring guidelines](/authoring/guidelines/), shows the most common pitfalls, and how to avoid them.
 
@@ -62,6 +59,12 @@ Ruby code should stick to generally recognized Ruby conventions, with [RoboCop](
 ## Tests
 
 ### Testing framework
+
+:::warning
+RSpec should be used instead for new content.
+:::
+
+> TODO Update this document
 
 Ruby kata should use the [Codewars Ruby testing framework](/languages/ruby/codewars-test/) to implement and execute tests.
 

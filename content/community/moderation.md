@@ -1,10 +1,6 @@
 ---
-sidebar: community
-prev: /community/
-next: /community/moderation-tools/
+title: Moderation
 ---
-
-# Moderation
 
 The Codewars community is moderated by admins and moderators. In short, admins are [Qualified](https://www.qualified.io/) employees who develops Codewars, and moderators are a small team of users chosen by the admins to act as delegates.
 

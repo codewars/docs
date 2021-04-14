@@ -1,8 +1,8 @@
 ---
+title: Criteria for Kata Approval and Retirement
+sidebar_label: Criteria for Approval and Retirement
 kind: reference
 ---
-
-# Criteria for Kata Approval and Retirement
 
 ## Eligibility for Approval
 
@@ -13,7 +13,7 @@ As an author gets more katas approved, they become established as an experienced
 <tr>
 <th align="left">Average assessed rank</th>
 <th>Required satisfaction %</th>
-<th colspan="4">Required votes<br>(by number of author's approved kata)</th>
+<th colspan="4">Required votes<br/>(by number of author's approved kata)</th>
 </tr>
 <tr>
 <th></th>
@@ -64,11 +64,11 @@ To determine whether a kata is eligible for approval, the following procedure is
 
 1. There should be no pending issues.
 1. `votes count` is calculated as the total amount of satisfaction votes cast on a kata.
-1. `votes score` is calculated as the sum of votes multiplied by the [voting power](/references/gamification/privileges/) of the user.
+1. `votes score` is calculated as the sum of votes multiplied by the [voting power](/gamification/privileges/) of the user.
 1. `required votes` and minimum satisfaction rating are determined from the table above.
 1. The kata is approvable when the requirement for minimum satisfaction rating is met and one of the following conditions is satisfied: `votes count >= required votes` or `votes count >= 3 AND votes score >= required votes`.
 
-To be able to approve a kata, the user needs to have [`Approve Kata` privilege](/references/gamification/privileges/).
+To be able to approve a kata, the user needs to have [`Approve Kata` privilege](/gamification/privileges/).
 
 ## Auto-Retire
 

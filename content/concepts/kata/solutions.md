@@ -1,9 +1,7 @@
 ---
+title: Solutions
 kind: concept
-sidebar: explanation-kata
 ---
-
-# Solutions
 
 Each time a warrior completes a kata within a given language, their solution is added to the list of successful solutions for that particular language. After completing a kata you are immediately taken to this page, often giving you an Aha! moment when you realize how others have completed the same task. This moment can be incredibly enlightening if you come across solutions that had a different approach than yours.
 

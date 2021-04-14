@@ -1,11 +1,6 @@
 ---
-sidebar: curating
-prev: /curating/guidelines/
-next: /curating/guidelines/translation/
+title: Kata Reviewing Guidelines
 ---
-
-
-# Kata Curating Guidelines
 
 This article contains a set of guidelines, which can be used by reviewers to determine whether a kata meets quality requirements to be approved and become available for users to train on. They were collected to help ensure that kata are of sufficient quality and users' experience will be as good as possible.
 

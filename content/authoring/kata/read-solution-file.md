@@ -1,8 +1,7 @@
 ---
+title: How to Read a Solution File
 kind: recipe
 ---
-
-# How to Read a Solution File
 
 Some kata may wish to analyze the content of the solution file in order to verify requirements related to the code itself. For example, tests of a code golf kata would probably want to verify the length of the submitted solution.
 

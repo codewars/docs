@@ -1,13 +1,8 @@
 ---
+title: Mocha
 kind: reference
-sidebar: "language:javascript"
-prev: /languages/javascript/
-languages: [javascript]
-tags:
-  - testing
 ---
 
-# Mocha
 
 <!--
 TODO: Finish this reference
