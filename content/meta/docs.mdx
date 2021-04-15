@@ -1,0 +1,52 @@
+---
+title: Writing Codewars Docs
+---
+
+The Codewars Docs is built with [Docusaurus][docusaurus], and the docs are written in Markdown.
+Each page has "Edit this page" link that allows you to contribute on GitHub.
+
+Plain Markdown is great for writing, but sometimes we need extra features to make the docs more helpful.
+Docusaurus provides some [Markdown extensions][markdown-features], and has support for [MDX][mdx] to extend Markdown with React components.
+
+This page summarizes the features we use, and is also used to test the styling. See [Docusaurus docs][docusaurus-docs] for more details.
+
+## Admonitions
+
+Use the following syntax to add admonitions:
+
+```markdown
+:::type title?
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+:::
+```
+
+`type` is required. `title` is optional and defaults to uppercased `type`.
+
+### Types
+
+:::note
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+:::
+
+:::tip
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+:::
+
+:::info
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+:::
+
+:::warning
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+:::
+
+:::caution
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+:::
+
+[docusaurus]: https://docusaurus.io/
+[docusaurus-docs]: https://docusaurus.io/docs
+[mdx]: https://mdxjs.com/
+[markdown-features]: https://docusaurus.io/docs/markdown-features

@@ -482,5 +482,10 @@ module.exports = {
       ],
     },
     "glossary",
+    {
+      type: "category",
+      label: "Meta",
+      items: ["meta/docs"],
+    },
   ],
 };
