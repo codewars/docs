@@ -4,6 +4,9 @@
  * bundles Infima by default. Infima is a CSS framework designed to
  * work well for content-centric websites.
  */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --ifm-color-primary: #b1361e;
@@ -47,10 +50,6 @@ html[data-theme="dark"] .header-github-link:before {
     no-repeat;
 }
 
-.anchored {
-  display: inline;
-  position: relative;
-}
 .anchored:target {
   background-color: var(--cw-anchored-target-bg);
 }
@@ -59,13 +58,85 @@ html[data-theme="dark"] .header-github-link:before {
 }
 .anchored > .anchor-link::before {
   content: "*";
-  /* -ml-2 pr-2 absolute inset-y-0 opacity-0 float-left text-primary */
-  margin-left: -0.5rem;
-  padding-right: 0.5rem;
+  @apply -ml-2 pr-2 absolute inset-y-0 opacity-0 float-left;
   color: var(--ifm-color-primary);
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  opacity: 0;
-  float: left;
+}
+
+/* Remove .alert styles from Docusaurus */
+.admonition.alert {
+  border-radius: 0;
+  border-width: 0;
+}
+
+.admonition {
+  @apply mb-4 py-4 pr-8 pl-4;
+
+  & .admonition-heading h5 {
+    @apply flex items-center m-0 mb-2 uppercase text-lg;
+  }
+
+  & .admonition-icon {
+    @apply inline-block align-middle mr-1 mt-1.5;
+
+    & svg {
+      @apply inline-block w-5 h-5;
+      @apply fill-current stroke-current;
+    }
+  }
+}
+
+.admonition.admonition-note {
+  @apply bg-note bg-opacity-10 border-solid border-l-8 border-note;
+
+  & .admonition-heading {
+    @apply text-note;
+  }
+  & .admonition-content {
+    @apply text-note-content;
+  }
+}
+
+.admonition.admonition-tip {
+  @apply bg-tip bg-opacity-10 border-solid border-l-8 border-tip;
+
+  & .admonition-heading {
+    @apply text-tip;
+  }
+  & .admonition-content {
+    @apply text-tip-content;
+  }
+}
+
+.admonition.admonition-info {
+  @apply bg-info bg-opacity-10 border-solid border-l-8 border-info;
+
+  & .admonition-heading {
+    @apply text-info;
+  }
+  & .admonition-content {
+    @apply text-info-content;
+  }
+}
+
+.admonition.admonition-warning {
+  @apply bg-warning bg-opacity-10 border-solid border-l-8 border-warning;
+
+  & .admonition-heading {
+    @apply text-warning;
+  }
+  & .admonition-content {
+    @apply text-warning-content;
+  }
+}
+
+.admonition.admonition-caution,
+.admonition.admonition-danger {
+  @apply bg-caution bg-opacity-10 border-solid border-l-8 border-caution;
+
+  & .admonition-heading {
+    @apply text-caution;
+  }
+  & .admonition-content {
+    @apply text-caution-content;
+  }
 }
