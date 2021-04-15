@@ -43,6 +43,7 @@ module.exports = {
           label: "Guidelines",
           items: [
             "authoring/guidelines",
+            "authoring/guidelines/kata",
             "authoring/guidelines/description",
             "authoring/guidelines/coding",
             "authoring/guidelines/sample-tests",

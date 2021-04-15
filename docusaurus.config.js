@@ -68,5 +68,5 @@ module.exports = {
       },
     ],
   ],
-  plugins: [],
+  plugins: ["./sitePlugin.js"],
 };
