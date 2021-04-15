@@ -1,11 +1,7 @@
 ---
+title: Writing a Kata Description
 kind: reference
-sidebar: authoring
-prev: /authoring/guidelines/
-next: /authoring/guidelines/coding/
 ---
-
-# Writing a Kata Description
 
 The kata description, created by the kata author, is a crucial part of every kata, presenting the task and all requirements to a user attempting it. Descriptions should be written with special attention. Unclear descriptions are a common cause of a poor user experience with a kata. To ensure the quality of the kata, its description should conform to the guidelines presented below.
 

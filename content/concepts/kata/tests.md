@@ -1,9 +1,8 @@
 ---
+title: Tests
 kind: concept
-sidebar: explanation-kata
 ---
 
-# Tests
 
 Eack kata has two sets of tests associated with it, used for two different purposes.
 

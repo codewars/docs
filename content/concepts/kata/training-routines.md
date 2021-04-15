@@ -1,9 +1,8 @@
 ---
+title: Training Routines
 kind: concept
-sidebar: explanation-kata
 ---
 
-# Training routines
 
 _TBD: this page was imported from old CW wiki and needs to be reviewied/redacted._
 

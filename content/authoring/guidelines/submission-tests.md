@@ -1,15 +1,14 @@
 ---
+title: Writing Submission Tests
 kind: reference
 sidebar: authoring
-prev: /authoring/guidelines/sample-tests/
-next: /authoring/guidelines/preloaded/
 ---
-
-# Writing Submission Tests
 
 This article contains a set of guidelines for kata authors or translators to create good test suites for their kata. They were collected to help ensure that kata, translations and their test suites are of sufficient quality so that users' experience with tests will be as good as possible.
 
-NOTE: There are many kinds of kata, and some guidelines might simply not apply to some of them (puzzles, hack-mes, kata which mess with internals of the language runtime, and some types of challenges that require special ways of testing). But still, the present guidelines apply at least to some extent for the vast majority of kata, and if they are followed, kata authors can be sure that their tests will be clear, efficient, reliable, and easy to debug and maintain.
+:::note
+There are many kinds of kata, and some guidelines might simply not apply to some of them (puzzles, hack-mes, kata which mess with internals of the language runtime, and some types of challenges that require special ways of testing). But still, the present guidelines apply at least to some extent for the vast majority of kata, and if they are followed, kata authors can be sure that their tests will be clear, efficient, reliable, and easy to debug and maintain.
+:::
 
 
 ## General Guidelines
@@ -94,7 +93,7 @@ Some kata may impose additional restrictions on submitted solutions unrelated to
 
 - If the user solution should be inspected as source code, it can be found in `/workspace/solution.txt`.
 - **Every additional restriction should be tested.** It's **not enough** just to say _"Do not use BigInteger"_, or _"You have to use recursion."_ , it has to be actually verified (but see below).
-- Restrictions of the form "do not use X" or "you must use Y" are seldom a good idea since they are extremely difficult (or downright infeasible) to reliably enforce. See [this article (TODO: write the article)]() for details.
+- Restrictions of the form "do not use X" or "you must use Y" are seldom a good idea since they are extremely difficult (or downright infeasible) to reliably enforce. See `[this article (TODO: write the article)]` for details.
 
 
 [authoring-guidelines-general-coding]: /authoring/guidelines/coding/

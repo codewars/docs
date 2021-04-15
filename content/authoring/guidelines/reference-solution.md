@@ -1,11 +1,9 @@
 ---
+title: Writing a Reference Solution
 kind: reference
-sidebar: authoring
-prev: /authoring/guidelines/preloaded/
 next: /authoring/guidelines/translation/
 ---
 
-# Writing a Reference Solution
 
 :::note
 On this page, the term "Reference Solution" refers to a separate code snippet provided by a kata author or translator, which is used by Codewars to verify the correctness of the kata while it's being published.

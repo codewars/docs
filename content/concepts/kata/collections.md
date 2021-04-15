@@ -1,9 +1,8 @@
 ---
+title: Collections
 kind: concept
-sidebar: explanation-kata
 ---
 
-# Collections
 
 _TBD: this page was imported from old CW wiki and needs to be reviewied/redacted._
 

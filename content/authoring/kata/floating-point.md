@@ -1,9 +1,7 @@
 ---
+title: Working with Floating-Point Numbers
 kind: tutorial
 ---
-
-# HOWTO Work with Floating-Point Numbers
-
 
 This article attempts to explain to kata authors what the most common problems and pitfalls encountered when creating kata are when working with floating-point numbers, and how to avoid them.
 Many freshly published kata turn out to have problems with handling precision of calculations, using incorrect assertions, or trying to work around the problems in an incorrect manner. This often causes many valid solutions to fail the tests. Errors related to floating-point values are often difficult to reproduce, so whenever an issue is reported, authors immediately close it as _"works for me, you are doing something wrong"_. Incorrectly handled floating-point numbers can also cause confusing errors and assertion messages.

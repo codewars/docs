@@ -1,9 +1,8 @@
 ---
+title: Kata Discourse
 kind: concept
-sidebar: explanation-kata
 ---
 
-# Kata Discourse
 
 _TBD: this page was imported from old CW wiki and needs to be reviewied/redacted._
 

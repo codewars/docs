@@ -1,10 +1,6 @@
 ---
-sidebar: curating
-prev: /curating/
-next: /curating/translation/
+title: Reviewing a Kata
 ---
-
-# Curating a Kata
 
 This article is meant to explain how to ensure a kata is high quality before it leaves the beta state, and after it's accepted.
 
@@ -88,5 +84,5 @@ Sufficiently privileged users are encouraged to fix any reported problems and im
 
 [kata-curating-guidelines]: /curating/guidelines/kata/
 [kata-authoring-guidelines]: /authoring/guidelines/kata/
-[privileges-reference]: /references/gamification/privileges/#privileges
+[privileges-reference]: /gamification/privileges/#privileges
 [approval-criteria]: /references/kata-ranking/approval-retire-criteria/

@@ -1,9 +1,6 @@
 ---
-sidebar: curating
-prev: /curating/guidelines/kata/
+title: Translation Reviewing Guidelines
 ---
-
-# Translation Curating Guidelines
 
 This article contains a set of guidelines, which can be used by reviewers to determine whether a pending translation meets quality requirements to be approved and become available for users to train on. They were collected to help ensure that translations are of sufficient quality and users' experience will be as good as possible.
 

@@ -1,10 +1,7 @@
 ---
+title: Kata Authoring Guidelines
 kind: reference
-sidebar: authoring
-prev: /authoring/guidelines/translation/
 ---
-
-# Kata Authoring Guidelines
 
 This article contains a set of guidelines, which can be used by authors to create good, enjoyable, high-quality kata. They were collected to help ensure that kata are of sufficient quality and users' experience will be as good as possible.
 

@@ -1,6 +1,0 @@
-/* Prevent the sticky header from covering the element scrolled to.
- * The margin should be greater than the height of the sticky header.
- */
-[id] {
-  scroll-margin-top: 4rem;
-}

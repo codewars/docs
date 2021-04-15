@@ -1,11 +1,8 @@
 ---
+title: General Kata Coding Guidelines
 kind: reference
-sidebar: authoring
-prev: /authoring/guidelines/description/
-next: /authoring/guidelines/sample-tests/
 ---
 
-# General Kata Coding Guidelines
 
 Coding guidelines can be a controversial topic for programmers. Programmers like them, and programmers hate them. Programmers fight for them, and they fight against them. Coding guidelines can be very helpful, but can be also very difficult to define, establish, follow, and enforce.
 

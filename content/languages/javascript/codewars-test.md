@@ -1,15 +1,8 @@
 ---
+title: Codewars Test Framework
 kind: reference
-sidebar: "language:javascript"
-prev: /languages/javascript/
-languages:
-  - javascript
-  - coffeescript
-tags:
-  - testing
 ---
 
-# Codewars Test Framework
 
 <!--
 TODO: Show equivalent assertions in `chai` to help with migration.
