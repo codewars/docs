@@ -23,7 +23,7 @@ This guide covers common problems you may run into as a newcomer solving kata on
 There are a number of things it could be. Try the following (in the given order):
 
 - Make sure you didn't miss anything in the kata description. Indeed, some descriptions are far from perfect, but it's also very likely you missed some requirements, did not account for some edge case, or that there's some helpful hint or advice there.
-- Make sure your solution is efficient enough. If you're setting a timeout error, you may need to rethink your approach (or check for infinite loops on edge cases!).
+- Make sure your solution is efficient enough. If you're getting a timeout error, you may need to rethink your approach (or check for infinite loops on edge cases!).
 - Some tests are susceptible to mutation of input parameters and fail if solution changes input objects passed to it. If kata does not ask you explicitly to change input arguments, make sure you do not do it. If you find a kata that fails when input is mutated by solution, raise it as an issue ([see here](#post-discourse)).
 - **Debug your solution.** Check what input causes your solution to fail ([see here](#print-input)), recreate it locally, and debug it in your IDE.
 - Check if your solution passes two successive calls with different inputs. It's sometimes the case that the solution contains some global variables or static members and a stale state is carried over from one invocation to another.
