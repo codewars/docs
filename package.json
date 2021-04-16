@@ -21,6 +21,7 @@
     "@mdx-js/react": "^1.6.21",
     "@tabler/icons": "^1.40.2",
     "clsx": "^1.1.1",
+    "copy-text-to-clipboard": "^3.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
@@ -42,6 +43,8 @@
     "postcss-nested": "^5.0.5",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.2.1",
-    "tailwindcss": "^2.1.1"
+    "shiki": "^0.9.3",
+    "tailwindcss": "^2.1.1",
+    "unist-util-visit": "^2.0.3"
   }
 }
