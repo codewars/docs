@@ -24,48 +24,48 @@ There are a number of things it could be. Try the following (in the given order)
 
 - Make sure you didn't miss anything in the kata description. Indeed, some descriptions are far from perfect, but it's also very likely you missed some requirements, did not account for some edge case, or that there's some helpful hint or advice there.
 - Make sure your solution is efficient enough. If you're getting a timeout error, you may need to rethink your approach (or check for infinite loops on edge cases!).
-- Some tests are susceptible to mutation of input parameters and fail if solution changes input objects passed to it. If kata does not ask you explicitly to change input arguments, make sure you do not do it. If you find a kata that fails when input is mutated by solution, raise it as an issue ([see here](#post-discourse)).
+- Some tests are susceptible to mutation of input arguments and fail if your solution changes input objects passed to it. If the kata does not explicitly ask you to modify input arguments, make sure you do not do it. If you find a kata that fails when input is mutated by your solution, raise it as an issue ([see here](#post-discourse)).
 - **Debug your solution.** Check what input causes your solution to fail ([see here](#print-input)), recreate it locally, and debug it in your IDE.
 - Check if your solution passes two successive calls with different inputs. It's sometimes the case that the solution contains some global variables or static members and a stale state is carried over from one invocation to another.
-- Check the version of the language you have installed locally and what language version (or runtime) is used in Codewars runner. Maybe the version installed on Codewars does not support some functions?
+- Check the version of the language you have installed locally and what language version (or runtime) is used in Codewars runner. The version installed on Codewars may not support some functions or language features you are using.
 - Read through this FAQ once again and search for a point that describes your problem better than “it does not work”.
 - Ask a question ([see here](#post-discourse)).
 
-### When I run "Tests", everything passes, but when I hit “Attempt” tests fail {#test-attempt}
+### When I run "Test", everything passes, but when I hit “Attempt” tests fail {#test-attempt}
 
-It’s because your solution does not pass the tests. Remember that when you press **“TEST”**, only sample tests are run - the ones you see under the kata code editor. There’s usually only a couple of sample tests, they are easy, execute fast, and they do not cover too many edge cases. Only when you press **“ATTEMPT”**, the full test suite is run, potentially with tests for edge cases, large inputs, performance, random tests, etc. You cannot see the full test suite (and its test cases) if you haven’t solved the kata. Only when the full test suite is run and passes, your solution can be accepted and kata can be considered solved. See [this point](#works-but-no) for possible hints on how to proceed.
+That is because your solution does not pass the tests. Remember that when you press **“TEST”**, only sample tests are run – the ones you see under the kata code editor. There’s usually only a couple of sample tests, they are easy, execute fast, and they do not cover too many edge cases. Only when you press **“ATTEMPT”**, the full test suite is run, potentially with tests for edge cases, large inputs, performance, random tests, etc. You cannot see the full test suite (and its test cases) if you haven’t solved the kata. Only when the full test suite is run and passes can your solution be accepted and the kata be considered solved. See [this point](#works-but-no) for possible hints on how to proceed.
 
 ### All tests except the last one pass {#last-fail}
 
 <!--- textlint-disable -->
 
-For some kata (but not for all!), the test suite is built in such a way that tests are stopped on the first failure. When you see only one failed test and it’s the last one, it might mean that it’s the first one which your solution failed, and when you fix it, there are more to come.
+For some kata (but not for all!), the test suite is built in such a way that tests are stopped on the first failure. When you see only one failed test and nothing after it, that might mean that it’s the first test which your solution failed and once you fix it, there are more to come.
 
 <!-- textlint-enable -->
 
 ### When I print my answer it looks exactly the same as the expected output, yet tests fail {#expected-the-same}
 
-There is a couple of possible reasons for such behavior:
+There are a couple of possible reasons for such behavior:
 
-- Your answer contains some unexpected characters which are not easily visible when printed. These might be leading or trailing spaces, missing or superfluous new line characters, etc. One especially nasty case is that for some languages, Codewars test output panel seems to coalesce adjacent whitespace characters into a single space (just like HTML rendering does), so even if you copy expected and actual values from test output and compare them character by character, they appear exactly the same! To detect such cases, you could, for example, replace all whitespace characters with some printable ones just before sending it to stdout.
-- Check the type of value returned by your solutions. When printed, expected and actual might look the same, but their types might be different - for example, you return a number, but it should be a numeric string.
+- Your answer contains some unexpected characters which are not easily visible when printed. These might be leading or trailing spaces, missing or superfluous new line characters, etc. One especially nasty case is that for some languages, the Codewars test output panel seems to collapse consecutive whitespace characters into a single space (just like HTML rendering does), so even if you copy expected and actual values from test output and compare them character by character, they appear exactly the same! To detect such cases, you could, for example, replace all whitespace characters with some printable ones just before sending it to stdout.
+- Check the type of the value returned by your solution. When printed, expected and actual values might look the same, but their types may be different – for example, you might return a number when in fact a numeric string is expected.
 - When the answer is expected to be a floating-point number, it might not be precise enough to compare equal with the expected value, but the assertion message rounds both so they look the same. Check for possible rounding errors or floating-point accuracy issues.
-- If all tests fail with some message similar to `"Expected 'Something' but got None"` or something along those lines (depending on language and assertions library used), it might mean that you only print your answer to the stdout instead of returning it from your function. This problem occurs especially often for people who do not understand the difference between printing a value and returning it, or when someone comes from some other competitive programming website, which actually requires values to be printed and not returned.
+- If all tests fail with some message similar to `"Expected 'Something' but got None"` or something along those lines (depending on language and assertions library used), it might mean that you are printing your answer to standard output instead of returning it from your function. This problem occurs especially often for people who do not understand the difference between printing a value and returning it, or when someone comes from some other competitive programming website which actually requires values to be printed and not returned.
 
 ### All tests pass, but I get a timeout {#pass-but-timeout}
 
-Sometimes users are confused when their solution is valid, passes all tests, test output panel is green, but they cannot submit the solution because tests time out. Such a situation means that solution does _not_ pass all the tests. Most likely, the solution returns a valid answer and passes tests up to some point, but it's too slow and then gets forcibly aborted by the runner due to exceeded execution time. Solution needs to be improved and made more performant. Some hints can be found [here](#timeout).
+Sometimes users are confused when their solution is valid, passes all tests, test output panel is green, but they cannot submit the solution because tests time out. Such a situation means that solution does _not_ pass all the tests. Most likely, the solution returns a valid answer and passes tests up to some point, but it's too slow and then gets forcibly aborted by the runner due to exceeded execution time. The solution needs to be improved and made more performant. Some hints can be found [here](#timeout).
 
 ## Error messages and printing your input/output
 
 ### How can I see which input causes my solution to fail? {#print-input}
 
-Most (all?) languages on Codewars support writing to standard output. You can use stdout functions of your language to print function arguments (or anything else) and it will be visible in the test output panel.
+Most, if not all, languages on Codewars support writing to standard output (stdout). You can use stdout functions of your language to print function arguments (or anything you like) and it will be visible in the test output panel.
 
 <!--- For false positive "built in" -->
 <!--- textlint-disable terminology -->
 
-**Important note:** remember that when tests are run, your solution is executed (potentially with all the print statements inside), then assertions are performed on the returned value, and finally, green/red assertion messages are printed. This leads to the fact that whatever you print in your solution, will appear **above** the assertion message it applies to. It's somewhat difficult to spot it visually in the CW test output panel. If you think that your output totally does not match the test case or its assertion message, be sure to look at the green/red message located **below** what you printed, and not above it. Additionally, some test suites are built in a way that the printed output and assertion messages are completely far away from one from another, but such kata are rather exceptions and not that common.
+**Important note:** remember that when tests are run, your solution is executed *first* (potentially with all the print statements inside), then assertions are performed on the returned value, and finally, green/red assertion messages are printed. This leads to the fact that whatever you print in your solution will appear **above** the assertion message it applies to. It's somewhat difficult to spot it visually in the Codewars test output panel. If you think that your output totally does not match the test case or its assertion message, be sure to look at the green/red message located **below** whatever you printed, and not above it. Additionally, some test suites are built in a way that the printed output and related assertion messages are separated visually from one from another, but such kata are rather exceptions and not that common.
 
 <!--- textlint-enable terminology -->
 
@@ -79,11 +79,11 @@ Most (all?) languages on Codewars support writing to standard output. You can us
 
 ### I want to print something to the console but it's not showing up! {#no-print}
 
-Sometimes test suite crashes or is forcibly aborted by the test runner, and in such case, the output you want to print does not appear or is truncated. It usually happens because standard output was not flushed when the crash occurred. Make sure that stdout is flushed after each of your write operations, so you won’t lose any part of it.
+Sometimes the test suite crashes or is forcibly aborted by the test runner, and in such cases the output you want to print does not appear or is truncated. It usually happens because standard output was not flushed when the crash occurred. Make sure that stdout is flushed after each of your write operations, so you won’t lose any part of it.
 
 ### Tests fail and assertion messages are confusing and unhelpful {#assert-confusing}
 
-This question often applies to C and C++ kata, but not only. Some test or assertion libraries used by Codewars do not have a nice way to specify additional assertion messages for failed test cases, or authors did not think or care about adding these. If this is a case, unfortunately, you need to debug the kata in another way (for example by [printing test input](#print-output)), and eventually [raise an issue](#post-discourse) about confusing assertion messages.
+This question often applies to C and C++ kata, but not exclusively. Some test or assertion libraries used by Codewars do not have a nice way to specify additional assertion messages for failed test cases, or authors did not think or care about adding these. If this is the case you will unfortunately have to debug the kata in another way (for example by [printing test input](#print-output)), and perhaps [raise an issue](#post-discourse) about confusing assertion messages.
 
 ---
 
@@ -93,12 +93,12 @@ This question often applies to C and C++ kata, but not only. Some test or assert
 
 There are a few possible causes:
 
-- Your solution is too slow, especially for more difficult/larger inputs. The computational complexity of some problems grows rapidly with input size and sometimes trivial, naive solutions pass for small inputs, but are not sufficient for more challenging scenarios. You probably need to think of a better approach: some optimizations might help, but also might not. In the latter case, you probably need to think of a better algorithm.
+- Your solution is too slow, especially for more difficult/larger inputs. The computational complexity of some problems grows rapidly with input size and sometimes trivial, naïve solutions pass for small inputs, but are not sufficiently performant for more challenging scenarios. You probably need to think of a better approach: some optimizations might help, but also might not. In the latter case, you probably need to think of a better algorithm.
 - If you are pretty sure your approach is correct, make sure that some additional time complexity does not creep in with some library functions you use. For example, calling `contains` on a HashSet is cheap and does not increase time complexity significantly, but calling `contains` on a list or array introduces an additional O(n) time complexity factor.
-- Your solution falls into an infinite loop of some kind. You can try to spot that on your own by printing to the console from the inside of your loops. If you print enough to the console, you'll run into the `Max buffer limit` exception before your code times out, so you'll get feedback about what you did wrong rather than the simple `Execution timed out` thing.
-- There are some kata that sometimes randomize random tests that are too large to pass. Fortunately, it does not happen often, and not every time. Try to resubmit your solution and see if it helps. If you get timeouts spuriously it means that kata tests are inconsistent when it comes to difficulty, and you can raise it as an issue ([see here](#post-discourse)).
-- There is a known issue with CW runner for Python, which makes random tests much slower than they used to be some time ago. Read through the kata discourse and see if anyone mentions some problems with timeouts for Python.
-- Some languages have multiple versions available on Codewars, and versions can differ when it comes to performance. For example, C# currently has 3 versions: 7.3, 8.0, and Mono 4.3.2, and it was observed that solutions run with Mono runtime sometimes take 2 to 3 times longer to execute (but not always). Similar thing with C++ 14 vs C++ 17: There is no `-O2` in C++14, so solutions run MUCH slower. C++ 17 uses `-O2` and solutions run significantly faster, but the compilation is much longer and can timeout with large hardcoded arrays, strings, etc. This point usually applies only to performance-related kata where tests were tuned to take most of the available time quota, and when you get timeouts with one language version, try another one if available.
+- Your solution falls into an infinite loop of some kind. You can try to spot that on your own by printing to the console from the inside of your loops. If you print enough to the console, you'll run into the `Max buffer limit` exception before your code times out, so you'll get feedback about what you did wrong rather than the vague `Execution timed out` message.
+- There are some kata that sometimes produce random tests that are too large to pass. Fortunately, it does not happen often, and not every time. Try to resubmit your solution and see if it helps. If you get timeouts spuriously it could mean that kata tests are inconsistent when it comes to difficulty, in which case you can raise it as an issue ([see here](#post-discourse)).
+- There is a known issue with Codewars' runner for Python, which makes random tests much slower than they used to be some time ago. Read through the kata discourse and see if anyone mentions some problems with timeouts for Python.
+- Some languages have multiple versions available on Codewars, and versions can differ when it comes to performance. For example, C# currently has 3 versions: 7.3, 8.0, and Mono 4.3.2, and it was observed that solutions run with the Mono runtime sometimes take 2 to 3 times longer to execute (but not always). Similarly for C++14 vs C++17: There is no `-O2` in C++14, so solutions run MUCH slower. C++ 17 uses `-O2` and solutions run significantly faster, but the compilation is much longer and can timeout with large hardcoded arrays, strings, etc. This point usually applies only to performance-related kata where tests were tuned to take most of the available time quota, so when you get timeouts with one language version, try another one if available.
 
 ### I get Max Buffer Size Reached (1.5 MiB) {#maxbuffer}
 
@@ -116,9 +116,9 @@ If you see "STDERR, Max Buffer Size Reached (1.5 MiB)" at the bottom of it, that
 Several things may cause this:
 
 - You print your answer to the console instead of returning it.
-- You want to debug your solution printing to the console, and your code printed too many steps (loop rounds or recursive calls) or got trapped in an infinite loop.
-- You're only printing the input at the beginning of your function, but you forgot that some inputs are **_huge_** (on performances intensive Kata, printing one single input array can already overflow the buffer).
-- In some rare cases, some kata may be pretty "printing intensive", either because there are a lot of assertions printed to the console (that info and all things related to the test output formatting are part of the buffer!), or because they are generating code that is used to display HTML/JS stuff to the console (_thinking about myjinxin2015's ["play game series"](https://www.codewars.com/kata/search/my-languages?q=play%20game%20series&) or his ["canvas Fun" series](https://www.codewars.com/kata/search/my-languages?q=canvas&), for instance_) and you may reach the buffer limit even if you don't print much to the console.
+- You want to debug your solution by printing to the console, but your code printed too many steps (loop rounds or recursive calls) or got trapped in an infinite loop.
+- You're only printing the input at the beginning of your function, but you forgot that some inputs are **_huge_** (on performances intensive kata, printing one single input array can already overflow the buffer).
+- In rare cases, some kata may be pretty "printing intensive", either because there are a lot of assertions printed to the console (that info and all things related to the test output formatting are part of the buffer!), or because they are generating code that is used to display HTML/JS stuff to the console (_thinking about myjinxin2015's ["play game series"](https://www.codewars.com/kata/search/my-languages?q=play%20game%20series&) or his ["canvas Fun" series](https://www.codewars.com/kata/search/my-languages?q=canvas&), for instance_) and you may reach the buffer limit even if you don't print much to the console.
 
 In any case, to bypass that problem, you need to reduce the statements from printing to the console in your code.
 
@@ -126,16 +126,16 @@ _Note: this buffer error can actually become useful in some cases. See ["I get E
 
 ### I get `Exit code: some number`, or a message about some strange signal with some number {#exitcode}
 
-It usually means that the test run either crashed, or was forcibly terminated by the runner. Unfortunately, it's not always easy to exactly tell why, because exit codes are often cryptic, differ between languages and test frameworks, and they usually are not very clear by themselves. However, in the majority of cases, the crash is caused by an invalid solution and it should be gone when you fix it. [Appendix A](#appendix-errorcodes) collects some often encountered error codes, but is by no means exhaustive. If you cannot find the problem in your solution and tests still crash, ask a question ([see here](#post-discourse)).
+It usually means that the test run either crashed, or was forcibly terminated by the runner. Unfortunately, it's not always easy to exactly tell why, because exit codes are often cryptic, differ between languages and test frameworks, and they usually are not very clear by themselves. However, in the majority of cases, the crash is caused by an invalid solution and should stop occurring when you fix it. [Appendix A](#appendix-errorcodes) collects some often encountered error codes, but is by no means exhaustive. If you cannot find the problem in your solution and tests still crash, ask a question ([see here](#post-discourse)).
 
 ### I get an empty output panel with "nothing was written to STDOUT or STDERR" {#memorysaturation}
 
-This happens when your code is consuming all the memory the runner/docker allowed it to use during the tests. It's pretty inconvenient when this happens because it just makes crash the sandbox in which your code is executed and ends up giving you no feedback at all.  
-Facing this error means either that your code ran into an infinite loop where it created too many objects/data structures, or that the kata is really heavy about the amount of data and you need to micro-optimize further the way you handle them. In any case, that means you need to change (at least) a bit your approach to solve the problem.
+This happens when your code is consuming all the memory the runner/docker allowed it to use during the tests. It's pretty inconvenient when this happens because it just crashes the sandbox in which your code is executed and ends up giving you no feedback at all.  
+Facing this error means either that your code ran into an infinite loop where it created too many objects/data structures, or that the kata is really heavy about the amount of data produced and you need to further micro-optimize the way you handle it. In any case, that means you need to change your approach (at least) a bit to solve the problem.
 
 _Note:_
 
-_In some languages (python, ruby, ...), you can instead get this message: `Response received but no data was written to STDOUT or STDERR` if you're running the example tests while they are empty of any assertion (hence, when they actually weren't written by the author. You may encounter the case on old Kata from time to time). So check the presence of sample tests first, before you begin to rewrite your whole code... ;) And keep in mind you still can use the full test suite to debug your code, using `Attempt`._
+_In some languages (Python, Ruby, ...), you can instead get this message: `Response received but no data was written to STDOUT or STDERR` if you're running the example tests while they are empty of any assertion (hence, when they actually weren't written by the author. You may encounter the case on old Kata from time to time). So check the presence of sample tests first, before you begin to rewrite your whole code... ;) And keep in mind you still can use the full test suite to debug your code, using `Attempt`._
 
 ---
 
@@ -148,24 +148,24 @@ Probably nothing. Go through the following checklist and see which applies to yo
 - Do not raise a kata issue (yet)
 - Check what input causes your solution to fail ([see here](#print-input)) and recreate the test case locally in your IDE. Check if it fails on your machine too.
 - See how many solutions were accepted for the language version you are trying to solve. If there are many accepted solutions, there’s probably no serious bug in the kata.
-- Read through kata discourse to see if a similar issue or question was already raised.
-- Raise kata issue ([see here](#post-discourse)), but only if you are really, REALLY sure that it’s indeed a problem with the kata.
+- Read through the kata's discourse to see if a similar issue or question was already raised.
+- Raise a kata issue ([see here](#post-discourse)), but only if you are really, REALLY sure that it’s indeed a problem with the kata.
 
 ### How do I post to a kata discourse? {#post-discourse}
 
-- Use [code formatting TODO](https://github.com/Codewars/Codewars.com/wiki/Markdown-Formatting) when posting blocks of code.
-- Use **spoiler flag** when your posts contain parts of a solution (even not working one), or if it mentions anything that might reveal details of the solution.
+- Use [code formatting ( TODO )](https://github.com/Codewars/Codewars.com/wiki/Markdown-Formatting) when posting blocks of code.
+- Use the **spoiler flag** when your post contains parts of a solution (even a non-working one), or if it mentions anything that might reveal details of the solution.
 - Say what language version you are referring to.
 - Mark your post with the **Question** label if you have some problems solving the kata and want to ask for help.
 - Mark your post with the **Suggestion** label if you want to propose some changes or improvements to the discussed kata. It's also customary when posting a translation to post a link as a suggestion as well, in case the notification gets lost.
-- Mark your post with the **Issue** label only if you are perfectly sure that kata is in some way broken, and needs to be edited and fixed. If you have difficulties with solving the kata, raise a **Question**, and not an **Issue**.
-- Read [this Codewars wiki page TODO](https://github.com/Codewars/Codewars.com/wiki/Kata-Discourse) for some more details on labels.
-- Note that because of this three-label system, the standard of issues is _likely more strict_ on Codewars than on other platforms you might be familiar with. So for example many GitHub issues would be questions or suggestions by this standard.
+- Mark your post with the **Issue** label only if you are perfectly sure that kata is in some way broken and needs to be edited and fixed. If you have difficulties with solving the kata, raise a **Question**, and not an **Issue**.
+- Read [this Codewars wiki page ( TODO )](https://github.com/Codewars/Codewars.com/wiki/Kata-Discourse) for some more details on labels.
+- Note that because of this three-label system, the standard of issues is _likely more strict_ on Codewars than on other platforms you might be familiar with. As an example, many GitHub issues would be questions or suggestions by this standard.
 - Remember that by posting a comment you're communicating with _real humans_, and by labelling (or not labelling) you're requesting the corresponding level of attention from _real humans_. We understand that you may be utterly frustrated about the fact that the answer should be 1064, not 1074, but it needs to be understood that these guidelines provide crucial information that helps the community help you and/or improve the kata, and will also help yourself understand the problem better.
 
 ### I am stuck. I tried everything and nothing helped. What now? {#more-help}
 
-You can search for additional help on the Codewars Gitter chats: [general TODO](https://gitter.im/Codewars/Codewars.com) or [kata solving help TODO](https://gitter.im/Codewars/Codewars.com/kata-solving-help). There’s always someone hanging out there, and usually, users are very willing to help. Usually.
+You can search for additional help on the Codewars Gitter chats: [general](https://gitter.im/Codewars/Codewars.com) or [kata solving help](https://gitter.im/Codewars/Codewars.com/kata-solving-help). There’s always someone hanging out there, and usually users are very willing to help. Usually.
 
 ---
 
@@ -173,23 +173,23 @@ You can search for additional help on the Codewars Gitter chats: [general TODO](
 
 ### [C, C++] Signal 11 - `SIGSEGV`
 
-`SIGSEGV` is usually raised when a program accesses a memory location in an invalid way. Language standard defines such memory access as **undefined behavior** which means that such invalid code may, or may not, manifest in one way or another. It's not guaranteed that invalid memory access will always raise SIGSEGV.
+`SIGSEGV` is usually raised when a program accesses a memory location in an invalid way. Language standard defines such memory access as **undefined behavior** which means that such invalid code may or may not manifest in one way or another. It's not guaranteed that invalid memory access will always raise SIGSEGV.
 If you encounter such a signal when solving a kata, it means that your solution contains some error related to memory access. The signal itself does not necessarily have to be emitted directly by your solution. It can originate from the test suite if your solution returned a pointer that the test suite cannot reliably operate on. But still, it's probably some bug in your solution that causes the error. Many possible causes can lead to SIGSEGV, and in kata these usually are:
 
-- accessing an array outside of its bounds, often caused by off-by-one errors, or character buffers missing space for a null terminator
+- accessing an array outside of its bounds, often caused by off-by-one errors, or character buffers missing space for a null terminator.
 - modification of string literals. Note that not every input parameter passed as `char[]` or `char*` can be modified. The program will probably crash if you modify an argument that is a string literal.
-- returning a string literal or a pointer to static/global array from your solution. While it's very often not mentioned explicitly in kata descriptions, kata tests **usually** require you to return freeable buffers and they attempt to deallocate them when tests end. When you return a pointer to a statically allocated buffer, the test suite will crash trying to free it.
-- returning a pointer to stack variable from your solution - this happens especially when you return a pointer to VLA (stack-allocated variable-length array). As your function returns, all stack variables are destroyed and pointers returned by your solution become immediately invalid. Test suite attempts to perform some assertions on such invalid pointers and crashes.
-- returning `NULL` when it's not expected - when you return `NULL` while your function is expected to return a valid pointer, it may happen that the test suite doesn't check the validity of the pointer before trying to use it to do memory access. In such a case, the test suite will probably crash, possibly raising SIGSEGV. (Note: if you encounter this case and you can confirm this is the problem, you can [raise an issue](#post-discourse) in the discourse, giving all the needed information)
-- dereferencing a `NULL` pointer - `NULL` was passed in as input parameter, or some library function (e.g. `malloc`) returned `NULL` and your solution did not check the return value but directly accessed memory assuming a valid pointer was returned.
-- missing null terminator in the returned string - test suite cannot find the end of a string buffer returned by you and reaches past its end.
+- returning a string literal or a pointer to a static/global array from your solution. While it's very often not mentioned explicitly in kata descriptions, kata tests **usually** require you to return freeable buffers and they attempt to deallocate them when tests end. When you return a pointer to a statically allocated buffer, the test suite will crash trying to free it.
+- returning a pointer to a stack variable from your solution – this happens especially when you return a pointer to VLA (stack-allocated variable-length array). As your function returns, all stack variables are destroyed and pointers returned by your solution become immediately invalid. Test suite attempts to perform some assertions on such invalid pointers and crashes.
+- returning `NULL` when it's not expected. When you return `NULL` while your function is expected to return a valid pointer, it may happen that the test suite doesn't check the validity of the pointer before trying to use it to access memory. In such a case, the test suite will probably crash, possibly raising SIGSEGV. (Note: if you encounter this case and you can confirm this is the problem, you can [raise an issue](#post-discourse) in the discourse, giving all the needed information)
+- dereferencing a `NULL` pointer. `NULL` was passed in as input parameter, or some library function (e.g. `malloc`) returned `NULL` and your solution did not check the return value but directly accessed memory assuming a valid pointer was returned.
+- missing null terminator in the returned string. The test suite cannot find the end of a string buffer returned by you and reaches past its end.
 - infinite/too deep recursion
 
 ### [C, C++] Signal 6 - `SIGABRT`
 
 `SIGABRT` means that your solution destroyed internal structures of your program or its runtime, or damaged them in some way. Just like with `SIGSEGV`, there are many possible reasons for `SIGABRT`, but when it comes to kata, the most common are:
 
-- out-of-bounds writes to arrays or memory buffers, which happen to overwrite important control structures of the program located in the neighborhood of such buffer. For example, off-by-one writes, modification of memory located _before_ some array, writing past the end of a string buffer, etc.
+- out-of-bounds writes to arrays or memory buffers, which happen to overwrite important control structures of the program located in the neighborhood of such buffers. Examples: off-by-one writes, modification of memory located _before_ some array, writing past the end of a string buffer, etc.
 - `free` called on a non-freeable pointer: a pointer pointing to global memory, static memory, a string literal, or stack (for example, VLA). The signal can originate not only from your solution, but also from the test suite when you return a non-freeable pointer from your solution and the test suite attempts to `free` it.
 - double `free`
 
