@@ -268,7 +268,7 @@
   description: |
     Tests whose the inputs/outputs aren't the same each time you run the test suite.
 
-    Random tests are prefered to randomized tests, when creating Kata.
+    Random tests are preferred to randomized tests, when creating Kata.
 
 - term: Randomized tests
   description: |
@@ -280,7 +280,7 @@
 
 - term: Reject (translation)
   description: |
-    A translation writen by an user can be rejected during the review process if it is not fulfilling the original requirements or if the translated task doesn't fit with the original difficulty of the Kata.
+    A translation written by an user can be rejected during the review process if it is not fulfilling the original requirements or if the translated task doesn't fit with the original difficulty of the Kata.
 
 - term: Retire/Retired kata
   description: |

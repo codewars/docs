@@ -339,7 +339,7 @@ Very often overlooked, but a very good approach to represent 2D arrays is to sto
     <summary>Example</summary>
 
 ```c
-//declaration of solution accepting a two-dimentional array
+//declaration of solution accepting a two-dimensional array
 void play_game_of_life(size_t world_h, size_t world_w, char world_2d[world_h][world_w]);
 
 size_t world_h = ...;

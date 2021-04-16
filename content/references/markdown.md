@@ -56,7 +56,7 @@ This is the content of the code block.
 ````
 
 The opening code fence can be followed by an optional text called the info string. When the info string is a valid language ID, `python` for example, the content is syntax highlighted.
-See the language's documentation in [supported languages](/languages/) to find the langauge ID.
+See the language's documentation in [supported languages](/languages/) to find the language ID.
 
 ````markdown
 ```python
