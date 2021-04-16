@@ -23,7 +23,7 @@ This guide covers common problems you may run into as a newcomer solving kata on
 There are a number of things it could be. Try the following (in the given order):
 
 - Make sure you didn't miss anything in the kata description. Indeed, some descriptions are far from perfect, but it's also very likely you missed some requirements, did not account for some edge case, or that there's some helpful hint or advice there.
-- Make sure your solution is efficient enough. If you're setting a timeout error, you may need to rethink your approach (or check for infinite loops on edge cases!).
+- Make sure your solution is efficient enough. If you're getting a timeout error, you may need to rethink your approach (or check for infinite loops on edge cases!).
 - Some tests are susceptible to mutation of input parameters and fail if solution changes input objects passed to it. If kata does not ask you explicitly to change input arguments, make sure you do not do it. If you find a kata that fails when input is mutated by solution, raise it as an issue ([see here](#post-discourse)).
 - **Debug your solution.** Check what input causes your solution to fail ([see here](#print-input)), recreate it locally, and debug it in your IDE.
 - Check if your solution passes two successive calls with different inputs. It's sometimes the case that the solution contains some global variables or static members and a stale state is carried over from one invocation to another.
@@ -49,10 +49,12 @@ There is a couple of possible reasons for such behavior:
 
 - Your answer contains some unexpected characters which are not easily visible when printed. These might be leading or trailing spaces, missing or superfluous new line characters, etc. One especially nasty case is that for some languages, Codewars test output panel seems to coalesce adjacent whitespace characters into a single space (just like HTML rendering does), so even if you copy expected and actual values from test output and compare them character by character, they appear exactly the same! To detect such cases, you could, for example, replace all whitespace characters with some printable ones just before sending it to stdout.
 - Check the type of value returned by your solutions. When printed, expected and actual might look the same, but their types might be different - for example, you return a number, but it should be a numeric string.
-- When the answer is expected to be a floating-point number, it might not be precise enough to compare equal with the expected value, but assertion message rounds both so they look the same. Check for possible rounding errors or floating-point accuracy issues.
-- If all tests fail with some message similar to `"Expected 'Something' but got None"` or something along the lines (depending on language and assertions library used) it might mean that you only print your answer to the stdout instead of returning it from your function. This problem happens especially often for people who do not understand the difference between printing value and returning it, or when someone comes from some other competitive programming website, which actually requires values to be printed and not returned.
+- When the answer is expected to be a floating-point number, it might not be precise enough to compare equal with the expected value, but the assertion message rounds both so they look the same. Check for possible rounding errors or floating-point accuracy issues.
+- If all tests fail with some message similar to `"Expected 'Something' but got None"` or something along those lines (depending on language and assertions library used), it might mean that you only print your answer to the stdout instead of returning it from your function. This problem occurs especially often for people who do not understand the difference between printing a value and returning it, or when someone comes from some other competitive programming website, which actually requires values to be printed and not returned.
 
----
+### All tests pass, but I get a timeout {#pass-but-timeout}
+
+Sometimes users are confused when their solution is valid, passes all tests, test output panel is green, but they cannot submit the solution because tests time out. Such a situation means that solution does _not_ pass all the tests. Most likely, the solution returns a valid answer and passes tests up to some point, but it's too slow and then gets forcibly aborted by the runner due to exceeded execution time. Solution needs to be improved and made more performant. Some hints can be found [here](#timeout).
 
 ## Error messages and printing your input/output
 
