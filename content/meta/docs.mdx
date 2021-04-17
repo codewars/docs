@@ -46,6 +46,31 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
 :::
 
+## Anchored
+
+Use `Anchored` component to add a link to a specific section within a page other than the headings. This can be useful when you'd like to point users to a specific section within a doc.
+
+### Example
+
+```markdown
+import A from "@components/Anchored";
+
+> <A id="learn-by-doing">The best kind of learning is learning by doing.</A>
+>
+> &mdash;Peter Norvig  
+> [Teach Yourself Programming in Ten Years](https://norvig.com/21-days.html)
+```
+
+import A from "@components/Anchored";
+
+> <A id="learn-by-doing">The best kind of learning is learning by doing.</A>
+>
+> &mdash;Peter Norvig  
+> [Teach Yourself Programming in Ten Years](https://norvig.com/21-days.html)
+
+Hovering over the quote shows a small asterisk (\*) on the left, which you can use to get the link to this quote.
+The sentence is styled differently when [targeted](#.learn-by-doing).
+
 [docusaurus]: https://docusaurus.io/
 [docusaurus-docs]: https://docusaurus.io/docs
 [mdx]: https://mdxjs.com/

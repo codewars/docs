@@ -2,8 +2,8 @@ import React from "react";
 
 const Anchored = ({ id, children }) => {
   return (
-    <div id={`.${id}`} class="anchored inline relative">
-      <a class="anchor-link" href={`#.${id}`} aria-hidden="true"></a>
+    <div id={`.${id}`} className="anchored inline relative">
+      <a className="anchor-link" href={`#.${id}`} aria-hidden="true"></a>
       {children}
     </div>
   );

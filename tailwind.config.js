@@ -19,6 +19,9 @@ module.exports = {
     extend: {
       colors: {
         brand: "#b1361e",
+        amber: colors.amber,
+        fuchsia: colors.fuchsia,
+        pink: colors.pink,
         // Admonitions colors
         note: colors.coolGray[600],
         "note-content": colors.coolGray[500],
