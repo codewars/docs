@@ -3,7 +3,13 @@ const plugin = require("tailwindcss/plugin");
 
 module.exports = {
   mode: "jit",
-  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./content/**/*.mdx"],
+  purge: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+    // Don't look in `content/` for now because this can generate unnecessary classes and also cause issues.
+    // For example, Prism adds `table` class to a token in TOML, and because some pages uses the word `table`,
+    // `.table` is generated, and that token gets `display: table`.
+    // "./content/**/*.mdx",
+  ],
   corePlugins: {
     preflight: false,
   },
