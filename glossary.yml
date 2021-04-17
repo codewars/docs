@@ -280,7 +280,7 @@
 
 - term: Reject (translation)
   description: |
-    A translation written by an user can be rejected during the review process if it is not fulfilling the original requirements or if the translated task doesn't fit with the original difficulty of the Kata.
+    A translation written by a user can be rejected during the review process if it is not fulfilling the original requirements or if the translated task doesn't fit with the original difficulty of the Kata.
 
 - term: Retire/Retired kata
   description: |
