@@ -1,5 +1,5 @@
 ---
-title: Authoring Kata
+title: Creating a Kata
 ---
 
 _TBD: improve this stub_
@@ -11,16 +11,16 @@ To create a new kata, a user needs to earn the ["Create Kata" privilege][referen
 
 ## Kata Editor
 
-Kata are created with the [kata editor](/references/ui/kata-editor/)
+Kata are created with the [kata editor](/references/kata-editor/)
 
-Users new to creating kata may refer to the [tutorial](/authoring/kata/create-first-kata/).
+Users new to creating kata may refer to the [tutorial](/authoring/tutorials/create-first-kata/).
 
 Some [languages](/languages/) also have a page dedicated to authoring kata, with code examples and best practices.
 
 Every kata author should follow [kata authoring guidelines](/authoring/guidelines/kata/).
 
-After being published, every kata goes through the [beta process](/concepts/kata/beta-process/) and is subject to a series of [reviews](/curating/kata/).
+After being published, every kata goes through the [beta process](/concepts/kata/beta-process/) and is subject to a series of [reviews](/curation/kata/).
 
 
 [reference-privileges]: /gamification/privileges/
-[docs-curating]: /curating/
+[docs-curating]: /curation/

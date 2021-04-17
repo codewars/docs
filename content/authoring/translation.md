@@ -1,5 +1,5 @@
 ---
-title: Translation
+title: Translating a Kata
 ---
 
 _TBD: improve this stub_
@@ -10,7 +10,7 @@ Some [languages](/languages/) also have a page dedicated to authoring kata, with
 
 Every translator should follow [translation authoring guidelines](/authoring/guidelines/translation/).
 
-After being published, every translation goes through a series of [reviews](/curating/translation/) before it can be approved.
+After being published, every translation goes through a series of [reviews](/curation/translation/) before it can be approved.
 
 <!--
 TODO: this page would relate to creating both initial language version, as well as new translation

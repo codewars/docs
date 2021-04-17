@@ -47,7 +47,7 @@ A translation should substantially change neither the overall idea nor the requi
 
 - **You are responsible for your translations.** As long as you're an active Codewars user, you should address quality issues in translations you authored: fix issues, consider suggestions, and answer questions, which might come up later when users attempt to submit their solutions. See [translation curation guidelines][translation-curation-guidelines] for more guidelines on maintenance of translations.
 
-[translation-curation-guidelines]: /curating/guidelines/translation/
+[translation-curation-guidelines]: /curation/guidelines/translation/
 [authoring-guidelines-description]: /authoring/guidelines/description/
 [authoring-guidelines-general-coding]: /authoring/guidelines/coding/
 [authoring-guidelines-general]: /authoring/guidelines/
