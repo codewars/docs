@@ -429,9 +429,7 @@ module.exports = {
       items: [
         "gamification/index",
         "gamification/ranks",
-        "gamification/rank-rewards",
         "gamification/honor",
-        "gamification/honor-rewards",
         "gamification/privileges",
         "gamification/list-of-privileges",
       ],
