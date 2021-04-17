@@ -27,6 +27,13 @@ a code {
   @apply text-red-700 dark:text-red-300;
 }
 
+.table-of-contents__link--active,
+.table-of-contents__link--active code,
+.table-of-contents__link:hover,
+.table-of-contents__link:hover code {
+  @apply font-semibold;
+}
+
 .docusaurus-highlight-code-line {
   background-color: rgb(72, 77, 91);
   display: block;
