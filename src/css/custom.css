@@ -23,6 +23,10 @@ html[data-theme="dark"] {
   --ifm-footer-background-color: #262626;
 }
 
+a code {
+  @apply text-red-700 dark:text-red-300;
+}
+
 .docusaurus-highlight-code-line {
   background-color: rgb(72, 77, 91);
   display: block;
