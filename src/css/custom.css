@@ -80,6 +80,9 @@ html[data-theme="dark"] .anchored:target {
   border-radius: 0;
   border-width: 0;
 }
+.alert a {
+  color: inherit;
+}
 
 .admonition {
   @apply mb-4 py-4 pr-8 pl-4;
