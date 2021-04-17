@@ -25,7 +25,7 @@ The attempt button will submit your solution against the kata test cases. These 
 This button will run your solution against the sample tests, which are the tests shown directly above.
 
 ### Skip Button
-If you do not wish to complete the kata, you can skip to the next. A new kata will be choosen for you at random, based off of your active [[training routine|Training Routines]]. 
+If you do not wish to complete the kata, you can skip to the next. A new kata will be chosen for you at random, based off of your active [[training routine|Training Routines]]. 
 
 ### Unlock Solutions
 If you wish to give up trying to complete the kata on your own, you can unlock the solutions and view other warrior's fully completed solutions. If you choose to go this route, you will forfeit any honor and rank progression that you could have otherwise have earned for completing the kata.
