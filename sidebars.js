@@ -11,6 +11,7 @@ module.exports = {
       items: [
         "getting-started/registering",
         "getting-started/setting-up",
+        // Move these under Training
         "getting-started/finding-kata",
         "getting-started/solving-kata",
         "getting-started/kata-solved",
@@ -26,23 +27,19 @@ module.exports = {
       type: "category",
       label: "Authoring",
       items: [
-        "authoring",
+        "authoring/index",
+        "authoring/kata",
+        "authoring/translation",
         {
           type: "category",
-          label: "Kata",
-          items: [
-            "authoring/kata",
-            "authoring/kata/create-first-kata",
-            "authoring/kata/adding-images",
-            "authoring/kata/floating-point",
-            "authoring/kata/read-solution-file",
-          ],
+          label: "Tutorials",
+          items: ["authoring/tutorials/create-first-kata"],
         },
         {
           type: "category",
           label: "Guidelines",
           items: [
-            "authoring/guidelines",
+            "authoring/guidelines/index",
             "authoring/guidelines/kata",
             "authoring/guidelines/description",
             "authoring/guidelines/coding",
@@ -53,23 +50,39 @@ module.exports = {
             "authoring/guidelines/translation",
           ],
         },
-        "authoring/translation",
+        {
+          type: "category",
+          label: "Recipes",
+          items: [
+            "authoring/recipes/adding-images",
+            "authoring/recipes/floating-point",
+            "authoring/recipes/read-solution-file",
+          ],
+        },
       ],
     },
     {
       type: "category",
-      label: "Curating",
+      label: "Curation",
       items: [
-        "curating",
-        "curating/kata",
-        "curating/translation",
+        "curation/index",
+        "curation/kata",
+        "curation/translation",
         {
           type: "category",
           label: "Guidelines",
           items: [
-            "curating/guidelines",
-            "curating/guidelines/kata",
-            "curating/guidelines/translation",
+            "curation/guidelines/index",
+            "curation/guidelines/kata",
+            "curation/guidelines/translation",
+          ],
+        },
+        {
+          type: "category",
+          label: "References",
+          items: [
+            "curation/references/kata-ranks",
+            "curation/references/approval-retirement-criteria",
           ],
         },
       ],
@@ -78,77 +91,79 @@ module.exports = {
       type: "category",
       label: "Community",
       items: [
-        "community",
-        "community/moderation",
-        "community/moderation-tools",
+        "community/index",
+        "community/following",
+        "community/moderation/index",
+        "community/moderation/tools",
         "community/rules",
       ],
     },
-
     {
       type: "category",
       label: "Languages",
       items: [
-        "languages",
+        "languages/index",
         {
           type: "category",
           label: "Agda",
-          items: ["languages/agda", "languages/agda/agda"],
+          items: ["languages/agda/index", "languages/agda/agda"],
         },
         {
           type: "category",
           label: "BF",
-          items: ["languages/bf", "languages/bf/codewars-test"],
+          items: ["languages/bf/index", "languages/bf/codewars-test"],
         },
         {
           type: "category",
           label: "C",
           items: [
-            "languages/c",
+            "languages/c/index",
             {
               type: "category",
               label: "authoring",
-              items: ["languages/c/authoring/memory-management-techniques"],
+              items: [
+                "languages/c/authoring/index",
+                "languages/c/authoring/memory-management-techniques",
+              ],
             },
-            "languages/c/authoring",
             "languages/c/criterion",
           ],
         },
         {
           type: "category",
           label: "CFML",
-          items: ["languages/cfml", "languages/cfml/testbox"],
+          items: ["languages/cfml/index", "languages/cfml/testbox"],
         },
         {
           type: "category",
           label: "Clojure",
-          items: ["languages/clojure", "languages/clojure/clojure-test"],
+          items: ["languages/clojure/index", "languages/clojure/clojure-test"],
         },
         {
           type: "category",
           label: "COBOL",
-          items: ["languages/cobol", "languages/cobol/zut"],
+          items: ["languages/cobol/index", "languages/cobol/zut"],
         },
         {
           type: "category",
           label: "CoffeeScript",
-          items: ["languages/coffeescript"],
+          items: ["languages/coffeescript/index"],
         },
         {
           type: "category",
           label: "CommonLisp",
-          items: ["languages/commonlisp", "languages/commonlisp/rove"],
+          items: ["languages/commonlisp/index", "languages/commonlisp/rove"],
         },
         {
           type: "category",
           label: "Coq",
-          items: ["languages/coq", "languages/coq/coq-codewars"],
+          items: ["languages/coq/index", "languages/coq/coq-codewars"],
         },
         {
           type: "category",
           label: "C++",
           items: [
-            "languages/cpp",
+            "languages/cpp/index",
             {
               type: "category",
               label: "igloo",
@@ -159,63 +174,63 @@ module.exports = {
         {
           type: "category",
           label: "Crystal",
-          items: ["languages/crystal", "languages/crystal/spec"],
+          items: ["languages/crystal/index", "languages/crystal/spec"],
         },
         {
           type: "category",
           label: "C#",
-          items: ["languages/csharp", "languages/csharp/nunit"],
+          items: ["languages/csharp/index", "languages/csharp/nunit"],
         },
         {
           type: "category",
           label: "Dart",
-          items: ["languages/dart", "languages/dart/test"],
+          items: ["languages/dart/index", "languages/dart/test"],
         },
         {
           type: "category",
           label: "Elixir",
-          items: ["languages/elixir", "languages/elixir/exunit"],
+          items: ["languages/elixir/index", "languages/elixir/exunit"],
         },
         {
           type: "category",
           label: "Elm",
-          items: ["languages/elm", "languages/elm/test"],
+          items: ["languages/elm/index", "languages/elm/test"],
         },
         {
           type: "category",
           label: "Erlang",
-          items: ["languages/erlang", "languages/erlang/eunit"],
+          items: ["languages/erlang/index", "languages/erlang/eunit"],
         },
         {
           type: "category",
           label: "Factor",
-          items: ["languages/factor", "languages/factor/testest"],
+          items: ["languages/factor/index", "languages/factor/testest"],
         },
         {
           type: "category",
           label: "Forth",
-          items: ["languages/forth", "languages/forth/ttester"],
+          items: ["languages/forth/index", "languages/forth/ttester"],
         },
         {
           type: "category",
           label: "Fortran",
-          items: ["languages/fortran", "languages/fortran/codewars-test"],
+          items: ["languages/fortran/index", "languages/fortran/codewars-test"],
         },
         {
           type: "category",
           label: "F#",
-          items: ["languages/fsharp", "languages/fsharp/fuchu"],
+          items: ["languages/fsharp/index", "languages/fsharp/fuchu"],
         },
         {
           type: "category",
           label: "Go",
-          items: ["languages/go", "languages/go/ginkgo"],
+          items: ["languages/go/index", "languages/go/ginkgo"],
         },
         {
           type: "category",
           label: "Groovy",
           items: [
-            "languages/groovy",
+            "languages/groovy/index",
             "languages/groovy/junit",
             "languages/groovy/spock",
           ],
@@ -223,28 +238,28 @@ module.exports = {
         {
           type: "category",
           label: "Haskell",
-          items: ["languages/haskell", "languages/haskell/hspec"],
+          items: ["languages/haskell/index", "languages/haskell/hspec"],
         },
         {
           type: "category",
           label: "Haxe",
-          items: ["languages/haxe", "languages/haxe/utest"],
+          items: ["languages/haxe/index", "languages/haxe/utest"],
         },
         {
           type: "category",
           label: "Idris",
-          items: ["languages/idris", "languages/idris/specdris"],
+          items: ["languages/idris/index", "languages/idris/specdris"],
         },
         {
           type: "category",
           label: "Java",
-          items: ["languages/java", "languages/java/junit"],
+          items: ["languages/java/index", "languages/java/junit"],
         },
         {
           type: "category",
           label: "Javascript",
           items: [
-            "languages/javascript",
+            "languages/javascript/index",
             "languages/javascript/authoring",
             "languages/javascript/codewars-test",
             "languages/javascript/mocha",
@@ -253,13 +268,13 @@ module.exports = {
         {
           type: "category",
           label: "Julia",
-          items: ["languages/julia", "languages/julia/factcheck"],
+          items: ["languages/julia/index", "languages/julia/factcheck"],
         },
         {
           type: "category",
           label: "Kotlin",
           items: [
-            "languages/kotlin",
+            "languages/kotlin/index",
             "languages/kotlin/junit",
             "languages/kotlin/kotlintest",
           ],
@@ -267,68 +282,68 @@ module.exports = {
         {
           type: "category",
           label: "Lean",
-          items: ["languages/lean", "languages/lean/lean"],
+          items: ["languages/lean/index", "languages/lean/lean"],
         },
         {
           type: "category",
           label: "Lua",
-          items: ["languages/lua", "languages/lua/busted"],
+          items: ["languages/lua/index", "languages/lua/busted"],
         },
         {
           type: "category",
           label: "NASM",
-          items: ["languages/nasm", "languages/nasm/criterion"],
+          items: ["languages/nasm/index", "languages/nasm/criterion"],
         },
         {
           type: "category",
           label: "Nim",
-          items: ["languages/nim", "languages/nim/unittest"],
+          items: ["languages/nim/index", "languages/nim/unittest"],
         },
         {
           type: "category",
           label: "Objective-C",
-          items: ["languages/objc", "languages/objc/unitkit"],
+          items: ["languages/objc/index", "languages/objc/unitkit"],
         },
         {
           type: "category",
           label: "OCaml",
-          items: ["languages/ocaml", "languages/ocaml/ounit"],
+          items: ["languages/ocaml/index", "languages/ocaml/ounit"],
         },
         {
           type: "category",
           label: "Pascal",
-          items: ["languages/pascal"],
+          items: ["languages/pascal/index"],
         },
         {
           type: "category",
           label: "Perl",
-          items: ["languages/perl", "languages/perl/test"],
+          items: ["languages/perl/index", "languages/perl/test"],
         },
         {
           type: "category",
           label: "PHP",
-          items: ["languages/php", "languages/php/phpunit"],
+          items: ["languages/php/index", "languages/php/phpunit"],
         },
         {
           type: "category",
           label: "PowerShell",
-          items: ["languages/powershell", "languages/powershell/pester"],
+          items: ["languages/powershell/index", "languages/powershell/pester"],
         },
         {
           type: "category",
           label: "Prolog",
-          items: ["languages/prolog", "languages/prolog/plunit"],
+          items: ["languages/prolog/index", "languages/prolog/plunit"],
         },
         {
           type: "category",
           label: "PureScript",
-          items: ["languages/purescript", "languages/purescript/spec"],
+          items: ["languages/purescript/index", "languages/purescript/spec"],
         },
         {
           type: "category",
           label: "Python",
           items: [
-            "languages/python",
+            "languages/python/index",
             "languages/python/authoring",
             "languages/python/codewars-test",
           ],
@@ -336,28 +351,28 @@ module.exports = {
         {
           type: "category",
           label: "R",
-          items: ["languages/r", "languages/r/testthat"],
+          items: ["languages/r/index", "languages/r/testthat"],
         },
         {
           type: "category",
           label: "Racket",
-          items: ["languages/racket", "languages/racket/rackunit"],
+          items: ["languages/racket/index", "languages/racket/rackunit"],
         },
         {
           type: "category",
           label: "Raku",
-          items: ["languages/raku", "languages/raku/test"],
+          items: ["languages/raku/index", "languages/raku/test"],
         },
         {
           type: "category",
           label: "Reason",
-          items: ["languages/reason", "languages/reason/jest"],
+          items: ["languages/reason/index", "languages/reason/jest"],
         },
         {
           type: "category",
           label: "Ruby",
           items: [
-            "languages/ruby",
+            "languages/ruby/index",
             "languages/ruby/authoring",
             "languages/ruby/codewars-test",
           ],
@@ -365,28 +380,28 @@ module.exports = {
         {
           type: "category",
           label: "Rust",
-          items: ["languages/rust", "languages/rust/rust"],
+          items: ["languages/rust/index", "languages/rust/rust"],
         },
         {
           type: "category",
           label: "Scala",
-          items: ["languages/scala", "languages/scala/scalatest"],
+          items: ["languages/scala/index", "languages/scala/scalatest"],
         },
         {
           type: "category",
           label: "Shell",
-          items: ["languages/shell", "languages/shell/rspec"],
+          items: ["languages/shell/index", "languages/shell/rspec"],
         },
         {
           type: "category",
           label: "Solidity",
-          items: ["languages/solidity", "languages/solidity/truffle"],
+          items: ["languages/solidity/index", "languages/solidity/truffle"],
         },
         {
           type: "category",
           label: "SQL",
           items: [
-            "languages/sql",
+            "languages/sql/index",
             "languages/sql/rspec",
             "languages/sql/explicit-tests",
           ],
@@ -394,17 +409,17 @@ module.exports = {
         {
           type: "category",
           label: "Swift",
-          items: ["languages/swift", "languages/swift/xctest"],
+          items: ["languages/swift/index", "languages/swift/xctest"],
         },
         {
           type: "category",
           label: "TypeScript",
-          items: ["languages/typescript", "languages/typescript/mocha"],
+          items: ["languages/typescript/index", "languages/typescript/mocha"],
         },
         {
           type: "category",
           label: "VB.NET",
-          items: ["languages/vb", "languages/vb/nunit"],
+          items: ["languages/vb/index", "languages/vb/nunit"],
         },
       ],
     },
@@ -412,29 +427,16 @@ module.exports = {
       type: "category",
       label: "Gamification",
       items: [
-        "gamification",
+        "gamification/index",
         "gamification/ranks",
-        "gamification/rank-rewards",
         "gamification/honor",
-        "gamification/honor-rewards",
         "gamification/privileges",
-        "gamification/list-of-privileges",
       ],
     },
     {
       type: "category",
       label: "Concepts",
       items: [
-        {
-          type: "category",
-          label: "Allying",
-          items: [
-            "concepts/clans-allies-and-followers",
-            "concepts/clans-allies-and-followers/followers",
-            "concepts/clans-allies-and-followers/allies",
-            "concepts/clans-allies-and-followers/clans",
-          ],
-        },
         {
           type: "category",
           label: "Kata",
@@ -463,22 +465,14 @@ module.exports = {
       items: [
         {
           type: "category",
-          label: "Kata Ranking",
+          label: "Markdown",
           items: [
-            "references/kata-ranking",
-            "references/kata-ranking/approval-retire-criteria",
+            "references/markdown/index",
+            "references/markdown/extensions",
           ],
         },
-        {
-          type: "category",
-          label: "Markdown",
-          items: ["references/markdown", "references/markdown/extensions"],
-        },
-        {
-          type: "category",
-          label: "UI",
-          items: ["references/ui/kata-editor", "references/ui/kata-trainer"],
-        },
+        "references/kata-editor",
+        "references/kata-trainer",
       ],
     },
     "glossary",
