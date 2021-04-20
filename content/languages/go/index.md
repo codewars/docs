@@ -5,26 +5,26 @@ slug: /languages/go
 ---
 
 
-### Versions
+## Versions
 
 1.12
 
-### Test Frameworks
+## Test Frameworks
 
 [Ginkgo](http://onsi.github.io/ginkgo/)
 
-### Timeout
+## Timeout
 
 12 seconds
 
-### Packages
+## Packages
 
 - [Gomega](http://onsi.github.io/gomega/)
 
-### Services
+## Services
 
 None
 
-### Language ID
+## Language ID
 
 `go`

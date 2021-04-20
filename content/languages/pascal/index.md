@@ -5,19 +5,19 @@ slug: /languages/pascal
 ---
 
 
-### Status
+## Status
 
 Beta
 
-### Versions
+## Versions
 
 Free Pascal v3.2
 
-### Test Frameworks
+## Test Frameworks
 
 [FPTest](https://github.com/graemeg/fptest)
 
-#### Example
+### Example
 
 ```pascal
 unit Example;
@@ -74,18 +74,18 @@ end.
 
 Preloaded code can be provided as a separate unit.
 
-### Timeout
+## Timeout
 
 12 seconds
 
-### Packages
+## Packages
 
 None
 
-### Services
+## Services
 
 None
 
-### Language ID
+## Language ID
 
 `pascal`

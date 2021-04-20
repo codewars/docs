@@ -5,28 +5,28 @@ slug: /languages/kotlin
 ---
 
 
-### Versions
+## Versions
 
 - 1.3
 
-### Test Frameworks
+## Test Frameworks
 
 - JUnit4
 - KotlinTest
 - Spek
 
-### Timeout
+## Timeout
 
 16 seconds
 
-### Packages
+## Packages
 - kotlin.test
 - Kluent
 - Expekt
 
-### Services
+## Services
 None
 
-### Language ID
+## Language ID
 
 `kotlin`

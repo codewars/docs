@@ -5,19 +5,19 @@ slug: /languages/perl
 ---
 
 
-### Status
+## Status
 
 Beta
 
-### Versions
+## Versions
 
 5.30
 
-### Test Frameworks
+## Test Frameworks
 
 [`Test::More`](https://perldoc.perl.org/Test::More) ([`Test::Most`](https://metacpan.org/pod/Test::Most) can be used to reduce boilerplate)
 
-#### Example
+### Example
 
 ```perl
 package Solution;
@@ -58,19 +58,19 @@ done_testing();
 
 Preloaded code can be provided and it will be a separate package.
 
-### Timeout
+## Timeout
 
 12 seconds
 
-### Packages
+## Packages
 
 None
 
-### Services
+## Services
 
 None
 
 
-### Language ID
+## Language ID
 
 `perl`

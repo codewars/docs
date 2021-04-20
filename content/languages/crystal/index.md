@@ -5,23 +5,23 @@ slug: /languages/crystal
 ---
 
 
-### Versions
+## Versions
 
 - 0.24
 - 0.34
 - 1.0
 
-### Test Frameworks
+## Test Frameworks
 
 - [Spec](https://crystal-lang.org/api/1.0.0/Spec.html)
 
-### Timeout
+## Timeout
 12 seconds
-### Packages
+## Packages
 None 
-### Services
+## Services
 None
 
-### Language ID
+## Language ID
 
 `crystal`

@@ -5,19 +5,19 @@ slug: /languages/idris
 ---
 
 
-### Status
+## Status
 
 Beta
 
-### Versions
+## Versions
 
 1.3.x
 
-### Test Frameworks
+## Test Frameworks
 
 [specdris](https://github.com/pheymann/specdris)
 
-#### Example
+### Example
 
 ```idris
 module Solution
@@ -49,18 +49,18 @@ The test needs to export `specSuite : IO ()` like in [the official example](http
 
 The names of the module can be anything and the optional preloaded code will be just extra module.
 
-### Timeout
+## Timeout
 
 12 seconds
 
-### Packages
+## Packages
 
 None
 
-### Services
+## Services
 
 None
 
-### Language ID
+## Language ID
 
 `idris`

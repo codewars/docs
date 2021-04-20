@@ -5,15 +5,15 @@ slug: /languages/erlang
 ---
 
 
-### Versions
+## Versions
 20.0
-### Test Frameworks
+## Test Frameworks
 [EUnit](http://erlang.org/doc/apps/eunit/chapter.html)
-### Timeout
+## Timeout
 12 seconds
-### Packages
+## Packages
 None
-### Services
+## Services
 None
-### Language ID
+## Language ID
 `erlang`

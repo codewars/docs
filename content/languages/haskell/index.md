@@ -5,11 +5,11 @@ slug: /languages/haskell
 ---
 
 
-### Versions
+## Versions
 
 - GHC 8.8.4 ([LTS Haskell 16.25](https://www.stackage.org/lts-16.25))
 
-### Test Frameworks
+## Test Frameworks
 
 [Hspec](http://hspec.github.io/)
 
@@ -34,13 +34,13 @@ Examples: `ExampleSpec`, `Example.ExampleSpec` are allowed while `Spec`, `Exampl
 
 The common convention is: If the solution's module name is e.g. `YourKata.SomeTask`, **just add `Spec` to the end without a dot**, e.g. `YourKata.SomeTaskSpec`.
 
-### Timeout
+## Timeout
 
 12 seconds
 
-### Packages
+## Packages
 
-#### GHC 8.8.4
+### GHC 8.8.4
 
 ```yaml
 # From package.yaml
@@ -73,10 +73,10 @@ dependencies:
 - vector
 ```
 
-### Services
+## Services
 
 None
 
-### Language ID
+## Language ID
 
 `haskell`

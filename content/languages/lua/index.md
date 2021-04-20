@@ -5,15 +5,15 @@ slug: /languages/lua
 ---
 
 
-### Versions
+## Versions
 5.3
-### Test Frameworks
+## Test Frameworks
 [busted](https://olivinelabs.com/busted/)
-### Timeout
+## Timeout
 12 seconds
-### Packages
+## Packages
 None 
-### Services
+## Services
 None
-### Language ID
+## Language ID
 `lua`

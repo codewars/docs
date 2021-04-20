@@ -5,13 +5,13 @@ slug: /languages/r
 ---
 
 
-### Versions
+## Versions
 3.4.1
 
-### Test Frameworks
+## Test Frameworks
 [testthat](https://github.com/hadley/testthat)
 
-#### Using Preloaded Code
+### Using Preloaded Code
 
 Preloaded
 ```R
@@ -31,11 +31,11 @@ test_that("addition using preloaded works", {
 })
 ```
 
-### Timeout
+## Timeout
 
 12 seconds
 
-### Packages
+## Packages
 
 Packages in the [tidyverse](https://www.tidyverse.org/) are installed (v1.2.1).
 
@@ -70,10 +70,10 @@ ggsave(plot=p, filename=pngf, width=7, height=7)
 cat(sprintf('\n<LOG::Plot><img src="data:image/png;base64,%s" width="100%%">\n', base64enc::base64encode(pngf)))
 ```
 
-### Services
+## Services
 
 None
 
-### Language ID
+## Language ID
 
 `r`

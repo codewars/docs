@@ -5,19 +5,19 @@ slug: /languages/purescript
 ---
 
 
-### Status
+## Status
 
 Beta
 
-### Versions
+## Versions
 
 [0.12.x](https://github.com/purescript/purescript/releases/tag/v0.12.2)
 
-### Test Frameworks
+## Test Frameworks
 
 [spec](https://purescript-spec.github.io/purescript-spec)
 
-#### Example
+### Example
 
 The name of the solution module can be arbitrary. Extra module can be provided in preloaded code.
 ```purescript
@@ -62,11 +62,11 @@ spec =
       quickCheck \n -> (n * 2 / 2) === n
 ```
 
-### Timeout
+## Timeout
 
 12 seconds
 
-### Packages
+## Packages
 
 - `prelude`
 - `console`
@@ -83,10 +83,10 @@ Packages are managed with [`psc-package`](https://github.com/purescript/psc-pack
 
 Feel free to [open issues](https://github.com/Codewars/codewars-runner-cli/issues/new) for additional packages.
 
-### Services
+## Services
 
 None
 
-### Language ID
+## Language ID
 
 `purescript`

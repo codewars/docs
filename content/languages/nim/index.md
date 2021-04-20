@@ -5,11 +5,11 @@ slug: /languages/nim
 ---
 
 
-### Versions
+## Versions
 
 - 1.0
 
-### Test Frameworks
+## Test Frameworks
 
 [unittest](https://nim-lang.org/docs/unittest.html)
 
@@ -24,7 +24,7 @@ include solution_tests
 
 The custom output formatter is open sourced at [Codewars/nim-unittest](https://github.com/Codewars/nim-unittest).
 
-#### Using Preloaded Code
+### Using Preloaded Code
 
 Preloaded
 ```nim
@@ -44,11 +44,11 @@ suite "add(x, y, z) using preloaded f(x, y)":
     check(add(1, 1, 1) == 3)
 ```
 
-### Timeout
+## Timeout
 12 seconds
-### Packages
+## Packages
 None
-### Services
+## Services
 None
-### Language ID
+## Language ID
 `nim`

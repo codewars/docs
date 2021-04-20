@@ -5,26 +5,26 @@ slug: /languages/elixir
 ---
 
 
-### Versions
+## Versions
 
 - 1.9.1
 
-### Test Frameworks
+## Test Frameworks
 
 [ExUnit](https://hexdocs.pm/ex_unit/ExUnit.html)
 
-### Timeout
+## Timeout
 
 12 seconds
 
-### Packages
+## Packages
 
 None 
 
-### Services
+## Services
 
 None
 
-### Language ID
+## Language ID
 
 `elixir`

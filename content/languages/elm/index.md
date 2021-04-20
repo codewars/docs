@@ -5,15 +5,15 @@ slug: /languages/elm
 ---
 
 
-### Versions
+## Versions
 
 0.19
 
-### Test Frameworks
+## Test Frameworks
 
 [elm test](https://github.com/elm-explorations/test)
 
-#### Example
+### Example
 
 The name of the solution module can be anything.
 Extra module can be provided in preloaded section.
@@ -64,11 +64,11 @@ suite =
         ]
 ```
 
-### Timeout
+## Timeout
 
 12 seconds
 
-### Packages
+## Packages
 
 - `elm/core`
 - `elm-community/array-extra`
@@ -80,10 +80,10 @@ suite =
 - `elm-community/string-extra`
 - `elm-explorations/test`
 
-### Services
+## Services
 
 None
 
-### Language ID
+## Language ID
 
 `elm`

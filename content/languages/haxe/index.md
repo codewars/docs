@@ -5,18 +5,18 @@ slug: /languages/haxe
 ---
 
 
-### Status
+## Status
 Beta
 
-### Versions
+## Versions
 
 4.0
 
-### Test Frameworks
+## Test Frameworks
 
 [utest](https://github.com/haxe-utest/utest)
 
-#### Example
+### Example
 
 `src/Solution.hx`
 ```haxe
@@ -42,18 +42,18 @@ The name of the test class must be `SolutionTest`.
 
 The optional preloaded code is a separate module (`src/Preloaded.hx`) that you can import.
 
-### Timeout
+## Timeout
 
 12 seconds
 
-### Packages
+## Packages
 
 None
 
-### Services
+## Services
 
 None
 
-### Language ID
+## Language ID
 
 `haxe`

@@ -5,14 +5,14 @@ slug: /languages/fortran
 ---
 
 
-### Status
+## Status
 Beta
 
-### Versions
+## Versions
 
 - `f2008` with GFortran 9 (`-std=f2008 -fall-intrinsics`)
 
-### Test Frameworks
+## Test Frameworks
 
 [Codewars Test Framework (CW2)](https://github.com/Codewars/fortran-test-framework)
 
@@ -57,15 +57,15 @@ end program
 ```
 
 
-### Timeout
+## Timeout
 12 seconds
 
-### Packages
+## Packages
 None
 
-### Services
+## Services
 None
 
-### Language ID
+## Language ID
 
 `fortran`

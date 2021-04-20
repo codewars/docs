@@ -5,14 +5,14 @@ slug: /languages/powershell
 ---
 
 
-### Status
+## Status
 
 Beta
 
-### Versions
+## Versions
 6.0.0
 
-### Test Frameworks
+## Test Frameworks
 [Pester](https://github.com/pester/Pester)
 
 ```powershell
@@ -61,15 +61,15 @@ Describe "Multiply" {
 }
 ```
 
-### Timeout
+## Timeout
 12 seconds
 
-### Packages
+## Packages
 None
 
-### Services
+## Services
 None
 
-### Language ID
+## Language ID
 
 `powershell`

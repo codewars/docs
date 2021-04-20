@@ -5,32 +5,32 @@ slug: /languages/coq
 ---
 
 
-### Versions
+## Versions
 
 - 8.12
 
-### Test Frameworks
+## Test Frameworks
 
 [coq_codewars](https://github.com/Codewars/coq_codewars)
 
-### Interactive Proof Editing Support
+## Interactive Proof Editing Support
 
 Unfortunately, the Codewars environment does not support the interactive development of Coq proofs. The current recommended method of solving a Kata is by copying the relevant code snippets onto your local machine and developing your solution locally: preloaded code should go into `Preloaded.v`, your solution into `Solution.v` and the Sample/Submit tests into `SolutionTest.v`.
 
-### Timeout
+## Timeout
 
 16 seconds
 
-### Packages
+## Packages
 
 - [Equations](http://mattam82.github.io/Coq-Equations/)
 - [TLC](https://www.chargueraud.org/softs/tlc/)
 - [mathcomp](http://math-comp.github.io/math-comp/)
 
-### Services
+## Services
 
 None
 
-### Language ID
+## Language ID
 
 `coq`

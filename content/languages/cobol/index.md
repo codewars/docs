@@ -5,19 +5,19 @@ slug: /languages/cobol
 ---
 
 
-### Status
+## Status
 
 Beta
 
-### Versions
+## Versions
 
 `IBM` (GnuCOBOL v2.2 `-std=ibm-strict -O2`)
 
-### Test Frameworks
+## Test Frameworks
 
 [`ZUT`](https://github.com/neopragma/cobol-unit-test) (zOS Unit Test)
 
-#### Example
+### Example
 
 ```cobol
 123456*
@@ -49,18 +49,18 @@ Beta
 Peloaded code is a copybook (`PRELOADED.CPY`) and can be used like `COPY PRELOADED.`.
 
 
-### Timeout
+## Timeout
 
 12 seconds
 
-### Packages
+## Packages
 
 None
 
-### Services
+## Services
 
 None
 
-### Language ID
+## Language ID
 
 `cobol`

@@ -5,19 +5,19 @@ slug: /languages/raku
 ---
 
 
-### Status
+## Status
 
 Beta
 
-### Versions
+## Versions
 
 [Rakudo 2020.09](https://github.com/rakudo/rakudo/releases/tag/2020.09)
 
-### Test Frameworks
+## Test Frameworks
 
 [Test](https://docs.raku.org/language/testing)
 
-#### Example
+### Example
 
 ```raku
 use v6;
@@ -45,19 +45,19 @@ done-testing;
 
 Preloaded code can be provided and it will be a separate module.
 
-### Timeout
+## Timeout
 
 12 seconds
 
-### Packages
+## Packages
 
 None
 
-### Services
+## Services
 
 None
 
 
-### Language ID
+## Language ID
 
 `raku`

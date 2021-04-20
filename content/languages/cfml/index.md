@@ -5,19 +5,19 @@ slug: /languages/cfml
 ---
 
 
-### Status
+## Status
 
 Beta
 
-### Versions
+## Versions
 
 Lucee v5.2
 
-### Test Frameworks
+## Test Frameworks
 
 [TestBox v3](https://testbox.ortusbooks.com)
 
-#### Example
+### Example
 
 The solution and the tests are written to `Solution.cfc` and `SolutionTest.cfc` respectively.
 Optional preloaded code is written to `Preloaded.cfc` if given.
@@ -47,19 +47,19 @@ component extends="CodewarsBaseSpec" {
 ```
 [`CodewarsBaseSpec`](https://github.com/Codewars/testbox-codewars/blob/master/CodewarsBaseSpec.cfc) allows grouping debugging outputs under the relevant test case.
 
-### Timeout
+## Timeout
 
 16 seconds
 
-### Packages
+## Packages
 
 None
 
-### Services
+## Services
 
 None
 
 
-### Language ID
+## Language ID
 
 `cfml`

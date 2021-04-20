@@ -5,13 +5,13 @@ slug: /languages/nasm
 ---
 
 
-### Versions
+## Versions
 
 2.11
 
 Submitted code is assembled with `nasm -f elf64`.
 
-### Test Frameworks
+## Test Frameworks
 
 [Criterion](https://criterion.readthedocs.io/en/master/)
 
@@ -31,15 +31,15 @@ Test(add_test, should_add_integers) {
 }
 ```
 
-### Timeout
+## Timeout
 12 seconds
 
-### Packages
+## Packages
 None
 
-### Services
+## Services
 None
 
-### Language ID
+## Language ID
 
 `nasm`
