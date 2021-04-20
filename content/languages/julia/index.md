@@ -5,20 +5,20 @@ slug: /languages/julia
 ---
 
 
-### Status
+## Status
 
 Beta
 
-### Versions
+## Versions
 
 - 1.0
 - 1.5
 
-### Test Frameworks
+## Test Frameworks
 
 [FactCheck](https://github.com/JuliaArchive/FactCheck.jl)
 
-#### Minimum Example
+### Minimum Example
 ```julia
 module Adder
   export add
@@ -34,7 +34,7 @@ facts("add") do
 end
 ```
 
-#### With Random Tests
+### With Random Tests
 ```julia
 using FactCheck
 using .Solution
@@ -58,11 +58,11 @@ facts("multiply") do
 end
 ```
 
-### Timeout
+## Timeout
 12 seconds
 
-### Packages
-#### 1.5
+## Packages
+### 1.5
 ```toml
 [deps]
 DataStructures = "864edb3b-99cc-5e75-8d2d-829cb0a9cfe8" # version = "0.18.9"
@@ -70,9 +70,9 @@ IterTools = "c8e1da08-722c-5040-9ed9-7db0dc04731e" # version = "1.3.0"
 Lazy = "50d2b5c4-7a5e-59d5-8109-a42b560f39c0" # version = "0.15.1"
 ```
 
-### Services
+## Services
 None
 
-### Language ID
+## Language ID
 
 `julia`

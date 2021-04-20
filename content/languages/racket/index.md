@@ -5,15 +5,15 @@ slug: /languages/racket
 ---
 
 
-### Versions
+## Versions
 
 [v7.2](https://blog.racket-lang.org/2019/01/racket-v7-2.html)
 
-### Test Frameworks
+## Test Frameworks
 
 [RackUnit](https://docs.racket-lang.org/rackunit/)
 
-#### Example
+### Example
 
 ```racket
 #lang racket
@@ -36,18 +36,18 @@ slug: /languages/racket
 Import `"solution.rkt"`, `rackunit` and [`codewars/rack-unit`](https://github.com/Codewars/codewars-rackunit).
 Optional preloaded code will be written to `"preloaded.rkt"`.
 
-### Timeout
+## Timeout
 
 12 seconds
 
-### Packages
+## Packages
 
 None
 
-### Services
+## Services
 
 None
 
-### Language ID
+## Language ID
 
 `racket`

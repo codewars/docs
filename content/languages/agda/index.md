@@ -4,31 +4,31 @@ sidebar_label: Overview
 slug: /languages/agda
 ---
 
-### Status
+## Status
 
 Beta
 
-### Versions
+## Versions
 
 2.6.0.1
 
-### Test Frameworks
+## Test Frameworks
 
 None. Make the program type check.
 
-### Timeout
+## Timeout
 
 16 seconds
 
-### Packages
+## Packages
 
 - stdlib [v1.0.1](https://github.com/agda/agda-stdlib/releases/tag/v1.0.1)
 - Cubical [b1fddc15](https://github.com/agda/cubical/commit/b1fddc15b80ed9569224b8a1461ae5f879dab826) (latest compatible with 2.6.0)
 
-### Services
+## Services
 
 None
 
-### Language ID
+## Language ID
 
 `agda`

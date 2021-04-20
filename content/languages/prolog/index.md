@@ -5,19 +5,19 @@ slug: /languages/prolog
 ---
 
 
-### Status
+## Status
 
 Beta
 
-### Versions
+## Versions
 
 SWI Prolog v8.0
 
-### Test Frameworks
+## Test Frameworks
 
 [plunit](https://www.swi-prolog.org/pldoc/doc_for?object=section(%27packages/plunit.html%27))
 
-#### Example
+### Example
 
 `plunit` can be used normally.
 ```prolog
@@ -37,18 +37,18 @@ test(add_1) :-
 The name of the solution module is inferred from the test file using the line `:- begin_tests(example).`.
 Optional preloaded code is written to `preloaded.pl`.
 
-### Timeout
+## Timeout
 
 12 seconds
 
-### Packages
+## Packages
 
 None
 
-### Services
+## Services
 
 None
 
-### Language ID
+## Language ID
 
 `prolog`

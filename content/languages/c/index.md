@@ -5,23 +5,23 @@ slug: /languages/c
 ---
 
 
-### Versions
+## Versions
 
 - Clang 8 / C18 (`-Wall -Wextra`)
 
-### Test Frameworks
+## Test Frameworks
 [Criterion](https://criterion.readthedocs.io/en/master/)
 
-### Timeout
+## Timeout
 12 seconds
 
-### Packages
+## Packages
 
 `-lm -lcrypto -ldl -pthread`
 
-### Services
+## Services
 None
 
-### Language ID
+## Language ID
 
 `c`

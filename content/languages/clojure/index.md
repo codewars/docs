@@ -5,15 +5,15 @@ slug: /languages/clojure
 ---
 
 
-### Versions
+## Versions
 1.8.0
-### Test Frameworks
+## Test Frameworks
 clojure.test
-### Timeout
+## Timeout
 12 seconds
-### Packages
+## Packages
 None 
-### Services
+## Services
 None
-### Language ID
+## Language ID
 `clojure`

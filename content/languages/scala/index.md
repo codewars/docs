@@ -5,29 +5,29 @@ slug: /languages/scala
 ---
 
 
-### Versions
+## Versions
 
 - 2.13
 
-### Test Frameworks
+## Test Frameworks
 
 [ScalaTest](http://www.scalatest.org/)
 
-### Timeout
+## Timeout
 
 16 seconds
 
-### Packages
+## Packages
 
-#### 2.13
+### 2.13
 
 - `cats-core` `2.0.0`
 - `cats-effect` `2.0.0`
 
-### Services
+## Services
 
 None
 
-### Language ID
+## Language ID
 
 `scala`

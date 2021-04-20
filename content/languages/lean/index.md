@@ -5,24 +5,24 @@ slug: /languages/lean
 ---
 
 
-### Version
+## Version
 
 - 3.18.4 with mathlib ([78655b6](https://github.com/leanprover-community/mathlib/tree/78655b6eef558ccb36772934ed98ed83d9a56802))
 - 3.20.0 with mathlib ([da66bb8](https://github.com/leanprover-community/mathlib/tree/da66bb81bf0466335bae82077f0c335dfe53aeb3))
 
-### Test Frameworks
+## Test Frameworks
 
 None
 
-### Allowed axioms
+## Allowed axioms
 
 As is usual in mathematical practice, you may freely invoke classical / non-computable principles in your Lean proofs without reservation, e.g. excluded middle, axiom of choice, etc. If constructivism / computability is a major concern then please consider switching to Coq / Idris / Agda instead.
 
-### Interactive Proof Editing Support
+## Interactive Proof Editing Support
 
 Unfortunately, the Codewars environment does not support the interactive development of Lean proofs. The current recommended method of solving a Kata is by copying the relevant code snippets onto your local machine and developing your solution locally.
 
-#### Setting up your local environment
+### Setting up your local environment
 
 Follow the [instructions over at leanprover-community](https://leanprover-community.github.io/get_started.html) to install the complete Lean development environment locally on your machine (if you haven't done so already). Then:
 
@@ -40,18 +40,18 @@ Follow the [instructions over at leanprover-community](https://leanprover-commun
 
 Now you should be good to go. When solving the kata locally, remember _not_ to modify `Preloaded.lean` or `SolutionTest.lean` - the only file you should be working on is `Solution.lean`. Then, once your project builds without any errors or sorries, copy-paste the full text of `Solution.lean` back to the kata trainer and hit the "Attempt" button. Given that your solution does not take more than 20s to compile, you should see the blue "Attempt" button turn into a green "Submit" button. Hit the green button and you've solved the kata!
 
-### Timeout
+## Timeout
 
 20 seconds
 
-### Packages
+## Packages
 
 None
 
-### Services
+## Services
 
 None
 
-### Language ID
+## Language ID
 
 `lean`

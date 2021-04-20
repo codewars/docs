@@ -5,11 +5,11 @@ slug: /languages/cpp
 ---
 
 
-### Versions
+## Versions
 
 - Clang 8 C++17 (`-std=c++17 -pthread -lm -lcrypto -ldl -ltbb -lfmt -O2 -Wall -Wextra -fsanitize=return`) with `libstdc++-9`
 
-### Test Frameworks
+## Test Frameworks
 
 - [Igloo](https://github.com/joakimkarlsson/igloo)
 
@@ -18,17 +18,17 @@ slug: /languages/cpp
 
 Some changes were made in order to produce output for Codewars and support C++17 ([diff](https://github.com/joakimkarlsson/igloo/compare/master...codewars:codewars)).
 
-### Timeout
+## Timeout
 12 seconds
 
-### Packages
+## Packages
 
 - `range-v3`
 - `fmt`
 
-### Services
+## Services
 None
 
-### Language ID
+## Language ID
 
 `cpp`

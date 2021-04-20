@@ -5,27 +5,27 @@ slug: /languages/solidity
 ---
 
 
-### Versions
+## Versions
 
 - 0.4.13 (Truffle v3.4.8)
 - 0.4.19 (Truffle v4.0.6)
 
-### Test Frameworks
+## Test Frameworks
 
 - [Mocha](http://truffleframework.com/docs/getting_started/javascript-tests)
 
-### Timeout
+## Timeout
 
 16 seconds
 
-### Packages
+## Packages
 
 - web3
 
-### Services
+## Services
 
 None
 
-### Language ID
+## Language ID
 
 `solidity`

@@ -5,13 +5,13 @@ slug: /languages/javascript
 ---
 
 
-### Versions
+## Versions
 
 - Node 8.x
 - Node 10.x
 - Node 12.x
 
-### Test Frameworks
+## Test Frameworks
 
 - [Codewars](https://github.com/Codewars/codewars.com/wiki/Codewars-JavaScript-Test-Framework)
 
@@ -29,7 +29,7 @@ If the failure output for deep equality is truncated, `chai.config.truncateThres
 
 If you're creating a kata, try inserting an example in the kata editor to get started.
 
-#### Example for Node v10.x/v12.x
+### Example for Node v10.x/v12.x
 
 ```javascript
 const chai = require("chai");
@@ -79,11 +79,11 @@ describe("Example", function() {
 
 Prefixing with `<LOG::-LABEL>` will put the message inside a container with `LABEL`. The `-` makes it collapsed by default.
 
-### Timeout
+## Timeout
 
 12 seconds
 
-### Node Modules
+## Node Modules
 
 > NOTE: Module versions are locked but may be updated. If an update happens, existing kata may need to be manually updated.
 
@@ -127,7 +127,7 @@ Prefixing with `<LOG::-LABEL>` will put the message inside a container with `LAB
 - web3
   - ganache-core
 
-### Services
+## Services
 - sqlite3
 - redis
 - mongodb
@@ -136,6 +136,6 @@ Prefixing with `<LOG::-LABEL>` will put the message inside a container with `LAB
 [mocha]: https://mochajs.org/
 
 
-### Language ID
+## Language ID
 
 `javascript`

@@ -5,22 +5,22 @@ slug: /languages/java
 ---
 
 
-### Versions
+## Versions
 
 - Java 8
 - Java 11
 
-### Test Frameworks
+## Test Frameworks
 
 JUnit (both JUnit 4 and 5 are supported)
 
-### Timeout
+## Timeout
 
 16 seconds
 
-### Packages
+## Packages
 
-#### Java 11
+### Java 11
 
 - `junit:junit`
 - `org.junit.jupiter:junit-jupiter-api`
@@ -37,10 +37,10 @@ JUnit (both JUnit 4 and 5 are supported)
 - `org.jsoup:jsoup`
 - `org.dom4j:dom4j`
 
-### Services
+## Services
 
 None
 
-### Language ID
+## Language ID
 
 `java`

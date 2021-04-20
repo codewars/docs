@@ -5,30 +5,30 @@ slug: /languages/factor
 ---
 
 
-### Status
+## Status
 
 Beta
 
-### Versions
+## Versions
 
 0.98
 
-### Test Frameworks
+## Test Frameworks
 
 [testest](https://github.com/Codewars/testest)
 
-### Timeout
+## Timeout
 
 12 seconds
 
-### Packages
+## Packages
 
 None
 
-### Services
+## Services
 
 None
 
-### Language ID
+## Language ID
 
 `factor`

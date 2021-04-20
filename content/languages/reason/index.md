@@ -5,19 +5,19 @@ slug: /languages/reason
 ---
 
 
-### Status
+## Status
 
 Beta
 
-### Versions
+## Versions
 
 3.3
 
-### Test Frameworks
+## Test Frameworks
 
 Jest ([bs-jest](https://github.com/glennsl/bs-jest))
 
-#### Example
+### Example
 
 ```ocaml
 let add = (a, b) => a + b;
@@ -35,18 +35,18 @@ describe("add", () => {
 
 Solution is always put in the `Solution` module. Optional preloaded code can be provided (`Preloaded` module).
 
-### Timeout
+## Timeout
 
 12 seconds
 
-### Packages
+## Packages
 
 None
 
-### Services
+## Services
 
 None
 
-### Language ID
+## Language ID
 
 `reason`

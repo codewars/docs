@@ -5,12 +5,12 @@ slug: /languages/ruby
 ---
 
 
-### Versions
+## Versions
 
 - 2.5
 - 3.0
 
-### Test Frameworks
+## Test Frameworks
 
 From Ruby 3.0, [RSpec](https://rspec.info/) is used under the hood:
 
@@ -28,15 +28,15 @@ See [`rspec-expectaions`](https://rspec.info/documentation/3.10/rspec-expectatio
 
 Earlier versions use [Codewars Test Framework](https://github.com/Codewars/codewars.com/wiki/Codewars-Ruby-Test-Framework) with similar syntax.
 
-### Timeout
+## Timeout
 
 12 seconds
 
-### Packages
+## Packages
 
 <!-- TODO organize gems by type/categories -->
 
-#### Ruby MRI 2.5
+### Ruby MRI 2.5
 
 - activesupport (5.2.0)
 - factory_bot (4.8.2)
@@ -56,7 +56,7 @@ Earlier versions use [Codewars Test Framework](https://github.com/Codewars/codew
 - sqlite3 (1.3.13)
 - webmock (3.4.2)
 
-#### Ruby MRI 3.0.0
+### Ruby MRI 3.0.0
 
 - faker (2.17.0)
 - faraday (1.3.0)
@@ -72,12 +72,12 @@ Earlier versions use [Codewars Test Framework](https://github.com/Codewars/codew
 - sqlite3 (1.4.2)
 - webmock (3.12.2)
 
-### Services
+## Services
 
 - sqlite
 - redis
 - mongodb
 
-### Language ID
+## Language ID
 
 `ruby`

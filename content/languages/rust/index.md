@@ -5,7 +5,7 @@ slug: /languages/rust
 ---
 
 
-### Versions
+## Versions
 
 - 1.49 (`edition = "2018"`)
 - 1.50 (`edition = "2018"`)
@@ -23,11 +23,11 @@ opt-level = 1
 opt-level = 3
 ```
 
-### Test Frameworks
+## Test Frameworks
 
 Rust kata uses builtin `#[test]`.
 
-### Example
+## Example
 
 ```rust
 pub fn add(x: i32, y: i32) -> i32 { x + y }
@@ -45,12 +45,12 @@ mod tests {
 ```
 Preloaded code is written to `preloaded.rs` since 1.50.
 
-### Timeout
+## Timeout
 12 seconds
 
-### Packages
+## Packages
 
-#### 1.49
+### 1.49
 
 ```toml
 [dependencies]
@@ -76,7 +76,7 @@ quickcheck = "1.0.1"
 quickcheck_macros = "1.0.0"
 ```
 
-#### 1.50
+### 1.50
 
 ```toml
 [dependencies]
@@ -103,10 +103,10 @@ quickcheck_macros = "1.0.0"
 float_eq = "0.5.0"
 ```
 
-### Services
+## Services
 
 None
 
-### Language ID
+## Language ID
 
 `rust`

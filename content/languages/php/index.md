@@ -5,13 +5,13 @@ slug: /languages/php
 ---
 
 
-### Versions
+## Versions
 
 - 7.0
 - 7.4
 - 8.0
 
-### Test Frameworks
+## Test Frameworks
 [PHPUnit](https://phpunit.de/)
 
 - [PHPUnit 5.7](https://phpunit.de/manual/5.7/en/) (PHP 7.0)
@@ -20,15 +20,15 @@ slug: /languages/php
 - [PHPUnit 9.5](https://phpunit.readthedocs.io/en/9.5/) (PHP 8.0)
   - The name of the test class must end with `Test`
 
-### Timeout
+## Timeout
 12 seconds
 
-### Packages
+## Packages
 None 
 
-### Services
+## Services
 None
 
-### Language ID
+## Language ID
 
 `php`

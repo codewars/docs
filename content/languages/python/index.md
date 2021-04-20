@@ -5,19 +5,19 @@ slug: /languages/python
 ---
 
 
-### Versions
+## Versions
 
 - 3.6
 
-### Test Frameworks
+## Test Frameworks
 
 - [Codewars Test Framework](/languages/python/codewars-test)
 - unittest
 
-### Timeout
+## Timeout
 12 seconds
 
-### Packages
+## Packages
 
 - beautifulsoup4 (bs4)
 - gmpy2
@@ -32,12 +32,12 @@ slug: /languages/python
 - scipy
 - six
 
-### Services
+## Services
 
 - sqlite
 - redis-server
 - mongodb
 
-### Language ID
+## Language ID
 
 `python`
