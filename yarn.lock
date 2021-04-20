@@ -1120,19 +1120,19 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
-"@docsearch/css@3.0.0-alpha.35":
-  version "3.0.0-alpha.35"
-  resolved "https://registry.yarnpkg.com/@docsearch/css/-/css-3.0.0-alpha.35.tgz#17579a6649cae7303ecac400795e84b1a906a5ed"
-  integrity sha512-Qaft+2qy7VYzy3j02OqurXtm1tCNXAfTO1u8R7ww4qB9+1Ns80kn9tJejbtQclgBbFCGf7kn7JShxwlpEMLUzw==
+"@docsearch/css@3.0.0-alpha.36":
+  version "3.0.0-alpha.36"
+  resolved "https://registry.yarnpkg.com/@docsearch/css/-/css-3.0.0-alpha.36.tgz#0af69a86b845974d0f8cab62db0218f66b6ad2d6"
+  integrity sha512-zSN2SXuZPDqQaSFzYa1kOwToukqzhLHG7c66iO+/PlmWb6/RZ5cjTkG6VCJynlohRWea7AqZKWS/ptm8kM2Dmg==
 
 "@docsearch/react@^3.0.0-alpha.33":
-  version "3.0.0-alpha.35"
-  resolved "https://registry.yarnpkg.com/@docsearch/react/-/react-3.0.0-alpha.35.tgz#ce7c2480384c4721976dc49f0962701e98b309d2"
-  integrity sha512-gL3CsZDvRhrrte2zjUFfnKC/jG2o2S6W9+v+m46Ro0juzfdSoKnVLyCr6MUi94asE6yF1zjCX1Z9xcpw0wq8YA==
+  version "3.0.0-alpha.36"
+  resolved "https://registry.yarnpkg.com/@docsearch/react/-/react-3.0.0-alpha.36.tgz#f2dbd53ba9c389bc19aea89a3ad21782fa6b4bb5"
+  integrity sha512-synYZDHalvMzesFiy7kK+uoz4oTdWSTbe2cU+iiUjwFMyQ+WWjWwGVnvcvk+cjj9pRCVaZo5y5WpqNXq1j8k9Q==
   dependencies:
     "@algolia/autocomplete-core" "1.0.0-alpha.44"
     "@algolia/autocomplete-preset-algolia" "1.0.0-alpha.44"
-    "@docsearch/css" "3.0.0-alpha.35"
+    "@docsearch/css" "3.0.0-alpha.36"
     algoliasearch "^4.0.0"
 
 "@docusaurus/core@2.0.0-alpha.73":
