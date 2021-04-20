@@ -6,7 +6,7 @@ module.exports = {
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
+  favicon: "favicon.ico",
   organizationName: "codewars",
   projectName: "docs",
   // https://docusaurus.io/docs/next/api/themes/configuration
@@ -25,7 +25,7 @@ module.exports = {
       hideOnScroll: true,
       logo: {
         alt: "Codewars Logo",
-        src: "img/logo.svg",
+        src: "logo.svg",
         // srcDark: "",
         href: "https://www.codewars.com/",
       },
