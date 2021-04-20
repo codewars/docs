@@ -9,7 +9,7 @@
 @tailwind utilities;
 
 :root {
-  --ifm-color-primary: #b1361e;
+  --ifm-color-primary: theme("colors.brand");
   --ifm-color-primary-dark: #9f311b;
   --ifm-color-primary-darker: #962e19;
   --ifm-color-primary-darkest: #7c2615;
@@ -155,4 +155,29 @@ html[data-theme="dark"] .anchored:target {
   & .admonition-content {
     @apply text-caution-content;
   }
+}
+
+html[data-theme="light"] .DocSearch {
+  --docsearch-primary-color: theme("colors.red.500");
+  --docsearch-highlight-color: var(--docsearch-primary-color);
+  --docsearch-searchbox-shadow: inset 0 0 0 2px var(--docsearch-primary-color);
+  --docsearch-logo-color: theme("colors.red.400");
+}
+
+html[data-theme="dark"] .DocSearch {
+  --docsearch-primary-color: theme("colors.red.800");
+  --docsearch-text-color: var(--ifm-font-color-base);
+  --docsearch-highlight-color: var(--docsearch-primary-color);
+  --docsearch-muted-color: var(--ifm-color-secondary-darkest);
+  --docsearch-container-background: rgba(47, 55, 69, 0.7);
+  --docsearch-logo-color: theme("colors.red.900");
+  --docsearch-modal-background: var(--ifm-background-color);
+  --docsearch-modal-shadow: inset 1px 1px 0 0 #2c2e40, 0 3px 8px 0 #000309;
+  --docsearch-searchbox-shadow: inset 0 0 0 2px var(--docsearch-primary-color);
+  --docsearch-footer-background: var(--ifm-background-surface-color);
+  --docsearch-key-gradient: linear-gradient(
+    -26.5deg,
+    var(--ifm-color-emphasis-200) 0%,
+    var(--ifm-color-emphasis-100) 100%
+  );
 }
