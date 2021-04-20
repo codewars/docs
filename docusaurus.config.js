@@ -14,6 +14,12 @@ module.exports = {
     colorMode: {
       defaultMode: "dark",
     },
+    algolia: {
+      // Search only API key
+      apiKey: "651420d53bdf2d24b6719c6777dc69a4",
+      indexName: "codewars-docs",
+      appId: "2O5VWTLFC8",
+    },
     navbar: {
       title: "Codewars",
       hideOnScroll: true,

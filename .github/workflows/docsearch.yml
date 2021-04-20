@@ -1,0 +1,22 @@
+name: DocSearch Scraper
+
+on:
+  schedule:
+    # Run daily at 00:00 UTC
+    - cron: "0 0 * * *"
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Get DocSearch Config
+        id: docsearch-config
+        run: echo "::set-output name=json::$(cat docsearch.json | jq -r tostring)"
+      - name: Run DocSearch Scraper
+        run: docker run -e TZ -e API_KEY -e APPLICATION_ID -e CONFIG algolia/docsearch-scraper:latest
+        env:
+          TZ: UTC
+          API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
+          APPLICATION_ID: "2O5VWTLFC8"
+          CONFIG: ${{ steps.docsearch-config.outputs.json }}
