@@ -19,6 +19,7 @@ module.exports = {
       apiKey: "651420d53bdf2d24b6719c6777dc69a4",
       indexName: "codewars-docs",
       appId: "2O5VWTLFC8",
+      contextualSearch: true,
     },
     navbar: {
       title: "Codewars",
