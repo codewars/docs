@@ -31,16 +31,12 @@ module.exports = {
         href: "https://www.codewars.com/",
       },
       items: [
-        // {
-        //   label: "Languages",
-        //   position: "left",
-        //   items: [
-        //     {
-        //       label: "JavaScript",
-        //       href: "/languages/javascript",
-        //     },
-        //   ],
-        // },
+        {
+          label: "Docs",
+          activeBaseRegex: "/(?!search)",
+          position: "left",
+          to: "/",
+        },
         {
           href: "https://github.com/codewars",
           position: "right",
