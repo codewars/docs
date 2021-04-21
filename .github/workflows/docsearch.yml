@@ -1,6 +1,7 @@
 name: DocSearch Scraper
 
 on:
+  workflow_dispatch:
   schedule:
     # Run daily at 00:00 UTC
     - cron: "0 0 * * *"
