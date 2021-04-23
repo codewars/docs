@@ -47,6 +47,7 @@ module.exports = {
         },
       ],
     },
+    hideableSidebar: true,
     footer: {
       links: [],
       copyright: `Copyright © ${new Date().getFullYear()} Codewars`,
