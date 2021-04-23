@@ -14,18 +14,18 @@ slug: /languages/r
 ### Using Preloaded Code
 
 Preloaded
-```R
+```r
 f <- function(a, b) { a + b }
 ```
 
 Solution
-```R
+```r
 source("setup.R")
 add <- f
 ```
 
 Tests
-```R
+```r
 test_that("addition using preloaded works", {
   expect_equal(add(1, 1), 2)
 })
@@ -42,7 +42,7 @@ Packages in the [tidyverse](https://www.tidyverse.org/) are installed (v1.2.1).
 Note that some packages requires `suppressPackageStartupMessages` or `warn.conflicts=FALSE` to avoid warnings printed to `stderr` causing failure (Codewars' limitation).
 
 Example:
-```R
+```r
 suppressPackageStartupMessages(
   library(dplyr)
 )
@@ -53,7 +53,7 @@ library(dplyr, warn.conflicts=FALSE)
 For `ggplot2`, use SVGs or data URIs to show the image. Specify `width` and `height` when calling `ggsave` to avoid message written to `stderr`.
 
 Example:
-```R
+```r
 library(ggplot2)
 # example plot
 p <- ggplot(mpg, aes(displ, hwy, colour = class)) + 

@@ -46,7 +46,7 @@ console.info(`toCelsius_4: ${toCelsius_4(degrees)}`);
 
 The above program prints:
 
-```test
+```text
 Human body:
 toCelsius_1: 37.77777777777778
 toCelsius_2: 37.77777777777778

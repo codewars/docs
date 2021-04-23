@@ -11,8 +11,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: github-pr-review
           locale: "US"
-          # Check all files
-          filter_mode: nofilter
+          pattern: "*.md*"
 
   languagetool:
     name: runner / languagetool

@@ -11,6 +11,7 @@ slug: /languages/rust
 - 1.50 (`edition = "2018"`)
 
 The following profiles are used to get decent performance in tests:
+
 ```toml
 [profile.dev]
 opt-level = 1
