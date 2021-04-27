@@ -42,6 +42,18 @@ C++-specific paragraphs can be inserted with [language conditional rendering](/r
 ~~~
 ```
 
+
+_TODO:_
+
+- includes (missing includes, C includes)
+- random utilities
+- stringizers
+- custom assertion messages (modifications to the testing framework: https://github.com/codewars/snowhouse/pull/3 )
+- compilation warnings
+- input and output values: const ref vs value, replacements for arrays and `std::vector`
+- avoid C: strings, arrays
+- input modification, changing the signature of solution function 
+
 <!--
 
 ## Tasks and Requirements
