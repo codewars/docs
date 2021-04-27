@@ -42,62 +42,53 @@ C++-specific paragraphs can be inserted with [language conditional rendering](/r
 ~~~
 ```
 
-
-_TODO:_
-
-- includes (missing includes, C includes)
-- random utilities
-- stringizers
-- custom assertion messages (modifications to the testing framework: https://github.com/codewars/snowhouse/pull/3 )
-- compilation warnings
-- input and output values: const ref vs value, replacements for arrays and `std::vector`
-- avoid C: strings, arrays
-- input modification, changing the signature of solution function 
-
-<!--
-
 ## Tasks and Requirements
 
-Some concepts don't always translate well to or from C++. Because of this, some constructs should be avoided and some translations just shouldn't be done. Some high-level languages, like Python or JavaScript, reside on the exact opposite end of the spectrum than C, and translating kata between them and C can result in significant differences in difficulty, requirements, and design of the solution.
-- C is much lower-level than many other popular languages available on Codewars. For this reason, many kata, even if their task can be translated to C directly, can turn out much harder in C than in the original language. There are many kata that were originally created as very easy and beginner-friendly (for example 8 kyu). But after translating into C, and adding aspects like memory management, or two dimensional C arrays, etc. they are not so easy anymore, and newbies complain that kata ranked 8 kyu is too difficult for them while it should be an entry-level task.
-- C is statically typed, so any task that depends on dynamic typing can be difficult to translate into C, and attempts of forcing a C kata to reflect a dynamically typed interface can lead to ideas that enforce a really bad design.
-- There are just a few additional libraries available for the C runner, so almost everything has to be implemented manually by the author or the user. Kata that take advantage of additional packages installed for other languages become much more difficult in C.
+Some concepts don't always translate well to or from C++. C++ allows for a variety of paradigms and techniques, and many of them are not widely spread accross other languages. Because of this, some constructs should be avoided and some translations just shouldn't be done.
+- C++ is statically typed, so any task that depends on dynamic typing can be difficult to translate into C++, and attempts of forcing a C++ kata to reflect a dynamically typed interface can lead to ideas that enforce a really bad design.
+- There are just a few additional libraries available for the C++ runner, so kata that take advantage of additional, specialized packages installed for other languages become much more difficult in C++.
+- Many features of C++ do not have direct equivalents in other popular languages: mixture of allowed paradigms, template meta-programming, unmanaged memory backed by RAII, native access to the platform and runtime, and many others. C++ kata which rely on them can be difficult to translate to other languages.
+
 
 ## Coding
 
 ### Code style
 
-Unlike for example Python or Java, there's no single guide for C code style, or even a set of naming conventions, which would be widely adopted and agreed upon by C programmers. Traditional naming conventions are using `snake_case`, Win32 API naming conventions are using `PascalCase`, there are GNU guidelines, Microsoft guidelines, Google guidelines, and some of them contradict each other. Just use whatever set of guidelines you like, but when you do, use it consistently.
+C++ programmers have many sets of naming conventions or code style guides. Some of them can be found for example [here](https://isocpp.org/wiki/faq/coding-standards), or [here](https://google.github.io/styleguide/cppguide.html). Codewars does not strictly enforce any of them, just use whatever set of guidelines you like, but when you do, use it consistently. 
+
 
 ### Header files
 
-Not as much of a problem for C as it is for C++, but still, C authors often forget to include required header files, or just leave them out deliberately because "it works" even when some of the files are not included. It happens mostly due to the following reasons:
-- The compiler provides an implicit declaration of a function, when it's encountered in the code and was not declared. However, this behavior is not standard and is now deprecated. You need to explicitly include header files for library functions you use or declare them in some other way.
-- Some header files include other header files indirectly, for example, file `foo.h` contains line `#include <bar.h>`, which might appear to make the explicit include for `bar.h` unnecessary. It's not true though, because the file `foo.h` might change one day, or might depend on some compiler settings or command line options, and after some changes to the configuration of the C runner, the `bar.h` might be not included there anymore. That's why every file (i.e. code snippet) of a kata should explicitly include all required header files declaring functions used in it.
-- The author might think that header files for the testing framework are included automatically by the code runner. That is not the case though, and test suites need to include `criterion/criterion.h` explicitly.
+C++ authors often forget to include required header files, or just leave them out deliberately because "it works" even when some of the files are not included. It happens mostly due to the following reasons:
+- C++ setup used by Codewars runner uses somewhat specific way to prepare and run kata snippets (TODO: describe C++ template). The structure of concatenated file which is compiled by the runner causes that some header files are included always, or that some files included in one kata snippet are automatically available in some other kata snippet. However, this behavior should not be relied on if not necessary, and every snippet should include all header files required by code it contains. 
+- Some header files include other header files indirectly, for example, file `foo.h` contains line `#include <bar.h>`, which might appear to make the explicit include for `bar.h` unnecessary. It's not true though, because the file `foo.h` might change one day, or might depend on some compiler settings or command line options, and after some changes to the configuration of the C++ runner, the `bar.h` might be not included there anymore.
+
 
 ### Compilation warnings
 
-Compiler options related to warnings used by the C runner are somewhat strict and require some discipline to get the code to compile cleanly. `-Wall` and `-Wextra` may cause numerous warnings and some of them are very pedantic. However, code of C kata should still compile cleanly, without any warnings logged to the console. Even when a warning does not cause any problem with tests, users get distracted by them and blame them for failing tests.
+Compiler options related to warnings used by the C++ runner are somewhat strict and require some discipline to get the code to compile cleanly. `-Wall` and `-Wextra` may cause numerous warnings and some of them are very pedantic. However, code of C++ kata should still compile cleanly, without any warnings logged to the console. Even when a warning does not cause any problem with tests, users get distracted by them and blame them for failing tests.
 
 
-### Working with pointers and memory management
+### Avoiding C
 
-Unlike many modern, high-level languages, C does not manage memory automatically. Manual memory management is a very vast and complex topic, with many possible ways of achieving the goal depending on a specific case, caveats, and pitfalls.
+Sometimes authors consider C++ just "a C, but with classes". While C and C++ are still compatible in many ways, such perception is wrong and incorrect use of C features in C++ code leads to bad code at best, to undefined behavior and difficult to diagnose errors in more extreme cases. Features and idioms from C language should be replaced with their equivalents from modern C++:
 
-Data hidden behind pointers can be arranged in many possible ways. Whenever a kata passes in a pointer to the user's solution or requires it to return or manipulate a pointer or data referenced by a pointer, it should **explicitly** and **clearly** provide all information necessary to carry out the operation correctly. The information can be put in one or more of the following places:
+- C features must not be used where they do not have well-defined behavior in C++. For example, memory management must not be done with `malloc`/`free` or similar, or VLAs should be replaced with `std::array` or `std::vector`.
+- C++ features should be preferred to ones inherited from C, for example:
+  - C-style casts should be replaced with their C++ equivalents.
+  - Functions originating from C should be replaced with related C++ functionalities: `<random>` instead of `rand`, `<iostream>` instead of `stdio.h`, etc.
+- C++ header files should not be confused with their C equivalents. For example, `cmath` or `cctype` should be used instead of `math.h` or `ctype.h`.
+- Proper C++ data types should be used instead of their C "equivalents". C-strings should be replaced with `std::string`, raw C-style arrays should be replaced with `std::array`, `std::vector`, or other containers, etc.
 
-- The code itself. Specifying that a pointer points to `const` data can serve as a hint that it has not been allocated dynamically and won't be freed. Size hints for array parameters can help understanding how arrays are organized, etc. Correctly specified types can be very helpful, but not always sufficient.
-- [Language-specific paragraph](#description) in the kata description.
-- As a comment in the "Solution setup" snippet.
-- When necessary, [sample tests](/authoring/guidelines/sample-tests/) should present an example of how data is composed, passed to the user solution, fetched from it, worked on, and cleaned up afterwards.
+--------
 
-When the structure, layout, or allocation scheme of pointed data is not described, users cannot know how to implement requirements without causing either a crash or a memory leak. Authors can choose the ownership strategy their kata should use, and the memory can be managed either by the test suite, by the user, or both. However, they should be aware of the advantages and disadvantages of each such strategy, and when and which applies the best. 
+_TODO:_
 
-Possible ways of handling memory management are described in the [Memory Management in C kata](/languages/c/authoring/memory-management-techniques/) article.
-
-One of the consequences of unmanaged memory is that it's strongly recommended against returning string constants from C functions, especially when translating kata from other languages. Returning a string in other languages is not a problem, but in C it always raises questions of who should allocate it and how it should be allocated. Consider replacing the string with some simpler data type (eventually aliased with a `typedef`), and/or provide some symbolic constants for available values. For example, if the requirement for the JavaScript version is: _"Return the string 'BLACK' if a black pawn will be captured first, 'WHITE' if a white one, and 'NONE' if all pawns are safe."_, C version should preferably provide and use the named constants `BLACK`, `WHITE` and `NONE`. If the author decides to keep raw C-strings as elements of the kata interface, they should clearly specify the required allocation scheme.
-
+- random utilities
+- stringizers
+- custom assertion messages (modifications to the testing framework: https://github.com/codewars/snowhouse/pull/3 )
+- input and output values: const ref vs value, replacements for arrays and `std::vector`
+- input modification, changing the signature of solution function 
 
 ## Tests
 
@@ -156,6 +147,7 @@ To avoid the above problems, calls to assertion functions should respect the fol
 
 In C, not everything can be easily tested. It's not possible to reliably verify the size or bounds of a returned buffer, or the validity of a returned pointer. It's difficult to test for conditions which result in a crash or undefined behavior. It cannot be reliably verified whether there's no memory leaks and if all allocated memory were correctly released. Sometimes the only way is to skip some checks or crash the tests.
 
+<!--
 
 ## Preloaded
 
