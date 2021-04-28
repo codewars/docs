@@ -44,7 +44,7 @@ C++-specific paragraphs can be inserted with [language conditional rendering](/r
 
 ## Tasks and Requirements
 
-Some concepts don't always translate well to or from C++. C++ allows for a variety of paradigms and techniques, and many of them are not widely spread across other languages. Because of this, some constructs should be avoided and some translations just shouldn't be done.
+Some concepts don't always translate well to or from C++. C++ allows for a variety of paradigms and techniques, many of which are not necessarily suited to other languages. For this reason, certain constructs should be avoided and some kata just should not be translated to C++.
 - C++ is statically typed, so any task that depends on dynamic typing can be difficult to translate into C++, and attempts to force a C++ kata to reflect a dynamically typed interface can lead to ideas that enforce a really bad design.
 - There are only a few additional libraries available to the C++ runner, so kata that take advantage of specialized packages installed for other languages become much more difficult to implement in C++.
 - Many features of C++ do not have direct equivalents in other popular languages: mixture of allowed paradigms, template meta-programming, unmanaged memory backed by RAII, native access to the platform and runtime, and many others. C++ kata which rely on them can be difficult to translate to other languages.
