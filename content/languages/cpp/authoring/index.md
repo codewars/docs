@@ -56,6 +56,14 @@ Some concepts don't always translate well to or from C++. C++ allows for a varie
 
 C++ programmers have many sets of naming conventions or code style guides. Some of them can be found for example [here](https://isocpp.org/wiki/faq/coding-standards), or [here](https://google.github.io/styleguide/cppguide.html). Codewars does not strictly enforce any of them, just use whatever set of guidelines you like, but when you do, use it consistently. 
 
+There's a few C++ coding guidelines which are violated by kata authors and translatiors particularly often:
+- Non-trivial arguments should be passed by const reference, and not by value.
+- Appropriate containers should be used:
+  - C-style raw arrays and pointers to arrays need to be avoided
+  - `std::array`, `std::pair`, or `std::tuple` should be used for data of known size
+  - `std::vector` should be used for arrays of varying size
+  - `std::string` should be used instead of C-strings
+
 
 ### Header files
 
@@ -126,10 +134,10 @@ To rectify such issue in your tests, you can make such types suitable for string
 _TODO:_
 
 - random utilities
-- input and output values: const ref vs value, replacements for arrays and `std::vector`
 - input modification, changing the signature of solution function 
 
 
+<!--
 
 ### Random utilities
 
@@ -175,7 +183,6 @@ To avoid the above problems, calls to assertion functions should respect the fol
 
 In C, not everything can be easily tested. It's not possible to reliably verify the size or bounds of a returned buffer, or the validity of a returned pointer. It's difficult to test for conditions which result in a crash or undefined behavior. It cannot be reliably verified whether there's no memory leaks and if all allocated memory were correctly released. Sometimes the only way is to skip some checks or crash the tests.
 
-<!--
 
 ## Preloaded
 
