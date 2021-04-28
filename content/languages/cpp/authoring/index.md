@@ -44,7 +44,7 @@ C++-specific paragraphs can be inserted with [language conditional rendering](/r
 
 ## Tasks and Requirements
 
-Some concepts don't always translate well to or from C++. C++ allows for a variety of paradigms and techniques, and many of them are not widely spread accross other languages. Because of this, some constructs should be avoided and some translations just shouldn't be done.
+Some concepts don't always translate well to or from C++. C++ allows for a variety of paradigms and techniques, and many of them are not widely spread across other languages. Because of this, some constructs should be avoided and some translations just shouldn't be done.
 - C++ is statically typed, so any task that depends on dynamic typing can be difficult to translate into C++, and attempts of forcing a C++ kata to reflect a dynamically typed interface can lead to ideas that enforce a really bad design.
 - There are just a few additional libraries available for the C++ runner, so kata that take advantage of additional, specialized packages installed for other languages become much more difficult in C++.
 - Many features of C++ do not have direct equivalents in other popular languages: mixture of allowed paradigms, template meta-programming, unmanaged memory backed by RAII, native access to the platform and runtime, and many others. C++ kata which rely on them can be difficult to translate to other languages.
@@ -52,7 +52,7 @@ Some concepts don't always translate well to or from C++. C++ allows for a varie
 
 ## Kata snippets and template
 
-Due to complicated compilation model of C++ code, paired with the fact that Codewars strictly enforces names of source files, their amount, and meaning, code runner uses a `[template]()` (TODO: document C++ runner template) to concatenate all kata snippets into a single translation unit. This fact has various consequences on the code, some positive, and some negative: namespace pollution, symbols introduced by one snippet being visible in other snippets, etc. However, in majority of cases, it does not affect kata in any way, and whenever possible, this behavior should be treated as implementation detail of C++ code runner. Kata snippets should be treated as separate source files, if possible.
+Due to complicated compilation model of C++ code, paired with the fact that Codewars strictly enforces names of source files, their amount, and meaning, code runner uses a `[template]()` (TODO: document C++ runner template) to concatenate all kata snippets into a single translation unit. This fact has various consequences on the code, some positive, and some negative: namespace pollution, symbols introduced by one snippet being visible in other snippets, etc. However, in the majority of cases, it does not affect kata in any way, and whenever possible, this behavior should be treated as implementation detail of C++ code runner. Kata snippets should be treated as separate source files, if possible.
 
 One consequence of using the template is that signature of solution function can be modified by the user in a way which can affect tests. To avoid possibility of users tampering with prototype of solution function, it's recommended to re-declare it in the tests snippet.
 
@@ -74,7 +74,7 @@ There's a few C++ coding guidelines which are violated by kata authors and trans
 
 ### Header files
 
-C++ authors often forget to include required header files, or just leave them out deliberately because "it works" even when some of the files are not included. It happens mostly due to the following reasons:
+C++ authors often forget to include required header files, or just leave them out deliberately because "it works" even when some files are not included. It happens mostly due to the following reasons:
 - C++ setup used by Codewars runner uses somewhat specific way to prepare and run kata snippets (TODO: describe C++ template). The structure of concatenated file which is compiled by the runner causes that some header files are included always, or that some files included in one kata snippet are automatically available in some other kata snippet. However, this behavior should not be relied on if not necessary, and every snippet should include all header files required by code it contains. 
 - Some header files include other header files indirectly, for example, file `foo.h` contains line `#include <bar.h>`, which might appear to make the explicit include for `bar.h` unnecessary. It's not true though, because the file `foo.h` might change one day, or might depend on some compiler settings or command line options, and after some changes to the configuration of the C++ runner, the `bar.h` might be not included there anymore.
 
@@ -139,7 +139,7 @@ To rectify such issue in your tests, you can make such types suitable for string
 
 ### Random utilities
 
-Until C++11, the most common way of producing random values was `rand` function. However, it has a set of problems: it needs to be properly seeded, and it's difficult to produce values outside of `0...RAND_MAX` range. Since C++11, standard library offers a set of functionalities which are designed to produce random values of different types, from various ranges, and with better distribution when compared to `rand`. Unfortunately, API presented in `random` header seems to be confusing and difficult to use and accompanied by amount of misconceptions, and authors either use it incorrectly, or resort to (not) good, old `rand`. However, working with `random` turns out to be not that difficult:
+Until C++11, the most common way of producing random values was `rand` function. However, it has a set of problems: it needs to be properly seeded, and it's difficult to produce values outside `0...RAND_MAX` range. Since C++11, standard library offers a set of functionalities which are designed to produce random values of different types, from various ranges, and with better distribution when compared to `rand`. Unfortunately, API presented in `random` header seems to be confusing and difficult to use and accompanied by amount of misconceptions, and authors either use it incorrectly, or resort to (not) good, old `rand`. However, working with `random` turns out to be not that difficult:
 
 ```cpp
 //use random_device only as a seed
@@ -185,7 +185,7 @@ The reference solution or data ___must not___ be defined in the [Preloaded code]
 
 ### Input mutation
 
-General guidelines for submission tests contain a section related to [input mutation](/authoring/guidelines/submission-tests/#input-mutation) and how to prevent users from abusing it to work around kata requirements. It's usually not a problem in "real world" C++ programming, but on Codewars, users can take advantage of vulnerable test suites and modify their behavior. Constness of a function argument can be forcefully cast away by a user, or they can change the function signature and remove `const` qualifier from input parameter(s).  After calling a user solution, tests should not rely on the state of such values and they should consider them as potentially modified by a user.
+General guidelines for submission tests contain a section related to [input mutation](/authoring/guidelines/submission-tests/#input-mutation) and how to prevent users from abusing it to work around kata requirements. It's usually not a problem in "real world" C++ programming, but on Codewars, users can take advantage of vulnerable test suites and modify their behavior. Constness of a function argument can be forcefully cast away by a user, or they can change the function signature and remove `const` qualifier from input parameter(s).  After calling a user solution, tests should not rely on the state of such values, and they should consider them as potentially modified by a user.
 
 
 ### Calling assertions
@@ -201,7 +201,7 @@ To avoid the above problems, calls to assertion functions should respect the fol
 - `Assert::That(bool)` should not be used, because it generates poor feedback on failure. The overload `Assert::That(bool_value, Equals(expected_value), message_supplier)` should be used instead.
 - Overloads of `Assert::That` which accept `message_supplier` should be preferred. Assertion message should provide meaningful details on the cause of failure, like test input, etc.
 - Some additional attention should be paid to the order of parameters passed to `Assert::That`. It differs between various assertion libraries, and it happens to be quite often confused by authors, mixing up `actual` and `expected` in assertion messages. For the C++ testing framework, the order is `(actual, SomeConstraint(expected))`.
-- To avoid unexpected crashes in tests, it's recommended to perform some additional assertions before assuming that the answer returned by the user solution has some particular form, or size. For example, if the solution returns a pointer, an explicit assertion should be added to check whether the returned pointer is valid, and not, for example, `nullptr`; the size of the returned container should be verified before accessing an element which could turn out to be located outside of its bounds.
+- To avoid unexpected crashes in tests, it's recommended to perform some additional assertions before assuming that the answer returned by the user solution has some particular form, or size. For example, if the solution returns a pointer, an explicit assertion should be added to check whether the returned pointer is valid, and not, for example, `nullptr`; the size of the returned container should be verified before accessing an element which could turn out to be located out of its bounds.
 
 
 ### Testability
@@ -344,7 +344,7 @@ Test(random_tests, large_arrays) {
     size_t array_size = rand() % 200 + 801;
     fill_random_array(array, array_size);
     
-    //since original array is no used after tests, it's enough to create only one copy
+    //since original array is not used after tests, it's enough to create only one copy
     memcpy(reference, array, sizeof(double) * array_size);
     
     square_every_item_ref(reference, array_size);
