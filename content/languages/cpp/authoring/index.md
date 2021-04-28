@@ -64,10 +64,10 @@ One consequence of using the template is that signature of solution function can
 C++ programmers have many sets of naming conventions or code style guides. Some of them can be found for example [here](https://isocpp.org/wiki/faq/coding-standards), or [here](https://google.github.io/styleguide/cppguide.html). Codewars does not strictly enforce any of them, just use whatever set of guidelines you like, but when you do, use it consistently. 
 
 There's a few C++ coding guidelines which are violated by kata authors and translatiors particularly often:
-- Non-trivial arguments should be passed by const reference, and not by value.
-- Appropriate containers should be used:
+- Arguments which are not cheap to copy should be passed by const reference, and not by value.
+- Appropriate containers should be used, _especially_ when used as input arguments or return values:
   - C-style raw arrays and pointers to arrays need to be avoided
-  - `std::array`, `std::pair`, or `std::tuple` should be used for data of known size
+  - `std::array`, `std::pair`, or `std::tuple` should be used for data of known size. Avoid representing 2D points or pairs with `std::vector`.
   - `std::vector` should be used for arrays of varying size
   - `std::string` should be used instead of C-strings
 
@@ -88,12 +88,12 @@ Compiler options related to warnings used by the C++ runner are somewhat strict 
 
 Sometimes authors consider C++ just "a C, but with classes". While C and C++ are still compatible in many ways, such perception is wrong and incorrect use of C features in C++ code leads to bad code at best, to undefined behavior and difficult to diagnose errors in more extreme cases. Features and idioms from C language should be replaced with their equivalents from modern C++:
 
-- C features must not be used where they do not have well-defined behavior in C++. For example, memory management must not be done with `malloc`/`free` or similar, or VLAs should be replaced with `std::array` or `std::vector`.
+- C features must not be used where they do not have well-defined behavior in C++. For example, memory management generally should not be done with `malloc`/`free` or similar, or VLAs should be replaced with `std::array` or `std::vector`.
 - C++ features should be preferred to ones inherited from C, for example:
   - C-style casts should be replaced with their C++ equivalents.
   - Functions originating from C should be replaced with related C++ functionalities: `<random>` instead of `rand`, `<iostream>` instead of `stdio.h`, etc.
 - C++ header files should not be confused with their C equivalents. For example, `cmath` or `cctype` should be used instead of `math.h` or `ctype.h`.
-- Proper C++ data types should be used instead of their C "equivalents". C-strings should be replaced with `std::string`, raw C-style arrays should be replaced with `std::array`, `std::vector`, or other containers, etc.
+- Proper C++ data types should be used instead of their C "equivalents", especially when used as elements of solution interface (input parameters and return value). C-strings should be replaced with `std::string` (or `std::string_view`), raw C-style arrays should be replaced with `std::array`, `std::vector`, or other containers, C++ pointer wrappers should be considered instead of raw pointers, etc.
 
 
 ## Tests
