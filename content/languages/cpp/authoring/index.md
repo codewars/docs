@@ -139,44 +139,39 @@ To rectify such issue in your tests, you can make such types suitable for string
 
 ### Random utilities
 
-Until C++11, the most common way of producing random values was `rand` function. However, it has a set of problems: it needs to be properly seeded, and it's difficult to produce values outside of `0...RAND_MAX` range. Since C++11, standard library offers a set of functionalities which are designed to produce random values of different types, from various ranges, and with better distribution when compared to `rand`. Unfortunately, API presented in `random` header seems to be confusing and difficult to use and accompanied by amount of misconceptions, and authors either use it icorrectly, or resort to good, old `rand`. However, working with `random` turns out to be not that difficult:
+Until C++11, the most common way of producing random values was `rand` function. However, it has a set of problems: it needs to be properly seeded, and it's difficult to produce values outside of `0...RAND_MAX` range. Since C++11, standard library offers a set of functionalities which are designed to produce random values of different types, from various ranges, and with better distribution when compared to `rand`. Unfortunately, API presented in `random` header seems to be confusing and difficult to use and accompanied by amount of misconceptions, and authors either use it incorrectly, or resort to (not) good, old `rand`. However, working with `random` turns out to be not that difficult:
 
 ```cpp
+//use random_device only as a seed
+std::random_device seed;
 
-#include <random>
+//create one PRNG which will be used to pick values
+//from (potentially many) distributions
+std::mt19937 engine{ seed() };
 
-Describe(TestSuite) {
-private:
+//a set of distributions for every type or range you are going to need in your tests
+std::uniform_int_distribution<    int> rand_number     {  1,  100 };
+std::uniform_int_distribution< size_t> rand_length     { 20,  100 };
+std::uniform_real_distribution<double> rand_coefficient{ -1,    1 };
+std::uniform_int_distribution<   char> rand_letter     { 'a', 'z' };
+std::uniform_int_distribution<   char> rand_bool       {   0,   1 };
+//etc.
 
-  //One random engine is usually enough.
-  std::mt19937 engine{ std::random_device{}() };
+//for convenience, distributions can be bound with PRNG
+auto gen_length = std::bind(rand_length, engine);
+auto gen_letter = std::bind(rand_letter, engine);
 
-  //A set of callables for every type or range you are going to need in your tests.
-  //For convenience, distributions are already bound with the PRNG.
-  std::function<int   ()> rand_number      = std::bind(std::uniform_int_distribution<    int>{  1,  100 }, engine);
-  std::function<size_t()> rand_length      = std::bind(std::uniform_int_distribution< size_t>{ 20,  100 }, engine);
-  std::function<double()> rand_coefficient = std::bind(std::uniform_real_distribution<double>{ -1,    1 }, engine);
-  std::function<char  ()> rand_letter      = std::bind(std::uniform_int_distribution<   char>{ 'a', 'z' }, engine);
-  std::function<bool  ()> rand_bool        = std::bind(std::uniform_int_distribution<   char>{   0,   1 }, engine);
-  // and etc.
+std::string input;
+//input string generator: string of random length, composed of random letters
+size_t input_length = gen_length(); //use length generator
+for(int i=0; i<input_length; ++i) {  
+  //string generation logic...
+  input.push_back(gen_letter()); //use generator of random letters
+}
 
-public:
-  It(RandomTests) {
-
-    size_t input_length = rand_length(); //use length generator
-    
-    std::string input;
-    for(int i=0; i<input_length; ++i) {
-      
-      //string generation logic...
-      input.push_back(rand_letter()); //use generator of random letters
-
-    }
-
-    //... testing logic    
-  }
-};
+//... testing logic    
 ```
+
 
 _TODO: `sample`, `shuffle`_
 
