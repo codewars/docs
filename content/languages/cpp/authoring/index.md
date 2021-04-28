@@ -136,12 +136,6 @@ In its default configuration, Snowhouse can produce confusing assertion messages
 
 To rectify such issue in your tests, you can make such types suitable for stringification in a way described in dedicated documentation article on [custom Snowhouse stringizers](/languages/cpp/igloo/stringizers/).
 
---------
-
-_TODO:_
-
-- input modification, changing the signature of solution function 
-
 
 ### Random utilities
 
@@ -184,7 +178,8 @@ public:
 };
 ```
 
-_TODO: `sample`, `shuffle`
+_TODO: `sample`, `shuffle`_
+
 
 ### Reference solution
 
