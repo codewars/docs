@@ -80,27 +80,55 @@ Sometimes authors consider C++ just "a C, but with classes". While C and C++ are
 - C++ header files should not be confused with their C equivalents. For example, `cmath` or `cctype` should be used instead of `math.h` or `ctype.h`.
 - Proper C++ data types should be used instead of their C "equivalents". C-strings should be replaced with `std::string`, raw C-style arrays should be replaced with `std::array`, `std::vector`, or other containers, etc.
 
---------
-
-_TODO:_
-
-- random utilities
-- stringizers
-- custom assertion messages (modifications to the testing framework: https://github.com/codewars/snowhouse/pull/3 )
-- input and output values: const ref vs value, replacements for arrays and `std::vector`
-- input modification, changing the signature of solution function 
 
 ## Tests
 
 ### Testing framework
 
-C kata use the [Criterion testing framework](/languages/c/criterion/) to implement and execute tests. Read its reference page to find out how to structure tests into groups and test cases, what assertions are available, etc.
+C++ kata use the [modified version](https://github.com/codewars/igloo) of [Igloo](https://github.com/joakimkarlsson/igloo) testing framework, along with [modified version](https://github.com/codewars/snowhouse) of [Snowhouse](https://github.com/banditcpp/snowhouse) assertion library. Codewars modified both libraries to adapt them to code runner environment and make them more useful for kata authors.
 
-Criterion supports many features that can be very helpful, but (unfortunately) are not commonly used by C authors. It allows for parameterized tests, setting up additional data, test fixture setup, teardown, custom descriptions, etc. 
+#### Custom assertion messages
 
-### Test feedback
+Drawback of the original version of Snowhouse assertion library is that neither its `AssertThat` macro, nor `Assert::That` function, accepts a custom assertion message which could be used by authors to provide detailed information on the cause of failure. To support authors with possibility to provide useful feedback, Codewars provides a set of overloads for `Assert::That`, which accept additional message supplier:
 
-You should notice that the report hooks used by the Codewars test runner produce one test output entry per assertion, so the test output panel can get very noisy.
+```cpp
+template<typename ActualType, typename ConstraintListType, typename MessageSupplierType>
+static void That(const ActualType& actual, ExpressionBuilder<ConstraintListType> expression, const MessageSupplierType& message_supplier, const char* file_name = "", int line_number = 0);
+
+template<typename ConstraintListType, typename MessageSupplierType>
+static void That(const char* actual, ExpressionBuilder<ConstraintListType> expression, const MessageSupplierType& message_supplier, const char* file_name = "", int line_number = 0)
+    
+template<typename ActualType, typename ExpressionType, typename MessageSupplierType>
+static void That(const ActualType& actual, const ExpressionType& expression, const MessageSupplierType& message_supplier, const char* file_name = "", int line_number = 0);
+
+template<typename ExpressionType, typename MessageSupplierType>
+static void That(const char* actual, const ExpressionType& expression, const MessageSupplierType& message_supplier, const char* file_name = "", int line_number = 0);
+```
+
+`message_supplier` is a callable compatible with a function accepting no arguments and returning `std::string`. It can be a function, a functor, a lambda expression, or an instance of any type supporting above requirements.
+
+For more details and examples of custom assertion messages, see `[Example test suite](#example_test_suite)` below, or `[Snowhouse reference](/languages/cpp/snowhouse/)` page.
+
+#### Stringizers
+
+In its default configuration, Snowhouse can produce confusing assertion messages, when `expected` and `actual` values are of type it cannot stringify:
+
+```text
+  does_not_pretty_print_type_without_stringizer
+    Expected: equal to [ [unsupported type], [unsupported type] ]
+    Actual: [ [unsupported type], [unsupported type] ]
+```
+
+To rectify such issue in your tests, you can make such types suitable for stringification in a way described in dedicated documentation article on [custom Snowhouse stringizers](/languages/cpp/igloo/stringizers/).
+
+--------
+
+_TODO:_
+
+- random utilities
+- input and output values: const ref vs value, replacements for arrays and `std::vector`
+- input modification, changing the signature of solution function 
+
 
 
 ### Random utilities
