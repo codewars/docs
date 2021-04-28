@@ -50,6 +50,13 @@ Some concepts don't always translate well to or from C++. C++ allows for a varie
 - Many features of C++ do not have direct equivalents in other popular languages: mixture of allowed paradigms, template meta-programming, unmanaged memory backed by RAII, native access to the platform and runtime, and many others. C++ kata which rely on them can be difficult to translate to other languages.
 
 
+## Kata snippets and template
+
+Due to complicated compilation model of C++ code, paired with the fact that Codewars strictly enforces names of source files, their amount, and meaning, code runner uses a `[template]()` (TODO: document C++ runner template) to concatenate all kata snippets into a single translation unit. This fact has various consequences on the code, some positive, and some negative: namespace pollution, symbols introduced by one snippet being visible in other snippets, etc. However, in majority of cases, it does not affect kata in any way, and whenever possible, this behavior should be treated as implementation detail of C++ code runner. Kata snippets should be treated as separate source files, if possible.
+
+One consequence of using the template is that signature of solution function can be modified by the user in a way which can affect tests. To avoid possibility of users tampering with prototype of solution function, it's recommended to re-declare it in the tests snippet.
+
+
 ## Coding
 
 ### Code style
@@ -133,35 +140,62 @@ To rectify such issue in your tests, you can make such types suitable for string
 
 _TODO:_
 
-- random utilities
 - input modification, changing the signature of solution function 
 
 
-<!--
-
 ### Random utilities
 
-Unlike some other languages, C does not provide too many means of generating random numbers which could be used to build random tests. `stdlib.h` header provides the `rand` function which, while being quite simple, satisfies the majority of needs, but sometimes can be tricky to be used correctly.
+Until C++11, the most common way of producing random values was `rand` function. However, it has a set of problems: it needs to be properly seeded, and it's difficult to produce values outside of `0...RAND_MAX` range. Since C++11, standard library offers a set of functionalities which are designed to produce random values of different types, from various ranges, and with better distribution when compared to `rand`. Unfortunately, API presented in `random` header seems to be confusing and difficult to use and accompanied by amount of misconceptions, and authors either use it icorrectly, or resort to good, old `rand`. However, working with `random` turns out to be not that difficult:
 
-Before `rand` is called for the first time, it must be seeded with `srand`. A call to `srand` should be performed only once, in the setup phase of the random tests. `srand` usually uses the current time as a seed, so authors need to include `time.h` before using the `time` function.
+```cpp
 
-`rand` can return integers only up to `RAND_MAX`. There's no standard-compliant way to generate random values of types `unsigned int`, `long`, or `double`. Authors who would like to generate random values out of the domain of `rand` have to craft them manually. _(TODO: create article with snippets with RNGs for types other than `int`)_
+#include <random>
 
-Additionally, the value of `RAND_MAX` might differ on different platforms, or even change. For the current Codewars setup it's `2^31-1`, but there are some common platforms with `RAND_MAX` being as small as `2^15-1`. This makes the code using `rand` even less portable, and while portability might not be a big concern for Codewars kata, it could turn out to be an issue for users trying to reproduce random tests locally.
+Describe(TestSuite) {
+private:
 
-An alternative to `rand` could be using random devices, like `/dev/urandom`. This way of generating random numbers could partially alleviate the issue of the `rand` being capped at `RAND_MAX`, but also could inflate the amount of the boilerplate code and could cause additional problems with portability.
+  //One random engine is usually enough.
+  std::mt19937 engine{ std::random_device{}() };
 
+  //A set of callables for every type or range you are going to need in your tests.
+  //For convenience, distributions are already bound with the PRNG.
+  std::function<int   ()> rand_number      = std::bind(std::uniform_int_distribution<    int>{  1,  100 }, engine);
+  std::function<size_t()> rand_length      = std::bind(std::uniform_int_distribution< size_t>{ 20,  100 }, engine);
+  std::function<double()> rand_coefficient = std::bind(std::uniform_real_distribution<double>{ -1,    1 }, engine);
+  std::function<char  ()> rand_letter      = std::bind(std::uniform_int_distribution<   char>{ 'a', 'z' }, engine);
+  std::function<bool  ()> rand_bool        = std::bind(std::uniform_int_distribution<   char>{   0,   1 }, engine);
+  // and etc.
+
+public:
+  It(RandomTests) {
+
+    size_t input_length = rand_length(); //use length generator
+    
+    std::string input;
+    for(int i=0; i<input_length; ++i) {
+      
+      //string generation logic...
+      input.push_back(rand_letter()); //use generator of random letters
+
+    }
+
+    //... testing logic    
+  }
+};
+```
+
+_TODO: `sample`, `shuffle`
 
 ### Reference solution
 
-If the test suite happens to use a reference solution to calculate expected values (which [should be avoided](/authoring/guidelines/submission-tests/#reference-solution) when possible), or some kind of reference data like precalculated arrays, etc., it must not be possible for the user to call it, redefine, overwrite or directly access its contents. To prevent this, it should be defined as `static` in the tests implementation file.
+If the test suite happens to use a reference solution to calculate expected values (which [should be avoided](/authoring/guidelines/submission-tests/#reference-solution) when possible), or some kind of reference data like precalculated arrays, etc., it must not be possible for the user to call it, redefine, overwrite, or directly access its contents. To prevent this, reference data can be made a private member of `Describe` structure. Reference solution can be either a private member of `Describe`, or a lambda-initialized local variable of an `It` block. See `[Example test suite](#example_test_suite)` for some examples.
 
 The reference solution or data ___must not___ be defined in the [Preloaded code](/authoring/guidelines/preloaded/).
 
 
 ### Input mutation
 
-General guidelines for submission tests contain a section related to [input mutation](/authoring/guidelines/submission-tests/#input-mutation) and how to prevent users from abusing it to work around kata requirements. Since C does not have reference semantics, it might appear that C kata are not affected by this problem, but it's not completely true. While data is passed to the user solution by value, it indeed cannot be easily modified by the user solution. However, when data is passed indirectly, by a pointer, or as an array, it can be modified _even when it's marked as `const`_. Constness of a function argument can be forcefully cast away by a user and then they would be able to modify values passed as `const T*` or as elements of `const T[]`. It's usually not a problem in "real world" C programming, but on Codewars, users can take advantage of vulnerable test suites and modify their behavior this way. After calling a user solution, tests should not rely on the state of such values and they should consider them as potentially modified by a user.
+General guidelines for submission tests contain a section related to [input mutation](/authoring/guidelines/submission-tests/#input-mutation) and how to prevent users from abusing it to work around kata requirements. It's usually not a problem in "real world" C++ programming, but on Codewars, users can take advantage of vulnerable test suites and modify their behavior. Constness of a function argument can be forcefully cast away by a user, or they can change the function signature and remove `const` qualifier from input parameter(s).  After calling a user solution, tests should not rely on the state of such values and they should consider them as potentially modified by a user.
 
 
 ### Calling assertions
@@ -173,26 +207,30 @@ Criterion provides a set of useful [assertions](/languages/c/criterion/#assertio
 
 To avoid the above problems, calls to assertion functions should respect the following rules:
 - The expected value should be calculated _before_ invoking an assertion. The `expected` parameter passed to the assertion should not be a function call expression, but a value calculated directly beforehand.
-- Appropriate assertion functions should be used for each given test. `cr_assert_eq` is not suitable in all situations. Use `cr_assert_float_eq` for floating point comparisons, `cr_assert` for tests on boolean values, `cr_assert_str_*` to test strings and `cr_assert_arr_*` to test arrays.
-- Some additional attention should be paid to the order of parameters passed to assertion macros. It differs between various assertion libraries, and it happens to be quite often confused by authors, mixing up `actual` and `expected` in assertion messages. For the C testing framework, the order is `(actual, expected)`.
-- To avoid unexpected crashes in tests, it's recommended to perform some additional assertions before assuming that the answer returned by the user solution has some particular form, or size. For example, if the solution returns a pointer (possibly pointing to an array), an explicit assertion should be added to check whether the returned pointer is valid, and not, for example, `NULL`; the size of the returned array, potentially reported by an output parameter, should be verified before accessing an element which could turn out to be located outside of its bounds.
-- Default messages produced by assertion macros are confusing, so authors should provide custom messages for failed assertions.
+- Appropriate assertion functions should be used for each given test. `AssertEquals` is not the only option, and Snowhouse provides a selection of constraints and expressions suitable for many scenarios: `EqualsWithDelta` for floating point comparisons, `EqualsContainer ` to compare containers with a predicate, etc.
+- `Assert::That(bool)` should not be used, because it generates poor feedback on failure. The overload `Assert::That(bool_value, Equals(expected_value), message_supplier)` should be used instead.
+- Overloads of `Assert::That` which accept `message_supplier` should be preferred. Assertion message should provide meaningful details on the cause of failure, like test input, etc.
+- Some additional attention should be paid to the order of parameters passed to `Assert::That`. It differs between various assertion libraries, and it happens to be quite often confused by authors, mixing up `actual` and `expected` in assertion messages. For the C++ testing framework, the order is `(actual, SomeConstraint(expected))`.
+- To avoid unexpected crashes in tests, it's recommended to perform some additional assertions before assuming that the answer returned by the user solution has some particular form, or size. For example, if the solution returns a pointer, an explicit assertion should be added to check whether the returned pointer is valid, and not, for example, `nullptr`; the size of the returned container should be verified before accessing an element which could turn out to be located outside of its bounds.
 
 
 ### Testability
 
-In C, not everything can be easily tested. It's not possible to reliably verify the size or bounds of a returned buffer, or the validity of a returned pointer. It's difficult to test for conditions which result in a crash or undefined behavior. It cannot be reliably verified whether there's no memory leaks and if all allocated memory were correctly released. Sometimes the only way is to skip some checks or crash the tests.
+In C++, not everything can be easily tested. It's not possible to reliably verify the validity of a returned pointer. It's difficult to test for conditions which result in a crash or undefined behavior. Sometimes the only way is to skip some checks or crash the tests.
 
 
 ## Preloaded
 
-As C is a quite low-level language, it often requires some boilerplate code to implement non-trivial tests, checks, and assertions. It can be tempting to put some code that would be common to sample tests and submission tests in the Preloaded snippet, but this approach sometimes proves to be problematic (see [here](/authoring/guidelines/preloaded/#accessibility-of-preloaded-code) why), and can cause some headaches for users who are interested in training on the kata locally, or checking how the user solution is called, etc. It's strongly discouraged to use preloaded code to make the code common for test snippets if it would hide some information or implementation details interesting to the user. 
+C++ sometimes requires some boilerplate code to implement non-trivial tests, checks, and assertions. It can be tempting to put some code that would be common to sample tests and submission tests in the Preloaded snippet, but this approach sometimes proves to be problematic (see [here](/authoring/guidelines/preloaded/#accessibility-of-preloaded-code) why), and can cause some headaches for users who are interested in training on the kata locally, or checking how the user solution is called, etc. It's strongly discouraged to use preloaded code to make the code common for test snippets if it would hide some information or implementation details interesting to the user. 
 
 
 ## Example test suite
 
 Below you can find an example test suite that covers most of the common scenarios mentioned in this article. Note that it does not present all possible techniques, so actual test suites can use a different structure, as long as they keep to established conventions and do not violate authoring guidelines.
 
+_TODO: create example test suite_
+
+<!--
 ```c
 //include headers for Criterion
 #include <criterion/criterion.h>
