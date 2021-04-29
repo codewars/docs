@@ -100,9 +100,9 @@ Sometimes authors consider C++ just "C, but with classes". While C and C++ are c
 
 ### `using` directives
 
-To avoid problems with namespace pollution, C++ snippets should not contain `using` directives (and especially `using namespace std;`) anywhere in the global namespace. Incorrect use of `using` can sometimes cause difficult to diagnose compilation problems. For example, `using namespace std;` placed incorrectly in "Complete solution" or in "Initial solution" snippet can result in failed compilation for _some_ users. To minimize such risks, authors should stick to following guidelines:
-- `using` directives should not be present in global scope of "Preloaded", "Complete solution", and "Initial solution" snippets. They are heavily discouraged in global scope of "Sample tests" and "Submission tests" snippets. This rule applies not only to `using namespace std;`, but also to other namespaces and namespace-qualified names.
-- `using` directives can be perfectly used in function scope: inside of an "Initial solution" function, in test helpers, or in `It` blocks.
+To avoid problems with namespace pollution, C++ snippets should not contain `using` directives (particularly `using namespace std;`) anywhere in the global namespace. Incorrect use of `using` can sometimes cause compilation problems that are difficult to diagnose. For example, `using namespace std;` placed incorrectly in the "Complete solution" or "Initial solution" snippet can result in failed compilation for _some_ users. To minimize such risks, authors should stick to following guidelines:
+- `using` directives should not be present in the global scope of "Preloaded", "Complete solution", and "Initial solution" snippets. They are heavily discouraged in the global scope of "Sample tests" and "Submission tests" snippets. This rule applies not only to `using namespace std;`, but also to other namespaces and namespace-qualified names.
+- `using` directives are perfectly fine inside the scope of an "Initial solution" function, test helpers, or `It` blocks.
 
 ## Tests
 
@@ -132,11 +132,11 @@ Describe(TestGroup_2) {
 };
 ```
 
-`Describe` blocks are expanded into C++ `struct`, and they can contain anything a structure can, in particular `public` and `private` access specifiers, member fields and functions, etc. `Describe` blocks can be also nested, with one remark: nested `Describe` sections compile and get registered for execution correctly, but test output panel does not report them hierarchically: all of them are flattened into one-level test report.
+`Describe` blocks are expanded into C++ `struct`s, and they can contain anything a `struct` can, in particular `public` and `private` access modifiers, member fields and functions, etc. `Describe` blocks can also be nested, with one caveat: while nested `Describe` sections are correctly compiled and registered for execution, the test output panel does not report them hierarchically; they are all flattened into a single-level test report.
 
 ### Snowhouse
 
-`Snowhouse` provides `Assert::That` function, which can accept either a constraint which has to be fulfilled by an asserted value (`Assert::That(actual, Equals(expected))`), or a fluent expression accepting actual value as input and returning a boolean value indicating a success or failure (`Assert::That(actual, Is().Equal(expected))`). Both types of assertions are equivalent to each other and authors can choose whichever suits them better. For clarity, this document uses only constraints as examples, but each of them has corresponding expression. Most useful ones are:
+`Snowhouse` provides the function `Assert::That`, which can accept either a constraint which has to be fulfilled by an asserted value (`Assert::That(actual, Equals(expected))`), or a fluent expression accepting actual value as input and returning a boolean value indicating success or failure (`Assert::That(actual, Is().Equal(expected))`). Both types of assertions are equivalent to each other and authors can choose whichever suits them better. For clarity, this document uses only constraints as examples, but each of them have corresponding expressions. The most useful ones are:
 - `Equals`
 - `EqualsWithDelta`
 - `EqualsContainer`
@@ -213,7 +213,7 @@ for(int i=0; i<input_length; ++i) {
 //... testing logic    
 ```
 
-Standard library also contains some functions which can be helpful when generating random inputs:
+The standard library also contains some functions which can be helpful when generating random inputs:
 
 - [`std::shuffle`](https://www.cplusplus.com/reference/algorithm/shuffle/) - randomly rearranges elements in range using generator.
 - [`std::sample`](https://en.cppreference.com/w/cpp/algorithm/sample) - randomly selects elements from the sequence, without replacement.
@@ -278,10 +278,10 @@ std::vector<int> square_every_item(const std::vector<int>& ages);
 
 Describe(FixedTests) {
   
-  //a test case of fixed_tests suite for primary scenario
+  // a test case of fixed_tests suite for a primary scenario
   It(ExampleArray) {
     
-    //using directive limited to non-global scope
+    // using directive limited to non-global scope
     using namespace std;
 
     vector<int> items    = { 0, 1, 2, 3,  4 };  
@@ -289,11 +289,11 @@ Describe(FixedTests) {
       
     auto actual = square_every_item(items);
     
-    //Assertion constraint checking for container equality
+    // Assertion constraint checking for container equality
     Assert::That(actual, EqualsContainer(expected), ExtraMessage("Invalid answer for { 0, 1, 2, 3, 4 }"));
   }
   
-  //a test case of fixed_tests suite for potential edge case
+  // a test case of fixed_tests suite for a potential edge case
   It(EmptyArray) {
     
     std::vector<int> empty;
@@ -312,7 +312,7 @@ private:
   std::function<size_t()> gen_small_size = std::bind(std::uniform_int_distribution<size_t>{  2,  10 }, engine);
   std::function<size_t()> gen_large_size = std::bind(std::uniform_int_distribution<size_t>{ 80, 100 }, engine);
 
-  //random test case generator
+  // random test case generator
   std::vector<int> generate_random_input(size_t size) {  
     std::vector<int> generated;
     std::generate_n(std::back_inserter(generated), size, gen_number);
@@ -332,41 +332,41 @@ private:
   
 public:  
   
-  //a set of small random tests, with verbose debugging messages
+  // a set of small random tests, with verbose debugging messages
   It(SmallArrays) {
     
     for(int i=0; i<10; ++i) {
       
-      //generate test case
+      // generate test case
       size_t input_size = gen_small_size();
       auto input = generate_random_input(input_size);
       
-      //tests need to copy the input vector, because
-      //it is used after calling user and reference solution
+      // tests need to copy the input vector, because
+      // it is used after calling the user and reference solution
       auto original = input;
       auto expected = square_every_item_ref(input);      
       
       auto actual = square_every_item(input);
   
-      //assertion uses custom message to avoid confusing test output
-      //it also uses data from original, non-mutated input array
+      // assertion uses a custom message to avoid confusing test output.
+      // it also uses data from original, non-mutated input array
       Assert::That(actual, EqualsContainer(expected), ExtraMessage(fmt::format("Input: {}", stringify_input(original))));
     }
   }  
 
-  //a set of large random tests, with not so detailed debugging messages
+  // a set of large random tests, with less detailed debugging messages
   It(LargeArrays) {
     
     for(int i=0; i<10; ++i) {
       
-      //generate test cases
+      // generate test cases
       size_t input_size = gen_large_size();
       auto input = generate_random_input(input_size);
       
       auto expected = square_every_item_ref(input);
       auto actual = square_every_item(input);
       
-      //assertion uses custom message supplier
+      // assertion uses custom message supplier
       Assert::That(actual, EqualsContainer(expected), [&]() {
         auto [act, exp] = std::mismatch(actual.cbegin(), actual.cend(), expected.cbegin());
         auto idx = act - actual.cbegin();
