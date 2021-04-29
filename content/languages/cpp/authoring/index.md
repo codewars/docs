@@ -98,9 +98,42 @@ Sometimes authors consider C++ just "C, but with classes". While C and C++ are c
 
 ## Tests
 
-### Testing framework
-
 C++ kata use the [modified version](https://github.com/codewars/igloo) of the [Igloo](https://github.com/joakimkarlsson/igloo) testing framework, along with a [modified version](https://github.com/codewars/snowhouse) of the [Snowhouse](https://github.com/banditcpp/snowhouse) assertion library. Codewars modified both libraries to adapt them to the code runner environment and make them more useful for kata authors.
+
+### Igloo
+
+General structure of tests created with Igloo can be presented as:
+
+```cpp
+Describe(TestGroup_1) {
+
+  It(TestCase_1) {
+    //...
+  }
+
+  It(TestCase_2) {
+    //...
+  }
+};
+
+Describe(TestGroup_2) {
+
+  It(TestCase_1) {
+    //...
+  }
+};
+```
+
+`Describe` blocks are expanded into C++ `struct`, and they can contain anything a structure can, in particular `public` and `private` access specifiers, member fields and functions, etc. `Describe` blocks can be also nested, with one remark: nested `Describe` sections compile and get registered for execution correctly, but test output panel does not report them hierarchically: all of them are flattened into one-level test report.
+
+### Snowhouse
+
+`Snowhouse` provides `Assert::That` function, which can accept either a constraint which has to be fulfilled by an asserted value (`Assert::That(actual, Equals(expected))`), or a fluent expression accepting actual value as input and returning a boolean value indicating a success or failure (`Assert::That(actual, Is().Equal(expected))`). Both types of assertions are equivalent to each other and authors can choose whichever suits them better. For clarity, this document uses only constraints as examples, but each of them has corresponding expression. Most useful ones are:
+- `Equals`
+- `EqualsWithDelta`
+- `EqualsContainer`
+- ... what else?
+
 
 #### Custom assertion messages
 
@@ -172,9 +205,12 @@ for(int i=0; i<input_length; ++i) {
 //... testing logic    
 ```
 
+Standard library also contains some functions which can be helpful when generating random inputs:
 
-_TODO: `sample`, `shuffle`_
+- [`std::shuffle`](https://www.cplusplus.com/reference/algorithm/shuffle/) - randomly rearranges elements in range using generator.
+- [`std::sample`](https://en.cppreference.com/w/cpp/algorithm/sample) - randomly selects elements from the sequence, without replacement.
 
+Note that `std::random_shuffle` is now considered obsolete and has been superseded by `std::shuffle`.
 
 ### Reference solution
 
