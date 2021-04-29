@@ -142,12 +142,12 @@ To rectify this issue in your tests, you can make such types suitable for string
 Until C++11, the most common way of producing random values was the `rand` function. However, it has a set of problems: it needs to be properly seeded, and it is difficult to produce values outside of `0...RAND_MAX` range. Since C++11, the standard library offers a set of functionalities which are designed to produce random values of different types, from various ranges, and with better distribution when compared to `rand`. Unfortunately, the API presented in the `random` header seems to be confusing and difficult to use and accompanied by a few misconceptions, and authors either use it incorrectly or resort to (not) good, old `rand`. However, working with `random` turns out to be not that difficult:
 
 ```cpp
-//use random_device only as a seed
-std::random_device seed;
+//use random_device only as a seeder
+std::random_device seeder;
 
 //create one PRNG which will be used to pick values
 //from (potentially many) distributions
-std::mt19937 engine{ seed() };
+std::mt19937 engine{ seeder() };
 
 //a set of distributions for every type or range you are going to need in your tests
 std::uniform_int_distribution<    int> rand_number     {  1,  100 };
@@ -218,119 +218,101 @@ C++ sometimes requires some boilerplate code to implement non-trivial tests, che
 
 Below you can find an example test suite that covers most of the common scenarios mentioned in this article. Note that it does not present all possible techniques, so actual test suites can use a different structure, as long as they keep to established conventions and do not violate authoring guidelines.
 
-_TODO: create example test suite_
+_TODO: finish example test suite_
 
-<!--
-```c
-//include headers for Criterion
-#include <criterion/criterion.h>
-
+```cpp
 //include all required headers
-#include <math.h>
-#include <time.h>
-#include <stdlib.h>
-#include <stddef.h>
-#include <stdint.h>
+#include <fmt/core.h>
+#include <fmt/ranges.h>
+
+#include <vector>
+#include <algorithm>
+#include <random>
+#include <sstream>
+#include <string>
 
 //redeclare the user solution
-void square_every_item(double items[], size_t size);
+std::vector<int> square_every_item(const std::vector<int>& ages);
 
-//reference solution defined as static
-static void square_every_item_ref(double items[], size_t size)
-{
-    for(size_t i = 0; i<size; ++i)
-    {
-      items[i] *= items[i];
+
+Describe(FixedTests) {
+  
+  //a test case of fixed_tests suite for primary scenario
+  It(ExampleArray) {
+    
+    std::vector<int> items    = { 0, 1, 2, 3,  4 };  
+    std::vector<int> expected = { 0, 1, 4, 9, 16 };
+      
+    auto actual = square_every_item(items);
+    
+    //Assertion constraint checking for container equality
+    Assert::That(actual, EqualsContainer(expected), ExtraMessage("Invalid answer for { 0, 1, 2, 3, 4 }"));
+  }
+  
+  //a test case of fixed_tests suite for potential edge case
+  It(EmptyArray) {
+    
+    std::vector<int> empty;
+    
+    auto actual = square_every_item(empty);
+    Assert::That(actual, IsEmpty(), ExtraMessage("Input: empty vector"));
+  }
+};
+
+Describe(RandomTests) {
+
+private:
+  
+  std::mt19937 engine{ std::random_device{}() };
+  std::function<int   ()> gen_number     = std::bind(std::uniform_int_distribution<int   >{  1, 100 }, engine);
+  std::function<size_t()> gen_small_size = std::bind(std::uniform_int_distribution<size_t>{  2,  10 }, engine);
+  std::function<size_t()> gen_large_size = std::bind(std::uniform_int_distribution<size_t>{ 20, 100 }, engine);
+
+  //random test case generator
+  std::vector<int> generate_random_input(size_t size) {  
+    std::vector<int> generated;
+    std::generate_n(std::back_inserter(generated), size, gen_number);
+    return generated;
+  }  
+  
+  std::vector<int> square_every_item_ref(const std::vector<int>& numbers) {
+    
+    std::vector<int> result = numbers;
+    std::transform(result.begin(), result.end(), result.begin(), [](int a) { return a * a; });
+    return result;
+  }
+  
+  std::string stringify_input(const std::vector<int>& input) {
+    return fmt::format("{}", fmt::join(input, ","));
+  }
+  
+public:  
+  
+  //a set of small random tests, with verbose debugging messages
+  It(SmallArrays) {
+    
+    for(int i=0; i<10; ++i) {
+      
+      //generate test case
+      size_t input_size = gen_small_size();
+      auto input = generate_random_input(input_size);
+      
+      //tests need to copy the input vector, because
+      //it is used after calling user and reference solution
+      auto original = input;
+      auto expected = square_every_item_ref(input);      
+      
+      auto actual = square_every_item(input);
+  
+      //assertion uses custom message to avoid confusing test output
+      //it also uses data from original, non-mutated input array
+      Assert::That(actual, EqualsContainer(expected), ExtraMessage(fmt::format("Input: {}", stringify_input(original))));
     }
-}
+  }  
+};
 
-//custom comparer for floating-point values
-static int cmp_double_fuzzy_equal(double* a, double* b) {
-  double diff = *a - *b;
-  return fabs(diff) < 1e-10 ? 0 : diff;
-}
+/*
 
-//random test case generator
-static void fill_random_array(double array[], size_t size) {  
-  for(size_t i=0; i<size; ++i) {
-    //use rand to generate doubles
-    array[i] = (double)rand() / RAND_MAX * 100;
-  }
-}
-
-//helper function
-static size_t get_mismatch_position(double actual[], double reference[], size_t size) {
-  for(size_t i=0; i<size; ++i) {
-    if(cmp_double_fuzzy_equal(actual+i, reference+i))
-      return i;
-  }
-  return SIZE_MAX;
-}
-
-//setup function, called by test suite setup macro below
-void setup_random_tests(void) {
-  srand(time(NULL));
-}
-
-//a test case of fixed_tests suite for primary scenario
-Test(fixed_tests, example_array) {
-  
-  double items[5]    = { 0.0, 1.1,  2.2,  3.3,   4.4 };  
-  double expected[5] = { 0.0, 1.21, 4.84, 10.89, 19.36 };
-    
-  square_every_item(items, 5);
-  
-  //assertion macro suitable for arrays of doubles
-  cr_assert_arr_eq_cmp(items, expected, 5, cmp_double_fuzzy_equal);
-}
-
-//a test case of fixed_tests suite for potential edge case
-Test(fixed_tests, empty_array) {
-  
-  const double dummy = 42.5;
-  double items[1] = { dummy };
-  
-  square_every_item(items, 0);
-  cr_assert_eq(items[0], dummy, "Empty array should not be tampered with.");
-}
-
-//setup of the test suite, if necessary
-TestSuite(random_tests, .init=setup_random_tests);
-
-//a set of small random tests, with verbose debugging messages
-Test(random_tests, small_arrays) {
-  
-  double input[10];
-  double actual[10];  
-  double reference[10];
-  
-  for(int i=0; i<10; ++i) {
-    
-    //generate test case
-    size_t array_size = rand() % 10 + 1;
-    fill_random_array(input, array_size);
-    
-    //kata requires the input to be mutated, so tests need to copy it, because
-    //input array is used after calling user and reference solution
-    memcpy(reference, input, sizeof(double) * array_size);
-    square_every_item_ref(reference, array_size);
-    
-    //copy is made from original input, and not from an array fed to
-    //the reference solution
-    memcpy(actual, input, sizeof(double) * array_size);    
-    square_every_item(actual, array_size);
-
-    //assertion uses custom message to avoid confusing test output
-    //it also uses data from original, non-mutated input array
-    size_t invalid_position = get_mismatch_position(actual, reference, array_size);
-    cr_assert_arr_eq_cmp(actual, reference, array_size, cmp_double_fuzzy_equal,
-                         "Invalid answer at position %zu for input value %f, expected %f but got %f",
-                         invalid_position, 
-                         input[invalid_position], 
-                         reference[invalid_position], 
-                         actual[invalid_position]);
-  }
-}
 
 //a set of large random tests, with not so detailed debugging messages
 Test(random_tests, large_arrays) {
@@ -354,6 +336,34 @@ Test(random_tests, large_arrays) {
     cr_assert_arr_eq_cmp(array, reference, array_size, cmp_double_fuzzy_equal, "Invalid answer for arrays of size %zu", array_size);
   }
 }
-```
 
--->
+/*
+
+
+//reference solution defined as static
+static void square_every_item_ref(double items[], size_t size)
+{
+    for(size_t i = 0; i<size; ++i)
+    {
+      items[i] *= items[i];
+    }
+}
+
+//custom comparer for floating-point values
+static int cmp_double_fuzzy_equal(double* a, double* b) {
+  double diff = *a - *b;
+  return fabs(diff) < 1e-10 ? 0 : diff;
+}
+
+//helper function
+static size_t get_mismatch_position(double actual[], double reference[], size_t size) {
+  for(size_t i=0; i<size; ++i) {
+    if(cmp_double_fuzzy_equal(actual+i, reference+i))
+      return i;
+  }
+  return SIZE_MAX;
+}
+
+
+*/
+```
