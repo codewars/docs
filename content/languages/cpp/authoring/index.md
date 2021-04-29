@@ -56,6 +56,8 @@ Due to the complicated compilation model of C++ code, paired with the fact that 
 
 One consequence of using a template is that the signature of a solution function can be modified by the user in a way which can affect tests. To avoid the possibility of users tampering with the prototype of a solution function, it's recommended to re-declare it in the tests snippet.
 
+Another issue caused by the use of the template is excessive namespace pollution. See paagraph on [namespaces](#namespaces) for more details.
+
 
 ## Coding
 
@@ -93,8 +95,14 @@ Sometimes authors consider C++ just "C, but with classes". While C and C++ are c
   - C-style casts should be replaced with their C++ equivalents.
   - Functions originating from C should be replaced with related C++ functionalities: `<random>` instead of `rand`, `<iostream>` instead of `stdio.h`, etc.
 - C++ header files should not be confused with their C equivalents. For example, `cmath` or `cctype` should be used instead of `math.h` or `ctype.h`.
-- Proper C++ data types should be used instead of their C "equivalents", especially when used as elements of a solution interface (input parameters and return value). C-strings should be replaced with `std::string` (or `std::string_view`), raw C-style arrays should be replaced with `std::array`, `std::vector`, or other containers, C++ pointer wrappers should be considered instead of raw pointers, etc.
+- Proper C++ data types should be used instead of their C "equivalents", especially when used as elements of a solution interface (input parameters and return value). C-strings should be replaced with `std::string` (or `std::string_view`), raw C-style arrays should be replaced with `std::array`, `std::vector`, or other containers, smart pointers should be considered instead of raw pointers, etc.
 
+
+### `using` directives
+
+To avoid problems with namespace pollution, C++ snippets should not contain `using` directives (and especially `using namespace std;`) anywhere in the global namespace. Incorrect use of `using` can sometimes cause difficult to diagnose compilation problems. For example, `using namespace std;` placed incorrectly in "Complete solution" or in "Initial solution" snippet can result in failed compilation for _some_ users. To minimize such risks, authors should stick to following guidelines:
+- `using` directives should not be present in global scope of "Preloaded", "Complete solution", and "Initial solution" snippets. They are heavily discouraged in global scope of "Sample tests" and "Submission tests" snippets. This rule applies not only to `using namespace std;`, but also to other namespaces and namespace-qualified names.
+- `using` directives can be perfectly used in function scope: inside of an "Initial solution" function, in test helpers, or in `It` blocks.
 
 ## Tests
 
@@ -273,8 +281,11 @@ Describe(FixedTests) {
   //a test case of fixed_tests suite for primary scenario
   It(ExampleArray) {
     
-    std::vector<int> items    = { 0, 1, 2, 3,  4 };  
-    std::vector<int> expected = { 0, 1, 4, 9, 16 };
+    //using directive limited to non-global scope
+    using namespace std;
+
+    vector<int> items    = { 0, 1, 2, 3,  4 };  
+    vector<int> expected = { 0, 1, 4, 9, 16 };
       
     auto actual = square_every_item(items);
     
