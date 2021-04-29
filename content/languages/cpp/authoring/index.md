@@ -70,8 +70,8 @@ There are a few C++ coding guidelines which are violated by kata authors and tra
 - Appropriate containers should be used, _especially_ when used as input arguments or return values:
   - C-style raw arrays and pointers to arrays need to be avoided
   - `std::array`, `std::pair`, or `std::tuple` should be used for data of known size. Avoid representing 2D points or pairs with `std::vector`.
-  - `std::vector` should be used for arrays of varying size
-  - `std::string` should be used instead of C-strings
+  - `std::vector` is not the only available option, and can be replaced by another container (for example, `std::set`), a set of iterators, a range, or any other construct suitable for the task.
+  - `std::string` or `std::string_view` should be used instead of C-strings
 
 
 ### Header files
@@ -205,7 +205,7 @@ auto gen_letter = std::bind(rand_letter, engine);
 std::string input;
 //input string generator: string of random length, composed of random letters
 size_t input_length = gen_length(); //use length generator
-for(int i=0; i<input_length; ++i) {  
+for(size_t i=0; i<input_length; ++i) {  
   //string generation logic...
   input.push_back(gen_letter()); //use generator of random letters
 }
