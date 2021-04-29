@@ -190,17 +190,16 @@ General guidelines for submission tests contain a section related to [input muta
 
 ### Calling assertions
 
-Criterion provides a set of useful [assertions](/languages/c/criterion/#assertions), but when used incorrectly, they can cause a series of problems:
-- Stacktraces of a crashing user solution can reveal details that should not be visible,
+Snowhouse provides a set of useful `[assertions (TODO: link to reference)](/languages/c/criterion/#assertions)`, but when used incorrectly, they can cause a series of problems:
 - Use of an assertion not suitable for the given case may lead to incorrect test results,
 - Incorrectly used assertions may produce confusing or unhelpful messages.
 
 To avoid the above problems, calls to assertion functions should respect the following rules:
-- The expected value should be calculated _before_ invoking an assertion. The `expected` parameter passed to the assertion should not be a function call expression, but a value calculated directly beforehand.
+- The expected value should be calculated _before_ invoking an assertion. The `expected` parameter passed to the assertion should not be a function call expression, but a value calculated directly beforehand. _(? does this point hold for C++ kata?)_
 - Appropriate assertion functions should be used for each given test. `AssertEquals` is not the only option, and Snowhouse provides a selection of constraints and expressions suitable for many scenarios: `EqualsWithDelta` for floating point comparisons, `EqualsContainer ` to compare containers with a predicate, etc.
-- `Assert::That(bool)` should not be used, because it generates poor feedback on failure. The overload `Assert::That(bool_value, Equals(expected_value), message_supplier)` should be used instead.
 - Overloads of `Assert::That` which accept `message_supplier` should be preferred. Assertion message should provide meaningful details on the cause of failure, like test input, etc.
-- Some additional attention should be paid to the order of parameters passed to `Assert::That`. It differs between various assertion libraries, and authors quite often happen to confuse `actual` and `expected` in assertion messages. For the C++ testing framework, the order is `(actual, SomeConstraint(expected))`.
+- `Assert::That(bool)` should not be used, because it generates poor feedback on failure. The overload `Assert::That(bool_value, Equals(expected_value), message_supplier)` should be used instead.
+- Some additional attention should be paid to the order of parameters passed to `Assert::That`. Authors quite often happen to confuse `actual` and `expected` in assertion messages. For the C++ testing framework, the order is `(actual, SomeConstraint(expected))`.
 - To avoid unexpected crashes in tests, it's recommended to perform some additional assertions before assuming that the answer returned by the user solution has some particular form or size. For example, if the solution returns a pointer, an explicit assertion should be added to check whether the returned pointer is valid, and not, for example, `nullptr`; the size of the returned container should be verified before accessing an element which could turn out to be located out of its bounds.
 
 
@@ -217,8 +216,6 @@ C++ sometimes requires some boilerplate code to implement non-trivial tests, che
 ## Example test suite
 
 Below you can find an example test suite that covers most of the common scenarios mentioned in this article. Note that it does not present all possible techniques, so actual test suites can use a different structure, as long as they keep to established conventions and do not violate authoring guidelines.
-
-_TODO: finish example test suite_
 
 ```cpp
 //include all required headers
@@ -266,7 +263,7 @@ private:
   std::mt19937 engine{ std::random_device{}() };
   std::function<int   ()> gen_number     = std::bind(std::uniform_int_distribution<int   >{  1, 100 }, engine);
   std::function<size_t()> gen_small_size = std::bind(std::uniform_int_distribution<size_t>{  2,  10 }, engine);
-  std::function<size_t()> gen_large_size = std::bind(std::uniform_int_distribution<size_t>{ 20, 100 }, engine);
+  std::function<size_t()> gen_large_size = std::bind(std::uniform_int_distribution<size_t>{ 80, 100 }, engine);
 
   //random test case generator
   std::vector<int> generate_random_input(size_t size) {  
@@ -309,61 +306,26 @@ public:
       Assert::That(actual, EqualsContainer(expected), ExtraMessage(fmt::format("Input: {}", stringify_input(original))));
     }
   }  
-};
 
-/*
-
-
-//a set of large random tests, with not so detailed debugging messages
-Test(random_tests, large_arrays) {
-  
-  double array[1000];     //small enough to be allocated on the stack,
-  double reference[1000]; //but you can use dynamic memory if necessary.
-  
-  for(int i=0; i<10; ++i) {
+  //a set of large random tests, with not so detailed debugging messages
+  It(LargeArrays) {
     
-    //generate test cases
-    size_t array_size = rand() % 200 + 801;
-    fill_random_array(array, array_size);
-    
-    //since original array is not used after tests, it's enough to create only one copy
-    memcpy(reference, array, sizeof(double) * array_size);
-    
-    square_every_item_ref(reference, array_size);
-    square_every_item(array, array_size);
-    
-    //assertion uses custom message
-    cr_assert_arr_eq_cmp(array, reference, array_size, cmp_double_fuzzy_equal, "Invalid answer for arrays of size %zu", array_size);
-  }
-}
-
-/*
-
-
-//reference solution defined as static
-static void square_every_item_ref(double items[], size_t size)
-{
-    for(size_t i = 0; i<size; ++i)
-    {
-      items[i] *= items[i];
+    for(int i=0; i<10; ++i) {
+      
+      //generate test cases
+      size_t input_size = gen_large_size();
+      auto input = generate_random_input(input_size);
+      
+      auto expected = square_every_item_ref(input);
+      auto actual = square_every_item(input);
+      
+      //assertion uses custom message supplier
+      Assert::That(actual, EqualsContainer(expected), [&]() {
+        auto [act, exp] = std::mismatch(actual.cbegin(), actual.cend(), expected.cbegin());
+        auto idx = act - actual.cbegin();
+        return fmt::format("Invalid answer for inputs of size {}: vectors mismatch at position {}, expected: {}, actual: {}", input_size, idx, *exp, *act);
+      });
     }
-}
-
-//custom comparer for floating-point values
-static int cmp_double_fuzzy_equal(double* a, double* b) {
-  double diff = *a - *b;
-  return fabs(diff) < 1e-10 ? 0 : diff;
-}
-
-//helper function
-static size_t get_mismatch_position(double actual[], double reference[], size_t size) {
-  for(size_t i=0; i<size; ++i) {
-    if(cmp_double_fuzzy_equal(actual+i, reference+i))
-      return i;
   }
-  return SIZE_MAX;
-}
-
-
-*/
+};
 ```
