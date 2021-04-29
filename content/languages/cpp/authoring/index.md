@@ -90,7 +90,7 @@ Compiler options related to warnings used by the C++ runner are somewhat strict 
 
 Sometimes authors consider C++ just "C, but with classes". While C and C++ are compatible in many ways, that kind of perception is wrong: incorrect use of C features in C++ code leads to bad code at best, or to undefined behavior and difficult to diagnose errors in more extreme cases. Features and idioms from C language should be replaced with their equivalents from modern C++:
 
-- C features must not be used where they do not have well-defined behavior in C++. For example, memory management generally should not be done with `malloc`/`free` or similar, and VLAs should be replaced with `std::array` or `std::vector`.
+- C features must not be used where they do not have well-defined behavior in C++. For example, memory management generally should not be done with `malloc`/`free` or similar, and VLAs should be replaced with `std::vector`.
 - C++ features should be preferred over those inherited from C, for example:
   - C-style casts should be replaced with their C++ equivalents.
   - Functions originating from C should be replaced with related C++ functionalities: `<random>` instead of `rand`, `<iostream>` instead of `stdio.h`, etc.
