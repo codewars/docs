@@ -1,6 +1,7 @@
 ---
 title: Authoring C++ Content
 sidebar_label: Authoring
+slug: /languages/cpp/authoring
 ---
 
 This article is meant for kata authors and translators who would like to create new content in C++. It attempts to explain how to create and organize things in a way conforming to [authoring guidelines](/authoring/guidelines/), shows the most common pitfalls and how to avoid them.
