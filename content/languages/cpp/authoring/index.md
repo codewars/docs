@@ -1,5 +1,5 @@
 ---
-title: Authoring JavaScript Content
+title: Authoring C++ Content
 sidebar_label: Authoring
 ---
 
