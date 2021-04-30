@@ -232,7 +232,7 @@ General guidelines for submission tests contain a section related to [input muta
 
 ### Calling assertions
 
-Snowhouse provides a set of useful `[assertions (TODO: link to reference)](/languages/c/criterion/#assertions)`, but when used incorrectly, they can cause a series of problems:
+Snowhouse provides a set of useful [assertions](/languages/cpp/igloo#snowhouse-assertions)`, but when used incorrectly, they can cause a series of problems:
 - Use of an assertion not suitable for the given case may lead to incorrect test results,
 - Incorrectly used assertions may produce confusing or unhelpful messages.
 
