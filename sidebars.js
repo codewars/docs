@@ -164,6 +164,7 @@ module.exports = {
           label: "C++",
           items: [
             "languages/cpp/index",
+            "languages/cpp/authoring/index",
             {
               type: "category",
               label: "igloo",
