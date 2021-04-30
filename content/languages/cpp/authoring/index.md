@@ -50,7 +50,7 @@ Some concepts don't always translate well to or from C++. C++ allows for a varie
 
 ## Kata snippets and template
 
-Due to the complicated compilation model of C++ code, paired with the fact that Codewars strictly enforces the names, amount, and meaning of source files, the code runner uses a `[template]()` (TODO: document C++ runner template) to concatenate all kata snippets into a single translation unit. This fact has various consequences on the code, some positive, and some negative: namespace pollution, symbols introduced by one snippet being visible in other snippets, etc. However, in the majority of cases, it does not affect kata in any way, and whenever possible, this behavior should be treated as an implementation detail of the C++ code runner. Kata snippets should be treated as separate source files, if possible.
+Due to the complicated compilation model of C++ code, paired with the fact that Codewars strictly enforces the names, amount, and meaning of source files, the code runner uses a [template](/languages/cpp/solution_template) to concatenate all kata snippets into a single translation unit. This fact has various consequences on the code, some positive, and some negative: namespace pollution, symbols introduced by one snippet being visible in other snippets, etc. However, in the majority of cases, it does not affect kata in any way, and whenever possible, this behavior should be treated as an implementation detail of the C++ code runner. Kata snippets should be treated as separate source files, if possible.
 
 One consequence of using a template is that the signature of a solution function can be modified by the user in a way which can affect tests. Make sure that tests are not possible to work around by users tampering with the prototype of the solution function. One possible way to ensure this is to re-declare the solution function in the tests snippet.
 
@@ -75,7 +75,7 @@ There are a few C++ coding guidelines which are violated by kata authors and tra
 ### Header files
 
 C++ authors often forget to include required header files, or just leave them out deliberately because "it works" even when some files are not included. It happens mostly due to the following reasons:
-- C++ setup used by the Codewars runner uses a somewhat specific way to prepare and run kata snippets (TODO: describe C++ template). The structure of concatenated files which the runner compiles causes some header files to always be included, or makes some files included in one kata snippet automatically available to some other kata snippet. However, this behavior should not be relied upon if not necessary.
+- C++ setup used by the Codewars runner uses a somewhat specific way to prepare and run kata snippets (see [Kata snippets and template](#kata-snippets-and-template)). The structure of concatenated files which the runner compiles causes some header files to always be included, or makes some files included in one kata snippet automatically available to some other kata snippet. However, this behavior should not be relied upon if not necessary.
 - Some header files include other header files indirectly; for example, if file `foo.h` contains line `#include <bar.h>`, that might appear to make the explicit include for `bar.h` unnecessary. This is not true though, because the file `foo.h` might change one day, or might depend on some compiler settings or command line options, and after some changes to the configuration of the C++ runner, the file `bar.h` might be not included there anymore.
 
 Every snippet should include all header files required by the code it contains. 
@@ -243,6 +243,11 @@ To avoid the above problems, calls to assertion functions should respect the fol
 - `Assert::That(bool)` should not be used, because it generates poor feedback on failure. The overload `Assert::That(bool_value, Equals(expected_value), message_supplier)` should be used instead.
 - Some additional attention should be paid to the order of parameters passed to `Assert::That`. Authors quite often happen to confuse `actual` and `expected` in assertion messages. For the C++ testing framework, the order is `(actual, SomeConstraint(expected))`.
 - To avoid unexpected crashes in tests, it's recommended to perform some additional assertions before assuming that the answer returned by the user solution has some particular form or size. For example, if the solution returns a pointer, an explicit assertion should be added to check whether the returned pointer is valid, and not, for example, `nullptr`; the size of the returned container should be verified before accessing an element which could turn out to be located out of its bounds.
+
+
+### Additional libraries
+
+Currently, C++ setup provides just a few [additional libraries](/languages/cpp/#packages), but they can come helpful for authors to create better kata. For example, `{fmt}` library can be used to compose assertion messages and provide better feedback from tests.
 
 
 ### Testability
