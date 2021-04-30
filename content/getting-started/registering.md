@@ -28,7 +28,7 @@ If your answer is correct, you will experience the best thing in the life of a c
 
 ## Your new account
 
-Congratulations! You solved your first Codewars challenge. Now you are ready to finish creating your account. Simply fill in a few details or use your GitHub account to authenticate Codewars:
+Congratulations! You solved your first Codewars challenge. Now you are ready to finish creating your account. Simply fill in a few details or use your GitHub account to authenticate yourself on Codewars:
 
 ![enlist](./img/registering_05_enlist.png)
 
