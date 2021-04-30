@@ -54,7 +54,7 @@ Due to the complicated compilation model of C++ code, paired with the fact that 
 
 One consequence of using a template is that the signature of a solution function can be modified by the user in a way which can affect tests. Make sure that tests are not possible to work around by users tampering with the prototype of the solution function. One possible way to ensure this is to re-declare the solution function in the tests snippet.
 
-Another issue caused by the use of the template is excessive namespace pollution. See paagraph on [namespaces](#namespaces) for more details.
+Another issue caused by the use of the template is excessive namespace pollution. See paagraph on [`using` directives`](#using-directives) for more details.
 
 
 ## Coding
@@ -75,8 +75,10 @@ There are a few C++ coding guidelines which are violated by kata authors and tra
 ### Header files
 
 C++ authors often forget to include required header files, or just leave them out deliberately because "it works" even when some files are not included. It happens mostly due to the following reasons:
-- C++ setup used by the Codewars runner uses a somewhat specific way to prepare and run kata snippets (TODO: describe C++ template). The structure of concatenated files which the runner compiles causes some header files to always be included, or makes some files included in one kata snippet automatically available to some other kata snippet. However, this behavior should not be relied upon if not necessary, and every snippet should include all header files required by the code it contains. 
+- C++ setup used by the Codewars runner uses a somewhat specific way to prepare and run kata snippets (TODO: describe C++ template). The structure of concatenated files which the runner compiles causes some header files to always be included, or makes some files included in one kata snippet automatically available to some other kata snippet. However, this behavior should not be relied upon if not necessary.
 - Some header files include other header files indirectly; for example, if file `foo.h` contains line `#include <bar.h>`, that might appear to make the explicit include for `bar.h` unnecessary. This is not true though, because the file `foo.h` might change one day, or might depend on some compiler settings or command line options, and after some changes to the configuration of the C++ runner, the file `bar.h` might be not included there anymore.
+
+Every snippet should include all header files required by the code it contains. 
 
 
 ### Compilation warnings
@@ -88,12 +90,9 @@ Compiler options related to warnings used by the C++ runner are somewhat strict 
 
 Sometimes authors consider C++ just "C, but with classes". While C and C++ are compatible in many ways, that kind of perception is wrong: incorrect use of C features in C++ code leads to bad code at best, or to undefined behavior and difficult to diagnose errors in more extreme cases. Features and idioms from C language should be replaced with their equivalents from modern C++:
 
-- C features must not be used where they do not have well-defined behavior in C++. For example, memory management generally should not be done with `malloc`/`free` or similar, and VLAs should be replaced with `std::vector`.
-- C++ features should be preferred over those inherited from C, for example:
-  - C-style casts should be replaced with their C++ equivalents.
-  - Functions originating from C should be replaced with related C++ functionalities: `<random>` instead of `rand`, `<iostream>` instead of `stdio.h`, etc.
-- C++ header files should not be confused with their C equivalents. For example, `cmath` or `cctype` should be used instead of `math.h` or `ctype.h`.
 - Proper C++ data types should be used instead of their C "equivalents", especially when used as elements of a solution interface (input parameters and return value). C-strings should be replaced with `std::string` (or `std::string_view`), raw C-style arrays should be replaced with `std::array`, `std::vector`, or other containers, smart pointers should be considered instead of raw pointers, etc.
+- C++ header files should not be confused with their C equivalents. For example, `cmath` or `cctype` should be used instead of `math.h` or `ctype.h`.
+- C features must not be used where they do not have well-defined behavior in C++. For example, memory management generally should not be done with `malloc`/`free` or similar, and VLAs should be replaced with `std::vector`.
 
 
 ### `using` directives
@@ -101,6 +100,7 @@ Sometimes authors consider C++ just "C, but with classes". While C and C++ are c
 To avoid problems with namespace pollution, C++ snippets should not contain `using` directives (particularly `using namespace std;`) anywhere in the global namespace. Incorrect use of `using` can sometimes cause compilation problems that are difficult to diagnose. For example, `using namespace std;` placed incorrectly in the "Complete solution" or "Initial solution" snippet can result in failed compilation for _some_ users. To minimize such risks, authors should stick to following guidelines:
 - `using` directives should not be present in the global scope of "Preloaded", "Complete solution", and "Initial solution" snippets. They are heavily discouraged in the global scope of "Sample tests" and "Submission tests" snippets. This rule applies not only to `using namespace std;`, but also to other namespaces and namespace-qualified names.
 - `using` directives are perfectly fine inside the scope of an "Initial solution" function, test helpers, or `It` blocks.
+
 
 ## Tests
 
@@ -161,7 +161,7 @@ static void That(const char* actual, const ExpressionType& expression, const Mes
 
 `message_supplier` is a callable compatible with a function accepting no arguments and returning `std::string`. It can be a function, a functor, a lambda expression, or an instance of any type supporting above requirements.
 
-For more details and examples of custom assertion messages, see `[Example test suite](#example_test_suite)` below, or visit the `[Snowhouse reference](/languages/cpp/snowhouse/)` page.
+For more details and examples of custom assertion messages, see `[Example test suite](#example-test-suite)` below, or visit the `[Snowhouse reference](/languages/cpp/snowhouse/)` page.
 
 #### Stringizers
 
@@ -220,7 +220,7 @@ Note that `std::random_shuffle` is now considered obsolete and has been supersed
 
 ### Reference solution
 
-If the test suite happens to use a reference solution to calculate expected values (which [should be avoided](/authoring/guidelines/submission-tests/#reference-solution) when possible), or some kind of reference data like precalculated arrays, etc., it must not be possible for the user to call it, redefine, overwrite, or directly access its contents. To prevent this, reference data can be made a private member of the `Describe` structure. A reference solution can be either a private member of `Describe`, or a lambda-initialized local variable of an `It` block. See `[Example test suite](#example_test_suite)` for some examples.
+If the test suite happens to use a reference solution to calculate expected values (which [should be avoided](/authoring/guidelines/submission-tests/#reference-solution) when possible), or some kind of reference data like precalculated arrays, etc., it must not be possible for the user to call it, redefine, overwrite, or directly access its contents. To prevent this, reference data can be made a private member of the `Describe` structure. A reference solution can be either a private member of `Describe`, or a lambda-initialized local variable of an `It` block. See `[Example test suite](#example-test-suite)` for some examples.
 
 The reference solution or data ___must not___ be defined in the [Preloaded code](/authoring/guidelines/preloaded/).
 
@@ -253,6 +253,16 @@ In C++, not everything can be easily tested. It's not possible to reliably verif
 ## Preloaded
 
 C++ sometimes requires some boilerplate code to implement non-trivial tests, checks, and assertions. It can be tempting to insert some code that would be common to sample tests and submission tests in the Preloaded snippet, but this approach sometimes proves to be problematic (see [here](/authoring/guidelines/preloaded/#accessibility-of-preloaded-code) why), and can cause some headaches for users who are interested in training on the kata locally, or checking how the user solution is called, etc. It's strongly discouraged to use preloaded code to make the code common for test snippets if it would hide some information or implementation details interesting to the user. 
+
+Preloaded should not contain `#include` directives and `using` directives just to makie some names available to other snippets (see [`using` directives](#using-directives) and [header files](#header-files)). Preloaded of following form is bad, and should not be used:
+
+```cpp
+// include them here, because all snippets use them
+#include <vector>
+#include <string>
+
+using namespace std;
+```
 
 
 ## Example test suite
