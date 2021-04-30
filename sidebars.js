@@ -167,7 +167,7 @@ module.exports = {
             "languages/cpp/authoring/index",
             {
               type: "category",
-              label: "igloo",
+              label: "Testing Framework",
               items: ["languages/cpp/igloo", "languages/cpp/igloo/stringizers"],
             },
           ],
