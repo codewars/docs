@@ -165,6 +165,7 @@ module.exports = {
           items: [
             "languages/cpp/index",
             "languages/cpp/authoring/index",
+            "languages/cpp/solution_template",
             {
               type: "category",
               label: "Testing Framework",
