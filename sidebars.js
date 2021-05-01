@@ -169,7 +169,7 @@ module.exports = {
             {
               type: "category",
               label: "Igloo",
-              items: ["languages/cpp/igloo", "languages/cpp/igloo/stringizers"],
+              items: ["languages/cpp/igloo/index", "languages/cpp/igloo/stringizers"],
             },
           ],
         },
