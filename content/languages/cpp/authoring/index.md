@@ -237,7 +237,6 @@ Snowhouse provides a set of useful [assertions](/languages/cpp/igloo#snowhouse-a
 - Incorrectly used assertions may produce confusing or unhelpful messages.
 
 To avoid the above problems, calls to assertion functions should respect the following rules:
-- The expected value should be calculated _before_ invoking an assertion. The `expected` parameter passed to the assertion should not be a function call expression, but a value calculated directly beforehand. _(? does this point hold for C++ kata?)_
 - Appropriate assertion functions should be used for each given test. `AssertEquals` is not the only option, and Snowhouse provides a selection of constraints and expressions suitable for many scenarios: `EqualsWithDelta` for floating point comparisons, `EqualsContainer` to compare containers with a predicate, etc.
 - Overloads of `Assert::That` which accept `message_supplier` should be preferred. Assertion message should provide meaningful details on the cause of failure, like test input, etc.
 - `Assert::That(bool)` should not be used, because it generates poor feedback on failure. The overload `Assert::That(bool_value, Equals(expected_value), message_supplier)` should be used instead.
