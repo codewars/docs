@@ -1,10 +1,7 @@
 ---
-kind: reference
-sidebar: "language:cpp"
-prev: /languages/cpp/
-languages: [cpp]
-tags:
-  - testing
+title: Igloo
+sidebar_label: Overview
+slug: /languages/cpp/igloo
 ---
 
 # Igloo

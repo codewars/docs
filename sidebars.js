@@ -165,10 +165,10 @@ module.exports = {
           items: [
             "languages/cpp/index",
             "languages/cpp/authoring/index",
-            "languages/cpp/solution_template",
+            "languages/cpp/solution-template",
             {
               type: "category",
-              label: "Testing Framework",
+              label: "Igloo",
               items: ["languages/cpp/igloo", "languages/cpp/igloo/stringizers"],
             },
           ],

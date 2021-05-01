@@ -45,13 +45,12 @@ C++-specific paragraphs can be inserted with [language conditional rendering](/r
 
 Some concepts don't always translate well to or from C++. C++ allows for a variety of paradigms and techniques, many of which are not necessarily suited to other languages. For this reason, certain constructs should be avoided and some kata just should not be translated to C++.
 - C++ is statically typed, so any task that depends on dynamic typing can be difficult to translate into C++, and attempts to force a C++ kata to reflect a dynamically typed interface can lead to ideas that enforce a really bad design.
-- There are only a few additional libraries available to the C++ runner, so kata that take advantage of specialized packages installed for other languages become much more difficult to implement in C++.
 - Many features of C++ do not have direct equivalents in other popular languages: mixture of allowed paradigms, template meta-programming, unmanaged memory backed by RAII, native access to the platform and runtime, and many others. C++ kata which rely on them can be difficult to translate to other languages.
 
 
 ## Kata snippets and template
 
-Due to the complicated compilation model of C++ code, paired with the fact that Codewars strictly enforces the names, amount, and meaning of source files, the code runner uses a [template](/languages/cpp/solution_template) to concatenate all kata snippets into a single translation unit. This fact has various consequences on the code, some positive, and some negative: namespace pollution, symbols introduced by one snippet being visible in other snippets, etc. However, in the majority of cases, it does not affect kata in any way, and whenever possible, this behavior should be treated as an implementation detail of the C++ code runner. Kata snippets should be treated as separate source files, if possible.
+Due to the complicated compilation model of C++ code, paired with the fact that Codewars strictly enforces the names, amount, and meaning of source files, the code runner uses a [template](/languages/cpp/solution-template) to concatenate all kata snippets into a single translation unit. This fact has various consequences on the code, some positive, and some negative: namespace pollution, symbols introduced by one snippet being visible in other snippets, etc. However, in the majority of cases, it does not affect kata in any way, and whenever possible, this behavior should be treated as an implementation detail of the C++ code runner. Kata snippets should be treated as separate source files, if possible.
 
 One consequence of using a template is that the signature of a solution function can be modified by the user in a way which can affect tests. Make sure that tests are not possible to work around by users tampering with the prototype of the solution function.
 
@@ -62,9 +61,9 @@ Another issue caused by the use of the template is excessive namespace pollution
 
 ### Code style
 
-C++ programmers have many sets of naming conventions or code style guides. Some of them can be found for example [here](https://isocpp.org/wiki/faq/coding-standards), or [here](https://google.github.io/styleguide/cppguide.html). Codewars does not strictly enforce any of them, just use whatever set of guidelines you like, but when you do, use it consistently. 
+C++ programmers have many sets of naming conventions or code style guides. Some of them can be found for example in [ISO C++ FAQ](https://isocpp.org/wiki/faq/coding-standards), or [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html). Codewars does not strictly enforce any of them, just use whatever code style you like, but when you do, use it consistently. 
 
-There are a few C++ coding guidelines which are violated by kata authors and translators particularly often:
+There are a few C++ language guidelines which are violated by kata authors and translators particularly often:
 - Arguments which are not cheap to copy should be passed by const reference, and not by value.
 - Appropriate containers should be used, _especially_ when used as input arguments or return values:
   - C-style raw arrays and pointers to arrays need to be avoided
@@ -182,34 +181,34 @@ To rectify this issue in your tests, you can make such types suitable for string
 Until C++11, the most common way of producing random values was the `rand` function. However, it has a set of problems: it needs to be properly seeded, and it is difficult to produce values outside of `0...RAND_MAX` range. Since C++11, the standard library offers a set of functionalities which are designed to produce random values of different types, from various ranges, and with better distribution when compared to `rand`. Unfortunately, the API presented in the `random` header seems to be confusing and difficult to use and accompanied by a few misconceptions, and authors either use it incorrectly or resort to (not) good, old `rand`. However, working with `random` turns out to be not that difficult:
 
 ```cpp
-//use random_device only as a seeder
+// use random_device only as a seeder
 std::random_device seeder;
 
-//create one PRNG which will be used to pick values
-//from (potentially many) distributions
+// create one PRNG which will be used to pick values
+// from (potentially many) distributions
 std::mt19937 engine{ seeder() };
 
-//a set of distributions for every type or range you are going to need in your tests
+// a set of distributions for every type or range you are going to need in your tests
 std::uniform_int_distribution<    int> rand_number     {  1,  100 };
 std::uniform_int_distribution< size_t> rand_length     { 20,  100 };
 std::uniform_real_distribution<double> rand_coefficient{ -1,    1 };
 std::uniform_int_distribution<   char> rand_letter     { 'a', 'z' };
 std::uniform_int_distribution<   char> rand_bool       {   0,   1 };
-//etc.
+// etc.
 
-//for convenience, distributions can be bound with PRNG
+// for convenience, distributions can be bound with PRNG
 auto gen_length = std::bind(rand_length, engine);
 auto gen_letter = std::bind(rand_letter, engine);
 
 std::string input;
-//input string generator: string of random length, composed of random letters
-size_t input_length = gen_length(); //use length generator
+// input string generator: string of random length, composed of random letters
+size_t input_length = gen_length(); // use length generator
 for(size_t i=0; i<input_length; ++i) {  
-  //string generation logic...
-  input.push_back(gen_letter()); //use generator of random letters
+  // string generation logic...
+  input.push_back(gen_letter()); // use generator of random letters
 }
 
-//... testing logic    
+// ...testing logic    
 ```
 
 The standard library also contains some functions which can be helpful when generating random inputs:
