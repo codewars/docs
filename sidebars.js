@@ -165,7 +165,6 @@ module.exports = {
           items: [
             "languages/cpp/index",
             "languages/cpp/authoring/index",
-            "languages/cpp/solution-template",
             {
               type: "category",
               label: "Igloo",

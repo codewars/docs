@@ -50,7 +50,7 @@ Some concepts don't always translate well to or from C++. C++ allows for a varie
 
 ## Kata snippets and template
 
-Due to the complicated compilation model of C++ code, paired with the fact that Codewars strictly enforces the names, amount, and meaning of source files, the code runner uses a [template](/languages/cpp/solution-template) to concatenate all kata snippets into a single translation unit. This fact has various consequences on the code, some positive, and some negative: namespace pollution, symbols introduced by one snippet being visible in other snippets, etc. However, in the majority of cases, it does not affect kata in any way, and whenever possible, this behavior should be treated as an implementation detail of the C++ code runner. Kata snippets should be treated as separate source files, if possible.
+Due to the complicated compilation model of C++ code, paired with the fact that Codewars strictly enforces the names, amount, and meaning of source files, the code runner uses a template to concatenate all kata snippets into a single translation unit. This fact has various consequences on the code, some positive, and some negative: namespace pollution, symbols introduced by one snippet being visible in other snippets, etc. However, in the majority of cases, it does not affect kata in any way, and whenever possible, this behavior should be treated as an implementation detail of the C++ code runner. Kata snippets should be treated as separate source files, if possible.
 
 One consequence of using a template is that the signature of a solution function can be modified by the user in a way which can affect tests. Make sure that tests are not possible to work around by users tampering with the prototype of the solution function.
 
