@@ -164,10 +164,11 @@ module.exports = {
           label: "C++",
           items: [
             "languages/cpp/index",
+            "languages/cpp/authoring/index",
             {
               type: "category",
-              label: "igloo",
-              items: ["languages/cpp/igloo", "languages/cpp/igloo/stringizers"],
+              label: "Igloo",
+              items: ["languages/cpp/igloo/index", "languages/cpp/igloo/stringizers"],
             },
           ],
         },
