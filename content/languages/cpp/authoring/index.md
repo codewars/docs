@@ -54,7 +54,7 @@ Due to the complicated compilation model of C++ code, paired with the fact that 
 
 One consequence of using a template is that the signature of a solution function can be modified by the user in a way which can affect tests. Make sure that tests are not possible to work around by users tampering with the prototype of the solution function.
 
-Another issue caused by the use of the template is excessive namespace pollution. See paagraph on [`using` directives`](#using-directives) for more details.
+Another issue caused by the use of the template is excessive namespace pollution. See paragraph on [`using` directives`](#using-directives) for more details.
 
 
 ## Coding
@@ -138,7 +138,6 @@ Describe(TestGroup_2) {
 - `Equals`
 - `EqualsWithDelta`
 - `EqualsContainer`
-- ... what else?
 
 
 #### Custom assertion messages
