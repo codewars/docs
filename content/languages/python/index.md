@@ -8,6 +8,7 @@ slug: /languages/python
 ## Versions
 
 - 3.6
+- 3.8
 
 ## Test Frameworks
 
