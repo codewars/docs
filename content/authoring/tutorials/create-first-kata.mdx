@@ -5,24 +5,24 @@ kind: tutorial
 
 import ThemedImage from "@theme/ThemedImage";
 
-On Codewars, kata are created by regular users, who decided to share their idea with the community and create a task others could train on. People can come up with great ideas, and well-crafted kata are a source of great fun for everyone. After solving some kata, everyone sooner or later wants to contribute and create something others would enjoy to work on. Additionally, creating a kata can be a great learning experience.
+Kata on Codewars are created by regular users who want to share their ideas with the community and create challenges for others to train on. After solving a few kata, many users often find that they want to contribute back to the community with kata of their own. Not only can authoring a kata be a great learning experience, well-crafted kata are a source of great fun for everyone. 
 
-However, authors sometimes do not realize the fact that creating a good quality kata is much harder than solving it. Creating kata is a totally different kind of task from solving kata. It requires a much wider mindset and set of skills. Creating a kata is much closer to "professional" tasks: it requires you to design a task with a large set of target users in mind, write a solution, create tests for it, handle feedback from users, and maintain it by fixing bugs. Every kata is a small software product in itself, and goes through a small equivalent of a full software development lifecycle!
+However, first-time authors – regardless of programming experience – may not realize that creating a good quality kata from scratch is a much more involved task than solving one, as it requires a wider mindset and broader set of skills. In many ways authoring a kata is closer to what would be considered a "professional" task: it requires designing a challenge with a diverse target audience in mind, writing a solution, creating tests, handling feedback from users, and finally maintaining it via bug-fixes. Every kata is a like a small software product in and of itself and goes through the equivalent of a full software development lifecycle.
 
 ## Support for authors
 
-To support you with this difficult task, a set of help pages has been created with the following types of information:
+To support you in this challenging task, we have provided some helpful resources:
 
-- Tutorials for users who are still figuring things out.
-- [Guidelines](/authoring/guidelines/), which need to be respected to meet the Codewars quality criteria. It is strongly recommended to become familiar with these, otherwise you risk that your kata will be met with bad reception, harsh remarks, and many reported issues.
-- Recipes explaining how to realize some commonly occurring tasks, or solve commonly repeating problems.
-- [Language specific pages](/languages/) with code snippets, examples, references, and tutorials related to specific programming languages.
+- Tutorials for users new to the authoring process.
+- [Guidelines](/authoring/guidelines/) which must be respected in order to meet the Codewars quality criteria. It is strongly recommended to become familiar with these, otherwise you risk receiving negative feedback on your newly created kata, including numerous issue reports and possibly harsh remarks.
+- Recipes explaining how to solve frequently occurring tasks or work around common problems.
+- [Language specific pages](/languages/) that contain related code snippets, examples, references and tutorials.
 
-You can also reach out directly to the community to ask questions and seek experienced users' advice on the [kata-authoring-help](https://gitter.im/Codewars/codewars.com/kata-authoring-help) Gitter channel.
+You can also reach out to the community directly with any questions and seek experienced users' advice on the [kata-authoring-help](https://gitter.im/Codewars/codewars.com/kata-authoring-help) Gitter channel.
 
 ## Requirements
 
-To create a new kata, you need to earn the ["Create Kata" privilege](/gamification/privileges/). After reaching the required amount of 300 Honor points, the privilege is granted and you can select the **"New Kata"** option from the profile menu:
+In order to create a new kata, you first need to earn the ["Create Kata" privilege](/gamification/privileges/), which is automatically awarded once you accumulate 300 Honor points. Then you can select the **"New Kata"** option from the profile menu:
 
 <ThemedImage
   alt='"New Kata" Menu'
@@ -32,70 +32,70 @@ To create a new kata, you need to earn the ["Create Kata" privilege](/gamificati
   }}
 />
 
-## How to make a good kata?
+## How to create a good kata
 
-Everyone enjoys good, wellcrafted kata, and no one likes to struggle with poorly authored challenges. However, especially for unexperienced authors, it's often difficult to tell what is good, what is bad, or why. There's a few aspects which can drastically influence experience of other users with your kata and, as a result, feedback it will receive.
+While everyone enjoys an interesting and well-crafted kata, no one likes to struggle with poorly authored challenges. That said, it is often difficult to identify good and bad kata qualities and determine what sets them apart, especially for unexperienced authors. There are a few factors that have a drastic influence on the enjoyment other users will experience solving your kata and, as a result, the feedback it will receive.
 
-### Kata Idea and Duplicates
+### Kata ideas and duplicates
 
-At the time of writing, there are already **over 6500** approved kata, and almost 2500 beta kata. It's a vast red ocean out there - if you're still sticking to ideas like Fizzbuzz, Fibonacci numbers, or Caesar/ROT cipher, it's pretty much 99.999999...% chance that someone has done this before you.
+At the time of writing, there are already **~7000** approved kata and over 2000 kata in beta status. With such a vast selection of kata, chances are high that your idea may not be unique - popular topics like FizzBuzz, Fibonacci numbers and Rotation Ciphers are virtually guaranteed to have been covered already.
 
-This is bad because creating a kata about them again constitutes a **duplicate** kata, and we certainly don't want 100 Fizzbuzz kata out in the wild. When a duplicate is found it will be retired, which basically means it gets taken out of the kata catalog.
+The reason we mention this is because we don't need dozens of **duplicate** FizzBuzz kata. Whenever a kata is identified as a duplicate (and it usually will), it will be retired and thus effectively removed the kata catalog.
 
-To make sure users will like the idea presented in your kata, you can:
+Here are a few steps to ensure users like the idea presented in your kata:
 
-- Try to **come up with some novel and original idea.** It would mean not only creating some original theme or backstory, but the task should also ideally boil down to some new, interesting approach. There's already many kata which can be brought down to one of very popular ideas:
-  - Topics common when learnign programming. Fibonacci, fizz-buzz, factorial, there's already plenty of them.
-  - Simple map/filter/reduce operations on a list or array. There's too many kata which require just to iterate over a sequence and pick/reject/transform some of its elements based on some simple criteria.
-  - Calculating a result of a formula, be it mathematical, physical, or chemical. Substituting values into a formula has been done many times.
-  - Simple graph search. Simple patch finding, BFS, DFS, there's already [enough kata](https://www.codewars.com/collections/bfs-shitpost) to make it boring.
-- **[Search for keywords](https://www.codewars.com/kata/search/?q=&) to see if someone has done the idea before.** Many topics has been already extensively covered. There are many kata related to [Fibonacci numbers](https://www.codewars.com/kata/search/?q=fibonacci&), [factorials](https://www.codewars.com/kata/search/?q=factorial&&order_by=rank_id%20asc), [fizz-buzz](https://www.codewars.com/kata/search/?q=buzz&&order_by=rank_id%20asc), and other common topics. Even some very advanced topics have many similar kata. For example, while [Peano](https://www.codewars.com/kata/search/?q=peano) and [Church](https://www.codewars.com/kata/search/?q=church) numbers are definitely not easy, as the search results clearly show, they've been done many times already.
-- **Solve more kata.** This way you will get better feeling of what is already there and what topics appear often in search results. Naturally, when you've already solved 10 Fibonacci kata, solving another one will make you very nauseous, making you naturally allergic to duplicates ;-)
+- Try to come up with a **novel and original idea**. Not only does this entail crafting a unique theme or backstory, but would ideally also involve a new, interesting approach to a problem. There are already many kata that cover a range of popular topics, including:
+  - Basics for beginners, such as the Fibonacci sequence, FizzBuzz, factorials, etc.
+  - Simple map/filter/reduce operations on lists or arrays. Numerous kata exist which merely require iteration over a sequence while selecting/transforming some of its elements based on simple criteria.
+  - Calculating the result of a mathematical, physical, or chemical formula. Substituting values into a formula has also been done before.
+  - Simple graph search algorithms like path finding, BFS, DFS, etc. [have been covered sufficiently](https://www.codewars.com/collections/bfs-shitpost).
+- **[Search for keywords](https://www.codewars.com/kata/search/?q=&) to find out if someone has already done something similar.** Not only basic topics have been extensively covered ([Fibonacci numbers](https://www.codewars.com/kata/search/?q=fibonacci&), [factorials](https://www.codewars.com/kata/search/?q=factorial&&order_by=rank_id%20asc), [FizzBuzz](https://www.codewars.com/kata/search/?q=buzz&&order_by=rank_id%20asc)), even advanced topics such as [Peano](https://www.codewars.com/kata/search/?q=peano) and [Church](https://www.codewars.com/kata/search/?q=church) numbers have multiple similar kata dedicated to them, as the search results clearly show.
+- **Solve more kata.** Doing so will offer you a better overview of what kinds of kata already exist. Having solved your 13th Fibonacci problem will help you understand why duplicates are as unpopular as they are.
 
 ### Kata quality
 
-Even the best idea won't save the kata if it's implemented poorly. Lucky for you, there's a set of [quality guidelines](/authoring/guidelines/) which, when followed, will ensure that all pieces of your kata will be created properly. There's quite a lot of them and in the beginning they might seem a bit intimidating, so try to read through them and understand them, before you apply them to your kata. Remember that whenever you have any problems understanding something, you can always [ask for help](https://gitter.im/Codewars/codewars.com/kata-authoring-help).
+Even the best idea won't save a kata from the community's critical eye if it is implemented poorly. Fortunately, there is a set of [quality guidelines](/authoring/guidelines/) which, when followed properly, will ensure that all individual aspects of your kata will combine into a well-regarded experience. While it may seem like a lot to take in, do make a point of reading and understanding them so you can apply them to your kata. Remember that whenever any problems or questions arise, you can always [ask for help](https://gitter.im/Codewars/codewars.com/kata-authoring-help).
 
 ### Learning from experience
 
-There's no better teacher than experience, that's why it's never a bad idea to solve more kata, learn more, and then come back to creating your own. It can help one significantly in the following aspects:
+There's no better teacher than experience, which is why it's never a bad idea to solve more kata and learn from them. Doing so can help significantly in the following aspects:
 
-- Getting more experienced will help you _understand_ how hard your kata is, so that you can tune your kata to your desire easily.
-- As you train more, you tend to know what the most efficient solution for a kata is. This is crucial to performance and golf kata: you don't want to make a performance kata when you can only write sub-par solutions! You'll get pwned hard by veterans ;-)
-- Encountering kata issues and looking at comment sections will let you understand the common issues people will raise. Learn from history and don't make the same mistake again!
-- Looking at solutions (and more importantly, solution comment sections) will give you an insight into what constitutes good practice.
-- It also allows you to see how others write their tests. Writing good tests is **hard**, especially if your kata is also hard.
-- By solving and reviewing [beta kata](https://www.codewars.com/kata/search/my-languages?q=&&xids=completed&beta=true) you can learn a lot from mistakes of others and see what are the most common mistakes of kata authors, how reviewers react to them, and what are possible ways to resolve them.
+- Gaining more experience will help you _understand_ how difficult your kata is compared to others. This enables you to better tune your kata to the goals you have in mind.
+- The more you train, the more familiar you will become with the most efficient solutions to a given problem. This is crucial knowledge for performance and golf kata: you can't author a performance kata without knowing a performant algorithm.
+- Encountering and identifying issues and reading the discourse on other kata will reveal the most common issues users run in to. Learn from other people's mistakes.
+- Studying solutions and, more importantly, solution comment sections will give you an insight into what constitutes good practice.
+- Training on kata allows you to see how others write their tests. Writing good tests is **hard**, especially if the kata is (supposed to be) difficult.
+- By solving and reviewing [beta kata](https://www.codewars.com/kata/search/my-languages?q=&&xids=completed&beta=true) you can see what other authors get wrong, what mistakes reviewers commonly point out and how to best resolve them.
 
-Be aware though that there's many old kata which were created long time ago and do not hold to current standards. Bad quality of an existing kata is not an excuse for creating another bad one!
+Be aware though that there are many old kata created a long time ago that do not hold up to current standards. The bad quality of an existing kata is not an excuse to create a sub-par one yourself.
 
 ## Setting up the kata
 
-Kata are edited with the kata editor tool, described in the [Kata Editor reference](/references/kata-editor/). To fully set up the kata you have to provide some basic information, as well as write some code in the language(s) of your choice.
+Kata are created with the kata editor tool as described in the [Kata Editor reference](/references/kata-editor/). To fully set up the kata you must provide some basic information as well as code in the language(s) of your choice.
 
 ### Kata Properties
 
 #### Name
 
-The name is used to uniquely identify a kata. You can be creative with the name that you use. The best practice is to use a name that gives other users a good idea of what type of challenge they will be getting themselves into.
+The name is used to uniquely identify a kata. You can be creative when choosing a name, however the best practice is to pick a name that informs users about the kind of challenge they can expect.
 
 #### Discipline
 
 The discipline is the category that the kata belongs to. You should pick the category that best describes what the kata is intended to focus on. As of now, there are five categories:
 
-- Fundamentals - Focuses on the core language and API knowledge.
-- Algorithms - Focuses on the logic required to complete the task.
-- Bug Fixes - Focuses on taking existing code, determining the issue, and fixing it.
-- Refactoring - Focuses on taking existing code and making it better.
+- Fundamentals - Focus is on core language and API knowledge.
+- Algorithms - Focus is on the logic required to complete the task.
+- Bug Fixes - Focus is on analyzing existing code, identifying the issue, and fixing it.
+- Refactoring - Focus is on rewriting and improving existing code.
 - Puzzles
 
 #### Estimated rank
 
-Here you specify how difficult you think your kata is. This value is used as an initial estimate for the kata difficulty and will be refined while collecting rank votes from other users who solved it. Your perception of the difficulty of your kata might differ from what the community might think and estimate, so your kata may end up approved with a higher or lower rank.
+This is where you specify how difficult you think your kata is. This value is used as an initial estimate for the kata's difficulty and will be refined by collecting rank votes from other users who solved it. Your perception of your kata's difficulty might differ from that of the community, so your kata may end up approved with a higher or lower rank than your initial choice.
 
 #### Tags
 
-Tags are used to classify your kata and make it easier to search for. Some tags are derived from the assigned discipline and added automatically, but you can add more.
+Tags are used to classify your kata and make it easier to find via search. Some tags are derived from the assigned discipline and added automatically, but you can add more if you like.
 
 #### Allow Contributors?
 
