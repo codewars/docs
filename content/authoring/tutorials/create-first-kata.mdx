@@ -7,14 +7,14 @@ import ThemedImage from "@theme/ThemedImage";
 
 Kata on Codewars are created by regular users who want to share their ideas with the community and create challenges for others to train on. After solving a few kata, many users often find that they want to contribute back to the community with kata of their own. Not only can authoring a kata be a great learning experience, well-crafted kata are a source of great fun for everyone.
 
-However, first-time authors – regardless of programming experience – may not realize that creating a good quality kata from scratch is a much more involved task than solving one, as it requires a wider mindset and broader set of skills (if that sounds intimidating, don't be discouraged: that's what this tutorial is for!). In many ways authoring a kata is closer to what would be considered a "professional" task: it requires designing a challenge with a diverse target audience in mind, writing a solution, creating tests, handling feedback from users, and finally maintaining it via bug-fixes. Every kata is a like a small software product in and of itself and goes through the equivalent of a full software development lifecycle.
+However, first-time authors – regardless of programming experience – may not realize that creating a good quality kata from scratch is a much more involved task than solving one, as it requires a wider mindset and broader set of skills (if that sounds intimidating, don't be discouraged: that's what this tutorial is for!). In many ways authoring a kata is closer to what would be considered a "professional" task: it requires designing a challenge with a diverse target audience in mind, implementing a solution, creating tests, handling feedback from users, and finally maintaining them. Every kata is like a small software product and goes through an equivalent of a full software development lifecycle.
 
 ## Support for authors
 
 To support you in this challenging task, we have provided some helpful resources:
 
 - Tutorials for users new to the authoring process.
-- [Guidelines](/authoring/guidelines/) which must be respected in order to meet the Codewars quality criteria. It is strongly recommended to become familiar with these, otherwise you risk receiving negative feedback on your newly created kata, including numerous issue reports and possibly harsh remarks.
+- [Guidelines](/authoring/guidelines/) which must be respected in order to meet the Codewars quality criteria. It is strongly recommended becoming familiar with these, otherwise you risk receiving negative feedback on your newly created kata, including numerous issue reports and possibly harsh remarks.
 - Recipes explaining how to solve frequently occurring tasks or work around common problems.
 - [Language specific pages](/languages/) that contain related code snippets, examples, references and tutorials.
 
@@ -40,7 +40,7 @@ While everyone enjoys an interesting and well-crafted kata, no one likes to stru
 
 At the time of writing, there are already **~7000** approved kata and over 2000 kata in beta status. With such a vast selection of kata, chances are high that your idea may not be unique - popular topics like FizzBuzz, Fibonacci numbers and Rotation Ciphers are virtually guaranteed to have been covered already.
 
-The reason we mention this is because we don't need dozens of **duplicate** FizzBuzz kata. Whenever a [kata is identified as a duplicate](https://github.com/Codewars/content-issues/wiki/List-of-Possible-Duplicate-Kata) (and it usually will), it will be retired and thus effectively removed the kata catalog.
+The reason we mention this is that we don't need dozens of **duplicate** FizzBuzz kata. Whenever a [kata is identified as a duplicate](https://github.com/Codewars/content-issues/wiki/List-of-Possible-Duplicate-Kata) (and it usually will), it will be retired and thus effectively removed the kata catalog.
 
 Here are a few steps to ensure users like the idea presented in your kata:
 
@@ -54,7 +54,7 @@ Here are a few steps to ensure users like the idea presented in your kata:
 
 ### Kata quality
 
-Even the best idea won't save a kata from the community's critical eye if it is implemented poorly. Fortunately, there is a set of [quality guidelines](/authoring/guidelines/) which, when followed properly, will ensure that all individual aspects of your kata will combine into a well-regarded experience. While it may seem like a lot to take in, do make a point of reading and understanding them so you can apply them to your kata. Remember that whenever any problems or questions arise, you can always [ask for help](https://gitter.im/Codewars/codewars.com/kata-authoring-help).
+Even the best idea can be ruined by poor execution. Fortunately, there is a set of [quality guidelines](/authoring/guidelines/) which, when followed properly, will ensure that all individual aspects of your kata will combine into a well-regarded experience. While it may seem like a lot to take in, do make a point of reading and understanding them, so you can apply them to your kata. Remember that whenever any problems or questions arise, you can always [ask for help](https://gitter.im/Codewars/codewars.com/kata-authoring-help).
 
 ### Learning from experience
 
@@ -67,7 +67,7 @@ There's no better teacher than experience, which is why it's never a bad idea to
 - Training on kata allows you to see how others write their tests. Writing good tests is **hard**, especially if the kata is (supposed to be) difficult. Look at the sample tests, but also take note of how submission tests are constructed and organized.
 - By solving and reviewing [beta kata](https://www.codewars.com/kata/search/my-languages?q=&&xids=completed&beta=true) you can see what other authors tend to get wrong, what mistakes reviewers commonly point out and how to best resolve them.
 
-Be aware though that there are many old kata created a long time ago that do not hold up to current standards. The bad quality of an existing kata is not an excuse to create a sub-par one yourself.
+Be aware though that there are many old kata created a long time ago that do not hold up to the current standards. The poor quality of an existing kata is not an excuse to create a sub-par one yourself.
 
 ## Setting up the kata
 
@@ -105,7 +105,7 @@ You can check the list of [privileges](/gamification/privileges/#privileges) to 
 
 ### Description
 
-The description field is where you provide the information and instructions users require to train on your kata. This field recognizes [Github flavored markdown](/references/markdown/) with a set of [Codewars extensions](/references/markdown/extensions/). Use the `Preview` tab to see how it will look like when presented to users.
+The description field is where you provide the information and instructions users require when training on your kata. This field recognizes [GitHub flavored Markdown](/references/markdown/) with a set of [Codewars extensions](/references/markdown/extensions/). Use the `Preview` tab to see how it will look like when presented to users.
 
 A kata's description is the first thing users see and forms the basis of their first impressions. A clear and concise description that covers all the necessary information encourages users to give the kata a try. By the same token, a user who finds the description lacking is likely to raise issues or downvote your kata.
 
@@ -125,7 +125,7 @@ The initial solution is the code users are provided with when they start trainin
 
 Special care must be taken when providing code for the initial solution. You may have encountered a situation yourself where the provided initial solution was incorrect (e.g. code that wouldn't compile, function signatures that differed from the tests or description, etc.). Hunting down the required information in the description or sample tests is an exercise in frustration and, more importantly, a waste of time that should have been spent actually *solving* the kata.
 
-The _only time_ non-compiling code is acceptable is when it is an _intrinsic part if the challenge_, for example when the kata focuses explicitly on debugging or involves solving language-specific compile-time problems. In any other case, **it is considered a kata issue of the initial solution does not compile**. To avoid this, you must obviously supply some kind of placeholder code or "dummy" implementation which, depending on the chosen language, typically takes the form of a no-op or return statement. Note that this placeholder code _only needs to satisfy the compiler_, but may (and likely will) lead to run-time errors if not replaced by the user.
+The _only time_ non-compiling code is acceptable is when it is an _intrinsic part if the challenge_, for example when the kata focuses explicitly on debugging or involves solving language-specific compile-time problems. In any other case, **it is considered a kata issue if the initial solution does not compile**. To avoid this, you must obviously supply some kind of placeholder code or "dummy" implementation which, depending on the chosen language, typically takes the form of a no-op or return statement. Note that this placeholder code _only needs to satisfy the compiler_, but may (and likely will) lead to run-time errors if not replaced by the user.
 
 The same rule applies to interpreted languages (e.g. JavaScript, Python, Ruby): the initial solution must not contain syntax errors and/or (top-level) reference errors that prevent the user from immediately implementing their solution.
 
@@ -141,7 +141,7 @@ public class Kata
     }
 }
 ```
-```Python
+```python
 # Python
 def repeat_string(s, n):
     # your code goes here
@@ -167,7 +167,7 @@ The essential function of a test is to perform the following two tasks:
 
 It may seem that point 2 is encapsulated implicitly in point 1, but this is not the case. Tests that allow both correct and incorrect solutions to pass are pointless. Properly constructed test suites accept _all_ correct – _and only_ correct – solutions and reject all others.
 
-A comprehensive set of tests should cover all of the following aspects:
+A comprehensive set of tests should cover all the following aspects:
 
 - Test basic functionality
 - Provide full coverage (or at least decent coverage, if that's not possible)
@@ -208,7 +208,7 @@ The next step should be to read through the [authoring guidelines](/authoring/gu
 
 ### Ask for a review of your draft
 
-Kata in draft status are not listed and cannot be searched for, however users with direct links can still access them. You can share the link to an as of yet unpublished kata with others users [on Gitter](https://gitter.im/Codewars/codewars.com/kata-authoring-help) and they will be able to read the description, train on the kata, and provide feedback, before getting a chance to rate it. This a great way to get quick feedback about the most obvious problems while you're working out the kinks.
+Kata in draft status are not listed and cannot be searched for, however users with direct links can still access them. You can share the link with others [on Gitter](https://gitter.im/Codewars/codewars.com/kata-authoring-help) and they will be able to read the description, train on the kata, and provide feedback, before getting a chance to rate it. This a great way to get quick feedback about the most obvious problems while you're working out the kinks.
 
 ## After publishing
 
