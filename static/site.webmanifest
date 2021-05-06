@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "short_name": "",
+  "name": "The Codewars Docs",
+  "short_name": "The Codewars Docs",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#FFFFFF",
-  "background_color": "#FFFFFF",
+  "theme_color": "#222222",
+  "background_color": "#222222",
   "display": "standalone"
 }
