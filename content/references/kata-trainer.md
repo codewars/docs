@@ -10,7 +10,7 @@ kind: reference
 The kata trainer is the interface you're presented when you click "Train" on a kata. It is here that you write your solution, run tests and attempt to complete the kata.
 
 ![Kata Trainer](./img/kata-trainer.png)
-_The interface: 1) View Panel 2) Language selection 3) Language version 4) Solution Editor 5) Sample Tests Editor 6) Action buttons_
+_The interface: 1) View Panel 2) Language selection 3) Language version 4) Solution Editor 5) Sample Tests Editor 6) Action buttons 7) Enable VIM/EMACS mode_
 
 ## View panel
 On the left side of the interface you will find two views split into separate tabs:
@@ -24,6 +24,10 @@ You can switch freely between these two tabs at any time during your training on
 The right half of the interface is dedicated to writing and testing your solution. At the very top you'll find two drop-down menus:
 - **Language**: Here you select the language you wish to train in. Many kata feature translations into multiple languages, and you can train in any of them by selecting the appropriate language here. 
 - **Language version**: Over time, languages evolve and new versions are released, which may then get added to Codewars. Select your preferred language version from the available options here. Note that your choice affects both your solution and the test suite, and can have a significant impact on performance under certain circumstances.
+
+If you prefer your editor to replicate a VIM or EMACS experience, you can toggle those modes with the buttons on the right. Because the <kbd>Esc</kbd> key has a special function in VIM mode, its usual behavior of toggling full-screen mode is disabled.
+
+_If you find that your editor no longer accepts your input or behaves in an unexpected way, make sure you haven't accidentally enabled VIM mode_.
 
 ### Solution
 This is where you write your solution code. The solution editor features language-based syntax highlighting and auto-indentation. The button in the top-right corner switches to full-screen view.
@@ -61,6 +65,6 @@ The following keyboard shortcuts are available inside the kata trainer:
 - <kbd>Command</kbd>+<kbd>'</kbd> Run sample tests
 - <kbd>Command</kbd>+<kbd>U</kbd> Toggle focus between editors
 - <kbd>Command</kbd>+<kbd>I</kbd> Cycle between Instructions and Output in the view panel
-- <kbd>Esc</kbd> Toggle full screen mode for the editor currently with focus
+- <kbd>Esc</kbd> Toggle full screen mode for the editor currently with focus (in VIM mode, toggles _command-line mode_ on and off)
 
 Replace <kbd>Command</kbd> with <kbd>Ctrl</kbd> on Linux and Windows.
