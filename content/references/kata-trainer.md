@@ -23,20 +23,20 @@ You can switch freely between these two tabs at any time during your training on
 
 The right half of the interface is dedicated to writing and testing your solution. At the very top you'll find two drop-down menus:
 - **Language**: Here you select the language you wish to train in. Many kata feature translations into multiple languages, and you can train in any of them by selecting the appropriate language here. 
-- **Language version**: Over time, languages evolve and new versions are released, which may then get added to Codewars. Select your preferred language version from the available options here. Note that your choice affects both your solution and the test suite.
+- **Language version**: Over time, languages evolve and new versions are released, which may then get added to Codewars. Select your preferred language version from the available options here. Note that your choice affects both your solution and the test suite, and can have a significant impact on performance under certain circumstances.
 
 ### Solution
 This is where you write your solution code. The solution editor features language-based syntax highlighting and auto-indentation. The button in the top-right corner switches to full-screen view.
 
 ### Sample Tests
-The sample tests editor is usually pre-populated with basic unit tests to give you an idea of how your code will be tested when the full test suite is run. You are free to modify these tests and add your own.
+The sample tests editor is usually pre-populated with basic unit tests to give you an idea of how your code will be called when the full test suite is run. If you are unsure whether your code is accepting and returning the correct data, this is a good place to check. You are free to modify these tests and add your own. 
 
 ## Buttons
 
 Below the editors are buttons that perform various actions related to the kata.
 
 ### Skip Button
-If you do not wish to complete the kata, you can skip to the next. A new kata will be chosen for you at random, based on your active [training routine](/getting-started/finding-kata#personal-trainer). You can always come back and continue where you left off.
+If you do not wish to complete the kata, you can skip to the next. A new kata will be chosen for you at random, based on your active [training routine](/getting-started/finding-kata#personal-trainer). You can always come back and continue where you left off, provided you have run the tests at least once.
 
 ### Unlock Solutions
 If you decide to give up your attempt at completing the kata, you can unlock and view other users' completed solutions. Choosing this option means you will **forfeit** any honor and rank progression that you would otherwise earn for completing the kata, even if you complete the kata at a later date.
@@ -48,7 +48,7 @@ This button leads you to the kata's [discourse page](/concepts/kata/discourse), 
 Revert the kata trainer to its original state. Choosing this action will reset the contents of both the solution and the sample tests editors to that provided by the kata author, _resulting in the loss of any code you have written_.
 
 ### Test
-This button will run your solution against the contents of the sample tests editor, offering a quick way to verify basic functionality and correctness of your code.
+This button will run your solution against the contents of the sample tests editor, offering a quick way to verify basic functionality and correctness of your code. It also ensures the contents of the solution editor are saved, should you leave the trainer and return later.
 
 ### Attempt
 The attempt button will run your solution against the kata's full test suite. These test cases are not shown in the editor, but you will see their results in the Output panel. Passing all tests is a pre-requisite to submitting your solution and completing the kata. If your attempt is successful, this button will turn green and change its label to "Submit". Clicking it again will then submit your solution, marking the kata as completed, and take you to the solutions page.
