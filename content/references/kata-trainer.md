@@ -3,6 +3,8 @@ title: Kata Trainer
 kind: reference
 ---
 
+import ThemedImage from "@theme/ThemedImage";
+
 The kata trainer is the interface you're presented when you click "Train" on a kata. It is here that you write your solution, run tests and attempt to complete the kata. Since this is where you'll be spending the majority of your time, it is recommended that you familiarize yourself with the interface and its functionality. That way, you focus entirely on solving the kata.
 
 <ThemedImage
