@@ -5,7 +5,7 @@ kind: reference
 
 import ThemedImage from "@theme/ThemedImage";
 
-The kata trainer is the interface you're presented when you click "Train" on a kata. It is here that you write your solution, run tests and attempt to complete the kata. Since this is where you'll be spending the majority of your time, it is recommended that you familiarize yourself with the interface and its functionality. That way, you focus entirely on solving the kata.
+The kata trainer is the interface you're presented when you click "Train" on a kata. It is here that you write your solution, run tests and attempt to complete the kata. Since this is where you'll be spending the majority of your time, it is recommended that you familiarize yourself with the interface and its functionality. That way, you can focus entirely on solving the kata.
 
 <ThemedImage
   alt="Kata trainer interface"
@@ -14,7 +14,7 @@ The kata trainer is the interface you're presented when you click "Train" on a k
     dark: require("./img/kata-trainer-dark.png").default,
   }}
 />
-_The interface: 1) View Panel 2) Language selection 3) Language version 4) Solution Editor 5) Sample Tests Editor 6) Action buttons 7) Enable VIM/EMACS mode_
+*The interface: 1) View Panel 2) Language selection 3) Language version 4) Solution Editor 5) Sample Tests Editor 6) Action buttons 7) Enable VIM/EMACS mode*
 
 ## View panel
 On the left side of the interface you will find two views split into separate tabs:
@@ -31,7 +31,7 @@ The right half of the interface is dedicated to writing and testing your solutio
 - **VIM/EMACS mode**: If you prefer your editor to replicate a VIM or EMACS experience, you can toggle those modes with the buttons on the right. Because the <kbd>Esc</kbd> key has a special function in VIM mode, its usual behavior of toggling full-screen mode is disabled.
 
 :::note
-_If you find that your editor no longer accepts your input or behaves in an unexpected way, make sure you haven't accidentally enabled VIM mode_.
+If you find that your editor no longer accepts your input or behaves in an unexpected way, make sure you haven't accidentally enabled VIM mode.
 :::
 
 ### Solution
