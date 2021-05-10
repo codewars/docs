@@ -20,8 +20,9 @@ The kata trainer is the interface you're presented when you click "Train" on a k
 On the left side of the interface you will find two views split into separate tabs:
 - **Instructions**: The kata description with information about the task.
 - **Output**: A view showing the test results as well as anything you choose to print to `stdout` from within your solution code.
+- **Past Solutions**: If you have completed this kata before (possibly in a different language), you can view your past solutions here. If this is your first attempt at solving the kata, this tab will not be displayed.
 
-You can switch freely between these two tabs at any time during your training on the kata. Note that running tests will automatically display the Output panel.
+You can switch freely between these tabs at any time during your training on the kata. Note that running tests will automatically display the Output panel.
 
 ## Editors
 
@@ -74,6 +75,6 @@ The following keyboard shortcuts are available inside the kata trainer:
 - <kbd>Command</kbd>+<kbd>'</kbd> Run sample tests
 - <kbd>Command</kbd>+<kbd>U</kbd> Toggle focus between editors
 - <kbd>Command</kbd>+<kbd>I</kbd> Cycle between Instructions and Output in the view panel
-- <kbd>Esc</kbd> Toggle full screen mode for the editor currently with focus (in VIM mode, toggles _command-line mode_ on and off)
+- <kbd>Esc</kbd> Toggle full screen mode for the editor currently with focus (in VIM mode, toggles *command-line mode* on and off)
 
 Replace <kbd>Command</kbd> with <kbd>Ctrl</kbd> on Linux and Windows.
