@@ -28,7 +28,7 @@ You can switch freely between these tabs at any time during your training on the
 ## Editors
 
 The right half of the interface is dedicated to writing and testing your solution. At the very top you'll find the following options:
-- **Language**: Here you select the language you wish to train in. Many kata feature translations into multiple languages, and you can train in any of them by selecting the appropriate language here. If your training setup includes multiple languages, make sure the correct one is selected before you begin writing any code.
+- **Language**: Here you select the language you wish to train in. Many kata feature translations into multiple languages, and you can train in any of them by selecting the appropriate language here. Make sure the correct one is selected before you begin writing any code.
 - **Language version**: Over time, programming languages evolve and new versions are released, which may then get added to Codewars. Select your preferred language version from the available options here. Note that your choice affects both your solution and the test suite and can have a significant impact on performance under certain circumstances.
 - **VIM/EMACS mode**: If you prefer your editor to replicate a VIM or EMACS experience, you can toggle those modes with the buttons on the right. Because the <kbd>Esc</kbd> key has a special function in VIM mode, its usual behavior of toggling full-screen mode is disabled.
 
