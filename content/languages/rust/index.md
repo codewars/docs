@@ -29,10 +29,13 @@ Rust kata uses builtin `#[test]`.
 
 ## Example
 
+Solution and tests are concatenated to `src/lib.rs`.
+
 ```rust
 pub fn add(x: i32, y: i32) -> i32 { x + y }
 ```
-tests will be a child module.
+
+All the tests _should_ be in a child module `tests`:
 ```rust
 #[cfg(test)]
 mod tests {
@@ -43,7 +46,12 @@ mod tests {
     }
 }
 ```
-Preloaded code is written to `preloaded.rs`.
+
+The optional preloaded code is a child module `preloaded` at `src/preloaded.rs`.
+Rust's module system is explicit, so you need to declare it with `mod preloaded;` to use it.
+
+See the unit testing chapter in [the book](https://doc.rust-lang.org/book/ch11-01-writing-tests.html) and
+[Rust By Example](https://doc.rust-lang.org/rust-by-example/testing/unit_testing.html) for more.
 
 ## Timeout
 12 seconds
