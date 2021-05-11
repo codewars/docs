@@ -1,0 +1,81 @@
+---
+title: Kata Trainer
+kind: reference
+---
+
+import ThemedImage from "@theme/ThemedImage";
+
+The kata trainer is the interface you're presented when you click "Train" on a kata. It is here that you write your solution, run tests and attempt to complete the kata. Since this is where you'll be spending the majority of your time, it is recommended that you familiarize yourself with the interface and its functionality. That way, you can focus entirely on solving the kata.
+
+<ThemedImage
+  alt="Kata trainer interface"
+  sources={{
+    light: require("./img/kata-trainer-light.png").default,
+    dark: require("./img/kata-trainer-dark.png").default,
+  }}
+/>
+
+*The interface: 1) View Panel 2) Language selection 3) Language version 4) Solution Editor 5) Sample Tests Editor 6) Action buttons 7) Enable Vim/Emacs mode*
+
+## View panel
+On the left side of the interface you will find a set of panels split into separate tabs:
+- **Instructions**: The kata description with information about the task.
+- **Output**: A view showing the test results as well as anything you choose to print to `stdout` from within your solution code.
+- **Past Solutions**: If you have completed this kata before (possibly in a different language), you can view your past solutions here. If this is your first attempt at solving the kata, this tab will not be displayed.
+
+You can switch freely between these tabs at any time during your training on the kata. Note that running tests will automatically display the Output panel.
+
+## Editors
+
+The right half of the interface is dedicated to writing and testing your solution. At the very top you'll find the following options:
+- **Language**: Here you select the language you wish to train in. Many kata feature translations into multiple languages, and you can train in any of them by selecting the appropriate language here. Make sure the correct one is selected before you begin writing any code.
+- **Language version**: Over time, programming languages evolve and new versions are released, which may then get added to Codewars. Select your preferred language version from the available options here. Note that your choice affects both your solution and the test suite and can have a significant impact on performance under certain circumstances.
+- **Vim/Emacs mode**: If you prefer your editor to replicate a [Vim](https://codemirror.net/demo/vim.html) or [Emacs](https://codemirror.net/demo/emacs.html) experience, you can toggle those modes with the buttons on the right.
+
+:::note
+If you find that your editor no longer accepts your input or behaves in an unexpected way, make sure you haven't accidentally enabled Vim mode.
+:::
+
+### Solution
+This is where you write your solution code. The solution editor features language-based syntax highlighting and auto-indentation as well as an optional Vim/Emacs mode (see above). The button in the top-right corner switches to full-screen view. If you're used to working in an IDE, you'll find the solution editor supports many of the same hotkeys for common editing tasks.
+
+Code within the editors is saved every time you run tests or attempt to submit your solution, allowing you to close the page and continue where you left off once you return.
+
+### Sample Tests
+The sample tests editor is usually pre-populated with basic tests to give you an idea of how your code will be called when the full test suite is run. If you are unsure whether your code is accepting and returning the correct data, this is a good place to check. You are free to modify these tests and add your own. Sample tests allow you to target specific areas of your solution and debug your code efficiently, as opposed to attempting the full test suite which consists of a large number of tests with potentially huge inputs.
+
+Tests in the sample tests editor are executed with the "Test" button.
+
+## Buttons
+
+Below the editors are buttons that perform various actions related to the kata.
+
+### Skip Button
+If you do not wish to complete the kata, you can skip to the next. A new kata will be chosen for you at random, based on your active [training routine](/getting-started/finding-kata#personal-trainer). You can always come back and continue where you left off, provided you have run the tests at least once.
+
+### Unlock Solutions
+If you decide to give up your attempt at completing the kata, you can unlock and view other users' completed solutions. Choosing this option means you will **forfeit** any honor and rank progression you would have otherwise earned for completing the kata, even if you do so at a later date.
+
+### Discuss
+This button leads you to the kata's [discourse page](/concepts/kata/discourse), where you can view and post comments, questions and issues. Note that choosing this means leaving the kata trainer, causing any unsaved editor contents to be lost.
+
+### Reset
+Revert the kata trainer to its original state as you found it at the beginning of your training. Choosing this action will reset the contents of both the solution and the sample tests editors to that provided by the kata author, _resulting in the loss of any code you have written_.
+
+### Test
+This button will run your solution against the contents of the sample tests editor, offering a quick way to verify basic functionality and correctness of your code. It also ensures the contents of the solution editor are saved, should you leave the trainer and return later.
+
+### Attempt
+The attempt button will run your solution against the kata's full test suite. These test cases are not shown in the editor, but you will see their results in the Output panel. Passing all tests is a pre-requisite to submitting your solution and completing the kata. If your attempt is successful, this button will turn green and change its label to "Submit". Clicking it again will then submit your solution, marking the kata as completed, and take you to the solutions page. Any changes made to your code between these steps will require a new attempt.
+
+## Shortcuts
+
+The following keyboard shortcuts are available inside the kata trainer:
+
+- <kbd>Command</kbd>+<kbd>Enter</kbd> Attempt
+- <kbd>Command</kbd>+<kbd>'</kbd> or <kbd>Command</kbd>+<kbd>s</kbd> Run sample tests
+- <kbd>Command</kbd>+<kbd>U</kbd> Toggle focus between editors
+- <kbd>Command</kbd>+<kbd>I</kbd> Cycle between Instructions and Output in the view panel
+- <kbd>Esc</kbd> Toggle full screen mode on the focused editor
+
+Replace <kbd>Command</kbd> with <kbd>Ctrl</kbd> on Linux and Windows.
