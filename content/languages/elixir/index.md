@@ -7,7 +7,7 @@ slug: /languages/elixir
 
 ## Versions
 
-- 1.9.1
+- 1.11
 
 ## Test Frameworks
 
@@ -19,7 +19,7 @@ slug: /languages/elixir
 
 ## Packages
 
-None 
+None
 
 ## Services
 
