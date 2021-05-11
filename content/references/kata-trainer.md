@@ -14,6 +14,7 @@ The kata trainer is the interface you're presented when you click "Train" on a k
     dark: require("./img/kata-trainer-dark.png").default,
   }}
 />
+
 *The interface: 1) View Panel 2) Language selection 3) Language version 4) Solution Editor 5) Sample Tests Editor 6) Action buttons 7) Enable VIM/EMACS mode*
 
 ## View panel
