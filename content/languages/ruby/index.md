@@ -24,6 +24,7 @@ describe "Example" do
   end
 end
 ```
+Note that if an assertion message is provided while using RSpec, actual and expected results have to be in that message otherwise the information will not be shown to the user.
 See [`rspec-expectaions`](https://rspec.info/documentation/3.10/rspec-expectations/).
 
 Earlier versions use [Codewars Test Framework](https://github.com/Codewars/codewars.com/wiki/Codewars-Ruby-Test-Framework) with similar syntax.
