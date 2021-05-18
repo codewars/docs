@@ -18,12 +18,13 @@ From Ruby 3.0, [RSpec](https://rspec.info/) is used under the hood:
 # Defaults to the global `describe` for backwards compatibility, but `RSpec.desribe` works as well.
 describe "Example" do
   it "should return the sum" do
-    expect(add(1, 1)).to eq(2)
+    expect(add(1, 1)).to eq(2), "failure message"
     # The following is still supported, but new tests should not use them.
-    # Test.assert_equals(add(1, 1), 2)
+    # Test.assert_equals(add(1, 1), 2, "failure message")
   end
 end
 ```
+Note that if an assertion message is provided while using RSpec, actual and expected results have to be in that message otherwise the information will not be shown to the user.
 See [`rspec-expectaions`](https://rspec.info/documentation/3.10/rspec-expectations/).
 
 Earlier versions use [Codewars Test Framework](https://github.com/Codewars/codewars.com/wiki/Codewars-Ruby-Test-Framework) with similar syntax.
