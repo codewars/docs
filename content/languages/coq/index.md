@@ -24,7 +24,6 @@ Unfortunately, the Codewars environment does not support the interactive develop
 ## Packages
 
 - [Equations](http://mattam82.github.io/Coq-Equations/)
-- [TLC](https://www.chargueraud.org/softs/tlc/)
 - [mathcomp](http://math-comp.github.io/math-comp/)
 
 ## Services
