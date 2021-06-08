@@ -31,4 +31,4 @@ There's a set of rules you should follow to keep interaction with other users a 
 
 Kata discourse is not the only place to meet other users. Community members can be also met at:
 
-- Codewars [Gitter](https://gitter.im/Codewars/codewars.com) with a dedicated room for [kata solving help](https://gitter.im/Codewars/codewars.com/kata-solving-help),
+- Codewars [Discord](https://discord.com/channels/846624424199061524/) with a dedicated room for [kata solving help](https://discord.com/channels/846624424199061524/846628654716551198),
