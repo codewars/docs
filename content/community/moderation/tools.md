@@ -24,4 +24,4 @@ slug: /community/moderation/tools
   - [codewars/codewars.com](https://github.com/codewars/codewars.com) GitHub repository
   - [codewars/docs](https://github.com/codewars/docs) GitHub repository
   - [codewars/content-issues](https://github.com/codewars/content-issues) GitHub repository
-  - [Codewars Discord server](https://discord.com/channels/846624424199061524)
+  - [Codewars Discord server](https://discord.gg/7U9t33jrgG)
