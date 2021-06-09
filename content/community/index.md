@@ -27,8 +27,13 @@ Remember that your posts will be read by other people, and to be able to help yo
 
 There's a set of rules you should follow to keep interaction with other users a good experience for both sides. You can find them in _(TODO: where? Code of Conduct, some discourse guidelines?)_.
 
-## Other Places
+## Discord
 
-Kata discourse is not the only place to meet other users. Community members can be also met at:
+You can also join the official [Codewars Discord](https://discord.gg/7U9t33jrgG) server where the community hangs out and helps each other. The following are some channels we have:
 
-- Codewars [Discord](https://discord.com/channels/846624424199061524/) with a dedicated room for [kata solving help](https://discord.com/channels/846624424199061524/846628654716551198),
+- [`#beginners`](https://discord.com/channels/846624424199061524/846953079710023699): A channel dedicated to new Codewars users. We'll help you get comfortable within the community.
+- [`#help-solve`](https://discord.com/channels/846624424199061524/846628654716551198): Get help solving a kata.
+- [`#help-author`](https://discord.com/channels/846624424199061524/846628678602588200): Get help authoring a kata, ask for early feedback. 
+- [`#random`](https://discord.com/channels/846624424199061524/846624870187401227): A general off-topic channel.
+
+We also have channels for sub-communities within Codewars such as channels for programming languages.
