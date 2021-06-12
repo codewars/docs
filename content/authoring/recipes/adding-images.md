@@ -78,7 +78,7 @@ Codewars allows a safe subset of HTML in Markdown including `<svg>`, so it's pos
 
 The image markup can be pasted directly into the kata editor without additional processing or encoding, and usually it's more readable than encoded image data.
 But still, even simple-looking SVGs often require a significant amount of code, inflating the kata description. However, they can be minified or optimized with some additional tools (for example [SVGOMG][svgomg]), or by removing unnecessary parts of markup and Metadata. Additionally, the results of mixing HTML with Markdown are ill-defined and subject to change.
-Note that those images are scaling automatically in the description page, which can become very annoying. To avoid this, the `svg` code can be wrapped with  a `<div style="width:400px;height:400px">...</div>` tag, choosing the dimension that suites the situation better.
+Make sure to prevent images from becoming too large by using `width/height` attributes, `style` attributes, or a wrapper element with `style`.
 
 
 [svgomg]: https://jakearchibald.github.io/svgomg/
