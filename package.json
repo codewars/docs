@@ -45,7 +45,7 @@
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.2.1",
     "shiki": "^0.9.3",
-    "tailwindcss": "^2.1.1",
+    "tailwindcss": "^2.2.2",
     "unist-util-visit": "^2.0.3"
   }
 }
