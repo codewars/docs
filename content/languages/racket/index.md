@@ -7,7 +7,10 @@ slug: /languages/racket
 
 ## Versions
 
-[v7.2](https://blog.racket-lang.org/2019/01/racket-v7-2.html)
+- 8.1 [CS](https://docs.racket-lang.org/guide/performance.html#%28tech._c%29)
+- 8.1 [BC](https://docs.racket-lang.org/guide/performance.html#%28tech._bc%29)
+
+BC can be used when CS implementation have performance issues (e.g., bignums).
 
 ## Test Frameworks
 
