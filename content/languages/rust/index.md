@@ -7,7 +7,7 @@ slug: /languages/rust
 
 ## Versions
 
-- 1.52 (`edition = "2018"`)
+- 1.54 (`edition = "2018"`)
 
 The following profiles are used to get decent performance in tests:
 
@@ -64,21 +64,21 @@ See the unit testing chapter in [the book](https://doc.rust-lang.org/book/ch11-0
 [dependencies]
 bit-set = "0.5.2"
 chrono = "0.4.19"
-fancy-regex = "0.5.0"
-futures = "0.3.13"
+fancy-regex = "0.7.1"
+futures = "0.3.16"
 im = "15.0.0"
-itertools = "0.10.0"
+itertools = "0.10.1"
 lazy_static = "1.4.0"
 num = { version = "0.4.0", features = ["rand"] }
-once_cell = "1.7.2"
-rand = "0.8.3"
-regex = "1.4.3"
-serde = { version = "1.0.124", features = ["derive"] }
-serde_json = "1.0.64"
-text_io = "0.1.8"
-thiserror = "1.0.24"
-tokio = { version = "1.2.0", features = ["full"] }
-tokio-util = { version = "0.6.3", features = ["full"] }
+once_cell = "1.8.0"
+rand = "0.8.4"
+regex = "1.5.4"
+serde = { version = "1.0.126", features = ["derive"] }
+serde_json = "1.0.66"
+text_io = "0.1.9"
+thiserror = "1.0.26"
+tokio = { version = "1.9.0", features = ["full"] }
+tokio-util = { version = "0.6.7", features = ["full"] }
 
 [dev-dependencies]
 quickcheck = "1.0.3"
