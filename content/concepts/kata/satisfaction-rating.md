@@ -1,5 +1,5 @@
 ---
-title: Satsfaction Rating
+title: Satisfaction Rating
 kind: concept
 ---
 
