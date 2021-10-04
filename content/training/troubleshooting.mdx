@@ -4,6 +4,7 @@ kind: recipe
 ---
 
 import ThemedImage from "@theme/ThemedImage";
+import A from "@components/Anchored";
 
 <!---
 TODO Break this up into smaller recipes, then provide a summary page linking to them
@@ -49,7 +50,7 @@ There are a couple of possible reasons for such behavior:
 - Your answer contains some unexpected characters which are not easily visible when printed. These might be leading or trailing spaces, missing or superfluous new line characters, etc. One especially nasty case is that for some languages, the Codewars test output panel seems to collapse consecutive whitespace characters into a single space (just like HTML rendering does), so even if you copy expected and actual values from test output and compare them character by character, they appear exactly the same! To detect such cases, you could, for example, replace all whitespace characters with some printable ones just before sending it to stdout.
 - Check the type of the value returned by your solution. When printed, expected and actual values might look the same, but their types may be different – for example, you might return a number when in fact a numeric string is expected.
 - When the answer is expected to be a floating-point number, it might not be precise enough to compare equal with the expected value, but the assertion message rounds both so they look the same. Check for possible rounding errors or floating-point accuracy issues.
-- If all tests fail with some message similar to `"Expected 'Something' but got None"` or something along those lines (depending on language and assertions library used), it might mean that you are printing your answer to standard output instead of returning it from your function. This problem occurs especially often for people who do not understand the difference between printing a value and returning it, or when someone comes from some other competitive programming website which actually requires values to be printed and not returned.
+- <A id="print-vs-return">If all tests fail with some message similar to `"Expected 'Something' but got None"` or something along those lines (depending on language and assertions library used), it might mean that you are printing your answer to standard output instead of returning it from your function.</A> This problem occurs especially often for people who do not understand the difference between printing a value and returning it, or when someone comes from some other competitive programming website which actually requires values to be printed and not returned.
 
 ### All tests pass, but I get a timeout {#pass-but-timeout}
 
