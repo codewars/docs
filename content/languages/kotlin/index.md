@@ -8,6 +8,7 @@ slug: /languages/kotlin
 ## Versions
 
 - 1.3
+- 1.5
 
 ## Test Frameworks
 
