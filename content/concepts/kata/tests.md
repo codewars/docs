@@ -10,7 +10,7 @@ Eack kata has two sets of tests associated with it, used for two different purpo
 
 Sample tests provide some preliminary test cases to guide users working on their solution. Sample tests are optional and author may choose to not provide them, although it's considered a good authoring practice to include at least a few of them.
 
-When sample tests are present, it's worh to taka a good look at them. Reading them you can find out what is the required interface of your solution, and how it will be called (for example what name should your function have and how parameters are passed to it). It's possible that they will contain some hints on possible inputs, edge cases, etc.
+When sample tests are present, it's worh to take a good look at them. Reading them you can find out what is the required interface of your solution, and how it will be called (for example what name should your function have and how parameters are passed to it). It's possible that they will contain some hints on possible inputs, edge cases, etc.
 
 As a user is working on their solution, they are encouraged to modify sample tests and add their own test cases, using [Test Driven Development](https://en.wikipedia.org/wiki/Test-driven_development) approach. This way they go through the problem step by step, improving the solution gradually. Sample tests can be run against the solution to verify if implementation conforms to requirements. If test turns red, there's still something to fix. If test output is all green, user can think of adding some more test cases, one by one, to sample tests. User can continue adding test cases until all requirements of the kata are covered, they cannot think of any more of cases, or they are confident their solution is ready.
 
