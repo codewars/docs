@@ -46,7 +46,7 @@ Beta
            EXPECT RESULT TO BE NUMERIC 3
 ```
 
-Peloaded code is a copybook (`PRELOADED.CPY`) and can be used like `COPY PRELOADED.`.
+Preloaded code is a copybook (`PRELOADED.CPY`) and can be used like `COPY PRELOADED.`.
 
 
 ## Timeout
