@@ -184,6 +184,11 @@ module.exports = {
         },
         {
           type: "category",
+          label: "D",
+          items: ["languages/d/index"],
+        },
+        {
+          type: "category",
           label: "Dart",
           items: ["languages/dart/index", "languages/dart/test"],
         },
