@@ -43,6 +43,7 @@ sidebar_position: 0
 - [CFML](/languages/cfml)
 - [COBOL](/languages/cobol)
 - [CommonLisp](/languages/commonlisp)
+- [D](/languages/d)
 - [Elm](/languages/elm)
 - [Erlang](/languages/erlang)
 - [Factor](/languages/factor)
