@@ -17,7 +17,19 @@ slug: /languages/c
 
 ## Packages
 
-`-lm -lcrypto -ldl -pthread`
+The GNU POSIX C library (libc6) is used, supporting all GNU Extensions.
+C math functions (libm)
+OpenSSL (libcrypto)
+Dynamic Linking (libdl)
+POSIX threads (libpthread)
+Criterion testframework (libcriterion)
+SQLite (libsqlite3)
+
+`-lm -lcrypto -ldl -pthread -lcriterion -lsqlite3`
+
+## Compiled sources
+
+'preloaded.c tests.c solution.c`
 
 ## Services
 None
