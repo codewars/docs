@@ -54,7 +54,7 @@ Due to the complicated compilation model of C++ code, paired with the fact that 
 
 One consequence of using a template is that the signature of a solution function can be modified by the user in a way which can affect tests. Make sure that tests are not possible to work around by users tampering with the prototype of the solution function.
 
-Another issue caused by the use of the template is excessive namespace pollution. See paragraph on [`using` directives`](#using-directives) for more details.
+Another issue caused by the use of the template is excessive namespace pollution. See paragraph on [`using` directives](#using-directives) for more details.
 
 
 ## Coding
@@ -97,7 +97,7 @@ Sometimes authors consider C++ just "C, but with classes". While C and C++ are c
 
 ### `using` directives
 
-To avoid problems with namespace pollution, C++ snippets should not contain `using` directives (particularly `using namespace std;`) anywhere in the global namespace. Incorrect use of `using` can sometimes cause compilation problems that are difficult to diagnose. For example, `using namespace std;` placed incorrectly in the "Complete solution" or "Initial solution" snippet can result in failed compilation for _some_ users. To minimize such risks, authors should stick to following guidelines:
+As mentioned in the section ["Kata snippets and template"](#kata-snippets-and-template), the way how C++ snippets are processed by the Codewars code runner can cause problems with names introduced into the global scope with `using` directives. The easiest way to avoid problems with namespace pollution is to ensure that C++ snippets do not contain `using` directives (particularly `using namespace std;`) anywhere in the global namespace. Incorrect use of `using` can sometimes cause compilation problems that are difficult to diagnose. For example, `using namespace std;` placed incorrectly in the "Complete solution" or "Initial solution" snippet can result in failed compilation for _some_ users. To minimize such risks, authors should stick to following guidelines:
 - `using` directives should not be present in the global scope of "Preloaded", "Complete solution", and "Initial solution" snippets. They are heavily discouraged in the global scope of "Sample tests" and "Submission tests" snippets. This rule applies not only to `using namespace std;`, but also to other namespaces and namespace-qualified names.
 - `using` directives are perfectly fine inside the scope of an "Initial solution" function, test helpers, or `It` blocks.
 
