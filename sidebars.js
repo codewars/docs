@@ -142,7 +142,7 @@ module.exports = {
         {
           type: "category",
           label: "COBOL",
-          items: ["languages/cobol/index", "languages/cobol/zut"],
+          items: ["languages/cobol/index"],
         },
         {
           type: "category",
