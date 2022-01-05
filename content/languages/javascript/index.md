@@ -10,6 +10,7 @@ slug: /languages/javascript
 - Node 8.x
 - Node 10.x
 - Node 12.x
+- Node 14.x
 
 ## Test Frameworks
 
