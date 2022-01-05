@@ -30,7 +30,7 @@ If the failure output for deep equality is truncated, `chai.config.truncateThres
 
 If you're creating a kata, try inserting an example in the kata editor to get started.
 
-### Example for Node v10<sup>+</sup>
+### Example for Node v10.x/v12.x
 
 ```javascript
 const chai = require("chai");
