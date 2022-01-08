@@ -42,7 +42,7 @@ Factor-specific paragraphs can be inserted with [language conditional rendering]
 
 ## Tasks and Requirements
 
-Some concepts don't always translate well to or from Factor. Because of this, some constructs should be avoided and some translations just shouldn't be done.
+Some concepts don't always translate well to or from Factor. Because of this some constructs should be avoided and some translations just shouldn't be done.
 - Factor has explicit stack effects, which means some Kata involving multi-variadic functions (among other things) might be difficult to translate properly.
 
 Some kata just should not be translated into Factor because it can be difficult to keep their initial idea:
@@ -67,7 +67,7 @@ IN: add-three
 Similarly, both Sample tests and Submission tests require these lines, and should each import:
 - the solution vocabulary
 - the testest vocabulary (`tools.testest`)
-- any other vocabularies required by your tests (eg. `random`)
+- any other vocabularies required by your tests (e.g. `random`)
 
 The vocabulary name of each should be the same as the solution vocabulary, with an additional `.tests` suffix.
 
@@ -133,7 +133,7 @@ The `random` [vocabulary](https://docs.factorcode.org/content/vocab-random.html)
 
 ### `locals`
 
-Often testing will involving generating some random value, and using it as an input to the user solution, and the reference solution. This can often get rather complex, especially when using the assertion syntax. A good solution can be to use the `locals` vocabulary, allowing values to be stored similar to imperative languages. As a short example:
+Often testing will involve generating some random value, and using it as an input to the user solution, and the reference solution. This can often get rather complex, especially when using the assertion syntax. A good solution can be to use the `locals` vocabulary, allowing values to be stored similar to imperative languages. As a short example:
 
 ```factor
 1000 random :> a
@@ -144,7 +144,7 @@ a b + :> expected
 
 ### Parsing word limitations
 
-Kata which require the definition of parsing words can run into some problems when writing tests. Here are listed some known problems, as well as potential workarounds.
+Kata which involve defining parsing words can run into some problems when writing tests. Here are listed some known problems, as well as potential workarounds.
 
 #### A parsing word cannot be used in the same file it is defined in.
 
