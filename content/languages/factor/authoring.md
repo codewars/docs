@@ -152,7 +152,7 @@ Factor is compiled in such a way that parsing words cannot be defined and used i
 
 #### Random tests for parsing words
 
-For some parsing words, it might be very difficult to create random tests which involve different combinations of parsing words as they might appear in real code. Tests are not run until run-time, and so all parsing will have been completed. One potential solution is to  build a string of the desired computation, use the `eval(` [word](https://docs.factorcode.org/content/word-eval(,eval.html) to compile it.
+For some parsing words, it might be very difficult to create random tests which involve different combinations of parsing words as they might appear in real code. Tests are not run until run-time, and so all parsing will have been completed. One potential solution is to  build a string of the desired computation, use the `eval(` [word](https://docs.factorcode.org/content/word-eval%28,eval.html) to compile it.
 
 ### Reference solution
 
