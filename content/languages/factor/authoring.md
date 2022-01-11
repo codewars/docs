@@ -76,7 +76,7 @@ USING: add-three tools.testest kernel math ;
 IN: add-three.tests
 ```
 
-#### Test grouping functions
+#### Test grouping words
 
 To create and present test output, testest uses the `describe#{` and `it#{` words:
 
@@ -131,15 +131,33 @@ The `random` [vocabulary](https://docs.factorcode.org/content/vocab-random.html)
 100 random ! Random integer from 0-99 inclusive
 ```
 
-### `locals`
+### Recipe: Generating random tests
 
-Often testing will involve generating some random value, and using it as an input to the user solution, and the reference solution. This can often get rather complex, especially when using the assertion syntax. A good solution can be to use the `locals` vocabulary, allowing values to be stored similar to imperative languages. As a short example:
+The following words can useful in writing concise and understand random tests:
+- Binding lexical variables with [`:>`](https://docs.factorcode.org/content/word-__colon____gt__,syntax.html) makes it much easier to use randomly generated values in multiple places.
+- Test group labels can be formatted with [`vsprintf`](https://docs.factorcode.org/content/word-vsprintf,formatting.html) to include inputs (where appropriate)
+- Tests can be run in a loop using [`times`](https://docs.factorcode.org/content/word-times,math.html).
+
+Using these, a batch of random tests might look something like the following example:
 
 ```factor
-1000 random :> a
-1000 random :> b
-a b + :> expected
-<{ a b add -> expected }>
+USING: multiply tools.testest kernel random math formatting locals ;
+IN: multiply.tests
+
+:: run-tests ( -- )
+  "Random tests" describe#{
+    50 [
+      100 random :> a
+      100 random :> b
+      a b * :> expected
+      { a b } "Testing a=%d b=%d" vsprintf it#{
+        <{ a b multiply -> expected }>
+      }#
+    ] times
+  }#
+;
+
+MAIN: run-tests
 ```
 
 ### Parsing word limitations
