@@ -133,7 +133,7 @@ The `random` [vocabulary](https://docs.factorcode.org/content/vocab-random.html)
 
 ### Recipe: Generating random tests
 
-The following words can useful in writing concise and understand random tests:
+The following words can be useful in writing concise and understandable random tests:
 - Binding lexical variables with [`:>`](https://docs.factorcode.org/content/word-__colon____gt__,syntax.html) makes it much easier to use randomly generated values in multiple places.
 - Test group labels can be formatted with [`vsprintf`](https://docs.factorcode.org/content/word-vsprintf,formatting.html) to include inputs (where appropriate)
 - Tests can be run in a loop using [`times`](https://docs.factorcode.org/content/word-times,math.html).
