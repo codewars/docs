@@ -160,6 +160,41 @@ IN: multiply.tests
 MAIN: run-tests
 ```
 
+### Custom assertion messages
+
+Sometimes it can be helpful to have full control over the assertion messages for both passing and failing assertions. `testest` includes the ability to set custom messages, as well as a couple helper words:
+- `lf` will simply output `"<:LF:>"`, which is required by Codewars to properly print a new-line in assertion messages
+- `seq.` will properly print a sequence, in particular to be used for `expected` and `got` in failure assertions.
+
+**Success**
+
+Custom success messages can be set by assigning a quotation with stack effect `( -- )` to the variable `test-passed.`. For example, using [`write`](https://docs.factorcode.org/content/word-write,io.html) and [`set`](https://docs.factorcode.org/content/word-set,namespaces.html) as follows:
+```factor
+[ "Custom message" write ] test-passed. set
+```
+
+**Failure**
+
+Similarly to success messages, custom failure messages can be set by assigning a quotation to the variable `test-failed.`. This quotation must have the stack effect `( assert-sequence -- )` where `assert-sequence` is a tuple with slots `got` and `expected`, each containing sequences of the relevant elements in the assertion.
+
+A simple failure message might look something like this:
+```factor
+[ "Good try, but no." write drop ] test-failed. set
+```
+or a more informative failure message might look like this:
+```factor
+[
+  [ "The result should have been: " write expected>> seq. ]
+  [ lf "but instead it was: " write got>> seq. ]
+  bi
+] test-failed. set
+```
+:::note
+When a custom success or failure message is set, the new message will be displayed for all future assertions until changed again.
+
+If you want to set a custom message for only a limited number of tests, you can use [`with-scope`](https://docs.factorcode.org/content/word-with-scope,namespaces.html) to revert all variables once the scope ends.
+:::
+
 ### Parsing word limitations
 
 Kata which involve defining parsing words can run into some problems when writing tests. Here are listed some known problems, as well as potential workarounds.
