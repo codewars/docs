@@ -83,44 +83,46 @@ To create and present test output, testest uses the `describe#{` and `it#{` word
 ```factor
 "Fixed tests" describe#{
   "Odd numbers" it#{
-    ! some assertions...
+    ! some tests...
   }#
 
   "Even numbers" it#{
-    ! some assertions...
+    ! some tests...
   }#
 }#
 
 "Random tests" describe#{
   "Small inputs" it#{
-    ! some assertions...
+    ! some tests...
   }#
 
   "Large inputs" it#{
-    ! some assertions...
+    ! some tests...
   }#
 }#
 ```
 
-`describe` blocks can contain `describe` or `it` blocks, but `it` blocks can only contain assertions.
+`describe` blocks can contain `describe` or `it` blocks, but `it` blocks can only contain unit tests.
 
-#### Assertions
+#### Unit tests
 
-Assertions with testest are created using the following syntax:
+Unit tests with testest are created using the following syntax:
 ```factor
 <{ ...inputs -> ...expected }>
 ```
-The left side `...inputs` including whatever setup you wish to test, and the right side `...expected` being what the resulting stack should be. For example:
+The left side `...inputs` should include whatever setup you wish to test, and the right side `...expected` should include what the resulting stack should be. For example:
 
 ```factor
 <{ 3 4 add -> 7 }>
 ```
 
-Note that `...inputs` is not limited to just literals and the tested word. For example a word with the stack effect `( ... a b -- ... r )` might need to be tested with leading values, to ensure they are not changed:
+:::note
+The values in unit tests are not limited to just literals and the tested word. For example a word with the stack effect `( ... a b -- ... r )` might need to be tested with leading values, to ensure they are not changed:
 
 ```factor
 <{ t "str" 3 4 special-add -> t "str" 7 }>
 ```
+:::
 
 ### Generating random values
 
@@ -160,11 +162,11 @@ IN: multiply.tests
 MAIN: run-tests
 ```
 
-### Custom assertion messages
+### Custom result messages
 
-Sometimes it can be helpful to have full control over the assertion messages for both passing and failing assertions. `testest` includes the ability to set custom messages, as well as a couple helper words:
-- `lf` will simply output `"<:LF:>"`, which is required by Codewars to properly print a new-line in assertion messages
-- `seq.` will properly print a sequence, in particular to be used for `expected` and `got` in failure assertions.
+Sometimes it can be helpful to have full control over the unit test messages for both passing and failing tests. `testest` includes the ability to set custom messages, as well as a couple helper words:
+- `lf` will simply output `"<:LF:>"`, which is required by Codewars to properly print a new-line in success and failure messages
+- `seq.` will properly print a sequence, in particular to be used for `expected` and `got` in failure messages.
 
 **Success**
 
@@ -175,7 +177,7 @@ Custom success messages can be set by assigning a quotation with stack effect `(
 
 **Failure**
 
-Similarly to success messages, custom failure messages can be set by assigning a quotation to the variable `test-failed.`. This quotation must have the stack effect `( assert-sequence -- )` where `assert-sequence` is a tuple with slots `got` and `expected`, each containing sequences of the relevant elements in the assertion.
+Similarly to success messages, custom failure messages can be set by assigning a quotation to the variable `test-failed.`. This quotation must have the stack effect `( assert-sequence -- )` where `assert-sequence` is a tuple with slots `got` and `expected`, each containing sequences of the relevant elements in the unit test.
 
 A simple failure message might look something like this:
 ```factor
@@ -189,8 +191,15 @@ or a more informative failure message might look like this:
   bi
 ] test-failed. set
 ```
+Sometimes it might be helpful to include additional values in the unit-test, so that they are available to your custom quotation, in the case of failure.
+```factor
+[ expected>> first2 number>string write " IS" " is NOT" ? write " divisible by 7" write ] test-failed. set
+100 random :> i
+<{ i >bin re matches? i -> i 7 multiple? i }> ! Extra i on both sides, for use by failure message
+```
+
 :::note
-When a custom success or failure message is set, the new message will be displayed for all future assertions until changed again.
+When a custom success or failure message is set, the new message will be displayed for all future unit tests until changed again.
 
 If you want to set a custom message for only a limited number of tests, you can use [`with-scope`](https://docs.factorcode.org/content/word-with-scope,namespaces.html) to revert all variables once the scope ends.
 :::
