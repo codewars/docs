@@ -42,7 +42,7 @@ Factor-specific paragraphs can be inserted with [language conditional rendering]
 
 ## Tasks and Requirements
 
-Some concepts don't always translate well to or from Factor. Because of this some constructs should be avoided and some translations just shouldn't be done.
+Some concepts don't always translate well to or from Factor. Because of this some constructs should be avoided, and some translations just shouldn't be done.
 - Factor has explicit stack effects, which means some Kata involving multi-variadic functions (among other things) might be difficult to translate properly.
 
 Some kata just should not be translated into Factor because it can be difficult to keep their initial idea:
