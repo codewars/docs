@@ -115,6 +115,7 @@ The left side `...inputs` should include whatever setup you wish to test, and th
 ```factor
 <{ 3 4 add -> 7 }>
 ```
+The unit test is passed or failed depending on if the resulting stacks match. The test result message can be [fully customized](/languages/factor/authoring#custom-result-messages).
 
 :::note
 The values in unit tests are not limited to just literals and the tested word. For example a word with the stack effect `( ... a b -- ... r )` might need to be tested with leading values, to ensure they are not changed:

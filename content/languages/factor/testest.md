@@ -44,7 +44,7 @@ MAIN: run-tests
 
 #### `<{ ...inputs -> ...expected }>`
 
-  Creates a unit test, by executing the values in `...inputs`, then executing the values in `...expected` and comparing the results. If these results match then the test is passed, otherwise it is failed.
+  Creates a unit test, by executing the values in `...inputs`, then executing the values in `...expected` and comparing the resulting stacks. If they match, the test is passed, otherwise the test is failed. On failure, the stacks are packed into a tuple (under `got` and `expected` slots, respectively) and pushed onto the stack to be available for the `test-failed.` quotation.
 
 #### `test-passed.`
 
