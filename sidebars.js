@@ -210,7 +210,7 @@ module.exports = {
         {
           type: "category",
           label: "Factor",
-          items: ["languages/factor/index", "languages/factor/testest"],
+          items: ["languages/factor/index", "languages/factor/authoring", "languages/factor/testest"],
         },
         {
           type: "category",
