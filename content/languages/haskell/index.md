@@ -63,6 +63,7 @@ dependencies:
 - persistent
 - persistent-sqlite
 - persistent-template
+- QuickCheck
 - random
 - regex-pcre
 - regex-posix
