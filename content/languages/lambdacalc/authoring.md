@@ -83,7 +83,7 @@ Refer to the [Encodings Reference](encoding-reference) for naming conventions.
 
 Below you can find an example test suite, showing how the components of `lc-test` are used to compile and test a Lambda Calculus Kata.
 
-```lambdacalc
+```javascript
 import { assert, LC, getSolution } from "./lc-test.js";
 
 LC.configure({ purity: "Let", numEncoding: "Church", verbosity: "Concise" });
