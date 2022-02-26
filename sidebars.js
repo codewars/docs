@@ -287,6 +287,11 @@ module.exports = {
         },
         {
           type: "category",
+          label: "Lambda Calculus",
+          items: ["languages/lambdacalc/index", "languages/lambdacalc/authoring", "languages/lambdacalc/lc-test"],
+        },
+        {
+          type: "category",
           label: "Lean",
           items: ["languages/lean/index", "languages/lean/lean"],
         },
