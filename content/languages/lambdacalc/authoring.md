@@ -64,7 +64,7 @@ The `Preloaded` section, example `Solution`, and solver `Solution` code are `Str
 
 The only way to arrive at JavaScript values from compiled Lambda Calculus code is passing its compiled form a JavaScript value in testing; there is no way to embed JavaScript values in Lambda Calculus code - not even passing it `Number`s, which will be transparently encoded ( or generate an `EvalError`, when `numEncoding = None` ).
 
-Note that there are _no `String`s_ in Lambda Calculus syntax, though you can pass and manipulate `String`s in testing ( ie. in JavaScript ).
+Note that there are _no `String`s_ in Lambda Calculus syntax, though you can pass and manipulate `String`s in testing ( i.e. in JavaScript ).
 
 Also note that _all_ passed `Number`s will be transparently encoded, which will generate a `RangeError` for negative numbers in most `numEncoding`s.
 

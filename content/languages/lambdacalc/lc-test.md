@@ -13,14 +13,14 @@ To run tests for Lambda Calculus programs, Codewars uses a custom compiling and 
 
 The framework is hosted in Javascript, and as such, both the sample and submission tests of Kata must be written in Javascript, while the preloaded section, example solution and user solution are Lambda Calculus.
 
-Please refer to specific documentation for further information on the modules which `lc-test` utilises.
+Please refer to specific documentation for further information on the modules which `lc-test` utilizes.
 - [Chai](chai-docs) for assertions
 - [Lambda Calculus](lc-docs) for compilation
 
 ## Basic Usage
 
 ### Example tests
-```js
+```javascript
 import { assert, config, LC, getSolution } from "./lc-test.js";
 
 LC.configure({purity: "Let", numEncoding: "Church"});
@@ -89,7 +89,7 @@ Default configuration is
 `verbosity` controls the amount of debug and error information displayed.
 
 `purity` controls the strictness/purity of the Lambda Calculus syntax allowed.
-- `PureLC` ensures that all terms must be self contained, using no external definitions, including itself.
+- `PureLC` ensures that all terms must be self-contained, using no external definitions, including itself.
 - `Let` allows defined terms to be used in later terms.
 - `LetRec` allows defined terms to be used in later terms, and additionally allows a term to reference itself (direct recursion).
 
@@ -99,7 +99,7 @@ Default configuration is
 
 #### `toInt` / `fromInt`
 
-These functions use the current `numEncoding` for converting between functions (ie. Lambda Calculus terms), and Javascript numbers.
+These functions use the current `numEncoding` for converting between functions (i.e. Lambda Calculus terms), and Javascript numbers.
 
 `toInt` converts a function to a Javascript number.
 
