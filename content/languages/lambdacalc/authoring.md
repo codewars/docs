@@ -42,10 +42,6 @@ Lambda Calculus-specific paragraphs can be inserted with [language conditional r
 ~~~
 ```
 
-## Tasks and Requirements
-
-Due to being an esoteric language, in many cases tasks may be significantly harder to complete in Lambda Calculus, than in other languages. Due to this, many kata translations should rather be published as standalone katas with `[LC]` as a title prefix.
-
 ## Tests
 
 ### lc-test
