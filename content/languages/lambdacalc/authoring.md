@@ -10,9 +10,9 @@ This article is not a standalone tutorial on creating kata or translations. It's
 
 ## General info
 
-Any technical information related to the Lambda Calculus setup on Codewars can be found on the [Lambda Calculus reference](/languages/factor/) page (language versions, available libraries, and setup of the code runner).
+Any technical information related to the Lambda Calculus setup on Codewars can be found on the [Lambda Calculus reference](/languages/lambdacalc/) page (language versions, available libraries, and setup of the code runner).
 
-For further information about Lambda Calculus as a language, and for a collection of extensive authoring, syntax and style guides, see [The Lambda Calculus Wiki](https://github.com/JohanWiltink/lc-docs/wiki).
+For further information about Lambda Calculus as a language, and for a collection of extensive authoring, syntax and style guides, see [The Lambda Calculus Documentation Wiki](lc-docs-wiki).
 
 ## Description
 
@@ -54,7 +54,7 @@ Lambda Calculus kata use [lc-test](/languages/lambdacalc/lc-test/) to implement 
 
 ### Setup
 
-Lambda Calculus is heavily dependant upon what encodings are chosen to represent various data types. All Lambda Calculus kata should declare in the description which `Purity` and which `numEncoding` (if any) are going to be used in the kata. Additionally, any required encodings should also be described, such as expected input and output types.
+Lambda Calculus is heavily dependant upon what encodings are chosen to represent various data types. All Lambda Calculus kata should declare in the description which `Purity` and which `numEncoding` (if any) are going to be used in the kata. Additionally, any required encodings, such as for inputs and outputs, should be specified by their constructors and deconstructors, allowing the actual implementation to remain free to the solver.
 
 ### What is in what language, what syntax, what encoding?
 
@@ -86,35 +86,24 @@ Below you can find an example test suite, showing how the components of `lc-test
 ```javascript
 import { assert, LC, getSolution } from "./lc-test.js";
 
-LC.configure({ purity: "Let", numEncoding: "Church", verbosity: "Concise" });
-const { counter } = LC.compile(getSolution());
+LC.configure({ purity: "LetRec", numEncoding: "Church", verbosity: "Concise" });
+const { multiply } = LC.compile(getSolution());
 
-const T = t => f => t ;
-const F = t => f => f ;
+describe("Multiply",()=>{
 
-describe("Full tests", function() {
-  it("fixed tests", function() {
-    assert.numEql( counter(F), 0 );
-    assert.numEql( counter(T)(F), 1 );
-    assert.numEql( counter(T)(T)(T)(F), 3 );
-    assert.numEql( counter(T)(T)(T)(T)(T)(T)(T)(T)(T)(F), 9 );
+  it("example tests",()=>{
+    assert.equal( multiply(7)(7), 49 );
+    assert.equal( multiply(11)(11), 121 );
   });
 
-  it("random tests", () => {
-    for (let i=30; i--;) {
-      let c = counter;
-      let n = Math.floor(Math.random()*101);
-      for (let j=n; j--;) {
-        try {
-          c = c(T);
-        } catch {
-          assert.fail("counter broke while applying True!");
-          break;
-        }
-      }
-      assert.numEql(c(F), n);
+  it("random tests",()=>{
+    const rnd = (m,n=0) => Math.random() * (n-m) + m | 0 ;
+    for ( let i=1; i<=100; i++ ) {
+      const m = rnd(i), n = rnd(i);
+      assert.equal( multiply(m)(n), m*n );
     }
   });
 });
 ```
 [encoding-reference]: https://github.com/JohanWiltink/lc-docs/wiki/encodings-guide
+[lc-docs-wiki]: https://github.com/JohanWiltink/lc-docs/wiki

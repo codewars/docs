@@ -47,9 +47,9 @@ describe("Fixed tests", () => {
 
 `assert` is the standard `chai.assert`, extended with the following the following additional assertion:
 
-**`assert.numEql(actual, expected, msg)`**
+**`assert.numEql(actual, expected [ , message ] )`**
 
-`actual` and `expected` are automatically decoded according to the current `numEncoding`, if necessary, before making an equality assertion between them. A custom failure message can be set with `msg`.
+`actual` and `expected` are automatically decoded according to the current `numEncoding`, if necessary, before making an equality assertion between them. A custom failure message can optionally be set with `message`.
 
 #### `config`
 
@@ -63,7 +63,7 @@ describe("Fixed tests", () => {
 `LC.compile(getSolution())` returns a JavaScript `Object` with all top level definitions from the compiled Lambda Calculus source code. Each definition is a `Function` which can be directly called.
 
 :::note
-Use destructuring to coneniently extract the desired definitions, renaming them to valid Javascript identifiers.
+Use destructuring to conveniently extract the desired definitions, renaming them to valid Javascript identifiers.
 
 ```javascript
 const solution = LC.compile(getSolution());
@@ -84,7 +84,7 @@ Default configuration is
 }
 ```
 
-`LC.configure` can be used to change the settings, by passing an object with key-values of the settings to be changed. For example `LC.configure({purity: "Let", numEncoding: "Scott"})`
+`LC.configure();` can be used to change the settings, by passing an object with key-values of the settings to be changed. For example `LC.configure({purity: "Let", numEncoding: "Scott"})`
 
 `verbosity` controls the amount of debug and error information displayed.
 
