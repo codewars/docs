@@ -45,7 +45,7 @@ describe("Fixed tests", () => {
 
 #### `assert`
 
-`assert` is the standard `chai.assert`, extended with the following the following additional assertion:
+`assert` is the standard `chai.assert`, extended with the following additional assertion:
 
 **`assert.numEql(actual, expected [ , message ] )`**
 
@@ -84,7 +84,7 @@ Default configuration is
 }
 ```
 
-`LC.configure();` can be used to change the settings, by passing an object with key-values of the settings to be changed. For example `LC.configure({purity: "Let", numEncoding: "Scott"})`
+`LC.configure` can be used to change the settings, by passing an object with key-values of the settings to be changed. For example `LC.configure({purity: "Let", numEncoding: "Scott"});`
 
 `verbosity` controls the amount of debug and error information displayed.
 
