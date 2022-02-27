@@ -12,7 +12,7 @@ This article is not a standalone tutorial on creating kata or translations. It's
 
 Any technical information related to the Lambda Calculus setup on Codewars can be found on the [Lambda Calculus reference](/languages/lambdacalc/) page (language versions, available libraries, and setup of the code runner).
 
-For further information about Lambda Calculus as a language, and for a collection of extensive authoring, syntax and style guides, see [The Lambda Calculus Documentation Wiki](lc-docs-wiki).
+For further information about Lambda Calculus as a language, and for a collection of extensive authoring, syntax and style guides, see [The Lambda Calculus Documentation Wiki][lc-docs-wiki].
 
 ## Description
 
@@ -73,7 +73,7 @@ For 2-tuples, ask for `Pair` and `fst, snd`.
 For lists, ask for `nil, cons` and `foldr`.
 For option types, ask for `none, some` and `option`.
 
-Refer to the [Encodings Reference](encoding-reference) for naming conventions.
+Refer to the [Encodings Reference][encoding-reference] for naming conventions.
 
 ## Example test suite
 

@@ -14,8 +14,8 @@ To run tests for Lambda Calculus programs, Codewars uses a custom compiling and 
 The framework is hosted in Javascript, and as such, both the sample and submission tests of Kata must be written in Javascript, while the preloaded section, example solution and user solution are Lambda Calculus.
 
 Please refer to specific documentation for further information on the modules which `lc-test` utilizes.
-- [Chai](chai-docs) for assertions
-- [Lambda Calculus](lc-docs) for compilation
+- [Chai][chai-docs] for assertions
+- [Lambda Calculus][lc-docs] for compilation
 
 ## Basic Usage
 
@@ -93,7 +93,7 @@ Default configuration is
 - `Let` allows defined terms to be used in later terms.
 - `LetRec` allows defined terms to be used in later terms, and additionally allows a term to reference itself (direct recursion).
 
-`numEncoding` selects the specific number encoding to be used when compiling number literals, or conversion functions such as `toInt`. The encoding may be one of the [predefined encodings](lc-docs), a custom encoding, or `"None"`.
+`numEncoding` selects the specific number encoding to be used when compiling number literals, or conversion functions such as `toInt`. The encoding may be one of the [predefined encodings][lc-docs], a custom encoding, or `"None"`.
 - Custom encodings can be set by assigning to `numEncoding` an object with both `toInt` and `fromInt` attribute functions to perform conversion.
 - `"None"` will cause number literals in code to throw an error.
 
