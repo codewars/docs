@@ -101,5 +101,5 @@ describe("Multiply",()=>{
   });
 });
 ```
-[encoding-reference]: https://github.com/JohanWiltink/lc-docs/wiki/encodings-guide
-[lc-docs-wiki]: https://github.com/JohanWiltink/lc-docs/wiki
+[encoding-reference]: https://github.com/codewars/lambda-calculus/wiki/encodings-guide
+[lc-docs-wiki]: https://github.com/codewars/lambda-calculus/wiki

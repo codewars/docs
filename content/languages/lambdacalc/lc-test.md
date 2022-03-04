@@ -111,4 +111,4 @@ These functions use the current `numEncoding` for converting between functions (
 
 [test-framework-repo]: https://github.com/codewars/lambda-calculus
 [chai-docs]: https://www.chaijs.com/api/assert/
-[lc-docs]: https://github.com/JohanWiltink/lc-docs/wiki
+[lc-docs]: https://github.com/codewars/lambda-calculus/wiki
