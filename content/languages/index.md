@@ -52,6 +52,7 @@ sidebar_position: 0
 - [Haxe](/languages/haxe)
 - [Idris](/languages/idris)
 - [Julia](/languages/julia)
+- [Lambda Calculus](/languages/lambdacalc)
 - [Nim](/languages/nim)
 - [Objective-C](/languages/objc)
 - [OCaml](/languages/ocaml)
