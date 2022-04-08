@@ -486,7 +486,7 @@ module.exports = {
         "references/kata-trainer",
       ],
     },
-    "glossary",
+    // "glossary",
     {
       type: "category",
       label: "Meta",
