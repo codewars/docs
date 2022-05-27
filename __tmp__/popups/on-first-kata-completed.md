@@ -17,7 +17,7 @@ Each time you complete a kata you will be shown the solution of other Codewarrio
 ## Next Kata
 
 You can move on to the next kata by clicking this button in the top right corner. It will randomly select a new kata for you based
-off of your selected language and training routine. Your active training routing is found on the dashboard page if you want to change it.
+off of your selected language and training routine. Your active training routine is found on the dashboard page if you want to change it.
 
 ## Train Again
 
