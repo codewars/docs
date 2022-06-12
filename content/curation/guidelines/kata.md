@@ -20,6 +20,7 @@ This article contains a set of guidelines, which can be used by reviewers to det
 ## Approval
 
 - A kata can be approved only if the review confirms that it is of sufficient quality, it holds to all applicable quality guidelines, and all reported issues have been addressed.
+- When picking a difficulty rank for an approved kata, approvers are advised to check the breakdown of rank assessments cast by users who managed to solve it. Information about the brakdown is not currently presented in UI, but can be seen under `https://www.codewars.com/api/v1/code-challenges/:kataId/assessed-ranks`. 
 - **Approvers should keep responsibility for all issues in the kata they approved.** You should actively maintain all problems which slipped through your review and ended up in an approved kata: fix issues, consider suggestions, answer questions.
 
 
