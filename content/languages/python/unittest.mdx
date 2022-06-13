@@ -1,0 +1,64 @@
+---
+title: Python unittest
+sidebar_label: unittest
+kind: reference
+---
+
+import ThemedImage from "@theme/ThemedImage";
+
+Codewars offers Python's [unittest](https://docs.python.org/3/library/unittest.html) module for testing solutions. Codewars uses a custom reporter for unittest to format the output for the code runner. Visit the [python-test-framework](https://github.com/codewars/python-unittest) GitHub repository for more information.
+
+## Basic Example
+
+```python
+import solution
+import unittest
+from codewars_unittest import CodewarsTestRunner
+
+class TestBasicFunctionality(unittest.TestCase):
+    def test_add(self):
+        "add two numbers"
+        self.assertEqual(solution.add(2, 1), 3)
+
+    def test_subtract(self):
+        "subtract two numbers"
+        self.assertEqual(solution.subtract(2, 1), 1)
+
+class TestEdgeCases(unittest.TestCase):
+    def test_division_by_zero(self):
+        "divide by zero"
+        self.assertRaises(ZeroDivisionError, solution.divide, 42, 0)
+
+unittest.main(testRunner=CodewarsTestRunner())
+```
+
+As demonstrated above, methods intended to be tested must begin with the prefix `test`. The `Test` class name is flexible. You may register multiple classes before invoking `unittest.main`. Verbose test descriptions can be provided with a simple [docstring](https://www.python.org/dev/peps/pep-0257/).
+
+Visit [unittest — Basic Example](https://docs.python.org/3/library/unittest.html#basic-example) for a simple, platform-agnostic example of `unittest`.
+
+## Assertions
+
+The crux of each test is a call to [`assertEqual()`](https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertEqual) to check for an expected result; [`assertTrue()`](https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertTrue) or [`assertFalse()`](https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertFalse) to verify a condition; or [`assertRaises()`](https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertRaises) to verify that a specific exception gets raised. These methods are used instead of the `assert` statement so the test runner can accumulate all test results and produce a report.
+
+## Setup and Tear Down
+
+The [`setUp()`](https://docs.python.org/3/library/unittest.html#unittest.TestCase.setUp) and [`tearDown()`](https://docs.python.org/3/library/unittest.html#unittest.TestCase.tearDown) methods allow you to execute code before and after each test method.
+
+Similarly, you can use [`setUpClass()`](https://docs.python.org/3/library/unittest.html#unittest.TestCase.setUpClass) and [`tearDownClass()`](https://docs.python.org/3/library/unittest.html#unittest.TestCase.tearDownClass) to run code before all tests run and after all tests complete, respectively.
+
+## Test Ordering
+
+Unittest reorders test cases by default which can cause frustration for candidates and students when matching test case code with the output displayed on the runner. There are a variety of solutions to the problem which you can read about on [this Stack Overflow thread](https://stackoverflow.com/questions/5387299/python-unittest-testcase-execution-order), but the following approach should work for typical cases:
+
+```python
+import inspect
+
+class Test(unittest.TestCase):
+    # ... test cases ...
+
+test_src = inspect.getsource(Test)
+unittest.TestLoader.sortTestMethodsUsing = lambda _, x, y: (
+    test_src.index(f"def {x}") - test_src.index(f"def {y}")
+)
+```
+

@@ -357,6 +357,7 @@ module.exports = {
             "languages/python/index",
             "languages/python/authoring",
             "languages/python/codewars-test",
+            "languages/python/unittest",
           ],
         },
         {
