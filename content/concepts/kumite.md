@@ -11,7 +11,7 @@ In karate, kumite (ko͞omiˌtā) is the practice of taking techniques learned fr
 
 ## How does it work?
 
-Creating a new kumite will involve creating some code, with an optional description and set of test cases that prove it works. Once published, the code provided will be considered the first "move". You and any other code warrior are then able to respond to that move with your own. You do this by "forking" the original move. Your fork can refactor the original code, add features, fix bugs, add additional tests, etc. Any fork can then also be forked, creating a series of moves that happen between 1 or more participants.
+Creating a new kumite will involve creating some code, with an optional description and set of test cases that prove it works. Once published, the code provided will be considered the first "move". You and any other user are then able to respond to that move with your own. You do this by "forking" the original move. Your fork can refactor the original code, add features, fix bugs, add additional tests, etc. Any fork can then also be forked, creating a series of moves that happen between 1 or more participants.
 
 ## What do I use this for?
 
