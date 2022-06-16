@@ -23,7 +23,7 @@ Be nice. Everyone in the Codewars community should feel welcome, regardless of t
 
 **Be honorable.** Cheating is discouraged. If you find a way to complete a kata that falls outside the kata itself (notably but not limited to: exploiting Codewars's test framework, website and servers), then refrain from doing so. Violators will be banned for such usage. Codewars has algorithms to detect some forms of cheating but does not attempt to track down every possible way. If you witness someone else who has a solution that you do not feel to be honorable, please let the moderators know on [Discord](https://discord.gg/7U9t33jrgG) or on [GitHub](https://github.com/Codewars/codewars.com/issues/1378).
 
-**Please do not post your solutions on Github (or alike)**. We realize you would like to use these challenges as your resume, but you should have side-projects for that. If a Code Warrior is unable to find a solution online, then they are further encouraged to complete the task themselves - which will enable them to get more value out of their time spent. 
+**Please do not post your solutions on Github (or alike)**. We realize you would like to use these challenges as your resume, but you should have side-projects for that. If an user is unable to find a solution online, then they are further encouraged to complete the task themselves - which will enable them to get more value out of their time spent. 
 
 ## Policy
 
