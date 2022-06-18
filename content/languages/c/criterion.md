@@ -22,7 +22,7 @@ Test(add_test, should_add_integers, .description = "should add integers") {
   int a = 1;
   int b = 1;
   int expected = 2;
-  cr_assert_eq(expected, add(a, a), "add(%d, %d) == %d", a, b, expected);
+  cr_assert_eq(expected, add(a, b), "add(%d, %d) == %d", a, b, expected);
 }
 ```
 
