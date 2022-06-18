@@ -3,7 +3,7 @@ title: JUnit
 kind: reference
 ---
 
-You can use JUnit [4](https://junit.org/junit4/) or [5](https://junit.org/junit5/) assertions in Codewars. 5 offers nesting, pretty name display and multiple test classes.
+You can use JUnit [4](https://junit.org/junit4/) or [5](https://junit.org/junit5/) in Codewars. 5 offers nesting, pretty name display and multiple test classes.
 
 Note that JUnit assertions use `(expected, actual)` parameter ordering rather than the typical `(actual, expected)`.
 
