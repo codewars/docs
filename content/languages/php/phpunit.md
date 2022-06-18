@@ -11,7 +11,7 @@ tags:
 
 All [PHPUnit](https://phpunit.readthedocs.io/) tests start with a subclass of `TestCase`. You can then add one or more test case methods to that class, each of which must be public and start with `test`. In Codewars' PHP versions 7.4+, PHPUnit requires the name of the test class to end with `Test`.
 
-Note that PHPUnit's `assertEqual` call uses the parameter order `($expected, $actual)`, unlike most testing libraries which have `$actual` first.
+Note that PHPUnit's assertions follow the parameter order `($expected, $actual)`, unlike most testing libraries which have `$actual` first.
 
 ## Basic Setup
 
