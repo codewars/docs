@@ -25,7 +25,7 @@ public class Adder {
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
-class AdderTests {
+public class AdderTests {
     @Test
     public void testAdd() {
         assertEquals(3, Adder.add(1, 2));
