@@ -75,7 +75,7 @@ $this->assertEqualsWithDelta(0.99, "1", 0.1); // passes
 $this->assertEqualsWithDelta(99999, true, 0.1); // passes
 ```
 
-Implementing a custom delta assertion based on `assertTrue` may be a safer bet.
+Type-checking the arguments to `assertEqualsWithDelta` before calling it or implementing a custom delta assertion based on `assertTrue` may be a safer bet.
 
 
 <!--
