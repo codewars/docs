@@ -24,8 +24,6 @@ function Add-Numbers($a, $b) {
 ```powershell
 BeforeAll {
     . $PSCommandPath.Replace(".Tests.ps1", ".ps1")
-    # Or
-    # . $PSScriptRoot/Solution.ps1
 }
 
 Describe "Add-Numbers" {
