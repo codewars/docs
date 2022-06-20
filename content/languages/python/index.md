@@ -9,6 +9,7 @@ slug: /languages/python
 
 - 3.6
 - 3.8
+- 3.10
 
 ## Test Frameworks
 
