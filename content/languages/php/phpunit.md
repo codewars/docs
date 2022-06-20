@@ -13,11 +13,15 @@ All [PHPUnit](https://phpunit.readthedocs.io/) tests start with a subclass of `T
 
 ## Basic Setup
 
+### Solution Code
+
 ```php
 function add(int $a, int $b): int {
     return $a + $b;
 }
 ```
+
+### Test Fixture
 
 ```php
 class AddTest extends TestCase {
