@@ -7,7 +7,6 @@ slug: /languages/python
 
 ## Versions
 
-- 3.6
 - 3.8
 - 3.10
 
