@@ -1,17 +1,24 @@
-import React, { useState } from "react";
 import copy from "copy-text-to-clipboard";
+import React, { useRef, useState } from "react";
 
-const CodeBlockWithCopy = ({ codedata, ...props }) => {
+const CodeBlock = ({ ...props }) => {
+  const pre = useRef(null);
   const [showCopied, setShowCopied] = useState(false);
   const handleCopyCode = () => {
-    copy(atob(codedata));
-    setShowCopied(true);
-    setTimeout(() => setShowCopied(false), 1500);
+    if (pre.current) {
+      copy(
+        Array.from(pre.current.querySelectorAll("code"))
+          .map((el) => el.textContent)
+          .join("\n")
+      );
+      setShowCopied(true);
+      setTimeout(() => setShowCopied(false), 1500);
+    }
   };
 
   return (
     <div className="relative group">
-      <pre {...props}></pre>
+      <pre ref={pre} {...props}></pre>
       <button
         type="button"
         aria-label={"Copy code to clipboard"}
@@ -24,4 +31,4 @@ const CodeBlockWithCopy = ({ codedata, ...props }) => {
   );
 };
 
-export default CodeBlockWithCopy;
+export default CodeBlock;

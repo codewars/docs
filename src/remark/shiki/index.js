@@ -84,7 +84,6 @@ const remapLanguageId = (id) => {
 };
 
 // Use shiki for syntax highlighting.
-// Also store Base64 encoded code in HTML, so we can use that to implement copy button.
 // TODO Decoration. Like Docusaurus builtin, or https://github.com/shikijs/shiki/issues/5
 //      or https://github.com/andrewbranch/gatsby-remark-vscode#line-highlighting
 const createHighlighter = ({ theme = "nord" } = {}) => {
@@ -159,8 +158,7 @@ const createHighlighter = ({ theme = "nord" } = {}) => {
         }
       }
 
-      const b64 = Buffer.from(code).toString("base64");
-      let html = `<pre style="background-color: ${bg}" codedata="${b64}">`;
+      let html = `<pre class="${theme}" style="background-color: ${bg}">`;
       html += `<code class="language-${lang}">`;
       for (const line of tokenLines) {
         html += `<span>`;
