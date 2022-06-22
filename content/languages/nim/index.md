@@ -1,6 +1,5 @@
 ---
 title: Nim
-sidebar_label: Overview
 slug: /languages/nim
 ---
 

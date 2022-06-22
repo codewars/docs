@@ -1,6 +1,5 @@
 ---
 title: D
-sidebar_label: Overview
 slug: /languages/d
 ---
 

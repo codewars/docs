@@ -1,6 +1,5 @@
 ---
 title: Swift
-sidebar_label: Overview
 slug: /languages/swift
 ---
 

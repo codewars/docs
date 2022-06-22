@@ -1,6 +1,5 @@
 ---
 title: Perl
-sidebar_label: Overview
 slug: /languages/perl
 ---
 

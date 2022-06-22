@@ -1,6 +1,5 @@
 ---
 title: SQL
-sidebar_label: Overview
 slug: /languages/sql
 ---
 

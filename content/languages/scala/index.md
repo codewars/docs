@@ -1,6 +1,5 @@
 ---
 title: Scala
-sidebar_label: Overview
 slug: /languages/scala
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Crystal
-sidebar_label: Overview
 slug: /languages/crystal
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Julia
-sidebar_label: Overview
 slug: /languages/julia
 ---
 

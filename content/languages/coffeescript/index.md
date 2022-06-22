@@ -1,6 +1,5 @@
 ---
 title: CoffeeScript
-sidebar_label: Overview
 slug: /languages/coffeescript
 ---
 

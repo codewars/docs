@@ -1,6 +1,5 @@
 ---
 title: Raku
-sidebar_label: Overview
 slug: /languages/raku
 ---
 

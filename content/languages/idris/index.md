@@ -1,6 +1,5 @@
 ---
 title: Idris
-sidebar_label: Overview
 slug: /languages/idris
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Reason
-sidebar_label: Overview
 slug: /languages/reason
 ---
 

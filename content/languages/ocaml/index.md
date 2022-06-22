@@ -1,6 +1,5 @@
 ---
 title: Ocaml
-sidebar_label: Overview
 slug: /languages/ocaml
 ---
 

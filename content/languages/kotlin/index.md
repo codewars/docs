@@ -1,6 +1,5 @@
 ---
 title: Kotlin
-sidebar_label: Overview
 slug: /languages/kotlin
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: TypeScript
-sidebar_label: Overview
 slug: /languages/typescript
 ---
 

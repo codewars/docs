@@ -1,6 +1,5 @@
 ---
 title: JavaScript
-sidebar_label: Overview
 slug: /languages/javascript
 ---
 

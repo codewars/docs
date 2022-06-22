@@ -1,6 +1,5 @@
 ---
 title: Shell
-sidebar_label: Overview
 slug: /languages/shell
 ---
 

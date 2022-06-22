@@ -1,6 +1,5 @@
 ---
 title: Lean
-sidebar_label: Overview
 slug: /languages/lean
 ---
 

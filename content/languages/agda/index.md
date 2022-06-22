@@ -1,6 +1,5 @@
 ---
 title: Agda
-sidebar_label: Overview
 slug: /languages/agda
 ---
 

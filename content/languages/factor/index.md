@@ -1,6 +1,5 @@
 ---
 title: Factor
-sidebar_label: Overview
 slug: /languages/factor
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Dart
-sidebar_label: Overview
 slug: /languages/dart
 ---
 

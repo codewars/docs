@@ -1,6 +1,5 @@
 ---
 title: PureScript
-sidebar_label: Overview
 slug: /languages/purescript
 ---
 

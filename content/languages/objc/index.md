@@ -1,6 +1,5 @@
 ---
 title: Objective-C
-sidebar_label: Overview
 slug: /languages/objc
 ---
 

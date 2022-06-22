@@ -1,6 +1,5 @@
 ---
 title: Lambda Calculus
-sidebar_label: Overview
 slug: /languages/lambdacalc
 ---
 

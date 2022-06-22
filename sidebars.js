@@ -3,7 +3,11 @@ module.exports = {
     {
       type: "category",
       label: "Codewars",
-      items: ["index"],
+      link: {
+        type: "doc",
+        id: "index",
+      },
+      items: [],
     },
     {
       type: "category",
@@ -21,25 +25,37 @@ module.exports = {
     {
       type: "category",
       label: "Training",
+      link: {
+        type: "generated-index",
+      },
       items: ["training/troubleshooting"],
     },
     {
       type: "category",
       label: "Authoring",
+      link: {
+        type: "doc",
+        id: "authoring/index",
+      },
       items: [
-        "authoring/index",
         "authoring/kata",
         "authoring/translation",
         {
           type: "category",
           label: "Tutorials",
+          link: {
+            type: "generated-index",
+          },
           items: ["authoring/tutorials/create-first-kata"],
         },
         {
           type: "category",
           label: "Guidelines",
+          link: {
+            type: "doc",
+            id: "authoring/guidelines/index",
+          },
           items: [
-            "authoring/guidelines/index",
             "authoring/guidelines/kata",
             "authoring/guidelines/description",
             "authoring/guidelines/coding",
@@ -53,6 +69,9 @@ module.exports = {
         {
           type: "category",
           label: "Recipes",
+          link: {
+            type: "generated-index",
+          },
           items: [
             "authoring/recipes/adding-images",
             "authoring/recipes/floating-point",
@@ -64,15 +83,21 @@ module.exports = {
     {
       type: "category",
       label: "Curation",
+      link: {
+        type: "doc",
+        id: "curation/index",
+      },
       items: [
-        "curation/index",
         "curation/kata",
         "curation/translation",
         {
           type: "category",
           label: "Guidelines",
+          link: {
+            type: "doc",
+            id: "curation/guidelines/index",
+          },
           items: [
-            "curation/guidelines/index",
             "curation/guidelines/kata",
             "curation/guidelines/translation",
           ],
@@ -80,6 +105,9 @@ module.exports = {
         {
           type: "category",
           label: "References",
+          link: {
+            type: "generated-index",
+          },
           items: [
             "curation/references/kata-ranks",
             "curation/references/approval-retirement-criteria",
@@ -90,8 +118,11 @@ module.exports = {
     {
       type: "category",
       label: "Community",
+      link: {
+        type: "doc",
+        id: "community/index",
+      },
       items: [
-        "community/index",
         "community/following",
         "community/moderation/index",
         "community/moderation/tools",
@@ -101,30 +132,45 @@ module.exports = {
     {
       type: "category",
       label: "Languages",
+      link: {
+        type: "doc",
+        id: "languages/index",
+      },
       items: [
-        "languages/index",
         {
           type: "category",
           label: "Agda",
-          items: ["languages/agda/index"],
+          link: {
+            type: "doc",
+            id: "languages/agda/index",
+          },
+          items: [],
         },
         {
           type: "category",
           label: "BF",
-          items: ["languages/bf/index", "languages/bf/codewars-test"],
+          link: {
+            type: "doc",
+            id: "languages/bf/index",
+          },
+          items: ["languages/bf/codewars-test"],
         },
         {
           type: "category",
           label: "C",
+          link: {
+            type: "doc",
+            id: "languages/c/index",
+          },
           items: [
-            "languages/c/index",
             {
               type: "category",
-              label: "authoring",
-              items: [
-                "languages/c/authoring/index",
-                "languages/c/authoring/memory-management-techniques",
-              ],
+              label: "Authoring",
+              link: {
+                type: "doc",
+                id: "languages/c/authoring/index",
+              },
+              items: ["languages/c/authoring/memory-management-techniques"],
             },
             "languages/c/criterion",
           ],
@@ -132,147 +178,246 @@ module.exports = {
         {
           type: "category",
           label: "CFML",
-          items: ["languages/cfml/index", "languages/cfml/testbox"],
+          link: {
+            type: "doc",
+            id: "languages/cfml/index",
+          },
+          items: ["languages/cfml/testbox"],
         },
         {
           type: "category",
           label: "Clojure",
-          items: ["languages/clojure/index", "languages/clojure/clojure-test"],
+          link: {
+            type: "doc",
+            id: "languages/clojure/index",
+          },
+          items: ["languages/clojure/clojure-test"],
         },
         {
           type: "category",
           label: "COBOL",
-          items: ["languages/cobol/index"],
+          link: {
+            type: "doc",
+            id: "languages/cobol/index",
+          },
+          items: [],
         },
         {
           type: "category",
           label: "CoffeeScript",
-          items: ["languages/coffeescript/index"],
+          link: {
+            type: "doc",
+            id: "languages/coffeescript/index",
+          },
+          items: [],
         },
         {
           type: "category",
           label: "CommonLisp",
-          items: ["languages/commonlisp/index", "languages/commonlisp/rove"],
+          link: {
+            type: "doc",
+            id: "languages/commonlisp/index",
+          },
+          items: ["languages/commonlisp/rove"],
         },
         {
           type: "category",
           label: "Coq",
-          items: ["languages/coq/index", "languages/coq/coq-codewars"],
+          link: {
+            type: "doc",
+            id: "languages/coq/index",
+          },
+          items: ["languages/coq/coq-codewars"],
         },
         {
           type: "category",
           label: "C++",
+          link: {
+            type: "doc",
+            id: "languages/cpp/index",
+          },
           items: [
-            "languages/cpp/index",
-            "languages/cpp/authoring/index",
+            {
+              type: "category",
+              label: "Authoring",
+              link: {
+                type: "doc",
+                id: "languages/cpp/authoring/index",
+              },
+              items: [],
+            },
             {
               type: "category",
               label: "Igloo",
-              items: [
-                "languages/cpp/igloo/index",
-                "languages/cpp/igloo/stringizers",
-              ],
+              link: {
+                type: "doc",
+                id: "languages/cpp/igloo/index",
+              },
+              items: ["languages/cpp/igloo/stringizers"],
             },
           ],
         },
         {
           type: "category",
           label: "Crystal",
-          items: ["languages/crystal/index", "languages/crystal/spec"],
+          link: {
+            type: "doc",
+            id: "languages/crystal/index",
+          },
+          items: ["languages/crystal/spec"],
         },
         {
           type: "category",
           label: "C#",
-          items: ["languages/csharp/index", "languages/csharp/nunit"],
+          link: {
+            type: "doc",
+            id: "languages/csharp/index",
+          },
+          items: ["languages/csharp/nunit"],
         },
         {
           type: "category",
           label: "D",
-          items: ["languages/d/index"],
+          link: {
+            type: "doc",
+            id: "languages/d/index",
+          },
+          items: [],
         },
         {
           type: "category",
           label: "Dart",
-          items: ["languages/dart/index", "languages/dart/test"],
+          link: {
+            type: "doc",
+            id: "languages/dart/index",
+          },
+          items: ["languages/dart/test"],
         },
         {
           type: "category",
           label: "Elixir",
-          items: ["languages/elixir/index", "languages/elixir/exunit"],
+          link: {
+            type: "doc",
+            id: "languages/elixir/index",
+          },
+          items: ["languages/elixir/exunit"],
         },
         {
           type: "category",
           label: "Elm",
-          items: ["languages/elm/index", "languages/elm/test"],
+          link: {
+            type: "doc",
+            id: "languages/elm/index",
+          },
+          items: ["languages/elm/test"],
         },
         {
           type: "category",
           label: "Erlang",
-          items: ["languages/erlang/index", "languages/erlang/eunit"],
+          link: {
+            type: "doc",
+            id: "languages/erlang/index",
+          },
+          items: ["languages/erlang/eunit"],
         },
         {
           type: "category",
           label: "Factor",
-          items: [
-            "languages/factor/index",
-            "languages/factor/authoring",
-            "languages/factor/testest",
-          ],
+          link: {
+            type: "doc",
+            id: "languages/factor/index",
+          },
+          items: ["languages/factor/authoring", "languages/factor/testest"],
         },
         {
           type: "category",
           label: "Forth",
-          items: ["languages/forth/index", "languages/forth/ttester"],
+          link: {
+            type: "doc",
+            id: "languages/forth/index",
+          },
+          items: ["languages/forth/ttester"],
         },
         {
           type: "category",
           label: "Fortran",
-          items: ["languages/fortran/index", "languages/fortran/codewars-test"],
+          link: {
+            type: "doc",
+            id: "languages/fortran/index",
+          },
+          items: ["languages/fortran/codewars-test"],
         },
         {
           type: "category",
           label: "F#",
-          items: ["languages/fsharp/index", "languages/fsharp/fuchu"],
+          link: {
+            type: "doc",
+            id: "languages/fsharp/index",
+          },
+          items: ["languages/fsharp/fuchu"],
         },
         {
           type: "category",
           label: "Go",
-          items: ["languages/go/index", "languages/go/ginkgo"],
+          link: {
+            type: "doc",
+            id: "languages/go/index",
+          },
+          items: ["languages/go/ginkgo"],
         },
         {
           type: "category",
           label: "Groovy",
-          items: [
-            "languages/groovy/index",
-            "languages/groovy/junit",
-            "languages/groovy/spock",
-          ],
+          link: {
+            type: "doc",
+            id: "languages/groovy/index",
+          },
+          items: ["languages/groovy/junit", "languages/groovy/spock"],
         },
         {
           type: "category",
           label: "Haskell",
-          items: ["languages/haskell/index", "languages/haskell/hspec"],
+          link: {
+            type: "doc",
+            id: "languages/haskell/index",
+          },
+          items: ["languages/haskell/hspec"],
         },
         {
           type: "category",
           label: "Haxe",
-          items: ["languages/haxe/index", "languages/haxe/utest"],
+          link: {
+            type: "doc",
+            id: "languages/haxe/index",
+          },
+          items: ["languages/haxe/utest"],
         },
         {
           type: "category",
           label: "Idris",
-          items: ["languages/idris/index", "languages/idris/specdris"],
+          link: {
+            type: "doc",
+            id: "languages/idris/index",
+          },
+          items: ["languages/idris/specdris"],
         },
         {
           type: "category",
           label: "Java",
-          items: ["languages/java/index", "languages/java/junit"],
+          link: {
+            type: "doc",
+            id: "languages/java/index",
+          },
+          items: ["languages/java/junit"],
         },
         {
           type: "category",
           label: "Javascript",
+          link: {
+            type: "doc",
+            id: "languages/javascript/index",
+          },
           items: [
-            "languages/javascript/index",
             "languages/javascript/authoring",
             "languages/javascript/codewars-test",
             "languages/javascript/mocha",
@@ -281,22 +426,29 @@ module.exports = {
         {
           type: "category",
           label: "Julia",
-          items: ["languages/julia/index", "languages/julia/factcheck"],
+          link: {
+            type: "doc",
+            id: "languages/julia/index",
+          },
+          items: ["languages/julia/factcheck"],
         },
         {
           type: "category",
           label: "Kotlin",
-          items: [
-            "languages/kotlin/index",
-            "languages/kotlin/junit",
-            "languages/kotlin/kotlintest",
-          ],
+          link: {
+            type: "doc",
+            id: "languages/kotlin/index",
+          },
+          items: ["languages/kotlin/junit", "languages/kotlin/kotlintest"],
         },
         {
           type: "category",
           label: "Lambda Calculus",
+          link: {
+            type: "doc",
+            id: "languages/lambdacalc/index",
+          },
           items: [
-            "languages/lambdacalc/index",
             "languages/lambdacalc/authoring",
             "languages/lambdacalc/lc-test",
           ],
@@ -304,68 +456,119 @@ module.exports = {
         {
           type: "category",
           label: "Lean",
-          items: ["languages/lean/index"],
+          link: {
+            type: "doc",
+            id: "languages/lean/index",
+          },
+          items: [],
         },
         {
           type: "category",
           label: "Lua",
-          items: ["languages/lua/index", "languages/lua/busted"],
+          link: {
+            type: "doc",
+            id: "languages/lua/index",
+          },
+          items: ["languages/lua/busted"],
         },
         {
           type: "category",
           label: "NASM",
-          items: ["languages/nasm/index", "languages/nasm/criterion"],
+          link: {
+            type: "doc",
+            id: "languages/nasm/index",
+          },
+          items: ["languages/nasm/criterion"],
         },
         {
           type: "category",
           label: "Nim",
-          items: ["languages/nim/index", "languages/nim/unittest"],
+          link: {
+            type: "doc",
+            id: "languages/nim/index",
+          },
+          items: ["languages/nim/unittest"],
         },
         {
           type: "category",
           label: "Objective-C",
-          items: ["languages/objc/index", "languages/objc/unitkit"],
+          link: {
+            type: "doc",
+            id: "languages/objc/index",
+          },
+          items: ["languages/objc/unitkit"],
         },
         {
           type: "category",
           label: "OCaml",
-          items: ["languages/ocaml/index", "languages/ocaml/ounit"],
+          link: {
+            type: "doc",
+            id: "languages/ocaml/index",
+          },
+          items: ["languages/ocaml/ounit"],
         },
         {
           type: "category",
           label: "Pascal",
-          items: ["languages/pascal/index"],
+          link: {
+            type: "doc",
+            id: "languages/pascal/index",
+          },
+          items: [],
         },
         {
           type: "category",
           label: "Perl",
-          items: ["languages/perl/index", "languages/perl/test"],
+          link: {
+            type: "doc",
+            id: "languages/perl/index",
+          },
+          items: ["languages/perl/test"],
         },
         {
           type: "category",
           label: "PHP",
-          items: ["languages/php/index", "languages/php/phpunit"],
+          link: {
+            type: "doc",
+            id: "languages/php/index",
+          },
+          items: ["languages/php/phpunit"],
         },
         {
           type: "category",
           label: "PowerShell",
-          items: ["languages/powershell/index", "languages/powershell/pester"],
+          link: {
+            type: "doc",
+            id: "languages/powershell/index",
+          },
+          items: ["languages/powershell/pester"],
         },
         {
           type: "category",
           label: "Prolog",
-          items: ["languages/prolog/index", "languages/prolog/plunit"],
+          link: {
+            type: "doc",
+            id: "languages/prolog/index",
+          },
+          items: ["languages/prolog/plunit"],
         },
         {
           type: "category",
           label: "PureScript",
-          items: ["languages/purescript/index", "languages/purescript/spec"],
+          link: {
+            type: "doc",
+            id: "languages/purescript/index",
+          },
+          items: ["languages/purescript/spec"],
         },
         {
           type: "category",
           label: "Python",
+          link: {
+            type: "doc",
+            id: "languages/python/index",
+          },
           items: [
-            "languages/python/index",
             "languages/python/authoring",
             "languages/python/codewars-test",
           ],
@@ -373,81 +576,128 @@ module.exports = {
         {
           type: "category",
           label: "R",
-          items: ["languages/r/index", "languages/r/testthat"],
+          link: {
+            type: "doc",
+            id: "languages/r/index",
+          },
+          items: ["languages/r/testthat"],
         },
         {
           type: "category",
           label: "Racket",
-          items: ["languages/racket/index", "languages/racket/rackunit"],
+          link: {
+            type: "doc",
+            id: "languages/racket/index",
+          },
+          items: ["languages/racket/rackunit"],
         },
         {
           type: "category",
           label: "Raku",
-          items: ["languages/raku/index", "languages/raku/test"],
+          link: {
+            type: "doc",
+            id: "languages/raku/index",
+          },
+          items: ["languages/raku/test"],
         },
         {
           type: "category",
           label: "Reason",
-          items: ["languages/reason/index", "languages/reason/jest"],
+          link: {
+            type: "doc",
+            id: "languages/reason/index",
+          },
+          items: ["languages/reason/jest"],
         },
         {
           type: "category",
           label: "Ruby",
-          items: [
-            "languages/ruby/index",
-            "languages/ruby/authoring",
-            "languages/ruby/codewars-test",
-          ],
+          link: {
+            type: "doc",
+            id: "languages/ruby/index",
+          },
+          items: ["languages/ruby/authoring", "languages/ruby/codewars-test"],
         },
         {
           type: "category",
           label: "Rust",
-          items: ["languages/rust/index"],
+          link: {
+            type: "doc",
+            id: "languages/rust/index",
+          },
+          items: [],
         },
         {
           type: "category",
           label: "Scala",
-          items: ["languages/scala/index", "languages/scala/scalatest"],
+          link: {
+            type: "doc",
+            id: "languages/scala/index",
+          },
+          items: ["languages/scala/scalatest"],
         },
         {
           type: "category",
           label: "Shell",
-          items: ["languages/shell/index", "languages/shell/rspec"],
+          link: {
+            type: "doc",
+            id: "languages/shell/index",
+          },
+          items: ["languages/shell/rspec"],
         },
         {
           type: "category",
           label: "Solidity",
-          items: ["languages/solidity/index", "languages/solidity/truffle"],
+          link: {
+            type: "doc",
+            id: "languages/solidity/index",
+          },
+          items: ["languages/solidity/truffle"],
         },
         {
           type: "category",
           label: "SQL",
-          items: [
-            "languages/sql/index",
-            "languages/sql/rspec",
-            "languages/sql/explicit-tests",
-          ],
+          link: {
+            type: "doc",
+            id: "languages/sql/index",
+          },
+          items: ["languages/sql/rspec", "languages/sql/explicit-tests"],
         },
         {
           type: "category",
           label: "Swift",
-          items: ["languages/swift/index", "languages/swift/xctest"],
+          link: {
+            type: "doc",
+            id: "languages/swift/index",
+          },
+          items: ["languages/swift/xctest"],
         },
         {
           type: "category",
           label: "TypeScript",
-          items: ["languages/typescript/index", "languages/typescript/mocha"],
+          link: {
+            type: "doc",
+            id: "languages/typescript/index",
+          },
+          items: ["languages/typescript/mocha"],
         },
         {
           type: "category",
           label: "VB.NET",
-          items: ["languages/vb/index", "languages/vb/nunit"],
+          link: {
+            type: "doc",
+            id: "languages/vb/index",
+          },
+          items: ["languages/vb/nunit"],
         },
       ],
     },
     {
       type: "category",
       label: "Gamification",
+      link: {
+        type: "generated-index",
+      },
       items: [
         "gamification/index",
         "gamification/ranks",
@@ -458,12 +708,18 @@ module.exports = {
     {
       type: "category",
       label: "Concepts",
+      link: {
+        type: "generated-index",
+      },
       items: [
         {
           type: "category",
           label: "Kata",
+          link: {
+            type: "doc",
+            id: "concepts/kata",
+          },
           items: [
-            "concepts/kata",
             "concepts/kata/beta-process",
             "concepts/kata/collections",
             "concepts/kata/discourse",
@@ -477,21 +733,29 @@ module.exports = {
         {
           type: "category",
           label: "Kumite",
-          items: ["concepts/kumite"],
+          link: {
+            type: "doc",
+            id: "concepts/kumite",
+          },
+          items: [],
         },
       ],
     },
     {
       type: "category",
       label: "References",
+      link: {
+        type: "generated-index",
+      },
       items: [
         {
           type: "category",
           label: "Markdown",
-          items: [
-            "references/markdown/index",
-            "references/markdown/extensions",
-          ],
+          link: {
+            type: "doc",
+            id: "references/markdown/index",
+          },
+          items: ["references/markdown/extensions"],
         },
         "references/kata-editor",
         "references/kata-trainer",
@@ -501,6 +765,9 @@ module.exports = {
     {
       type: "category",
       label: "Meta",
+      link: {
+        type: "generated-index",
+      },
       items: ["meta/docs"],
     },
   ],

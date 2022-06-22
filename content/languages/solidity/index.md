@@ -1,6 +1,5 @@
 ---
 title: Solidity
-sidebar_label: Overview
 slug: /languages/solidity
 ---
 

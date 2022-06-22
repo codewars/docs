@@ -1,6 +1,5 @@
 ---
 title: PHP
-sidebar_label: Overview
 slug: /languages/php
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: NASM
-sidebar_label: Overview
 slug: /languages/nasm
 ---
 

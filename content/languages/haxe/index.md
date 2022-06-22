@@ -1,6 +1,5 @@
 ---
 title: Haxe
-sidebar_label: Overview
 slug: /languages/haxe
 ---
 
