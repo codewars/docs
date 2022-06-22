@@ -1,6 +1,6 @@
 ---
 title: General Kata Coding Guidelines
-tags: [reference]
+tags: [authoring, reference]
 ---
 
 

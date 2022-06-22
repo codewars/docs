@@ -1,6 +1,6 @@
 ---
 title: Writing a Reference Solution
-tags: [reference]
+tags: [authoring, reference]
 next: /authoring/guidelines/translation/
 ---
 

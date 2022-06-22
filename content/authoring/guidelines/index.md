@@ -1,6 +1,6 @@
 ---
 title: Content Authoring Guidelines
-tags: [reference]
+tags: [authoring, reference]
 slug: /authoring/guidelines
 ---
 

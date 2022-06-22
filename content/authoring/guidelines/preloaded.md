@@ -1,6 +1,6 @@
 ---
 title: Writing Preloaded Code
-tags: [reference]
+tags: [authoring, reference]
 ---
 
 The preloaded code snippet, created by the kata author or translator, can be used to reduce boilerplate code, but can cause problems when used incorrectly. To ensure the quality of the kata, it should conform to a set of guidelines presented below.

@@ -1,6 +1,6 @@
 ---
 title: Adding Images to Kata Descriptions
-tags: [recipe]
+tags: [authoring, recipe]
 ---
 
 Currently, it's not possible to attach any files or additional assets to a kata, but many authors would like to illustrate their descriptions with images. There are plans to introduce the possibility of uploading and attaching files to descriptions. However, until attaching images is implemented, authors have to resort to other techniques, each with advantages and disadvantages.
