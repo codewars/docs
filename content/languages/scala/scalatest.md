@@ -1,9 +1,9 @@
 ---
-kind: reference
 sidebar: "language:scala"
 prev: /languages/scala/
 languages: [scala]
 tags:
+  - reference
   - testing
 ---
 

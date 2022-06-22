@@ -1,9 +1,9 @@
 ---
-kind: reference
 sidebar: "language:purescript"
 prev: /languages/purescript/
 languages: [purescript]
 tags:
+  - reference
   - testing
 ---
 

@@ -1,9 +1,9 @@
 ---
-kind: reference
 sidebar: "language:haskell"
 prev: /languages/haskell/
 languages: [haskell]
 tags:
+  - reference
   - testing
 ---
 

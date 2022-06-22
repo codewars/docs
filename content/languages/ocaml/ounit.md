@@ -1,9 +1,9 @@
 ---
-kind: reference
 sidebar: "language:ocaml"
 prev: /languages/ocaml/
 languages: [ocaml]
 tags:
+  - reference
   - testing
 ---
 

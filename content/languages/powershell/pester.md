@@ -1,9 +1,9 @@
 ---
-kind: reference
 sidebar: "language:powershell"
 prev: /languages/powershell/
 languages: [powershell]
 tags:
+  - reference
   - testing
 ---
 

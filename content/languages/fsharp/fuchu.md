@@ -1,9 +1,9 @@
 ---
-kind: reference
 sidebar: "language:fsharp"
 prev: /languages/fsharp/
 languages: [fsharp]
 tags:
+  - reference
   - testing
 ---
 

@@ -1,9 +1,9 @@
 ---
-kind: reference
 sidebar: "language:factor"
 prev: /languages/factor/
 languages: [factor]
 tags:
+  - reference
   - testing
 ---
 

@@ -1,9 +1,9 @@
 ---
-kind: reference
 sidebar: "language:objc"
 prev: /languages/objc/
 languages: [objc]
 tags:
+  - reference
   - testing
 ---
 

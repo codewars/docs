@@ -1,9 +1,9 @@
 ---
-kind: reference
 sidebar: "language:julia"
 prev: /languages/julia/
 languages: [julia]
 tags:
+  - reference
   - testing
 ---
 

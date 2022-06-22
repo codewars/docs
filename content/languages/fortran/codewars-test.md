@@ -1,9 +1,9 @@
 ---
-kind: reference
 sidebar: "language:fortran"
 prev: /languages/fortran/
 languages: [fortran]
 tags:
+  - reference
   - testing
 ---
 

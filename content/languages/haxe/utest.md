@@ -1,9 +1,9 @@
 ---
-kind: reference
 sidebar: "language:haxe"
 prev: /languages/haxe/
 languages: [haxe]
 tags:
+  - reference
   - testing
 ---
 

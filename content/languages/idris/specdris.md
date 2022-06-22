@@ -1,9 +1,9 @@
 ---
-kind: reference
 sidebar: "language:idris"
 prev: /languages/idris/
 languages: [idris]
 tags:
+  - reference
   - testing
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Writing explicit tests for SQL kata
-kind: tutorial
+tags: [tutorial]
 ---
 
 ## Generalities

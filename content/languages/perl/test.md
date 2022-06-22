@@ -1,9 +1,9 @@
 ---
-kind: reference
 sidebar: "language:perl"
 prev: /languages/perl/
 languages: [perl]
 tags:
+  - reference
   - testing
 ---
 

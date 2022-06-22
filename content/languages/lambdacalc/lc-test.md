@@ -1,9 +1,9 @@
 ---
-kind: reference
 sidebar: "language:lambdacalc"
 prev: /languages/lambdacalc/
 languages: [lambdacalc]
 tags:
+  - reference
   - testing
 ---
 

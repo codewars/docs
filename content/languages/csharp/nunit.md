@@ -1,9 +1,9 @@
 ---
-kind: reference
 sidebar: "language:csharp"
 prev: /languages/csharp/
 languages: [csharp]
 tags:
+  - reference
   - testing
 ---
 

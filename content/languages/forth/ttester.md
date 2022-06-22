@@ -1,9 +1,9 @@
 ---
-kind: reference
 sidebar: "language:forth"
 prev: /languages/forth/
 languages: [forth]
 tags:
+  - reference
   - testing
 ---
 

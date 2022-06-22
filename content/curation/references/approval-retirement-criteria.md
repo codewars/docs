@@ -1,7 +1,7 @@
 ---
 title: Criteria for Kata Approval and Retirement
 sidebar_label: Criteria for Approval and Retirement
-kind: reference
+tags: [reference]
 ---
 
 ## Eligibility for Approval

@@ -1,9 +1,9 @@
 ---
-kind: reference
 sidebar: "language:nasm"
 prev: /languages/nasm/
 languages: [nasm]
 tags:
+  - reference
   - testing
 ---
 

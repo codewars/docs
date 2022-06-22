@@ -1,6 +1,6 @@
 ---
 title: What is Kumite?
-kind: concept
+tags: [concept]
 ---
 
 :::note

@@ -1,6 +1,6 @@
 ---
 title: Curation Guidelines
-kind: reference
+tags: [reference]
 slug: /curation/guidelines
 ---
 

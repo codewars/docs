@@ -1,6 +1,6 @@
 ---
 title: Writing Sample Tests
-kind: reference
+tags: [reference]
 ---
 
 Sample tests are a part of every kata which is often underappreciated by both kata authors and solvers. Bad sample tests can cause a lot of frustration, while a good suite of them often increases the overall satisfaction of users from solving the kata. To make sample tests as good as possible, follow the guidelines collected below.
