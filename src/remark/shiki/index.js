@@ -1,75 +1,15 @@
+const fs = require("fs");
 const path = require("path");
 
-const { getHighlighter, BUNDLED_LANGUAGES } = require("shiki");
+const { getHighlighter } = require("shiki");
 const visit = require("unist-util-visit");
 
-const syntaxPath = (name) =>
-  path.resolve(__dirname, `./languages/${name}.tmLanguage.json`);
-
-const langs = new Set([
-  "asm",
-  "c",
-  "clojure",
-  "cobol",
-  "coffee",
-  "cpp",
-  "crystal",
-  "csharp",
-  "css",
-  "d",
-  "dart",
-  "elixir",
-  "elm",
-  "erlang",
-  "fsharp",
-  "go",
-  "groovy",
-  "haskell",
-  "html",
-  "java",
-  "javascript",
-  "json",
-  "jsonc",
-  "jsx",
-  "julia",
-  "kotlin",
-  "latex",
-  "lisp",
-  "lua",
-  "markdown",
-  "mdx",
-  "nim",
-  "objc",
-  "ocaml",
-  "pascal",
-  "perl",
-  "php",
-  "powershell",
-  "prolog",
-  "purescript",
-  "python",
-  "r",
-  "raku",
-  "ruby",
-  "rust",
-  "scala",
-  "shell",
-  "solidity",
-  "sql",
-  "swift",
-  "toml",
-  "tsx",
-  "typescript",
-  "vb",
-  "yaml",
-]);
-
-const languages = BUNDLED_LANGUAGES.filter((lang) => {
-  return (
-    langs.has(lang.id) ||
-    (lang.aliases && lang.aliases.some((id) => langs.has(id)))
+const grammar = (name) =>
+  JSON.parse(
+    fs.readFileSync(
+      path.resolve(__dirname, `./languages/${name}.tmLanguage.json`)
+    )
   );
-});
 
 // Remap language id to match Shiki.
 const remapLanguageId = (id) => {
@@ -88,50 +28,40 @@ const remapLanguageId = (id) => {
 //      or https://github.com/andrewbranch/gatsby-remark-vscode#line-highlighting
 const createHighlighter = ({ theme = "nord" } = {}) => {
   // Reuse the same instance
-  const highlighterPromise = getHighlighter({
-    theme,
-    langs: languages.concat([
-      // See languages/README.md for sources.
-      // TODO Open PR upstream
-      {
-        id: "fortran",
-        scopeName: "source.fortran.free",
-        path: syntaxPath("fortran"),
-      },
-      {
-        id: "idris",
-        scopeName: "source.idris",
-        path: syntaxPath("idris"),
-      },
-      {
-        id: "haxe",
-        scopeName: "source.hx",
-        path: syntaxPath("haxe"),
-      },
-      {
-        id: "racket",
-        scopeName: "source.racket",
-        path: syntaxPath("racket"),
-      },
-
-      // TODO Remove these after a new shiki is released
-      {
-        id: "nim",
-        scopeName: "source.nim",
-        path: syntaxPath("nim"),
-      },
-      {
-        id: "r",
-        scopeName: "source.r",
-        path: syntaxPath("r"),
-      },
-      {
-        id: "raku",
-        scopeName: "source.perl.6",
-        path: syntaxPath("raku"),
-      },
-    ]),
-  });
+  const highlighterPromise = getHighlighter({ theme }).then(
+    async (highlighter) => {
+      const langs = [
+        // See languages/README.md for sources.
+        {
+          id: "factor",
+          scopeName: "source.factor",
+          grammar: grammar("factor"),
+        },
+        {
+          id: "fortran",
+          scopeName: "source.fortran.free",
+          grammar: grammar("fortran"),
+        },
+        {
+          id: "idris",
+          scopeName: "source.idris",
+          grammar: grammar("idris"),
+        },
+        {
+          id: "haxe",
+          scopeName: "source.hx",
+          grammar: grammar("haxe"),
+        },
+        {
+          id: "racket",
+          scopeName: "source.racket",
+          grammar: grammar("racket"),
+        },
+      ];
+      for (const lang of langs) await highlighter.loadLanguage(lang);
+      return highlighter;
+    }
+  );
 
   return () => async (tree) => {
     const highlighter = await highlighterPromise;
