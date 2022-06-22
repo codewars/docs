@@ -1,6 +1,5 @@
 ---
 title: Lua
-sidebar_label: Overview
 slug: /languages/lua
 ---
 

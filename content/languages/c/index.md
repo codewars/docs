@@ -1,6 +1,5 @@
 ---
 title: C
-sidebar_label: Overview
 slug: /languages/c
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Erlang
-sidebar_label: Overview
 slug: /languages/erlang
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: CommonLisp
-sidebar_label: Overview
 slug: /languages/commonlisp
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Go
-sidebar_label: Overview
 slug: /languages/go
 ---
 

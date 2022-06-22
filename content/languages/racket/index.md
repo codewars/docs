@@ -1,6 +1,5 @@
 ---
 title: Racket
-sidebar_label: Overview
 slug: /languages/racket
 ---
 

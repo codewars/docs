@@ -1,6 +1,5 @@
 ---
 title: Elixir
-sidebar_label: Overview
 slug: /languages/elixir
 ---
 

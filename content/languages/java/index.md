@@ -1,6 +1,5 @@
 ---
 title: Java
-sidebar_label: Overview
 slug: /languages/java
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Authoring C++ Content
-sidebar_label: Authoring
 slug: /languages/cpp/authoring
 ---
 

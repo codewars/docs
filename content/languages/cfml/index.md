@@ -1,6 +1,5 @@
 ---
 title: CFML
-sidebar_label: Overview
 slug: /languages/cfml
 ---
 

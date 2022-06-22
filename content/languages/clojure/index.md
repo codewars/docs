@@ -1,6 +1,5 @@
 ---
 title: Clojure
-sidebar_label: Overview
 slug: /languages/clojure
 ---
 

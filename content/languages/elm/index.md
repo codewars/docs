@@ -1,6 +1,5 @@
 ---
 title: Elm
-sidebar_label: Overview
 slug: /languages/elm
 ---
 

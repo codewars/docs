@@ -1,6 +1,5 @@
 ---
 title: F#
-sidebar_label: Overview
 slug: /languages/fsharp
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Groovy
-sidebar_label: Overview
 slug: /languages/groovy
 ---
 

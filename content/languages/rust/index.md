@@ -1,6 +1,5 @@
 ---
 title: Rust
-sidebar_label: Overview
 slug: /languages/rust
 ---
 

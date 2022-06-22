@@ -1,6 +1,5 @@
 ---
 title: Haskell
-sidebar_label: Overview
 slug: /languages/haskell
 ---
 

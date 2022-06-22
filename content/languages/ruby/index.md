@@ -1,6 +1,5 @@
 ---
 title: Ruby
-sidebar_label: Overview
 slug: /languages/ruby
 ---
 

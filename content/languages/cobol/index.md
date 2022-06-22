@@ -1,6 +1,5 @@
 ---
 title: COBOL
-sidebar_label: Overview
 slug: /languages/cobol
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Python
-sidebar_label: Overview
 slug: /languages/python
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Coq
-sidebar_label: Overview
 slug: /languages/coq
 ---
 

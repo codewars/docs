@@ -1,6 +1,5 @@
 ---
 title: BF
-sidebar_label: Overview
 slug: /languages/bf
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Pascal
-sidebar_label: Overview
 slug: /languages/pascal
 ---
 

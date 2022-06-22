@@ -1,6 +1,5 @@
 ---
 title: Fortran
-sidebar_label: Overview
 slug: /languages/fortran
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Prolog
-sidebar_label: Overview
 slug: /languages/prolog
 ---
 

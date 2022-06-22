@@ -1,6 +1,5 @@
 ---
 title: R
-sidebar_label: Overview
 slug: /languages/r
 ---
 

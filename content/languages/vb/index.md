@@ -1,6 +1,5 @@
 ---
 title: VB.NET
-sidebar_label: Overview
 slug: /languages/vb
 ---
 

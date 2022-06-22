@@ -1,6 +1,5 @@
 ---
 title: Forth
-sidebar_label: Overview
 slug: /languages/forth
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Powershell
-sidebar_label: Overview
 slug: /languages/powershell
 ---
 
