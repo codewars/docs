@@ -1,6 +1,7 @@
 ---
 title: Ruby
 slug: /languages/ruby
+tags: [ruby]
 ---
 
 

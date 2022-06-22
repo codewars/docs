@@ -1,6 +1,7 @@
 ---
 title: C#
 slug: /languages/csharp
+tags: [csharp]
 ---
 
 

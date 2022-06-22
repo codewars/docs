@@ -1,6 +1,7 @@
 ---
 title: D
 slug: /languages/d
+tags: [d]
 ---
 
 

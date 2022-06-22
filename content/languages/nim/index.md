@@ -1,6 +1,7 @@
 ---
 title: Nim
 slug: /languages/nim
+tags: [nim]
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 title: Elixir
 slug: /languages/elixir
+tags: [elixir]
 ---
 
 

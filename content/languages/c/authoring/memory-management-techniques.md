@@ -1,6 +1,6 @@
 ---
 title: Memory Management in C Kata
-tags: [tutorial]
+tags: [c, tutorial]
 ---
 
 Unlike many modern, high-level languages, C does not manage memory automatically. Manual memory management is a very vast and complex topic, with many possible ways of achieving the goal depending on a specific case, caveats, and pitfalls.

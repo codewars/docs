@@ -1,6 +1,7 @@
 ---
 title: PureScript
 slug: /languages/purescript
+tags: [purescript]
 ---
 
 

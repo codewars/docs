@@ -1,6 +1,7 @@
 ---
 title: Reason
 slug: /languages/reason
+tags: [reason]
 ---
 
 

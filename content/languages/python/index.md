@@ -1,6 +1,7 @@
 ---
 title: Python
 slug: /languages/python
+tags: [python]
 ---
 
 

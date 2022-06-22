@@ -1,6 +1,7 @@
 ---
 title: Groovy
 slug: /languages/groovy
+tags: [groovy]
 ---
 
 

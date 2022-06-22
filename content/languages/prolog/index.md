@@ -1,6 +1,7 @@
 ---
 title: Prolog
 slug: /languages/prolog
+tags: [prolog]
 ---
 
 

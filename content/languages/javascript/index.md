@@ -1,6 +1,7 @@
 ---
 title: JavaScript
 slug: /languages/javascript
+tags: [javascript]
 ---
 
 

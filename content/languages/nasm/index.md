@@ -1,6 +1,7 @@
 ---
 title: NASM
 slug: /languages/nasm
+tags: [nasm]
 ---
 
 

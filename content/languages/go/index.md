@@ -1,6 +1,7 @@
 ---
 title: Go
 slug: /languages/go
+tags: [go]
 ---
 
 

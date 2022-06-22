@@ -1,6 +1,7 @@
 ---
 title: Coq
 slug: /languages/coq
+tags: [coq]
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 title: Julia
 slug: /languages/julia
+tags: [julia]
 ---
 
 

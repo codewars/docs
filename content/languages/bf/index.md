@@ -1,6 +1,7 @@
 ---
 title: BF
 slug: /languages/bf
+tags: [bf]
 ---
 
 ## Versions

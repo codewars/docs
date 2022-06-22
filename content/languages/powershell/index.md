@@ -1,6 +1,7 @@
 ---
 title: Powershell
 slug: /languages/powershell
+tags: [powershell]
 ---
 
 

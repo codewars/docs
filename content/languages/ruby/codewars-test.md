@@ -1,6 +1,6 @@
 ---
 title: Codewars Test Framework
-tags: [reference]
+tags: [ruby, reference]
 ---
 
 ## Basic Setup

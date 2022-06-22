@@ -1,6 +1,7 @@
 ---
 title: F#
 slug: /languages/fsharp
+tags: [fsharp]
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 title: Haskell
 slug: /languages/haskell
+tags: [haskell]
 ---
 
 

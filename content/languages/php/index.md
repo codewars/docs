@@ -1,6 +1,7 @@
 ---
 title: PHP
 slug: /languages/php
+tags: [php]
 ---
 
 

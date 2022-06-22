@@ -1,6 +1,7 @@
 ---
 title: Clojure
 slug: /languages/clojure
+tags: [clojure]
 ---
 
 

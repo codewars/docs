@@ -1,6 +1,7 @@
 ---
 title: Fortran
 slug: /languages/fortran
+tags: [fortran]
 ---
 
 

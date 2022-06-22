@@ -1,6 +1,7 @@
 ---
 title: Haxe
 slug: /languages/haxe
+tags: [haxe]
 ---
 
 

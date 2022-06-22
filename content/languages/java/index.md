@@ -1,6 +1,7 @@
 ---
 title: Java
 slug: /languages/java
+tags: [java]
 ---
 
 

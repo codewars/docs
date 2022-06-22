@@ -1,6 +1,7 @@
 ---
 title: Crystal
 slug: /languages/crystal
+tags: [crystal]
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 title: CoffeeScript
 slug: /languages/coffeescript
+tags: [coffeescript]
 ---
 
 

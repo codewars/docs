@@ -1,6 +1,7 @@
 ---
 title: Forth
 slug: /languages/forth
+tags: [forth]
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 title: Objective-C
 slug: /languages/objc
+tags: [objc]
 ---
 
 

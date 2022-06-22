@@ -1,6 +1,7 @@
 ---
 title: VB.NET
 slug: /languages/vb
+tags: [vb]
 ---
 
 

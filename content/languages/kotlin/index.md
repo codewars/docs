@@ -1,6 +1,7 @@
 ---
 title: Kotlin
 slug: /languages/kotlin
+tags: [kotlin]
 ---
 
 

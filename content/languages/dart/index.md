@@ -1,6 +1,7 @@
 ---
 title: Dart
 slug: /languages/dart
+tags: [dart]
 ---
 
 

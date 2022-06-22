@@ -1,5 +1,6 @@
 ---
 title: Codewars Test Framework
+tags: [bf]
 ---
 
 

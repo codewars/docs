@@ -1,6 +1,7 @@
 ---
 title: Solidity
 slug: /languages/solidity
+tags: [solidity]
 ---
 
 

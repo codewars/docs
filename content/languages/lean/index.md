@@ -1,6 +1,7 @@
 ---
 title: Lean
 slug: /languages/lean
+tags: [lean]
 ---
 
 

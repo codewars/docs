@@ -1,4 +1,4 @@
 ---
 title: Ginkgo
-tags: [reference]
+tags: [go, reference, testing]
 ---

@@ -1,6 +1,7 @@
 ---
 title: Pascal
 slug: /languages/pascal
+tags: [pascal]
 ---
 
 

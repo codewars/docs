@@ -1,6 +1,7 @@
 ---
 title: Rust
 slug: /languages/rust
+tags: [rust]
 ---
 
 

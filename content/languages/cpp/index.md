@@ -1,6 +1,7 @@
 ---
 title: C++
 slug: /languages/cpp
+tags: [cpp]
 ---
 
 

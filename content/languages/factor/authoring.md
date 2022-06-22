@@ -1,6 +1,7 @@
 ---
 title: Authoring Factor Content
 sidebar_label: Authoring
+tags: [factor]
 ---
 
 This article is intended for kata authors and translators who would like to create new content in Factor. It attempts to explain how to create and organize things in a way conforming to [authoring guidelines](/authoring/guidelines/), shows the most common pitfalls and how to avoid them.

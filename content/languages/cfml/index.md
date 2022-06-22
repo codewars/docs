@@ -1,6 +1,7 @@
 ---
 title: CFML
 slug: /languages/cfml
+tags: [cfml]
 ---
 
 

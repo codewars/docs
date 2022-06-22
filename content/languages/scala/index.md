@@ -1,6 +1,7 @@
 ---
 title: Scala
 slug: /languages/scala
+tags: [scala]
 ---
 
 

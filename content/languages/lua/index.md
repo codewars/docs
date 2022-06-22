@@ -1,6 +1,7 @@
 ---
 title: Lua
 slug: /languages/lua
+tags: [lua]
 ---
 
 

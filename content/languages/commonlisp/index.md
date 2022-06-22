@@ -1,6 +1,7 @@
 ---
 title: CommonLisp
 slug: /languages/commonlisp
+tags: [commonlisp]
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 title: Racket
 slug: /languages/racket
+tags: [racket]
 ---
 
 

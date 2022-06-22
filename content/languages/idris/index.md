@@ -1,6 +1,7 @@
 ---
 title: Idris
 slug: /languages/idris
+tags: [idris]
 ---
 
 

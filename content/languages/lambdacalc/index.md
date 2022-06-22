@@ -1,6 +1,7 @@
 ---
 title: Lambda Calculus
 slug: /languages/lambdacalc
+tags: [lambdacalc]
 ---
 
 

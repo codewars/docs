@@ -1,6 +1,7 @@
 ---
 title: TypeScript
 slug: /languages/typescript
+tags: [typescript]
 ---
 
 

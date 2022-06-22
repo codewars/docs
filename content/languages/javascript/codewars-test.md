@@ -1,6 +1,6 @@
 ---
 title: Codewars Test Framework
-tags: [reference]
+tags: [javascript, reference, testing]
 ---
 
 

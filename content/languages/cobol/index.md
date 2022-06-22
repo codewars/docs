@@ -1,6 +1,7 @@
 ---
 title: COBOL
 slug: /languages/cobol
+tags: [cobol]
 ---
 
 

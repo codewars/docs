@@ -1,6 +1,7 @@
 ---
 title: Swift
 slug: /languages/swift
+tags: [swift]
 ---
 
 

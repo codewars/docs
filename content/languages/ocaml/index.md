@@ -1,6 +1,7 @@
 ---
 title: Ocaml
 slug: /languages/ocaml
+tags: [ocaml]
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 title: Perl
 slug: /languages/perl
+tags: [perl]
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 title: R
 slug: /languages/r
+tags: [r]
 ---
 
 

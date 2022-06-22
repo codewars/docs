@@ -1,6 +1,6 @@
 ---
 title: JUnit
-tags: [reference]
+tags: [java, reference, testing]
 ---
 
 You can use JUnit [4](https://junit.org/junit4/) or [5](https://junit.org/junit5/) in Codewars. 5 offers nesting, pretty name display and multiple test classes.

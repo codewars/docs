@@ -1,6 +1,7 @@
 ---
 title: Raku
 slug: /languages/raku
+tags: [raku]
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 title: Shell
 slug: /languages/shell
+tags: [shell]
 ---
 
 

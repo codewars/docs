@@ -1,6 +1,7 @@
 ---
 title: Agda
 slug: /languages/agda
+tags: [agda]
 ---
 
 ## Status

@@ -1,6 +1,7 @@
 ---
 title: SQL
 slug: /languages/sql
+tags: [sql]
 ---
 
 ## Versions

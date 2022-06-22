@@ -1,6 +1,7 @@
 ---
 title: Factor
 slug: /languages/factor
+tags: [factor]
 ---
 
 

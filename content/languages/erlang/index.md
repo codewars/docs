@@ -1,6 +1,7 @@
 ---
 title: Erlang
 slug: /languages/erlang
+tags: [erlang]
 ---
 
 

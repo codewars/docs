@@ -1,6 +1,7 @@
 ---
 title: Elm
 slug: /languages/elm
+tags: [elm]
 ---
 
 
