@@ -1,5 +1,4 @@
 ---
-sidebar: "language:raku"
 prev: /languages/raku/
 tags:
   - raku

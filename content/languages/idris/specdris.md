@@ -1,5 +1,4 @@
 ---
-sidebar: "language:idris"
 prev: /languages/idris/
 tags:
   - idris

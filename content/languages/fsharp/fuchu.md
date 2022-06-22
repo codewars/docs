@@ -1,5 +1,4 @@
 ---
-sidebar: "language:fsharp"
 prev: /languages/fsharp/
 tags:
   - fsharp

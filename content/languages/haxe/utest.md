@@ -1,5 +1,4 @@
 ---
-sidebar: "language:haxe"
 prev: /languages/haxe/
 tags:
   - haxe

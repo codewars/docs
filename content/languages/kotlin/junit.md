@@ -1,5 +1,4 @@
 ---
-sidebar: "language:kotlin"
 prev: /languages/kotlin/
 tags:
   - kotlin

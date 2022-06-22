@@ -1,5 +1,4 @@
 ---
-sidebar: "language:fortran"
 prev: /languages/fortran/
 tags:
   - fortran

@@ -1,5 +1,4 @@
 ---
-sidebar: "language:julia"
 prev: /languages/julia/
 tags:
   - julia

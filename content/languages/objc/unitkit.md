@@ -1,5 +1,4 @@
 ---
-sidebar: "language:objc"
 prev: /languages/objc/
 tags:
   - objc

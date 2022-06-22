@@ -1,5 +1,4 @@
 ---
-sidebar: "language:groovy"
 prev: /languages/groovy/
 tags:
   - groovy

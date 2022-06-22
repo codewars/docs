@@ -1,5 +1,4 @@
 ---
-sidebar: "language:shell"
 prev: /languages/shell/
 tags:
   - shell

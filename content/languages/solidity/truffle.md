@@ -1,5 +1,4 @@
 ---
-sidebar: "language:solidity"
 prev: /languages/solidity/
 tags:
   - solidity

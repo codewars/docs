@@ -1,5 +1,4 @@
 ---
-sidebar: "language:scala"
 prev: /languages/scala/
 tags:
   - scala

@@ -1,5 +1,4 @@
 ---
-sidebar: "language:powershell"
 prev: /languages/powershell/
 tags:
   - powershell

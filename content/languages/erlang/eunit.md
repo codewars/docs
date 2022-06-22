@@ -1,5 +1,4 @@
 ---
-sidebar: "language:erlang"
 prev: /languages/erlang/
 tags:
   - erlang

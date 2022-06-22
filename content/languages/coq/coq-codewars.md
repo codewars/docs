@@ -1,5 +1,4 @@
 ---
-sidebar: "language:coq"
 prev: /languages/coq/
 tags:
   - coq

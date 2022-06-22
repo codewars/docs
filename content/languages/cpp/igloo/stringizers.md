@@ -1,5 +1,4 @@
 ---
-sidebar: "language:cpp"
 prev: /languages/cpp/igloo/
 tags:
   - cpp

@@ -1,5 +1,4 @@
 ---
-sidebar: "language:purescript"
 prev: /languages/purescript/
 tags:
   - purescript

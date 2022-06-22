@@ -1,5 +1,4 @@
 ---
-sidebar: "language:commonlisp"
 prev: /languages/commonlisp/
 tags:
   - commonlisp

@@ -1,5 +1,4 @@
 ---
-sidebar: "language:haskell"
 prev: /languages/haskell/
 tags:
   - haskell

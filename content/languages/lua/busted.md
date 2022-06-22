@@ -1,5 +1,4 @@
 ---
-sidebar: "language:lua"
 prev: /languages/lua/
 tags:
   - lua

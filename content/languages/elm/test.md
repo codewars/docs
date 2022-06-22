@@ -1,5 +1,4 @@
 ---
-sidebar: "language:elm"
 prev: /languages/elm/
 tags:
   - elm

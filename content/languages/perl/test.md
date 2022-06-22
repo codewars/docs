@@ -1,5 +1,4 @@
 ---
-sidebar: "language:perl"
 prev: /languages/perl/
 tags:
   - perl

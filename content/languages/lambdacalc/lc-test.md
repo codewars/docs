@@ -1,5 +1,4 @@
 ---
-sidebar: "language:lambdacalc"
 prev: /languages/lambdacalc/
 tags:
   - lambdacalc

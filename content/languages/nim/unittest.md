@@ -1,5 +1,4 @@
 ---
-sidebar: "language:nim"
 prev: /languages/nim/
 tags:
   - nim

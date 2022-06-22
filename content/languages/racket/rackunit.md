@@ -1,5 +1,4 @@
 ---
-sidebar: "language:racket"
 prev: /languages/racket/
 tags:
   - racket

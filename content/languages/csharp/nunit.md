@@ -1,5 +1,4 @@
 ---
-sidebar: "language:csharp"
 prev: /languages/csharp/
 tags:
   - csharp

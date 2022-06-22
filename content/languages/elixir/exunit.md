@@ -1,5 +1,4 @@
 ---
-sidebar: "language:elixir"
 prev: /languages/elixir/
 tags:
   - elixir

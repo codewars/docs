@@ -1,5 +1,4 @@
 ---
-sidebar: "language:php"
 prev: /languages/php/
 tags:
   - php

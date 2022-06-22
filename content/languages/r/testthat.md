@@ -1,5 +1,4 @@
 ---
-sidebar: "language:r"
 prev: /languages/r/
 tags:
   - r

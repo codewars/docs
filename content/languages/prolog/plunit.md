@@ -1,5 +1,4 @@
 ---
-sidebar: "language:prolog"
 prev: /languages/prolog/
 tags:
   - prolog

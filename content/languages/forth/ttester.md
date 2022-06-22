@@ -1,5 +1,4 @@
 ---
-sidebar: "language:forth"
 prev: /languages/forth/
 tags:
   - forth

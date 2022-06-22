@@ -1,5 +1,4 @@
 ---
-sidebar: "language:ocaml"
 prev: /languages/ocaml/
 tags:
   - ocaml

@@ -1,5 +1,4 @@
 ---
-sidebar: "language:vb"
 prev: /languages/vb/
 tags:
   - vb

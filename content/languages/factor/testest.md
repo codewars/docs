@@ -1,5 +1,4 @@
 ---
-sidebar: "language:factor"
 prev: /languages/factor/
 tags:
   - factor

@@ -1,5 +1,4 @@
 ---
-sidebar: "language:dart"
 prev: /languages/dart/
 tags:
   - dart

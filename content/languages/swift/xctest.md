@@ -1,5 +1,4 @@
 ---
-sidebar: "language:swift"
 prev: /languages/swift/
 tags:
   - swift

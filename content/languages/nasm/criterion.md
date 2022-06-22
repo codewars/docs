@@ -1,5 +1,4 @@
 ---
-sidebar: "language:nasm"
 prev: /languages/nasm/
 tags:
   - nasm

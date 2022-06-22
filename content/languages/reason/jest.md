@@ -1,5 +1,4 @@
 ---
-sidebar: "language:reason"
 prev: /languages/reason/
 tags:
   - reason

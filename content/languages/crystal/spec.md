@@ -1,5 +1,4 @@
 ---
-sidebar: "language:crystal"
 prev: /languages/crystal/
 tags:
   - crystal
