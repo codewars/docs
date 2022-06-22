@@ -1,8 +1,8 @@
 ---
 sidebar: "language:objc"
 prev: /languages/objc/
-languages: [objc]
 tags:
+  - objc
   - reference
   - testing
 ---

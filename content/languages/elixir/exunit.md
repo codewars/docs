@@ -1,8 +1,8 @@
 ---
 sidebar: "language:elixir"
 prev: /languages/elixir/
-languages: [elixir]
 tags:
+  - elixir
   - reference
   - testing
 ---

@@ -1,8 +1,8 @@
 ---
 sidebar: "language:racket"
 prev: /languages/racket/
-languages: [racket]
 tags:
+  - racket
   - reference
   - testing
 ---

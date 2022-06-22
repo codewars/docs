@@ -1,8 +1,8 @@
 ---
 sidebar: "language:erlang"
 prev: /languages/erlang/
-languages: [erlang]
 tags:
+  - erlang
   - reference
   - testing
 ---

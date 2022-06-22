@@ -1,8 +1,8 @@
 ---
 sidebar: "language:perl"
 prev: /languages/perl/
-languages: [perl]
 tags:
+  - perl
   - reference
   - testing
 ---

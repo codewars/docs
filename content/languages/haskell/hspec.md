@@ -1,8 +1,8 @@
 ---
 sidebar: "language:haskell"
 prev: /languages/haskell/
-languages: [haskell]
 tags:
+  - haskell
   - reference
   - testing
 ---

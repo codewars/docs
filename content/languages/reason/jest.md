@@ -1,8 +1,8 @@
 ---
 sidebar: "language:reason"
 prev: /languages/reason/
-languages: [reason]
 tags:
+  - reason
   - reference
   - testing
 ---

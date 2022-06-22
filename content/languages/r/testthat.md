@@ -1,8 +1,8 @@
 ---
 sidebar: "language:r"
 prev: /languages/r/
-languages: [r]
 tags:
+  - r
   - reference
   - testing
 ---

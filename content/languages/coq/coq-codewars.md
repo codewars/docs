@@ -1,8 +1,8 @@
 ---
 sidebar: "language:coq"
 prev: /languages/coq/
-languages: [coq]
 tags:
+  - coq
   - reference
   - testing
 ---

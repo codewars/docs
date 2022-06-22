@@ -1,8 +1,8 @@
 ---
 sidebar: "language:idris"
 prev: /languages/idris/
-languages: [idris]
 tags:
+  - idris
   - reference
   - testing
 ---

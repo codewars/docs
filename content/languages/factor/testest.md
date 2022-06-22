@@ -1,8 +1,8 @@
 ---
 sidebar: "language:factor"
 prev: /languages/factor/
-languages: [factor]
 tags:
+  - factor
   - reference
   - testing
 ---

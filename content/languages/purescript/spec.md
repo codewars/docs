@@ -1,8 +1,8 @@
 ---
 sidebar: "language:purescript"
 prev: /languages/purescript/
-languages: [purescript]
 tags:
+  - purescript
   - reference
   - testing
 ---

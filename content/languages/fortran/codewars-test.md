@@ -1,8 +1,8 @@
 ---
 sidebar: "language:fortran"
 prev: /languages/fortran/
-languages: [fortran]
 tags:
+  - fortran
   - reference
   - testing
 ---

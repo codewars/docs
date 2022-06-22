@@ -1,8 +1,8 @@
 ---
 sidebar: "language:csharp"
 prev: /languages/csharp/
-languages: [csharp]
 tags:
+  - csharp
   - reference
   - testing
 ---

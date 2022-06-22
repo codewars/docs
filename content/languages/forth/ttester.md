@@ -1,8 +1,8 @@
 ---
 sidebar: "language:forth"
 prev: /languages/forth/
-languages: [forth]
 tags:
+  - forth
   - reference
   - testing
 ---

@@ -1,8 +1,8 @@
 ---
 sidebar: "language:crystal"
 prev: /languages/crystal/
-languages: [crystal]
 tags:
+  - crystal
   - reference
   - testing
 ---

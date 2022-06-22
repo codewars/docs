@@ -1,8 +1,8 @@
 ---
 sidebar: "language:commonlisp"
 prev: /languages/commonlisp/
-languages: [commonlisp]
 tags:
+  - commonlisp
   - reference
   - testing
 ---
