@@ -13,6 +13,11 @@ module.exports = {
   projectName: "docs",
   // https://docusaurus.io/docs/next/api/themes/configuration
   themeConfig: {
+    docs: {
+      sidebar: {
+        hideable: true,
+      },
+    },
     colorMode: {
       defaultMode: "dark",
     },
@@ -47,7 +52,6 @@ module.exports = {
         },
       ],
     },
-    hideableSidebar: true,
     footer: {
       links: [],
       copyright: `Copyright © ${new Date().getFullYear()} Codewars`,

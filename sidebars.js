@@ -106,7 +106,7 @@ module.exports = {
         {
           type: "category",
           label: "Agda",
-          items: ["languages/agda/index", "languages/agda/agda"],
+          items: ["languages/agda/index"],
         },
         {
           type: "category",
@@ -168,7 +168,10 @@ module.exports = {
             {
               type: "category",
               label: "Igloo",
-              items: ["languages/cpp/igloo/index", "languages/cpp/igloo/stringizers"],
+              items: [
+                "languages/cpp/igloo/index",
+                "languages/cpp/igloo/stringizers",
+              ],
             },
           ],
         },
@@ -210,7 +213,11 @@ module.exports = {
         {
           type: "category",
           label: "Factor",
-          items: ["languages/factor/index", "languages/factor/authoring", "languages/factor/testest"],
+          items: [
+            "languages/factor/index",
+            "languages/factor/authoring",
+            "languages/factor/testest",
+          ],
         },
         {
           type: "category",
@@ -288,12 +295,16 @@ module.exports = {
         {
           type: "category",
           label: "Lambda Calculus",
-          items: ["languages/lambdacalc/index", "languages/lambdacalc/authoring", "languages/lambdacalc/lc-test"],
+          items: [
+            "languages/lambdacalc/index",
+            "languages/lambdacalc/authoring",
+            "languages/lambdacalc/lc-test",
+          ],
         },
         {
           type: "category",
           label: "Lean",
-          items: ["languages/lean/index", "languages/lean/lean"],
+          items: ["languages/lean/index"],
         },
         {
           type: "category",
@@ -391,7 +402,7 @@ module.exports = {
         {
           type: "category",
           label: "Rust",
-          items: ["languages/rust/index", "languages/rust/rust"],
+          items: ["languages/rust/index"],
         },
         {
           type: "category",
