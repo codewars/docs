@@ -1,6 +1,8 @@
 ---
 title: Python
+description: Python on Codewars
 slug: /languages/python
+tags: [python]
 ---
 
 

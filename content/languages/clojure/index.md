@@ -1,6 +1,8 @@
 ---
 title: Clojure
+description: Clojure on Codewars
 slug: /languages/clojure
+tags: [clojure]
 ---
 
 

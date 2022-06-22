@@ -1,6 +1,6 @@
 ---
 title: Satisfaction Rating
-kind: concept
+tags: [concept]
 ---
 
 

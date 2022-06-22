@@ -1,7 +1,7 @@
 ---
 title: Community Moderation Tools
 sidebar_label: Moderation Tools
-kind: reference
+tags: [reference]
 slug: /community/moderation/tools
 ---
 

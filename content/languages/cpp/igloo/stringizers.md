@@ -1,9 +1,7 @@
 ---
-kind: recipe
-sidebar: "language:cpp"
-prev: /languages/cpp/igloo/
-languages: [cpp]
 tags:
+  - cpp
+  - recipe
   - testing
 ---
 

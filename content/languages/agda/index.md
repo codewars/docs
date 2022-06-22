@@ -1,6 +1,8 @@
 ---
 title: Agda
+description: Agda on Codewars
 slug: /languages/agda
+tags: [agda]
 ---
 
 ## Status

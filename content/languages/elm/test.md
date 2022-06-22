@@ -1,9 +1,7 @@
 ---
-kind: reference
-sidebar: "language:elm"
-prev: /languages/elm/
-languages: [elm]
 tags:
+  - elm
+  - reference
   - testing
 ---
 

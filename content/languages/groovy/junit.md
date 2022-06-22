@@ -1,9 +1,7 @@
 ---
-kind: reference
-sidebar: "language:groovy"
-prev: /languages/groovy/
-languages: [groovy]
 tags:
+  - groovy
+  - reference
   - testing
 ---
 

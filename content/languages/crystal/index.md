@@ -1,6 +1,8 @@
 ---
 title: Crystal
+description: Crystal on Codewars
 slug: /languages/crystal
+tags: [crystal]
 ---
 
 

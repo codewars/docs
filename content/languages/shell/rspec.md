@@ -1,9 +1,7 @@
 ---
-kind: reference
-sidebar: "language:shell"
-prev: /languages/shell/
-languages: [shell]
 tags:
+  - shell
+  - reference
   - testing
 ---
 

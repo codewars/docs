@@ -1,6 +1,6 @@
 ---
 title: Translation Authoring Guidelines
-kind: reference
+tags: [authoring, reference]
 ---
 
 

@@ -1,6 +1,8 @@
 ---
 title: Java
+description: Java on Codewars
 slug: /languages/java
+tags: [java]
 ---
 
 

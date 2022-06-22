@@ -1,6 +1,6 @@
 ---
 title: Writing Submission Tests
-kind: reference
+tags: [authoring, reference]
 ---
 
 This article contains a set of guidelines for kata authors or translators to create good test suites for their kata. They were collected to help ensure that kata, translations and their test suites are of sufficient quality so that users' experience with tests will be as good as possible.

@@ -1,9 +1,7 @@
 ---
-kind: reference
-sidebar: "language:swift"
-prev: /languages/swift/
-languages: [swift]
 tags:
+  - swift
+  - reference
   - testing
 ---
 

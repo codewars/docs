@@ -1,6 +1,8 @@
 ---
 title: Lambda Calculus
+description: Lambda Calculus on Codewars
 slug: /languages/lambdacalc
+tags: [lambdacalc]
 ---
 
 

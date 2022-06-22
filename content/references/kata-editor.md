@@ -1,6 +1,6 @@
 ---
 title: Kata Editor
-kind: reference
+tags: [reference]
 ---
 
 :::note

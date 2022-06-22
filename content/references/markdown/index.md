@@ -1,7 +1,7 @@
 ---
 title: Basic Markdown Syntax
 slug: /references/markdown
-kind: reference
+tags: [reference]
 ---
 
 Codewars supports [Markdown][wiki-markdown].

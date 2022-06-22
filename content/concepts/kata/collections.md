@@ -1,6 +1,6 @@
 ---
 title: Collections
-kind: concept
+tags: [concept]
 ---
 
 

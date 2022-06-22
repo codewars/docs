@@ -1,6 +1,8 @@
 ---
 title: Raku
+description: Raku on Codewars
 slug: /languages/raku
+tags: [raku]
 ---
 
 

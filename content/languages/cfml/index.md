@@ -1,6 +1,8 @@
 ---
 title: CFML
+description: CFML on Codewars
 slug: /languages/cfml
+tags: [cfml]
 ---
 
 

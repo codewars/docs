@@ -1,9 +1,7 @@
 ---
-kind: reference
-sidebar: "language:vb"
-prev: /languages/vb/
-languages: [vb]
 tags:
+  - vb
+  - reference
   - testing
 ---
 

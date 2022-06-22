@@ -1,9 +1,7 @@
 ---
-kind: reference
-sidebar: "language:kotlin"
-prev: /languages/kotlin/
-languages: [kotlin]
 tags:
+  - kotlin
+  - reference
   - testing
 ---
 

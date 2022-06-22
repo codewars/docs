@@ -1,6 +1,8 @@
 ---
 title: Groovy
+description: Groovy on Codewars
 slug: /languages/groovy
+tags: [groovy]
 ---
 
 

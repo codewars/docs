@@ -1,6 +1,6 @@
 ---
 title: Tests
-kind: concept
+tags: [concept]
 ---
 
 

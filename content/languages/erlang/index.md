@@ -1,6 +1,8 @@
 ---
 title: Erlang
+description: Erlang on Codewars
 slug: /languages/erlang
+tags: [erlang]
 ---
 
 

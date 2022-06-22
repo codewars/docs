@@ -1,6 +1,6 @@
 ---
 title: Mocha
-kind: reference
+tags: [javascript, reference, testing]
 ---
 
 

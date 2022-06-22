@@ -1,6 +1,8 @@
 ---
 title: Prolog
+description: Prolog on Codewars
 slug: /languages/prolog
+tags: [prolog]
 ---
 
 

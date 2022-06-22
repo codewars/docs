@@ -1,4 +1,4 @@
 ---
 title: TestBox
-kind: reference
+tags: [cfml, reference]
 ---

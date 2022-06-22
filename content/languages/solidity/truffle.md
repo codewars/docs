@@ -1,9 +1,7 @@
 ---
-kind: reference
-sidebar: "language:solidity"
-prev: /languages/solidity/
-languages: [solidity]
 tags:
+  - solidity
+  - reference
   - testing
 ---
 

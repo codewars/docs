@@ -1,6 +1,8 @@
 ---
 title: Forth
+description: Forth on Codewars
 slug: /languages/forth
+tags: [forth]
 ---
 
 

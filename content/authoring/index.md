@@ -1,6 +1,7 @@
 ---
 title: Authoring Content
 slug: /authoring
+tags: [authoring]
 ---
 
 All content available on Codewars is created by members of the Codewars community. It's ideas of Codewars users that get turned into kata, and the fact that users are familiar with plenty of programming languages allows for a large number of available translations.

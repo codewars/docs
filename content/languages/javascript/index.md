@@ -1,6 +1,8 @@
 ---
 title: JavaScript
+description: JavaScript on Codewars
 slug: /languages/javascript
+tags: [javascript]
 ---
 
 

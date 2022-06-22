@@ -1,9 +1,7 @@
 ---
-kind: reference
-sidebar: "language:ocaml"
-prev: /languages/ocaml/
-languages: [ocaml]
 tags:
+  - ocaml
+  - reference
   - testing
 ---
 

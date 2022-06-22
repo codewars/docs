@@ -1,6 +1,8 @@
 ---
 title: F#
+description: F# on Codewars
 slug: /languages/fsharp
+tags: [fsharp]
 ---
 
 

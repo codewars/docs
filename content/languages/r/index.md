@@ -1,6 +1,8 @@
 ---
 title: R
+description: R on Codewars
 slug: /languages/r
+tags: [r]
 ---
 
 

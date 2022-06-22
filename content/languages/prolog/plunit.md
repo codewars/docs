@@ -1,9 +1,7 @@
 ---
-kind: reference
-sidebar: "language:prolog"
-prev: /languages/prolog/
-languages: [prolog]
 tags:
+  - prolog
+  - reference
   - testing
 ---
 

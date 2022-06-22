@@ -1,6 +1,8 @@
 ---
 title: Pascal
+description: Pascal on Codewars
 slug: /languages/pascal
+tags: [pascal]
 ---
 
 

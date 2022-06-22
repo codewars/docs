@@ -1,6 +1,8 @@
 ---
 title: D
+description: D on Codewars
 slug: /languages/d
+tags: [d]
 ---
 
 

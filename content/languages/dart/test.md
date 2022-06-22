@@ -1,9 +1,7 @@
 ---
-kind: reference
-sidebar: "language:dart"
-prev: /languages/dart/
-languages: [dart]
 tags:
+  - dart
+  - reference
   - testing
 ---
 

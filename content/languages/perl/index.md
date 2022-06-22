@@ -1,6 +1,8 @@
 ---
 title: Perl
+description: Perl on Codewars
 slug: /languages/perl
+tags: [perl]
 ---
 
 

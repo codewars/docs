@@ -1,4 +1,4 @@
 ---
 title: RSpec
-kind: reference
+tags: [sql, reference, testing]
 ---

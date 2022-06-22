@@ -1,9 +1,7 @@
 ---
-kind: reference
-sidebar: "language:lua"
-prev: /languages/lua/
-languages: [lua]
 tags:
+  - lua
+  - reference
   - testing
 ---
 

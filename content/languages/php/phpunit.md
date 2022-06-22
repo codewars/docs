@@ -1,9 +1,7 @@
 ---
-kind: reference
-sidebar: "language:php"
-prev: /languages/php/
-languages: [php]
 tags:
+  - php
+  - reference
   - testing
 ---
 

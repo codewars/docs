@@ -1,5 +1,6 @@
 ---
 title: Creating a Kata
+tags: [authoring]
 ---
 
 _TBD: improve this stub_

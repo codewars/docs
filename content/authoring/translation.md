@@ -1,5 +1,6 @@
 ---
 title: Translating a Kata
+tags: [authoring]
 ---
 
 _TBD: improve this stub_

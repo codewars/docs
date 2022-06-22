@@ -1,6 +1,8 @@
 ---
 title: C
+description: C on Codewars
 slug: /languages/c
+tags: [c]
 ---
 
 

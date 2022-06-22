@@ -1,6 +1,6 @@
 ---
 title: Training Routines
-kind: concept
+tags: [concept]
 ---
 
 

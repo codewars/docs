@@ -1,6 +1,8 @@
 ---
 title: Haskell
+description: Haskell on Codewars
 slug: /languages/haskell
+tags: [haskell]
 ---
 
 

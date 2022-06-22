@@ -1,6 +1,6 @@
 ---
 title: Authoring C Content
-kind: tutorial
+tags: [c, tutorial]
 sidebar_position: 0
 slug: /languages/c/authoring
 ---

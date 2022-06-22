@@ -1,6 +1,8 @@
 ---
 title: Kotlin
+description: Kotlin on Codewars
 slug: /languages/kotlin
+tags: [kotlin]
 ---
 
 

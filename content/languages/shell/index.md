@@ -1,6 +1,8 @@
 ---
 title: Shell
+description: Shell on Codewars
 slug: /languages/shell
+tags: [shell]
 ---
 
 

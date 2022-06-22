@@ -1,6 +1,6 @@
 ---
 title: Working with Floating-Point Numbers
-kind: tutorial
+tags: [authoring, tutorial]
 ---
 
 This article attempts to explain to kata authors what the most common problems and pitfalls encountered when creating kata are when working with floating-point numbers, and how to avoid them.

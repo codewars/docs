@@ -1,6 +1,8 @@
 ---
 title: Objective-C
+description: Objective-C on Codewars
 slug: /languages/objc
+tags: [objc]
 ---
 
 

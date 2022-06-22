@@ -1,9 +1,7 @@
 ---
-kind: reference
-sidebar: "language:raku"
-prev: /languages/raku/
-languages: [raku]
 tags:
+  - raku
+  - reference
   - testing
 ---
 

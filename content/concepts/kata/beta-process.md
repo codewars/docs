@@ -1,6 +1,6 @@
 ---
 title: Beta Process
-kind: concept
+tags: [concept]
 ---
 
 Each kata is crafted for and by the community. Kata are created by other users rewarded with kata authoring privilege. When a kata is published by an author (or Sensei), it will go into a beta process where the community can help test and provide quality assurance feedback and cast a vote for its difficulty ranking. The feedback during this process is vital to making sure all kata are of the highest quality.

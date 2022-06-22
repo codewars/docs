@@ -1,6 +1,6 @@
 ---
 title: Privileges
-kind: concept
+tags: [concept]
 ---
 
 Users earn new privileges as their Honor grows. These can be divided in a couple of groups:

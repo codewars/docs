@@ -1,6 +1,6 @@
 ---
 title: Kata Discourse
-kind: concept
+tags: [concept]
 ---
 
 

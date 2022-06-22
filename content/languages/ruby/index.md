@@ -1,6 +1,8 @@
 ---
 title: Ruby
+description: Ruby on Codewars
 slug: /languages/ruby
+tags: [ruby]
 ---
 
 

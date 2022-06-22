@@ -1,6 +1,8 @@
 ---
 title: NASM
+description: NASM on Codewars
 slug: /languages/nasm
+tags: [nasm]
 ---
 
 

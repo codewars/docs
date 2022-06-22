@@ -1,6 +1,8 @@
 ---
 title: CoffeeScript
+description: CoffeeScript on Codewars
 slug: /languages/coffeescript
+tags: [coffeescript]
 ---
 
 

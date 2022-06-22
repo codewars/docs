@@ -1,9 +1,7 @@
 ---
-kind: reference
-sidebar: "language:nim"
-prev: /languages/nim/
-languages: [nim]
 tags:
+  - nim
+  - reference
   - testing
 ---
 

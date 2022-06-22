@@ -1,6 +1,8 @@
 ---
 title: Elixir
+description: Elixir on Codewars
 slug: /languages/elixir
+tags: [elixir]
 ---
 
 
