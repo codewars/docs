@@ -1,5 +1,6 @@
 ---
 title: TypeScript
+description: TypeScript on Codewars
 slug: /languages/typescript
 tags: [typescript]
 ---

@@ -1,5 +1,6 @@
 ---
 title: Scala
+description: Scala on Codewars
 slug: /languages/scala
 tags: [scala]
 ---

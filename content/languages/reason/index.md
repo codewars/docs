@@ -1,5 +1,6 @@
 ---
 title: Reason
+description: Reason on Codewars
 slug: /languages/reason
 tags: [reason]
 ---

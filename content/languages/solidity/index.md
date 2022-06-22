@@ -1,5 +1,6 @@
 ---
 title: Solidity
+description: Solidity on Codewars
 slug: /languages/solidity
 tags: [solidity]
 ---

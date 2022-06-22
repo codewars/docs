@@ -1,5 +1,6 @@
 ---
 title: Racket
+description: Racket on Codewars
 slug: /languages/racket
 tags: [racket]
 ---

@@ -1,5 +1,6 @@
 ---
 title: PureScript
+description: PureScript on Codewars
 slug: /languages/purescript
 tags: [purescript]
 ---

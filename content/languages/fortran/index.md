@@ -1,5 +1,6 @@
 ---
 title: Fortran
+description: Fortran on Codewars
 slug: /languages/fortran
 tags: [fortran]
 ---

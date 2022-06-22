@@ -1,5 +1,6 @@
 ---
 title: Lean
+description: Lean on Codewars
 slug: /languages/lean
 tags: [lean]
 ---

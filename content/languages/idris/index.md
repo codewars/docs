@@ -1,5 +1,6 @@
 ---
 title: Idris
+description: Idris on Codewars
 slug: /languages/idris
 tags: [idris]
 ---

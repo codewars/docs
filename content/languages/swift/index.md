@@ -1,5 +1,6 @@
 ---
 title: Swift
+description: Swift on Codewars
 slug: /languages/swift
 tags: [swift]
 ---

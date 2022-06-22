@@ -1,5 +1,6 @@
 ---
 title: COBOL
+description: COBOL on Codewars
 slug: /languages/cobol
 tags: [cobol]
 ---

@@ -1,5 +1,6 @@
 ---
 title: Coq
+description: Coq on Codewars
 slug: /languages/coq
 tags: [coq]
 ---

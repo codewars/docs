@@ -1,5 +1,6 @@
 ---
 title: CommonLisp
+description: CommonLisp on Codewars
 slug: /languages/commonlisp
 tags: [commonlisp]
 ---

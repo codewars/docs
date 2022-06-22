@@ -1,5 +1,6 @@
 ---
 title: Rust
+description: Rust on Codewars
 slug: /languages/rust
 tags: [rust]
 ---

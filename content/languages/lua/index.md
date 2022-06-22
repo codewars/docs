@@ -1,5 +1,6 @@
 ---
 title: Lua
+description: Lua on Codewars
 slug: /languages/lua
 tags: [lua]
 ---

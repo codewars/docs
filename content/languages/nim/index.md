@@ -1,5 +1,6 @@
 ---
 title: Nim
+description: Nim on Codewars
 slug: /languages/nim
 tags: [nim]
 ---

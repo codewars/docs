@@ -1,5 +1,6 @@
 ---
 title: VB.NET
+description: VB.NET on Codewars
 slug: /languages/vb
 tags: [vb]
 ---

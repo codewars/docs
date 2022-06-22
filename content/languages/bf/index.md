@@ -1,5 +1,6 @@
 ---
 title: BF
+description: BF on Codewars
 slug: /languages/bf
 tags: [bf]
 ---

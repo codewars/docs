@@ -1,5 +1,6 @@
 ---
 title: Dart
+description: Dart on Codewars
 slug: /languages/dart
 tags: [dart]
 ---

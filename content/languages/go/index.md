@@ -1,5 +1,6 @@
 ---
 title: Go
+description: Go on Codewars
 slug: /languages/go
 tags: [go]
 ---

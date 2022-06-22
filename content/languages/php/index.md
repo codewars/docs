@@ -1,5 +1,6 @@
 ---
 title: PHP
+description: PHP on Codewars
 slug: /languages/php
 tags: [php]
 ---

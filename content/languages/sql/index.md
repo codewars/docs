@@ -1,5 +1,6 @@
 ---
 title: SQL
+description: SQL on Codewars
 slug: /languages/sql
 tags: [sql]
 ---

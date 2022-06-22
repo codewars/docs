@@ -1,5 +1,6 @@
 ---
 title: Factor
+description: Factor on Codewars
 slug: /languages/factor
 tags: [factor]
 ---

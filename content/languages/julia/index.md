@@ -1,5 +1,6 @@
 ---
 title: Julia
+description: Julia on Codewars
 slug: /languages/julia
 tags: [julia]
 ---

@@ -1,5 +1,6 @@
 ---
 title: Powershell
+description: Powershell on Codewars
 slug: /languages/powershell
 tags: [powershell]
 ---

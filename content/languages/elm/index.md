@@ -1,5 +1,6 @@
 ---
 title: Elm
+description: Elm on Codewars
 slug: /languages/elm
 tags: [elm]
 ---

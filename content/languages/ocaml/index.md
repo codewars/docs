@@ -1,5 +1,6 @@
 ---
 title: Ocaml
+description: Ocaml on Codewars
 slug: /languages/ocaml
 tags: [ocaml]
 ---

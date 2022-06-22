@@ -1,5 +1,6 @@
 ---
 title: Haxe
+description: Haxe on Codewars
 slug: /languages/haxe
 tags: [haxe]
 ---
