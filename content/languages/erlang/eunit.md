@@ -1,5 +1,4 @@
 ---
-prev: /languages/erlang/
 tags:
   - erlang
   - reference

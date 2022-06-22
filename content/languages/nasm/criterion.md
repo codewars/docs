@@ -1,5 +1,4 @@
 ---
-prev: /languages/nasm/
 tags:
   - nasm
   - reference

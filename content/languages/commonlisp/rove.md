@@ -1,5 +1,4 @@
 ---
-prev: /languages/commonlisp/
 tags:
   - commonlisp
   - reference

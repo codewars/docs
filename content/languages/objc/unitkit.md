@@ -1,5 +1,4 @@
 ---
-prev: /languages/objc/
 tags:
   - objc
   - reference

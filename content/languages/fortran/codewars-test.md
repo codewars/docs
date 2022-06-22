@@ -1,5 +1,4 @@
 ---
-prev: /languages/fortran/
 tags:
   - fortran
   - reference

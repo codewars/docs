@@ -1,5 +1,4 @@
 ---
-prev: /languages/idris/
 tags:
   - idris
   - reference

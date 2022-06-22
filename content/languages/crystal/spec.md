@@ -1,5 +1,4 @@
 ---
-prev: /languages/crystal/
 tags:
   - crystal
   - reference

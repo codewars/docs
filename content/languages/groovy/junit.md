@@ -1,5 +1,4 @@
 ---
-prev: /languages/groovy/
 tags:
   - groovy
   - reference

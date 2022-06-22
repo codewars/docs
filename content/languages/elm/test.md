@@ -1,5 +1,4 @@
 ---
-prev: /languages/elm/
 tags:
   - elm
   - reference

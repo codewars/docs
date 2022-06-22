@@ -1,5 +1,4 @@
 ---
-prev: /languages/powershell/
 tags:
   - powershell
   - reference

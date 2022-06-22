@@ -1,5 +1,4 @@
 ---
-prev: /languages/julia/
 tags:
   - julia
   - reference

@@ -1,5 +1,4 @@
 ---
-prev: /languages/nim/
 tags:
   - nim
   - reference

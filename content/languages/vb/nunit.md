@@ -1,5 +1,4 @@
 ---
-prev: /languages/vb/
 tags:
   - vb
   - reference

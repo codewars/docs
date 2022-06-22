@@ -1,5 +1,4 @@
 ---
-prev: /languages/csharp/
 tags:
   - csharp
   - reference

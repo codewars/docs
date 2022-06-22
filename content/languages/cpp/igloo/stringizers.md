@@ -1,5 +1,4 @@
 ---
-prev: /languages/cpp/igloo/
 tags:
   - cpp
   - recipe

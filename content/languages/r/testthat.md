@@ -1,5 +1,4 @@
 ---
-prev: /languages/r/
 tags:
   - r
   - reference

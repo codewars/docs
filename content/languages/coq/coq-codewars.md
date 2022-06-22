@@ -1,5 +1,4 @@
 ---
-prev: /languages/coq/
 tags:
   - coq
   - reference

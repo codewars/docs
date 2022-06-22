@@ -1,5 +1,4 @@
 ---
-prev: /languages/kotlin/
 tags:
   - kotlin
   - reference

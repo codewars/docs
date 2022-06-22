@@ -1,5 +1,4 @@
 ---
-prev: /languages/forth/
 tags:
   - forth
   - reference

@@ -1,5 +1,4 @@
 ---
-prev: /languages/dart/
 tags:
   - dart
   - reference

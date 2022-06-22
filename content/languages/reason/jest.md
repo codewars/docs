@@ -1,5 +1,4 @@
 ---
-prev: /languages/reason/
 tags:
   - reason
   - reference

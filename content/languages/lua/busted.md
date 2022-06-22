@@ -1,5 +1,4 @@
 ---
-prev: /languages/lua/
 tags:
   - lua
   - reference

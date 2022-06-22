@@ -1,5 +1,4 @@
 ---
-prev: /languages/scala/
 tags:
   - scala
   - reference

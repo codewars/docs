@@ -1,5 +1,4 @@
 ---
-prev: /languages/perl/
 tags:
   - perl
   - reference

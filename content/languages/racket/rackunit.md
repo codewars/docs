@@ -1,5 +1,4 @@
 ---
-prev: /languages/racket/
 tags:
   - racket
   - reference

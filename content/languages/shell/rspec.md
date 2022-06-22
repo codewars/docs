@@ -1,5 +1,4 @@
 ---
-prev: /languages/shell/
 tags:
   - shell
   - reference

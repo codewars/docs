@@ -1,5 +1,4 @@
 ---
-prev: /languages/fsharp/
 tags:
   - fsharp
   - reference

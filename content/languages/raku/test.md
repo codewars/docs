@@ -1,5 +1,4 @@
 ---
-prev: /languages/raku/
 tags:
   - raku
   - reference

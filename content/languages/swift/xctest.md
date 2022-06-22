@@ -1,5 +1,4 @@
 ---
-prev: /languages/swift/
 tags:
   - swift
   - reference

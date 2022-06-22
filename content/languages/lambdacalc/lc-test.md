@@ -1,5 +1,4 @@
 ---
-prev: /languages/lambdacalc/
 tags:
   - lambdacalc
   - reference

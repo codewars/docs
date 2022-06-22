@@ -1,5 +1,4 @@
 ---
-prev: /languages/haxe/
 tags:
   - haxe
   - reference

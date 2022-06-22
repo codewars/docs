@@ -1,5 +1,4 @@
 ---
-prev: /languages/elixir/
 tags:
   - elixir
   - reference

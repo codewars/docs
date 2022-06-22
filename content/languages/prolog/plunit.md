@@ -1,5 +1,4 @@
 ---
-prev: /languages/prolog/
 tags:
   - prolog
   - reference

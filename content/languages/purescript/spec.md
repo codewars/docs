@@ -1,5 +1,4 @@
 ---
-prev: /languages/purescript/
 tags:
   - purescript
   - reference

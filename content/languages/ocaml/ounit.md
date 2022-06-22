@@ -1,5 +1,4 @@
 ---
-prev: /languages/ocaml/
 tags:
   - ocaml
   - reference

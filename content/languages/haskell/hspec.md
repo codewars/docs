@@ -1,5 +1,4 @@
 ---
-prev: /languages/haskell/
 tags:
   - haskell
   - reference

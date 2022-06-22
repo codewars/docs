@@ -1,5 +1,4 @@
 ---
-prev: /languages/solidity/
 tags:
   - solidity
   - reference

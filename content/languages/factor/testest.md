@@ -1,5 +1,4 @@
 ---
-prev: /languages/factor/
 tags:
   - factor
   - reference

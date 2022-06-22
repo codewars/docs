@@ -1,5 +1,4 @@
 ---
-prev: /languages/php/
 tags:
   - php
   - reference
