@@ -1,75 +1,15 @@
+const fs = require("fs");
 const path = require("path");
 
-const { getHighlighter, BUNDLED_LANGUAGES } = require("shiki");
+const { getHighlighter } = require("shiki");
 const visit = require("unist-util-visit");
 
-const syntaxPath = (name) =>
-  path.resolve(__dirname, `./languages/${name}.tmLanguage.json`);
-
-const langs = new Set([
-  "asm",
-  "c",
-  "clojure",
-  "cobol",
-  "coffee",
-  "cpp",
-  "crystal",
-  "csharp",
-  "css",
-  "d",
-  "dart",
-  "elixir",
-  "elm",
-  "erlang",
-  "fsharp",
-  "go",
-  "groovy",
-  "haskell",
-  "html",
-  "java",
-  "javascript",
-  "json",
-  "jsonc",
-  "jsx",
-  "julia",
-  "kotlin",
-  "latex",
-  "lisp",
-  "lua",
-  "markdown",
-  "mdx",
-  "nim",
-  "objc",
-  "ocaml",
-  "pascal",
-  "perl",
-  "php",
-  "powershell",
-  "prolog",
-  "purescript",
-  "python",
-  "r",
-  "raku",
-  "ruby",
-  "rust",
-  "scala",
-  "shell",
-  "solidity",
-  "sql",
-  "swift",
-  "toml",
-  "tsx",
-  "typescript",
-  "vb",
-  "yaml",
-]);
-
-const languages = BUNDLED_LANGUAGES.filter((lang) => {
-  return (
-    langs.has(lang.id) ||
-    (lang.aliases && lang.aliases.some((id) => langs.has(id)))
+const grammar = (name) =>
+  JSON.parse(
+    fs.readFileSync(
+      path.resolve(__dirname, `./languages/${name}.tmLanguage.json`)
+    )
   );
-});
 
 // Remap language id to match Shiki.
 const remapLanguageId = (id) => {
@@ -86,111 +26,107 @@ const remapLanguageId = (id) => {
 // Use shiki for syntax highlighting.
 // TODO Decoration. Like Docusaurus builtin, or https://github.com/shikijs/shiki/issues/5
 //      or https://github.com/andrewbranch/gatsby-remark-vscode#line-highlighting
-const createHighlighter = ({ theme = "nord" } = {}) => {
+const createHighlighter = ({ themes = ["nord"] } = {}) => {
   // Reuse the same instance
-  const highlighterPromise = getHighlighter({
-    theme,
-    langs: languages.concat([
-      // See languages/README.md for sources.
-      // TODO Open PR upstream
-      {
-        id: "fortran",
-        scopeName: "source.fortran.free",
-        path: syntaxPath("fortran"),
-      },
-      {
-        id: "idris",
-        scopeName: "source.idris",
-        path: syntaxPath("idris"),
-      },
-      {
-        id: "haxe",
-        scopeName: "source.hx",
-        path: syntaxPath("haxe"),
-      },
-      {
-        id: "racket",
-        scopeName: "source.racket",
-        path: syntaxPath("racket"),
-      },
-
-      // TODO Remove these after a new shiki is released
-      {
-        id: "nim",
-        scopeName: "source.nim",
-        path: syntaxPath("nim"),
-      },
-      {
-        id: "r",
-        scopeName: "source.r",
-        path: syntaxPath("r"),
-      },
-      {
-        id: "raku",
-        scopeName: "source.perl.6",
-        path: syntaxPath("raku"),
-      },
-    ]),
-  });
+  const highlighterPromise = getHighlighter({ themes }).then(
+    async (highlighter) => {
+      const langs = [
+        // See languages/README.md for sources.
+        {
+          id: "factor",
+          scopeName: "source.factor",
+          grammar: grammar("factor"),
+        },
+        {
+          id: "fortran",
+          scopeName: "source.fortran.free",
+          grammar: grammar("fortran"),
+        },
+        {
+          id: "idris",
+          scopeName: "source.idris",
+          grammar: grammar("idris"),
+        },
+        {
+          id: "haxe",
+          scopeName: "source.hx",
+          grammar: grammar("haxe"),
+        },
+        {
+          id: "racket",
+          scopeName: "source.racket",
+          grammar: grammar("racket"),
+        },
+      ];
+      for (const lang of langs) await highlighter.loadLanguage(lang);
+      return highlighter;
+    }
+  );
 
   return () => async (tree) => {
     const highlighter = await highlighterPromise;
-    const fg = highlighter.getForegroundColor();
-    const bg = highlighter.getBackgroundColor();
 
     visit(tree, "code", (node) => {
-      // const meta = node.meta;
-      const lang = node.lang || "text";
-      const code = node.value;
-      let tokenLines = null;
-      try {
-        tokenLines = highlighter.codeToThemedTokens(
-          code,
-          remapLanguageId(lang)
-        );
-      } catch (e) {
-        if (/^No language registration for/.test(e.message)) {
-          console.warn(`shiki: ${e.message}`);
-          console.warn(`shiki: Falling back to "text"`);
-          tokenLines = highlighter.codeToThemedTokens(code, "text");
-        } else {
-          throw e;
-        }
-      }
-
-      let html = `<pre class="${theme}" style="background-color: ${bg}">`;
-      html += `<code class="language-${lang}">`;
-      for (const line of tokenLines) {
-        html += `<span>`;
-        for (const token of line) {
-          const css = [`color: ${token.color || fg}`];
-          switch (token.fontStyle) {
-            case -1: // NotSet
-            case 0: // None
-              break;
-            case 1: // Italic
-              css.push(`font-style: italic`);
-              break;
-            case 2: // Bold
-              css.push(`font-weight: bold`);
-              break;
-            case 4: // Underline
-              css.push(`text-decoration: underline`);
-              break;
-          }
-          const content = escapeHtml(token.content);
-          html += `<span style="${css.join("; ")}">${content}</span>`;
-        }
-        html += `</span>\n`;
-      }
-
-      html = html.replace(/\n*$/, ""); // get rid of trailing new lines
-      html += `</code></pre>`;
-
-      node.value = html;
+      node.value = themes
+        .map((theme) =>
+          codeToHtml(highlighter, node.value, node.lang || "text", theme)
+        )
+        .join("");
       node.type = "html";
     });
   };
+};
+
+const codeToHtml = (highlighter, code, lang, theme) => {
+  let tokenLines = null;
+  try {
+    tokenLines = highlighter.codeToThemedTokens(
+      code,
+      remapLanguageId(lang),
+      theme
+    );
+  } catch (e) {
+    if (/^No language registration for/.test(e.message)) {
+      console.warn(`shiki: ${e.message}`);
+      console.warn(`shiki: Falling back to "text"`);
+      tokenLines = highlighter.codeToThemedTokens(code, "text", theme);
+    } else {
+      throw e;
+    }
+  }
+
+  const fg = highlighter.getForegroundColor(theme);
+  const bg = highlighter.getBackgroundColor(theme);
+
+  let html = `<pre class="${theme}" style="background-color: ${bg}">`;
+  html += `<code class="language-${lang}">`;
+  for (const line of tokenLines) {
+    html += `<span>`;
+    for (const token of line) {
+      const css = [`color: ${token.color || fg}`];
+      switch (token.fontStyle) {
+        case -1: // NotSet
+        case 0: // None
+          break;
+        case 1: // Italic
+          css.push(`font-style: italic`);
+          break;
+        case 2: // Bold
+          css.push(`font-weight: bold`);
+          break;
+        case 4: // Underline
+          css.push(`text-decoration: underline`);
+          break;
+      }
+      const content = escapeHtml(token.content);
+      html += `<span style="${css.join("; ")}">${content}</span>`;
+    }
+    html += `</span>\n`;
+  }
+
+  html = html.replace(/\n*$/, ""); // get rid of trailing new lines
+  html += `</code></pre>`;
+  return html;
 };
 
 module.exports = { createHighlighter };

@@ -1,0 +1,204 @@
+{
+  "fileTypes": [
+    "factor",
+    "facts"
+  ],
+  "foldingStartMarker": "^\\s*(M|C)?:|#(V|H|C)\\{",
+  "foldingStopMarker": "^\\s*$",
+  "keyEquivalent": "^~F",
+  "name": "Factor",
+  "patterns": [
+    {
+      "captures": {
+        "2": {
+          "name": "keyword.colon.factor"
+        },
+        "3": {
+          "name": "entity.name.function.factor"
+        },
+        "4": {
+          "name": "comment.stack-effect.factor"
+        }
+      },
+      "match": "(^|(?<=\\s))(:)\\s+([^\\s]+)\\s",
+      "name": "definition.word.factor"
+    },
+    {
+      "captures": {
+        "2": {
+          "name": "keyword.colon.factor"
+        },
+        "3": {
+          "name": "entity.name.method.factor"
+        },
+        "4": {
+          "name": "comment.stack-effect.factor"
+        }
+      },
+      "match": "(^|(?<=\\s))(C:)\\s+([^\\s]+)\\s",
+      "name": "definition.word.class.factor"
+    },
+    {
+      "captures": {
+        "2": {
+          "name": "keyword.colon.factor"
+        },
+        "3": {
+          "name": "entity.name.class.factor"
+        },
+        "4": {
+          "name": "entity.name.method.factor"
+        },
+        "5": {
+          "name": "comment.stack-effect.factor"
+        }
+      },
+      "match": "(^|(?<=\\s))(M:)\\s+([^\\s]+)\\s+([^\\s]+)\\s",
+      "name": "definition.word.method.factor"
+    },
+    {
+      "captures": {
+        "2": {
+          "name": "keyword.colon.factor"
+        },
+        "4": {
+          "name": "entity.name.generic.factor"
+        },
+        "5": {
+          "name": "comment.stack-effect.factor"
+        }
+      },
+      "match": "(^|(?<=\\s))(G(ENERIC)?:)\\s+([^\\s]+)\\s",
+      "name": "definition.word.generic.factor"
+    },
+    {
+      "captures": {
+        "2": {
+          "name": "storage.type.factor"
+        },
+        "3": {
+          "name": "entity.name.class.factor"
+        }
+      },
+      "match": "(^|(?<=\\s))(TUPLE:)\\s+([^\\s]+)\\s+(([^\\s]+)+)",
+      "name": "meta.class.factor"
+    },
+    {
+      "match": "(^|(?<=\\s))(drop|2drop|3drop|keep|2keep|3keep|nip|2nip|dup|2dup|3dup|dupd|over|pick|tuck|swap|rot|-rot|roll|-roll|slip|2swap|swapd|>r|r>)(\\s|$)",
+      "name": "keyword.control.stack.factor"
+    },
+    {
+      "match": "(^|(?<=\\s))(get|set)(\\s|$)",
+      "name": "keyword.control.variable.factor"
+    },
+    {
+      "match": "(^|(?<=\\s))(if|when|unless|if*|unless*|when*)\\*?(\\s|$)",
+      "name": "keyword.control.flow.factor"
+    },
+    {
+      "begin": "(^|(?<=\\s))(USING:)",
+      "end": "(?<=\\s);(\\s|$)",
+      "name": "keyword.control.using.factor",
+      "patterns": [
+        {
+          "match": "(^|(?<=\\s))[^\\s]+(\\s|$)",
+          "name": "constant.namespace.factor"
+        }
+      ]
+    },
+    {
+      "begin": "(^|(?<=\\s))(REQUIRES:)",
+      "end": "(?<=\\s);(\\s|$)",
+      "name": "keyword.control.requires.factor",
+      "patterns": [
+        {
+          "match": "(^|(?<=\\s))[^\\s]+(\\s|$)",
+          "name": "constant.namespace.factor"
+        }
+      ]
+    },
+    {
+      "match": "(^|(?<=\\s))(f|t)(\\s|$)",
+      "name": "constant.language.factor"
+    },
+    {
+      "match": "(^|(?<=\\s))CHAR:\\s+[^\\s]+(\\s|$)",
+      "name": "constant.character.factor"
+    },
+    {
+      "match": "(^|(?<=\\s))-?+\\d+\\.\\d+(E(\\+|-)\\d+)?(\\s|$)",
+      "name": "constant.numeric.float.factor"
+    },
+    {
+      "match": "(^|(?<=\\s))-?\\d+/-?\\d+(\\s|$)",
+      "name": "constant.numeric.rational.factor"
+    },
+    {
+      "begin": "\"",
+      "end": "\"",
+      "name": "string.quoted.double.factor",
+      "patterns": [
+        {
+          "include": "#escaped_characters"
+        }
+      ]
+    },
+    {
+      "begin": "<\"",
+      "end": "\">",
+      "name": "string.quoted.double.multiline.factor",
+      "patterns": [
+        {
+          "include": "#escaped_characters"
+        }
+      ]
+    },
+    {
+      "begin": "(^|(?<=\\s))(STRING:)\\s+(\\S+)",
+      "captures": {
+        "2": {
+          "name": "keyword.colon.factor"
+        },
+        "3": {
+          "name": "entity.name.heredoc.factor"
+        }
+      },
+      "contentName": "string.unquoted.heredoc.factor",
+      "end": "^;$",
+      "name": "definition.word.heredoc.factor"
+    },
+    {
+      "match": "inline|foldable",
+      "name": "storage.modifier.factor"
+    },
+    {
+      "match": "(^|(?<=\\s))#?!(\\s.*)?$",
+      "name": "comment.line.factor"
+    },
+    {
+      "begin": "\\((?=\\s)",
+      "end": "(^|(?<=\\s))\\)",
+      "name": "comment.parens.factor"
+    },
+    {
+      "match": "\\b[^\\s]+:\\s+[^\\s]+(\\s|$)",
+      "name": "keyword.control.postpone.factor"
+    }
+  ],
+  "repository": {
+    "escaped_characters": {
+      "patterns": [
+        {
+          "match": "\\\\(\\\\|[enrts'\"?]|[0-3]\\d{,2}|[4-7]\\d?|u[a-fA-F0-9]{,2})",
+          "name": "constant.character.escape.factor"
+        },
+        {
+          "match": "\\\\.",
+          "name": "invalid.illegal.unknown-escape.factor"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.factor",
+  "uuid": "3C9C9C2A-314A-475B-A4E4-A68BAAF3F36E"
+}

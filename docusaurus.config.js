@@ -66,7 +66,11 @@ module.exports = {
           routeBasePath: "/",
           sidebarPath: require.resolve("./sidebars.js"),
           editUrl: "https://github.com/codewars/docs/edit/master/",
-          beforeDefaultRemarkPlugins: [createHighlighter({ theme: "nord" })],
+          beforeDefaultRemarkPlugins: [
+            createHighlighter({
+              themes: ["github-dark-dimmed", "github-light"],
+            }),
+          ],
         },
         blog: false,
         theme: {

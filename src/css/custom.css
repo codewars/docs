@@ -181,3 +181,17 @@ html[data-theme="dark"] .DocSearch {
     var(--ifm-color-emphasis-100) 100%
   );
 }
+
+html[data-theme="dark"] pre.github-light {
+  display: none;
+}
+
+html[data-theme="light"] pre.github-dark-dimmed {
+  display: none;
+}
+
+html[data-theme="light"] pre.github-light {
+  outline-style: solid;
+  outline-width: 1px;
+  outline-color: #d1d5db;
+}
