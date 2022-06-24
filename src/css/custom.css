@@ -182,11 +182,10 @@ html[data-theme="dark"] .DocSearch {
   );
 }
 
-html[data-theme="dark"] pre.github-light {
-  display: none;
-}
-
-html[data-theme="light"] pre.github-dark-dimmed {
+html[data-theme="dark"] pre.github-light,
+html[data-theme="light"] pre.github-dark-dimmed,
+html[data-theme='dark'] img[src$='#gh-light-mode-only'],
+html[data-theme='light'] img[src$='#gh-dark-mode-only'] {
   display: none;
 }
 
