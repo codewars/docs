@@ -3,7 +3,6 @@ title: Troubleshooting Your Solution
 tags: [recipe]
 ---
 
-import ThemedImage from "@theme/ThemedImage";
 import A from "@components/Anchored";
 
 <!---
@@ -69,13 +68,8 @@ Most, if not all, languages on Codewars support writing to standard output (stdo
 
 <!--- textlint-enable terminology -->
 
-<ThemedImage
-  alt="Print to the console"
-  sources={{
-    light: require("./img/troubleshooting-print-console-light.png").default,
-    dark: require("./img/troubleshooting-print-console-dark.png").default,
-  }}
-/>
+![Print to the console](./img/troubleshooting-print-console-light.png#gh-light-mode-only)
+![Print to the console](./img/troubleshooting-print-console-dark.png#gh-dark-mode-only)
 
 ### I want to print something to the console but it's not showing up! {#no-print}
 
@@ -105,13 +99,8 @@ There are a few possible causes:
 Sometimes, you see all the tests green, 0 failed tests, and then "exit code 137" in red at the top of the output panel.  
 If you see "STDERR, Max Buffer Size Reached (1.5 MiB)" at the bottom of it, that means too many things were printed to the console during the tests and they were interrupted.
 
-<ThemedImage
-  alt="Buffer Limit Error"
-  sources={{
-    light: require("./img/buffer-limit-error-light.png").default,
-    dark: require("./img/buffer-limit-error-dark.png").default,
-  }}
-/>
+![Buffer Limit Error](./img/buffer-limit-error-light.png#gh-light-mode-only)
+![Buffer Limit Error](./img/buffer-limit-error-dark.png#gh-dark-mode-only)
 
 Several things may cause this:
 
