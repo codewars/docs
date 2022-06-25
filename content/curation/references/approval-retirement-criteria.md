@@ -4,12 +4,6 @@ sidebar_label: Criteria for Approval and Retirement
 tags: [reference]
 ---
 
-## Auto-unpublish of beta kata
-
-A beta kata is automatically unpublished and turned into a draft after collecting two posts labelled as `issue`.
-
-A draft with unresolved issues canot be republished.
-
 ## Eligibility for Approval
 
 As an author gets more katas approved, they become established as an experienced kata maker, and less votes will be needed for their future kata to be approved. The following table lists the requirements for a beta kata to be able to be approved:
