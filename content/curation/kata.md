@@ -52,7 +52,7 @@ When a reviewer writes a post pointing out the spotted issues which need to be f
 
 ### Auto-unpublish
 
-A beta kata which receives two posts labeled as `issue` is automatically unpublished and turned back into a draft. It cannot be republished until there is at least one unresolved issue.
+A beta kata which receives two posts labeled as `issue` is automatically unpublished and turned back into a draft. It cannot be republished as long as there is at least one unresolved issue.
 
 ## Reward for Reviewers
 
