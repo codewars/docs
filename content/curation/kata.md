@@ -50,6 +50,9 @@ Users performing a review should hold to [Kata Curating Guidelines][kata-curatin
 
 When a reviewer writes a post pointing out the spotted issues which need to be fixed, it should be done in a way which actually instructs the author how to fix them. Sometimes, authors can be unaware that some specific issue might occur, or why it might be a problem, and reviewers with their short remarks leave them even more clueless. When a reviewer wants to signal such an issue, it should be done in a way which minimizes the need for follow-up questions and additional explanations. Initially it might seem as more effort from the reviewer, but this additional effort may ease the resolution of problems further down the line.
 
+### Auto-unpublish
+
+A beta kata which receives two posts labeled as `issue` is automatically unpublished and turned back into a draft. It cannot be republished as long as there is at least one unresolved issue.
 
 ## Reward for Reviewers
 
