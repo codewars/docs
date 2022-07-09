@@ -13,6 +13,7 @@ module.exports = {
       type: "category",
       label: "Getting Started",
       items: [
+        "getting-started/prerequisites",
         "getting-started/registering",
         "getting-started/setting-up",
         // Move these under Training
