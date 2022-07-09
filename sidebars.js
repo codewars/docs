@@ -13,7 +13,6 @@ module.exports = {
       type: "category",
       label: "Getting Started",
       items: [
-        "getting-started/prerequisites",
         "getting-started/registering",
         "getting-started/setting-up",
         // Move these under Training
@@ -29,7 +28,7 @@ module.exports = {
       link: {
         type: "generated-index",
       },
-      items: ["training/troubleshooting"],
+      items: ["training/troubleshooting", "training/beginners"],
     },
     {
       type: "category",
