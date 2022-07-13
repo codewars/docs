@@ -26,6 +26,7 @@ module.exports = {
       type: "category",
       label: "Training",
       link: {
+        slug: "/training",
         type: "generated-index",
       },
       items: ["training/troubleshooting"],
@@ -44,6 +45,7 @@ module.exports = {
           type: "category",
           label: "Tutorials",
           link: {
+            slug: "/authoring/tutorials",
             type: "generated-index",
           },
           items: ["authoring/tutorials/create-first-kata"],
@@ -70,6 +72,7 @@ module.exports = {
           type: "category",
           label: "Recipes",
           link: {
+            slug: "/authoring/recipes",
             type: "generated-index",
           },
           items: [
@@ -106,6 +109,7 @@ module.exports = {
           type: "category",
           label: "References",
           link: {
+            slug: "/curation/references",
             type: "generated-index",
           },
           items: [
@@ -696,10 +700,10 @@ module.exports = {
       type: "category",
       label: "Gamification",
       link: {
-        type: "generated-index",
+        type: "doc",
+        id: "gamification/index",
       },
       items: [
-        "gamification/index",
         "gamification/ranks",
         "gamification/honor",
         "gamification/privileges",
@@ -709,6 +713,7 @@ module.exports = {
       type: "category",
       label: "Concepts",
       link: {
+        slug: "/concepts",
         type: "generated-index",
       },
       items: [
@@ -745,6 +750,7 @@ module.exports = {
       type: "category",
       label: "References",
       link: {
+        slug: "/references",
         type: "generated-index",
       },
       items: [
@@ -766,6 +772,7 @@ module.exports = {
       type: "category",
       label: "Meta",
       link: {
+        slug: "/meta",
         type: "generated-index",
       },
       items: ["meta/docs"],
