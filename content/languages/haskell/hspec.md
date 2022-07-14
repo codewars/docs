@@ -9,7 +9,7 @@ tags:
 
 ## Basic Setup
 
-### Solution Code
+### Solution
 
 ```haskell
 module Example where
@@ -18,7 +18,7 @@ add :: Num a => a -> a -> a
 add = (+)
 ```
 
-### Test Fixture
+### Tests
 
 ```haskell
 module ExampleSpec where -- test module name MUST end with Spec

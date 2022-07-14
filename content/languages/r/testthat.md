@@ -9,7 +9,7 @@ tags:
 
 ## Basic Setup
 
-### Solution Code
+### Solution
 
 ```r
 add <- function(a, b) {
@@ -17,7 +17,7 @@ add <- function(a, b) {
 }
 ```
 
-### Test Fixture
+### Tests
 
 ```r
 context("add")
@@ -27,7 +27,7 @@ test_that("should add numbers", {
 })
 ```
 
-## Using Preloaded Code
+## Using Preloaded
 
 ### Preloaded
 
@@ -35,14 +35,14 @@ test_that("should add numbers", {
 f <- function(a, b) { a + b }
 ```
 
-### Solution Code
+### Solution
 
 ```r
 source("setup.R")
 add <- f
 ```
 
-### Test Fixture
+### Tests
 
 ```r
 context("add")

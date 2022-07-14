@@ -9,7 +9,7 @@ tags:
 
 ## Basic Setup
 
-### Solution Code
+### Solution
 
 ```powershell
 function Add-Numbers($a, $b) {
@@ -17,7 +17,7 @@ function Add-Numbers($a, $b) {
 }
 ```
 
-### Test Fixture
+### Tests
 
 ```powershell
 BeforeAll {
