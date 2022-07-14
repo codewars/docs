@@ -11,26 +11,6 @@ slug: /languages/r
 ## Test Frameworks
 [testthat](https://github.com/hadley/testthat)
 
-### Using Preloaded Code
-
-Preloaded
-```r
-f <- function(a, b) { a + b }
-```
-
-Solution
-```r
-source("setup.R")
-add <- f
-```
-
-Tests
-```r
-test_that("addition using preloaded works", {
-  expect_equal(add(1, 1), 2)
-})
-```
-
 ## Timeout
 
 12 seconds

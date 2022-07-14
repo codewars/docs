@@ -29,6 +29,31 @@ test_that("should add numbers", {
 })
 ```
 
+## Using Preloaded Code
+
+### Preloaded
+
+```r
+f <- function(a, b) { a + b }
+```
+
+### Solution Code
+
+```r
+source("setup.R")
+add <- f
+```
+
+### Test Fixture
+
+```r
+context("add")
+
+test_that("addition using preloaded works", {
+  expect_equal(add(1, 1), 2)
+})
+```
+
 <!--
 TODO: Finish this reference
 TODO: Add tutorial and link to it
