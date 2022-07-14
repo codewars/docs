@@ -9,7 +9,7 @@ tags:
 
 ## Basic Setup
 
-### Solution Code
+### Solution
 
 ```perl
 package Solution;
@@ -30,7 +30,7 @@ sub add {
 1;
 ```
 
-### Test Fixture
+### Tests
 
 ```perl
 # use strict;
