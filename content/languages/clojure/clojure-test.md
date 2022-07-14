@@ -16,7 +16,7 @@ tags: [clojure]
   (+ a b))
 ```
 
-### Test Fixture
+### Tests
 
 ```clojure
 (ns clojure.adder-test
