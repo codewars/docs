@@ -9,6 +9,7 @@ tags: [nim]
 ## Versions
 
 - 1.0
+- 1.6
 
 ## Test Frameworks
 
@@ -23,7 +24,7 @@ import solution
 include solution_tests
 ```
 
-The custom output formatter is open sourced at [Codewars/nim-unittest](https://github.com/Codewars/nim-unittest).
+The custom output formatter is open sourced at [codewars/nim-unittest](https://github.com/codewars/nim-unittest).
 
 ### Using Preloaded Code
 
