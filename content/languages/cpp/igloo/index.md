@@ -2,7 +2,7 @@
 title: Igloo
 sidebar_label: Overview
 slug: /languages/cpp/igloo
-tags: [cpp, testing]
+tags: [cpp, reference, testing]
 ---
 
 # Igloo
