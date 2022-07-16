@@ -10,7 +10,7 @@ tags: [clojure]
 ### Solution Code
 
 ```clojure
-(ns clojure.adder)
+(ns solution)
 
 (defn add [a b]
   (+ a b))
@@ -19,9 +19,9 @@ tags: [clojure]
 ### Tests
 
 ```clojure
-(ns clojure.adder-test
+(ns solution-test
   (:require [clojure.test :refer :all]
-            [clojure.adder :refer :all]))
+            [solution :refer [add]]))
 
 (deftest Add
   (is (= (add 1 2) 3)))
