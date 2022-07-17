@@ -1,4 +1,4 @@
 ---
 title: Clojure Test
-tags: [clojure]
+tags: [clojure, reference, testing]
 ---
