@@ -14,27 +14,6 @@ tags: [haskell]
 
 [Hspec](http://hspec.github.io/)
 
-```haskell
-module ExampleSpec where
-
-import Test.Hspec
-import Example
-
-spec :: Spec
-spec = do
-    describe "add" $ do
-        it "adds Nums" $ do
-            (add 1 1) `shouldBe` (2 :: Integer)
-
--- Optional
-main = hspec spec
-```
-
-The test module's name **must end with `Spec`**. `Spec` by itself is not allowed.
-Examples: `ExampleSpec`, `Example.ExampleSpec` are allowed while `Spec`, `Example.Spec`, `ExampleTest`, `Example.KataTest` are not.
-
-The common convention is: If the solution's module name is e.g. `YourKata.SomeTask`, **just add `Spec` to the end without a dot**, e.g. `YourKata.SomeTaskSpec`.
-
 ## Timeout
 
 12 seconds
