@@ -416,7 +416,7 @@ module.exports = {
         },
         {
           type: "category",
-          label: "Javascript",
+          label: "JavaScript",
           link: {
             type: "doc",
             id: "languages/javascript/index",
