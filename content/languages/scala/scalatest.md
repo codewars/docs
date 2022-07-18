@@ -17,7 +17,7 @@ object Adder {
 }
 ```
 
-### Tests (Scala 3.0)
+### Tests (Scala 3.0/ScalaTest 3.2)
 
 ```scala
 import org.scalatest.flatspec._
@@ -32,7 +32,7 @@ class AdderSpec extends AnyFlatSpec with Matchers {
 }
 ```
 
-### Tests (Scala 2.13)
+### Tests (Scala 2.13/ScalaTest 3.0)
 
 ```scala
 import org.scalatest._
