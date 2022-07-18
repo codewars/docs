@@ -21,12 +21,27 @@ class Adder {
 
 ```groovy
 import static org.junit.jupiter.api.Assertions.assertEquals
+
+import org.junit.jupiter.api.DisplayName
+import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 
+@DisplayName("Testing Adder")
 class AdderTests {
   @Test
+  @DisplayName("Adder.add(1, 1) returns 2")
   void "1 + 1 = 2"() {
     assertEquals(2, Adder.add(1, 1), "1 + 1 should equal 2")
+  }
+
+  @Nested
+  @DisplayName("Negative Integers")
+  class Negatives {
+    @Test
+    @DisplayName("Adder.add(-1, -1) returns -2")
+    void "-1 + -1 = -2"() {
+      assertEquals(-2, Adder.add(-1, -1), "-1 + -1 should equal -2")
+    }
   }
 }
 ```
