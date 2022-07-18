@@ -24,8 +24,6 @@ import org.scalatest.flatspec._
 import org.scalatest.matchers.should._
 
 class AdderSpec extends AnyFlatSpec with Matchers {
-  behavior of "Adder.add"
-
   "add(1, 2)" should "be 3" in {
     Adder.add(1, 2) shouldBe (3)
   }
