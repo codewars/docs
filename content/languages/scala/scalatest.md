@@ -30,6 +30,10 @@ class AdderSpec extends AnyFlatSpec with Matchers {
 
 ## Basic Setup (Scala 2.13/ScalaTest 3.0)
 
+:::warning
+Scala 3 should be used for new content
+:::
+
 ### Solution
 
 ```scala
