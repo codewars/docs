@@ -7,7 +7,28 @@ tags:
 
 # ScalaTest
 
-## Basic Setup
+## Basic Setup (Scala 3.0/ScalaTest 3.2)
+
+### Solution
+
+```scala
+def add(a: Int, b: Int) = a + b
+```
+
+### Tests
+
+```scala
+import org.scalatest.flatspec._
+import org.scalatest.matchers.should._
+
+class AdderSpec extends AnyFlatSpec with Matchers {
+  "add(1, 2)" should "be 3" in {
+    add(1, 2) shouldBe (3)
+  }
+}
+```
+
+## Basic Setup (Scala 2.13/ScalaTest 3.0)
 
 ### Solution
 
@@ -17,20 +38,7 @@ object Adder {
 }
 ```
 
-### Tests (Scala 3.0/ScalaTest 3.2)
-
-```scala
-import org.scalatest.flatspec._
-import org.scalatest.matchers.should._
-
-class AdderSpec extends AnyFlatSpec with Matchers {
-  "add(1, 2)" should "be 3" in {
-    Adder.add(1, 2) shouldBe (3)
-  }
-}
-```
-
-### Tests (Scala 2.13/ScalaTest 3.0)
+### Tests
 
 ```scala
 import org.scalatest._
