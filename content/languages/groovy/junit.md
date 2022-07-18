@@ -39,7 +39,7 @@ import static org.junit.Assert.assertEquals
 
 class TestAdd {
   @Test
-  void addTest() {
+  void "1 + 1 = 2"() {
     assertEquals(2, Adder.add(1, 1))
   }
 }
