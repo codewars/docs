@@ -18,13 +18,27 @@ fun add(a: Int, b: Int) = a + b
 ### Tests (JUnit 5)
 
 ```kotlin
-import org.junit.jupiter.api.*
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.DisplayName
+import org.junit.jupiter.api.Nested
+import org.junit.jupiter.api.Test
 
-class AddTest {
+@DisplayName("Testing Adder")
+class AdderTests {
     @Test
-    @DisplayName("add(1, 1) == 2")
-    fun test1() {
-        Assertions.assertEquals(2, add(1, 1))
+    @DisplayName("add(1, 1) returns 2")
+    fun addTwo() {
+        assertEquals(2, add(1, 1), "1 + 1 should equal 2")
+    }
+
+    @Nested
+    @DisplayName("Negative Integers")
+    class Negatives {
+        @Test
+        @DisplayName("add(-1, -1) returns -2")
+        fun addTwoNegative() {
+            assertEquals(-2, add(-1, -1), "-1 + -1 should equal -2")
+        }
     }
 }
 ```
