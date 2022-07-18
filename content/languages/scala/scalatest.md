@@ -17,16 +17,31 @@ object Adder {
 }
 ```
 
-### Tests
+### Tests (3.0)
+
+```scala
+import org.scalatest.flatspec._
+import org.scalatest.matchers.should._
+
+class AdderSpec extends AnyFlatSpec with Matchers {
+  behavior of "Adder.add"
+
+  "add(1, 2)" should "be 3" in {
+    Adder.add(1, 2) shouldBe (3)
+  }
+}
+```
+
+### Tests (2.13)
 
 ```scala
 import org.scalatest._
 
-class SampleSpec extends FlatSpec with Matchers {
+class AdderSpec extends FlatSpec with Matchers {
   behavior of "Adder.add"
 
   it should "add two numbers" in {
-    Adder.add(1, 2) should equal(3)
+    Adder.add(1, 2) should equal (3)
   }
 }
 ```
