@@ -616,6 +616,10 @@ module.exports = {
 	{
           type: "category",
           label: "RISC-V",
+          link: {
+            type: "doc",
+            id: "languages/riscv/index",
+	  },
           items: ["languages/riscv/index"],
 	},
         {
