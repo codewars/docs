@@ -620,7 +620,7 @@ module.exports = {
             type: "doc",
             id: "languages/riscv/index",
 	  },
-          items: [],
+          items: ["languages/riscv/cgreen"],
 	},
         {
           type: "category",
