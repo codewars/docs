@@ -613,6 +613,11 @@ module.exports = {
           },
           items: ["languages/reason/jest"],
         },
+	{
+          type: "category",
+          label: "RISC-V",
+          items: ["languages/riscv/index"],
+	},
         {
           type: "category",
           label: "Ruby",
