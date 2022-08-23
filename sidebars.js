@@ -615,6 +615,15 @@ module.exports = {
         },
         {
           type: "category",
+          label: "RISC-V",
+          link: {
+            type: "doc",
+            id: "languages/riscv/index",
+          },
+          items: ["languages/riscv/cgreen"],
+        },
+        {
+          type: "category",
           label: "Ruby",
           link: {
             type: "doc",
