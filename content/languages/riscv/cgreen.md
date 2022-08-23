@@ -13,7 +13,7 @@ Unit tests for RISC-V are written in C with [Cgreen](https://cgreen-devs.github.
 
 ### Solution
 
-```asm
+```riscv
 .globl add
 add:
   addw a0, a0, a1
