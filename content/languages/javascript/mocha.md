@@ -24,7 +24,7 @@ config.truncateThreshold = 0;
 // if applicable to the challenge, don't truncate printing deeply objects
 require("util").inspect.defaultOptions.depth = null;
 
-describe("adder",() => {
+describe("adder", () => {
   it("should add two numbers", () => {
     assert.equal(add(1, 2), 3);
 
