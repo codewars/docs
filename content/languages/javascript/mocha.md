@@ -21,7 +21,7 @@ const {assert, config, expect} = require("chai");
 // don't truncate assertion diff output
 config.truncateThreshold = 0;
 
-// if applicable to the challenge, don't truncate printing deeply objects
+// if applicable to the challenge, don't truncate printing deeply-nested objects
 require("util").inspect.defaultOptions.depth = null;
 
 describe("adder", () => {
