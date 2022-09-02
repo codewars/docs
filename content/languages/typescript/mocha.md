@@ -19,13 +19,14 @@ export default add;
 
 ```typescript
 import {assert, config, expect} from "chai";
+import {inspect} from "util";
 import add from "./solution";
 
 // don't truncate assertion diff output
 config.truncateThreshold = 0;
 
 // if applicable to the challenge, don't truncate printing deeply-nested objects
-require("util").inspect.defaultOptions.depth = null;
+inspect.defaultOptions.depth = null;
 
 describe("adder", () => {
   it("should add two numbers", () => {
