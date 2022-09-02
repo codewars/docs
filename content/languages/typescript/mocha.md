@@ -19,7 +19,6 @@ export default add;
 
 ```typescript
 import {assert, config, expect} from "chai";
-import {inspect} from "util";
 import add from "./solution";
 
 // don't truncate assertion diff output
