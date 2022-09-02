@@ -25,9 +25,6 @@ import add from "./solution";
 // don't truncate assertion diff output
 config.truncateThreshold = 0;
 
-// if applicable to the challenge, don't truncate printing deeply-nested objects
-inspect.defaultOptions.depth = null;
-
 describe("add", () => {
   it("should add two numbers", () => {
     assert.strictEqual(add(1, 2), 3);
