@@ -26,7 +26,7 @@ require("util").inspect.defaultOptions.depth = null;
 
 describe("add", () => {
   it("should add two numbers", () => {
-    assert.equal(add(1, 2), 3);
+    assert.strictEqual(add(1, 2), 3);
 
     // ...or use expect assertions:
     expect(add(1, 2)).to.eq(3);
