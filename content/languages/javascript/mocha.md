@@ -10,7 +10,7 @@ tags: [javascript, reference, testing]
 ### Solution
 
 ```javascript
-const adder = (a, b) => a + b;
+const add = (a, b) => a + b;
 ```
 
 ### Tests
