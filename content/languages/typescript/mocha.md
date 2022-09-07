@@ -29,7 +29,7 @@ describe("add", () => {
     assert.strictEqual(add(1, 2), 3);
 
     // ...or use expect assertions:
-    expect(add(1, 2)).to.eq(3);
+    expect(add(1, 2)).to.equal(3);
   });
 });
 ```
