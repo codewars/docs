@@ -12,7 +12,7 @@ Shell can be tested with Ruby's [RSpec](https://rspec.info/) library which runs 
 ### Solution
 
 ```shell
-#!/bin/sh
+#!/bin/bash
 
 echo $(($1 + $2))
 ```
