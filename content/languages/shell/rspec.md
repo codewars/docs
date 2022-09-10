@@ -5,7 +5,7 @@ tags: [shell, reference, testing]
 
 # RSpec
 
-Shell can be tested with Ruby's [RSpec](https://rspec.info/) library which runs the solution shell script as a subprocess. The `run_shell(args: [], output: true)` function is provided to facilitate this. Calling `run_shell(2, 3, 4)` effectively runs `./solution.sh 2 3 4` and returns the script's stdout as a string.
+Shell can be tested with Ruby's [RSpec](https://rspec.info/) library which runs the solution shell script as a subprocess. The `run_shell(args: [], output: true)` function is provided to facilitate this. Calling `run_shell(2, 3, 4)` effectively runs `bash -c $(cat solution.sh) 2 3 4` and returns the script's stdout as a string.
 
 ## Basic Setup
 
