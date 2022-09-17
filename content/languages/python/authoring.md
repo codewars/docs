@@ -96,7 +96,7 @@ It's possible to put functions decorated with `@test.it` in a loop and use them 
 @test.describe("Generated test cases")
 def tests_with_generated_test_cases()
     test_cases = generate_test_cases()
-    for msg, input, expected in test_case:
+    for msg, input, expected in test_cases:
         @test.it(msg)
         def _():
             actual = user_solution(input)
