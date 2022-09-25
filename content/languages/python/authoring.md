@@ -88,24 +88,6 @@ This is a convention used in many Python kata, but it's not a requirement, and a
 
 Python kata use the [Codewars Python testing framework](/languages/python/codewars-test/) to implement and execute tests. You should read its reference page to find out how to use `describe` and `it` blocks for [organization and grouping](/languages/python/codewars-test/#organization-of-tests), what [assertions](/languages/python/codewars-test/#assertions-1) are available, etc.
 
-#### Dynamically generated test cases
-
-It's possible to put functions decorated with `@test.it` in a loop and use them as a construct similar to parametrized test cases known from other testing frameworks, for example:
-
-```python
-@test.describe("Generated test cases")
-def tests_with_generated_test_cases()
-    test_cases = generate_test_cases()
-    for msg, input, expected in test_cases:
-        @test.it(msg)
-        def _():
-            actual = user_solution(input)
-            test.assert_equals(actual, expected)
-
-```
-
-This technique is liked by authors familiar with testing frameworks that provide parametrized or generated test cases out of the box, like NUnit, or JUnit. However, some caution is needed when this approach is used. Test suites organized like this can become large and can flood the test output panel with many entries, making it unreadable or causing performance problems in client browsers.
-
 #### Decorated functions
 
 To create and present test output, the Python testing framework uses parameters of `@test.describe` and `@test.it` decorators, and ignores actual names of decorated functions. Since the names are often redundant with titles of `describe` or `it` sections, they can be replaced with some placeholder name, for example, `_`:
@@ -133,6 +115,24 @@ def _():
     def _():
         ...some assertions...        
 ```
+
+#### Dynamically generated test cases
+
+It's possible to put functions decorated with `@test.it` in a loop and use them as a construct similar to parametrized test cases known from other testing frameworks, for example:
+
+```python
+@test.describe("Generated test cases")
+def tests_with_generated_test_cases()
+    test_cases = generate_test_cases()
+    for msg, input, expected in test_cases:
+        @test.it(msg)
+        def _():
+            actual = user_solution(input)
+            test.assert_equals(actual, expected)
+
+```
+
+This technique is liked by authors familiar with testing frameworks that provide parametrized or generated test cases out of the box, like NUnit, or JUnit. However, some caution is needed when this approach is used. Test suites organized like this can become large and can flood the test output panel with many entries, making it unreadable or causing performance problems in client browsers.
 
 #### Test feedback
 
