@@ -69,8 +69,6 @@ Test output:
 
 Not only your custom types can be affected by this issue. Snowhouse may be not able to stringify many built-in, standard, or 3rd party types. Basically, every type which does not define its version of the output stream operator (`operator <<`) is affected, and the `std::pair` template is a very common case of such types for Codewars kata.
 
-## Solutions
-
 To make a stringification of unsupported types possible, you have to provide one (or both) of code snippets: definition of `operator <<` for your type, or specialization of `snowhouse::Stringizer<T>` template. Snippets should be located just where your custom types are, usually in **Preloaded**.
 
 ### Stringification with `operator <<`
@@ -246,6 +244,56 @@ should_pretty_print_vector_of_pairs_of_custom_type
   Expected: equal to [ (A, (1, 1)) ]
   Actual: [ (A, (0, 0)), (B, (2, 2)) ]
 ```
+
+## Precision loss in formatted `double` values
+
+By default, Snowhouse assertions present `double` values formatted with precision of 6 significant digits. In some cases this can lead to very confusing assertion messages issued by Snowhouse assertions. Following assertion:
+
+```cpp
+Assert::That(doubleValue, EqualsWithDelta(32.98765, 1e-9));
+```
+
+can result in output similar to:
+
+```text
+Test_Describe
+  Test_It
+    Expected: equal to 32.9877 (+/- 1e-09)
+    Actual: 32.9877
+```
+
+Confusingly, tests do not pass even though the actual value is presented as identical to the expected one. However, both values differ at decimal places affected by accurracy of the comparison (above `1e-9`), but below the precision of formatting. To improve presentation of `double` values in assertion messages, a specialization for `Stringizer<double>` has to be provided, preferably in the Preloaded snippet:
+
+```cpp
+#include <sstream>
+#include <iomanip>
+
+namespace snowhouse {
+
+  template<>
+  struct Stringizer<double>
+  {
+    static std::string ToString(double value)
+    {
+      std::ostringstream oss;
+      oss << std::setprecision(15) << value;
+      return oss.str();
+    }
+  };
+}
+```
+
+Precision of the formatting (in the example above the value of `1e-15` is used) can be fine-tuned by authors to conform to requirements of their kata. With the specialized stringizer, `double` values are presented in assertion messages with increased precision:
+
+```text
+Test_Describe
+  Test_It
+    Expected: equal to 32.9877 (+/- 1e-09)
+    Actual: 32.32.98765001
+```
+
+Now, the difference between expected and actual values is clearly visible.
+
 
 ## Additional info
 
