@@ -151,20 +151,14 @@ Some useful functions include:
 - [`random.sample(population, k)`](https://docs.python.org/3.8/library/random.html#random.sample) - returns a `k` length list of unique elements chosen from the `population` sequence or set.
 - [`random.choices(population[, ...], k=1)`](https://docs.python.org/3.8/library/random.html#random.choices) - extracts `k` elements of the `population` (possibly outputting the same element several times).
 
-:::warning
-The Python runner is currently affected by a performance issue (reported as [codewars/runner#58](https://github.com/codewars/runner/issues/58)) which sometimes causes the generation of large amounts of random numbers to be noticeably slower. The majority of kata should not be affected by it in any significant way, but it can sometimes be a problem for performance tests generating large, random sets of data.
-See the linked issue for details and possible workarounds.
-:::
-
 ### Additional packages
 
 The Codewars runner provides a set of preinstalled packages, which are available not only for users solving a kata, but can be also used by authors to build tests and generators of test cases. For example, `numpy` can be used to make the generation of matrices easier.
 
 ### Reference solution
 
-If the test suite happens to use a reference solution to calculate expected values (which [should be avoided](/authoring/guidelines/submission-tests/#reference-solution) when possible), or some kind of reference data like precalculated lists, etc., it must not be possible for the user to redefine, overwrite or directly access its contents. To prevent this, it should be defined in a scope local to the testing function, a `it` or a `describe` block.
-
-The reference solution or data ___must not___ be defined in the [Preloaded code](/authoring/guidelines/preloaded/). The reference solution ___must not___ be defined in the top-level scope of the test suite.
+If the test suite happens to use a reference solution to calculate expected values (which [should be avoided](/authoring/guidelines/submission-tests/#reference-solution) when possible), or some kind of reference data like precalculated lists, etc., it must not be easily possible for the user to redefine, overwrite or directly access its contents. To prevent this, the reference solution or data ___must not___ be defined in the [Preloaded code](/authoring/guidelines/preloaded/).  
+Since Python snippets are proper Python modules since Python 3, calling a reference solution from a user solution is not as trivial as it used to be in previous setups of the code runner, so it's no longer necessary (but still possible) to define reference solution inside of `describe` or `it` blocks.
 
 ### Calling assertions
 
