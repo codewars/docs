@@ -69,11 +69,9 @@ Test output:
 
 Not only your custom types can be affected by this issue. Snowhouse may be not able to stringify many built-in, standard, or 3rd party types. Basically, every type which does not define its version of the output stream operator (`operator <<`) is affected, and the `std::pair` template is a very common case of such types for Codewars kata.
 
-### Solutions
-
 To make a stringification of unsupported types possible, you have to provide one (or both) of code snippets: definition of `operator <<` for your type, or specialization of `snowhouse::Stringizer<T>` template. Snippets should be located just where your custom types are, usually in **Preloaded**.
 
-#### Stringification with `operator <<`
+### Stringification with `operator <<`
 
 `operator <<` is the easiest option to provide stringification, but it can be used only with types you control. You can add `operator <<` for types you created for the kata, but not for 3rd party, external, or standard types, like for example `std::pair`. For them, you have to use specialized `Stringizer<T>` ([see below](#stringification-with-stringizert)).
 
@@ -130,7 +128,7 @@ Now your custom types are displayed properly in assertion messages:
 ```
 
 
-#### Stringification with `Stringizer<T>`
+### Stringification with `Stringizer<T>`
 
 Sometimes, the definition of `operator <<` cannot be used for stringification. You cannot add it to types which you do not own and you cannot re-define it for types which already have it defined, but not in a way you'd like to. Or maybe you just prefer this way rather than `operator <<`. In such cases, Snowhouse allows you to use a `snowhouse::Stringizer<T>` template specialized for the type you want to stringify.
 
