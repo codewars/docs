@@ -262,7 +262,7 @@ Test_Describe
     Actual: 32.9877
 ```
 
-Confusingly, tests do not pass even though the actual value is presented as identical to the expected one. However, both values differ at decimal places affected by accurracy of the comparison (above `1e-9`), but below the precision of formatting. To improve presentation of `double` values in assertion messages, a specialization for `Stringizer<double>` has to be provided, preferrably in the Preloaded snippet:
+Confusingly, tests do not pass even though the actual value is presented as identical to the expected one. However, both values differ at decimal places affected by accurracy of the comparison (above `1e-9`), but below the precision of formatting. To improve presentation of `double` values in assertion messages, a specialization for `Stringizer<double>` has to be provided, preferably in the Preloaded snippet:
 
 ```cpp
 #include <sstream>
@@ -283,7 +283,7 @@ namespace snowhouse {
 }
 ```
 
-Precision of the formatting (in the example above the value of `1e-15` is used) can be fine tuned by authors to conform to requirements of their kata. With the specialized stringizer, `double` values are presented in assertion messages with increased precision:
+Precision of the formatting (in the example above the value of `1e-15` is used) can be fine-tuned by authors to conform to requirements of their kata. With the specialized stringizer, `double` values are presented in assertion messages with increased precision:
 
 ```text
 Test_Describe
