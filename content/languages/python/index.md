@@ -33,6 +33,7 @@ tags: [python]
 - scikit-learn
 - scipy
 - six
+- math
 
 ## Services
 
