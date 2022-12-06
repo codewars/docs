@@ -1,0 +1,10 @@
+import ipaddress
+from ipaddress import IPv4Address
+def ipv4_address_class(ipv4_addr):
+    a = '{:#b}'.format(ipaddress.IPv4Address(ipv4_addr))
+    print(a)
+    if a[2:6]=='0000' or a[2:6]=='0111' or a[2:6]=='0101' or a[2:6]=='0100' or a[2:6]=='0110' or a[2:6]=='0011' or a[2:6]=='0001' or a[2:6]=='0010':return 'A'
+    if a[2:6]=='1010'or a[2:6]=='1011' or a[2:6]=='1000' or a[2:6]=='1001':return 'B'
+    if a[2:6]=='1100'or a[2:6]=='1101':return 'C'
+    if a[2:6]=='1110':return 'D'
+    if a[2:6]=='1111':return 'E'
