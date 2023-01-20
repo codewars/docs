@@ -64,6 +64,7 @@ sidebar_position: 0
 - [R](/languages/r)
 - [Raku](/languages/raku)
 - [Reason](/languages/reason)
+- [RISC-V](/languages/riscv)
 - [Solidity](/languages/solidity)
 - [VB.NET](/languages/vb)
 

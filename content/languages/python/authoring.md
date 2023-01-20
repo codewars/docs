@@ -88,24 +88,6 @@ This is a convention used in many Python kata, but it's not a requirement, and a
 
 Python kata use the [Codewars Python testing framework](/languages/python/codewars-test/) to implement and execute tests. You should read its reference page to find out how to use `describe` and `it` blocks for [organization and grouping](/languages/python/codewars-test/#organization-of-tests), what [assertions](/languages/python/codewars-test/#assertions-1) are available, etc.
 
-#### Dynamically generated test cases
-
-It's possible to put functions decorated with `@test.it` in a loop and use them as a construct similar to parametrized test cases known from other testing frameworks, for example:
-
-```python
-@test.describe("Generated test cases")
-def tests_with_generated_test_cases()
-    test_cases = generate_test_cases()
-    for msg, input, expected in test_case:
-        @test.it(msg)
-        def _():
-            actual = user_solution(input)
-            test.assert_equals(actual, expected)
-
-```
-
-This technique is liked by authors familiar with testing frameworks that provide parametrized or generated test cases out of the box, like NUnit, or JUnit. However, some caution is needed when this approach is used. Test suites organized like this can become large and can flood the test output panel with many entries, making it unreadable or causing performance problems in client browsers.
-
 #### Decorated functions
 
 To create and present test output, the Python testing framework uses parameters of `@test.describe` and `@test.it` decorators, and ignores actual names of decorated functions. Since the names are often redundant with titles of `describe` or `it` sections, they can be replaced with some placeholder name, for example, `_`:
@@ -134,6 +116,24 @@ def _():
         ...some assertions...        
 ```
 
+#### Dynamically generated test cases
+
+It's possible to put functions decorated with `@test.it` in a loop and use them as a construct similar to parametrized test cases known from other testing frameworks, for example:
+
+```python
+@test.describe("Generated test cases")
+def tests_with_generated_test_cases()
+    test_cases = generate_test_cases()
+    for msg, input, expected in test_cases:
+        @test.it(msg)
+        def _():
+            actual = user_solution(input)
+            test.assert_equals(actual, expected)
+
+```
+
+This technique is liked by authors familiar with testing frameworks that provide parametrized or generated test cases out of the box, like NUnit, or JUnit. However, some caution is needed when this approach is used. Test suites organized like this can become large and can flood the test output panel with many entries, making it unreadable or causing performance problems in client browsers.
+
 #### Test feedback
 
 You should notice that the Python testing framework produces one test output entry per assertion (or even more in [some special situations](/languages/python/codewars-test/#timeout-utility)), so the test output panel can get very noisy.
@@ -151,20 +151,14 @@ Some useful functions include:
 - [`random.sample(population, k)`](https://docs.python.org/3.8/library/random.html#random.sample) - returns a `k` length list of unique elements chosen from the `population` sequence or set.
 - [`random.choices(population[, ...], k=1)`](https://docs.python.org/3.8/library/random.html#random.choices) - extracts `k` elements of the `population` (possibly outputting the same element several times).
 
-:::warning
-The Python runner is currently affected by a performance issue (reported as [codewars/runner#58](https://github.com/codewars/runner/issues/58)) which sometimes causes the generation of large amounts of random numbers to be noticeably slower. The majority of kata should not be affected by it in any significant way, but it can sometimes be a problem for performance tests generating large, random sets of data.
-See the linked issue for details and possible workarounds.
-:::
-
 ### Additional packages
 
 The Codewars runner provides a set of preinstalled packages, which are available not only for users solving a kata, but can be also used by authors to build tests and generators of test cases. For example, `numpy` can be used to make the generation of matrices easier.
 
 ### Reference solution
 
-If the test suite happens to use a reference solution to calculate expected values (which [should be avoided](/authoring/guidelines/submission-tests/#reference-solution) when possible), or some kind of reference data like precalculated lists, etc., it must not be possible for the user to redefine, overwrite or directly access its contents. To prevent this, it should be defined in a scope local to the testing function, a `it` or a `describe` block.
-
-The reference solution or data ___must not___ be defined in the [Preloaded code](/authoring/guidelines/preloaded/). The reference solution ___must not___ be defined in the top-level scope of the test suite.
+If the test suite happens to use a reference solution to calculate expected values (which [should be avoided](/authoring/guidelines/submission-tests/#reference-solution) when possible), or some kind of reference data like precalculated lists, etc., it must not be easily possible for the user to redefine, overwrite or directly access its contents. To prevent this, the reference solution or data ___must not___ be defined in the [Preloaded code](/authoring/guidelines/preloaded/).  
+Since Python snippets are proper Python modules since Python 3, calling a reference solution from a user solution is not as trivial as it used to be in previous setups of the code runner, so it's no longer necessary (but still possible) to define reference solution inside of `describe` or `it` blocks.
 
 ### Calling assertions
 
