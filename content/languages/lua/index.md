@@ -9,7 +9,7 @@ tags: [lua]
 ## Versions
 5.3
 ## Test Frameworks
-[busted](https://olivinelabs.com/busted/)
+[busted](https://lunarmodules.github.io/busted/)
 ## Timeout
 12 seconds
 ## Packages
