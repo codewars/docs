@@ -30,8 +30,9 @@ module.exports = {
         type: "generated-index",
       },
       items: [
-        "training/troubleshooting",
-        "training/training-example"],
+        "training/training-example",
+        "training/troubleshooting"
+      ],
     },
     {
       type: "category",
