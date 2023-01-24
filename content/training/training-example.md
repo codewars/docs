@@ -1,5 +1,6 @@
 ---
 title: How to train on a Codewars kata
+tags: [training, tutorial]
 ---
 
 ## Structure of a kata
