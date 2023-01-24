@@ -18,7 +18,7 @@ The goal of submission tests is to verify the correctness of a user solution and
 
 ## Writing a solution
 
-To work correctly, the user’s solution has to conform to expectations of tests: it has to be a function if tests expect it to be one, or a class, or a variable. Statement of a kata task should clearly explain what is required. To make things easier for users, initial solution setup usually (but not always) contains a stub which presents an expected form of a solution which conforms to requirements imposed by tests. It is ready to be called, usually should not be changed by users, and just needs to be filled in. Additional hints about how a user solution should look like and how it is invoked can be found in example tests:
+To work correctly, the user’s solution has to conform to expectations of tests: it has to be a function if tests expect it to be one, or a class, or a variable. Statement of a kata task should clearly explain what is required. To make things easier for users, initial solution setup usually (but not always) contains a stub which presents an expected form of a solution which conforms to requirements imposed by tests. It is ready to be called, usually should not be changed by users, and just needs to be filled in. Additional hints about how a user solution should look and how it is invoked can be found in example tests:
 
 ![img2](./img/training-example/img2.png)
 
