@@ -29,7 +29,10 @@ module.exports = {
         slug: "/training",
         type: "generated-index",
       },
-      items: ["training/troubleshooting"],
+      items: [
+        "training/training-example",
+        "training/troubleshooting"
+      ],
     },
     {
       type: "category",
