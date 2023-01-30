@@ -98,4 +98,4 @@ They may include concepts such as:
 - [Thorough performance algorithms](https://www.codewars.com/kata/5976c5a5cd933a7bbd000029) that need to quickly untangle a multitude of [large data values](https://www.codewars.com/kata/59568be9cc15b57637000054).
 - Advanced [games](https://www.codewars.com/kata/5ea6a8502186ab001427809e) and [puzzles](https://www.codewars.com/kata/5a20eeccee1aae3cbc000090) that need to be constructed in a detailed fashion.
 - Complex [interpreters](https://www.codewars.com/kata/52ffcfa4aff455b3c2000750) and [compilers](https://www.codewars.com/kata/59f9cad032b8b91e12000035).
-- Implementation of [mini-programs](https://www.codewars.com/kata/5a12755832b8b956a9000133) with [multiple feature requirements](https://www.codewars.com/kata/591f3a2a6368b6658800020).
+- Implementation of [mini-programs](https://www.codewars.com/kata/5a12755832b8b956a9000133) with [multiple feature requirements](https://www.codewars.com/kata/5a529cced8e145207e000010)
