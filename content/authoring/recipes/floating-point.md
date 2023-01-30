@@ -190,3 +190,4 @@ You should always consult the documentation for your [language](/languages/) and
 ## Further reading
 
 - [THE FLOATING-POINT GUIDE: What Every Programmer Should Know About Floating-Point Arithmetic or Why don’t my numbers add up?](https://floating-point-gui.de/)
+- [0.30000000000000004.com](https://0.30000000000000004.com)
