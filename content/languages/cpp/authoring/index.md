@@ -160,7 +160,7 @@ static void That(const char* actual, const ExpressionType& expression, const Mes
 
 `message_supplier` is a callable compatible with a function accepting no arguments and returning `std::string`. It can be a function, a functor, a lambda expression, or an instance of any type supporting above requirements.
 
-For more details and examples of custom assertion messages, see [Example test suite](#example-test-suite) below, or visit the [(TODO) Snowhouse reference](/languages/cpp/snowhouse/) page.
+For more details and examples of custom assertion messages, see [Example test suite](#example-test-suite) below.
 
 #### Stringizers
 
