@@ -20,14 +20,12 @@ With both arguments used, test output becomes more explicit:
 ```
 
 ```text
-Time: 1083ms Passed: 0Failed: 1Exit Code: 1
-  Test Results:
-    Tests for square
-      (square 3) should return 9
+Tests for square
+    (square 3) should return 9
         Incorrect answer for n=3
         expected: 9 but got: 10
-    Completed in 0.24ms
-  Completed in 0.26ms
+    Completed in 0.22ms
+Completed in 0.24ms
 ```
 
 ### References
