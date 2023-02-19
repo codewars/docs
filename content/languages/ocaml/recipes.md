@@ -6,9 +6,9 @@ tags: [authoring, recipe, ocaml]
 
 ## Informative assertion messages
 
-Default assertion messages of OCaml OUnit are usually very bad. OUnit assertons accept two optional, named arguments:
-- `~printer`, used to stringify values presented by assertion messages.
-- `~msg`, used to provide additional information about failure, if necessary.
+Default assertion messages of OCaml OUnit are usually very bad. OUnit assertions accept two optional arguments:
+- `~printer` defines a printer (stringifier) for compared values.
+- `~msg` is used to provide additional information about failure, if necessary.
 
 With both arguments used, test output becomes more explicit:
 
@@ -31,4 +31,4 @@ Completed in 0.24ms
 ### References
 
 - [Improving OUnit Output](https://cs3110.github.io/textbook/chapters/data/ounit.html#improving-ounit-output)
-- [OUnit: xUnit testing framework for OCaml](https://gildor478.github.io/ounit/ounit2/index.html#error-reporting)
+- [OUnit: xUnit testing framework for OCaml](https://ocaml.org/p/ounit2/2.2.3/doc/index.html#error-reporting)
