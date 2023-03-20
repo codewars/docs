@@ -13,7 +13,7 @@ tags: [solidity]
 
 ## Test Frameworks
 
-- [Mocha](http://truffleframework.com/docs/getting_started/javascript-tests)
+- [Mocha](https://trufflesuite.com/docs/truffle/how-to/debug-test/write-tests-in-javascript/)
 
 ## Timeout
 
