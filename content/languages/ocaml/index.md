@@ -11,7 +11,7 @@ tags: [ocaml]
 - 5.0.0
 
 ## Test Frameworks
-[OUnit 2.2.7](https://ocaml.org/p/ounit2/2.2.3/doc/index.html)
+[OUnit 2.2.7](https://ocaml.org/p/ounit2/2.2.7/doc/OUnit/index.html)
 
 ## Timeout
 12 seconds
