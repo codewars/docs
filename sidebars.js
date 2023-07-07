@@ -361,7 +361,7 @@ module.exports = {
             type: "doc",
             id: "languages/fsharp/index",
           },
-          items: ["languages/fsharp/fuchu"],
+          items: ["languages/fsharp/fuchu", "languages/fsharp/nunit"],
         },
         {
           type: "category",
