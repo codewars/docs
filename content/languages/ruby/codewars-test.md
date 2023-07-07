@@ -3,6 +3,12 @@ title: Codewars Test Framework
 tags: [ruby, reference, testing]
 ---
 
+# Codewars Test Framework
+
+:::warning
+RSpec should be used instead of Codewars Test Framework for new content.
+:::
+
 ## Basic Setup
 
 ```ruby
