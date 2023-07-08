@@ -632,7 +632,11 @@ module.exports = {
             type: "doc",
             id: "languages/ruby/index",
           },
-          items: ["languages/ruby/authoring", "languages/ruby/codewars-test"],
+          items: [
+            "languages/ruby/authoring",
+            "languages/ruby/rspec",
+            "languages/ruby/codewars-test"
+          ],
         },
         {
           type: "category",
