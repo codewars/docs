@@ -2,37 +2,107 @@
 title: Code of Conduct
 ---
 
-The purpose of our Community Code of Conduct is to ensure that all participants in the Codewars community have the best possible experience. We are all here to help each other learn, grow our skillsets and have a good time!
+##### Version 2.0, published July 2023
 
-The Codewars Community Code of Conduct covers our behavior as members of the Codewars community, in any forum, mailing list, wiki, web site, code repository, IRC channel, private correspondence, or public meetings.
+## Purpose
+The purpose of our Code of Conduct is to ensure that all participants in the Codewars community have the best possible experience. This code of conduct establishes the minimum expectations for behaviour for all Codewars participants in any space where you interact with Codewars, including; the website, [Discord server](https://discord.gg/7U9t33jrgG), mailing lists, [GitHub forums](https://github.com/codewars/codewars.com/discussions), or email communications. 
 
-As a worldwide community, diversity is one of our huge strengths, but it can also lead to communication issues and unhappiness. To that end, we have a few ground rules that we ask people to adhere to, to ensure that the Codewars community continues to be an excellent space in which to communicate, collaborate, and contribute.
+This Code of Conduct includes Codewars learners on our website, Andela employees/contractors, Codewars moderators, partners/clients of Codewars, third-party vendors, partners, and sponsors.
 
-This isn't an exhaustive list of things that you can't do. Rather, take it in the spirit in which it's intended — a guide to make it easier to be excellent to each other. We expect it to be followed in spirit as much as in the letter.
+By participating in the Codewars community, you agree to follow the rules in this Code of Conduct and agree to our [Privacy Policy](https://www.codewars.com/about/privacy) and [Terms of Service](https://www.codewars.com/about/terms-of-service). 
 
-## Rules
+## Our Standards 
+Codewars is dedicated to providing a positive experience for everyone, regardless of; _Age, Ability, Background, Caste, Citizenship, Education, Ethnicity and/or race, Family status, Gender, Gender identity or expression, Geographic location, Marital status, Nationality, Native language, Neurodiversity, Physical appearance, Place of birth, Religion or lack thereof, Sexual orientation, and, Socio-economic status._
 
-**Be considerate.** Codewars may have "war" in the name but it is actually a respectful and polite community. You will be interacting with users from across the globe, who have different personal opinions and come from different backgrounds and cultures. We are all here for the same thing, to learn and improve. The Codewars community has developers of all skill levels actively participating on the site and in discussions. If you are an experienced programmer, remember that others may not be. We are all learning, we just may be at different stages in that process.
+## Expected behavior 
 
-**Be patient.** This mostly applies to forums, mailing lists, and code contributions (i.e. asynchronous forms of communication). It is possible that your question or code contribution or suggestion might not receive an immediate response. Be patient and consider the norms of the community. One reminder ping is welcome, many reminder pings in rapid succession are not a good display of patience. Similarly, posting the same question in multiple threads is frowned upon and should not be done.
+- **Be considerate**:
+The Codewars community connects developers of all skill levels, backgrounds, and cultures. If you are an experienced programmer, remember that others may not be, and don’t assume that everyone has the same culture as you. We are all learning! 
 
-**Be respectful.** Not all of us will agree all the time, but disagreement is no excuse for poor behavior and poor manners. We might all experience some frustration now and then, but we cannot allow that frustration to turn into a personal attack. It's important to remember that a community where people feel uncomfortable or threatened is not a productive one. We expect members of the Codewars community to be respectful when communicating with other community members, as well as with people outside the community.
-Be nice. Everyone in the Codewars community should feel welcome, regardless of their background. Please be courteous, respectful and polite to fellow community members. No offensive comments will be tolerated.
+- **Be respectful**:
+We will never all agree on one programming language or library, and that is the value of different backgrounds and opinions. Value each other's ideas, backgrounds, skill levels and viewpoints. Be aware of your impact and how intense interactions may be affecting people. We also expect you to respect the Codewars team and moderators.
 
-**Communicate effectively.** We don't all speak the same language at the same skill level. Clear communication can help to avoid misunderstandings, as can remembering that our interpretations of words can be different depending on our backgrounds. Having context is important. It's better to ask for clarification than to make assumptions. Disagreements, social and technical, are normal, but we expect participants in the project to resolve disagreements constructively — so please avoid flamewars, trolling, personal attacks, and repetitive arguments. 
+- **Stay on topic**:
+Codewars is a place to practice, challenge ourselves and learn from our experience. Discussing our wins, failures and new ideas is encouraged. Be mindful to keep your conversations to the topic of the kata, channel or forum topic you are in.
 
-**Be honorable.** Cheating is discouraged. If you find a way to complete a kata that falls outside the kata itself (notably but not limited to: exploiting Codewars's test framework, website and servers), then refrain from doing so. Violators will be banned for such usage. Codewars has algorithms to detect some forms of cheating but does not attempt to track down every possible way. If you witness someone else who has a solution that you do not feel to be honorable, please let the moderators know on [Discord](https://discord.gg/7U9t33jrgG) or on [GitHub](https://github.com/Codewars/codewars.com/issues/1378).
+- **Be honorable**:
+We expect all members of the Codewars community to act in an honourable way at all times. Behaviours we consider dishonourable include; cheating, lying, encouraging violence, hate speech, and bullying.
 
-**Please do not post your solutions on Github (or alike)**. We realize you would like to use these challenges as your resume, but you should have side-projects for that. If an user is unable to find a solution online, then they are further encouraged to complete the task themselves - which will enable them to get more value out of their time spent. 
+- **Be empathetic**:
+Programming can sometimes be stressful, and so can communicating in your non-native language. Take a moment to consider the learner behind the code or comment and be empathetic to others' situations.
 
-## Policy
+- **Improve the discussion**:
+Help us make Codewars a great place by working to improve and deepen discussion in some way, however small.
 
-Harassment includes offensive verbal comments related to gender, age, sexual orientation, disability, physical appearance, body size, race, religion, intelligence, professional experience, or contributed content. Any form of deliberate intimidation and stalking will also be considered harassment. 
 
-Participants asked to stop any harassing behavior are expected to comply immediately. If any content is found with inappropriate content it will be taken down. 
+## Behavior that is not tolerated 
 
-If a participant engages in harassing behavior, the community admins may take any action they deem appropriate, including warning or banning the offender from the site.
+- **Hate speech or imagery**:
+Any form of expression (e.g. speech, text, or images) that can increase the risk of violence against members of another group. This includes using coded language, hate symbols, the denial of historical events, support for hate groups and people promoting hateful activities, prejudice and conspiracy theories.
 
-If you are being harassed, notice that someone else is being harassed, or have any other concerns, please bring it to our attention by emailing us at info@codewars.com.
 
-If you are caught cheating on a challenge, you will initially have your solution marked as a cheat and will not receive any honor or rank. This includes clever solutions that are clearly created for the spirit of cheating. Repeat offenders who have intentionally cheated will be banned.
+- **Violence and threats of violence**:
+Violence and threats of violence are not acceptable – online or offline. This includes incitement of violence toward any individual, including encouraging a person to commit self-harm. This also includes posting or threatening to post other people’s personally identifiable information (“doxing”) online. 
+
+
+- **Influencing or encouraging inappropriate behavior**:
+If you influence or encourage another person to violate the Code of Conduct, you may face the same consequences as if you had violated the Code of Conduct. Participants are expected to stop any inappropriate behaviour and comply immediately.
+
+
+- **Promoting, coordinating, or engaging in sexist, racist, homophobic, transphobic, ableist language, or otherwise exclusionary language**:
+This includes deliberately referring to someone by a gender they do not identify with and/or questioning the legitimacy of an individual’s gender identity. If you’re unsure if a word is derogatory, don’t use it. This also includes repeated subtle and/or indirect discrimination.
+
+
+- **Vulgar, offensive, and explicit language**:
+The use of slurs, vulgar language, explicit language, offensive jokes, and behavior disrupts and distracts learners from their goals. 
+
+
+- **Cheating and plagiarising**:
+Cheating, plagiarising, and the use of AI-generated code are not permitted on the Codewars website. Our algorithms and moderation team are trained to spot this behavior, and violators will face account restrictions.
+
+
+- **Retaliation**:
+Punishing someone for engaging in protected behavior is not permitted. This includes harassing, bullying, or filing a false report against a user for raising a sincere concern about your behavior.
+
+
+- **Unwelcome sexual attention or behavior that contributes to a sexualized environment**:
+This includes sexualized comments, jokes, or imagery in interactions, communications, or presentation materials, as well as inappropriate touching, groping, or sexual advances. Community members should not use sexualized images, activities, or other material. 
+
+
+- **Sustained disruption of online discussions, talks, or events**:
+Sustained disruption of events, online discussions, or meetings, including talks and presentations, will not be tolerated. This includes, spamming email or chat channels, ‘Talking over’ or ‘heckling’ event speakers, or influencing crowd actions that cause hostility in event sessions. Sustained disruption also includes drinking alcohol to excess or using recreational drugs to excess, or pushing others to do so.
+
+
+- **Unwelcome physical contact**:
+This includes touching a person without permission, including sensitive areas such as their hair, pregnant stomach, mobility device (wheelchair, scooter, etc.), or tattoos. This also includes physically blocking or intimidating another person. Physical contact or simulated physical contact (such as emojis like “kiss”) without affirmative consent is not acceptable. This includes the sharing or distribution of sexualized images or text.
+
+
+- **Spam, self-promotion or solicitation of business**: 
+Spamming the comments section of the Codewars website, channels on Discord, or GitHub forums is not permitted. Self-promotion (such as repeatedly promoting blogs, articles, videos, and accounts to promote your work) or soliciting business (including affiliate links for MLMs, and selling items) is also prohibited.
+
+
+
+## Enforcement of the Code of Conduct
+All reports made to Codewars are taken seriously. Those who don’t follow the Code of Conduct will be subject to repercussions, not limited to platform time-outs or lifetime bans.
+
+Actions we may take in response to a Code of Conduct breach or abuse report but are not limited to; 
+
+* Content removal
+* Content blocking
+* User warnings
+* User time outs
+* Account suspension 
+* Account termination
+* Notification to local law enforcement
+
+Every report is treated seriously, and the response will differ depending on the nature of the report.
+
+## Reporting a code of conduct incident 
+If you notice a community member displaying examples of behaviour that are not tolerated in the Codewars Community or are affected by another community member's actions, please create a report by emailing conduct@codewars.com. 
+
+We strive to maintain the anonymity and confidentiality of all individuals involved in an incident report. However, there may be cases where our team may ask permission to identify the individual(s) involved to gather the complete and accurate information needed. 
+
+## Modifications to these guidelines 
+Codewars and Andela may amend the guidelines occasionally and vary the procedures set out where appropriate in a particular case.
+
+Your agreement to comply with the guidelines will be deemed agreement to any changes. 
