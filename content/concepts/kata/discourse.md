@@ -17,10 +17,8 @@ There are 3 different labels that you can set on your comment. If you are just h
 ### Issues
 
 If you find an issue with the kata, such as broken test cases, buggy output or incorrect descriptions, please apply the `Issue` label to the comment. This will notify the author of any issues, as well as making it more obvious that there are problems with the content.
-
-If the kata is in the beta process, then logging issues is OK for things like needing random test cases, or changes that are otherwise not critical to completing the kata but would make it better. However if the kata has been approved then please only log issues that are preventing users from completing the kata.
-
-_Keep an eye out for duplicates._ Please don't file the same issue as someone else. If you want to try to bump the issue, reply to the existing one instead - though commenting for the purpose of bring attention to the issue isn't necessary if it was recently created.
+Logging issues is OK for things like needing random test cases, or changes that are critical to completing the kata. _Keep an eye out for duplicates:_ please don't file the same issue as someone else.  
+If you want to try to bump the issue, reply to the existing one instead - though commenting for the purpose of bring attention to the issue isn't necessary if it was recently created.
 
 ### Suggestions
 
