@@ -133,7 +133,7 @@ module.exports = {
         "community/following",
         "community/moderation/index",
         "community/moderation/tools",
-        "community/rules",
+        "community/code-of-conduct",
       ],
     },
     {
