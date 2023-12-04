@@ -29,12 +29,12 @@ module.exports = {
       contextualSearch: false,
     },
     navbar: {
-      title: "Codewars",
+      title: null,
       hideOnScroll: true,
       logo: {
         alt: "Codewars Logo",
-        src: "logo.svg",
-        // srcDark: "",
+        src: "logo-light.svg",
+        srcDark: "logo-dark.svg",
         href: "https://www.codewars.com/",
       },
       items: [
