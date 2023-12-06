@@ -10,6 +10,7 @@ tags: [java]
 
 - Java 8
 - Java 11
+- Java 17
 
 ## Test Frameworks
 
@@ -21,7 +22,7 @@ JUnit (both JUnit 4 and 5 are supported)
 
 ## Packages
 
-### Java 11
+### Java 11/17
 
 - `junit:junit`
 - `org.junit.jupiter:junit-jupiter-api`

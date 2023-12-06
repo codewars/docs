@@ -8,7 +8,7 @@ tags: [go]
 
 ## Versions
 
-1.12
+1.20
 
 ## Test Frameworks
 

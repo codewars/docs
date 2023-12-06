@@ -10,6 +10,7 @@ tags: [python]
 
 - 3.8
 - 3.10
+- 3.11
 
 ## Test Frameworks
 

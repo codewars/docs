@@ -9,6 +9,7 @@ tags: [csharp]
 ## Versions
 
 - 8.0 (.Net Core 3.1)
+- 10.0 (.Net 6.0)
 
 ## Test Frameworks
 

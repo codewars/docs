@@ -10,6 +10,7 @@ tags: [swift]
 
 - 5.0
 - 5.3
+- 5.9
 
 ## Test Frameworks
 XCTest
