@@ -8,3 +8,7 @@
     paths = [
       "node_modules/.cache",
     ]
+
+[[redirects]]
+  from = "/community/rules"
+  to = "/community/code-of-conduct"
