@@ -28,7 +28,7 @@ Codewars uses [QEMU user mode emulation](https://www.qemu.org/docs/master/user/m
     - `Zk` - Standard
     - `Zks` - ShangMi
 
-The most recent (26 Dec 2023) version of the specification for each can be downloaded below:
+The most recent version of the specification for each can be downloaded below (as of 26 Dec 2023):
 - \*[RISC-V Unprivileged Specification](https://github.com/riscv/riscv-isa-manual/releases/download/riscv-isa-release-056b6ff-2023-10-02/unpriv-isa-asciidoc.pdf)
 - †[Vector Extension Specification](https://github.com/riscv/riscv-v-spec/releases/download/v1.0/riscv-v-spec-1.0.pdf)
 - ‡[Bit-Manipulation Extension Specification](https://github.com/riscv/riscv-bitmanip/releases/download/1.0.0/bitmanip-1.0.0.pdf)
