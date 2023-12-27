@@ -10,7 +10,9 @@ Beta
 
 ## Version
 
-RV64GCV_Zba_Zbb_Zbc_Zbs_Zbkx_Zk_Zks
+QEMU Toolchain: QEMU 7.1, GCC 11.3.0, Binutils 2.38
+
+ISA String: RV64GCV_Zba_Zbb_Zbc_Zbs_Zbkx_Zk_Zks
 
 Codewars uses [QEMU user mode emulation](https://www.qemu.org/docs/master/user/main.html) to support RISC-V content. Codewars is configured to use the following extensions for RISC-V:
 - `G` - General-Purpose*
