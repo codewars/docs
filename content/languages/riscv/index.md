@@ -29,7 +29,7 @@ Codewars uses [QEMU user mode emulation](https://www.qemu.org/docs/master/user/m
     - `Zks` - ShangMi
 
 The most recent version of the specification for each can be downloaded below (as of 26 Dec 2023):
-- <sup>*</sup>[RISC-V Unprivileged Specification](https://github.com/riscv/riscv-isa-manual/releases/download/riscv-isa-release-056b6ff-2023-10-02/unpriv-isa-asciidoc.pdf)
+- <sup>*</sup><a href="https://github.com/riscv/riscv-isa-manual/releases/download/riscv-isa-release-056b6ff-2023-10-02/unpriv-isa-asciidoc.pdf" >RISC-V Unprivileged Specification</a>
 - <sup>†</sup>[Vector Extension Specification](https://github.com/riscv/riscv-v-spec/releases/download/v1.0/riscv-v-spec-1.0.pdf)
 - <sup>‡</sup>[Bit-Manipulation Extension Specification](https://github.com/riscv/riscv-bitmanip/releases/download/1.0.0/bitmanip-1.0.0.pdf)
 - <sup>§</sup>[Cryptography Extension Specification](https://github.com/riscv/riscv-crypto/releases/download/v1.0.1-scalar/riscv-crypto-spec-scalar-v1.0.1.pdf)
