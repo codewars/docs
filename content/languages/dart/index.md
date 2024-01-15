@@ -8,7 +8,6 @@ tags: [dart]
 
 ## Versions
 
-- 2.8
 - 2.14
 
 ## Test Frameworks
