@@ -8,12 +8,12 @@ tags: [fsharp]
 
 ## Versions
 
-- 4.0
+- 4.1
 - 6.0
 
 ## Test Frameworks
 
-- [Fuchu](https://github.com/mausch/Fuchu) (F# 4.0 only)
+- [Fuchu](https://github.com/mausch/Fuchu) (F# 4.1 only)
 - [NUnit](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-fsharp-with-nunit) (F# 6.0 only)
 
 ## Timeout

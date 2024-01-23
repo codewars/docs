@@ -12,7 +12,8 @@ Beta
 
 ## Versions
 
-[0.12.x](https://github.com/purescript/purescript/releases/tag/v0.12.2)
+- [0.12.x](https://github.com/purescript/purescript/releases/tag/v0.12.2)
+- [0.15.x](https://github.com/codewars/purescript/releases/tag/0.15.4.2)
 
 ## Test Frameworks
 

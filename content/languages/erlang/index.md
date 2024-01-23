@@ -7,7 +7,7 @@ tags: [erlang]
 
 
 ## Versions
-20.0
+26.0
 ## Test Frameworks
 [EUnit](http://erlang.org/doc/apps/eunit/chapter.html)
 ## Timeout

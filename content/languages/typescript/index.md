@@ -7,7 +7,7 @@ tags: [typescript]
 
 
 ## Versions
-- 4.2 (`--target es2020 --strict`) Node 14
+
 - 4.9 (`--target es2022 --strict`) Node 18
 
 ## Test Frameworks
