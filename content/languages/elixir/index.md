@@ -8,7 +8,7 @@ tags: [elixir]
 
 ## Versions
 
-- 1.11
+- 1.15
 
 ## Test Frameworks
 

@@ -8,8 +8,6 @@ tags: [crystal]
 
 ## Versions
 
-- 0.24
-- 0.34
 - 1.0
 
 ## Test Frameworks

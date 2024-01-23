@@ -8,7 +8,6 @@ tags: [nim]
 
 ## Versions
 
-- 1.0
 - 1.6
 
 ## Test Frameworks

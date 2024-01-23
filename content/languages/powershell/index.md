@@ -11,7 +11,9 @@ tags: [powershell]
 Beta
 
 ## Versions
-6.0.0
+
+- 6.0
+- 7.2
 
 ## Test Frameworks
 [Pester](https://github.com/pester/Pester)

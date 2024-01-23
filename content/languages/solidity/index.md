@@ -8,20 +8,15 @@ tags: [solidity]
 
 ## Versions
 
-- 0.4.13 (Truffle v3.4.8)
-- 0.4.19 (Truffle v4.0.6)
+- 0.8.16
 
 ## Test Frameworks
 
-- [Mocha](https://trufflesuite.com/docs/truffle/how-to/debug-test/write-tests-in-javascript/)
+- [Mocha](https://hardhat.org/tutorial/testing-contracts)
 
 ## Timeout
 
 16 seconds
-
-## Packages
-
-- web3
 
 ## Services
 
