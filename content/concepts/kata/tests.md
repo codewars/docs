@@ -4,7 +4,7 @@ tags: [concept]
 ---
 
 
-Eack kata has two sets of tests associated with it, used for two different purposes.
+Each kata has two sets of tests associated with it, used for two different purposes.
 
 ## Sample tests and TDD
 
