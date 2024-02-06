@@ -9,6 +9,7 @@ tags: [coq]
 ## Versions
 
 - 8.12
+- 8.15
 
 ## Test Frameworks
 
