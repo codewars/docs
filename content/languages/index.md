@@ -19,7 +19,7 @@ sidebar_position: 0
 | [Crystal](/languages/crystal) | 1.0 | Stable |
 | [C#](/languages/csharp) | 10.0 | Stable |
 | [D](/languages/d) | 2.098 | Beta |
-| [Dart](/languages/dart) | 3.3 | Stable |
+| [Dart](/languages/dart) | 2.14,3.3 | Stable |
 | [Elixir](/languages/elixir) | 1.15 | Stable |
 | [Elm](/languages/elm) | 0.19 | Beta |
 | [Erlang](/languages/erlang) | 26 | Beta |
