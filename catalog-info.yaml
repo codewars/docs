@@ -5,6 +5,13 @@ metadata:
   description: Codewars application documentation.
   annotations:
     github.com/project-slug: codewars/docs
+  links:
+    - url: https://docs.codewars.com
+      title: Production Environment
+      icon: url
+    - url: https://github.com/codewars/docs/actions
+      title: CI/CD Pipelines
+      icon: jenkins
   tags:
     - nodejs
 spec:
