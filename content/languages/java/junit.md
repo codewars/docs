@@ -7,6 +7,8 @@ You can use JUnit [4](https://junit.org/junit4/) or [5](https://junit.org/junit5
 
 Note that JUnit assertions use `(expected, actual)` parameter ordering rather than the typical `(actual, expected)`.
 
+Also note that the order of the optional `message` parameter is swapped between JUnit 4 and 5: in JUnit 4 the order is `(message, expected, actual)`; while in JUnit5 it is `(expected, actual, message)`.
+
 ## Basic Setup
 
 ### Example solution
@@ -28,7 +30,7 @@ import static org.junit.Assert.assertEquals;
 public class AdderTests {
     @Test
     public void testAdd() {
-        assertEquals(3, Adder.add(1, 2));
+        assertEquals("1 + 2 should equal 3", 3, Adder.add(1, 2));
     }
 }
 ```
