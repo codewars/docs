@@ -130,10 +130,11 @@ module.exports = {
         id: "community/index",
       },
       items: [
-        "community/following",
+        "community/code-of-conduct",
         "community/moderation/index",
         "community/moderation/tools",
-        "community/code-of-conduct",
+        "community/moderation/keeping-codewars-safe/",
+        "community/following",
       ],
     },
     {
