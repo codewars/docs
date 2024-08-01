@@ -133,7 +133,7 @@ module.exports = {
         "community/code-of-conduct",
         "community/moderation/index",
         "community/moderation/tools",
-        "community/moderation/keeping-codewars-safe/",
+        "community/moderation/keeping-codewars-safe",
         "community/following",
       ],
     },
