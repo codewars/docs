@@ -8,11 +8,12 @@ tags: [csharp]
 
 ## Versions
 
-- 10.0 (.Net 6.0)
+- 10.0 (.NET 6.0)
+- 12.0 (.NET 8.0)
 
 ## Test Frameworks
 
-[NUnit](http://www.nunit.org/)
+[NUnit](https://nunit.org/)
 
 ## Timeout
 12 seconds

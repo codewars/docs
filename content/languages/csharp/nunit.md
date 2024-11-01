@@ -32,7 +32,7 @@ public class AddTest
     [Test, Description("should add two numbers")]
     public void ShouldAddTwoNumbers()
     {
-        Assert.AreEqual(3, Challenge.Add(1, 2));
+        Assert.That(3, Is.EqualTo(Challenge.Add(1, 2)));
     }
 }
 ```
