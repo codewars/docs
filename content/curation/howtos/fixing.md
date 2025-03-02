@@ -10,7 +10,7 @@ The first step to fixing a Codewars kata is determining which kata need fixing i
 
 - On the [kata search page](https://www.codewars.com/kata/my-languages), every entry shows the number of pending issues (if any).
 - Posts on the home page [dashboard](https://www.codewars.com/dashboard/discourse/issues) can be filtered to display the most recently reported issues.
-- The discourse page of every kata can be filtered for posts labeled as `ISSUE`.
+- The discourse page of every kata can be filtered for posts labeled as `ISSUE` or `SUGGESTION`.
 - The [kata search page](https://www.codewars.com/kata/) can be used to find challenges that have not been updated to the latest version of their available languages. For example, to find kata with tests that need to be updated to the latest available version of JavaScript, filter for language: JavaScript, and manually add the parameter `&outdated=1` to the URL (example link to find all [outdated JavaScript kata](https://www.codewars.com/kata/search/javascript?q=&order_by=sort_date%20desc&outdated=1)).
 - The [`codewars/content-issues`](https://github.com/codewars/content-issues) GitHub repository hosts [wiki pages](https://github.com/codewars/content-issues/wiki) with lists of kata that need an update and an [issue board](https://github.com/codewars/content-issues/issues) with tickets related to kata maintenance.
 
@@ -23,7 +23,7 @@ Fixes should not be applied by starting with a fork of an already approved fork.
 :::
 
 :::warning Prefer forks to direct edits
-Applying fixes via forks is preferred over updates done with the kata editor. Forks can be reviewed, and reviewers can share their remarks before approving the fix.
+Applying fixes via forks is preferred over updates done using the kata editor. Forks can be reviewed, and reviewers can share their remarks before approving the fix.
 :::
 
 ### Scope of a fix
@@ -32,13 +32,13 @@ A single Codewars challenge can be affected by multiple problems. It may be temp
 
 A user must find a balance between making large-scale fixes that attempt to address many issues at once and smaller, incremental changes that are easier to review and approve. Sometimes, applying a series of small fixes is more effective than attempting to fix multiple issues in a single fork.  
 
-It is recommended to write a short post on a published fork explaining what problems it addresses.
+It is recommended to write a short comment in the discourse of a published fork explaining what problems it addresses.
 
 ### Announcing the fork
 
 When a fork with a fix is ready, it needs to be published for review and potential merging. To notify reviewers about a fork ready for review, it can be helpful to announce the fix with a message posted in the discourse section of the kata (labeled as `SUGGESTION`) and in the `#fixing` channel of the Codewars Discord. 
 
-### Review of a fork
+## Review of a fork
 
 After a fork with a fix is published and announced, it should attract the attention of reviewers who will evaluate it and either approve it or request further improvements.
 
@@ -46,7 +46,11 @@ Users with sufficient privileges can approve their own forks without waiting for
 
 When a reviewer requests further improvements, they can be added to the same fork. It is not necessary to fork a fork if it hasn't been approved or rejected. However, if the fork has already been merged and further improvements are required, it must be re-forked. Editing an approved fork is possible, but there is no way to merge the new changes into the kata.
 
-### Resources on fixing
+## Pitfall: editing descriptions
+
+Updading a kata description, with a fork or in any other way, renders all pending translations and update forks of this kata impossible to approve due to description merge conflicts. While unfortunate, it is not a serious impediment for fixing activities, because merge conflicts are relatively [easy to fix](/curation/translation/#merge-issues). 
+
+## Resources on fixing
 
 Users interested in fixing Codewars challenges have several resources at their disposal:
 
