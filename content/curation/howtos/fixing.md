@@ -16,7 +16,7 @@ The first step to fixing a Codewars kata is determining which kata need fixing i
 
 ## Creating a fork
 
-A new fork can be initiated by opening the kata details page, selecting one of the available languages, and clicking the `Fork` button at the top right corner. This opens the fork editor, where all editors are populated with the current state of the corresponding code snippets in the selected language and description. This code can be edited and used as a starting point for a fix.
+A new fork can be initiated by opening the kata details page, selecting one of the available languages, and clicking the `Fork` button in the top right corner. This opens the fork editor, where all editors are populated with the current state of the corresponding code snippets in the selected language and description. This code can be edited and used as a starting point for a fix.
 
 :::warning Do not fork outdated forks
 Fixes should not be applied by starting with a fork of an already approved fork. For example, when an issue is reported with a JavaScript version of a kata, it should be fixed by forking the current state of the kata, not by forking the original, approved JavaScript translation or the most recent JavaScript translation. The kata may have been modified after the translation was published and approved, and forking an old fork can revert changes applied afterward. 

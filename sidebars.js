@@ -96,6 +96,7 @@ module.exports = {
       items: [
         "curation/kata",
         "curation/translation",
+        "curation/howtos/fixing",
         {
           type: "category",
           label: "Guidelines",
