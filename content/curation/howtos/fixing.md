@@ -44,7 +44,7 @@ After a fork with a fix is published and announced, it should attract the attent
 
 Users with sufficient privileges can approve their own forks without waiting for a review.
 
-When a reviewer requests further improvements, they can be added to the same fork. It is not necessary to fork a fork if it hasn't been approved or rejected. However, if the fork has already been merged and further improvements are required, it must be re-forked. Editing an approved fork is possible, but there is no way to merge the new changes into the kata.
+When a reviewer requests further improvements, they can be added to the same fork by its author. It is not necessary to fork a fork if it hasn't been approved or rejected. However, if the fork has already been merged and further improvements are required, it must be re-forked. Editing an approved fork is possible, but there is no way to merge the new changes into the kata.
 
 ## Pitfall: editing descriptions
 
