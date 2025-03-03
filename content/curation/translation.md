@@ -48,8 +48,6 @@ When the translation is approved, a new language is immediately available for so
 
 The user who approved the translation should also go through the kata discourse and mark suggestions posted by the translator as resolved.
 
-**NOTE:** at the time of writing, a user who _approves_ a translation is marked as a **kata contributor**. Users with the "contributor" flag seem to be affected by a bug preventing them from earning any future points they would be rewarded for authoring activities on kata they contributed to. Be aware that as a result, approving a translation will render you ineligible for honor points you would otherwise earn by translating, editing or fixing the kata in the future until the bug is fixed.
-
 ### Merge Issues
 
 Oftentimes if two translations are created around the same time, they may both update the description. When approving the 2nd translation, the 1st approved translation will already have updated the description. This will cause a merge conflict which has to be resolved.
@@ -69,20 +67,6 @@ Some possible reasons could be:
 - there's a justified concern that someone might approve a translation of insufficient quality before its issues are fixed.
 
 It's worth noting that rejected translations are not wasted work. They are still available in the system, can be forked and used as a base for new translations, or its code can be simply copied and reused.
-
-## Fixing existing translations
-
-Sometimes a kata needs to be fixed due to an issue, be it a bug in the reference solution, typos in the description or the lack of test coverage. Fixes and improvements to approved translations can be done in one of two ways:
-
-- If a translation was created with the translations panel, the most recent fork can be forked again, modified, and published. Afterwards it has to go through the usual translation review process and wait until another user approves it. However, translations created directly within the kata editor cannot be forked.
-- A translation may be modified directly with the kata editor. This method allows for immediate changes without waiting for approval, but it also has some drawbacks:
-  - it requires privileges which are available only to experienced users,
-  - it invalidates existing forks, what may cause merge conflicts for modified snippets if someone publishes a fork of this translation sometime in the future,
-  - direct edits are not subject to the review process and other users cannot verify the introduced changes.
-
-:::warning
-The way how kata edits are currently handled, existing pending forks can be very easily outdated by direct edits of the kata. When creating a fork based on some other, existing fork, you have to make sure that it contains the most current state of its language and does not overwrite or revert changes introduced with the kata editor.
-:::
 
 [translation-curating-guidelines]: /curation/guidelines/translation/
 [translation-authoring-guidelines]: /authoring/guidelines/translation/
