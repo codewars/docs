@@ -8,8 +8,7 @@ tags: [rust]
 
 ## Versions
 
-- 1.60 (`edition = "2021"`)
-- 1.62 (`edition = "2021"`)
+- 1.66 (`edition = "2021"`)
 
 The following profiles are used to get decent performance in tests:
 
@@ -27,7 +26,7 @@ opt-level = 3
 
 ## Test Frameworks
 
-Rust kata uses builtin `#[test]`.
+Rust kata use the built-in Rust support for testing, with test functions marked with `#[test]`.
 
 ## Example
 
@@ -37,7 +36,7 @@ Solution and tests are concatenated to `src/lib.rs`.
 pub fn add(x: i32, y: i32) -> i32 { x + y }
 ```
 
-All the tests _should_ be in a child module `tests`:
+All the tests _should_ be in a child module named `tests`:
 ```rust
 #[cfg(test)]
 mod tests {
@@ -62,62 +61,33 @@ See the unit testing chapter in [the book](https://doc.rust-lang.org/book/ch11-0
 
 ## Packages
 
-### 1.60
+### 1.66
 
 ```toml
 [dependencies]
-bit-set = "0.5.2"
-chrono = "0.4.19"
-either = "1.6.1"
-fancy-regex = "0.8.0"
-futures = "0.3.21"
-im = "15.0.0"
-itertools = "0.10.3"
-lazy_static = "1.4.0"
-num = { version = "0.4.0", features = ["rand"] }
-once_cell = "1.10.0"
-rand = "0.8.5"
-regex = "1.5.5"
-serde = { version = "1.0.136", features = ["derive"] }
-serde_json = "1.0.79"
-text_io = "0.1.10"
-thiserror = "1.0.30"
-tokio = { version = "1.17.0", features = ["full"] }
-tokio-util = { version = "0.7.1", features = ["full"] }
-
-[dev-dependencies]
-quickcheck = "1.0.3"
-quickcheck_macros = "1.0.0"
-float_eq = "0.7.0"
-```
-
-### 1.62
-
-```toml
-[dependencies]
-bit-set = "0.5.2"
-chrono = "0.4.19"
-either = "1.7.0"
+bit-set = "0.5.3"
+chrono = "0.4.23"
+either = "1.8.0"
 fancy-regex = "0.10.0"
-futures = "0.3.21"
+futures = "0.3.25"
 im = "15.1.0"
-itertools = "0.10.3"
+itertools = "0.10.5"
 lazy_static = "1.4.0"
 num = { version = "0.4.0", features = ["rand"] }
-once_cell = "1.13.0"
+once_cell = "1.16.0"
 rand = "0.8.5"
-regex = "1.6.0"
-serde = { version = "1.0.139", features = ["derive"] }
-serde_json = "1.0.82"
-text_io = "0.1.10"
-thiserror = "1.0.31"
-tokio = { version = "1.20.0", features = ["full"] }
-tokio-util = { version = "0.7.3", features = ["full"] }
+regex = "1.7.0"
+serde = { version = "1.0.150", features = ["derive"] }
+serde_json = "1.0.89"
+text_io = "0.1.12"
+thiserror = "1.0.37"
+tokio = { version = "1.23.0", features = ["full"] }
+tokio-util = { version = "0.7.4", features = ["full"] }
 
 [dev-dependencies]
 quickcheck = "1.0.3"
 quickcheck_macros = "1.0.0"
-float_eq = "1.0.0"
+float_eq = "1.0.1"
 ```
 
 ## Services
