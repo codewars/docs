@@ -5,7 +5,7 @@ tags: [authoring]
 
 _TBD: improve this stub_
 
-New translators may refer to the [tutorial(TODO)](/authoring/translation/).
+New translators may refer to the [tutorial(TODO)](https://github.com/Codewars/codewars.com/wiki/Tutorial:-How-to-translate-a-kata).
 
 Some [languages](/languages/) also have a page dedicated to authoring kata, with code examples and best practices.
 
@@ -30,6 +30,3 @@ When you publish your translation the original kata sensei will be automatically
 
 Tip: marking that comment as a `suggestion` will also help your translation from being accidentally overlooked.
 -->
-
-[sequential-code-blocks]: /references/markdown/extensions/#sequential-code-blocks
-[conditional-rendering]: /references/markdown/extensions/#conditional-rendering
