@@ -2,7 +2,7 @@
 title: Code of Conduct
 ---
 
-##### Version 2.0, published July 2023
+##### Version 2.1, published August 2025
 
 ## Purpose
 The purpose of our Code of Conduct is to ensure that all participants in the Codewars community have the best possible experience. This code of conduct establishes the minimum expectations for behaviour for all Codewars participants in any space where you interact with Codewars, including; the website, [Discord server](https://discord.gg/7U9t33jrgG), mailing lists, [GitHub forums](https://github.com/codewars/codewars.com/discussions), or email communications. 
@@ -26,13 +26,13 @@ We will never all agree on one programming language or library, and that is the 
 Codewars is a place to practice, challenge ourselves and learn from our experience. Discussing our wins, failures and new ideas is encouraged. Be mindful to keep your conversations to the topic of the kata, channel or forum topic you are in.
 
 - **Be honorable**:
-We expect all members of the Codewars community to act in an honourable way at all times. Behaviours we consider dishonourable include; cheating, lying, encouraging violence, hate speech, and bullying.
+We expect all members of the Codewars community to act in an honourable way at all times. Behaviours we consider dishonourable include; cheating, lying, encouraging violence, hate speech, and bullying. Using AI tools to learn is welcome; using them to bypass learning or game honor/ranks including cheating, using AI to bypass learning/ranks, lying, encouraging violence, hate speech and bullying is not.
 
 - **Be empathetic**:
 Programming can sometimes be stressful, and so can communicating in your non-native language. Take a moment to consider the learner behind the code or comment and be empathetic to others' situations.
 
 - **Improve the discussion**:
-Help us make Codewars a great place by working to improve and deepen discussion in some way, however small.
+Help us make Codewars a great place by working to improve and deepen discussion in some way, however small. When discussing your use of AI in learning, don’t post full solutions (AI‑generated or otherwise), drop hints and reasoning.
 
 
 ## Behavior that is not tolerated 
@@ -58,7 +58,7 @@ The use of slurs, vulgar language, explicit language, offensive jokes, and behav
 
 
 - **Cheating and plagiarising**:
-Cheating, plagiarising, and the use of AI-generated code are not permitted on the Codewars website. Our algorithms and moderation team are trained to spot this behavior, and violators will face account restrictions.
+Cheating and plagiarizing (Including submitting AI-generated solutions without your own clear understanding and modification is not permitted on the Codewars website. Our algorithms and moderation team can flag such behavior. Violators may face account restrictions.
 
 
 - **Retaliation**:
