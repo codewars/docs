@@ -2,14 +2,17 @@
 title: Code of Conduct
 ---
 
-##### Version 2.1, published September 2025
+
+##### Version 2.1,  Updated September 2025
 
 ## Purpose
 The purpose of our Code of Conduct is to ensure that all participants in the Codewars community have the best possible experience. This code of conduct establishes the minimum expectations for behaviour for all Codewars participants in any space where you interact with Codewars, including; the website, [Discord server](https://discord.gg/7U9t33jrgG), mailing lists, [GitHub forums](https://github.com/codewars/codewars.com/discussions), or email communications. 
 
 This Code of Conduct includes Codewars learners on our website, Andela employees/contractors, Codewars moderators, partners/clients of Codewars, third-party vendors, partners, and sponsors.
 
-By participating in the Codewars community, you agree to follow the rules in this Code of Conduct and agree to our [Privacy Policy](https://www.codewars.com/about/privacy), [Terms of Service](https://www.codewars.com/about/terms-of-service) and [AI Fair-Use Guidelines](https://sites.google.com/andela.com/codewars-ai-guidelines). 
+
+By participating in the Codewars community, you agree to follow the rules in this Code of Conduct and agree to our [Privacy Policy](https://www.codewars.com/about/privacy), [Terms of Service](https://www.codewars.com/about/terms-of-service) and [AI Fair Use Guidlines](https://sites.google.com/andela.com/codewars-ai-guidelines/home)
+
 
 ## Our Standards 
 Codewars is dedicated to providing a positive experience for everyone, regardless of; _Age, Ability, Background, Caste, Citizenship, Education, Ethnicity and/or race, Family status, Gender, Gender identity or expression, Geographic location, Marital status, Nationality, Native language, Neurodiversity, Physical appearance, Place of birth, Religion or lack thereof, Sexual orientation, and, Socio-economic status._
@@ -27,7 +30,6 @@ Codewars is a place to practice, challenge ourselves and learn from our experien
 
 - **Be honorable**:
 We expect all members of the Codewars community to act in an honourable way at all times. Behaviours we consider dishonourable (with or without AI) include; cheating, lying, gaming the system for honor/ranks, encouraging violence, hate speech, and bullying. Use of AI for learning is, however, encouraged. 
-
 
 - **Be empathetic**:
 Programming can sometimes be stressful, and so can communicating in your non-native language. Take a moment to consider the learner behind the code or comment and be empathetic to others' situations.
@@ -62,7 +64,6 @@ The use of slurs, vulgar language, explicit language, offensive jokes, and behav
 
 - **Cheating and plagiarising**:
 Cheating and plagiarizing (with or without AI) is not permitted on the Codewars website. Violators will face account suspension or ban.
-
 
 - **Retaliation**:
 Punishing someone for engaging in protected behavior is not permitted. This includes harassing, bullying, or filing a false report against a user for raising a sincere concern about your behavior.
