@@ -37,6 +37,7 @@ Help us make Codewars a great place by working to improve and deepen discussion 
 
 
 
+
 ## Behavior that is not tolerated 
 
 - **Hate speech or imagery**:
