@@ -26,7 +26,8 @@ We will never all agree on one programming language or library, and that is the 
 Codewars is a place to practice, challenge ourselves and learn from our experience. Discussing our wins, failures and new ideas is encouraged. Be mindful to keep your conversations to the topic of the kata, channel or forum topic you are in.
 
 - **Be honorable**:
-We expect all members of the Codewars community to act in an honourable way at all times. Behaviours we consider dishonourable include; cheating, lying, encouraging violence, hate speech, and bullying. Using AI tools to learn is welcome; using them to bypass learning or game honor/ranks including cheating, using AI to bypass learning/ranks, lying, encouraging violence, hate speech and bullying is not.
+We expect all members of the Codewars community to act in an honourable way at all times. Behaviours we consider dishonourable include; cheating, lying, encouraging violence, hate speech, and bullying. Using AI tools to learn is welcome; however using it for cheating, lying, encouraging violence, hate speech or bullying is not.
+
 
 - **Be empathetic**:
 Programming can sometimes be stressful, and so can communicating in your non-native language. Take a moment to consider the learner behind the code or comment and be empathetic to others' situations.
@@ -58,7 +59,7 @@ The use of slurs, vulgar language, explicit language, offensive jokes, and behav
 
 
 - **Cheating and plagiarising**:
-Cheating and plagiarizing (Including submitting AI-generated solutions without your own clear understanding and modification is not permitted on the Codewars website. Our algorithms and moderation team can flag such behavior. Violators may face account restrictions.
+Cheating and plagiarizing (with or without AI) is not permitted on the Codewars Website. Violators will face account suspension or ban.
 
 
 - **Retaliation**:
