@@ -26,7 +26,7 @@ We will never all agree on one programming language or library, and that is the 
 Codewars is a place to practice, challenge ourselves and learn from our experience. Discussing our wins, failures and new ideas is encouraged. Be mindful to keep your conversations to the topic of the kata, channel or forum topic you are in.
 
 - **Be honorable**:
-We expect all members of the Codewars community to act in an honourable way at all times. Behaviours we consider dishonourable include; cheating, lying, encouraging violence, hate speech, and bullying. Using AI tools to learn is welcome; however using it for cheating, lying, encouraging violence, hate speech or bullying is not.
+We expect all members of the Codewars community to act in an honourable way at all times. Behaviours we consider dishonourable include; cheating, lying, encouraging violence, hate speech, and bullying. Using AI tools to learn is welcome; however using it for cheating, gaming the system for honor/ranks, lying, encouraging violence, hate speech or bullying is not.
 
 
 - **Be empathetic**:
