@@ -2,7 +2,7 @@
 title: Code of Conduct
 ---
 
-##### Version 2.1, published August 2025
+##### Version 2.1, published September 2025
 
 ## Purpose
 The purpose of our Code of Conduct is to ensure that all participants in the Codewars community have the best possible experience. This code of conduct establishes the minimum expectations for behaviour for all Codewars participants in any space where you interact with Codewars, including; the website, [Discord server](https://discord.gg/7U9t33jrgG), mailing lists, [GitHub forums](https://github.com/codewars/codewars.com/discussions), or email communications. 
@@ -26,7 +26,7 @@ We will never all agree on one programming language or library, and that is the 
 Codewars is a place to practice, challenge ourselves and learn from our experience. Discussing our wins, failures and new ideas is encouraged. Be mindful to keep your conversations to the topic of the kata, channel or forum topic you are in.
 
 - **Be honorable**:
-We expect all members of the Codewars community to act in an honourable way at all times. Behaviours we consider dishonourable include; cheating, lying, encouraging violence, hate speech, and bullying. Using AI tools to learn is welcome; however using it for cheating, gaming the system for honor/ranks, lying, encouraging violence, hate speech or bullying is not.
+We expect all members of the Codewars community to act in an honourable way at all times. Behaviours we consider dishonourable (with or without AI) include; cheating, lying, gaming the system for honor/ranks, encouraging violence, hate speech, and bullying. Use of AI for learning is, however, encouraged. 
 
 
 - **Be empathetic**:
@@ -59,7 +59,7 @@ The use of slurs, vulgar language, explicit language, offensive jokes, and behav
 
 
 - **Cheating and plagiarising**:
-Cheating and plagiarizing (with or without AI) is not permitted on the Codewars Website. Violators will face account suspension or ban.
+Cheating and plagiarizing (with or without AI) is not permitted on the Codewars website. Violators will face account suspension or ban.
 
 
 - **Retaliation**:
