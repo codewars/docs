@@ -9,7 +9,7 @@ The purpose of our Code of Conduct is to ensure that all participants in the Cod
 
 This Code of Conduct includes Codewars learners on our website, Andela employees/contractors, Codewars moderators, partners/clients of Codewars, third-party vendors, partners, and sponsors.
 
-By participating in the Codewars community, you agree to follow the rules in this Code of Conduct and agree to our [Privacy Policy](https://www.codewars.com/about/privacy) and [Terms of Service](https://www.codewars.com/about/terms-of-service). 
+By participating in the Codewars community, you agree to follow the rules in this Code of Conduct and agree to our [Privacy Policy](https://www.codewars.com/about/privacy)  [Terms of Service](https://www.codewars.com/about/terms-of-service) and [AI Fair Use Guidlines](https://sites.google.com/andela.com/codewars-ai-guidelines/home)
 
 ## Our Standards 
 Codewars is dedicated to providing a positive experience for everyone, regardless of; _Age, Ability, Background, Caste, Citizenship, Education, Ethnicity and/or race, Family status, Gender, Gender identity or expression, Geographic location, Marital status, Nationality, Native language, Neurodiversity, Physical appearance, Place of birth, Religion or lack thereof, Sexual orientation, and, Socio-economic status._
