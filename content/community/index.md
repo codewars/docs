@@ -29,7 +29,7 @@ There's a set of rules you should follow to keep interaction with other users a 
 
 ## Discord
 
-You can also join the official [Codewars Discord](https://discord.gg/7U9t33jrgG) server where the community hangs out and helps each other. The following are some channels we have:
+You can also join the official [Codewars Discord](https://discord.gg/gy2PBSuTyx) server where the community hangs out and helps each other. The following are some channels we have:
 
 - [`#beginners`](https://discord.com/channels/846624424199061524/846953079710023699): A channel dedicated to new Codewars users. We'll help you get comfortable within the community.
 - [`#help-solve`](https://discord.com/channels/846624424199061524/846628654716551198): Get help solving a kata.
