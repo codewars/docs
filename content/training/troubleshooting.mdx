@@ -202,7 +202,9 @@ UndefinedBehaviorSanitizer can not provide additional info.
 ==1==ABORTING
 ```
 
-On Codewars, this error was usually seen when a solution attempted to dereference a past-the-end iterator, usually returned by `end( )` or by some function which signals some negative outcome by returning `end` iterator (for example, `std::find(myvec.begin(), myvec.end(), someValue)` will return `myvec.end()` if value is not found).
+There are some common causes for this problem:
+- attempt to dereference a past-the-end iterator, usually returned by `end( )` or by some function which signals some negative outcome by returning `end` iterator (for example, `std::find(myvec.begin(), myvec.end(), someValue)` will return `myvec.end()` if value is not found).
+- Division by zero (including modulo with zero divisor)
 
 ### Exit code 137
 
