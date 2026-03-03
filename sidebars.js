@@ -136,6 +136,7 @@ module.exports = {
         "community/moderation/tools",
         "community/moderation/keeping-codewars-safe",
         "community/following",
+        "community/roles"
       ],
     },
     {
