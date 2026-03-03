@@ -1,6 +1,7 @@
 ---
 title: How to Fix a Kata
 ---
+##### Updated February 2026
 
 Codewars kata, like any code, may need bug fixes, improvements, or updates to match new versions of runtimes or dependencies. That's why content maintenance activities are important and sometimes require significant effort.
 
