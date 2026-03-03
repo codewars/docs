@@ -4,10 +4,52 @@ title: How to Fix a Kata
 
 Codewars kata, like any code, may need bug fixes, improvements, or updates to match new versions of runtimes or dependencies. That's why content maintenance activities are important and sometimes require significant effort.
 
+# **Triage & Fixing Workflow**
+
+Before using the editor to fork and fix an Approved kata, you must follow this tiered workflow to determine the correct triage level and consult with the community.
+
+### **Step 1: Identifying Issues**
+
+Issues are typically flagged through three primary channels:
+
+* **Automated Flagging:** Tooling (like Cody) that detects beta kata issues or flags tests running on outdated language versions and automatically reports them to the [Kata Issues thread in the Discord fixing channel](https://discord.com/channels/846624424199061524/1419048924760641566) .  
+* **Community Reports:** User submissions via Codewars Kata Discourse (using the "issue" or "suggestion" tags) and discussions in the `#fixing` channel on Discord.  
+* **Content Audits:** Routine reviews of older kata established before our modern authoring guidelines were put in place.
+
+  ### 
+
+### **Step 2: The Triage Table**
+
+Determine the severity of the issue to apply the correct maintenance protocol: 
+
+| Tier | Classification | Description | Recommended Action |
+| ----- | ----- | ----- | ----- |
+| **1** | **Minor Fix** | A small typo, ambiguous description, or minor test adjustment that does not alter the core logic. | Apply the fix via a fork and request approval; focus on minimizing disruption. |
+| **2** | **Moderate Fix** | A bug in the tests or missing edge-cases that improves overall correctness but may invalidate some existing solutions. | Announce your intent to fix. Consider offering a grace period before merging to allow users time to update their solutions. |
+| **3** | **Structural / Conceptual** | A mis-specified kata or fundamental design flaw requiring completely rewritten tests or descriptions. | Evaluate whether it can be salvaged. If rewriting preserves the original spirit, treat it as a Tier 2 fix. If not, initiate **Retirement** (Requires SB approval). |
+| **4** | **Duplicate / Obsolete** | A kata that directly duplicates an existing challenge or solely targets an outdated language version. | Initiate **Retirement** and link the deprecated kata to the canonical version. |
+
+### **Step 3: Decision and Approval (For Tiers 2, 3, & 4\)**
+
+* **Community Consultation:** Open a discussion thread in the Discord `power-users` or `#fixing` channel summarizing the proposed changes. Solicit feedback for a period of **7 to 14 days**, depending on the complexity of the issue.  
+* **Final Determination:** The Community PM (SB) and Strategic Lead (MC) will review the community's input and make the final call on structural changes or retirements.  
+* **Version Control:** Avoid building upon outdated forks. Always base your fixes on the most current published state of the kata.
+
+  ### **Step 4: Implementation Requirements**
+
+When merging a fix, you must adhere to the following rules:
+
+1. **Scope Control:** Address *only* the specific issue at hand. Do not bundle unrelated stylistic changes into a single fix.  
+2. **Change Logging:** You **must** append a clearly dated Change Log to the bottom of the Kata Description to inform users why their solution may suddenly show as outdated:  
+   `**Update [YYYY-MM-DD]:** [Brief description of the fix, e.g., Added missing edge-case tests to align with modern standards.]`
+
+##
+
 ## Finding a kata to fix
 
 The first step to fixing a Codewars kata is determining which kata need fixing in the first place. The Codewars platform provides several ways to find challenges that require maintenance:
 
+- The [Kata Issues thread in the Discord fixing channel](https://discord.com/channels/846624424199061524/1419048924760641566) where our community bot, Cody flags and automatically reports kata issues. 
 - On the [kata search page](https://www.codewars.com/kata/my-languages), every entry shows the number of pending issues (if any).
 - Posts on the home page [dashboard](https://www.codewars.com/dashboard/discourse/issues) can be filtered to display the most recently reported issues.
 - The discourse page of every kata can be filtered for posts labeled as `ISSUE` or `SUGGESTION`.
@@ -56,12 +98,4 @@ Users interested in fixing Codewars challenges have several resources at their d
 
 - [Codewars documentation](https://docs.codewars.com/)
 - [Authoring examples](https://www.codewars.com/collections/authoring-examples) collection
-- Codewars Discord and its `#fixing` channel
-
-### Community resources
-
-:::info Note
-Community resources are created and maintained by Codewars users not affiliated with the platform. These resources are not maintained by Codewars and may become outdated or non-functional.
-:::
-
-- [Codot](https://github.com/hobovsky/codot-client/blob/main/README.md#fixing-forks-beta), an AI-powered assistant, and its [fork refactoring](https://github.com/hobovsky/codot-client/blob/main/README.fixing.md#fixing-forks-with-codot-beta) function.
+- [Codewars Discord](https://discord.gg/gy2PBSuTyx) and its `#fixing` channel
