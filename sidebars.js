@@ -97,7 +97,6 @@ module.exports = {
         "curation/kata",
         "curation/translation",
         "curation/howtos/fixing",
-         "curation/maintenance",
         {
           type: "category",
           label: "Guidelines",
@@ -121,6 +120,15 @@ module.exports = {
             "curation/references/kata-ranks",
             "curation/references/approval-retirement-criteria",
           ],
+        },
+         {
+          type: "category",
+          label: "Kata Maintenance & Quality",
+          link: {
+            type: "doc",
+            id: "curation/maintenance",
+          },
+          items: [],
         },
       ],
     },
