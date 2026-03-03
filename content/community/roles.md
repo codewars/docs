@@ -1,4 +1,6 @@
-# **Governance & Roles**
+---
+title: Governance & Roles
+---
 ##### Updated February, 2026
 
 Maintaining the Codewars ecosystem is a collaborative effort. The following roles define accountability and execution for kata maintenance:
