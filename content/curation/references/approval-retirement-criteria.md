@@ -79,3 +79,27 @@ Low-quality kata are automatically retired. Current rules are:
 1. If a kata needs 10 or more "Very Satisfied" votes in a row to reach the level of satisfaction required for approval.
 
 This feature needs improvement and any feedback is appreciated. Please comment on [#1672](https://github.com/codewars/codewars.com/issues/1672).
+
+### **Retiring Approved Content**
+
+If a kata falls into Tier 3 (Structural Failure) or Tier 4 (Obsolete/Duplicate) and cannot be salvaged without invalidating most solutions or altering the original concept, it must be retired.
+
+**The Manual Retirement Process:** Because there is currently no automated "Retire" button for approved content, Moderators & Admins must follow these steps (Note: only admins have the permission to retire a kata on the platform but moderators must provide admin with a kata retirement requirements listed below)  :
+
+1. **Log the Decision (Done by Moderators)**
+
+Log the retirement and the rationale in the internal community channel/thread/spreadsheet for transparency. This is done by the moderators and should contain the following;
+
+- **Update Description:** Write the description to explicitly explain *why* it was retired.  
+- **Link Replacements:** Provide a hyperlink to the new, canonical kata (if applicable).
+
+2. **Retire the Kata on the Platform (Done by Admins)**  
+   This is carried out by an admin (Andela staff)  with the following steps:  
+- **Mark as Retired:** Adjust tags/status so it no longer appears in standard search results.    
+- **Update Description:** Edit the description to explicitly explain *why* it was retired.  
+- **Link Replacements:** Provide a hyperlink to the new, canonical kata (if applicable).
+
+**Impact & The Honor Guarantee:** When retiring a kata, the decision-maker must confirm that all users who completed it retain their points, rank, and honor.
+
+## 
+
