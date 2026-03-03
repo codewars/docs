@@ -69,6 +69,7 @@ module.exports = {
             "authoring/guidelines/preloaded",
             "authoring/guidelines/reference-solution",
             "authoring/guidelines/translation",
+            "authoring/guidelines/kata-quality-benchmarks",
           ],
         },
         {
