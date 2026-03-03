@@ -29,13 +29,14 @@ Determine the severity of the issue to apply the correct maintenance protocol:
 | **3** | **Structural / Conceptual** | A mis-specified kata or fundamental design flaw requiring completely rewritten tests or descriptions. | Evaluate whether it can be salvaged. If rewriting preserves the original spirit, treat it as a Tier 2 fix. If not, initiate **Retirement** (Requires SB approval). |
 | **4** | **Duplicate / Obsolete** | A kata that directly duplicates an existing challenge or solely targets an outdated language version. | Initiate **Retirement** and link the deprecated kata to the canonical version. |
 
+###
 ### **Step 3: Decision and Approval (For Tiers 2, 3, & 4\)**
 
 * **Community Consultation:** Open a discussion thread in the Discord `power-users` or `#fixing` channel summarizing the proposed changes. Solicit feedback for a period of **7 to 14 days**, depending on the complexity of the issue.  
 * **Final Determination:** The Community PM (SB) and Strategic Lead (MC) will review the community's input and make the final call on structural changes or retirements.  
 * **Version Control:** Avoid building upon outdated forks. Always base your fixes on the most current published state of the kata.
-
-  ### **Step 4: Implementation Requirements**
+###
+### **Step 4: Implementation Requirements**
 
 When merging a fix, you must adhere to the following rules:
 
@@ -43,8 +44,7 @@ When merging a fix, you must adhere to the following rules:
 2. **Change Logging:** You **must** append a clearly dated Change Log to the bottom of the Kata Description to inform users why their solution may suddenly show as outdated:  
    `**Update [YYYY-MM-DD]:** [Brief description of the fix, e.g., Added missing edge-case tests to align with modern standards.]`
 
-##
-
+###
 ## Finding a kata to fix
 
 The first step to fixing a Codewars kata is determining which kata need fixing in the first place. The Codewars platform provides several ways to find challenges that require maintenance:
