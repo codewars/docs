@@ -3,7 +3,7 @@ title: Criteria for Kata Approval and Retirement
 sidebar_label: Criteria for Approval and Retirement
 tags: [reference]
 ---
-
+##### Updated February, 2026
 ## Eligibility for Approval
 
 As an author gets more katas approved, they become established as an experienced kata maker, and less votes will be needed for their future kata to be approved. The following table lists the requirements for a beta kata to be able to be approved:
