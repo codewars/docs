@@ -1,0 +1,24 @@
+---
+title: Kata Quality Benchmarks
+---
+##### Updated February, 2026
+
+Understanding what makes a kata highly rated versus frustrating is key to good authoring. Use these historical examples to grasp the nuances of Codewars design standards.
+
+### **Anti-Patterns (What to Avoid)**
+
+* **Language Inconsistency (*Jaden Casing Strings*):** The JavaScript version demands prototype extensions—a concept not natively supported in translated languages—creating a fractured experience across the platform. Additionally, it lacks strict casing rules, leaving edge cases entirely up to interpretation.  
+* **Obsolete or Duplicated Concepts (*Adding Big Numbers* & *Sum Strings as Numbers*):** These are exact duplicates that aged poorly. While acceptable in Node 8, modern JavaScript runtimes feature built-in `BigInt` arithmetic, reducing a 4-kyu challenge to a single line of code. They also enforce non-intuitive requirements, such as treating `"" + ""` as empty numbers.  
+* **Deceptive "Troll" Kata (*Wilson Primes*, *Never visit a . . . \!?*):** Ranked as 8 kyu (trivial), the actual code to solve these is simple, but arriving at the solution requires complex mathematical research. Beginners often feel deceived by the low rank, leading to high frustration rates.  
+* **Untestable Premises (*Write your own PRNG\!*):** This kata attempts to block built-in functions—a restriction users easily work around. Verifying true randomness in submission tests is exceptionally difficult, allowing users to pass by returning nearly anything.  
+* **Vague Specifications (*Is it a number?*):** Numbers come in many formats (scientific notation, whitespace padded, etc.), yet the task fails to specify exactly what to check. Allowed formats differ wildly depending on the language, turning the challenge into a frustrating game of "guess the test."  
+*   
+* **Broken Algorithms (*Approximate derivative*):** This challenge demands a mathematically broken algorithm and relies on that same broken algorithm to validate its own tests.
+
+### **Gold Standards (What to Emulate)**
+
+* **Practical Engineering (*Zip search*):** A phenomenal example of a practical, real-world data manipulation task that avoids obscure math and focuses purely on clean software engineering.  
+* **Advanced Puzzles (*7x7 Skyscrapers*):** A highly rewarding puzzle that requires deep architectural thought and algorithmic optimization. *(Note: Its only minor flaw is a lack of diverse test examples, which can leave it vulnerable to hardcoded solutions).*  
+* **Advanced Math in Beginner Kata with clear disclaimer and math tags:** Beginners visit Codewars to learn fundamental programming syntax and might not find solving complex algebraic formulas for an entry-level 8 kyu task interesting, Authors should endeavor to add the “mathematics” tag to such katas and also include a disclaimer in the description that the kata contains algebraic formulas and solvers should only proceed if they’re up for the challenge. This helps set and manages expectations while giving authors the freedom to create katas they like. 
+
+## 
