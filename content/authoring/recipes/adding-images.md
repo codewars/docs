@@ -61,6 +61,20 @@ Data URLs do not require a third-party hosting service, as the image data is emb
 
 But this method has a series of disadvantages. The encoded image data is usually very large, inflating the description terribly. Therefore, it works well only for small images. The MIME type matching the image format has to be looked up. Browsers differ in requirements and interpretation of MIME types, encodings, and details of data URL formats. Some browsers require the data to be URL encoded, while others do not. To encode image data as Base-64, gzip, or URL, additional tools need to be used.
 
+### Markdown references
+
+To avoid large data URLs interrupting the description, Markdown reference syntax can be used to move the image data to the bottom of the document, keeping the body readable and easier to edit:
+
+```
+... some description ...
+
+![image_reference_title]
+
+... more description ...
+
+[image_reference_title]: data:image/png;base64,iVBORw....RK5CYII=
+```
+
 ### Examples
 
 - `![image title](data:image/gif;base64,Base64 encoded data)` - a Base64 encoded GIF image
@@ -71,6 +85,7 @@ But this method has a series of disadvantages. The encoded image data is usually
 
 There are many online tools available which can convert an image to Base64 (for example [this one](https://www.motobit.com/util/base64-decoder-encoder.asp)), or generate a data URL from an image file, for example converters available on [BASE64 Guru](https://base64.guru/converter/encode/image) or [ezgif.com](https://ezgif.com/image-to-datauri). 
 
+Before converting to Base64, it's worth running the image through an optimizer to reduce its size. For example, [TinyPNG](https://tinypng.com) can reduce PNG file sizes by 60–70%, making the resulting Base64 data URL significantly smaller.
 
 ## Inlining SVG
 
@@ -80,6 +95,20 @@ The image markup can be pasted directly into the kata editor without additional 
 But still, even simple-looking SVGs often require a significant amount of code, inflating the kata description. However, they can be minified or optimized with some additional tools (for example [SVGOMG][svgomg]), or by removing unnecessary parts of markup and Metadata. Additionally, the results of mixing HTML with Markdown are ill-defined and subject to change.
 Make sure to prevent images from becoming too large by using `width/height` attributes, `style` attributes, or a wrapper element with `style`.
 
+## Controlling Image Layout
+
+By default, images in Codewars descriptions are left-aligned and rendered at their natural size, which can be very large on desktop and cause layout problems on mobile. Markdown provides no native way to control image placement or size. As a workaround, a `<div>` wrapper with inline styles can be used to center an image and constrain its width:
+
+```html
+<div style="max-width: 300px; margin: auto">
+
+...image markdown...
+
+</div>
+```
+
+Note that a blank line is required between the `<div>` tags and the Markdown image syntax for the image to render correctly.
+This works because Codewars permits a subset of HTML in descriptions. However, since HTML and Markdown interact in ill-defined ways, this approach may break in the future if the allowed HTML subset changes.
 
 [svgomg]: https://jakearchibald.github.io/svgomg/
 [markdown-extension-math]: /references/markdown/extensions/#math-typesetting
