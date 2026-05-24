@@ -196,8 +196,8 @@ std::uniform_int_distribution<   char> rand_bool       {   0,   1 };
 // etc.
 
 // for convenience, distributions can be bound with PRNG
-auto gen_length = std::bind(rand_length, engine);
-auto gen_letter = std::bind(rand_letter, engine);
+auto gen_length = std::bind(rand_length, std::ref(engine));
+auto gen_letter = std::bind(rand_letter, std::ref(engine));
 
 std::string input;
 // input string generator: string of random length, composed of random letters
@@ -281,6 +281,7 @@ Below you can find an example test suite that covers most of the common scenario
 #include <algorithm>
 #include <random>
 #include <sstream>
+#include <functional>
 #include <string>
 
 Describe(FixedTests) {
@@ -315,9 +316,9 @@ Describe(RandomTests) {
 private:
   
   std::mt19937 engine{ std::random_device{}() };
-  std::function<int   ()> gen_number     = std::bind(std::uniform_int_distribution<int   >{  1, 100 }, engine);
-  std::function<size_t()> gen_small_size = std::bind(std::uniform_int_distribution<size_t>{  2,  10 }, engine);
-  std::function<size_t()> gen_large_size = std::bind(std::uniform_int_distribution<size_t>{ 80, 100 }, engine);
+  std::function<int   ()> gen_number     = std::bind(std::uniform_int_distribution<int   >{  1, 100 }, std::ref(engine));
+  std::function<size_t()> gen_small_size = std::bind(std::uniform_int_distribution<size_t>{  2,  10 }, std::ref(engine));
+  std::function<size_t()> gen_large_size = std::bind(std::uniform_int_distribution<size_t>{ 80, 100 }, std::ref(engine));
 
   // random test case generator
   std::vector<int> generate_random_input(size_t size) {  
