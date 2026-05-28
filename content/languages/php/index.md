@@ -11,6 +11,7 @@ tags: [php]
 - 7.0
 - 7.4
 - 8.0
+- 8.4
 
 ## Test Frameworks
 [PHPUnit](https://phpunit.de/)
@@ -19,6 +20,8 @@ tags: [php]
 - [PHPUnit 9.1](https://phpunit.readthedocs.io/en/9.1/) (PHP 7.4)
   - The name of the test class must end with `Test`
 - [PHPUnit 9.5](https://phpunit.readthedocs.io/en/9.5/) (PHP 8.0)
+  - The name of the test class must end with `Test`
+- [PHPUnit 9.6](https://phpunit.readthedocs.io/en/9.6/) (PHP 8.4)
   - The name of the test class must end with `Test`
 
 ## Timeout

@@ -12,6 +12,7 @@ tags: [javascript]
 - Node 10.x
 - Node 12.x
 - Node 18.x
+- Node 22
 
 ## Test Frameworks
 

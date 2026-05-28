@@ -8,9 +8,10 @@ tags: [kotlin]
 
 ## Versions
 
-- 1.3
-- 1.5
-- 1.9
+- 1.3 (Java 1.8)
+- 1.5 (Java 11.0)
+- 1.9 (Java 17.0)
+- 2.1 (Java 17.0)
 
 ## Test Frameworks
 

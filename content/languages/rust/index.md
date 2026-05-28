@@ -9,6 +9,7 @@ tags: [rust]
 ## Versions
 
 - 1.66 (`edition = "2021"`)
+- 1.86 (`edition = "2021"`)
 
 The following profiles are used to get decent performance in tests:
 
@@ -60,6 +61,35 @@ See the unit testing chapter in [the book](https://doc.rust-lang.org/book/ch11-0
 12 seconds
 
 ## Packages
+
+### 1.86
+
+```toml
+[dependencies]
+bit-set = "0.5.3"
+chrono = "0.4.23"
+either = "1.8.0"
+fancy-regex = "0.10.0"
+futures = "0.3.25"
+im = "15.1.0"
+itertools = "0.10.5"
+lazy_static = "1.4.0"
+num = { version = "0.4.0", features = ["rand"] }
+once_cell = "1.16.0"
+rand = "0.8.5"
+regex = "1.7.0"
+serde = { version = "1.0.150", features = ["derive"] }
+serde_json = "1.0.89"
+text_io = "0.1.12"
+thiserror = "1.0.37"
+tokio = { version = "1.23.0", features = ["full"] }
+tokio-util = { version = "0.7.4", features = ["full"] }
+
+[dev-dependencies]
+quickcheck = "1.0.3"
+quickcheck_macros = "1.0.0"
+float_eq = "1.0.1"
+```
 
 ### 1.66
 

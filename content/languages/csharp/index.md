@@ -10,6 +10,7 @@ tags: [csharp]
 
 - 10.0 (.NET 6.0)
 - 12.0 (.NET 8.0)
+- 13.0 (.NET 9.0)
 
 ## Test Frameworks
 

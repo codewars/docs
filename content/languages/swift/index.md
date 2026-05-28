@@ -7,8 +7,8 @@ tags: [swift]
 
 
 ## Versions
-
 - 5.9
+- 6.0
 
 ## Test Frameworks
 XCTest
