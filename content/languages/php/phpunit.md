@@ -7,13 +7,15 @@ tags:
 
 # PHPUnit
 
-All [PHPUnit](https://phpunit.readthedocs.io/) tests start with a subclass of `TestCase`. You can then add one or more test case methods to that class, each of which must be public and start with `test`. In Codewars' PHP versions 7.4+, PHPUnit requires the name of the test class to end with `Test`.
+All [PHPUnit](https://phpunit.readthedocs.io/) tests start with a subclass of `TestCase`. You can then add one or more test case methods to that class, each of which must be public and start with `test`. In Codewars' PHP versions 7.4+, PHPUnit requires the name of the test class to end with `Test`. For the same versions, every PHP file (user code, tests, and preloaded if anything is in there) should have the opening tag `<?php`, and every test file should have the import `use PHPUnit\Framework\TestCase;`. The PHP runner will concatenate them if missing, but it is a legacy behavior that should not be relied on for new content.
 
 ## Basic Setup
 
 ### Solution
 
 ```php
+<?php
+
 function add(int $a, int $b): int {
     return $a + $b;
 }
@@ -22,11 +24,16 @@ function add(int $a, int $b): int {
 ### Tests
 
 ```php
+<?php
+
+use PHPUnit\Framework\TestCase;
+
 class AddTest extends TestCase {
     public function testAdd() {
+        $message = "for input a = 1, b = 2";
         $expected = 3;
         $actual = add(1, 2);
-        $this->assertSame($expected, $actual);
+        $this->assertSame($expected, $actual, $message);
     }
 }
 ```
@@ -66,6 +73,8 @@ $actual->bar = "42";
 $this->assertSame($expected, $actual); // fails
 ```
 
+This is because `=== / assertSame` between PHP objects will merely check if they point to the same object (reference equality). `== / assertEquals` between objects should still be avoided, because [its semantics](https://www.php.net/manual/en/language.oop5.object-comparison.php) are very surprising, and it compares object properties with loose comparison.
+
 Here, using [`assertObjectsEqual`](https://phpunit.readthedocs.io/en/9.5/assertions.html#assertobjectequals), which calls a class' `equals(self $other): bool` method, might be a more appropriate approach.
 
 ### Float equality
@@ -77,8 +86,9 @@ $this->assertEqualsWithDelta(0.99, "1", 0.1); // passes
 $this->assertEqualsWithDelta(99999, true, 0.1); // passes
 ```
 
-Type-checking the arguments to `assertEqualsWithDelta` before calling it or implementing a custom delta assertion based on `assertTrue` may be a safer bet.
+Type-checking the arguments to `assertEqualsWithDelta` before calling it (with `assertIsFloat`) or implementing a custom delta assertion based on `assertTrue` may be a safer bet.
 
+Another suprising fact is that unlike most languages, PHP considers `1` and `1.0` not to be strictly equal, so `assertSame(1, 1.0)` will fail. If you want to allow them to be strictly equal, you might want to cast the user's answer, e.g. `if (is_int($actual)) $actual = (float)$actual`, or the other way around.
 
 <!--
 TODO: Finish this reference
