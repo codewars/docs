@@ -525,7 +525,10 @@ module.exports = {
             type: "doc",
             id: "languages/ocaml/index",
           },
-          items: ["languages/ocaml/ounit"],
+          items: [
+            "languages/ocaml/ounit",
+            "languages/ocaml/recipes"
+          ],
         },
         {
           type: "category",
