@@ -191,11 +191,11 @@ std::mt19937 engine{ seeder() };
 std::uniform_int_distribution<    int> rand_number     {  1,  100 };
 std::uniform_int_distribution< size_t> rand_length     { 20,  100 };
 std::uniform_real_distribution<double> rand_coefficient{ -1,    1 };
-std::uniform_int_distribution<   char> rand_letter     { 'a', 'z' };
-std::uniform_int_distribution<   char> rand_bool       {   0,   1 };
+std::uniform_int_distribution<   int> rand_letter     { 'a', 'z' };
+std::uniform_int_distribution<   int> rand_bool       {   0,   1 };
 // etc.
 
-// for convenience, distributions can be bound with PRNG
+// for convenience, distributions can be bound with PRNG (you need to #include <functional> for std::bind)
 auto gen_length = std::bind(rand_length, engine);
 auto gen_letter = std::bind(rand_letter, engine);
 
@@ -257,7 +257,7 @@ In C++, not everything can be easily tested. It's not possible to reliably verif
 
 C++ sometimes requires some boilerplate code to implement non-trivial tests, checks, and assertions. It can be tempting to insert some code that would be common to sample tests and submission tests in the Preloaded snippet, but this approach sometimes proves to be problematic (see [here](/authoring/guidelines/preloaded/#accessibility-of-preloaded-code) why), and can cause some headaches for users who are interested in training on the kata locally, or checking how the user solution is called, etc. It's strongly discouraged to use preloaded code to make the code common for test snippets if it would hide some information or implementation details interesting to the user. 
 
-Preloaded should not contain `#include` directives and `using` directives just to makie some names available to other snippets (see [`using` directives](#using-directives) and [header files](#header-files)). Preloaded of following form is bad, and should not be used:
+Preloaded should not contain `#include` directives and `using` directives just to make some names available to other snippets (see [`using` directives](#using-directives) and [header files](#header-files)). Preloaded of following form is bad, and should not be used:
 
 ```cpp
 // include them here, because all snippets use them
@@ -282,6 +282,7 @@ Below you can find an example test suite that covers most of the common scenario
 #include <random>
 #include <sstream>
 #include <string>
+#include <functional>
 
 Describe(FixedTests) {
   
@@ -375,6 +376,11 @@ public:
       
       // assertion uses custom message supplier
       Assert::That(actual, EqualsContainer(expected), [&]() {
+        if (actual.size() != expected.size()) {
+            return fmt::format(
+                "Invalid answer for inputs of size {}: vectors have different sizes (expected: {}, actual: {})",
+                input_size, expected.size(), actual.size());
+        }
         auto [act, exp] = std::mismatch(actual.cbegin(), actual.cend(), expected.cbegin());
         auto idx = act - actual.cbegin();
         return fmt::format("Invalid answer for inputs of size {}: vectors mismatch at position {}, expected: {}, actual: {}", input_size, idx, *exp, *act);
